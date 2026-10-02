@@ -1,0 +1,784 @@
+{
+  "started_at_utc": "2026-10-02T02:55:00.248349+00:00",
+  "passed": true,
+  "original_pid": 10472,
+  "original_windows_before": [
+    {
+      "handle": 7737448,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 114692858,
+      "text": " ",
+      "visible": false
+    },
+    {
+      "handle": 8720656,
+      "text": " ",
+      "visible": false
+    },
+    {
+      "handle": 11998212,
+      "text": " ",
+      "visible": false
+    },
+    {
+      "handle": 12325028,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 2493774,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 62131956,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 21499560,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 1903822,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 382079638,
+      "text": "ASCET-MD",
+      "visible": true
+    },
+    {
+      "handle": 7867766,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 30868058,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 3609594,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 37097278,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 91425556,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 11405726,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 99158294,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 9245692,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 75174644,
+      "text": "State Machine Editor for: AEB_State_Machine [ Main ] Project: AEB_State_Machine_DEFAULT [PC/Physical]",
+      "visible": true
+    },
+    {
+      "handle": 337515312,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 263589482,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 4461274,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 248582054,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 3543262,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 19403328,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 8262202,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 1380850,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 8852836,
+      "text": "Block Diagram Editor for: AEB_State_Machine [ Init ] Project: AEB_State_Machine_DEFAULT [PC/Physical]",
+      "visible": true
+    },
+    {
+      "handle": 426512940,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 9571136,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 15008034,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 46467946,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 4001340,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 6951676,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 12456436,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 8980280,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 8457712,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 30017322,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 327551734,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 124063650,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 712970430,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 3411772,
+      "text": "MONITOR",
+      "visible": true
+    },
+    {
+      "handle": 114494268,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 6491394,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 4657198,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 27792366,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 3936350,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 7607012,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 924715758,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 42340394,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 3084242,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 1117452,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 282529456,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 2297836,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 2559180,
+      "text": ".NET-BroadcastEventWindow.4.0.0.0.297b065.0",
+      "visible": false
+    },
+    {
+      "handle": 4656612,
+      "text": "GDI+ Window (ASCET.exe)",
+      "visible": false
+    },
+    {
+      "handle": 2165210,
+      "text": "MSCTFIME UI",
+      "visible": false
+    },
+    {
+      "handle": 660562,
+      "text": "Default IME",
+      "visible": false
+    },
+    {
+      "handle": 21302576,
+      "text": "Default IME",
+      "visible": false
+    }
+  ],
+  "process": {
+    "pid": 19976,
+    "start_time_utc": "2026-10-02T02:55:02.3553151Z",
+    "runtime": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\runtime",
+    "port": 32612,
+    "background": true,
+    "guard_pid": 37916
+  },
+  "identity": {
+    "database_path": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\Database\\agent-b",
+    "database_root": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\Database\\",
+    "database_name": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\Database\\agent-b",
+    "server_pid": 19976,
+    "multi_instance": true
+  },
+  "hidden_windows": [
+    {
+      "handle": 21762606,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 1512254,
+      "text": "MONITOR",
+      "visible": false
+    },
+    {
+      "handle": 5968920,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 1896420518,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 2102090,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 398424,
+      "text": "ASCET-MD Instance:agent-b ProcId:19976",
+      "visible": false
+    },
+    {
+      "handle": 988356,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 1184798,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 2364510,
+      "text": ".NET-BroadcastEventWindow.4.0.0.0.297b065.0",
+      "visible": false
+    },
+    {
+      "handle": 463972,
+      "text": "GDI+ Window (ASCET.exe)",
+      "visible": false
+    },
+    {
+      "handle": 32314190,
+      "text": "MSCTFIME UI",
+      "visible": false
+    },
+    {
+      "handle": 1184858,
+      "text": "Default IME",
+      "visible": false
+    },
+    {
+      "handle": 1774690,
+      "text": "Default IME",
+      "visible": false
+    }
+  ],
+  "matching_echoes": 200,
+  "shown_windows": [
+    {
+      "handle": 21762606,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 1512254,
+      "text": "MONITOR",
+      "visible": true
+    },
+    {
+      "handle": 5968920,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 1896420518,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 2102090,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 398424,
+      "text": "ASCET-MD Instance:agent-b ProcId:19976",
+      "visible": true
+    },
+    {
+      "handle": 988356,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 1184798,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 2364510,
+      "text": ".NET-BroadcastEventWindow.4.0.0.0.297b065.0",
+      "visible": false
+    },
+    {
+      "handle": 463972,
+      "text": "GDI+ Window (ASCET.exe)",
+      "visible": false
+    },
+    {
+      "handle": 32314190,
+      "text": "MSCTFIME UI",
+      "visible": false
+    },
+    {
+      "handle": 1184858,
+      "text": "Default IME",
+      "visible": false
+    },
+    {
+      "handle": 1774690,
+      "text": "Default IME",
+      "visible": false
+    }
+  ],
+  "reshown_window_hidden": true,
+  "guard_status": {
+    "pid": 19976,
+    "background": true,
+    "guard": {
+      "status": "watching",
+      "error": null,
+      "target_pid": 19976,
+      "target_start_time_utc": "2026-10-02T02:55:02.3553151Z",
+      "pid": 28984,
+      "start_time_utc": "2026-10-02T02:55:09.4593888Z",
+      "executable": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\WindowGuard-A109769040E32383.exe",
+      "command_file": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\background.json.command",
+      "updated_at_utc": "2026-10-02T02:55:10.6244799Z",
+      "windows": [
+        {
+          "handle": 1512254,
+          "thread_id": 36128,
+          "type": "SHELL",
+          "text": "MONITOR"
+        },
+        {
+          "handle": 398424,
+          "thread_id": 36128,
+          "type": "SHELL",
+          "text": "ASCET-MD Instance:agent-b ProcId:19976"
+        }
+      ]
+    }
+  },
+  "guard_exited_with_ascet": true,
+  "original_windows_after": [
+    {
+      "handle": 7737448,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 114692858,
+      "text": " ",
+      "visible": false
+    },
+    {
+      "handle": 8720656,
+      "text": " ",
+      "visible": false
+    },
+    {
+      "handle": 11998212,
+      "text": " ",
+      "visible": false
+    },
+    {
+      "handle": 12325028,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 2493774,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 62131956,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 21499560,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 1903822,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 382079638,
+      "text": "ASCET-MD",
+      "visible": true
+    },
+    {
+      "handle": 7867766,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 30868058,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 3609594,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 37097278,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 91425556,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 11405726,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 99158294,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 9245692,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 75174644,
+      "text": "State Machine Editor for: AEB_State_Machine [ Main ] Project: AEB_State_Machine_DEFAULT [PC/Physical]",
+      "visible": true
+    },
+    {
+      "handle": 337515312,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 263589482,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 4461274,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 248582054,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 3543262,
+      "text": "HoverHelpShell",
+      "visible": false
+    },
+    {
+      "handle": 19403328,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 8262202,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 1380850,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 8852836,
+      "text": "Block Diagram Editor for: AEB_State_Machine [ Init ] Project: AEB_State_Machine_DEFAULT [PC/Physical]",
+      "visible": true
+    },
+    {
+      "handle": 426512940,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 9571136,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 15008034,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 46467946,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 4001340,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 6951676,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 12456436,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 8980280,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 8457712,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 30017322,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 327551734,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 124063650,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 712970430,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 3411772,
+      "text": "MONITOR",
+      "visible": true
+    },
+    {
+      "handle": 114494268,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 6491394,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 4657198,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 27792366,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 3936350,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 7607012,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 924715758,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 42340394,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 3084242,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 1117452,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 282529456,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 2297836,
+      "text": "",
+      "visible": false
+    },
+    {
+      "handle": 2559180,
+      "text": ".NET-BroadcastEventWindow.4.0.0.0.297b065.0",
+      "visible": false
+    },
+    {
+      "handle": 4656612,
+      "text": "GDI+ Window (ASCET.exe)",
+      "visible": false
+    },
+    {
+      "handle": 2165210,
+      "text": "MSCTFIME UI",
+      "visible": false
+    },
+    {
+      "handle": 660562,
+      "text": "Default IME",
+      "visible": false
+    },
+    {
+      "handle": 21302576,
+      "text": "Default IME",
+      "visible": false
+    }
+  ],
+  "original_windows_unchanged": true,
+  "original_files_unchanged": true,
+  "original_registry_unchanged": true,
+  "finished_at_utc": "2026-10-02T02:55:11.467254+00:00"
+}

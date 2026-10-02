@@ -1,0 +1,10 @@
+{
+  "instance_id": "agent-a",
+  "port": 32611,
+  "runtime": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\runtime",
+  "data": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data",
+  "logs": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\logs",
+  "database": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\agent-a",
+  "source_image_sha256": "b4dff51f53463f2053ad7163f6afaf7a9a24dfdfd0d538eceec22432fadb5237",
+  "patched_image_sha256": "1b8427a4ba4d0fc78aef38db99d2a4223158eb3a5544091b38cfb8f14c57a8ef"
+}

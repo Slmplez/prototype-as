@@ -1,0 +1,5 @@
+/README.md text eol=lf
+/.gitignore text eol=lf
+/.gitattributes text eol=lf
+# Preserve the packaged file hashes across checkouts.
+/ascet-multi-instance/** -text

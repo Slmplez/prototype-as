@@ -1,0 +1,9 @@
+**/__pycache__/
+*.py[cod]
+**/obj/
+**/.vs/
+.connector.lock
+*.command
+/ascet-multi-instance/analysis/
+/ascet-multi-instance/dist/
+/ascet-multi-instance/tools/multi-instance/connector/bin/

@@ -1,0 +1,15 @@
+{
+  "kind": "ascet-private-multi-instance",
+  "installation": "E:\\ETAS\\ASCET6.4",
+  "database_source": "D:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+  "database_source_hashes": {
+    "codestorage.dat": "ea523a02a91a290f95cde55683103bf2384f77811be1f1d5c5007b8217f10055",
+    "codestorage.idx": "0cee15f50cd097af8d1fadad5dcd561a45444e3693ed1d0c1f049ded5cfbea91",
+    "dbconfig2.dmp": "9f21e739df2fb4b509cd998066c6837c2b3c5830c95214b39b2847cebf514687",
+    "environment.xml": "c3b9980f74291d34226019a3cd1587f781b655c303d251e36c73f53ae69d796d",
+    "sobjects.dat": "ce7143e8c2d3589c46cfaef26b2586c6649dc8a38c0826c63a6ad2559c291961",
+    "sobjects.idx": "50a06a55de9c4307f007a98b63a1295e26cbfcc7b473600bfddec508278b7e04",
+    "attrib\\vatribut.dat": "38c6161168a965f806f2c88ec8015a0025707cf2d300543ee0be816370213cc3",
+    "attrib\\vatribut.idx": "f4f456435508de0749e8f0f12e584d377cffca6a832530cadec68a3fc756b582"
+  }
+}

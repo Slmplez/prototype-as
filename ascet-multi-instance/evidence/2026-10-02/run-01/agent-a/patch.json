@@ -1,0 +1,116 @@
+{
+  "source_sha256": "b4dff51f53463f2053ad7163f6afaf7a9a24dfdfd0d538eceec22432fadb5237",
+  "patched_sha256": "1b8427a4ba4d0fc78aef38db99d2a4223158eb3a5544091b38cfb8f14c57a8ef",
+  "source_bytes": 22249660,
+  "patched_bytes": 22249960,
+  "source_method_count": 131680,
+  "original_methods_preserved": 131671,
+  "changes": [
+    {
+      "name": "tool_enabled",
+      "old_address": "0x20226064",
+      "new_address": "0x20226064",
+      "dictionary": "0x121dfdcc",
+      "identity": 36714,
+      "code_hex": "000012122507250b080e1f0fb262172f02003e0e251b4b0000030300621f456423463e0e",
+      "literals": [
+        486572468,
+        486579952,
+        268663216,
+        453259500,
+        453255436,
+        304828420,
+        454564160,
+        454763856
+      ]
+    },
+    {
+      "name": "port",
+      "old_address": "0x2011d4b4",
+      "new_address": "0x2011d4b4",
+      "dictionary": "0x121dfdcc",
+      "identity": 11433,
+      "code_hex": "000010102507443e",
+      "literals": [
+        65223
+      ]
+    },
+    {
+      "name": "active",
+      "old_address": "0x201188dc",
+      "new_address": "0x201188dc",
+      "dictionary": "0x1209042c",
+      "identity": 10770,
+      "code_hex": "00001010401618443e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e",
+      "literals": []
+    },
+    {
+      "name": "inactive",
+      "old_address": "0x20104734",
+      "new_address": "0x20104734",
+      "dictionary": "0x1209042c",
+      "identity": 7932,
+      "code_hex": "000010103d1618443e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e",
+      "literals": []
+    },
+    {
+      "name": "com",
+      "old_address": "0x20571a78",
+      "new_address": "0x20571a78",
+      "dictionary": "0x120f3464",
+      "identity": 64244,
+      "code_hex": "00011010443e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e",
+      "literals": []
+    },
+    {
+      "name": "register",
+      "old_address": "0x2044ee38",
+      "new_address": "0x2044ee38",
+      "dictionary": "0x122ecee8",
+      "identity": 59432,
+      "code_hex": "000010101f07250b250f67133f443e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e",
+      "literals": [
+        268717116,
+        306262736,
+        306262756,
+        453848700
+      ]
+    },
+    {
+      "name": "program_path",
+      "old_address": "0x2027004c",
+      "new_address": "0x2027004c",
+      "dictionary": "0x12257b80",
+      "identity": 41298,
+      "code_hex": "000010102507620b443e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e",
+      "literals": [
+        306262788,
+        455134876
+      ]
+    },
+    {
+      "name": "data_path",
+      "old_address": "0x20270078",
+      "new_address": "0x20270078",
+      "dictionary": "0x12257b80",
+      "identity": 41299,
+      "code_hex": "000010102507620b443e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e",
+      "literals": [
+        306262872,
+        455134876
+      ]
+    },
+    {
+      "name": "log_path",
+      "old_address": "0x203f2a7c",
+      "new_address": "0x203f2a7c",
+      "dictionary": "0x12257b80",
+      "identity": 57132,
+      "code_hex": "000010102507443e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e0e3e",
+      "literals": [
+        306262952
+      ]
+    }
+  ],
+  "fixed_port": 32611
+}

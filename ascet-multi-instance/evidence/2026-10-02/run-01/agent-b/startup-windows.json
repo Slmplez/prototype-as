@@ -1,0 +1,82 @@
+[
+  {
+    "handle": 4918114,
+    "type": "#32770",
+    "text": "Fatal Application Error"
+  },
+  {
+    "handle": 272698640,
+    "type": "Button",
+    "text": "确定"
+  },
+  {
+    "handle": 1638403132,
+    "type": "Static",
+    "text": ""
+  },
+  {
+    "handle": 261885050,
+    "type": "Static",
+    "text": "Exit due to error: 53 - General protection fault - read from invalid memory location"
+  },
+  {
+    "handle": 21825500,
+    "type": "WindowsForms10.Window.8.app.0.297b065_r40_ad1",
+    "text": "InternalStartupScr"
+  },
+  {
+    "handle": 1779959596,
+    "type": "WindowsForms10.STATIC.app.0.297b065_r40_ad1",
+    "text": "Opening ASCET..."
+  },
+  {
+    "handle": 2491920,
+    "type": "WindowsForms10.msctls_progress32.app.0.297b065_r40_ad1",
+    "text": ""
+  },
+  {
+    "handle": 235471808,
+    "type": "WindowsForms10.Window.8.app.0.297b065_r40_ad1",
+    "text": ""
+  },
+  {
+    "handle": 19270210,
+    "type": "WindowsForms10.STATIC.app.0.297b065_r40_ad1",
+    "text": "ASCET"
+  },
+  {
+    "handle": 4919692,
+    "type": "WindowsForms10.STATIC.app.0.297b065_r40_ad1",
+    "text": "V6.4.0"
+  },
+  {
+    "handle": 509937596,
+    "type": "WindowsForms10.Window.0.app.0.297b065_r40_ad1",
+    "text": ""
+  },
+  {
+    "handle": 6687214,
+    "type": ".NET-BroadcastEventWindow.4.0.0.0.297b065.0",
+    "text": ".NET-BroadcastEventWindow.4.0.0.0.297b065.0"
+  },
+  {
+    "handle": 992610936,
+    "type": "GDI+ Hook Window Class",
+    "text": "GDI+ Window (ASCET.exe)"
+  },
+  {
+    "handle": 922626,
+    "type": "MSCTFIME UI",
+    "text": "MSCTFIME UI"
+  },
+  {
+    "handle": 27527640,
+    "type": "IME",
+    "text": "Default IME"
+  },
+  {
+    "handle": 19794488,
+    "type": "IME",
+    "text": "Default IME"
+  }
+]

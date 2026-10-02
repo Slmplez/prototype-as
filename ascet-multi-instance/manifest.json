@@ -1,0 +1,443 @@
+{
+  "schema_version": 1,
+  "package_kind": "ascet-multi-instance-connector-materials",
+  "created_at_utc": "2026-10-02T04:12:13.8133293Z",
+  "source_workspace": "E:\\Repo\\ASCET",
+  "file_count": 72,
+  "includes_vendor_runtime": false,
+  "includes_database_contents": false,
+  "files": [
+    {
+      "path": "bin/EndpointHost.exe",
+      "bytes": 15872,
+      "sha256": "524e9a431758903aa807597b67249a3dcf4f8e36acbe0fef461f5b8dc254e78c",
+      "source": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\EndpointHost.exe"
+    },
+    {
+      "path": "decompiled/Etas.AscetNET/de.etas.cebra.socket/ToolClient.cs",
+      "bytes": 10426,
+      "sha256": "524c3f52bfb3e8297ffa4bfedd2dbabe80f01a1bb244778dbff5f7853c68b5c4",
+      "source": "E:\\Repo\\ASCET\\decompiled\\Etas.AscetNET\\de.etas.cebra.socket\\ToolClient.cs"
+    },
+    {
+      "path": "decompiled/Etas.AscetNET/de.etas.cebra/Cebra.cs",
+      "bytes": 9099,
+      "sha256": "1a67f98b1508e26e747b7bf86f939146dc2c54634d684ee2ea65064549f8e575",
+      "source": "E:\\Repo\\ASCET\\decompiled\\Etas.AscetNET\\de.etas.cebra\\Cebra.cs"
+    },
+    {
+      "path": "decompiled/Etas.AscetNET/de.etas.util/LogFile.cs",
+      "bytes": 3265,
+      "sha256": "afd1521b972518df94666be11c3a8f8649dc41ccd165431e7b7c2b05a23690fc",
+      "source": "E:\\Repo\\ASCET\\decompiled\\Etas.AscetNET\\de.etas.util\\LogFile.cs"
+    },
+    {
+      "path": "docs/ascet-agent-background-workflow.md",
+      "bytes": 17671,
+      "sha256": "dd4b49b78040d16c437c3a745b6ec639e91be5a97b215994d1b5870a8b9143a6",
+      "source": "E:\\Repo\\ASCET\\docs\\ascet-agent-background-workflow.md"
+    },
+    {
+      "path": "docs/ascet-api-concurrency-analysis.md",
+      "bytes": 12784,
+      "sha256": "491a5f2f93e79bc16c7f5caaf16a46f7bce8a0d0c506034e82331e6ffa9de210",
+      "source": "E:\\Repo\\ASCET\\docs\\ascet-api-concurrency-analysis.md"
+    },
+    {
+      "path": "docs/ascet-api-concurrency-test-results.md",
+      "bytes": 8751,
+      "sha256": "98f1497b9692c8b9137f6a386f35608c5116f96c2c1bf1f19d044df737dff934",
+      "source": "E:\\Repo\\ASCET\\docs\\ascet-api-concurrency-test-results.md"
+    },
+    {
+      "path": "docs/ascet-multi-instance-api-implementation.md",
+      "bytes": 15731,
+      "sha256": "198e3e3b3cef74362f3e1038f71268881820b28628475335078d87b8fcd495e8",
+      "source": "E:\\Repo\\ASCET\\docs\\ascet-multi-instance-api-implementation.md"
+    },
+    {
+      "path": "evidence/2026-10-02/run-01/agent-a/instance.json",
+      "bytes": 632,
+      "sha256": "0ca784f8057fed15c88957928ac59e815b97c5da6f44e90222eec03a9e73d921",
+      "source": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\instance.json"
+    },
+    {
+      "path": "evidence/2026-10-02/run-01/agent-a/patch.json",
+      "bytes": 4750,
+      "sha256": "c7d737f35eee29248c5f221dffec7aa10ea27e474be0b4f9c038ab7b3a55c26c",
+      "source": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\patch.json"
+    },
+    {
+      "path": "evidence/2026-10-02/run-01/agent-b/background-validation.json",
+      "bytes": 15589,
+      "sha256": "08cbb536e75b75092049939d9904a0ff359adc93de789b2539a5f98a995ea94a",
+      "source": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\background-validation.json"
+    },
+    {
+      "path": "evidence/2026-10-02/run-01/agent-b/instance.json",
+      "bytes": 632,
+      "sha256": "74696152ac14d3d7d5d0c074e8fd59ab48de19dcbf494b23c88ef279ce7bd46c",
+      "source": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\instance.json"
+    },
+    {
+      "path": "evidence/2026-10-02/run-01/agent-b/patch.json",
+      "bytes": 4750,
+      "sha256": "99f3fdc89c21e47465be2aa6aeeec2afaab3fb26d0aa7374bb587819fa68c888",
+      "source": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\patch.json"
+    },
+    {
+      "path": "evidence/2026-10-02/run-01/agent-b/startup-windows.json",
+      "bytes": 1793,
+      "sha256": "f5da47b9a52dbb9d5615c26fd52bb7428814e4ef9c2d0323a37ed7f166bd51bf",
+      "source": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\startup-windows.json"
+    },
+    {
+      "path": "evidence/2026-10-02/run-01/experiment.json",
+      "bytes": 926,
+      "sha256": "6a91f5b629c4a3f6d0034ce16db8c730a0b6bfebe401ec15aaec32360bd92e90",
+      "source": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\experiment.json"
+    },
+    {
+      "path": "evidence/2026-10-02/run-01/validation.json",
+      "bytes": 10299,
+      "sha256": "5d03df92943e5a6960c6c0a93190cf597e05bdfa1318ac3122392b2cf1cad389",
+      "source": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\validation.json"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6695,
+      "sha256": "d25a1780e3d0b571cbdcf53c9b125c61fa476a4c6cd1922e1e5836c16d0fbd0a",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\PACKAGE-README.zh-CN.md"
+    },
+    {
+      "path": "references/copilot/AscetReadDomain.cs",
+      "bytes": 92881,
+      "sha256": "2d28381c76e31e168aff416f36aa273b618bf91e2a9a1c93700dd38462aa61eb",
+      "source": "E:\\Rep\\AscetAgent\\src\\ascetcli\\src\\AscetCopilot\\AscetReadDomain.cs"
+    },
+    {
+      "path": "references/copilot/cliLock.ts",
+      "bytes": 6488,
+      "sha256": "79ab2e19515136cc2e9d085e20f7e22487c8c1df71c4f5d0ef0983e8ebfdba12",
+      "source": "E:\\Rep\\AscetAgent\\src\\services\\ascet\\cliLock.ts"
+    },
+    {
+      "path": "references/copilot/Core/AscetLiveContext.cs",
+      "bytes": 14042,
+      "sha256": "98a3989d0266f9661e51de007d4eb5d547390f42686853af0d883c5efbb89c46",
+      "source": "E:\\Rep\\AscetAgent\\src\\ascetcli\\src\\AscetCopilot\\Core\\AscetLiveContext.cs"
+    },
+    {
+      "path": "references/copilot/runner.ts",
+      "bytes": 30835,
+      "sha256": "4808d55277d412753246d3f5d4998445f4594e2d952f5bbfde4562b8ce24f194",
+      "source": "E:\\Rep\\AscetAgent\\src\\services\\ascet\\runner.ts"
+    },
+    {
+      "path": "scripts/decompile_smalltalk.py",
+      "bytes": 56610,
+      "sha256": "a6562e9d67d1b95453fe6da9b31daf03cd57525e114d5a2d07d787b2a5f2a7e2",
+      "source": "E:\\Repo\\ASCET\\scripts\\decompile_smalltalk.py"
+    },
+    {
+      "path": "scripts/smalltalk_image.py",
+      "bytes": 13187,
+      "sha256": "792b47e2ef18fb42bfd4f97ac05e8726160d23beeecc9658481d54d2a599dfaf",
+      "source": "E:\\Repo\\ASCET\\scripts\\smalltalk_image.py"
+    },
+    {
+      "path": "tools/multi-instance/connector/Ascet.AgentConnector.csproj",
+      "bytes": 615,
+      "sha256": "ad3e638d21a0dcb15f9f922a8e3350440862aa824dec0ef9336b6d512aedc451",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\Ascet.AgentConnector.csproj"
+    },
+    {
+      "path": "tools/multi-instance/connector/AscetConnector.cs",
+      "bytes": 20278,
+      "sha256": "81eac4f8abcf60f6833dbc7899b02a3510c97f158a1e064a675c3094e90625aa",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\AscetConnector.cs"
+    },
+    {
+      "path": "tools/multi-instance/connector/build.ps1",
+      "bytes": 2134,
+      "sha256": "9f85c348e7c50775c12b7b55b2ba81efce1a29be188619095cb122e3bc5f48dd",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\build.ps1"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/net47/AgentExample.exe",
+      "bytes": 6144,
+      "sha256": "314d85ec2ddc48524b92241544de20199ff436b67663c5d5af5aee8cc8b64efa",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\net47\\AgentExample.exe"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/net47/Ascet.AgentConnector.dll",
+      "bytes": 30208,
+      "sha256": "e1dd506aec76047c861a61d96f40c7ab8c253d3ae53e6b97ad754795d878df3d",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\net47\\Ascet.AgentConnector.dll"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/net8.0/AgentExample.dll",
+      "bytes": 6144,
+      "sha256": "964b8219f102f5d6bdd1763e2a9fdf2202170faad46274c445cc0530eee84c42",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\net8.0\\AgentExample.dll"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/net8.0/AgentExample.runtimeconfig.json",
+      "bytes": 124,
+      "sha256": "4369cee75d40e8257b2be4dd1da2e854ca8b42a35f3bb34d4ee6aaecfbf6924a",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\net8.0\\AgentExample.runtimeconfig.json"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/net8.0/Ascet.AgentConnector.dll",
+      "bytes": 30720,
+      "sha256": "d4ae3487a18128eaf9d0833bf0994693a933864274b88968afd5fdf93c3caeeb",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\net8.0\\Ascet.AgentConnector.dll"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/tests-net8/Ascet.AgentConnector.dll",
+      "bytes": 30720,
+      "sha256": "d4ae3487a18128eaf9d0833bf0994693a933864274b88968afd5fdf93c3caeeb",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\tests-net8\\Ascet.AgentConnector.dll"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/tests-net8/ConnectorTests.dll",
+      "bytes": 18432,
+      "sha256": "17a49a80896b94ef7fdf57f44f3a90ef70acda2f171fd092e403933504125682",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\tests-net8\\ConnectorTests.dll"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/tests-net8/ConnectorTests.runtimeconfig.json",
+      "bytes": 124,
+      "sha256": "4369cee75d40e8257b2be4dd1da2e854ca8b42a35f3bb34d4ee6aaecfbf6924a",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\tests-net8\\ConnectorTests.runtimeconfig.json"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/tests/Ascet.AgentConnector.dll",
+      "bytes": 30208,
+      "sha256": "e1dd506aec76047c861a61d96f40c7ab8c253d3ae53e6b97ad754795d878df3d",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\tests\\Ascet.AgentConnector.dll"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/tests/ConnectorTests.exe",
+      "bytes": 18432,
+      "sha256": "17a49a80896b94ef7fdf57f44f3a90ef70acda2f171fd092e403933504125682",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\tests\\ConnectorTests.exe"
+    },
+    {
+      "path": "tools/multi-instance/connector/dist/tests/FakeEndpointHost.exe",
+      "bytes": 10752,
+      "sha256": "ca77e6bd04ca1d705089f40385b2d482c7d9568940a1a51caa49d6f09398efe0",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\dist\\tests\\FakeEndpointHost.exe"
+    },
+    {
+      "path": "tools/multi-instance/connector/examples/AgentExample.cs",
+      "bytes": 1159,
+      "sha256": "54ee0f3cf4ea8e8a0edb6696e483527d5e4a842e7d7cc0362360f3fa5203f658",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\examples\\AgentExample.cs"
+    },
+    {
+      "path": "tools/multi-instance/connector/examples/AgentExample.runtimeconfig.json",
+      "bytes": 124,
+      "sha256": "4369cee75d40e8257b2be4dd1da2e854ca8b42a35f3bb34d4ee6aaecfbf6924a",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\examples\\AgentExample.runtimeconfig.json"
+    },
+    {
+      "path": "tools/multi-instance/connector/README.md",
+      "bytes": 5422,
+      "sha256": "e5c7a909c6d9f5f83d7a4acba0e007446121b3949eea67306448c727a2a46c27",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\README.md"
+    },
+    {
+      "path": "tools/multi-instance/connector/test.ps1",
+      "bytes": 1817,
+      "sha256": "727ca801e9c78649d5799e9afb0b8736fdd76330ba7056f0c594511e7a6a86fb",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\test.ps1"
+    },
+    {
+      "path": "tools/multi-instance/connector/tests/ConnectorTests.cs",
+      "bytes": 5277,
+      "sha256": "b54de1d6ae448c706dab858f3257da74969b85cb3d67fbc839bdcd14fc9bed93",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\tests\\ConnectorTests.cs"
+    },
+    {
+      "path": "tools/multi-instance/connector/tests/FakeEndpointHost.cs",
+      "bytes": 1736,
+      "sha256": "8f360803975c4e74dba40082ea05bf20871425b287081827edf1822956e855c7",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\connector\\tests\\FakeEndpointHost.cs"
+    },
+    {
+      "path": "tools/multi-instance/EndpointHost.cs",
+      "bytes": 6938,
+      "sha256": "4b8db3611bfd89204ddc2200db0223ba14c5d04f3e172f7d3a103ba0e85aef7a",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\EndpointHost.cs"
+    },
+    {
+      "path": "tools/multi-instance/image_patch.py",
+      "bytes": 8706,
+      "sha256": "defa8365e78e5a049c8639c191ccbcea29f817d75697cd511ba740773b41fe5d",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\image_patch.py"
+    },
+    {
+      "path": "tools/multi-instance/launch-manual.ps1",
+      "bytes": 1376,
+      "sha256": "e2f2f4d3a1cfe663288bd884ca9fd24813ed52f43bca7caeadc0c3cf14e50965",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\launch-manual.ps1"
+    },
+    {
+      "path": "tools/multi-instance/launch.ps1",
+      "bytes": 2034,
+      "sha256": "1a7a667b26f8f61ca62020d84e44cc456c3c279b44629157644dbab959606053",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\launch.ps1"
+    },
+    {
+      "path": "tools/multi-instance/package.ps1",
+      "bytes": 6746,
+      "sha256": "10f2458e989d9d5d548a4c52c02c13dacdcb3b1bb1ef653b5ac73544d17a3c8c",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\package.ps1"
+    },
+    {
+      "path": "tools/multi-instance/prepare.py",
+      "bytes": 6405,
+      "sha256": "246c2e896e98e8c33343b0f016bbacfe14e10ce9d0ced96c9216cb9cd15fb717",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\prepare.py"
+    },
+    {
+      "path": "tools/multi-instance/read-windows.ps1",
+      "bytes": 2143,
+      "sha256": "25d5a7cf229c44ce7337e71dff02ff9fabee4bed5f3b3ffb66993624a3b84528",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\read-windows.ps1"
+    },
+    {
+      "path": "tools/multi-instance/README.md",
+      "bytes": 9636,
+      "sha256": "1ef17fffc81d524687d9881f95a49f86ebb3e09d7f063bd96d645f8e0c6b6a84",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\README.md"
+    },
+    {
+      "path": "tools/multi-instance/refresh.py",
+      "bytes": 2295,
+      "sha256": "790a1b6f18e6013ab8a2e65aa66291cf8ac2759655e2f63ab597759adf22fc35",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\refresh.py"
+    },
+    {
+      "path": "tools/multi-instance/stop.ps1",
+      "bytes": 1527,
+      "sha256": "8775109049814775cb9a68607d31c2ae0b067b12936235e163f8a463732c85d0",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\stop.ps1"
+    },
+    {
+      "path": "tools/multi-instance/test_image_patch.py",
+      "bytes": 3107,
+      "sha256": "9e7394d2a0e7c3d656e7a52eeec145589e88b92ae3027440f06cc521ba279399",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\test_image_patch.py"
+    },
+    {
+      "path": "tools/multi-instance/validate_background.py",
+      "bytes": 7368,
+      "sha256": "821a93c67c06afd392436ddeeef9860431b71921b75f85d85d26a46279e1d6cf",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\validate_background.py"
+    },
+    {
+      "path": "tools/multi-instance/validate.py",
+      "bytes": 12346,
+      "sha256": "892158cf9ca0a9911d3d48306c9531860ef0e490e84f6cc8b654644999cc1a2f",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\validate.py"
+    },
+    {
+      "path": "tools/multi-instance/WindowGuard.cs",
+      "bytes": 6879,
+      "sha256": "a109769040e32383599f5ddb6064097ca326c681424671bd35b4b13ec5e1e804",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\WindowGuard.cs"
+    },
+    {
+      "path": "tools/multi-instance/windows.ps1",
+      "bytes": 4468,
+      "sha256": "05701da8f54f767d001385e053f9b7a232e000bde2f32d2080383eecd9df3fde",
+      "source": "E:\\Repo\\ASCET\\tools\\multi-instance\\windows.ps1"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/ASDAscetController.st",
+      "bytes": 21967,
+      "sha256": "c5cf958aeb882f9f3efdebfce8818bdb0eacc90da391b8cff0985f9029d0495b",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\ASDAscetController.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/ASDGeneralOptions.st",
+      "bytes": 482304,
+      "sha256": "44083a4d0d2476bce95e71617c33bbd3daf3b8a9c1c25a733248f44403d02978",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\ASDGeneralOptions.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/EtasCebra_class.st",
+      "bytes": 31630,
+      "sha256": "720f5cb5dd242591f9fcd5e936dbbecde43e81875ba2706ecc1e79519e0f5efc",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\EtasCebra_class.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/EtasGeneralDllApi_class.st",
+      "bytes": 210830,
+      "sha256": "b8f9261852e9c3ca4525f2b6618fd13216ea42ebc72c559bdcb29fc3b3b65c43",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\EtasGeneralDllApi_class.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/EtasMainDatabaseWindow_class.st",
+      "bytes": 184349,
+      "sha256": "45252a1a250c0574d40522a0ace4086ff3121fa1e397e4e425a93bff83af5aa8",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\EtasMainDatabaseWindow_class.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/EtasXMLBasedOptions.st",
+      "bytes": 214565,
+      "sha256": "97646b006a78f8a50d3c2ec1944f958eb2376ac8c49b987094761e86f237727b",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\EtasXMLBasedOptions.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/RBPatchboxManager_class.st",
+      "bytes": 28564,
+      "sha256": "ce2a8d1d01e331aa572bc958c0fb0afc0375ad5e4e91654dc59f551a941610ef",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\RBPatchboxManager_class.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/RBToolboxManager_class.st",
+      "bytes": 89748,
+      "sha256": "7f4b815a7589c63883ebaf35aafb779c1c2f9be76161c4a6ee05cf5d95a179c1",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\RBToolboxManager_class.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/SGToolServer_class.st",
+      "bytes": 32075,
+      "sha256": "5bfe8a3f6fc09919c7c06eb1393408812931cea33a9cd8b65a56cb96c93c3f7e",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\SGToolServer_class.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/ASDBase.ic/SGToolServer.st",
+      "bytes": 25268,
+      "sha256": "b2de08fdc6e8a0e5f07d9b58f917220b96d5d7fc8898166567df08320337f01f",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\ASDBase.ic\\SGToolServer.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/cfsnls.ic/CfsDirectoryDescriptor_class.st",
+      "bytes": 93529,
+      "sha256": "e8b15d19c968e45b8027bd72bea9aa77dc97c210fbcf10b253e01a144e26d02a",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\cfsnls.ic\\CfsDirectoryDescriptor_class.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/kernel.ic/Behavior.st",
+      "bytes": 201119,
+      "sha256": "ad4d26281628433675ab26ffd02462c2e15588c19b72b3e07a847f894d4ebd60",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\kernel.ic\\Behavior.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/kernel.ic/EmSystemConfiguration.st",
+      "bytes": 647590,
+      "sha256": "236194db624a808b1603004cbb6109f232df78d36b7a2357ff3c7927a199c9dc",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\kernel.ic\\EmSystemConfiguration.st"
+    },
+    {
+      "path": "unpacked/smalltalk-source/parse.ic/EsCompiler_class.st",
+      "bytes": 30494,
+      "sha256": "13cc8b1728bbb8b668f31c2f6723e3777e81b20130a7feb3073b3ed8614544d3",
+      "source": "E:\\Repo\\ASCET\\unpacked\\smalltalk-source\\parse.ic\\EsCompiler_class.st"
+    }
+  ]
+}

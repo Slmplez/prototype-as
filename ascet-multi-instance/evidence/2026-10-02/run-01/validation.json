@@ -1,0 +1,280 @@
+{
+  "started_at_utc": "2026-10-02T02:37:29.598796+00:00",
+  "before_registry": {
+    "user": {
+      "Application State": {
+        "value": "terminated",
+        "kind": 1
+      },
+      "Process Name": {
+        "value": "ASCET",
+        "kind": 1
+      },
+      "Process Path": {
+        "value": "E:\\ETAS\\ASCET6.4",
+        "kind": 1
+      },
+      "UTC_Info_prompted": {
+        "value": "no",
+        "kind": 1
+      },
+      "ToolApiPort": {
+        "value": "",
+        "kind": 1
+      }
+    },
+    "machine": {
+      "CodingFrameworkShared": {
+        "value": "1.0",
+        "kind": 1
+      },
+      "EtasTime": {
+        "value": "1.0",
+        "kind": 1
+      },
+      "ProcessLog": {
+        "value": "V2.0",
+        "kind": 1
+      },
+      "LicenseConfigurationPath": {
+        "value": "E:\\ETAS\\ASCET6.4\\LicenseConfigurationInfo",
+        "kind": 1
+      },
+      "ProductActivationKey": {
+        "value": "1",
+        "kind": 1
+      },
+      "": {
+        "value": "Product",
+        "kind": 1
+      },
+      "Path": {
+        "value": "E:\\ETAS\\ASCET6.4",
+        "kind": 1
+      },
+      "ProductData": {
+        "value": "E:\\ETASData\\ASCET6.4",
+        "kind": 1
+      },
+      "ProductDisplayName": {
+        "value": "ASCET",
+        "kind": 1
+      },
+      "StartMenuFolder": {
+        "value": "ETAS\\ASCET 6.4",
+        "kind": 1
+      },
+      "ETASSharedCID": {
+        "value": "11ASCET6.4",
+        "kind": 1
+      },
+      "PrivateShared": {
+        "value": "b",
+        "kind": 1
+      },
+      "Version": {
+        "value": "V6.4.0",
+        "kind": 1
+      },
+      "EtasProductVersion": {
+        "value": "V6.4.0",
+        "kind": 1
+      },
+      "ReleaseOrBetaTag": {
+        "value": "Release",
+        "kind": 1
+      },
+      "InstallPath": {
+        "value": "D:\\\u5b66\u4e60\u8d44\u6599\\V64~1.0(R\\V64~1.0(R\\ASCETV~1.4",
+        "kind": 1
+      }
+    }
+  },
+  "before_hashes": {
+    "E:\\ETAS\\ASCET6.4\\icsrun\\ASDBase.ic": "b4dff51f53463f2053ad7163f6afaf7a9a24dfdfd0d538eceec22432fadb5237",
+    "E:\\ETASData\\ASCET6.4\\stationSettings.xml": "a57efb308932e4a9e936d4d91a8aa1ec9d4fedc23ae43e1a91328e55d1c3ae88",
+    "E:\\ETASData\\ASCET6.4\\USER\\ZJR\\Ascetsd.INI": "878372e9cfe574fce2c0c68446fcff7e167891e9b19ea5a8680341c616e0b265",
+    "E:\\ETASData\\ASCET6.4\\USER\\ZJR\\uiSettings.xml": "9df95049f9e7dca582a07253c9056715410001924a7c921b07e4bcd0fd52c3a5",
+    "E:\\ETASData\\ASCET6.4\\USER\\ZJR\\userSettings.xml": "d4239b87c70d89064f20c3af540fb6e73121b1603b2106b42e16593c1698a07d"
+  },
+  "before_database_hashes": {
+    "codestorage.dat": "ea523a02a91a290f95cde55683103bf2384f77811be1f1d5c5007b8217f10055",
+    "codestorage.idx": "0cee15f50cd097af8d1fadad5dcd561a45444e3693ed1d0c1f049ded5cfbea91",
+    "dbconfig2.dmp": "9b6967cccd07e53e90f5b09673659efe59a696eb1d5977db98814478e193893f",
+    "environment.xml": "c3b9980f74291d34226019a3cd1587f781b655c303d251e36c73f53ae69d796d",
+    "sobjects.dat": "ad3351799c03d03787a8b74ebb58bb8777214fbcfe2220ba3d96ba6e12abbcba",
+    "sobjects.idx": "50a06a55de9c4307f007a98b63a1295e26cbfcc7b473600bfddec508278b7e04",
+    "attrib\\vatribut.dat": "5429332f979a212725f25f433f9fc48e0e5c10cb3d3f75c4d46a604e2f938de4",
+    "attrib\\vatribut.idx": "6d0427b1eb337726bcf3f4c403a70604fc7f7c343d87d470223d3a239d79d27d"
+  },
+  "passed": true,
+  "identities": [
+    {
+      "database_path": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\agent-a",
+      "database_root": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\",
+      "database_name": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\agent-a",
+      "server_pid": 25712,
+      "multi_instance": true
+    },
+    {
+      "database_path": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\Database\\agent-b",
+      "database_root": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\Database\\",
+      "database_name": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\Database\\agent-b",
+      "server_pid": 39272,
+      "multi_instance": true
+    }
+  ],
+  "host_diagnostics": [
+    [
+      {
+        "startup_command_line": "('e:\\repo\\ascet\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\runtime\\ascet.exe' '-multiinstance:agent-a' '-databasee:\\repo\\ascet\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\database\\agent-a' '-le:\\repo\\ascet\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\logs\\crash.log' '-mn5000000' '-mi20000000' '-mc5000000' '-ml5000000' '-singleinstance' '-msd' '-ra' '-rf' '-no_break')"
+      }
+    ],
+    [
+      {
+        "startup_command_line": "('e:\\repo\\ascet\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\runtime\\ascet.exe' '-multiinstance:agent-b' '-databasee:\\repo\\ascet\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\database\\agent-b' '-le:\\repo\\ascet\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\logs\\crash.log' '-mn5000000' '-mi20000000' '-mc5000000' '-ml5000000' '-singleinstance' '-msd' '-ra' '-rf' '-no_break')"
+      }
+    ]
+  ],
+  "parallel_echoes": [
+    {
+      "instance": "agent-a",
+      "matched": 200
+    },
+    {
+      "instance": "agent-b",
+      "matched": 200
+    }
+  ],
+  "a_after_b_stop": {
+    "database_path": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\agent-a",
+    "database_root": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\",
+    "database_name": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\agent-a",
+    "server_pid": 25712,
+    "multi_instance": true
+  },
+  "b_after_restart": {
+    "database_path": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\Database\\agent-b",
+    "database_root": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\Database\\",
+    "database_name": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-b\\data\\Database\\agent-b",
+    "server_pid": 17540,
+    "multi_instance": true
+  },
+  "a_after_b_restart": {
+    "database_path": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\agent-a",
+    "database_root": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\",
+    "database_name": "E:\\Repo\\ASCET\\analysis\\multi-instance\\2026-10-02\\run-01\\agent-a\\data\\Database\\agent-a",
+    "server_pid": 25712,
+    "multi_instance": true
+  },
+  "after_registry": {
+    "user": {
+      "Application State": {
+        "value": "terminated",
+        "kind": 1
+      },
+      "Process Name": {
+        "value": "ASCET",
+        "kind": 1
+      },
+      "Process Path": {
+        "value": "E:\\ETAS\\ASCET6.4",
+        "kind": 1
+      },
+      "UTC_Info_prompted": {
+        "value": "no",
+        "kind": 1
+      },
+      "ToolApiPort": {
+        "value": "",
+        "kind": 1
+      }
+    },
+    "machine": {
+      "CodingFrameworkShared": {
+        "value": "1.0",
+        "kind": 1
+      },
+      "EtasTime": {
+        "value": "1.0",
+        "kind": 1
+      },
+      "ProcessLog": {
+        "value": "V2.0",
+        "kind": 1
+      },
+      "LicenseConfigurationPath": {
+        "value": "E:\\ETAS\\ASCET6.4\\LicenseConfigurationInfo",
+        "kind": 1
+      },
+      "ProductActivationKey": {
+        "value": "1",
+        "kind": 1
+      },
+      "": {
+        "value": "Product",
+        "kind": 1
+      },
+      "Path": {
+        "value": "E:\\ETAS\\ASCET6.4",
+        "kind": 1
+      },
+      "ProductData": {
+        "value": "E:\\ETASData\\ASCET6.4",
+        "kind": 1
+      },
+      "ProductDisplayName": {
+        "value": "ASCET",
+        "kind": 1
+      },
+      "StartMenuFolder": {
+        "value": "ETAS\\ASCET 6.4",
+        "kind": 1
+      },
+      "ETASSharedCID": {
+        "value": "11ASCET6.4",
+        "kind": 1
+      },
+      "PrivateShared": {
+        "value": "b",
+        "kind": 1
+      },
+      "Version": {
+        "value": "V6.4.0",
+        "kind": 1
+      },
+      "EtasProductVersion": {
+        "value": "V6.4.0",
+        "kind": 1
+      },
+      "ReleaseOrBetaTag": {
+        "value": "Release",
+        "kind": 1
+      },
+      "InstallPath": {
+        "value": "D:\\\u5b66\u4e60\u8d44\u6599\\V64~1.0(R\\V64~1.0(R\\ASCETV~1.4",
+        "kind": 1
+      }
+    }
+  },
+  "after_hashes": {
+    "E:\\ETAS\\ASCET6.4\\icsrun\\ASDBase.ic": "b4dff51f53463f2053ad7163f6afaf7a9a24dfdfd0d538eceec22432fadb5237",
+    "E:\\ETASData\\ASCET6.4\\stationSettings.xml": "a57efb308932e4a9e936d4d91a8aa1ec9d4fedc23ae43e1a91328e55d1c3ae88",
+    "E:\\ETASData\\ASCET6.4\\USER\\ZJR\\Ascetsd.INI": "878372e9cfe574fce2c0c68446fcff7e167891e9b19ea5a8680341c616e0b265",
+    "E:\\ETASData\\ASCET6.4\\USER\\ZJR\\uiSettings.xml": "9df95049f9e7dca582a07253c9056715410001924a7c921b07e4bcd0fd52c3a5",
+    "E:\\ETASData\\ASCET6.4\\USER\\ZJR\\userSettings.xml": "d4239b87c70d89064f20c3af540fb6e73121b1603b2106b42e16593c1698a07d"
+  },
+  "original_registry_unchanged": true,
+  "original_files_unchanged": true,
+  "after_database_hashes": {
+    "codestorage.dat": "ea523a02a91a290f95cde55683103bf2384f77811be1f1d5c5007b8217f10055",
+    "codestorage.idx": "0cee15f50cd097af8d1fadad5dcd561a45444e3693ed1d0c1f049ded5cfbea91",
+    "dbconfig2.dmp": "9b6967cccd07e53e90f5b09673659efe59a696eb1d5977db98814478e193893f",
+    "environment.xml": "c3b9980f74291d34226019a3cd1587f781b655c303d251e36c73f53ae69d796d",
+    "sobjects.dat": "ad3351799c03d03787a8b74ebb58bb8777214fbcfe2220ba3d96ba6e12abbcba",
+    "sobjects.idx": "50a06a55de9c4307f007a98b63a1295e26cbfcc7b473600bfddec508278b7e04",
+    "attrib\\vatribut.dat": "5429332f979a212725f25f433f9fc48e0e5c10cb3d3f75c4d46a604e2f938de4",
+    "attrib\\vatribut.idx": "6d0427b1eb337726bcf3f4c403a70604fc7f7c343d87d470223d3a239d79d27d"
+  },
+  "original_database_unchanged": true
+}
