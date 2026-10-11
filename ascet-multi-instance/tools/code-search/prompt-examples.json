@@ -1,0 +1,398 @@
+{
+  "purpose": "Executable named-tool argument examples for the ASCET agent prompt; raw CLI operation requests remain supported. Not a model-behavior evaluation.",
+  "placeholder_rule": "Replace <ref>, <ref2>, <component-ref>, <object-ref>, <cursor> and <local-cursor> with actual same-session values. Component refs select in.component. Outer Diagram refs read whole Diagrams; graphical hit and endpoint refs read local objects. <diagram-ref> is a whole Diagram ref from find target:diagrams or an outer graphical search result; in.diagram uses exact Component/Diagram pairs.",
+  "examples": [
+    {
+      "scenario": "Resolve a Component using the uniform name condition",
+      "tool": "ascet_code_find",
+      "input": { "target": "components", "name": "DBR_Force2Pressure", "match": "exact" }
+    },
+    {
+      "scenario": "Find a BDE-backed Module Process by name without filtering out its Diagram",
+      "tool": "ascet_code_find",
+      "input": {
+        "component": "AEBPre5ms_iBooster",
+        "member": "AEBPre5ms",
+        "match": "exact"
+      }
+    },
+    {
+      "scenario": "Read saved lines around a located Method match",
+      "tool": "ascet_code_read",
+      "input": {
+        "ref": "<ref>",
+        "lines": {
+          "start": 1,
+          "end": 2
+        }
+      }
+    },
+    {
+      "scenario": "Find a known Method even when its name is absent from its body",
+      "tool": "ascet_code_find",
+      "input": {
+        "component": "AEB_AxCtrlConfigFF_Modify",
+        "member": "calc_pre",
+        "match": "exact"
+      }
+    },
+    {
+      "scenario": "Find Components by a literal name fragment",
+      "tool": "ascet_code_find",
+      "input": {
+        "target": "components",
+        "component": "AEB_Trigger_BA_From_IB"
+      }
+    },
+    {
+      "scenario": "List supported code members of a selected Component",
+      "tool": "ascet_code_find",
+      "input": {
+        "in": {
+          "component": "<component-ref>"
+        },
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "List supported Init Methods by name",
+      "tool": "ascet_code_find",
+      "input": {
+        "member": "init",
+        "match": "exact",
+        "in": {
+          "kind": [
+            "method",
+            "process",
+            "diagram"
+          ]
+        }
+      }
+    },
+    {
+      "scenario": "Locate an exact variable occurrence",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": "AEBLockTime",
+        "mode": "identifier",
+        "case_sensitive": true,
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Locate two related known variables in one live read",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": [
+          "AEBLockTime",
+          "AEB_FxTarPT"
+        ],
+        "mode": "identifier",
+        "case_sensitive": true,
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Mix a variable and a descriptive text clue",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": [
+          {
+            "text": "AEBLockTime",
+            "mode": "identifier",
+            "case_sensitive": true
+          },
+          {
+            "text": "locking time",
+            "mode": "text"
+          }
+        ],
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Find an exact code statement",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": "AEB_FxTarPT = 250000;",
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Find a multiline literal block",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": "AEB_FxTarPT = 250000;\nAEB_LDMSelectedControllerPT = LDMSelectedController_None;",
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Find a family of identifier spellings using a regex",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": "\\b[PC]_AEB[A-Za-z_0-9]*\\b",
+        "mode": "regex",
+        "case_sensitive": true,
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Search the owning Component using an actual result ref",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": "AEBLockTime",
+        "mode": "identifier",
+        "in": {
+          "component": "<ref>"
+        },
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Find Init code without assuming text-only or state-machine-only ownership",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": [
+          "AEBLockTime",
+          "AEB_FxTarPT"
+        ],
+        "mode": "identifier",
+        "in": {
+          "member": "init",
+          "kind": [
+            "method",
+            "process",
+            "diagram"
+          ]
+        },
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Search State Actions and Transition code in a known Component",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": "AEBLockTime",
+        "mode": "identifier",
+        "in": {
+          "component": "040qm00100001m8714ag81ugur0dk",
+          "kind": [
+            "state_entry",
+            "state_static",
+            "state_exit",
+            "transition_trigger",
+            "transition_condition",
+            "transition_action"
+          ]
+        },
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Search a known stored Method binding name",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": "sm",
+        "in": {
+          "component": "040qm00100001m8714ag81ugur0dk",
+          "kind": [
+            "transition_trigger_binding",
+            "state_entry_binding"
+          ]
+        },
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Search base ESDL implementation only when that scope is intended",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": "AEB_FxTarPT",
+        "mode": "identifier",
+        "in": {
+          "implementation": "",
+          "variant": "ASDL"
+        },
+        "context": 10,
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Read a selected Method implementation or State/Transition code",
+      "tool": "ascet_code_read",
+      "input": {
+        "ref": "<ref>"
+      }
+    },
+    {
+      "scenario": "Read only if the selected ASCET code still matches the search snapshot",
+      "tool": "ascet_code_read",
+      "input": {
+        "ref": "<ref>",
+        "if_unchanged": true
+      }
+    },
+    {
+      "scenario": "Continue the same query snapshot",
+      "tool": "ascet_code_search",
+      "input": {
+        "cursor": "<cursor>"
+      }
+    },
+    {
+      "scenario": "Read several selected Methods together, sharing Component reads",
+      "tool": "ascet_code_read",
+      "input": {
+        "ref": [
+          "<ref>",
+          "<ref2>"
+        ]
+      }
+    },
+    {
+      "scenario": "Read full structural facts for a returned Diagram",
+      "tool": "ascet_code_read",
+      "input": {
+        "ref": "<ref>",
+        "include_graph": true,
+        "if_unchanged": true
+      }
+    },
+    {
+      "scenario": "Continue a member directory in the same session",
+      "tool": "ascet_code_find",
+      "input": {
+        "cursor": "<cursor>"
+      }
+    },
+    {
+      "scenario": "Find a BDE parameter and its direct connections",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": "C_AEB_AXCDeadZonePos",
+        "mode": "identifier",
+        "group_by": "object",
+        "in": {
+          "component": "040qm00ah4001ng70sfv1fh1n7clq",
+          "kind": "diagram"
+        },
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Read one BDE object and its incoming neighborhood",
+      "tool": "ascet_code_read",
+      "input": {
+        "ref": "<object-ref>",
+        "depth": 1,
+        "direction": "incoming"
+      }
+    },
+    {
+      "scenario": "Read only a BDE object and all its Pins",
+      "tool": "ascet_code_read",
+      "input": {
+        "ref": "<object-ref>",
+        "depth": 0
+      }
+    },
+    {
+      "scenario": "Continue a paged local Diagram read",
+      "tool": "ascet_code_read",
+      "input": {
+        "cursor": "<local-cursor>"
+      }
+    },
+    {
+      "scenario": "Discover BDE Diagrams by name including empty Init diagrams",
+      "tool": "ascet_code_find",
+      "input": {
+        "target": "diagrams",
+        "diagram": "Init",
+        "match": "exact"
+      }
+    },
+    {
+      "scenario": "Discover actual Private Specifications without interpreting folder names",
+      "tool": "ascet_code_find",
+      "input": {
+        "target": "diagrams",
+        "in": {
+          "visibility": "private"
+        }
+      }
+    },
+    {
+      "scenario": "Search independent variables only in one discovered Diagram",
+      "tool": "ascet_code_search",
+      "input": {
+        "query": [
+          "Signal",
+          "get"
+        ],
+        "group_by": "object",
+        "in": {
+          "diagram": "<diagram-ref>"
+        },
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Discover Hierarchy objects without guessing a name",
+      "tool": "ascet_code_find",
+      "input": {
+        "target": "objects",
+        "in": {
+          "diagram": "<diagram-ref>",
+          "object_kind": "hierarchy"
+        },
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Discover States including Junctions and empty action slots",
+      "tool": "ascet_code_find",
+      "input": {
+        "target": "states",
+        "component": "AEB_State_Machine",
+        "match": "exact",
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Discover Transitions without assuming the trigger appears in saved code",
+      "tool": "ascet_code_find",
+      "input": {
+        "target": "transitions",
+        "component": "AEB_State_Machine",
+        "match": "exact",
+        "limit": 20
+      }
+    },
+    {
+      "scenario": "Read a State or Transition and follow returned endpoint and code_slots refs",
+      "tool": "ascet_code_read",
+      "input": {
+        "ref": "<ref>"
+      }
+    },
+    {
+      "scenario": "Read the exact discovered Diagram revision",
+      "tool": "ascet_code_read",
+      "input": {
+        "ref": "<diagram-ref>",
+        "if_unchanged": true
+      }
+    }
+  ]
+}

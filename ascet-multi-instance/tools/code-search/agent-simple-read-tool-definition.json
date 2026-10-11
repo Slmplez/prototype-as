@@ -1,0 +1,111 @@
+{
+  "name": "ascet_code_read",
+  "description": "Read saved ASCET content with one actual ref string or an actual array of 1-32 refs. No operation argument; never JSON.stringify refs. Text returns code, Diagram returns diagram_text, bindings return method_binding. BDE objects return a local neighborhood with real Pins/connections/boundaries and referenced_component_path. State/Transition objects return saved relationships and code_slots refs; read those refs for source. Batch reads share one 128 KiB budget, preserve order and reuse Component reads. Continue with only cursor; batch items have individual next_cursor. For branch/order claims read the complete Method, consuming all pages. Component refs are scope-only. One root status; inspect partial/issues and batch errors. SOURCE_CHANGED needs new discovery; malformed arguments need correction without rediscovery.",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "ref": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "not": {
+              "pattern": "^\\s*[\\[\"{]"
+            }
+          },
+          {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 32,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "not": {
+                "pattern": "^\\s*[\\[\"{]"
+              }
+            }
+          }
+        ],
+        "description": "One actual ref string returned by search, find or read; alternatively an actual JSON array of 1-32 same-session ref strings. Copy the string unchanged: ref:REF, or ref:[REF1,REF2]. Never JSON.stringify the ref or array, or put extra quote/bracket characters inside the ref string. Correct malformed arguments and retry read; do not search again for this input error. Method/Process/code-slot refs select saved text or Method bindings for their exact Implementation/Variant. BDE node refs return a local neighborhood. State refs return incoming/outgoing and code_slots; Transition refs return start_state/end_state/priority/code_slots. Order and duplicates are preserved. Refs are not Element References, Component OIDs or paths; do not invent IDs. No-ID Comment hits use parent Diagram/Hierarchy refs. Component refs cannot be read."
+      },
+      "if_unchanged": {
+        "type": "boolean",
+        "default": false,
+        "description": "For text/Diagram refs, true enforces the captured source revision and changed content fails with SOURCE_CHANGED. False returns current content with a SOURCE_CHANGED issue; root status is changed unless a read is incomplete or fails (partial). BDE node refs always enforce the saved Diagram revision. State/Transition object refs always enforce the saved topology/code-slot revision, even when false, to prevent native ID reuse. Re-discover after SOURCE_CHANGED."
+      },
+      "debug": {
+        "type": "boolean",
+        "default": false,
+        "description": "Include Component/code identity, Database, hash, coverage and timings for diagnostics. Leave false for ordinary reads."
+      },
+      "include_graph": {
+        "type": "boolean",
+        "default": false,
+        "description": "Add raw BDE Diagram facts. Whole-Diagram refs use graph.scope:diagram; BDE node refs use graph.scope:local. State/Transition object refs reject this option. A paginated local graph is a fragment: endpoint records may appear on other pages. Standard local connections already include endpoint names and refs."
+      },
+      "lines": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "start",
+          "end"
+        ],
+        "properties": {
+          "start": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          }
+        },
+        "description": "Inclusive saved text/diagram_text line range. end must be >= start and is clamped to line_count. Applies to every ref in a batch. BDE node refs use depth/direction instead. State/Transition object refs reject line ranges; their code_slots refs select saved text. Bindings have no body. Cannot combine with include_graph."
+      },
+      "depth": {
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "default": 1,
+        "description": "BDE node refs only. 0 reads the target and all Pins; 1/2 expand one/two edge steps (default 1). Neighbor Pins are connected/boundary Pins; read a neighbor with depth:0 for its full interface. Use referenced_component_path with find.component to locate a real referenced Method. Does not expand Component implementations or cross Hierarchy boundaries."
+      },
+      "direction": {
+        "type": "string",
+        "enum": [
+          "incoming",
+          "outgoing",
+          "both"
+        ],
+        "default": "both",
+        "description": "BDE node refs only: native edge direction for neighborhood traversal, not inferred data dependency. State/Transition object refs reject this option."
+      },
+      "cursor": {
+        "type": "string",
+        "maxLength": 8192,
+        "description": "Copy a text, local Diagram or State/Transition relation read next_cursor unchanged. No other fields. The same immutable read snapshot is resumed. Batch items have independent cursors.",
+        "minLength": 1
+      }
+    },
+    "if": {
+      "required": [
+        "cursor"
+      ]
+    },
+    "then": {
+      "maxProperties": 1
+    },
+    "else": {
+      "required": [
+        "ref"
+      ]
+    }
+  }
+}

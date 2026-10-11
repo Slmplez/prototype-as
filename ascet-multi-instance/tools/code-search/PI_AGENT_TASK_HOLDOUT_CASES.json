@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "suite": "task_holdout",
+  "max_tool_calls": 20,
+  "timeout_ms": 180000,
+  "answer_format": "Return exactly one JSON object, without Markdown fences or surrounding prose, with outcome (located/partial/not_found/unsupported), answer (a concise explanation), evidence_refs (actual refs seen in this session), missing_evidence (strings), and facts (an object using the requested fields). In facts, name/path/kind/variant fields contain only the exact saved string; ID fields contain numbers, not explanatory text. Separate saved facts from inference. Do not invent unsupported values.",
+  "group_names": {
+    "source_arguments": "明确代码参数",
+    "graph_arguments": "BDE 范围与局部读取",
+    "state_evidence": "状态槽位与绑定",
+    "coverage_boundary": "能力边界"
+  },
+  "cases": [
+    {
+      "id": "holdout-member-symbol",
+      "group": "source_arguments",
+      "requirement": "只在 AEB_AxCtrlConfigFF_Modify 的 calc_pre、ASDL Method 中查完整符号 AxTarRaw，大小写敏感。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "AxTarRaw"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-independent-two",
+      "group": "source_arguments",
+      "requirement": "在 AEB_AxCtrlConfigFF_Modify 的 ASDL Method 中分别统计 AEB_AXCAxLimDiff 和 loc_AxTarLim 两个完整符号，两个查询互相独立。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "AEB_AXCAxLimDiff"
+          },
+          {
+            "text": "loc_AxTarLim"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-literal-statement",
+      "group": "source_arguments",
+      "requirement": "在 AEB_AxCtrlConfigFF_Modify 的 calc_pre、ASDL Method 中按字面搜索 loc_AxTarLim = AxTarLim;，保留分号，不是正则。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        },
+        "queries": [
+          {
+            "text": "loc_AxTarLim = AxTarLim;"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-multiline-tail",
+      "group": "source_arguments",
+      "requirement": "在 AEB_AxCtrlConfigFF_Modify 的 calc_pre、ASDL Method 中搜索跨行正则 loc_AEB_AxCtrlActive_B[^;]*;\\s*loc_AxTarLim[^;]*;，启用跨行匹配。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        },
+        "mode": "regex",
+        "multiline": true,
+        "queries": [
+          {
+            "text": "loc_AEB_AxCtrlActive_B[^;]*;\\s*loc_AxTarLim[^;]*;"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-switch-force-owner",
+      "group": "source_arguments",
+      "requirement": "只查 DBR_Force2Pressure 的 calc、ASDL Method 中完整变量 force，不能查其他 Component，也不能匹配名称的一部分。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "DBR_Force2Pressure",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "force"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-force-lines",
+      "group": "source_arguments",
+      "requirement": "定位 DBR_Force2Pressure 的 calc ASDL Method，只读原始第 2 到第 5 行，不要读取整篇。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。身份字段复制保存值，基础 Implementation 是空字符串。 同时返回 start_line,end_line。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "DBR_Force2Pressure",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "lines": {
+          "start": 2,
+          "end": 5
+        }
+      }
+    },
+    {
+      "id": "holdout-full-kp",
+      "group": "source_arguments",
+      "requirement": "完整读取 AEB_AxCtrlConfigFF_Modify 的 calc_Kp ASDL Method；不要用命中预览代替完整正文。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。身份字段复制保存值，基础 Implementation 是空字符串。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_Kp"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "holdout-ordered-batch",
+      "group": "source_arguments",
+      "requirement": "找到 AEB_AxCtrlConfigFF_Modify 的 calc_Ki 和 calc_Ks 两个 ASDL Method，在一次批量读取中按 calc_Ki、calc_Ks、calc_Ki 的顺序返回完整保存代码，重复项必须保留。facts: order_preserved,duplicates_preserved，均为布尔值。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "full": true,
+        "batch_order": true
+      },
+      "call_expectations": {
+        "batch_members": [
+          "calc_Ki",
+          "calc_Ks",
+          "calc_Ki"
+        ]
+      }
+    },
+    {
+      "id": "holdout-module-diagrams",
+      "group": "graph_arguments",
+      "requirement": "列出 AEB5ms 的所有已保存 BDE Diagram，Public 和 Private 都要包括，目录必须完整。facts: total_count,results [{component_path,diagram,visibility}]。",
+      "rubric": {
+        "type": "catalog",
+        "target": "diagrams",
+        "scope": {
+          "component": "AEB5ms",
+          "visibility": [
+            "public",
+            "private"
+          ]
+        }
+      }
+    },
+    {
+      "id": "holdout-max-interface",
+      "group": "graph_arguments",
+      "requirement": "找到 AEB_AxTarLim/Main 中的 AxCtrlLimGradAxMax 对象，只读对象本身及全部 Pins（depth 0，direction both），不要读取引用 Class 的正文。 facts: name,kind,hierarchy,pin_ids（目标的完整 Pin ID 数组）,node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB_AxTarLim"
+        },
+        "diagram": "Main",
+        "node": "AxCtrlLimGradAxMax",
+        "depth": 0,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "holdout-negative-outgoing",
+      "group": "graph_arguments",
+      "requirement": "找到 AEB_dFxTar/Main 中 C_AEB_AXCDeadZoneNeg 的真实输出连线，仅展开一层 outgoing；返回完整目标接口与实际连接，不推断调度。 facts: name,kind,hierarchy,pin_ids（目标的完整 Pin ID 数组）,node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB_dFxTar"
+        },
+        "diagram": "Main",
+        "node": "C_AEB_AXCDeadZoneNeg",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "holdout-positive-incoming",
+      "group": "graph_arguments",
+      "requirement": "只读 AEB_dFxTar/Main 中 C_AEB_AXCDeadZonePos 对象的一层 incoming 连接。如果没有输入连接如实说明，不要改成 outgoing。 facts: name,kind,hierarchy,pin_ids（目标的完整 Pin ID 数组）,node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB_dFxTar"
+        },
+        "diagram": "Main",
+        "node": "C_AEB_AXCDeadZonePos",
+        "depth": 1,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "holdout-off-static",
+      "group": "state_evidence",
+      "requirement": "完整读取 AEB_State_Machine/Main/AEB_State_Off 的 Static Action ASDL 源码；先确认代码槽位，不要把 State 结构当正文。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。身份字段复制保存值，基础 Implementation 是空字符串。 facts.code 为原始完整源码。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_State_Machine",
+          "member": "Main/AEB_State_Off",
+          "kind": "state_static",
+          "variant": "ASDL"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "holdout-off-exit",
+      "group": "state_evidence",
+      "requirement": "完整读取 AEB_State_Machine/Main/AEB_State_Off 的 Exit Action ASDL 保存代码，不要读 Static 或 Entry。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。身份字段复制保存值，基础 Implementation 是空字符串。 facts.code 为原始完整源码。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_State_Machine",
+          "member": "Main/AEB_State_Off",
+          "kind": "state_exit",
+          "variant": "ASDL"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "holdout-trigger-binding",
+      "group": "state_evidence",
+      "score_as": "transition-binding",
+      "requirement": "检查 AEB_State_Machine/Main/Transition #20：读 Transition、两端对象和触发槽位，核实保存的 priority 与 Method 绑定，不能把绑定当实现。facts: start_kind,start_id,end_kind,end_id,priority,binding_method,binding_is_body。"
+    },
+    {
+      "id": "holdout-runtime-boundary",
+      "group": "coverage_boundary",
+      "score_as": "unsupported-runtime",
+      "expected_outcome": "unsupported",
+      "requirement": "我只需要 AEBLockTime 现在运行时的数值，以及 AEB_State_Machine 当前实际调度顺序。若保存代码工具不支持，请直接说明，不要先查询保存源码。facts: runtime_value_supported,live_schedule_supported。",
+      "call_expectations": {
+        "no_tools": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{"query":"AEB_FxTarPT","mode":"text","case_sensitive":true,"id":"text","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"AEB_FxTarPT","mode":"identifier_occurrence","case_sensitive":true,"id":"identifier","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"\\b(?:AEB_FxTarPT|C_AEB_FxTarPT)\\b","mode":"regex","case_sensitive":true,"id":"regex","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"\\bAEB_EngTrqRedActive[A-Za-z_0-9]*\\b","mode":"regex","case_sensitive":true,"id":"regex_prefix","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"AEB_FxTarPT = 250000;\nAEB_LDMSelectedControllerPT = LDMSelectedController_None;","mode":"text","multiline":true,"case_sensitive":true,"id":"multiline_text","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"AEB_FxTarPT\\s*=\\s*250000;\\s*AEB_LDMSelectedControllerPT\\s*=\\s*LDMSelectedController_None;","mode":"regex","multiline":true,"case_sensitive":true,"id":"multiline_regex","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"AEB_FxTarPT = 250000;.*?LDMSelectedController_None;","mode":"regex","multiline":true,"dotall":true,"case_sensitive":true,"id":"dotall","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"AEB_FxTarPT = 250000;.*?LDMSelectedController_None;","mode":"regex","multiline":true,"dotall":false,"case_sensitive":true,"id":"dotall_off","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"C_AEB_FxTarPT","mode":"identifier_occurrence","case_sensitive":true,"context_before":2,"context_after":1,"id":"context","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"aeb_fxtarpt = 250000;","mode":"text","case_sensitive":false,"id":"case_insensitive","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"aeb_fxtarpt = 250000;","mode":"text","case_sensitive":true,"id":"case_sensitive","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"queries":[{"id":"variable","query":"AEB_FxTarPT","mode":"identifier_occurrence","case_sensitive":true},{"id":"prefix","query":"\\bAEB_EngTrqRedActive[A-Za-z_0-9]*\\b","mode":"regex","case_sensitive":true},{"id":"init_graph","query":"AEBLockTime = 0.0;","mode":"text","case_sensitive":true}],"context_before":1,"context_after":1,"id":"batch","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"C_AEB_FxTarPT","mode":"identifier_occurrence","case_sensitive":true,"context_before":2,"context_after":1,"result_format":"shared","id":"shared","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}
+{"query":"AEB_EngTrqRedActive*","mode":"text","case_sensitive":true,"id":"star_literal","expected_database":"d:\\ETASData\\ASCET6.4\\Database\\AEB_1"}

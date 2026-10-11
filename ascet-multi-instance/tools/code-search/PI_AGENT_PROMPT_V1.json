@@ -1,0 +1,191 @@
+{
+  "version": 2,
+  "grading_version": 6,
+  "intent_recording": "none",
+  "suite": "core",
+  "max_tool_calls": 20,
+  "timeout_ms": 240000,
+  "answer_format": "Return exactly one JSON object, without Markdown fences or surrounding prose, with outcome (located/partial/not_found/unsupported), answer (a concise explanation), evidence_refs (actual refs seen in this session), missing_evidence (strings), and facts (an object using the requested fields). In facts, name/path/kind/variant fields contain only the exact saved string; ID fields contain numbers, not explanatory text. Separate saved facts from inference. Do not invent unsupported values. Do not output a separate intent declaration. Only the final answer is JSON. Put facts at the requested level; preserve exact saved values.",
+  "group_names": {
+    "parameter_scope_regression": "参数层级、保存路径、歧义与精确范围"
+  },
+  "cases": [
+    {
+      "id": "intent-inactive-zero",
+      "group": "parameter_scope_regression",
+      "requirement": "找一下这段逻辑：AEB_AxCtrlActive_B 有效时保存 VxAct 和 AxTarRaw，无效时把修改后的值清零。我想看完整实现和两个加速度差值。",
+      "intent": {
+        "actions": [
+          "locate",
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AEB_AxCtrlActive_B",
+          "VxAct",
+          "AxTarRaw"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_search",
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "saved-method",
+      "response_fields": "component_type, variant, active_assignments (array of saved assignment statements), inactive_assignments (array), difference_assignments (only the two saved acceleration-difference statements; exclude mirror assignments)."
+    },
+    {
+      "id": "holdout-module-diagrams",
+      "group": "parameter_scope_regression",
+      "requirement": "列出 AEB5ms 的所有已保存 BDE Diagram，Public 和 Private 都要包括，目录必须完整。facts: total_count,results [{component_path,diagram,visibility}]。",
+      "rubric": {
+        "type": "catalog",
+        "target": "diagrams",
+        "scope": {
+          "component": "AEB5ms",
+          "visibility": [
+            "public",
+            "private"
+          ]
+        }
+      }
+    },
+    {
+      "id": "intent-calc-without-owner",
+      "group": "parameter_scope_regression",
+      "requirement": "把 calc 的完整代码给我看。",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "terms": [],
+        "components": [],
+        "members": [
+          "calc"
+        ],
+        "clarification_fields": [
+          "component"
+        ],
+        "question_patterns": [
+          "(?:组件|Component|Class|类)"
+        ],
+        "no_reads": true
+      },
+      "expected_outcome": "partial",
+      "response_fields": "{}; ask which owner in answer; do not pick an arbitrary calc."
+    },
+    {
+      "id": "intent-whole-variable",
+      "group": "parameter_scope_regression",
+      "requirement": "只在 AEB_AxCtrlConfigFF_Modify 的 ASDL Method 中查完整变量 AxTarLim，名字带 K1 后缀的别算进去。给我总命中数。",
+      "intent": {
+        "actions": [
+          "search"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AxTarLim"
+        ],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify"
+        ],
+        "members": [],
+        "clarification_fields": [],
+        "search_scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        }
+      },
+      "response_fields": "counts [{query,total_hits}] in requested order.",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "queries": [
+          {
+            "text": "AxTarLim",
+            "mode": "identifier"
+          }
+        ]
+      }
+    },
+    {
+      "id": "intent-literal-expression",
+      "group": "parameter_scope_regression",
+      "requirement": "只在 AEB_AxCtrlConfigFF_Modify/calc_pre 的 ASDL 代码里找字面代码 AxTarRaw - AxTarLim，不要当正则。给我命中数。",
+      "intent": {
+        "actions": [
+          "search"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AxTarRaw - AxTarLim"
+        ],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify"
+        ],
+        "members": [
+          "calc_pre"
+        ],
+        "clarification_fields": [],
+        "search_scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        }
+      },
+      "response_fields": "counts [{query,total_hits}] in requested order.",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        },
+        "queries": [
+          {
+            "text": "AxTarRaw - AxTarLim",
+            "mode": "text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "intent-specific-c-variant",
+      "group": "parameter_scope_regression",
+      "requirement": "我要看 EvenValue 的 Even，版本是 'ES1112'_Physical Experiment 的 C 实现，完整读出来，别拿 ASDL 的替代。",
+      "intent": {
+        "actions": [
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [
+          "EvenValue"
+        ],
+        "members": [
+          "Even"
+        ],
+        "clarification_fields": [],
+        "read_scope": {
+          "component": "EvenValue",
+          "kind": "method",
+          "member": "Even",
+          "variant": " 'ES1112'_Physical Experiment"
+        }
+      },
+      "score_as": "saved-c-method",
+      "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines."
+    }
+  ],
+  "description": "Six known development regressions, two independent first attempts per case/build. Control is batch-budget build; candidate adjusts scope parameter descriptions and keeps same six APIs. No selected retries. Same familiar database and model."
+}

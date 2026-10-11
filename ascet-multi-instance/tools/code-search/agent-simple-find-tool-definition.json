@@ -1,0 +1,451 @@
+{
+  "name": "ascet_code_find",
+  "description": "Find saved ASCET objects by literal name/path (contains or exact, no regex/glob). No operation argument. Default target:members returns readable saved Method/Process/code refs; graphical Methods select the whole Diagram with diagram_methods. With name/member, matched_members lists matching graphical members; [] means only the Diagram name matched. target:components returns scope refs for in.component, not read. target:diagrams includes Init and empty graphs. target:objects lists native BDE nodes; states/transitions include empty code slots and distinguish Junctions. Use in.object_kind only for objects; structural directories accept in.component/in.diagram/in.visibility. Results identify the owning component_type; referenced_component_path identifies a BDE reference target. Continue with only cursor. Same persistent CLI session; partial requires checking issues.",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "target": {
+        "type": "string",
+        "enum": [
+          "members",
+          "components",
+          "diagrams",
+          "objects",
+          "states",
+          "transitions"
+        ],
+        "default": "members"
+      },
+      "component": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256,
+        "not": {
+          "pattern": "[\r\n\u0000]"
+        },
+        "description": "Literal Component name or full model path; unlike in.component, accepts names rather than OIDs/refs."
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256,
+        "not": {
+          "pattern": "[\r\n\u0000]"
+        },
+        "description": "Literal name/path for the selected target: Component, Method/Process, Diagram, BDE object, State or Transition. Omit to list all, including unnamed structural objects. component can restrict the owner for member/Diagram/object discovery. Conflicting duplicate name conditions fail."
+      },
+      "member": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256,
+        "not": {
+          "pattern": "[\r\n\u0000]"
+        },
+        "description": "Method/Process name, State/Transition path, or Diagram name. A graphical Method selects its entire owning Diagram."
+      },
+      "match": {
+        "type": "string",
+        "enum": [
+          "contains",
+          "exact"
+        ],
+        "default": "contains"
+      },
+      "case_sensitive": {
+        "type": "boolean",
+        "default": false
+      },
+      "in": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Restrict by known exact metadata: values are case-sensitive, lists mean OR within a field, fields mean AND. Shared by all queries. Omit unknown scope instead of inventing identities.",
+        "properties": {
+          "object_kind": {
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "element",
+                  "operator",
+                  "control",
+                  "literal",
+                  "comment",
+                  "hierarchy",
+                  "hierarchy_pin",
+                  "conversion",
+                  "unknown"
+                ]
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 9,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "element",
+                    "operator",
+                    "control",
+                    "literal",
+                    "comment",
+                    "hierarchy",
+                    "hierarchy_pin",
+                    "conversion",
+                    "unknown"
+                  ]
+                }
+              }
+            ],
+            "description": "Native BDE node category, only for target:objects. A separate filter from saved source kind. Structural directories accept only in.component/in.diagram/in.visibility, plus this filter for objects."
+          },
+          "component": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              }
+            ],
+            "description": "A known 29-character ASCET Component OID, or a temporary result ref actually returned in this session. A ref selects the entire owning Component and pins its Database. It is not an Element Reference. Component names and model paths are not accepted."
+          },
+          "member": {
+            "oneOf": [
+              {
+                "type": "string",
+                "maxLength": 256,
+                "not": {
+                  "pattern": "[\r\n\u0000]"
+                },
+                "description": "Exact saved Method/Process name or full State/Transition path; case-sensitive scope filter. For literal name fragments use the top-level member field with match:contains."
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "not": {
+                    "pattern": "[\r\n\u0000]"
+                  },
+                  "description": "Exact saved Method/Process name or full State/Transition path; case-sensitive scope filter. For literal name fragments use the top-level member field with match:contains."
+                }
+              }
+            ],
+            "description": "Method/Process name, State/Transition path, or Diagram name. A graphical Method selects its entire owning Diagram."
+          },
+          "member_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "maxLength": 256,
+                "not": {
+                  "pattern": "[\r\n\u0000]"
+                }
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "not": {
+                    "pattern": "[\r\n\u0000]"
+                  }
+                }
+              }
+            ],
+            "description": "Exact saved identity for a Method, Process, State or Transition from known model metadata. Distinguishes objects with the same displayed name; do not guess IDs."
+          },
+          "kind": {
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "method",
+                  "process",
+                  "header",
+                  "external_c",
+                  "external_h",
+                  "state_entry",
+                  "state_static",
+                  "state_exit",
+                  "transition_trigger",
+                  "transition_action",
+                  "transition_condition",
+                  "state_entry_binding",
+                  "state_static_binding",
+                  "state_exit_binding",
+                  "transition_trigger_binding",
+                  "transition_action_binding",
+                  "transition_condition_binding",
+                  "diagram"
+                ]
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "method",
+                    "process",
+                    "header",
+                    "external_c",
+                    "external_h",
+                    "state_entry",
+                    "state_static",
+                    "state_exit",
+                    "transition_trigger",
+                    "transition_action",
+                    "transition_condition",
+                    "state_entry_binding",
+                    "state_static_binding",
+                    "state_exit_binding",
+                    "transition_trigger_binding",
+                    "transition_action_binding",
+                    "transition_condition_binding",
+                    "diagram"
+                  ]
+                }
+              }
+            ],
+            "description": "Exact code kind(s). Init may be method, process or diagram. State Entry/Static/Exit Actions and Transition Condition/Action/Trigger contain code; *_binding results describe stored Method bindings without fetching their implementations."
+          },
+          "variant": {
+            "oneOf": [
+              {
+                "type": "string",
+                "maxLength": 256,
+                "not": {
+                  "pattern": "[\r\n\u0000]"
+                },
+                "minLength": 1
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "not": {
+                    "pattern": "[\r\n\u0000]"
+                  },
+                  "minLength": 1
+                }
+              }
+            ],
+            "description": "Exact Variant(s) from known metadata, such as ASDL. Omission includes supported Variants; it does not select one specific language/version."
+          },
+          "implementation": {
+            "oneOf": [
+              {
+                "type": "string",
+                "maxLength": 256,
+                "not": {
+                  "pattern": "[\r\n\u0000]"
+                }
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "not": {
+                    "pattern": "[\r\n\u0000]"
+                  }
+                }
+              }
+            ],
+            "description": "Exact Implementation OID(s); the empty string selects the base Implementation. Omit to include supported Implementations. Do not pass a displayed name."
+          },
+          "diagram": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              }
+            ],
+            "description": "Exact whole Diagram refs from this session, or source OIDs paired with exactly one explicit in.component. Cross-Component selection uses refs and preserves each Component/Diagram pair. Does not accept names or object refs. Pins Database and ASCET process; scope reads fresh content."
+          },
+          "visibility": {
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "private"
+                ]
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "public",
+                    "private"
+                  ]
+                }
+              }
+            ],
+            "description": "Owning Diagram membership in Public/Private Specifications; omit for both. Applies to BDE and owned State/Transition code, not text Method access or model folder names. Combines by intersection with other scope fields."
+          }
+        }
+      },
+      "limit": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 200,
+        "default": 50,
+        "description": "Maximum metadata records on one page, not source occurrences."
+      },
+      "database": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Optional expected database path used as a safety precondition, not a command to open or switch databases. Omit to search the current database."
+      },
+      "debug": {
+        "type": "boolean",
+        "default": false,
+        "description": "Include database, timing and coverage diagnostics for troubleshooting. Leave false for ordinary code exploration."
+      },
+      "diagram": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256,
+        "not": {
+          "pattern": "[\r\n\u0000]"
+        },
+        "description": "Literal BDE Diagram name; requires target:diagrams. Supports exact/contains and case_sensitive. Includes state-machine Init BDE; lists empty/no-Method Diagrams."
+      },
+      "cursor": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 8192,
+        "description": "Use the exact next_cursor from a previous response in this same session, with no other fields. Continues its immutable snapshot; an expired/evicted cursor requires a new search."
+      }
+    },
+    "if": {
+      "required": [
+        "cursor"
+      ]
+    },
+    "then": {
+      "maxProperties": 1
+    },
+    "else": {
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "target"
+            ],
+            "properties": {
+              "target": {
+                "enum": [
+                  "objects",
+                  "states",
+                  "transitions"
+                ]
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "member"
+                  ]
+                },
+                {
+                  "required": [
+                    "diagram"
+                  ]
+                }
+              ]
+            },
+            "properties": {
+              "in": {
+                "propertyNames": {
+                  "enum": [
+                    "component",
+                    "diagram",
+                    "visibility",
+                    "object_kind"
+                  ]
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "in": {
+                "not": {
+                  "required": [
+                    "object_kind"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "target"
+            ],
+            "properties": {
+              "target": {
+                "enum": [
+                  "states",
+                  "transitions"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "in": {
+                "not": {
+                  "required": [
+                    "object_kind"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

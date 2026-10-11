@@ -1,0 +1,408 @@
+{
+  "name": "ascet_code_search",
+  "description": "Search saved ASCET C/ESDL, State/Transition code and original BDE fields. No operation argument. query arrays are independent searches sharing one limit, not AND. Prefer identifier mode for variables, known in.component/in.diagram refs and group_by:object for BDE. Text results contain original-line snippets (default context 10 each side); BDE hits merge fields per placed object and preview direct connections. Read hit/endpoint refs locally; outer Diagram refs read whole Diagrams. in.member selects the entire owning Diagram, including shared diagram_methods. limit defaults to 50, max 200; counts remain complete. Continue with only cursor while has_more. partial/issues cannot prove absence. Generated code, unsaved buffers, Dataset values, Formula definitions and transitive implementations are excluded.",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "query": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1024,
+            "not": {
+              "pattern": "\u0000"
+            }
+          },
+          {
+            "$ref": "#/$defs/queryEntry"
+          },
+          {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1024,
+                  "not": {
+                    "pattern": "\u0000"
+                  }
+                },
+                {
+                  "$ref": "#/$defs/queryEntry"
+                }
+              ]
+            }
+          }
+        ],
+        "description": "A string, one {text,mode,...} object, or 1-64 independent terms; usually batch 2-6 relevant clues. Strings inherit top-level pattern options; objects override only supplied options. An array does not require all terms in the same Method, Process or other code result. This is not a Component/Method name catalog or semantic search."
+      },
+      "mode": {
+        "type": "string",
+        "enum": [
+          "text",
+          "identifier",
+          "regex"
+        ],
+        "default": "text",
+        "description": "Use identifier for a complete variable/parameter name, text for literal code or a substring, and regex only for a pattern (ECMAScript Unicode, without / delimiters). No glob or typo-fuzzy mode; * is literal in text mode. Batch default; each query object may override it."
+      },
+      "case_sensitive": {
+        "type": "boolean",
+        "default": false,
+        "description": "Use true when exact symbol spelling is known. Defaults to false; query objects may override it. Metadata filters remain case-sensitive."
+      },
+      "multiline": {
+        "type": "boolean",
+        "description": "Allow matches across lines. When omitted, actual newlines in the query or dotall:true enable it; otherwise false. Batch entries inherit an explicit top-level value unless overridden."
+      },
+      "dotall": {
+        "type": "boolean",
+        "default": false,
+        "description": "Regex only: allow . to match newlines. Implies multiline unless multiline is explicitly set. Batch default; each query object may override it."
+      },
+      "context": {
+        "oneOf": [
+          {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "before": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "after": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          }
+        ],
+        "default": 10,
+        "description": "Lines before and after matches; defaults to 10 on each side. Use 20 for a wider window, {before,after} for different counts, or 0 for no surrounding lines. In the object form an omitted side is 0. Each result normally retains at most 40 context lines; page byte budgets may shorten it further. Inspect omitted_lines/truncation and use ascet_code_read for the complete implementation."
+      },
+      "in": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Restrict by known exact metadata: values are case-sensitive, lists mean OR within a field, fields mean AND. Shared by all queries. Omit unknown scope instead of inventing identities.",
+        "properties": {
+          "component": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              }
+            ],
+            "description": "A known 29-character ASCET Component OID, or a temporary result ref actually returned in this session. A ref selects the entire owning Component and pins its Database. It is not an Element Reference. Component names and model paths are not accepted."
+          },
+          "member": {
+            "oneOf": [
+              {
+                "type": "string",
+                "maxLength": 256,
+                "not": {
+                  "pattern": "[\r\n\u0000]"
+                },
+                "description": "Exact saved Method/Process name or full State/Transition path. Filters the selected code while query searches content. Use ascet_code_find for independent name lookup."
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "not": {
+                    "pattern": "[\r\n\u0000]"
+                  },
+                  "description": "Exact saved Method/Process name or full State/Transition path. Filters the selected code while query searches content. Use ascet_code_find for independent name lookup."
+                }
+              }
+            ],
+            "description": "Method/Process name, State/Transition path, or Diagram name. A graphical Method selects its entire owning Diagram."
+          },
+          "member_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "maxLength": 256,
+                "not": {
+                  "pattern": "[\r\n\u0000]"
+                }
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "not": {
+                    "pattern": "[\r\n\u0000]"
+                  }
+                }
+              }
+            ],
+            "description": "Exact saved identity for a Method, Process, State or Transition from known model metadata. Distinguishes objects with the same displayed name; do not guess IDs."
+          },
+          "kind": {
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "method",
+                  "process",
+                  "header",
+                  "external_c",
+                  "external_h",
+                  "state_entry",
+                  "state_static",
+                  "state_exit",
+                  "transition_trigger",
+                  "transition_action",
+                  "transition_condition",
+                  "state_entry_binding",
+                  "state_static_binding",
+                  "state_exit_binding",
+                  "transition_trigger_binding",
+                  "transition_action_binding",
+                  "transition_condition_binding",
+                  "diagram"
+                ]
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "method",
+                    "process",
+                    "header",
+                    "external_c",
+                    "external_h",
+                    "state_entry",
+                    "state_static",
+                    "state_exit",
+                    "transition_trigger",
+                    "transition_action",
+                    "transition_condition",
+                    "state_entry_binding",
+                    "state_static_binding",
+                    "state_exit_binding",
+                    "transition_trigger_binding",
+                    "transition_action_binding",
+                    "transition_condition_binding",
+                    "diagram"
+                  ]
+                }
+              }
+            ],
+            "description": "Exact code kind(s). Init may be method, process or diagram. State Entry/Static/Exit Actions and Transition Condition/Action/Trigger contain code; *_binding results describe stored Method bindings without fetching their implementations."
+          },
+          "variant": {
+            "oneOf": [
+              {
+                "type": "string",
+                "maxLength": 256,
+                "not": {
+                  "pattern": "[\r\n\u0000]"
+                },
+                "minLength": 1
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "not": {
+                    "pattern": "[\r\n\u0000]"
+                  },
+                  "minLength": 1
+                }
+              }
+            ],
+            "description": "Exact Variant(s) from known metadata, such as ASDL. Omission includes supported Variants; it does not select one specific language/version."
+          },
+          "implementation": {
+            "oneOf": [
+              {
+                "type": "string",
+                "maxLength": 256,
+                "not": {
+                  "pattern": "[\r\n\u0000]"
+                }
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "not": {
+                    "pattern": "[\r\n\u0000]"
+                  }
+                }
+              }
+            ],
+            "description": "Exact Implementation OID(s); the empty string selects the base Implementation. Omit to include supported Implementations. Do not pass a displayed name."
+          },
+          "diagram": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              }
+            ],
+            "description": "Exact whole Diagram refs from this session, or source OIDs paired with exactly one explicit in.component. Cross-Component selection uses refs and preserves each Component/Diagram pair. Does not accept names or object refs. Pins Database and ASCET process; scope reads fresh content."
+          },
+          "visibility": {
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "private"
+                ]
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "public",
+                    "private"
+                  ]
+                }
+              }
+            ],
+            "description": "Owning Diagram membership in Public/Private Specifications; omit for both. Applies to BDE and owned State/Transition code, not text Method access or model folder names. Combines by intersection with other scope fields."
+          }
+        }
+      },
+      "limit": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 200,
+        "default": 50,
+        "description": "Shared page budget across all queries, default 50, maximum 200. Counts occurrences normally; with group_by:object, counts BDE objects plus text occurrences. Bytes may further reduce the page."
+      },
+      "database": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Optional expected database path used as a safety precondition, not a command to open or switch databases. Omit to search the current database."
+      },
+      "debug": {
+        "type": "boolean",
+        "default": false,
+        "description": "Include database, timing and coverage diagnostics for troubleshooting. Leave false for ordinary code exploration."
+      },
+      "group_by": {
+        "type": "string",
+        "enum": [
+          "occurrence",
+          "object"
+        ],
+        "default": "occurrence",
+        "description": "object groups BDE matches by graphical identity before pagination. Text stays occurrence-based. Same-named objects remain separate. Omit for the existing snippets/occurrence contract."
+      },
+      "cursor": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 8192,
+        "description": "Use the exact next_cursor from a previous response in this same session, with no other fields. Continues its immutable snapshot; an expired/evicted cursor requires a new search."
+      }
+    },
+    "$defs": {
+      "queryEntry": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text"],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1024,
+            "not": {"pattern": "\u0000"},
+            "description": "Code search term in the effective mode. Actual newlines enable multiline by default."
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "description": "Optional caller label echoed in this query's results."
+          },
+          "mode": {
+            "type": "string",
+            "enum": ["text", "identifier", "regex"],
+            "description": "Overrides top-level mode. Without either, use text. Regex uses ECMAScript Unicode without / delimiters."
+          },
+          "case_sensitive": {
+            "type": "boolean",
+            "description": "Overrides top-level case_sensitive; false when neither is supplied."
+          },
+          "multiline": {
+            "type": "boolean",
+            "description": "Overrides top-level multiline. When neither is supplied, actual newlines or effective dotall:true enable cross-line matching."
+          },
+          "dotall": {
+            "type": "boolean",
+            "description": "Regex only: overrides top-level dotall; false when neither is supplied. Dot spans newlines when true; implies multiline unless explicitly set."
+          }
+        }
+      }
+    },
+    "if": {
+      "required": [
+        "cursor"
+      ]
+    },
+    "then": {
+      "maxProperties": 1
+    },
+    "else": {
+      "required": [
+        "query"
+      ]
+    }
+  }
+}

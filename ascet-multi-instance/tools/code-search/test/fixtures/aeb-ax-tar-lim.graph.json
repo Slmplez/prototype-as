@@ -1,0 +1,978 @@
+{
+  "component_oid": "040qm00100001mo70g3vs96o7fph6",
+  "source_oid": "040ts00000001qg714eg70ik99tge",
+  "name": "Main",
+  "visibility": "public",
+  "methods": [
+    {
+      "member_id": "0101ab0001000000db070407fe24da2ffa130000",
+      "name": "calc",
+      "kind": "method"
+    },
+    {
+      "member_id": "0101ab0001000000db070407fe2696a40c140000",
+      "name": "AxTarLim",
+      "kind": "method"
+    },
+    {
+      "member_id": "0101ab0001000000db07070802009aaff1000000",
+      "name": "SetAx_B",
+      "kind": "method"
+    }
+  ],
+  "scopes": [
+    {
+      "path": "root",
+      "name": "Main"
+    }
+  ],
+  "comments": [],
+  "nodes": [
+    {
+      "scope": "root",
+      "id": 2,
+      "kind": "element",
+      "name": "C_AEB_AXCdAxTarMin",
+      "element_alias": "0101ab00060a0000e007060f040684c689340000",
+      "element_type": "SGVariable"
+    },
+    {
+      "scope": "root",
+      "id": 3,
+      "kind": "element",
+      "name": "AxCtrlLimMinAx",
+      "element_alias": "0101ab0001000000db070407fe27c90a1f140000",
+      "element_type": "SGVariable",
+      "component_path": "PlatformLibrary\\Package\\AxControllerLibrary\\public\\AxCtrlLimMinAx"
+    },
+    {
+      "scope": "root",
+      "id": 11,
+      "kind": "element",
+      "name": "AxCtrlLimGradAxMin",
+      "element_alias": "0101ab0001000000db070407fe2880d121140000",
+      "element_type": "SGVariable",
+      "component_path": "PlatformLibrary\\Package\\AxControllerLibrary\\public\\AxCtrlLimGradAx"
+    },
+    {
+      "scope": "root",
+      "id": 21,
+      "kind": "element",
+      "name": "calc/AxTar",
+      "element_alias": "0101ab0001000000db070407fe2959db26140000",
+      "element_type": "SGMethodArgument"
+    },
+    {
+      "scope": "root",
+      "id": 27,
+      "kind": "element",
+      "name": "AxCtrlSetAxAct",
+      "element_alias": "0101ab0001000000db07070801fd183fc2000000",
+      "element_type": "SGVariable",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AxCtrlSetAx"
+    },
+    {
+      "scope": "root",
+      "id": 35,
+      "kind": "element",
+      "name": "calc/AxAct",
+      "element_alias": "0101ab0001000000db070407fe32b6b57b140000",
+      "element_type": "SGMethodArgument"
+    },
+    {
+      "scope": "root",
+      "id": 39,
+      "kind": "element",
+      "name": "calc/Active_B",
+      "element_alias": "0101ab0001000000db070407fe25d8d209140000",
+      "element_type": "SGMethodArgument"
+    },
+    {
+      "scope": "root",
+      "id": 42,
+      "kind": "element",
+      "name": "AxTarLim/return",
+      "element_alias": "0101ab0001000000db070407fe26b72c0e140000",
+      "element_type": "SGMethodParameter"
+    },
+    {
+      "scope": "root",
+      "id": 45,
+      "kind": "element",
+      "name": "AxCtrlLimMaxAx",
+      "element_alias": "0101ab0001000000db070407fe40598d80140000",
+      "element_type": "SGVariable",
+      "component_path": "PlatformLibrary\\Package\\AxControllerLibrary\\public\\AxCtrlLimMaxAx"
+    },
+    {
+      "scope": "root",
+      "id": 54,
+      "kind": "element",
+      "name": "AxCtrlLimGradAxMax",
+      "element_alias": "0101ab0001000000db070407fe411c6082140000",
+      "element_type": "SGVariable",
+      "component_path": "PlatformLibrary\\Package\\AxControllerLibrary\\public\\AxCtrlLimGradAx"
+    },
+    {
+      "scope": "root",
+      "id": 69,
+      "kind": "element",
+      "name": "AxCtrlMinAxAct",
+      "element_alias": "0101ab00060a0000e007060f040aad1e34380000",
+      "element_type": "SGVariable",
+      "component_path": "PlatformLibrary\\Package\\AxControllerLibrary\\public\\AxCtrlLimMaxAx"
+    },
+    {
+      "scope": "root",
+      "id": 78,
+      "kind": "element",
+      "name": "AxCtrlMaxAxAct",
+      "element_alias": "0101ab00060a0000e007060f040a860e1c380000",
+      "element_type": "SGVariable",
+      "component_path": "PlatformLibrary\\Package\\AxControllerLibrary\\public\\AxCtrlLimMinAx"
+    },
+    {
+      "scope": "root",
+      "id": 135,
+      "kind": "element",
+      "name": "SetAx_B/return",
+      "element_alias": "0101ab0001000000db07070802010abffb000000",
+      "element_type": "SGMethodParameter"
+    },
+    {
+      "scope": "root",
+      "id": 140,
+      "kind": "element",
+      "name": "C_AEBdT",
+      "element_alias": "0101ab000a8c0000de0705140872a021b18b0000",
+      "element_type": "SGVariable"
+    },
+    {
+      "scope": "root",
+      "id": 141,
+      "kind": "element",
+      "name": "AEB_AxTarLim",
+      "element_alias": "0101ab0001000000db07040e01c702e9101e0000",
+      "element_type": "SGVariable"
+    },
+    {
+      "scope": "root",
+      "id": 158,
+      "kind": "element",
+      "name": "calc/AxAct",
+      "element_alias": "0101ab0001000000db070407fe32b6b57b140000",
+      "element_type": "SGMethodArgument"
+    },
+    {
+      "scope": "root",
+      "id": 162,
+      "kind": "element",
+      "name": "C_AEB_AXCdAxTarMax",
+      "element_alias": "0101ab0006020000e007060702bcbc44161f0000",
+      "element_type": "SGVariable"
+    }
+  ],
+  "pins": [
+    {
+      "scope": "root",
+      "node_id": 11,
+      "id": 0,
+      "name": "calc/LDMdT",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 54,
+      "id": 1,
+      "name": "calc/LDMdT",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 3,
+      "id": 6,
+      "name": "AxTar/AxTar",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 3,
+      "id": 7,
+      "name": "calc/AxTarRaw",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 3,
+      "id": 8,
+      "name": "calc/AxTarMin",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 3,
+      "id": 9,
+      "name": "calc/Active_B",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 27,
+      "id": 10,
+      "name": "calc/AxTar",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 11,
+      "id": 14,
+      "name": "AxTarLim/AxTarLim",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 11,
+      "id": 15,
+      "name": "calc/AxTarSet",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 11,
+      "id": 16,
+      "name": "calc/AxTarK1",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 11,
+      "id": 17,
+      "name": "calc/dAxTarLim",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 11,
+      "id": 18,
+      "name": "calc/Active_B",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 11,
+      "id": 19,
+      "name": "calc/SetAx_B",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 11,
+      "id": 20,
+      "name": "GradLimActive_B/GradLimActive_B",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 21,
+      "id": 23,
+      "name": "get/get",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 27,
+      "id": 30,
+      "name": "AEB_AXCAxSet/AEB_AXCAxSet",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 27,
+      "id": 31,
+      "name": "AEB_AXCSetAx_B/AEB_AXCSetAx_B",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 27,
+      "id": 32,
+      "name": "calc/AxAct",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 27,
+      "id": 33,
+      "name": "calc/AxCtrlActive_B",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 35,
+      "id": 37,
+      "name": "get/get",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 39,
+      "id": 41,
+      "name": "get/get",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 42,
+      "id": 43,
+      "name": "set/aValue",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 45,
+      "id": 48,
+      "name": "AxTar/AxTar",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 45,
+      "id": 49,
+      "name": "calc/AxTarRaw",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 45,
+      "id": 50,
+      "name": "calc/AxTarMax",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 45,
+      "id": 51,
+      "name": "calc/Active_B",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 54,
+      "id": 57,
+      "name": "AxTarLim/AxTarLim",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 54,
+      "id": 58,
+      "name": "calc/AxTarSet",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 54,
+      "id": 59,
+      "name": "calc/AxTarK1",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 54,
+      "id": 60,
+      "name": "calc/dAxTarLim",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 54,
+      "id": 61,
+      "name": "calc/Active_B",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 54,
+      "id": 62,
+      "name": "calc/SetAx_B",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 54,
+      "id": 63,
+      "name": "GradLimActive_B/GradLimActive_B",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 2,
+      "id": 67,
+      "name": "get/get",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 69,
+      "id": 72,
+      "name": "AxTar/AxTar",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 69,
+      "id": 73,
+      "name": "calc/AxTarRaw",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 69,
+      "id": 74,
+      "name": "calc/AxTarMax",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 69,
+      "id": 75,
+      "name": "calc/Active_B",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 78,
+      "id": 81,
+      "name": "AxTar/AxTar",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 78,
+      "id": 82,
+      "name": "calc/AxTarRaw",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 78,
+      "id": 83,
+      "name": "calc/AxTarMin",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 78,
+      "id": 84,
+      "name": "calc/Active_B",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 27,
+      "id": 85,
+      "name": "calc/AxTarLimK1",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 135,
+      "id": 136,
+      "name": "set/aValue",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 141,
+      "id": 142,
+      "name": "set/aValue",
+      "input": true,
+      "output": false
+    },
+    {
+      "scope": "root",
+      "node_id": 141,
+      "id": 143,
+      "name": "get/get",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 140,
+      "id": 146,
+      "name": "get/get",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 158,
+      "id": 160,
+      "name": "get/get",
+      "input": false,
+      "output": true
+    },
+    {
+      "scope": "root",
+      "node_id": 162,
+      "id": 164,
+      "name": "get/get",
+      "input": false,
+      "output": true
+    }
+  ],
+  "connections": [
+    {
+      "scope": "root",
+      "id": 1,
+      "from_pin": 6,
+      "to_pin": 49,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 2,
+      "from_pin": 14,
+      "to_pin": 8,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 3,
+      "from_pin": 20,
+      "to_pin": 9,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 4,
+      "from_pin": 23,
+      "to_pin": 7,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 5,
+      "from_pin": 23,
+      "to_pin": 10,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 6,
+      "from_pin": 30,
+      "to_pin": 15,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 7,
+      "from_pin": 30,
+      "to_pin": 58,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 8,
+      "from_pin": 31,
+      "to_pin": 19,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 9,
+      "from_pin": 31,
+      "to_pin": 62,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 10,
+      "from_pin": 31,
+      "to_pin": 136,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 11,
+      "from_pin": 37,
+      "to_pin": 32,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 12,
+      "from_pin": 41,
+      "to_pin": 18,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 13,
+      "from_pin": 41,
+      "to_pin": 33,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 14,
+      "from_pin": 41,
+      "to_pin": 61,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 15,
+      "from_pin": 41,
+      "to_pin": 75,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 16,
+      "from_pin": 41,
+      "to_pin": 84,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 17,
+      "from_pin": 48,
+      "to_pin": 43,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 18,
+      "from_pin": 48,
+      "to_pin": 74,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 19,
+      "from_pin": 48,
+      "to_pin": 83,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 20,
+      "from_pin": 48,
+      "to_pin": 85,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 21,
+      "from_pin": 48,
+      "to_pin": 142,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 22,
+      "from_pin": 57,
+      "to_pin": 50,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 23,
+      "from_pin": 63,
+      "to_pin": 51,
+      "type": "1"
+    },
+    {
+      "scope": "root",
+      "id": 24,
+      "from_pin": 67,
+      "to_pin": 17,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 25,
+      "from_pin": 72,
+      "to_pin": 16,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 26,
+      "from_pin": 81,
+      "to_pin": 59,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 27,
+      "from_pin": 146,
+      "to_pin": 0,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 28,
+      "from_pin": 146,
+      "to_pin": 1,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 29,
+      "from_pin": 160,
+      "to_pin": 73,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 30,
+      "from_pin": 160,
+      "to_pin": 82,
+      "type": "2"
+    },
+    {
+      "scope": "root",
+      "id": 31,
+      "from_pin": 164,
+      "to_pin": 60,
+      "type": "2"
+    }
+  ],
+  "sequences": [
+    {
+      "scope": "root",
+      "pin_id": 0,
+      "number": 20,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 1,
+      "number": 25,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 7,
+      "number": 30,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 8,
+      "number": 30,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 9,
+      "number": 30,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 10,
+      "number": 5,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 15,
+      "number": 20,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 16,
+      "number": 20,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 17,
+      "number": 20,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 18,
+      "number": 20,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 19,
+      "number": 20,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 32,
+      "number": 5,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 33,
+      "number": 5,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 43,
+      "number": 1,
+      "method": "AxTarLim"
+    },
+    {
+      "scope": "root",
+      "pin_id": 49,
+      "number": 35,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 50,
+      "number": 35,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 51,
+      "number": 35,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 58,
+      "number": 25,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 59,
+      "number": 25,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 60,
+      "number": 25,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 61,
+      "number": 25,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 62,
+      "number": 25,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 73,
+      "number": 10,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 74,
+      "number": 10,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 75,
+      "number": 10,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 82,
+      "number": 15,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 83,
+      "number": 15,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 84,
+      "number": 15,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 85,
+      "number": 5,
+      "method": "calc"
+    },
+    {
+      "scope": "root",
+      "pin_id": 136,
+      "number": 1,
+      "method": "SetAx_B"
+    },
+    {
+      "scope": "root",
+      "pin_id": 142,
+      "number": 36,
+      "method": "calc"
+    }
+  ],
+  "boundaries": [],
+  "issues": []
+}

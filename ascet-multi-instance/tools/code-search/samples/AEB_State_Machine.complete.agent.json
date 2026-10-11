@@ -1,0 +1,368 @@
+{
+  "status": "ok",
+  "requested_count": 25,
+  "returned_count": 25,
+  "results": [
+    {
+      "ref": "sHZjDUp124:d1",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_entry",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "state": "Main/AEB_State_Off",
+      "state_id": 0,
+      "code": "/* */\r\n\r\n/* Initialization of AEB-state-signals */\r\nAEBState = 10;\r\nAEBActive = false;\r\nAEBBAActive = false;\r\nAEBIBActive = false;\r\n\r\ntAEB = 0.0;",
+      "line_count": 9
+    },
+    {
+      "ref": "sHZjDUp124:d2",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_entry",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "state": "Main/AEB_State_BA",
+      "state_id": 1,
+      "code": "/* */\r\nAEBState=30;\r\nAEBActive = true;\r\nAEBBAActive = true;\r\n\r\ntAEB = tAEB + C_AEBdT;",
+      "line_count": 6
+    },
+    {
+      "ref": "sHZjDUp124:d3",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_entry",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "state": "Main/AEB_State_IB",
+      "state_id": 2,
+      "code": "/* */\r\nAEBState=20;\r\nAEBActive = true;\r\nAEBIBActive = true;\r\n\r\ntAEB = tAEB + C_AEBdT;",
+      "line_count": 6
+    },
+    {
+      "ref": "sHZjDUp124:d4",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_exit",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "state": "Main/AEB_State_Off",
+      "state_id": 0,
+      "code": "/* */\r\nAEBState=12;\r\n\r\n",
+      "line_count": 4
+    },
+    {
+      "ref": "sHZjDUp124:d5",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_exit",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "state": "Main/AEB_State_BA",
+      "state_id": 1,
+      "code": "/* */\r\nAEBState=32;\r\nAEBBAActive = false;",
+      "line_count": 3
+    },
+    {
+      "ref": "sHZjDUp124:d6",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_exit",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "state": "Main/AEB_State_IB",
+      "state_id": 2,
+      "code": "/* */ \r\nAEBState=22;\r\nAEBIBActive = false;",
+      "line_count": 3
+    },
+    {
+      "ref": "sHZjDUp124:d7",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_static",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "state": "Main/AEB_State_Off",
+      "state_id": 0,
+      "code": "/* */\r\n/* Initialization of AEB-state-signals */\r\nAEBState=11;\r\nAEBActive = false;\r\nAEBBAActive = false;\r\nAEBIBActive = false;\r\n\r\ntAEB = 0.0;\r\n\r\n/* Decrement timer for locking time */\r\nif (AEBLockTime > 0.0)\r\n{\r\n   AEBLockTime = AEBLockTime - C_AEBdT;\r\n}\r\n",
+      "line_count": 15
+    },
+    {
+      "ref": "sHZjDUp124:d8",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_static",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "state": "Main/AEB_State_BA",
+      "state_id": 1,
+      "code": "/* */\r\nAEBState=31;\r\n\r\ntAEB = tAEB + C_AEBdT;",
+      "line_count": 4
+    },
+    {
+      "ref": "sHZjDUp124:d9",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_static",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "state": "Main/AEB_State_IB",
+      "state_id": 2,
+      "code": "/* */\r\nAEBState=21;\r\n\r\ntAEB = tAEB + C_AEBdT;",
+      "line_count": 4
+    },
+    {
+      "ref": "sHZjDUp124:da",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_action",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #23",
+      "transition_id": 23,
+      "code": "//Initialize AEB lock time\r\n\r\n/* Initialization of AEB-locking time */\r\nAEBLockTime = C_AEB_LockTime;",
+      "line_count": 4
+    },
+    {
+      "ref": "sHZjDUp124:db",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_action",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #25",
+      "transition_id": 25,
+      "code": "//Initialize AEB lock time\r\n\r\n/* Initialization of AEB-locking time */\r\nAEBLockTime = C_AEB_LockTime;",
+      "line_count": 4
+    },
+    {
+      "ref": "sHZjDUp124:dc",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_condition",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #22",
+      "transition_id": 22,
+      "code": "Trigger_BA_From_IB",
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:dd",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_condition",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #23",
+      "transition_id": 23,
+      "code": "Trigger_Off_From_IB\r\n",
+      "line_count": 2
+    },
+    {
+      "ref": "sHZjDUp124:de",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_condition",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #25",
+      "transition_id": 25,
+      "code": "Trigger_Off_From_BA",
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:df",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_condition",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #26",
+      "transition_id": 26,
+      "code": "Trigger_BA_From_Off",
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:dg",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_condition",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #27",
+      "transition_id": 27,
+      "code": "Trigger_IB_From_Off",
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:dh",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_trigger_binding",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #20",
+      "transition_id": 20,
+      "method_binding": {
+        "method": "init_trigger",
+        "method_alias": "0101ab0001000000db070412f3ab50eb822a0000",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:di",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_trigger_binding",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #21",
+      "transition_id": 21,
+      "method_binding": {
+        "method": "init_trigger",
+        "method_alias": "0101ab0001000000db070412f3ab50eb822a0000",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:dj",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_trigger_binding",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #22",
+      "transition_id": 22,
+      "method_binding": {
+        "method": "trigger",
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_trigger_binding",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #23",
+      "transition_id": 23,
+      "method_binding": {
+        "method": "trigger",
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:dl",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_trigger_binding",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #24",
+      "transition_id": 24,
+      "method_binding": {
+        "method": "init_trigger",
+        "method_alias": "0101ab0001000000db070412f3ab50eb822a0000",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:dm",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_trigger_binding",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #25",
+      "transition_id": 25,
+      "method_binding": {
+        "method": "trigger",
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:dn",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_trigger_binding",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #26",
+      "transition_id": 26,
+      "method_binding": {
+        "method": "trigger",
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:do",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "transition_trigger_binding",
+      "variant": "ASDL",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70igttug6",
+      "state_hierarchy_ids": [],
+      "transition": "Main/Transition #27",
+      "transition_id": 27,
+      "method_binding": {
+        "method": "trigger",
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "ref": "sHZjDUp124:dp",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "diagram",
+      "variant": "BD",
+      "representation": "graphical_model",
+      "diagram": "Init",
+      "diagram_oid": "040ts00000001qg714eg70igttv06",
+      "diagram_methods": [
+        {
+          "name": "init",
+          "kind": "method"
+        }
+      ],
+      "diagram_text": "Diagram root Init\nn4 literal: 0.0\n  p5 out: get/get\nn6 element: AEBLockTime\n  p7 in: set/aValue [init #10]\np5 -> p7 (type 2)",
+      "line_count": 6
+    }
+  ]
+}

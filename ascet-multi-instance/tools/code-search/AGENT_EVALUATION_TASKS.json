@@ -1,0 +1,17 @@
+{
+  "evaluation_mode": "Current assistant chooses CLI requests after each result. Task outcomes are assistant assessments, not an independent-model benchmark.",
+  "tasks": [
+    {"id":"force-conversion","type":"retrieval","request_budget":6,"requirement":"Find saved logic converting requested acceleration into braking force. Identify sign, scaling and inputs using a complete implementation."},
+    {"id":"pressure-conversion","type":"retrieval","request_budget":4,"requirement":"Find driver braking force to pressure conversion. Explain the implemented conditions and formula without inventing Dataset values."},
+    {"id":"lookup-reference","type":"retrieval","request_budget":8,"requirement":"Find a BDE use of interpolation or lookup. Identify the referenced Component, its external Pins and one actual connection, then locate a saved called implementation if available."},
+    {"id":"control-integrator","type":"retrieval","request_budget":8,"requirement":"Locate an acceleration-controller integrator. Explain reset or limiting behavior using saved code and distinguish external wiring from the implementation."},
+    {"id":"module-process","type":"retrieval","request_budget":5,"requirement":"Find a Module Process involved in AEB input preparation and read a real connected processing Component. Do not infer runtime scheduling from the Process name."},
+    {"id":"init-representation","type":"retrieval","request_budget":5,"requirement":"Find Init in a class outside the previously inspected AEB_State_Machine. Identify whether it is saved text or a Diagram and read its complete supported representation."},
+    {"id":"hold-state","type":"retrieval","request_budget":6,"requirement":"Find vehicle-hold timing in an automatic braking State Machine. Read the saved increment/reset logic and distinguish State code from Transition code."},
+    {"id":"hierarchy-connection","type":"retrieval","request_budget":8,"requirement":"Find a BDE Hierarchy with a real boundary, read both endpoint objects, and distinguish structural connectivity from inferred Component data dependencies."},
+    {"id":"multiline-regex","type":"retrieval","request_budget":5,"requirement":"Locate an if/else code fragment spanning multiple lines in a newly explored implementation. Verify the match against a full read and preserve the member identity."},
+    {"id":"batch-pagination","type":"retrieval","request_budget":8,"requirement":"Search AxAct, VxAct and FxDriver together, use limited pages, then narrow a Component and batch-read relevant text members. Explain per-query counts and continuation without assuming the queries are AND."},
+    {"id":"absent-name","type":"boundary","request_budget":3,"requirement":"Search a distinctive non-existent code identifier and report only what a complete zero-hit result establishes; do not claim absence from declarations, Dataset or unsupported sources."},
+    {"id":"runtime-order","type":"boundary","request_budget":3,"requirement":"Determine whether code-search can establish actual runtime task scheduling or execution frequency from a Module Process and Sequence notes. Separate saved facts from unsupported runtime assertions."}
+  ]
+}

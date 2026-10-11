@@ -1,0 +1,3853 @@
+{
+  "started_utc": "2026-10-01T12:13:27.162Z",
+  "scope": "All three public search modes, multiline text/regex, dotall, context, case sensitivity, batch and shared format; real live ASCET data only",
+  "timing_boundary": "Client request through complete response JSON received and parsed; first request includes Node/C# startup; already loaded ASCET",
+  "observations": [
+    {
+      "id": "text",
+      "title": "普通文本子串搜索",
+      "note": "匹配输入的连续文字；可以命中长变量名中的一部分。",
+      "request": {
+        "query": "AEB_FxTarPT",
+        "mode": "text",
+        "case_sensitive": true,
+        "id": "text",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "calc",
+      "response": {
+        "schema_version": 1,
+        "id": "text",
+        "query": "AEB_FxTarPT",
+        "mode": "text",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "results": [
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  4,
+                  20
+                ],
+                "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+              },
+              {
+                "line": 12,
+                "columns": [
+                  13
+                ],
+                "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+              },
+              {
+                "line": 17,
+                "columns": [
+                  7
+                ],
+                "text": "      AEB_FxTarPT = FxActPT;\t   "
+              },
+              {
+                "line": 20,
+                "columns": [
+                  4,
+                  18
+                ],
+                "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+              },
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;"
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f255a5f0da000000",
+            "member_name": "AEB_FxTarPT",
+            "language": "esdl",
+            "document_id": "c730ec8a947365bebb04310385c41264c448d0416dc08046b5b5c3c8cc8e83b9",
+            "source_sha256": "fccad20004ab04a7fa881a88116423ecfc4a6601214b5d0d6be64e6fb2d6515e",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  8
+                ],
+                "text": "return AEB_FxTarPT;"
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;"
+              }
+            ]
+          }
+        ],
+        "total_occurrences": 9,
+        "matched_lines": 7,
+        "matched_documents": 3,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:27.8251624Z",
+        "first_connection": true,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 62,
+          "native_scan_match_encode_ms": 32,
+          "wire_characters": 21889,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 3,
+          "transported_unique_characters": 1064,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 4,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 38.8192,
+          "native_read_transport_ms": 85.5471,
+          "bridge_ms": 133.9614,
+          "bridge_roundtrip_ms": 232.83630000000002,
+          "decode_match_ms": 2.711399999999969,
+          "decode_ms": 2.092399999999998,
+          "match_ms": 0.6189999999999714,
+          "search_ms": 235.5477
+        }
+      },
+      "elapsed_ms": 296.70390000000003,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "AEB_FxTarPT",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  4,
+                  20
+                ],
+                "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+              },
+              {
+                "line": 12,
+                "columns": [
+                  13
+                ],
+                "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+              },
+              {
+                "line": 17,
+                "columns": [
+                  7
+                ],
+                "text": "      AEB_FxTarPT = FxActPT;\t   "
+              },
+              {
+                "line": 20,
+                "columns": [
+                  4,
+                  18
+                ],
+                "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+              },
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;"
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                4,
+                20
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            },
+            {
+              "line": 12,
+              "columns": [
+                13
+              ],
+              "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+            },
+            {
+              "line": 17,
+              "columns": [
+                7
+              ],
+              "text": "      AEB_FxTarPT = FxActPT;\t   "
+            },
+            {
+              "line": 20,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+            },
+            {
+              "line": 26,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = 250000;"
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "identifier",
+      "title": "完整标识符出现位置",
+      "note": "按 C/ESDL 标识符边界匹配；不把 C_AEB_FxTarPT 中的子串算作 AEB_FxTarPT。仍会搜索注释/字符串，不是语义引用分析。",
+      "request": {
+        "query": "AEB_FxTarPT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "id": "identifier",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "calc",
+      "response": {
+        "schema_version": 1,
+        "id": "identifier",
+        "query": "AEB_FxTarPT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "results": [
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+              },
+              {
+                "line": 12,
+                "columns": [
+                  13
+                ],
+                "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+              },
+              {
+                "line": 17,
+                "columns": [
+                  7
+                ],
+                "text": "      AEB_FxTarPT = FxActPT;\t   "
+              },
+              {
+                "line": 20,
+                "columns": [
+                  4,
+                  18
+                ],
+                "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+              },
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;"
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f255a5f0da000000",
+            "member_name": "AEB_FxTarPT",
+            "language": "esdl",
+            "document_id": "c730ec8a947365bebb04310385c41264c448d0416dc08046b5b5c3c8cc8e83b9",
+            "source_sha256": "fccad20004ab04a7fa881a88116423ecfc4a6601214b5d0d6be64e6fb2d6515e",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  8
+                ],
+                "text": "return AEB_FxTarPT;"
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;"
+              }
+            ]
+          }
+        ],
+        "total_occurrences": 8,
+        "matched_lines": 7,
+        "matched_documents": 3,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:27.9333813Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 63,
+          "native_scan_match_encode_ms": 15,
+          "wire_characters": 21889,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 3,
+          "transported_unique_characters": 1064,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 4,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.00030000000000000003,
+          "native_read_transport_ms": 82.54350000000001,
+          "bridge_ms": 91.9691,
+          "bridge_roundtrip_ms": 93.70319999999998,
+          "decode_match_ms": 0.9096000000000117,
+          "decode_ms": 0.648900000000026,
+          "match_ms": 0.2606999999999857,
+          "search_ms": 94.6128
+        }
+      },
+      "elapsed_ms": 95.04219999999998,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "AEB_FxTarPT",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+              },
+              {
+                "line": 12,
+                "columns": [
+                  13
+                ],
+                "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+              },
+              {
+                "line": 17,
+                "columns": [
+                  7
+                ],
+                "text": "      AEB_FxTarPT = FxActPT;\t   "
+              },
+              {
+                "line": 20,
+                "columns": [
+                  4,
+                  18
+                ],
+                "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+              },
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;"
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            },
+            {
+              "line": 12,
+              "columns": [
+                13
+              ],
+              "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+            },
+            {
+              "line": 17,
+              "columns": [
+                7
+              ],
+              "text": "      AEB_FxTarPT = FxActPT;\t   "
+            },
+            {
+              "line": 20,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+            },
+            {
+              "line": 26,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = 250000;"
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "regex",
+      "title": "正则搜索多个指定名字",
+      "note": "| 表示二选一；\\b 限定词边界。JSON 中的反斜杠需要写成双反斜杠。",
+      "request": {
+        "query": "\\b(?:AEB_FxTarPT|C_AEB_FxTarPT)\\b",
+        "mode": "regex",
+        "case_sensitive": true,
+        "id": "regex",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "calc",
+      "response": {
+        "schema_version": 1,
+        "id": "regex",
+        "query": "\\b(?:AEB_FxTarPT|C_AEB_FxTarPT)\\b",
+        "mode": "regex",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "results": [
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  4,
+                  18
+                ],
+                "text": "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                "ranges": [
+                  {
+                    "start_line": 8,
+                    "start_column": 4,
+                    "end_line": 8,
+                    "end_column": 15
+                  },
+                  {
+                    "start_line": 8,
+                    "start_column": 18,
+                    "end_line": 8,
+                    "end_column": 31
+                  }
+                ]
+              },
+              {
+                "line": 12,
+                "columns": [
+                  13
+                ],
+                "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT",
+                "ranges": [
+                  {
+                    "start_line": 12,
+                    "start_column": 13,
+                    "end_line": 12,
+                    "end_column": 24
+                  }
+                ]
+              },
+              {
+                "line": 17,
+                "columns": [
+                  7
+                ],
+                "text": "      AEB_FxTarPT = FxActPT;\t   ",
+                "ranges": [
+                  {
+                    "start_line": 17,
+                    "start_column": 7,
+                    "end_line": 17,
+                    "end_column": 18
+                  }
+                ]
+              },
+              {
+                "line": 20,
+                "columns": [
+                  4,
+                  18
+                ],
+                "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;",
+                "ranges": [
+                  {
+                    "start_line": 20,
+                    "start_column": 4,
+                    "end_line": 20,
+                    "end_column": 15
+                  },
+                  {
+                    "start_line": 20,
+                    "start_column": 18,
+                    "end_line": 20,
+                    "end_column": 29
+                  }
+                ]
+              },
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 26,
+                    "start_column": 4,
+                    "end_line": 26,
+                    "end_column": 15
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f255a5f0da000000",
+            "member_name": "AEB_FxTarPT",
+            "language": "esdl",
+            "document_id": "c730ec8a947365bebb04310385c41264c448d0416dc08046b5b5c3c8cc8e83b9",
+            "source_sha256": "fccad20004ab04a7fa881a88116423ecfc4a6601214b5d0d6be64e6fb2d6515e",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  8
+                ],
+                "text": "return AEB_FxTarPT;",
+                "ranges": [
+                  {
+                    "start_line": 1,
+                    "start_column": 8,
+                    "end_line": 1,
+                    "end_column": 19
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 1,
+                    "start_column": 1,
+                    "end_line": 1,
+                    "end_column": 12
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "total_occurrences": 9,
+        "matched_lines": 7,
+        "matched_documents": 3,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:28.1319474Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 47,
+          "native_scan_match_encode_ms": 109,
+          "wire_characters": 844192,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 194,
+          "transported_unique_characters": 655980,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 800,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.00030000000000000003,
+          "native_read_transport_ms": 181.30670000000003,
+          "bridge_ms": 192.84480000000002,
+          "bridge_roundtrip_ms": 206.77429999999998,
+          "decode_match_ms": 44.721700000000055,
+          "decode_ms": 12.139999999999986,
+          "match_ms": 32.58170000000007,
+          "search_ms": 251.49600000000004
+        }
+      },
+      "elapsed_ms": 251.90520000000004,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "\\b(?:AEB_FxTarPT|C_AEB_FxTarPT)\\b",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  4,
+                  18
+                ],
+                "text": "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                "ranges": [
+                  {
+                    "start_line": 8,
+                    "start_column": 4,
+                    "end_line": 8,
+                    "end_column": 15
+                  },
+                  {
+                    "start_line": 8,
+                    "start_column": 18,
+                    "end_line": 8,
+                    "end_column": 31
+                  }
+                ]
+              },
+              {
+                "line": 12,
+                "columns": [
+                  13
+                ],
+                "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT",
+                "ranges": [
+                  {
+                    "start_line": 12,
+                    "start_column": 13,
+                    "end_line": 12,
+                    "end_column": 24
+                  }
+                ]
+              },
+              {
+                "line": 17,
+                "columns": [
+                  7
+                ],
+                "text": "      AEB_FxTarPT = FxActPT;\t   ",
+                "ranges": [
+                  {
+                    "start_line": 17,
+                    "start_column": 7,
+                    "end_line": 17,
+                    "end_column": 18
+                  }
+                ]
+              },
+              {
+                "line": 20,
+                "columns": [
+                  4,
+                  18
+                ],
+                "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;",
+                "ranges": [
+                  {
+                    "start_line": 20,
+                    "start_column": 4,
+                    "end_line": 20,
+                    "end_column": 15
+                  },
+                  {
+                    "start_line": 20,
+                    "start_column": 18,
+                    "end_line": 20,
+                    "end_column": 29
+                  }
+                ]
+              },
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 26,
+                    "start_column": 4,
+                    "end_line": 26,
+                    "end_column": 15
+                  }
+                ]
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;",
+              "ranges": [
+                {
+                  "start_line": 8,
+                  "start_column": 4,
+                  "end_line": 8,
+                  "end_column": 15
+                },
+                {
+                  "start_line": 8,
+                  "start_column": 18,
+                  "end_line": 8,
+                  "end_column": 31
+                }
+              ]
+            },
+            {
+              "line": 12,
+              "columns": [
+                13
+              ],
+              "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT",
+              "ranges": [
+                {
+                  "start_line": 12,
+                  "start_column": 13,
+                  "end_line": 12,
+                  "end_column": 24
+                }
+              ]
+            },
+            {
+              "line": 17,
+              "columns": [
+                7
+              ],
+              "text": "      AEB_FxTarPT = FxActPT;\t   ",
+              "ranges": [
+                {
+                  "start_line": 17,
+                  "start_column": 7,
+                  "end_line": 17,
+                  "end_column": 18
+                }
+              ]
+            },
+            {
+              "line": 20,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;",
+              "ranges": [
+                {
+                  "start_line": 20,
+                  "start_column": 4,
+                  "end_line": 20,
+                  "end_column": 15
+                },
+                {
+                  "start_line": 20,
+                  "start_column": 18,
+                  "end_line": 20,
+                  "end_column": 29
+                }
+              ]
+            },
+            {
+              "line": 26,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = 250000;",
+              "ranges": [
+                {
+                  "start_line": 26,
+                  "start_column": 4,
+                  "end_line": 26,
+                  "end_column": 15
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "regex_prefix",
+      "title": "正则实现通配式前缀匹配",
+      "note": "匹配 AEB_EngTrqRedActive 后跟任意个标识符字符，可同时找到 _B 和 K1_B 两个名字；不做拼写纠错。",
+      "request": {
+        "query": "\\bAEB_EngTrqRedActive[A-Za-z_0-9]*\\b",
+        "mode": "regex",
+        "case_sensitive": true,
+        "id": "regex_prefix",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "calc",
+      "response": {
+        "schema_version": 1,
+        "id": "regex_prefix",
+        "query": "\\bAEB_EngTrqRedActive[A-Za-z_0-9]*\\b",
+        "mode": "regex",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "results": [
+          {
+            "kind": "state_entry",
+            "component_oid": "040qm00100001mg70s4g6mc759kn8",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AutomaticBraking_SM",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "040ts00000001qg714eg70iiareg8/s0",
+            "member_name": "Main/Off",
+            "language": "esdl",
+            "document_id": "a187344e6c0ccb7ed8eba5bb56c9414b0af6de6e9232fcc015e0a4cfb4ac97a8",
+            "source_sha256": "6fb33731a6a4ec63e475850cdeeb680764542328dd391d9d0087cd3e02c8fbe0",
+            "location": {
+              "diagram_source_oid": "040ts00000001qg714eg70iiareg8",
+              "diagram_name": "Main",
+              "hierarchy_state_ids": [],
+              "element_type": "state",
+              "element_id": 0,
+              "slot": "entry"
+            },
+            "matches": [
+              {
+                "line": 7,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_EngTrqRedActive = false;",
+                "ranges": [
+                  {
+                    "start_line": 7,
+                    "start_column": 1,
+                    "end_line": 7,
+                    "end_column": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "state_entry",
+            "component_oid": "040qm00100001mg70s4g6mc759kn8",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AutomaticBraking_SM",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "040ts00000001qg714eg70iiareg8/s1",
+            "member_name": "Main/AxCtrl",
+            "language": "esdl",
+            "document_id": "e22931bf0ee1f7848d344b9be7306aadefd4593d6e7ee5719cf256771b52584d",
+            "source_sha256": "64526e026386f6209698b12f4655182cfa97153a8287ca4fdfba726fd2e1f1af",
+            "location": {
+              "diagram_source_oid": "040ts00000001qg714eg70iiareg8",
+              "diagram_name": "Main",
+              "hierarchy_state_ids": [],
+              "element_type": "state",
+              "element_id": 1,
+              "slot": "entry"
+            },
+            "matches": [
+              {
+                "line": 6,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_EngTrqRedActive = true;",
+                "ranges": [
+                  {
+                    "start_line": 6,
+                    "start_column": 1,
+                    "end_line": 6,
+                    "end_column": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "state_entry",
+            "component_oid": "040qm00100001mg70s4g6mc759kn8",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AutomaticBraking_SM",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "040ts00000001qg714eg70iiareg8/s2",
+            "member_name": "Main/Deactivate_Hold",
+            "language": "esdl",
+            "document_id": "c575ee9e7eb2158ffe8c3a0960122381f97202a63fe4be4f910b68720c7eb7f0",
+            "source_sha256": "0d30468f156cc948ca6fb847e204970ec88fda013acb2c6cd80d4475ae6255e6",
+            "location": {
+              "diagram_source_oid": "040ts00000001qg714eg70iiareg8",
+              "diagram_name": "Main",
+              "hierarchy_state_ids": [],
+              "element_type": "state",
+              "element_id": 2,
+              "slot": "entry"
+            },
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_EngTrqRedActive = false;",
+                "ranges": [
+                  {
+                    "start_line": 8,
+                    "start_column": 1,
+                    "end_line": 8,
+                    "end_column": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "state_static",
+            "component_oid": "040qm00100001mg70s4g6mc759kn8",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AutomaticBraking_SM",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "040ts00000001qg714eg70iiareg8/s0",
+            "member_name": "Main/Off",
+            "language": "esdl",
+            "document_id": "e2666a20e12447ec4db9dbdaae9cd7c49d69a8b077e5b003cb65f6b652deaab6",
+            "source_sha256": "cc3f52e9bfde089e412f7223570dbdad51dc18ac67114736c0c8c3b80ced7480",
+            "location": {
+              "diagram_source_oid": "040ts00000001qg714eg70iiareg8",
+              "diagram_name": "Main",
+              "hierarchy_state_ids": [],
+              "element_type": "state",
+              "element_id": 0,
+              "slot": "static"
+            },
+            "matches": [
+              {
+                "line": 7,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_EngTrqRedActive = false;",
+                "ranges": [
+                  {
+                    "start_line": 7,
+                    "start_column": 1,
+                    "end_line": 7,
+                    "end_column": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 5,
+                "columns": [
+                  5
+                ],
+                "text": "if (AEB_EngTrqRedActive_B)",
+                "ranges": [
+                  {
+                    "start_line": 5,
+                    "start_column": 5,
+                    "end_line": 5,
+                    "end_column": 26
+                  }
+                ]
+              },
+              {
+                "line": 15,
+                "columns": [
+                  8
+                ],
+                "text": "   if (AEB_EngTrqRedActiveK1_B)",
+                "ranges": [
+                  {
+                    "start_line": 15,
+                    "start_column": 8,
+                    "end_line": 15,
+                    "end_column": 31
+                  }
+                ]
+              },
+              {
+                "line": 31,
+                "columns": [
+                  1,
+                  27
+                ],
+                "text": "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;",
+                "ranges": [
+                  {
+                    "start_line": 31,
+                    "start_column": 1,
+                    "end_line": 31,
+                    "end_column": 24
+                  },
+                  {
+                    "start_line": 31,
+                    "start_column": 27,
+                    "end_line": 31,
+                    "end_column": 48
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "total_occurrences": 8,
+        "matched_lines": 7,
+        "matched_documents": 5,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:28.3847736Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 47,
+          "native_scan_match_encode_ms": 110,
+          "wire_characters": 844192,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 194,
+          "transported_unique_characters": 655980,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 800,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.00030000000000000003,
+          "native_read_transport_ms": 170.11430000000001,
+          "bridge_ms": 179.1481,
+          "bridge_roundtrip_ms": 192.98289999999997,
+          "decode_match_ms": 43.22760000000005,
+          "decode_ms": 11.441400000000044,
+          "match_ms": 31.786200000000008,
+          "search_ms": 236.21050000000002
+        }
+      },
+      "elapsed_ms": 236.69849999999997,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "\\bAEB_EngTrqRedActive[A-Za-z_0-9]*\\b",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 5,
+                "columns": [
+                  5
+                ],
+                "text": "if (AEB_EngTrqRedActive_B)",
+                "ranges": [
+                  {
+                    "start_line": 5,
+                    "start_column": 5,
+                    "end_line": 5,
+                    "end_column": 26
+                  }
+                ]
+              },
+              {
+                "line": 15,
+                "columns": [
+                  8
+                ],
+                "text": "   if (AEB_EngTrqRedActiveK1_B)",
+                "ranges": [
+                  {
+                    "start_line": 15,
+                    "start_column": 8,
+                    "end_line": 15,
+                    "end_column": 31
+                  }
+                ]
+              },
+              {
+                "line": 31,
+                "columns": [
+                  1,
+                  27
+                ],
+                "text": "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;",
+                "ranges": [
+                  {
+                    "start_line": 31,
+                    "start_column": 1,
+                    "end_line": 31,
+                    "end_column": 24
+                  },
+                  {
+                    "start_line": 31,
+                    "start_column": 27,
+                    "end_line": 31,
+                    "end_column": 48
+                  }
+                ]
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 5,
+              "columns": [
+                5
+              ],
+              "text": "if (AEB_EngTrqRedActive_B)",
+              "ranges": [
+                {
+                  "start_line": 5,
+                  "start_column": 5,
+                  "end_line": 5,
+                  "end_column": 26
+                }
+              ]
+            },
+            {
+              "line": 15,
+              "columns": [
+                8
+              ],
+              "text": "   if (AEB_EngTrqRedActiveK1_B)",
+              "ranges": [
+                {
+                  "start_line": 15,
+                  "start_column": 8,
+                  "end_line": 15,
+                  "end_column": 31
+                }
+              ]
+            },
+            {
+              "line": 31,
+              "columns": [
+                1,
+                27
+              ],
+              "text": "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;",
+              "ranges": [
+                {
+                  "start_line": 31,
+                  "start_column": 1,
+                  "end_line": 31,
+                  "end_column": 24
+                },
+                {
+                  "start_line": 31,
+                  "start_column": 27,
+                  "end_line": 31,
+                  "end_column": 48
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "multiline_text",
+      "title": "跨行代码片段：字面文本",
+      "note": "multiline=true 允许换行；统一 CR/CRLF/LF 后匹配，其他空格必须一致。",
+      "request": {
+        "query": "AEB_FxTarPT = 250000;\nAEB_LDMSelectedControllerPT = LDMSelectedController_None;",
+        "mode": "text",
+        "multiline": true,
+        "case_sensitive": true,
+        "id": "multiline_text",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "init",
+      "response": {
+        "schema_version": 1,
+        "id": "multiline_text",
+        "query": "AEB_FxTarPT = 250000;\nAEB_LDMSelectedControllerPT = LDMSelectedController_None;",
+        "mode": "text",
+        "case_sensitive": true,
+        "multiline": true,
+        "result_format": "expanded",
+        "results": [
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 1,
+                    "start_column": 1,
+                    "end_line": 2,
+                    "end_column": 58
+                  }
+                ]
+              }
+            ],
+            "context": [
+              {
+                "start_line": 1,
+                "end_line": 2,
+                "lines": [
+                  "AEB_FxTarPT = 250000;",
+                  "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                ]
+              }
+            ]
+          }
+        ],
+        "total_occurrences": 1,
+        "matched_lines": 2,
+        "matched_documents": 1,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:28.5580121Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 63,
+          "native_scan_match_encode_ms": 15,
+          "wire_characters": 21643,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 2,
+          "transported_unique_characters": 1045,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 3,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.0004,
+          "native_read_transport_ms": 91.1928,
+          "bridge_ms": 103.1203,
+          "bridge_roundtrip_ms": 104.96320000000003,
+          "decode_match_ms": 1.1062999999999192,
+          "decode_ms": 0.9424999999999955,
+          "match_ms": 0.16379999999992378,
+          "search_ms": 106.06949999999995
+        }
+      },
+      "elapsed_ms": 106.91710000000012,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "AEB_FxTarPT = 250000;\nAEB_LDMSelectedControllerPT = LDMSelectedController_None;",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 1,
+                    "start_column": 1,
+                    "end_line": 2,
+                    "end_column": 58
+                  }
+                ]
+              }
+            ],
+            "context": [
+              {
+                "start_line": 1,
+                "end_line": 2,
+                "lines": [
+                  "AEB_FxTarPT = 250000;",
+                  "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                ]
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 1,
+              "columns": [
+                1
+              ],
+              "text": "AEB_FxTarPT = 250000;",
+              "ranges": [
+                {
+                  "start_line": 1,
+                  "start_column": 1,
+                  "end_line": 2,
+                  "end_column": 58
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "start_line": 1,
+              "end_line": 2,
+              "lines": [
+                "AEB_FxTarPT = 250000;",
+                "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+              ]
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "multiline_regex",
+      "title": "跨行代码片段：允许不同空白",
+      "note": "\\s* 可匹配空格及换行；本查询不需要 dotall。",
+      "request": {
+        "query": "AEB_FxTarPT\\s*=\\s*250000;\\s*AEB_LDMSelectedControllerPT\\s*=\\s*LDMSelectedController_None;",
+        "mode": "regex",
+        "multiline": true,
+        "case_sensitive": true,
+        "id": "multiline_regex",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "init",
+      "response": {
+        "schema_version": 1,
+        "id": "multiline_regex",
+        "query": "AEB_FxTarPT\\s*=\\s*250000;\\s*AEB_LDMSelectedControllerPT\\s*=\\s*LDMSelectedController_None;",
+        "mode": "regex",
+        "case_sensitive": true,
+        "multiline": true,
+        "result_format": "expanded",
+        "results": [
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 26,
+                    "start_column": 4,
+                    "end_line": 27,
+                    "end_column": 61
+                  }
+                ]
+              }
+            ],
+            "context": [
+              {
+                "start_line": 26,
+                "end_line": 27,
+                "lines": [
+                  "   AEB_FxTarPT = 250000;",
+                  "   AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 1,
+                    "start_column": 1,
+                    "end_line": 2,
+                    "end_column": 58
+                  }
+                ]
+              }
+            ],
+            "context": [
+              {
+                "start_line": 1,
+                "end_line": 2,
+                "lines": [
+                  "AEB_FxTarPT = 250000;",
+                  "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                ]
+              }
+            ]
+          }
+        ],
+        "total_occurrences": 2,
+        "matched_lines": 4,
+        "matched_documents": 2,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:28.7485335Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 47,
+          "native_scan_match_encode_ms": 109,
+          "wire_characters": 844192,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 194,
+          "transported_unique_characters": 655980,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 800,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.0002,
+          "native_read_transport_ms": 172.9957,
+          "bridge_ms": 183.3838,
+          "bridge_roundtrip_ms": 196.9111999999999,
+          "decode_match_ms": 41.40610000000015,
+          "decode_ms": 10.657799999999952,
+          "match_ms": 30.7483000000002,
+          "search_ms": 238.31730000000005
+        }
+      },
+      "elapsed_ms": 238.7011,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "AEB_FxTarPT\\s*=\\s*250000;\\s*AEB_LDMSelectedControllerPT\\s*=\\s*LDMSelectedController_None;",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 1,
+                    "start_column": 1,
+                    "end_line": 2,
+                    "end_column": 58
+                  }
+                ]
+              }
+            ],
+            "context": [
+              {
+                "start_line": 1,
+                "end_line": 2,
+                "lines": [
+                  "AEB_FxTarPT = 250000;",
+                  "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                ]
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 1,
+              "columns": [
+                1
+              ],
+              "text": "AEB_FxTarPT = 250000;",
+              "ranges": [
+                {
+                  "start_line": 1,
+                  "start_column": 1,
+                  "end_line": 2,
+                  "end_column": 58
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "start_line": 1,
+              "end_line": 2,
+              "lines": [
+                "AEB_FxTarPT = 250000;",
+                "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+              ]
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "dotall",
+      "title": "跨行正则：点号跨越换行",
+      "note": "multiline=true 允许跨行；dotall=true 使 .*? 里的点号也匹配换行。",
+      "request": {
+        "query": "AEB_FxTarPT = 250000;.*?LDMSelectedController_None;",
+        "mode": "regex",
+        "multiline": true,
+        "dotall": true,
+        "case_sensitive": true,
+        "id": "dotall",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "init",
+      "response": {
+        "schema_version": 1,
+        "id": "dotall",
+        "query": "AEB_FxTarPT = 250000;.*?LDMSelectedController_None;",
+        "mode": "regex",
+        "case_sensitive": true,
+        "multiline": true,
+        "dotall": true,
+        "result_format": "expanded",
+        "results": [
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 26,
+                    "start_column": 4,
+                    "end_line": 27,
+                    "end_column": 61
+                  }
+                ]
+              }
+            ],
+            "context": [
+              {
+                "start_line": 26,
+                "end_line": 27,
+                "lines": [
+                  "   AEB_FxTarPT = 250000;",
+                  "   AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 1,
+                    "start_column": 1,
+                    "end_line": 2,
+                    "end_column": 58
+                  }
+                ]
+              }
+            ],
+            "context": [
+              {
+                "start_line": 1,
+                "end_line": 2,
+                "lines": [
+                  "AEB_FxTarPT = 250000;",
+                  "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                ]
+              }
+            ]
+          }
+        ],
+        "total_occurrences": 2,
+        "matched_lines": 4,
+        "matched_documents": 2,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:28.9853181Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 63,
+          "native_scan_match_encode_ms": 93,
+          "wire_characters": 844192,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 194,
+          "transported_unique_characters": 655980,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 800,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.00030000000000000003,
+          "native_read_transport_ms": 168.1551,
+          "bridge_ms": 176.5148,
+          "bridge_roundtrip_ms": 189.73400000000015,
+          "decode_match_ms": 40.034999999999854,
+          "decode_ms": 10.185999999999922,
+          "match_ms": 29.848999999999933,
+          "search_ms": 229.769
+        }
+      },
+      "elapsed_ms": 230.20640000000003,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "AEB_FxTarPT = 250000;.*?LDMSelectedController_None;",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;",
+                "ranges": [
+                  {
+                    "start_line": 1,
+                    "start_column": 1,
+                    "end_line": 2,
+                    "end_column": 58
+                  }
+                ]
+              }
+            ],
+            "context": [
+              {
+                "start_line": 1,
+                "end_line": 2,
+                "lines": [
+                  "AEB_FxTarPT = 250000;",
+                  "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                ]
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 1,
+              "columns": [
+                1
+              ],
+              "text": "AEB_FxTarPT = 250000;",
+              "ranges": [
+                {
+                  "start_line": 1,
+                  "start_column": 1,
+                  "end_line": 2,
+                  "end_column": 58
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "start_line": 1,
+              "end_line": 2,
+              "lines": [
+                "AEB_FxTarPT = 250000;",
+                "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+              ]
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "dotall_off",
+      "title": "对照：关闭 dotall",
+      "note": "同一真实库中，此表达式关闭 dotall 后没有命中。multiline 本身不会改变点号含义。",
+      "request": {
+        "query": "AEB_FxTarPT = 250000;.*?LDMSelectedController_None;",
+        "mode": "regex",
+        "multiline": true,
+        "dotall": false,
+        "case_sensitive": true,
+        "id": "dotall_off",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "empty": true,
+      "response": {
+        "schema_version": 1,
+        "id": "dotall_off",
+        "query": "AEB_FxTarPT = 250000;.*?LDMSelectedController_None;",
+        "mode": "regex",
+        "case_sensitive": true,
+        "multiline": true,
+        "dotall": false,
+        "result_format": "expanded",
+        "results": [],
+        "total_occurrences": 0,
+        "matched_lines": 0,
+        "matched_documents": 0,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:29.2267233Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 63,
+          "native_scan_match_encode_ms": 109,
+          "wire_characters": 844192,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 194,
+          "transported_unique_characters": 655980,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 800,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.00030000000000000003,
+          "native_read_transport_ms": 173.82240000000002,
+          "bridge_ms": 183.50750000000002,
+          "bridge_roundtrip_ms": 197.16139999999996,
+          "decode_match_ms": 38.82659999999987,
+          "decode_ms": 9.625600000000077,
+          "match_ms": 29.200999999999794,
+          "search_ms": 235.98799999999983
+        }
+      },
+      "elapsed_ms": 236.86810000000014,
+      "selected": [],
+      "correct": true
+    },
+    {
+      "id": "context",
+      "title": "返回命中前后文",
+      "note": "这里要求前 2 行、后 1 行；窗口会在文档边界截齐，重叠窗口合并。",
+      "request": {
+        "query": "C_AEB_FxTarPT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "context_before": 2,
+        "context_after": 1,
+        "id": "context",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "calc",
+      "response": {
+        "schema_version": 1,
+        "id": "context",
+        "query": "C_AEB_FxTarPT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "results": [
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  18
+                ],
+                "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+              }
+            ],
+            "context": [
+              {
+                "start_line": 6,
+                "end_line": 9,
+                "lines": [
+                  "{",
+                  "   //reduce/limit torque by setting target force to parameter",
+                  "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                  "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+                ]
+              }
+            ]
+          }
+        ],
+        "total_occurrences": 1,
+        "matched_lines": 1,
+        "matched_documents": 1,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:29.3773166Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 47,
+          "native_scan_match_encode_ms": 32,
+          "wire_characters": 21344,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 1,
+          "transported_unique_characters": 966,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 2,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.0004,
+          "native_read_transport_ms": 84.1422,
+          "bridge_ms": 92.4504,
+          "bridge_roundtrip_ms": 95.50900000000001,
+          "decode_match_ms": 0.7327000000000226,
+          "decode_ms": 0.5196000000000822,
+          "match_ms": 0.21309999999994034,
+          "search_ms": 96.24170000000004
+        }
+      },
+      "elapsed_ms": 96.71270000000004,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "C_AEB_FxTarPT",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  18
+                ],
+                "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+              }
+            ],
+            "context": [
+              {
+                "start_line": 6,
+                "end_line": 9,
+                "lines": [
+                  "{",
+                  "   //reduce/limit torque by setting target force to parameter",
+                  "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                  "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+                ]
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                18
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            }
+          ],
+          "context": [
+            {
+              "start_line": 6,
+              "end_line": 9,
+              "lines": [
+                "{",
+                "   //reduce/limit torque by setting target force to parameter",
+                "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+              ]
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "case_insensitive",
+      "title": "忽略大小写",
+      "note": "默认不区分大小写；本例明确设为 false，用小写输入查到实际大写变量。",
+      "request": {
+        "query": "aeb_fxtarpt = 250000;",
+        "mode": "text",
+        "case_sensitive": false,
+        "id": "case_insensitive",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "init",
+      "response": {
+        "schema_version": 1,
+        "id": "case_insensitive",
+        "query": "aeb_fxtarpt = 250000;",
+        "mode": "text",
+        "case_sensitive": false,
+        "result_format": "expanded",
+        "results": [
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;"
+              }
+            ]
+          },
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;"
+              }
+            ]
+          }
+        ],
+        "total_occurrences": 2,
+        "matched_lines": 2,
+        "matched_documents": 2,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:29.4953839Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 63,
+          "native_scan_match_encode_ms": 31,
+          "wire_characters": 21643,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 2,
+          "transported_unique_characters": 1045,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 3,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.00030000000000000003,
+          "native_read_transport_ms": 100.5222,
+          "bridge_ms": 109.3709,
+          "bridge_roundtrip_ms": 110.9656,
+          "decode_match_ms": 0.661600000000135,
+          "decode_ms": 0.4027000000000953,
+          "match_ms": 0.25890000000003965,
+          "search_ms": 111.62720000000013
+        }
+      },
+      "elapsed_ms": 112.25549999999976,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "aeb_fxtarpt = 250000;",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+            "member_name": "init",
+            "language": "esdl",
+            "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+            "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+            "matches": [
+              {
+                "line": 1,
+                "columns": [
+                  1
+                ],
+                "text": "AEB_FxTarPT = 250000;"
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 1,
+              "columns": [
+                1
+              ],
+              "text": "AEB_FxTarPT = 250000;"
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "case_sensitive",
+      "title": "对照：严格区分大小写",
+      "note": "同一小写查询开启 case_sensitive 后，在当前库没有命中。",
+      "request": {
+        "query": "aeb_fxtarpt = 250000;",
+        "mode": "text",
+        "case_sensitive": true,
+        "id": "case_sensitive",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "empty": true,
+      "response": {
+        "schema_version": 1,
+        "id": "case_sensitive",
+        "query": "aeb_fxtarpt = 250000;",
+        "mode": "text",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "results": [],
+        "total_occurrences": 0,
+        "matched_lines": 0,
+        "matched_documents": 0,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:29.6751338Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 47,
+          "native_scan_match_encode_ms": 31,
+          "wire_characters": 20158,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 0,
+          "transported_unique_characters": 0,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 1,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.0005,
+          "native_read_transport_ms": 84.41260000000001,
+          "bridge_ms": 93.0232,
+          "bridge_roundtrip_ms": 94.47829999999976,
+          "decode_match_ms": 0.41980000000012296,
+          "decode_ms": 0.38930000000027576,
+          "match_ms": 0.030499999999847205,
+          "search_ms": 94.89809999999989
+        }
+      },
+      "elapsed_ms": 95.36929999999984,
+      "selected": [],
+      "correct": true
+    },
+    {
+      "id": "batch",
+      "title": "一次请求搜索多个变量和代码片段",
+      "note": "每个 query 独立返回结果；可混用三种模式，不要求同一个方法同时包含所有 query。",
+      "request": {
+        "queries": [
+          {
+            "id": "variable",
+            "query": "AEB_FxTarPT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true
+          },
+          {
+            "id": "prefix",
+            "query": "\\bAEB_EngTrqRedActive[A-Za-z_0-9]*\\b",
+            "mode": "regex",
+            "case_sensitive": true
+          },
+          {
+            "id": "init_graph",
+            "query": "AEBLockTime = 0.0;",
+            "mode": "text",
+            "case_sensitive": true
+          }
+        ],
+        "context_before": 1,
+        "context_after": 1,
+        "id": "batch",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "calc",
+      "response": {
+        "schema_version": 1,
+        "query_count": 3,
+        "searches": [
+          {
+            "id": "variable",
+            "query": "AEB_FxTarPT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "result_format": "expanded",
+            "results": [
+              {
+                "kind": "method",
+                "component_oid": "040qm00100001mo70s2f4l12dn000",
+                "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+                "implementation_oid": "",
+                "variant": "ASDL",
+                "member_id": "0101ab0001000000db070704f2542490c6000000",
+                "member_name": "calc",
+                "language": "esdl",
+                "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+                "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+                "matches": [
+                  {
+                    "line": 8,
+                    "columns": [
+                      4
+                    ],
+                    "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+                  },
+                  {
+                    "line": 12,
+                    "columns": [
+                      13
+                    ],
+                    "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+                  },
+                  {
+                    "line": 17,
+                    "columns": [
+                      7
+                    ],
+                    "text": "      AEB_FxTarPT = FxActPT;\t   "
+                  },
+                  {
+                    "line": 20,
+                    "columns": [
+                      4,
+                      18
+                    ],
+                    "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+                  },
+                  {
+                    "line": 26,
+                    "columns": [
+                      4
+                    ],
+                    "text": "   AEB_FxTarPT = 250000;"
+                  }
+                ],
+                "context": [
+                  {
+                    "start_line": 7,
+                    "end_line": 9,
+                    "lines": [
+                      "   //reduce/limit torque by setting target force to parameter",
+                      "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                      "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+                    ]
+                  },
+                  {
+                    "start_line": 11,
+                    "end_line": 13,
+                    "lines": [
+                      "else if (   AEB_LDMSelectedControllerPT == LDMSelectedController_AEB",
+                      "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT",
+                      "\t\t)\t"
+                    ]
+                  },
+                  {
+                    "start_line": 16,
+                    "end_line": 21,
+                    "lines": [
+                      "   {",
+                      "      AEB_FxTarPT = FxActPT;\t   ",
+                      "   }",
+                      "",
+                      "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;",
+                      "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+                    ]
+                  },
+                  {
+                    "start_line": 25,
+                    "end_line": 27,
+                    "lines": [
+                      "   //no torque reduction/limitation by setting target force to passive value (numeric maximum value)",
+                      "   AEB_FxTarPT = 250000;",
+                      "   AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "method",
+                "component_oid": "040qm00100001mo70s2f4l12dn000",
+                "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+                "implementation_oid": "",
+                "variant": "ASDL",
+                "member_id": "0101ab0001000000db070704f255a5f0da000000",
+                "member_name": "AEB_FxTarPT",
+                "language": "esdl",
+                "document_id": "c730ec8a947365bebb04310385c41264c448d0416dc08046b5b5c3c8cc8e83b9",
+                "source_sha256": "fccad20004ab04a7fa881a88116423ecfc4a6601214b5d0d6be64e6fb2d6515e",
+                "matches": [
+                  {
+                    "line": 1,
+                    "columns": [
+                      8
+                    ],
+                    "text": "return AEB_FxTarPT;"
+                  }
+                ],
+                "context": [
+                  {
+                    "start_line": 1,
+                    "end_line": 1,
+                    "lines": [
+                      "return AEB_FxTarPT;"
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "method",
+                "component_oid": "040qm00100001mo70s2f4l12dn000",
+                "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+                "implementation_oid": "",
+                "variant": "ASDL",
+                "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+                "member_name": "init",
+                "language": "esdl",
+                "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+                "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+                "matches": [
+                  {
+                    "line": 1,
+                    "columns": [
+                      1
+                    ],
+                    "text": "AEB_FxTarPT = 250000;"
+                  }
+                ],
+                "context": [
+                  {
+                    "start_line": 1,
+                    "end_line": 2,
+                    "lines": [
+                      "AEB_FxTarPT = 250000;",
+                      "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "total_occurrences": 8,
+            "matched_lines": 7,
+            "matched_documents": 3
+          },
+          {
+            "id": "prefix",
+            "query": "\\bAEB_EngTrqRedActive[A-Za-z_0-9]*\\b",
+            "mode": "regex",
+            "case_sensitive": true,
+            "result_format": "expanded",
+            "results": [
+              {
+                "kind": "state_entry",
+                "component_oid": "040qm00100001mg70s4g6mc759kn8",
+                "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AutomaticBraking_SM",
+                "implementation_oid": "",
+                "variant": "ASDL",
+                "member_id": "040ts00000001qg714eg70iiareg8/s0",
+                "member_name": "Main/Off",
+                "language": "esdl",
+                "document_id": "a187344e6c0ccb7ed8eba5bb56c9414b0af6de6e9232fcc015e0a4cfb4ac97a8",
+                "source_sha256": "6fb33731a6a4ec63e475850cdeeb680764542328dd391d9d0087cd3e02c8fbe0",
+                "location": {
+                  "diagram_source_oid": "040ts00000001qg714eg70iiareg8",
+                  "diagram_name": "Main",
+                  "hierarchy_state_ids": [],
+                  "element_type": "state",
+                  "element_id": 0,
+                  "slot": "entry"
+                },
+                "matches": [
+                  {
+                    "line": 7,
+                    "columns": [
+                      1
+                    ],
+                    "text": "AEB_EngTrqRedActive = false;",
+                    "ranges": [
+                      {
+                        "start_line": 7,
+                        "start_column": 1,
+                        "end_line": 7,
+                        "end_column": 20
+                      }
+                    ]
+                  }
+                ],
+                "context": [
+                  {
+                    "start_line": 6,
+                    "end_line": 8,
+                    "lines": [
+                      "AEB_AutomaticBrakingSSM = false;",
+                      "AEB_EngTrqRedActive = false;",
+                      "AEB_tVehicleHold = 0.0;"
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "state_entry",
+                "component_oid": "040qm00100001mg70s4g6mc759kn8",
+                "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AutomaticBraking_SM",
+                "implementation_oid": "",
+                "variant": "ASDL",
+                "member_id": "040ts00000001qg714eg70iiareg8/s1",
+                "member_name": "Main/AxCtrl",
+                "language": "esdl",
+                "document_id": "e22931bf0ee1f7848d344b9be7306aadefd4593d6e7ee5719cf256771b52584d",
+                "source_sha256": "64526e026386f6209698b12f4655182cfa97153a8287ca4fdfba726fd2e1f1af",
+                "location": {
+                  "diagram_source_oid": "040ts00000001qg714eg70iiareg8",
+                  "diagram_name": "Main",
+                  "hierarchy_state_ids": [],
+                  "element_type": "state",
+                  "element_id": 1,
+                  "slot": "entry"
+                },
+                "matches": [
+                  {
+                    "line": 6,
+                    "columns": [
+                      1
+                    ],
+                    "text": "AEB_EngTrqRedActive = true;",
+                    "ranges": [
+                      {
+                        "start_line": 6,
+                        "start_column": 1,
+                        "end_line": 6,
+                        "end_column": 20
+                      }
+                    ]
+                  }
+                ],
+                "context": [
+                  {
+                    "start_line": 5,
+                    "end_line": 6,
+                    "lines": [
+                      "AEB_AutomaticBraking = true;",
+                      "AEB_EngTrqRedActive = true;"
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "state_entry",
+                "component_oid": "040qm00100001mg70s4g6mc759kn8",
+                "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AutomaticBraking_SM",
+                "implementation_oid": "",
+                "variant": "ASDL",
+                "member_id": "040ts00000001qg714eg70iiareg8/s2",
+                "member_name": "Main/Deactivate_Hold",
+                "language": "esdl",
+                "document_id": "c575ee9e7eb2158ffe8c3a0960122381f97202a63fe4be4f910b68720c7eb7f0",
+                "source_sha256": "0d30468f156cc948ca6fb847e204970ec88fda013acb2c6cd80d4475ae6255e6",
+                "location": {
+                  "diagram_source_oid": "040ts00000001qg714eg70iiareg8",
+                  "diagram_name": "Main",
+                  "hierarchy_state_ids": [],
+                  "element_type": "state",
+                  "element_id": 2,
+                  "slot": "entry"
+                },
+                "matches": [
+                  {
+                    "line": 8,
+                    "columns": [
+                      1
+                    ],
+                    "text": "AEB_EngTrqRedActive = false;",
+                    "ranges": [
+                      {
+                        "start_line": 8,
+                        "start_column": 1,
+                        "end_line": 8,
+                        "end_column": 20
+                      }
+                    ]
+                  }
+                ],
+                "context": [
+                  {
+                    "start_line": 7,
+                    "end_line": 8,
+                    "lines": [
+                      "",
+                      "AEB_EngTrqRedActive = false;"
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "state_static",
+                "component_oid": "040qm00100001mg70s4g6mc759kn8",
+                "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AutomaticBraking_SM",
+                "implementation_oid": "",
+                "variant": "ASDL",
+                "member_id": "040ts00000001qg714eg70iiareg8/s0",
+                "member_name": "Main/Off",
+                "language": "esdl",
+                "document_id": "e2666a20e12447ec4db9dbdaae9cd7c49d69a8b077e5b003cb65f6b652deaab6",
+                "source_sha256": "cc3f52e9bfde089e412f7223570dbdad51dc18ac67114736c0c8c3b80ced7480",
+                "location": {
+                  "diagram_source_oid": "040ts00000001qg714eg70iiareg8",
+                  "diagram_name": "Main",
+                  "hierarchy_state_ids": [],
+                  "element_type": "state",
+                  "element_id": 0,
+                  "slot": "static"
+                },
+                "matches": [
+                  {
+                    "line": 7,
+                    "columns": [
+                      1
+                    ],
+                    "text": "AEB_EngTrqRedActive = false;",
+                    "ranges": [
+                      {
+                        "start_line": 7,
+                        "start_column": 1,
+                        "end_line": 7,
+                        "end_column": 20
+                      }
+                    ]
+                  }
+                ],
+                "context": [
+                  {
+                    "start_line": 6,
+                    "end_line": 8,
+                    "lines": [
+                      "AEB_AutomaticBrakingSSM = false;",
+                      "AEB_EngTrqRedActive = false;",
+                      "AEB_tVehicleHold = 0.0;"
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "method",
+                "component_oid": "040qm00100001mo70s2f4l12dn000",
+                "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+                "implementation_oid": "",
+                "variant": "ASDL",
+                "member_id": "0101ab0001000000db070704f2542490c6000000",
+                "member_name": "calc",
+                "language": "esdl",
+                "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+                "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+                "matches": [
+                  {
+                    "line": 5,
+                    "columns": [
+                      5
+                    ],
+                    "text": "if (AEB_EngTrqRedActive_B)",
+                    "ranges": [
+                      {
+                        "start_line": 5,
+                        "start_column": 5,
+                        "end_line": 5,
+                        "end_column": 26
+                      }
+                    ]
+                  },
+                  {
+                    "line": 15,
+                    "columns": [
+                      8
+                    ],
+                    "text": "   if (AEB_EngTrqRedActiveK1_B)",
+                    "ranges": [
+                      {
+                        "start_line": 15,
+                        "start_column": 8,
+                        "end_line": 15,
+                        "end_column": 31
+                      }
+                    ]
+                  },
+                  {
+                    "line": 31,
+                    "columns": [
+                      1,
+                      27
+                    ],
+                    "text": "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;",
+                    "ranges": [
+                      {
+                        "start_line": 31,
+                        "start_column": 1,
+                        "end_line": 31,
+                        "end_column": 24
+                      },
+                      {
+                        "start_line": 31,
+                        "start_column": 27,
+                        "end_line": 31,
+                        "end_column": 48
+                      }
+                    ]
+                  }
+                ],
+                "context": [
+                  {
+                    "start_line": 4,
+                    "end_line": 6,
+                    "lines": [
+                      "",
+                      "if (AEB_EngTrqRedActive_B)",
+                      "{"
+                    ]
+                  },
+                  {
+                    "start_line": 14,
+                    "end_line": 16,
+                    "lines": [
+                      "{",
+                      "   if (AEB_EngTrqRedActiveK1_B)",
+                      "   {"
+                    ]
+                  },
+                  {
+                    "start_line": 30,
+                    "end_line": 31,
+                    "lines": [
+                      "//store last cycle value",
+                      "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "total_occurrences": 8,
+            "matched_lines": 7,
+            "matched_documents": 5
+          },
+          {
+            "id": "init_graph",
+            "query": "AEBLockTime = 0.0;",
+            "mode": "text",
+            "case_sensitive": true,
+            "result_format": "expanded",
+            "results": [
+              {
+                "kind": "graphical_method",
+                "component_oid": "040qm00100001m8714ag81ugur0dk",
+                "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+                "implementation_oid": "",
+                "variant": "BD",
+                "member_id": "0101ab0001000000da070806128c7bf1d39d0000",
+                "member_name": "init",
+                "language": "ascet_graph",
+                "representation": "graphical_model",
+                "graphical_location": {
+                  "specification_source_oid": "040ts00000001qg714eg70igttv06",
+                  "specification_name": "Init"
+                },
+                "document_id": "aded2855e5129bc8b861ac373066427b7954cd6db67a95dce0d527e3f18714e2",
+                "source_sha256": "b5c97200b1b526bfd238062687b3315a9b10073b2462049be144839c16cbb278",
+                "matches": [
+                  {
+                    "line": 4,
+                    "columns": [
+                      1
+                    ],
+                    "text": "AEBLockTime = 0.0;"
+                  }
+                ],
+                "context": [
+                  {
+                    "start_line": 3,
+                    "end_line": 5,
+                    "lines": [
+                      "// sequence 10",
+                      "AEBLockTime = 0.0;",
+                      "// Supported graph nodes used by this method; full specification graph is available via read_state_machine."
+                    ]
+                  }
+                ]
+              }
+            ],
+            "total_occurrences": 1,
+            "matched_lines": 1,
+            "matched_documents": 1
+          }
+        ],
+        "result_format": "expanded",
+        "id": "batch",
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:29.8620495Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 63,
+          "native_scan_match_encode_ms": 93,
+          "wire_characters": 844192,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 194,
+          "transported_unique_characters": 655980,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 800,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.00030000000000000003,
+          "native_read_transport_ms": 169.0941,
+          "bridge_ms": 180.0303,
+          "bridge_roundtrip_ms": 194.24019999999973,
+          "decode_match_ms": 42.89890000000014,
+          "decode_ms": 9.155099999999948,
+          "match_ms": 33.74380000000019,
+          "search_ms": 237.13909999999987
+        }
+      },
+      "elapsed_ms": 237.82299999999987,
+      "selected": [
+        {
+          "query_id": "variable",
+          "query": "AEB_FxTarPT",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 8,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+              },
+              {
+                "line": 12,
+                "columns": [
+                  13
+                ],
+                "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+              },
+              {
+                "line": 17,
+                "columns": [
+                  7
+                ],
+                "text": "      AEB_FxTarPT = FxActPT;\t   "
+              },
+              {
+                "line": 20,
+                "columns": [
+                  4,
+                  18
+                ],
+                "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+              },
+              {
+                "line": 26,
+                "columns": [
+                  4
+                ],
+                "text": "   AEB_FxTarPT = 250000;"
+              }
+            ],
+            "context": [
+              {
+                "start_line": 7,
+                "end_line": 9,
+                "lines": [
+                  "   //reduce/limit torque by setting target force to parameter",
+                  "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                  "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+                ]
+              },
+              {
+                "start_line": 11,
+                "end_line": 13,
+                "lines": [
+                  "else if (   AEB_LDMSelectedControllerPT == LDMSelectedController_AEB",
+                  "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT",
+                  "\t\t)\t"
+                ]
+              },
+              {
+                "start_line": 16,
+                "end_line": 21,
+                "lines": [
+                  "   {",
+                  "      AEB_FxTarPT = FxActPT;\t   ",
+                  "   }",
+                  "",
+                  "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;",
+                  "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+                ]
+              },
+              {
+                "start_line": 25,
+                "end_line": 27,
+                "lines": [
+                  "   //no torque reduction/limitation by setting target force to passive value (numeric maximum value)",
+                  "   AEB_FxTarPT = 250000;",
+                  "   AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+                ]
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            },
+            {
+              "line": 12,
+              "columns": [
+                13
+              ],
+              "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+            },
+            {
+              "line": 17,
+              "columns": [
+                7
+              ],
+              "text": "      AEB_FxTarPT = FxActPT;\t   "
+            },
+            {
+              "line": 20,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+            },
+            {
+              "line": 26,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = 250000;"
+            }
+          ],
+          "context": [
+            {
+              "start_line": 7,
+              "end_line": 9,
+              "lines": [
+                "   //reduce/limit torque by setting target force to parameter",
+                "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+              ]
+            },
+            {
+              "start_line": 11,
+              "end_line": 13,
+              "lines": [
+                "else if (   AEB_LDMSelectedControllerPT == LDMSelectedController_AEB",
+                "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT",
+                "\t\t)\t"
+              ]
+            },
+            {
+              "start_line": 16,
+              "end_line": 21,
+              "lines": [
+                "   {",
+                "      AEB_FxTarPT = FxActPT;\t   ",
+                "   }",
+                "",
+                "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+              ]
+            },
+            {
+              "start_line": 25,
+              "end_line": 27,
+              "lines": [
+                "   //no torque reduction/limitation by setting target force to passive value (numeric maximum value)",
+                "   AEB_FxTarPT = 250000;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+              ]
+            }
+          ]
+        },
+        {
+          "query_id": "prefix",
+          "query": "\\bAEB_EngTrqRedActive[A-Za-z_0-9]*\\b",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "matches": [
+              {
+                "line": 5,
+                "columns": [
+                  5
+                ],
+                "text": "if (AEB_EngTrqRedActive_B)",
+                "ranges": [
+                  {
+                    "start_line": 5,
+                    "start_column": 5,
+                    "end_line": 5,
+                    "end_column": 26
+                  }
+                ]
+              },
+              {
+                "line": 15,
+                "columns": [
+                  8
+                ],
+                "text": "   if (AEB_EngTrqRedActiveK1_B)",
+                "ranges": [
+                  {
+                    "start_line": 15,
+                    "start_column": 8,
+                    "end_line": 15,
+                    "end_column": 31
+                  }
+                ]
+              },
+              {
+                "line": 31,
+                "columns": [
+                  1,
+                  27
+                ],
+                "text": "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;",
+                "ranges": [
+                  {
+                    "start_line": 31,
+                    "start_column": 1,
+                    "end_line": 31,
+                    "end_column": 24
+                  },
+                  {
+                    "start_line": 31,
+                    "start_column": 27,
+                    "end_line": 31,
+                    "end_column": 48
+                  }
+                ]
+              }
+            ],
+            "context": [
+              {
+                "start_line": 4,
+                "end_line": 6,
+                "lines": [
+                  "",
+                  "if (AEB_EngTrqRedActive_B)",
+                  "{"
+                ]
+              },
+              {
+                "start_line": 14,
+                "end_line": 16,
+                "lines": [
+                  "{",
+                  "   if (AEB_EngTrqRedActiveK1_B)",
+                  "   {"
+                ]
+              },
+              {
+                "start_line": 30,
+                "end_line": 31,
+                "lines": [
+                  "//store last cycle value",
+                  "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;"
+                ]
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 5,
+              "columns": [
+                5
+              ],
+              "text": "if (AEB_EngTrqRedActive_B)",
+              "ranges": [
+                {
+                  "start_line": 5,
+                  "start_column": 5,
+                  "end_line": 5,
+                  "end_column": 26
+                }
+              ]
+            },
+            {
+              "line": 15,
+              "columns": [
+                8
+              ],
+              "text": "   if (AEB_EngTrqRedActiveK1_B)",
+              "ranges": [
+                {
+                  "start_line": 15,
+                  "start_column": 8,
+                  "end_line": 15,
+                  "end_column": 31
+                }
+              ]
+            },
+            {
+              "line": 31,
+              "columns": [
+                1,
+                27
+              ],
+              "text": "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;",
+              "ranges": [
+                {
+                  "start_line": 31,
+                  "start_column": 1,
+                  "end_line": 31,
+                  "end_column": 24
+                },
+                {
+                  "start_line": 31,
+                  "start_column": 27,
+                  "end_line": 31,
+                  "end_column": 48
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "start_line": 4,
+              "end_line": 6,
+              "lines": [
+                "",
+                "if (AEB_EngTrqRedActive_B)",
+                "{"
+              ]
+            },
+            {
+              "start_line": 14,
+              "end_line": 16,
+              "lines": [
+                "{",
+                "   if (AEB_EngTrqRedActiveK1_B)",
+                "   {"
+              ]
+            },
+            {
+              "start_line": 30,
+              "end_line": 31,
+              "lines": [
+                "//store last cycle value",
+                "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;"
+              ]
+            }
+          ]
+        },
+        {
+          "query_id": "init_graph",
+          "query": "AEBLockTime = 0.0;",
+          "hit": {
+            "kind": "graphical_method",
+            "component_oid": "040qm00100001m8714ag81ugur0dk",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+            "implementation_oid": "",
+            "variant": "BD",
+            "member_id": "0101ab0001000000da070806128c7bf1d39d0000",
+            "member_name": "init",
+            "language": "ascet_graph",
+            "representation": "graphical_model",
+            "graphical_location": {
+              "specification_source_oid": "040ts00000001qg714eg70igttv06",
+              "specification_name": "Init"
+            },
+            "document_id": "aded2855e5129bc8b861ac373066427b7954cd6db67a95dce0d527e3f18714e2",
+            "source_sha256": "b5c97200b1b526bfd238062687b3315a9b10073b2462049be144839c16cbb278",
+            "matches": [
+              {
+                "line": 4,
+                "columns": [
+                  1
+                ],
+                "text": "AEBLockTime = 0.0;"
+              }
+            ],
+            "context": [
+              {
+                "start_line": 3,
+                "end_line": 5,
+                "lines": [
+                  "// sequence 10",
+                  "AEBLockTime = 0.0;",
+                  "// Supported graph nodes used by this method; full specification graph is available via read_state_machine."
+                ]
+              }
+            ]
+          },
+          "matches": [
+            {
+              "line": 4,
+              "columns": [
+                1
+              ],
+              "text": "AEBLockTime = 0.0;"
+            }
+          ],
+          "context": [
+            {
+              "start_line": 3,
+              "end_line": 5,
+              "lines": [
+                "// sequence 10",
+                "AEBLockTime = 0.0;",
+                "// Supported graph nodes used by this method; full specification graph is available via read_state_machine."
+              ]
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "shared",
+      "title": "共享结果格式",
+      "note": "搜索含义不变；results[i].match_set 指向 match_sets，前后文从同索引 context_sets 取。",
+      "request": {
+        "query": "C_AEB_FxTarPT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "context_before": 2,
+        "context_after": 1,
+        "result_format": "shared",
+        "id": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "member": "calc",
+      "response": {
+        "schema_version": 1,
+        "id": "shared",
+        "query": "C_AEB_FxTarPT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "result_format": "shared",
+        "match_sets": [
+          [
+            {
+              "line": 8,
+              "columns": [
+                18
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            }
+          ]
+        ],
+        "context_sets": [
+          [
+            {
+              "start_line": 6,
+              "end_line": 9,
+              "lines": [
+                "{",
+                "   //reduce/limit torque by setting target force to parameter",
+                "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+              ]
+            }
+          ]
+        ],
+        "results": [
+          {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "match_set": 0
+          }
+        ],
+        "total_occurrences": 1,
+        "matched_lines": 1,
+        "matched_documents": 1,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:30.0347220Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 47,
+          "native_scan_match_encode_ms": 31,
+          "wire_characters": 21344,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 1,
+          "transported_unique_characters": 966,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 2,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.00030000000000000003,
+          "native_read_transport_ms": 83.54330000000002,
+          "bridge_ms": 93.3279,
+          "bridge_roundtrip_ms": 94.9656,
+          "decode_match_ms": 0.39180000000033033,
+          "decode_ms": 0.3154000000004089,
+          "match_ms": 0.07639999999992142,
+          "search_ms": 95.35740000000033
+        }
+      },
+      "elapsed_ms": 95.7501000000002,
+      "selected": [
+        {
+          "query_id": null,
+          "query": "C_AEB_FxTarPT",
+          "hit": {
+            "kind": "method",
+            "component_oid": "040qm00100001mo70s2f4l12dn000",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+            "implementation_oid": "",
+            "variant": "ASDL",
+            "member_id": "0101ab0001000000db070704f2542490c6000000",
+            "member_name": "calc",
+            "language": "esdl",
+            "document_id": "a1146a88709c0aef1a872cd77986f2fe215e1a59e09220bcf8e120959ff3bc50",
+            "source_sha256": "b7d29cb395665018c0b6d3881d3c80206fe48da27f9e2b06492da45262cf9556",
+            "match_set": 0
+          },
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                18
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            }
+          ],
+          "context": [
+            {
+              "start_line": 6,
+              "end_line": 9,
+              "lines": [
+                "{",
+                "   //reduce/limit torque by setting target force to parameter",
+                "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+              ]
+            }
+          ]
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "star_literal",
+      "title": "对照：普通文本中的星号",
+      "note": "text 不将 * 当作通配符。此写法没有命中；要查这个前缀，使用上面的 regex_prefix。",
+      "request": {
+        "query": "AEB_EngTrqRedActive*",
+        "mode": "text",
+        "case_sensitive": true,
+        "id": "star_literal",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "empty": true,
+      "response": {
+        "schema_version": 1,
+        "id": "star_literal",
+        "query": "AEB_EngTrqRedActive*",
+        "mode": "text",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "results": [],
+        "total_occurrences": 0,
+        "matched_lines": 0,
+        "matched_documents": 0,
+        "status": "ok",
+        "scope": "database",
+        "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "ascet_pid": 13536,
+        "observed_utc": "2026-10-01T12:13:30.1364299Z",
+        "first_connection": false,
+        "freshness": "live_model_read_each_request",
+        "complete": true,
+        "coverage_profile": "text_and_state_machine_sources_v2",
+        "excluded": [
+          "generated_code_archives",
+          "general_block_diagram_components",
+          "uncommitted_editor_buffer",
+          "semantic_symbol_references",
+          "transitive_bound_method_bodies"
+        ],
+        "includes_comments_and_strings": true,
+        "column_unit": "unicode_code_point_1_based",
+        "coverage": {
+          "candidate_objects": 269,
+          "components": 145,
+          "text_components": 98,
+          "documents": 799,
+          "characters": 2762194,
+          "containers": 213,
+          "native_directory_ms": 63,
+          "native_scan_match_encode_ms": 16,
+          "wire_characters": 20158,
+          "state_machine_components": 5,
+          "state_machine_diagrams": 5,
+          "states": 13,
+          "transitions": 19,
+          "method_bindings": 14,
+          "state_tree_max_depth": 1,
+          "transported_unique_sources": 0,
+          "transported_unique_characters": 0,
+          "graphical_specifications": 1,
+          "graphical_method_documents": 1,
+          "graphical_nodes": 3,
+          "graphical_connections": 1,
+          "returned_documents": 1,
+          "graphical_representation_characters": 2326
+        },
+        "errors": [],
+        "timings": {
+          "setup_ms": 0.00030000000000000003,
+          "native_read_transport_ms": 84.5734,
+          "bridge_ms": 94.3585,
+          "bridge_roundtrip_ms": 96.16750000000002,
+          "decode_match_ms": 0.3690000000001419,
+          "decode_ms": 0.33159999999998035,
+          "match_ms": 0.037400000000161526,
+          "search_ms": 96.53650000000016
+        }
+      },
+      "elapsed_ms": 96.87350000000015,
+      "selected": [],
+      "correct": true
+    }
+  ],
+  "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+  "ascet_pid": 13536,
+  "source_fingerprint": "012b96111deaed628dedb452621987d4ad46817abe14e0d57f8777083cf7279f",
+  "model_stable": true,
+  "correctness_passed": true
+}

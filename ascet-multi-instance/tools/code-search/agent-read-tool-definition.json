@@ -1,0 +1,20 @@
+{
+  "name": "ascet_code_read",
+  "description": "Read the current source of one ASCET search result by component_oid and document_id. Reads only that component's sources after directory lookup; does not reuse search snapshots. expected_database is required; optional expected_source_sha256 rejects changed content with SOURCE_CHANGED. Returns document.text, metadata, SHA-256 and logical line_count. Original text retains original line endings. State-machine documents retain diagram/hierarchy/element/slot identity. A binding document contains the bound method name; graphical_method documents contain a derived graphical representation with GET/SET ports and connections, not original ESDL or generated C. Unsupported graph logic is explicitly partial. Same persistent JSONL process as ascet_code_search; operation must be read.",
+  "inputSchema": {
+    "type": "object", "additionalProperties": false,
+    "required": ["operation", "target", "expected_database"],
+    "properties": {
+      "operation": { "const": "read" }, "id": {},
+      "target": {
+        "type": "object", "additionalProperties": false, "required": ["component_oid", "document_id"],
+        "properties": {
+          "component_oid": { "type": "string", "minLength": 1, "maxLength": 256, "not": { "pattern": "[\r\n\u0000]" } },
+          "document_id": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      },
+      "expected_database": { "type": "string", "minLength": 1 },
+      "expected_source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+    }
+  }
+}

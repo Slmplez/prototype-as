@@ -1,0 +1,240 @@
+{
+  "version": 2,
+  "grading_version": 3,
+  "intent_recording": "none",
+  "suite": "core",
+  "max_tool_calls": 20,
+  "timeout_ms": 240000,
+  "answer_format": "Return exactly one JSON object, without Markdown fences or surrounding prose, with outcome (located/partial/not_found/unsupported), answer (a concise explanation), evidence_refs (actual refs seen in this session), missing_evidence (strings), and facts (an object using the requested fields). In facts, name/path/kind/variant fields contain only the exact saved string; ID fields contain numbers, not explanatory text. Separate saved facts from inference. Do not invent unsupported values. Do not output a separate intent declaration. Only the final answer is JSON. Put facts at the requested level; preserve exact saved values.",
+  "group_names": {
+    "acceptance": "冻结构建后确定的新需求"
+  },
+  "cases": [
+    {
+      "id": "accept2-aeb5ms",
+      "group": "acceptance",
+      "requirement": "在 AEB5ms/Main 查名为 \"AEB_light_class\" 的 element（hierarchy root），按 depth 1、direction outgoing 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Public\\AEB5ms"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70iliargg",
+        "node": "AEB_light_class",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "accept2-aebpre5ms_ibooster",
+      "group": "acceptance",
+      "requirement": "在 AEBPre5ms_iBooster/Main 查名为 \"AEBEnaEBR\" 的 element（hierarchy root），按 depth 1、direction incoming 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Public\\AEBPre5ms_iBooster"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ilu3e0g",
+        "node": "AEBEnaEBR",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "accept2-aeb_light_class",
+      "group": "acceptance",
+      "requirement": "在 AEB_light_class/Main 查名为 \"AEB_Core\" 的 element（hierarchy root），按 depth 1、direction outgoing 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Public\\AEB_light_class"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70imfno0i",
+        "node": "AEB_Core",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "accept2-aeb_axctrlfxlim",
+      "group": "acceptance",
+      "requirement": "在 AEB_AxCtrlFxLim/Main 查名为 \"calc/AEB_AxCtrlActiveK1_B\" 的 element（hierarchy root），按 depth 1、direction incoming 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AxCtrlFxLim"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ijjrngc",
+        "node": "calc/AEB_AxCtrlActiveK1_B",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "accept2-aeb_axtarlim",
+      "group": "acceptance",
+      "requirement": "在 AEB_AxTarLim/Main 查名为 \"C_AEB_AXCdAxTarMin\" 的 element（hierarchy root），按 depth 1、direction outgoing 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AxTarLim"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ik99tge",
+        "node": "C_AEB_AXCdAxTarMin",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "accept2-aeb_core",
+      "group": "acceptance",
+      "requirement": "在 AEB_Core/Main 查名为 \"AEB_AutomaticBraking\" 的 element（hierarchy root），按 depth 0、direction incoming 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_Core"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ifb4g04",
+        "node": "AEB_AutomaticBraking",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 0,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "accept2-code-axctrldevdeadzone",
+      "group": "acceptance",
+      "requirement": "只查 AxCtrlDevDeadZone/calc 的 ASDL Method，完整符号 AxCtrlDevDeadZonePos，区分大小写。facts: counts [{query,total_hits}]。保持 Component、Method、Variant 和 kind 限制。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlDevDeadZone",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "AxCtrlDevDeadZonePos"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept2-code-axctrllimminax",
+      "group": "acceptance",
+      "requirement": "只查 AxCtrlLimMinAx/calc 的 ASDL Method，完整符号 AxTarMin，区分大小写。facts: counts [{query,total_hits}]。保持 Component、Method、Variant 和 kind 限制。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlLimMinAx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "AxTarMin"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept2-code-dbr_force2pressure",
+      "group": "acceptance",
+      "requirement": "只查 DBR_Force2Pressure/calc 的 ASDL Method，完整符号 force，区分大小写。facts: counts [{query,total_hits}]。保持 Component、Method、Variant 和 kind 限制。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "DBR_Force2Pressure",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "force"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept2-even-lines",
+      "group": "acceptance",
+      "requirement": "EvenValue 的 Even Method，Variant 精确为 DefaultC，基础 Implementation 空字符串。只读取保存第 1 到第 2 行，返回 facts: identity {component_path,kind,member,variant,implementation},total_lines,start_line,end_line。引用实际对象 ref，禁止把内部读取编号当引用。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "EvenValue",
+          "member": "Even",
+          "kind": "method",
+          "variant": "DefaultC",
+          "implementation": "absent"
+        },
+        "lines": {
+          "start": 1,
+          "end": 2
+        }
+      }
+    },
+    {
+      "id": "accept2-missing-object",
+      "group": "acceptance",
+      "expected_outcome": "partial",
+      "requirement": "刚才那个值从哪条线进来的？",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "no_tools": true,
+        "question_patterns": [
+          "Component|组件|对象|变量|信号"
+        ]
+      },
+      "response_fields": "facts must be {}. Ask a direct clarification question and state missing information."
+    },
+    {
+      "id": "accept2-missing-code",
+      "group": "acceptance",
+      "expected_outcome": "partial",
+      "requirement": "给我那个 calc 的实现，别猜是哪个组件。",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "no_tools": true,
+        "question_patterns": [
+          "Component|组件|对象|变量|信号"
+        ]
+      },
+      "response_fields": "facts must be {}. Ask a direct clarification question and state missing information."
+    }
+  ],
+  "boundary": "New requirements after candidate freeze, familiar database; not independent database generalization.",
+  "description": "12 new requirements written after both tool builds were frozen. Same familiar saved database; not an independent database."
+}

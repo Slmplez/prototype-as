@@ -1,0 +1,768 @@
+{
+  "report": "E:\\Repo\\ASCET\\tools\\code-search\\samples\\search-modes-2026-10-01T12-13-27-162Z.json",
+  "verified_requests": 14,
+  "model_stable": true,
+  "examples": [
+    {
+      "id": "text",
+      "elapsed_ms": 296.70390000000003,
+      "counts": [
+        {
+          "documents": 3,
+          "occurrences": 9
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "calc",
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                4,
+                20
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            },
+            {
+              "line": 12,
+              "columns": [
+                13
+              ],
+              "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+            },
+            {
+              "line": 17,
+              "columns": [
+                7
+              ],
+              "text": "      AEB_FxTarPT = FxActPT;\t   "
+            },
+            {
+              "line": 20,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+            },
+            {
+              "line": 26,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = 250000;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "identifier",
+      "elapsed_ms": 95.04219999999998,
+      "counts": [
+        {
+          "documents": 3,
+          "occurrences": 8
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "calc",
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            },
+            {
+              "line": 12,
+              "columns": [
+                13
+              ],
+              "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+            },
+            {
+              "line": 17,
+              "columns": [
+                7
+              ],
+              "text": "      AEB_FxTarPT = FxActPT;\t   "
+            },
+            {
+              "line": 20,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+            },
+            {
+              "line": 26,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = 250000;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regex",
+      "elapsed_ms": 251.90520000000004,
+      "counts": [
+        {
+          "documents": 3,
+          "occurrences": 9
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "calc",
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;",
+              "ranges": [
+                {
+                  "start_line": 8,
+                  "start_column": 4,
+                  "end_line": 8,
+                  "end_column": 15
+                },
+                {
+                  "start_line": 8,
+                  "start_column": 18,
+                  "end_line": 8,
+                  "end_column": 31
+                }
+              ]
+            },
+            {
+              "line": 12,
+              "columns": [
+                13
+              ],
+              "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT",
+              "ranges": [
+                {
+                  "start_line": 12,
+                  "start_column": 13,
+                  "end_line": 12,
+                  "end_column": 24
+                }
+              ]
+            },
+            {
+              "line": 17,
+              "columns": [
+                7
+              ],
+              "text": "      AEB_FxTarPT = FxActPT;\t   ",
+              "ranges": [
+                {
+                  "start_line": 17,
+                  "start_column": 7,
+                  "end_line": 17,
+                  "end_column": 18
+                }
+              ]
+            },
+            {
+              "line": 20,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;",
+              "ranges": [
+                {
+                  "start_line": 20,
+                  "start_column": 4,
+                  "end_line": 20,
+                  "end_column": 15
+                },
+                {
+                  "start_line": 20,
+                  "start_column": 18,
+                  "end_line": 20,
+                  "end_column": 29
+                }
+              ]
+            },
+            {
+              "line": 26,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = 250000;",
+              "ranges": [
+                {
+                  "start_line": 26,
+                  "start_column": 4,
+                  "end_line": 26,
+                  "end_column": 15
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regex_prefix",
+      "elapsed_ms": 236.69849999999997,
+      "counts": [
+        {
+          "documents": 5,
+          "occurrences": 8
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "calc",
+          "matches": [
+            {
+              "line": 5,
+              "columns": [
+                5
+              ],
+              "text": "if (AEB_EngTrqRedActive_B)",
+              "ranges": [
+                {
+                  "start_line": 5,
+                  "start_column": 5,
+                  "end_line": 5,
+                  "end_column": 26
+                }
+              ]
+            },
+            {
+              "line": 15,
+              "columns": [
+                8
+              ],
+              "text": "   if (AEB_EngTrqRedActiveK1_B)",
+              "ranges": [
+                {
+                  "start_line": 15,
+                  "start_column": 8,
+                  "end_line": 15,
+                  "end_column": 31
+                }
+              ]
+            },
+            {
+              "line": 31,
+              "columns": [
+                1,
+                27
+              ],
+              "text": "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;",
+              "ranges": [
+                {
+                  "start_line": 31,
+                  "start_column": 1,
+                  "end_line": 31,
+                  "end_column": 24
+                },
+                {
+                  "start_line": 31,
+                  "start_column": 27,
+                  "end_line": 31,
+                  "end_column": 48
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multiline_text",
+      "elapsed_ms": 106.91710000000012,
+      "counts": [
+        {
+          "documents": 1,
+          "occurrences": 1
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "init",
+          "matches": [
+            {
+              "line": 1,
+              "columns": [
+                1
+              ],
+              "text": "AEB_FxTarPT = 250000;",
+              "ranges": [
+                {
+                  "start_line": 1,
+                  "start_column": 1,
+                  "end_line": 2,
+                  "end_column": 58
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "start_line": 1,
+              "end_line": 2,
+              "lines": [
+                "AEB_FxTarPT = 250000;",
+                "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multiline_regex",
+      "elapsed_ms": 238.7011,
+      "counts": [
+        {
+          "documents": 2,
+          "occurrences": 2
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "init",
+          "matches": [
+            {
+              "line": 1,
+              "columns": [
+                1
+              ],
+              "text": "AEB_FxTarPT = 250000;",
+              "ranges": [
+                {
+                  "start_line": 1,
+                  "start_column": 1,
+                  "end_line": 2,
+                  "end_column": 58
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "start_line": 1,
+              "end_line": 2,
+              "lines": [
+                "AEB_FxTarPT = 250000;",
+                "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dotall",
+      "elapsed_ms": 230.20640000000003,
+      "counts": [
+        {
+          "documents": 2,
+          "occurrences": 2
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "init",
+          "matches": [
+            {
+              "line": 1,
+              "columns": [
+                1
+              ],
+              "text": "AEB_FxTarPT = 250000;",
+              "ranges": [
+                {
+                  "start_line": 1,
+                  "start_column": 1,
+                  "end_line": 2,
+                  "end_column": 58
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "start_line": 1,
+              "end_line": 2,
+              "lines": [
+                "AEB_FxTarPT = 250000;",
+                "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dotall_off",
+      "elapsed_ms": 236.86810000000014,
+      "counts": [
+        {
+          "documents": 0,
+          "occurrences": 0
+        }
+      ],
+      "selected": []
+    },
+    {
+      "id": "context",
+      "elapsed_ms": 96.71270000000004,
+      "counts": [
+        {
+          "documents": 1,
+          "occurrences": 1
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "calc",
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                18
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            }
+          ],
+          "context": [
+            {
+              "start_line": 6,
+              "end_line": 9,
+              "lines": [
+                "{",
+                "   //reduce/limit torque by setting target force to parameter",
+                "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case_insensitive",
+      "elapsed_ms": 112.25549999999976,
+      "counts": [
+        {
+          "documents": 2,
+          "occurrences": 2
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "init",
+          "matches": [
+            {
+              "line": 1,
+              "columns": [
+                1
+              ],
+              "text": "AEB_FxTarPT = 250000;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case_sensitive",
+      "elapsed_ms": 95.36929999999984,
+      "counts": [
+        {
+          "documents": 0,
+          "occurrences": 0
+        }
+      ],
+      "selected": []
+    },
+    {
+      "id": "batch",
+      "elapsed_ms": 237.82299999999987,
+      "counts": [
+        {
+          "documents": 3,
+          "occurrences": 8
+        },
+        {
+          "documents": 5,
+          "occurrences": 8
+        },
+        {
+          "documents": 1,
+          "occurrences": 1
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "calc",
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            },
+            {
+              "line": 12,
+              "columns": [
+                13
+              ],
+              "text": "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT"
+            },
+            {
+              "line": 17,
+              "columns": [
+                7
+              ],
+              "text": "      AEB_FxTarPT = FxActPT;\t   "
+            },
+            {
+              "line": 20,
+              "columns": [
+                4,
+                18
+              ],
+              "text": "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;"
+            },
+            {
+              "line": 26,
+              "columns": [
+                4
+              ],
+              "text": "   AEB_FxTarPT = 250000;"
+            }
+          ],
+          "context": [
+            {
+              "start_line": 7,
+              "end_line": 9,
+              "lines": [
+                "   //reduce/limit torque by setting target force to parameter",
+                "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+              ]
+            },
+            {
+              "start_line": 11,
+              "end_line": 13,
+              "lines": [
+                "else if (   AEB_LDMSelectedControllerPT == LDMSelectedController_AEB",
+                "         && AEB_FxTarPT < C_AEB_FxTarRampMaxPT",
+                "\t\t)\t"
+              ]
+            },
+            {
+              "start_line": 16,
+              "end_line": 21,
+              "lines": [
+                "   {",
+                "      AEB_FxTarPT = FxActPT;\t   ",
+                "   }",
+                "",
+                "   AEB_FxTarPT = AEB_FxTarPT + C_AEB_DiffFxTarRampPT;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+              ]
+            },
+            {
+              "start_line": 25,
+              "end_line": 27,
+              "lines": [
+                "   //no torque reduction/limitation by setting target force to passive value (numeric maximum value)",
+                "   AEB_FxTarPT = 250000;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+              ]
+            }
+          ]
+        },
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "calc",
+          "matches": [
+            {
+              "line": 5,
+              "columns": [
+                5
+              ],
+              "text": "if (AEB_EngTrqRedActive_B)",
+              "ranges": [
+                {
+                  "start_line": 5,
+                  "start_column": 5,
+                  "end_line": 5,
+                  "end_column": 26
+                }
+              ]
+            },
+            {
+              "line": 15,
+              "columns": [
+                8
+              ],
+              "text": "   if (AEB_EngTrqRedActiveK1_B)",
+              "ranges": [
+                {
+                  "start_line": 15,
+                  "start_column": 8,
+                  "end_line": 15,
+                  "end_column": 31
+                }
+              ]
+            },
+            {
+              "line": 31,
+              "columns": [
+                1,
+                27
+              ],
+              "text": "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;",
+              "ranges": [
+                {
+                  "start_line": 31,
+                  "start_column": 1,
+                  "end_line": 31,
+                  "end_column": 24
+                },
+                {
+                  "start_line": 31,
+                  "start_column": 27,
+                  "end_line": 31,
+                  "end_column": 48
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "start_line": 4,
+              "end_line": 6,
+              "lines": [
+                "",
+                "if (AEB_EngTrqRedActive_B)",
+                "{"
+              ]
+            },
+            {
+              "start_line": 14,
+              "end_line": 16,
+              "lines": [
+                "{",
+                "   if (AEB_EngTrqRedActiveK1_B)",
+                "   {"
+              ]
+            },
+            {
+              "start_line": 30,
+              "end_line": 31,
+              "lines": [
+                "//store last cycle value",
+                "AEB_EngTrqRedActiveK1_B = AEB_EngTrqRedActive_B;"
+              ]
+            }
+          ]
+        },
+        {
+          "component": "AEB_State_Machine",
+          "method": "init",
+          "matches": [
+            {
+              "line": 4,
+              "columns": [
+                1
+              ],
+              "text": "AEBLockTime = 0.0;"
+            }
+          ],
+          "context": [
+            {
+              "start_line": 3,
+              "end_line": 5,
+              "lines": [
+                "// sequence 10",
+                "AEBLockTime = 0.0;",
+                "// Supported graph nodes used by this method; full specification graph is available via read_state_machine."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shared",
+      "elapsed_ms": 95.7501000000002,
+      "counts": [
+        {
+          "documents": 1,
+          "occurrences": 1
+        }
+      ],
+      "selected": [
+        {
+          "component": "AEB_RedEngTorque",
+          "method": "calc",
+          "match_set": 0,
+          "matches": [
+            {
+              "line": 8,
+              "columns": [
+                18
+              ],
+              "text": "   AEB_FxTarPT = C_AEB_FxTarPT;"
+            }
+          ],
+          "context": [
+            {
+              "start_line": 6,
+              "end_line": 9,
+              "lines": [
+                "{",
+                "   //reduce/limit torque by setting target force to parameter",
+                "   AEB_FxTarPT = C_AEB_FxTarPT;",
+                "   AEB_LDMSelectedControllerPT = LDMSelectedController_AEB;"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "star_literal",
+      "elapsed_ms": 96.87350000000015,
+      "counts": [
+        {
+          "documents": 0,
+          "occurrences": 0
+        }
+      ],
+      "selected": []
+    }
+  ]
+}

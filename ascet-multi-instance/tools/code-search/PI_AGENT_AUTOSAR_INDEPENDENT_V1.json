@@ -1,0 +1,160 @@
+{
+  "version": 2,
+  "grading_version": 6,
+  "intent_recording": "none",
+  "suite": "core",
+  "max_tool_calls": 20,
+  "timeout_ms": 240000,
+  "answer_format": "Return exactly one JSON object, without Markdown fences or surrounding prose, with outcome (located/partial/not_found/unsupported), answer (a concise explanation), evidence_refs (actual refs seen in this session), missing_evidence (strings), and facts (an object using the requested fields). In facts, name/path/kind/variant fields contain only the exact saved string; ID fields contain numbers, not explanatory text. Separate saved facts from inference. Do not invent unsupported values. Do not output a separate intent declaration. Only the final answer is JSON. Put facts at the requested level; preserve exact saved values.",
+  "group_names": {
+    "code": "Independent saved code and State Actions",
+    "catalog": "Independent native name and identity discovery",
+    "bde": "Independent Module and BDE local evidence"
+  },
+  "expected_source_errors": [
+    {
+      "component_oid": "040vs00bec301mg70o4fba1ij4lg0",
+      "component_path": "Solutions\\Chapter_9_Implementation\\ClassWithParam",
+      "diagram_oid": "040vs00bec301mg70o4fba1ip0p00",
+      "stage": "BDE diagram Solutions\\Chapter_9_Implementation\\ClassWithParam/Main",
+      "message": "Signal on Exception: (ExError) An error has occurred. ('Unsupported source checkpoint class EsAtom')"
+    },
+    {
+      "component_oid": "040vs00bec301mg70o4fda14ia7g0",
+      "component_path": "Solutions\\Chapter_9_Implementation\\ComputationModule",
+      "diagram_oid": "040vs00bec301mg70o4fda14q2b00",
+      "stage": "BDE diagram Solutions\\Chapter_9_Implementation\\ComputationModule/Main",
+      "message": "Signal on Exception: (ExError) An error has occurred. ('Unsupported source checkpoint class EsAtom')"
+    }
+  ],
+  "cases": [
+    {
+      "id": "independent-autosar-component-name",
+      "group": "catalog",
+      "requirement": "定位名为 InitializationModule 的 Component，返回其准确保存路径与原生类型。facts: total_count, results (complete returned target identities).",
+      "rubric": {
+        "type": "catalog",
+        "target": "components",
+        "name": "InitializationModule",
+        "match": "exact"
+      }
+    },
+    {
+      "id": "independent-autosar-diagram-catalog",
+      "group": "catalog",
+      "requirement": "列出 Solutions\\Chapter_9_Implementation\\InitializationModule 中的所有保存 Diagram。facts: total_count, results (complete returned target identities).",
+      "rubric": {
+        "type": "catalog",
+        "target": "diagrams",
+        "scope": {
+          "component": "Solutions\\Chapter_9_Implementation\\InitializationModule"
+        }
+      }
+    },
+    {
+      "id": "independent-autosar-object-catalog",
+      "group": "catalog",
+      "requirement": "列出 Solutions\\Chapter_9_Implementation\\InitializationModule 内 Main Diagram 的所有原生 BDE 放置对象。facts: total_count, results (complete returned target identities).",
+      "rubric": {
+        "type": "catalog",
+        "target": "objects",
+        "scope": {
+          "component": "Solutions\\Chapter_9_Implementation\\InitializationModule"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040vs00bec301mg70o4fd9tuim100"
+      }
+    },
+    {
+      "id": "independent-autosar-message-pins",
+      "group": "bde",
+      "requirement": "在 Solutions\\Chapter_9_Implementation\\InitializationModule 的 Diagram \"Main\" 中，定位 element \"msg\"，node_id 0，Hierarchy root。回读该放置对象 depth 0、direction both 的局部保存信息，保留目标全部 Pins 和真实连接，避免推断运行顺序。facts: name, kind, hierarchy, pin_ids, connections [{from_pin_id,to_pin_id}].",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "Solutions\\Chapter_9_Implementation\\InitializationModule"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040vs00bec301mg70o4fd9tuim100",
+        "node": "msg",
+        "node_id": 0,
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 0,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "independent-autosar-message-input",
+      "group": "bde",
+      "requirement": "在 Solutions\\Chapter_9_Implementation\\InitializationModule 的 Diagram \"Main\" 中，定位 element \"msg\"，node_id 0，Hierarchy root。回读该放置对象 depth 1、direction incoming 的局部保存信息，保留目标全部 Pins 和真实连接，避免推断运行顺序。facts: name, kind, hierarchy, pin_ids, connections [{from_pin_id,to_pin_id}].",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "Solutions\\Chapter_9_Implementation\\InitializationModule"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040vs00bec301mg70o4fd9tuim100",
+        "node": "msg",
+        "node_id": 0,
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "independent-autosar-message-output",
+      "group": "bde",
+      "requirement": "在 Solutions\\Chapter_9_Implementation\\InitializationModule 的 Diagram \"Main\" 中，定位 element \"msg\"，node_id 0，Hierarchy root。回读该放置对象 depth 1、direction outgoing 的局部保存信息，保留目标全部 Pins 和真实连接，避免推断运行顺序。facts: name, kind, hierarchy, pin_ids, connections [{from_pin_id,to_pin_id}].",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "Solutions\\Chapter_9_Implementation\\InitializationModule"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040vs00bec301mg70o4fd9tuim100",
+        "node": "msg",
+        "node_id": 0,
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "independent-autosar-literal-output",
+      "group": "bde",
+      "requirement": "在 Solutions\\Chapter_9_Implementation\\InitializationModule 的 Diagram \"Main\" 中，定位 literal \"0\"，node_id 4，Hierarchy root。回读该放置对象 depth 1、direction outgoing 的局部保存信息，保留目标全部 Pins 和真实连接，避免推断运行顺序。facts: name, kind, hierarchy, pin_ids, connections [{from_pin_id,to_pin_id}].",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "Solutions\\Chapter_9_Implementation\\InitializationModule"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040vs00bec301mg70o4fd9tuim100",
+        "node": "0",
+        "node_id": 4,
+        "object_kind": "literal",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "independent-autosar-native-element-kind",
+      "group": "catalog",
+      "requirement": "仅列出 Solutions\\Chapter_9_Implementation\\InitializationModule 内 Main Diagram 的 element 类型对象，明确使用原生对象类型筛选。facts: total_count, results (complete returned target identities).",
+      "rubric": {
+        "type": "catalog",
+        "target": "objects",
+        "object_kind": "element",
+        "scope": {
+          "component": "Solutions\\Chapter_9_Implementation\\InitializationModule"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040vs00bec301mg70o4fd9tuim100"
+      }
+    }
+  ]
+}

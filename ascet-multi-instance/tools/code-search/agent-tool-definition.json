@@ -1,0 +1,335 @@
+{
+  "name": "ascet_code_search",
+  "description": "Read-only live search of C/ESDL source, state-machine slots/binding names and graphical method representations owned by state-machine components, including supported Init assignments. Graphical hits use kind=graphical_method and representation=graphical_model; text is derived graph data, not original ESDL or generated C. Unsupported graphical logic returns partial/errors; general block diagram components are excluded. Query one pattern or up to 64 queries sharing one live read. Modes: literal text, ASCII identifier_occurrence, or ECMAScript Unicode regex (1000ms matcher deadline). multiline=true permits cross-line matches; regex dotall=true lets dot consume newlines. context_before/context_after add up to 100 lines each. Regex/multiline ranges have exclusive ends in Unicode code points. Shared results reference match_sets and optional context_sets using match_set. Returns all versions and positions without truncation; every request re-reads the model. Use ascet_code_read with component_oid/document_id and expected_database to read full text. Includes comments and strings, not semantic references. Run one persistent serial Node.js JSONL process: dist/src/cli.js. Optional filters restrict component OIDs, member IDs/names, kinds, implementation OIDs and variants for the whole batch. Component OIDs use direct native lookup; regex workers are reused without caching source across fresh searches.",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "oneOf": [
+      {
+        "required": [
+          "query"
+        ],
+        "not": {
+          "required": [
+            "queries"
+          ]
+        }
+      },
+      {
+        "required": [
+          "queries"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "query"
+              ]
+            },
+            {
+              "required": [
+                "mode"
+              ]
+            },
+            {
+              "required": [
+                "case_sensitive"
+              ]
+            },
+            {
+              "required": [
+                "multiline"
+              ]
+            },
+            {
+              "required": [
+                "dotall"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "allOf": [
+      {
+        "$ref": "#/$defs/queryRules"
+      }
+    ],
+    "properties": {
+      "id": {},
+      "query": {
+        "$ref": "#/$defs/pattern"
+      },
+      "mode": {
+        "$ref": "#/$defs/mode"
+      },
+      "case_sensitive": {
+        "type": "boolean",
+        "default": false
+      },
+      "multiline": {
+        "type": "boolean",
+        "default": false
+      },
+      "dotall": {
+        "type": "boolean",
+        "default": false
+      },
+      "context_before": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 0
+      },
+      "context_after": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 0
+      },
+      "scope": {
+        "type": "string",
+        "enum": [
+          "database"
+        ],
+        "default": "database"
+      },
+      "expected_database": {
+        "type": "string",
+        "minLength": 1
+      },
+      "result_format": {
+        "type": "string",
+        "enum": [
+          "expanded",
+          "shared"
+        ],
+        "default": "expanded"
+      },
+      "queries": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 64,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "query"
+          ],
+          "allOf": [
+            {
+              "$ref": "#/$defs/queryRules"
+            }
+          ],
+          "properties": {
+            "id": {},
+            "query": {
+              "$ref": "#/$defs/pattern"
+            },
+            "mode": {
+              "$ref": "#/$defs/mode"
+            },
+            "case_sensitive": {
+              "type": "boolean",
+              "default": false
+            },
+            "multiline": {
+              "type": "boolean",
+              "default": false
+            },
+            "dotall": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      },
+      "filters": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Common scope for all queries. OR within each list; AND across fields. Exact case-sensitive metadata values. Omit to search the database.",
+        "properties": {
+          "component_oids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9A-Za-z]{29}$"
+            }
+          },
+          "member_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+              "type": "string",
+              "maxLength": 256,
+              "not": {
+                "pattern": "[\\r\\n\\u0000]"
+              }
+            }
+          },
+          "member_names": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+              "type": "string",
+              "maxLength": 256,
+              "not": {
+                "pattern": "[\\r\\n\\u0000]"
+              }
+            }
+          },
+          "kinds": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+              "type": "string",
+              "enum": [
+                "method",
+                "process",
+                "header",
+                "external_c",
+                "external_h",
+                "state_entry",
+                "state_static",
+                "state_exit",
+                "transition_trigger",
+                "transition_action",
+                "transition_condition",
+                "state_entry_binding",
+                "state_static_binding",
+                "state_exit_binding",
+                "transition_trigger_binding",
+                "transition_action_binding",
+                "transition_condition_binding",
+                "graphical_method"
+              ]
+            }
+          },
+          "implementation_oids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+              "type": "string",
+              "maxLength": 256,
+              "not": {
+                "pattern": "[\\r\\n\\u0000]"
+              },
+              "description": "Empty string selects the base implementation."
+            }
+          },
+          "variants": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+              "type": "string",
+              "maxLength": 256,
+              "not": {
+                "pattern": "[\\r\\n\\u0000]"
+              },
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "$defs": {
+      "pattern": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1024,
+        "not": {
+          "pattern": "\u0000"
+        }
+      },
+      "mode": {
+        "type": "string",
+        "enum": [
+          "text",
+          "identifier_occurrence",
+          "regex"
+        ],
+        "default": "text"
+      },
+      "queryRules": {
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "multiline"
+              ],
+              "properties": {
+                "multiline": {
+                  "const": true
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "query": {
+                  "not": {
+                    "pattern": "[\r\n]"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "mode"
+              ],
+              "properties": {
+                "mode": {
+                  "const": "identifier_occurrence"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "query": {
+                  "pattern": "^[A-Za-z_][A-Za-z_0-9]*$"
+                },
+                "multiline": {
+                  "const": false
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "dotall"
+              ],
+              "properties": {
+                "dotall": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "mode",
+                "multiline"
+              ],
+              "properties": {
+                "mode": {
+                  "const": "regex"
+                },
+                "multiline": {
+                  "const": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

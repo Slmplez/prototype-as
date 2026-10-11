@@ -1,0 +1,15 @@
+{
+  "name": "ascet_state_machine_read",
+  "description": "Read state-machine source slots, stored method text versions and supported graphical Init methods in one fresh component read. Includes diagram identities, hashes, method metadata, binding links and graphical_bodies with nodes, GET/SET ports, connections and execution sequence. Graphical documents use kind=graphical_method, variant=BD, language=ascet_graph and representation=graphical_model; derived assignments are not original ESDL or generated C. Supports direct scalar assignments from literal/local getter nodes; unknown operators, nested graphs and ambiguous storage are partial with errors and unread_method_bodies. Trigger events use body_status=state_machine_event. complete is scoped to state_machine_source_bundle_v2, excluding state transition topology, external component interface layout/caller wiring, generated code, editor buffers and transitive callees. Same persistent JSONL process as ascet_code_search; operation must be read_state_machine.",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["operation", "component_oid", "expected_database"],
+    "properties": {
+      "operation": {"const": "read_state_machine"},
+      "id": {},
+      "component_oid": {"type": "string", "minLength": 1, "maxLength": 256, "not": {"pattern": "[\r\n\u0000]"}},
+      "expected_database": {"type": "string", "minLength": 1}
+    }
+  }
+}

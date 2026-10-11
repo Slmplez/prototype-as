@@ -1,0 +1,35 @@
+{
+  "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+  "observed_utc": "2026-10-01T11:56:19.1279033Z",
+  "errors": [],
+  "examples": [
+    {
+      "kind": "method",
+      "component_oid": "040qm00100001mo70s2f4l12dn000",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+      "member_name": "init",
+      "language": "esdl",
+      "text": "AEB_FxTarPT = 250000;\rAEB_LDMSelectedControllerPT = LDMSelectedController_None;",
+      "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+      "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+      "component_type": "SGClass"
+    },
+    {
+      "kind": "method",
+      "component_oid": "040qm00800001n870k804dpsgqk0q",
+      "component_path": "PlatformLibrary_NewBrakeSystems\\Package\\DBR_DriverBrakeRequest\\Private\\BaseLib\\DBR_Force2Pressure",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "01010b0010428000e5070a14038c3e700a000000",
+      "member_name": "Init",
+      "language": "esdl",
+      "text": "pressure = 0;",
+      "document_id": "bb39e2627b7c916e3efc8294439db5bb21c5a69dbb1e0385e0d983bdec0d5137",
+      "source_sha256": "6d35430a6140ac078c6d805dfd05173d24d026fd038b0ad1efbd2938eaebb8c8",
+      "component_type": "SGClass"
+    }
+  ]
+}

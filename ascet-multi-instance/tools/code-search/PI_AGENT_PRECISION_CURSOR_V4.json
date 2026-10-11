@@ -1,0 +1,156 @@
+{
+  "version": 2,
+  "grading_version": 4,
+  "intent_recording": "none",
+  "suite": "core",
+  "max_tool_calls": 20,
+  "timeout_ms": 240000,
+  "answer_format": "Return exactly one JSON object, without Markdown fences or surrounding prose, with outcome (located/partial/not_found/unsupported), answer (a concise explanation), evidence_refs (actual refs seen in this session), missing_evidence (strings), and facts (an object using the requested fields). In facts, name/path/kind/variant fields contain only the exact saved string; ID fields contain numbers, not explanatory text. Separate saved facts from inference. Do not invent unsupported values. Do not output a separate intent declaration. Only the final answer is JSON. Put facts at the requested level; preserve exact saved values.",
+  "group_names": {
+    "cursor": "分页与参数回归"
+  },
+  "cases": [
+    {
+      "id": "batch-pagination",
+      "requirement": "Search AxTarRaw, VxAct and AxTarLim together as independent identifier queries scoped to AEB_AxCtrlConfigFF_Modify, initially with limit 1. Consume at least one returned cursor and finish the batch (or replace it with an equivalent larger-limit query). Batch-read at least two relevant complete saved text Methods. facts: counts (object mapping each query to its total_hits), array_semantics (independent/AND), pagination_complete (boolean).",
+      "group": "cursor"
+    },
+    {
+      "id": "large-header-read-pages",
+      "group": "cursor",
+      "max_tool_calls": 64,
+      "timeout_ms": 240000,
+      "requirement": "Read the complete saved XPass_BB00000_AEB Header in 'ES1130'_Physical Experiment by consuming every returned read page. Report identity and completeness without copying the whole body into the answer. facts: identity {component_path,kind,member,variant,implementation}, total_lines, pages_read, complete.",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "XPass_BB00000_AEB",
+          "kind": "header",
+          "variant": " 'ES1130'_Physical Experiment"
+        },
+        "full": true,
+        "paged": true
+      }
+    },
+    {
+      "id": "find-directory-pagination",
+      "group": "cursor",
+      "requirement": "List all Components with name/path containing Trial_Hierarchy, starting with limit 1. Consume a returned cursor and finish the directory. facts: total_count and results [{component_path,component_type}].",
+      "rubric": {
+        "type": "catalog",
+        "target": "components",
+        "name": "Trial_Hierarchy",
+        "match": "contains",
+        "pagination": "consume"
+      }
+    },
+    {
+      "id": "search-cursor-replay",
+      "group": "cursor",
+      "requirement": "Search identifier AxTarLim in saved ASDL Methods of AEB_AxCtrlConfigFF_Modify starting with limit 1. Call the same returned continuation cursor twice, compare the returned immutable page, and finish the search using continuation or an equivalent larger-limit query. facts: counts [{query,total_hits}].",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "AxTarLim"
+          }
+        ],
+        "pagination": "replay"
+      }
+    },
+    {
+      "id": "truncated-search-boundary",
+      "group": "cursor",
+      "expected_outcome": "partial",
+      "requirement": "Search identifier AxTarLim in saved ASDL Methods of AEB_AxCtrlConfigFF_Modify with limit 1. Stop after this first page, explicitly reporting that the remaining hits have not been inspected. Do not consume the cursor or substitute a full query. facts: counts [{query,total_hits}], complete, has_more; report a partial outcome.",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "AxTarLim"
+          }
+        ],
+        "pagination": "incomplete"
+      }
+    },
+    {
+      "id": "cross-tool-cursor-recovery",
+      "group": "cursor",
+      "requirement": "Controlled read-only recovery task: search identifier AxTarLim in AEB_AxCtrlConfigFF_Modify with limit 1. Deliberately pass its returned cursor to find, observe the cross-tool error, then consume that exact cursor on search. facts: error_observed, recovered.",
+      "rubric": {
+        "type": "recovery",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify"
+        },
+        "profile": "wrong_cursor_tool"
+      }
+    },
+    {
+      "id": "intent-variant-unspecified",
+      "group": "cursor",
+      "requirement": "把 EvenValue/Even 的 C 实现完整给我看，Variant 还没选，先帮我确认可选项。",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "terms": [],
+        "components": [
+          "EvenValue"
+        ],
+        "members": [
+          "Even"
+        ],
+        "clarification_fields": [
+          "variant"
+        ],
+        "question_patterns": [
+          "(?:Variant|版本|变体)"
+        ],
+        "no_reads": true,
+        "required_tools": [
+          "ascet_code_find"
+        ]
+      },
+      "expected_outcome": "partial",
+      "response_fields": "variants (all exact saved C Variant strings for this member); ask which Variant in answer.",
+      "intent_fixture": {
+        "type": "read",
+        "scope": {
+          "component": "EvenValue",
+          "kind": "method",
+          "member": "Even"
+        }
+      }
+    },
+    {
+      "id": "holdout-negative-outgoing",
+      "group": "cursor",
+      "requirement": "找到 AEB_dFxTar/Main 中 C_AEB_AXCDeadZoneNeg 的真实输出连线，仅展开一层 outgoing；返回完整目标接口与实际连接，不推断调度。 facts: name,kind,hierarchy,pin_ids（目标的完整 Pin ID 数组）,node_names,connection_count,boundaries_count。 facts.connections must be the complete [{from_pin_id,to_pin_id}] array for the requested depth/direction, including [] when empty.",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB_dFxTar"
+        },
+        "diagram": "Main",
+        "node": "C_AEB_AXCDeadZoneNeg",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    }
+  ],
+  "boundary": "New requirements after candidate freeze, familiar database; not independent database generalization.",
+  "description": "Focused short-cursor comparison; previously tested tasks, not held-out acceptance."
+}

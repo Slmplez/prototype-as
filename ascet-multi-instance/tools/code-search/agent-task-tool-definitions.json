@@ -1,0 +1,4225 @@
+[
+  {
+    "name": "ascet_find",
+    "description": "Find saved names: components = owning Classes/Modules/State Machines; members = Methods/Processes and Variants; diagrams = BDE or State Machine Diagrams; objects = placed BDE nodes; states/transitions = topology. target is required. No source-body search.",
+    "inputSchema": {
+      "type": "object",
+      "description": "For continuation, cursor is authoritative; other fields are ignored. Prefer only {cursor}.",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [
+            "cursor"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "target": {
+              "enum": [
+                "components",
+                "members",
+                "diagrams",
+                "objects",
+                "states",
+                "transitions"
+              ]
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Name of the selected target. For an object or State, put its name here, never in scope.members. Omit to list."
+            },
+            "match": {
+              "enum": [
+                "exact",
+                "contains"
+              ],
+              "default": "exact"
+            },
+            "scope": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "components": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        },
+                        "pattern": "^s[^:]+:[dn][0-9a-z]+$"
+                      }
+                    },
+                    "required": [],
+                    "oneOf": [
+                      {
+                        "required": [
+                          "name"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "path"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "ref"
+                        ],
+                        "maxProperties": 1
+                      }
+                    ]
+                  },
+                  "description": "Owning Class/Module/State Machine only: [{name:\"ComponentName\"}], [{path:\"returned component_path\"}] or [{ref:\"returned ref\"}]. Use name for a known short name; never guess full paths or Public/Private folders. Main is a Diagram, AEB_State_Off is a State, ES1130 is a Variant: none is a Component selector."
+                },
+                "diagrams": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        },
+                        "pattern": "^s[^:]+:[dn][0-9a-z]+$"
+                      }
+                    },
+                    "required": [],
+                    "oneOf": [
+                      {
+                        "required": [
+                          "name"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "path"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "ref"
+                        ],
+                        "maxProperties": 1
+                      }
+                    ]
+                  },
+                  "description": "Saved BDE or State Machine Diagram selectors. Resolve Main inside scope.components; returned Diagram refs preserve the exact owner and Diagram. State paths belong in find.name."
+                },
+                "members": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "not": {
+                      "pattern": "[\u0000\r\n]"
+                    }
+                  },
+                  "description": "Exact saved Method/Process or full State/Transition path strings. Put this field inside scope, never at the root."
+                },
+                "kinds": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "enum": [
+                      "method",
+                      "process",
+                      "header",
+                      "external_c",
+                      "external_h",
+                      "state_entry",
+                      "state_static",
+                      "state_exit",
+                      "transition_trigger",
+                      "transition_action",
+                      "transition_condition",
+                      "state_entry_binding",
+                      "state_static_binding",
+                      "state_exit_binding",
+                      "transition_trigger_binding",
+                      "transition_action_binding",
+                      "transition_condition_binding",
+                      "diagram"
+                    ]
+                  },
+                  "description": "Exact saved source kinds inside scope. Text Method means method; BDE means diagram. Graphical Methods have diagram source kind, so discover their representation first."
+                },
+                "variants": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256,
+                    "not": {
+                      "pattern": "[\u0000\r\n]"
+                    }
+                  },
+                  "description": "Exact saved Variant strings inside scope. ESDL source is ASDL. Preserve whitespace; omission includes all Variants, not a chosen implementation."
+                },
+                "implementations": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "not": {
+                      "pattern": "[\u0000\r\n]"
+                    }
+                  },
+                  "description": "Exact saved Implementation OIDs, inside scope. Empty string is base; never invent base, null or a displayed name as an OID."
+                },
+                "visibility": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "enum": [
+                      "public",
+                      "private"
+                    ]
+                  }
+                },
+                "object_kinds": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 9,
+                  "items": {
+                    "enum": [
+                      "element",
+                      "operator",
+                      "control",
+                      "literal",
+                      "comment",
+                      "hierarchy",
+                      "hierarchy_pin",
+                      "conversion",
+                      "unknown"
+                    ]
+                  },
+                  "description": "Native BDE object categories; only ascet_find target objects. Put object_kinds inside scope, not at the root."
+                }
+              },
+              "required": [],
+              "description": "Every filter is inside scope: components, diagrams, members, kinds, variants, implementations, visibility, object_kinds. No filter fields at the request root."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "default": 50
+            },
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [],
+          "oneOf": [
+            {
+              "required": [
+                "cursor"
+              ],
+              "maxProperties": 1
+            },
+            {
+              "required": [
+                "target"
+              ],
+              "not": {
+                "required": [
+                  "cursor"
+                ]
+              }
+            }
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "target": {
+                    "const": "objects"
+                  }
+                },
+                "required": [
+                  "target"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "scope": {
+                    "propertyNames": {
+                      "enum": [
+                        "components",
+                        "diagrams",
+                        "visibility",
+                        "object_kinds"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "target": {
+                    "enum": [
+                      "states",
+                      "transitions"
+                    ]
+                  }
+                },
+                "required": [
+                  "target"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "scope": {
+                    "propertyNames": {
+                      "enum": [
+                        "components",
+                        "diagrams",
+                        "visibility"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "target": {
+                    "enum": [
+                      "components",
+                      "members",
+                      "diagrams"
+                    ]
+                  }
+                },
+                "required": [
+                  "target"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "scope": {
+                    "not": {
+                      "required": [
+                        "object_kinds"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "target": {
+                    "const": "components"
+                  }
+                },
+                "required": [
+                  "target"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "scope": {
+                    "propertyNames": {
+                      "enum": [
+                        "components"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "target": {
+                    "const": "diagrams"
+                  }
+                },
+                "required": [
+                  "target"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "scope": {
+                    "propertyNames": {
+                      "enum": [
+                        "components",
+                        "diagrams",
+                        "members",
+                        "variants",
+                        "implementations",
+                        "visibility"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "outputSchema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "error"
+            },
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "code",
+            "message"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "ok",
+                "partial"
+              ]
+            },
+            "target": {
+              "enum": [
+                "members",
+                "components",
+                "diagrams",
+                "objects",
+                "states",
+                "transitions"
+              ]
+            },
+            "has_more": {
+              "type": "boolean"
+            },
+            "next_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "expires_utc": {
+              "type": "string"
+            },
+            "returned_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "total_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "results": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path"
+                ]
+              }
+            },
+            "issues": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            }
+          },
+          "required": [
+            "status",
+            "target",
+            "returned_count",
+            "total_count",
+            "results",
+            "has_more",
+            "next_cursor",
+            "expires_utc"
+          ]
+        }
+      ]
+    },
+    "guidelines": [
+      "Object/State names use name, never scope.members. Example: {target:\"objects\",name:\"Stage\",scope:{components:[{name:\"Class\"}],diagrams:[{name:\"Main\"}]}}. Add scope.object_kinds only when the caller explicitly names the native category (element, hierarchy, junction, etc.); never guess hierarchy from a referenced Component, path or instance name. An unknown variable is not an owning Component: find objects or search_bde first. Graphical member discovery must not force kind method; diagram_methods lists all members sharing that Diagram. Init may be Method, Process or Diagram.",
+      "Query saved ASCET source/BDE only. Runtime values/scheduling, Dataset values, generated code and unsaved edits are unsupported; say so without exploratory calls for an exclusively unsupported request.",
+      "Copy every user restriction into scope: owning Component, member, kind, Variant, Implementation, Diagram and visibility. Example: only Class.calc ASDL Method => {components:[{name:\"Class\"}],members:[\"calc\"],kinds:[\"method\"],variants:[\"ASDL\"]}. A prior find does not scope later searches. Reuse the exact scope; change it only when the user changes the target. Selectors have one of name/path/ref; arrays are OR, fields are AND. When the caller asks for Variant candidates, put the exact saved strings in facts.variants (not a renamed helper field).",
+      "Find lists names, representations, language and Variant/Implementation candidates. If the caller explicitly says not to guess an owning Component/Method, ask for that owner before exploratory calls. Otherwise, if a referent is missing, or several candidates remain and the user asks to choose first, ask a direct question and leave the task unresolved (outcome partial when required). A clarification answer must contain a direct question mark (? or？). C candidates have language c; ASDL is ESDL. Preserve Variant strings exactly.",
+      "Copy actual ref strings, search_scope and next_call; never change a ref prefix/suffix. Only ref values identify citable objects; read_evidence.id is internal tracking, never a citation. Base Implementation is \"\". Keep facts associated with the same object ref and read_scope. Consume relevant pages; partial cannot prove absence.",
+      "BDE connections are saved facts, not runtime scheduling. Graphical Methods share their Diagram. Method bindings are structural facts, not source bodies. A cursor is pagination control, never evidence: keep cursor/next_cursor out of evidence_refs. evidence_refs contains only actual saved ref strings returned by a tool; for a local BDE page, use its citable_refs whitelist and never derive a ref suffix. The final response is exactly one JSON object with outcome, answer, evidence_refs, missing_evidence and facts; keep only caller-requested fields under facts. Do not add inference, inferred, saved, derived or other helper objects; put caveats in answer/missing_evidence. When has_more:true and complete coverage is requested, continuation_required/continuation_call identifies the required next step: call the same tool with exactly {cursor} until has_more:false; do not change queries, scope, direction or limit midway and then claim the original batch is complete. If replacing an incomplete search with a larger limit, copy the original queries and scope exactly, including omitted filters; do not add a guessed kind/member/Variant filter."
+    ]
+  },
+  {
+    "name": "ascet_search_code",
+    "description": "Search saved text code. Method-only requests MUST include scope.kinds:[\"method\"]; without kinds, ALL text kinds are searched. Supports C/ESDL, Header, external C/H, State/Transition Actions. queries are independent; identifier matches full symbols, text matches literals, regex matches patterns. Returns snippets and code refs.",
+    "inputSchema": {
+      "type": "object",
+      "description": "For continuation, cursor is authoritative; other fields are ignored. Prefer only {cursor}.",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [
+            "cursor"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "queries": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 64,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1024,
+                    "not": {
+                      "pattern": "\u0000"
+                    }
+                  },
+                  "mode": {
+                    "enum": [
+                      "text",
+                      "identifier",
+                      "regex"
+                    ],
+                    "default": "text"
+                  },
+                  "case_sensitive": {
+                    "type": "boolean"
+                  },
+                  "multiline": {
+                    "type": "boolean"
+                  },
+                  "dotall": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "scope": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "components": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        },
+                        "pattern": "^s[^:]+:[dn][0-9a-z]+$"
+                      }
+                    },
+                    "required": [],
+                    "oneOf": [
+                      {
+                        "required": [
+                          "name"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "path"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "ref"
+                        ],
+                        "maxProperties": 1
+                      }
+                    ]
+                  },
+                  "description": "Owning Class/Module/State Machine only: [{name:\"ComponentName\"}], [{path:\"returned component_path\"}] or [{ref:\"returned ref\"}]. Use name for a known short name; never guess full paths or Public/Private folders. Main is a Diagram, AEB_State_Off is a State, ES1130 is a Variant: none is a Component selector."
+                },
+                "diagrams": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        },
+                        "pattern": "^s[^:]+:[dn][0-9a-z]+$"
+                      }
+                    },
+                    "required": [],
+                    "oneOf": [
+                      {
+                        "required": [
+                          "name"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "path"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "ref"
+                        ],
+                        "maxProperties": 1
+                      }
+                    ]
+                  },
+                  "description": "Saved BDE or State Machine Diagram selectors. Resolve Main inside scope.components; returned Diagram refs preserve the exact owner and Diagram. State paths belong in find.name."
+                },
+                "members": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "not": {
+                      "pattern": "[\u0000\r\n]"
+                    }
+                  },
+                  "description": "Exact saved Method/Process or full State/Transition path strings. Put this field inside scope, never at the root."
+                },
+                "kinds": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "enum": [
+                      "method",
+                      "process",
+                      "header",
+                      "external_c",
+                      "external_h",
+                      "state_entry",
+                      "state_static",
+                      "state_exit",
+                      "transition_trigger",
+                      "transition_action",
+                      "transition_condition"
+                    ]
+                  },
+                  "description": "Explicit Method: [\"method\"]; Static Action: [\"state_static\"]. Omission includes all text kinds, or State/Transition text kinds inside Diagram scope."
+                },
+                "variants": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256,
+                    "not": {
+                      "pattern": "[\u0000\r\n]"
+                    }
+                  },
+                  "description": "Exact saved Variant strings inside scope. ESDL source is ASDL. Preserve whitespace; omission includes all Variants, not a chosen implementation."
+                },
+                "implementations": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "not": {
+                      "pattern": "[\u0000\r\n]"
+                    }
+                  },
+                  "description": "Exact saved Implementation OIDs, inside scope. Empty string is base; never invent base, null or a displayed name as an OID."
+                },
+                "visibility": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "enum": [
+                      "public",
+                      "private"
+                    ]
+                  }
+                },
+                "code_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "not": {
+                    "pattern": "[\u0000\r\n]"
+                  },
+                  "pattern": "^s[^:]+:[dn][0-9a-z]+$",
+                  "description": "One returned text-code ref. Locks its owning Component, member ID, kind, Variant and Implementation. Use alone in scope; copy returned search_scope."
+                }
+              },
+              "required": [],
+              "oneOf": [
+                {
+                  "required": [
+                    "code_ref"
+                  ],
+                  "maxProperties": 1
+                },
+                {
+                  "not": {
+                    "required": [
+                      "code_ref"
+                    ]
+                  }
+                }
+              ],
+              "description": "All code filters belong here, inside scope. Example arguments: {queries:[{text:\"speed\",mode:\"identifier\"}],scope:{kinds:[\"method\"],variants:[\"ASDL\"]}}. Never put kinds, members or variants at the request root."
+            },
+            "context": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "before": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "after": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                }
+              },
+              "required": []
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "default": 50
+            },
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [],
+          "oneOf": [
+            {
+              "required": [
+                "cursor"
+              ],
+              "maxProperties": 1
+            },
+            {
+              "required": [
+                "queries"
+              ],
+              "not": {
+                "required": [
+                  "cursor"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "outputSchema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "error"
+            },
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "code",
+            "message"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "ok",
+                "partial"
+              ]
+            },
+            "has_more": {
+              "type": "boolean"
+            },
+            "next_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "expires_utc": {
+              "type": "string"
+            },
+            "returned_hits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "total_hits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "searches": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "query": {
+                    "type": "string"
+                  },
+                  "mode": {
+                    "enum": [
+                      "text",
+                      "identifier",
+                      "regex"
+                    ]
+                  },
+                  "returned_hits": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "total_hits": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "has_more": {
+                    "type": "boolean"
+                  },
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ref": {
+                          "type": "string"
+                        },
+                        "component_path": {
+                          "type": "string"
+                        },
+                        "kind": {
+                          "type": "string"
+                        },
+                        "variant": {
+                          "type": "string"
+                        },
+                        "snippets": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "start_line": {
+                                "type": "integer",
+                                "minimum": 1
+                              },
+                              "text": {
+                                "type": "string"
+                              },
+                              "matches": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "line": {
+                                      "type": "integer",
+                                      "minimum": 1
+                                    },
+                                    "columns": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                      }
+                                    }
+                                  },
+                                  "required": [
+                                    "line",
+                                    "columns"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "start_line",
+                              "text",
+                              "matches"
+                            ]
+                          }
+                        },
+                        "hits": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "ref": {
+                                "type": "string"
+                              },
+                              "kind": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "matched_fields": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "evidence": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "field": {
+                                      "type": "string"
+                                    },
+                                    "text": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "field",
+                                    "text"
+                                  ]
+                                }
+                              },
+                              "connections": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object"
+                                }
+                              }
+                            },
+                            "required": [
+                              "ref",
+                              "kind",
+                              "name",
+                              "matched_fields",
+                              "connections"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "ref",
+                        "component_path",
+                        "kind",
+                        "variant"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "index",
+                  "query",
+                  "mode",
+                  "returned_hits",
+                  "total_hits",
+                  "has_more",
+                  "results"
+                ]
+              }
+            },
+            "issues": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            }
+          },
+          "required": [
+            "status",
+            "returned_hits",
+            "total_hits",
+            "searches",
+            "has_more",
+            "next_cursor",
+            "expires_utc"
+          ]
+        }
+      ]
+    },
+    "guidelines": [
+      "Known Class.calc ASDL: {queries:[{text:\"force\",mode:\"identifier\"}],scope:{components:[{name:\"Class\"}],members:[\"calc\"],kinds:[\"method\"],variants:[\"ASDL\"]}}. All filters are inside scope. After an argument error, correct the same request and keep its queries/constraints; do not switch to BDE to bypass validation. Already located one code body: copy its search_scope:{code_ref}. Queries are independent; keep scope after zero hits. When has_more is true, continue with only {cursor}; do not rerun a different query list or scope and call the first result complete.",
+      "Query saved ASCET source/BDE only. Runtime values/scheduling, Dataset values, generated code and unsaved edits are unsupported; say so without exploratory calls for an exclusively unsupported request.",
+      "Copy every user restriction into scope: owning Component, member, kind, Variant, Implementation, Diagram and visibility. Example: only Class.calc ASDL Method => {components:[{name:\"Class\"}],members:[\"calc\"],kinds:[\"method\"],variants:[\"ASDL\"]}. A prior find does not scope later searches. Reuse the exact scope; change it only when the user changes the target. Selectors have one of name/path/ref; arrays are OR, fields are AND. When the caller asks for Variant candidates, put the exact saved strings in facts.variants (not a renamed helper field).",
+      "Find lists names, representations, language and Variant/Implementation candidates. If the caller explicitly says not to guess an owning Component/Method, ask for that owner before exploratory calls. Otherwise, if a referent is missing, or several candidates remain and the user asks to choose first, ask a direct question and leave the task unresolved (outcome partial when required). A clarification answer must contain a direct question mark (? or？). C candidates have language c; ASDL is ESDL. Preserve Variant strings exactly.",
+      "Copy actual ref strings, search_scope and next_call; never change a ref prefix/suffix. Only ref values identify citable objects; read_evidence.id is internal tracking, never a citation. Base Implementation is \"\". Keep facts associated with the same object ref and read_scope. Consume relevant pages; partial cannot prove absence.",
+      "BDE connections are saved facts, not runtime scheduling. Graphical Methods share their Diagram. Method bindings are structural facts, not source bodies. A cursor is pagination control, never evidence: keep cursor/next_cursor out of evidence_refs. evidence_refs contains only actual saved ref strings returned by a tool; for a local BDE page, use its citable_refs whitelist and never derive a ref suffix. The final response is exactly one JSON object with outcome, answer, evidence_refs, missing_evidence and facts; keep only caller-requested fields under facts. Do not add inference, inferred, saved, derived or other helper objects; put caveats in answer/missing_evidence. When has_more:true and complete coverage is requested, continuation_required/continuation_call identifies the required next step: call the same tool with exactly {cursor} until has_more:false; do not change queries, scope, direction or limit midway and then claim the original batch is complete. If replacing an incomplete search with a larger limit, copy the original queries and scope exactly, including omitted filters; do not add a guessed kind/member/Variant filter."
+    ]
+  },
+  {
+    "name": "ascet_search_bde",
+    "description": "Search original saved BDE fields, merging hits per placed object with direct connection previews. Returns object refs for local reads. Does not search text Method bodies or referenced Class implementations.",
+    "inputSchema": {
+      "type": "object",
+      "description": "For continuation, cursor is authoritative; other fields are ignored. Prefer only {cursor}.",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [
+            "cursor"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "queries": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 64,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1024,
+                    "not": {
+                      "pattern": "\u0000"
+                    }
+                  },
+                  "mode": {
+                    "enum": [
+                      "text",
+                      "identifier",
+                      "regex"
+                    ],
+                    "default": "text"
+                  },
+                  "case_sensitive": {
+                    "type": "boolean"
+                  },
+                  "multiline": {
+                    "type": "boolean"
+                  },
+                  "dotall": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "scope": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "components": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        },
+                        "pattern": "^s[^:]+:[dn][0-9a-z]+$"
+                      }
+                    },
+                    "required": [],
+                    "oneOf": [
+                      {
+                        "required": [
+                          "name"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "path"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "ref"
+                        ],
+                        "maxProperties": 1
+                      }
+                    ]
+                  },
+                  "description": "Owning Class/Module/State Machine only: [{name:\"ComponentName\"}], [{path:\"returned component_path\"}] or [{ref:\"returned ref\"}]. Use name for a known short name; never guess full paths or Public/Private folders. Main is a Diagram, AEB_State_Off is a State, ES1130 is a Variant: none is a Component selector."
+                },
+                "diagrams": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        }
+                      },
+                      "ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128,
+                        "not": {
+                          "pattern": "[\u0000\r\n]"
+                        },
+                        "pattern": "^s[^:]+:[dn][0-9a-z]+$"
+                      }
+                    },
+                    "required": [],
+                    "oneOf": [
+                      {
+                        "required": [
+                          "name"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "path"
+                        ],
+                        "maxProperties": 1
+                      },
+                      {
+                        "required": [
+                          "ref"
+                        ],
+                        "maxProperties": 1
+                      }
+                    ]
+                  },
+                  "description": "Saved BDE or State Machine Diagram selectors. Resolve Main inside scope.components; returned Diagram refs preserve the exact owner and Diagram. State paths belong in find.name."
+                },
+                "members": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "not": {
+                      "pattern": "[\u0000\r\n]"
+                    }
+                  },
+                  "description": "Exact saved Method/Process or full State/Transition path strings. Put this field inside scope, never at the root."
+                },
+                "variants": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256,
+                    "not": {
+                      "pattern": "[\u0000\r\n]"
+                    }
+                  },
+                  "description": "Exact saved Variant strings inside scope. ESDL source is ASDL. Preserve whitespace; omission includes all Variants, not a chosen implementation."
+                },
+                "implementations": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 32,
+                  "items": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "not": {
+                      "pattern": "[\u0000\r\n]"
+                    }
+                  },
+                  "description": "Exact saved Implementation OIDs, inside scope. Empty string is base; never invent base, null or a displayed name as an OID."
+                },
+                "visibility": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "enum": [
+                      "public",
+                      "private"
+                    ]
+                  }
+                }
+              },
+              "required": []
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "default": 50
+            },
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [],
+          "oneOf": [
+            {
+              "required": [
+                "cursor"
+              ],
+              "maxProperties": 1
+            },
+            {
+              "required": [
+                "queries"
+              ],
+              "not": {
+                "required": [
+                  "cursor"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "outputSchema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "error"
+            },
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "code",
+            "message"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "ok",
+                "partial"
+              ]
+            },
+            "has_more": {
+              "type": "boolean"
+            },
+            "next_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "expires_utc": {
+              "type": "string"
+            },
+            "returned_hits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "total_hits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "searches": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "query": {
+                    "type": "string"
+                  },
+                  "mode": {
+                    "enum": [
+                      "text",
+                      "identifier",
+                      "regex"
+                    ]
+                  },
+                  "returned_hits": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "total_hits": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "has_more": {
+                    "type": "boolean"
+                  },
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ref": {
+                          "type": "string"
+                        },
+                        "component_path": {
+                          "type": "string"
+                        },
+                        "kind": {
+                          "type": "string"
+                        },
+                        "variant": {
+                          "type": "string"
+                        },
+                        "snippets": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "start_line": {
+                                "type": "integer",
+                                "minimum": 1
+                              },
+                              "text": {
+                                "type": "string"
+                              },
+                              "matches": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "line": {
+                                      "type": "integer",
+                                      "minimum": 1
+                                    },
+                                    "columns": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                      }
+                                    }
+                                  },
+                                  "required": [
+                                    "line",
+                                    "columns"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "start_line",
+                              "text",
+                              "matches"
+                            ]
+                          }
+                        },
+                        "hits": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "ref": {
+                                "type": "string"
+                              },
+                              "kind": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "matched_fields": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "evidence": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "field": {
+                                      "type": "string"
+                                    },
+                                    "text": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "field",
+                                    "text"
+                                  ]
+                                }
+                              },
+                              "connections": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object"
+                                }
+                              }
+                            },
+                            "required": [
+                              "ref",
+                              "kind",
+                              "name",
+                              "matched_fields",
+                              "connections"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "ref",
+                        "component_path",
+                        "kind",
+                        "variant"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "index",
+                  "query",
+                  "mode",
+                  "returned_hits",
+                  "total_hits",
+                  "has_more",
+                  "results"
+                ]
+              }
+            },
+            "issues": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            }
+          },
+          "required": [
+            "status",
+            "returned_hits",
+            "total_hits",
+            "searches",
+            "has_more",
+            "next_cursor",
+            "expires_utc"
+          ]
+        }
+      ]
+    },
+    "guidelines": [
+      "Use one queries array for independent terms. identifier for complete symbols; regex only for a pattern. Keep the known Component and Diagram after zero hits.",
+      "Query saved ASCET source/BDE only. Runtime values/scheduling, Dataset values, generated code and unsaved edits are unsupported; say so without exploratory calls for an exclusively unsupported request.",
+      "Copy every user restriction into scope: owning Component, member, kind, Variant, Implementation, Diagram and visibility. Example: only Class.calc ASDL Method => {components:[{name:\"Class\"}],members:[\"calc\"],kinds:[\"method\"],variants:[\"ASDL\"]}. A prior find does not scope later searches. Reuse the exact scope; change it only when the user changes the target. Selectors have one of name/path/ref; arrays are OR, fields are AND. When the caller asks for Variant candidates, put the exact saved strings in facts.variants (not a renamed helper field).",
+      "Find lists names, representations, language and Variant/Implementation candidates. If the caller explicitly says not to guess an owning Component/Method, ask for that owner before exploratory calls. Otherwise, if a referent is missing, or several candidates remain and the user asks to choose first, ask a direct question and leave the task unresolved (outcome partial when required). A clarification answer must contain a direct question mark (? or？). C candidates have language c; ASDL is ESDL. Preserve Variant strings exactly.",
+      "Copy actual ref strings, search_scope and next_call; never change a ref prefix/suffix. Only ref values identify citable objects; read_evidence.id is internal tracking, never a citation. Base Implementation is \"\". Keep facts associated with the same object ref and read_scope. Consume relevant pages; partial cannot prove absence.",
+      "BDE connections are saved facts, not runtime scheduling. Graphical Methods share their Diagram. Method bindings are structural facts, not source bodies. A cursor is pagination control, never evidence: keep cursor/next_cursor out of evidence_refs. evidence_refs contains only actual saved ref strings returned by a tool; for a local BDE page, use its citable_refs whitelist and never derive a ref suffix. The final response is exactly one JSON object with outcome, answer, evidence_refs, missing_evidence and facts; keep only caller-requested fields under facts. Do not add inference, inferred, saved, derived or other helper objects; put caveats in answer/missing_evidence. When has_more:true and complete coverage is requested, continuation_required/continuation_call identifies the required next step: call the same tool with exactly {cursor} until has_more:false; do not change queries, scope, direction or limit midway and then claim the original batch is complete. If replacing an incomplete search with a larger limit, copy the original queries and scope exactly, including omitted filters; do not add a guessed kind/member/Variant filter."
+    ]
+  },
+  {
+    "name": "ascet_read_code",
+    "description": "Read saved text bodies using refs, optionally inclusive lines. line_coverage.page/complete_lines use inclusive line numbers; code_range uses exclusive end coordinates. Batch order/duplicates are preserved. State/Transition Action code refs are supported.",
+    "inputSchema": {
+      "type": "object",
+      "description": "For continuation, cursor is authoritative; other fields are ignored. Prefer only {cursor}.",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [
+            "cursor"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "refs": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 32,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128,
+                "not": {
+                  "pattern": "[\u0000\r\n]"
+                },
+                "pattern": "^s[^:]+:[dn][0-9a-z]+$"
+              }
+            },
+            "lines": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "start": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ]
+            },
+            "if_unchanged": {
+              "type": "boolean",
+              "default": false
+            },
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [],
+          "oneOf": [
+            {
+              "required": [
+                "cursor"
+              ],
+              "maxProperties": 1
+            },
+            {
+              "required": [
+                "refs"
+              ],
+              "not": {
+                "required": [
+                  "cursor"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "outputSchema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "error"
+            },
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "code",
+            "message"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "string"
+            },
+            "component_path": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "variant": {
+              "type": "string"
+            },
+            "has_more": {
+              "type": "boolean"
+            },
+            "next_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "expires_utc": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            },
+            "diagram_text": {
+              "type": "string"
+            },
+            "method_binding": {
+              "type": "object"
+            },
+            "issues": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            },
+            "object": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ref",
+                "kind",
+                "name"
+              ]
+            },
+            "nodes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "kind",
+                  "name"
+                ]
+              }
+            },
+            "pins": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "connections": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "boundaries": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "graph": {
+              "type": "object"
+            },
+            "code_slots": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path",
+                  "kind",
+                  "variant"
+                ]
+              }
+            },
+            "incoming": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path",
+                  "kind",
+                  "variant"
+                ]
+              }
+            },
+            "outgoing": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path",
+                  "kind",
+                  "variant"
+                ]
+              }
+            },
+            "start_state": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "ref": {
+                      "type": "string"
+                    },
+                    "component_path": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "variant": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ref",
+                    "component_path",
+                    "kind",
+                    "variant"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "end_state": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "ref": {
+                      "type": "string"
+                    },
+                    "component_path": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "variant": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ref",
+                    "component_path",
+                    "kind",
+                    "variant"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "priority": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "status": {
+              "enum": [
+                "ok",
+                "partial",
+                "changed"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "ref",
+            "component_path",
+            "kind",
+            "variant"
+          ],
+          "anyOf": [
+            {
+              "required": [
+                "code"
+              ]
+            },
+            {
+              "required": [
+                "diagram_text"
+              ]
+            },
+            {
+              "required": [
+                "method_binding"
+              ]
+            },
+            {
+              "required": [
+                "object"
+              ]
+            },
+            {
+              "required": [
+                "code_slots"
+              ]
+            },
+            {
+              "required": [
+                "graph"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "ok",
+                "partial",
+                "changed",
+                "error"
+              ]
+            },
+            "requested_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "returned_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "results": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "component_path": {
+                        "type": "string"
+                      },
+                      "kind": {
+                        "type": "string"
+                      },
+                      "variant": {
+                        "type": "string"
+                      },
+                      "has_more": {
+                        "type": "boolean"
+                      },
+                      "next_cursor": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "expires_utc": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "diagram_text": {
+                        "type": "string"
+                      },
+                      "method_binding": {
+                        "type": "object"
+                      },
+                      "issues": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "code",
+                            "message"
+                          ]
+                        }
+                      },
+                      "object": {
+                        "type": "object",
+                        "properties": {
+                          "ref": {
+                            "type": "string"
+                          },
+                          "kind": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "ref",
+                          "kind",
+                          "name"
+                        ]
+                      },
+                      "nodes": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "kind",
+                            "name"
+                          ]
+                        }
+                      },
+                      "pins": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "connections": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "boundaries": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "graph": {
+                        "type": "object"
+                      },
+                      "code_slots": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "component_path": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "variant": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "component_path",
+                            "kind",
+                            "variant"
+                          ]
+                        }
+                      },
+                      "incoming": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "component_path": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "variant": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "component_path",
+                            "kind",
+                            "variant"
+                          ]
+                        }
+                      },
+                      "outgoing": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "component_path": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "variant": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "component_path",
+                            "kind",
+                            "variant"
+                          ]
+                        }
+                      },
+                      "start_state": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "ref": {
+                                "type": "string"
+                              },
+                              "component_path": {
+                                "type": "string"
+                              },
+                              "kind": {
+                                "type": "string"
+                              },
+                              "variant": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "ref",
+                              "component_path",
+                              "kind",
+                              "variant"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "end_state": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "ref": {
+                                "type": "string"
+                              },
+                              "component_path": {
+                                "type": "string"
+                              },
+                              "kind": {
+                                "type": "string"
+                              },
+                              "variant": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "ref",
+                              "component_path",
+                              "kind",
+                              "variant"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "priority": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "component_path",
+                      "kind",
+                      "variant"
+                    ],
+                    "anyOf": [
+                      {
+                        "required": [
+                          "code"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "diagram_text"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "method_binding"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "object"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "code_slots"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "graph"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "deferred": {
+                        "const": true
+                      },
+                      "has_more": {
+                        "const": true
+                      },
+                      "next_cursor": {
+                        "type": "string"
+                      },
+                      "expires_utc": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "deferred",
+                      "has_more",
+                      "next_cursor",
+                      "expires_utc"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "message": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "message"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "error"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "status",
+            "requested_count",
+            "returned_count",
+            "results"
+          ]
+        }
+      ]
+    },
+    "guidelines": [
+      "Use refs as an actual array, even for one item. A continuation is only {cursor} on this same tool.",
+      "Query saved ASCET source/BDE only. Runtime values/scheduling, Dataset values, generated code and unsaved edits are unsupported; say so without exploratory calls for an exclusively unsupported request.",
+      "Copy every user restriction into scope: owning Component, member, kind, Variant, Implementation, Diagram and visibility. Example: only Class.calc ASDL Method => {components:[{name:\"Class\"}],members:[\"calc\"],kinds:[\"method\"],variants:[\"ASDL\"]}. A prior find does not scope later searches. Reuse the exact scope; change it only when the user changes the target. Selectors have one of name/path/ref; arrays are OR, fields are AND. When the caller asks for Variant candidates, put the exact saved strings in facts.variants (not a renamed helper field).",
+      "Find lists names, representations, language and Variant/Implementation candidates. If the caller explicitly says not to guess an owning Component/Method, ask for that owner before exploratory calls. Otherwise, if a referent is missing, or several candidates remain and the user asks to choose first, ask a direct question and leave the task unresolved (outcome partial when required). A clarification answer must contain a direct question mark (? or？). C candidates have language c; ASDL is ESDL. Preserve Variant strings exactly.",
+      "Copy actual ref strings, search_scope and next_call; never change a ref prefix/suffix. Only ref values identify citable objects; read_evidence.id is internal tracking, never a citation. Base Implementation is \"\". Keep facts associated with the same object ref and read_scope. Consume relevant pages; partial cannot prove absence.",
+      "BDE connections are saved facts, not runtime scheduling. Graphical Methods share their Diagram. Method bindings are structural facts, not source bodies. A cursor is pagination control, never evidence: keep cursor/next_cursor out of evidence_refs. evidence_refs contains only actual saved ref strings returned by a tool; for a local BDE page, use its citable_refs whitelist and never derive a ref suffix. The final response is exactly one JSON object with outcome, answer, evidence_refs, missing_evidence and facts; keep only caller-requested fields under facts. Do not add inference, inferred, saved, derived or other helper objects; put caveats in answer/missing_evidence. When has_more:true and complete coverage is requested, continuation_required/continuation_call identifies the required next step: call the same tool with exactly {cursor} until has_more:false; do not change queries, scope, direction or limit midway and then claim the original batch is complete. If replacing an incomplete search with a larger limit, copy the original queries and scope exactly, including omitted filters; do not add a guessed kind/member/Variant filter."
+    ]
+  },
+  {
+    "name": "ascet_read_bde",
+    "description": "Read whole Diagram listings or local BDE objects with real Pins/connections and Hierarchy boundaries. Object refs accept depth/direction; omit both for whole Diagram refs. For connections and initialization literals, read local object refs. Does not expand referenced Class implementations.",
+    "inputSchema": {
+      "type": "object",
+      "description": "For continuation, cursor is authoritative; other fields are ignored. Prefer only {cursor}.",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [
+            "cursor"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "refs": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 32,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128,
+                "not": {
+                  "pattern": "[\u0000\r\n]"
+                },
+                "pattern": "^s[^:]+:[dn][0-9a-z]+$"
+              }
+            },
+            "depth": {
+              "enum": [
+                0,
+                1,
+                2
+              ],
+              "default": 1,
+              "description": "Object-local view: 0 = requested object interface only, 1/2 = one/two connection hops. Preserve an explicit user depth. At depth 0, connections and neighbors in that view are empty; do not broaden it to populate those fields."
+            },
+            "direction": {
+              "enum": [
+                "incoming",
+                "outgoing",
+                "both"
+              ],
+              "default": "both",
+              "description": "Which connections to include, relative to the requested object. outgoing does not change the requested object to the wire destination. Omit depth/direction for whole Diagram refs."
+            },
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [],
+          "oneOf": [
+            {
+              "required": [
+                "cursor"
+              ],
+              "maxProperties": 1
+            },
+            {
+              "required": [
+                "refs"
+              ],
+              "not": {
+                "required": [
+                  "cursor"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "outputSchema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "error"
+            },
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "code",
+            "message"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "string"
+            },
+            "component_path": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "variant": {
+              "type": "string"
+            },
+            "has_more": {
+              "type": "boolean"
+            },
+            "next_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "expires_utc": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            },
+            "diagram_text": {
+              "type": "string"
+            },
+            "method_binding": {
+              "type": "object"
+            },
+            "issues": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            },
+            "object": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ref",
+                "kind",
+                "name"
+              ]
+            },
+            "nodes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "kind",
+                  "name"
+                ]
+              }
+            },
+            "pins": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "connections": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "boundaries": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "graph": {
+              "type": "object"
+            },
+            "code_slots": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path",
+                  "kind",
+                  "variant"
+                ]
+              }
+            },
+            "incoming": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path",
+                  "kind",
+                  "variant"
+                ]
+              }
+            },
+            "outgoing": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path",
+                  "kind",
+                  "variant"
+                ]
+              }
+            },
+            "start_state": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "ref": {
+                      "type": "string"
+                    },
+                    "component_path": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "variant": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ref",
+                    "component_path",
+                    "kind",
+                    "variant"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "end_state": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "ref": {
+                      "type": "string"
+                    },
+                    "component_path": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "variant": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ref",
+                    "component_path",
+                    "kind",
+                    "variant"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "priority": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "status": {
+              "enum": [
+                "ok",
+                "partial",
+                "changed"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "ref",
+            "component_path",
+            "kind",
+            "variant"
+          ],
+          "anyOf": [
+            {
+              "required": [
+                "code"
+              ]
+            },
+            {
+              "required": [
+                "diagram_text"
+              ]
+            },
+            {
+              "required": [
+                "method_binding"
+              ]
+            },
+            {
+              "required": [
+                "object"
+              ]
+            },
+            {
+              "required": [
+                "code_slots"
+              ]
+            },
+            {
+              "required": [
+                "graph"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "ok",
+                "partial",
+                "changed",
+                "error"
+              ]
+            },
+            "requested_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "returned_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "results": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "component_path": {
+                        "type": "string"
+                      },
+                      "kind": {
+                        "type": "string"
+                      },
+                      "variant": {
+                        "type": "string"
+                      },
+                      "has_more": {
+                        "type": "boolean"
+                      },
+                      "next_cursor": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "expires_utc": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "diagram_text": {
+                        "type": "string"
+                      },
+                      "method_binding": {
+                        "type": "object"
+                      },
+                      "issues": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "code",
+                            "message"
+                          ]
+                        }
+                      },
+                      "object": {
+                        "type": "object",
+                        "properties": {
+                          "ref": {
+                            "type": "string"
+                          },
+                          "kind": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "ref",
+                          "kind",
+                          "name"
+                        ]
+                      },
+                      "nodes": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "kind",
+                            "name"
+                          ]
+                        }
+                      },
+                      "pins": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "connections": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "boundaries": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "graph": {
+                        "type": "object"
+                      },
+                      "code_slots": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "component_path": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "variant": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "component_path",
+                            "kind",
+                            "variant"
+                          ]
+                        }
+                      },
+                      "incoming": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "component_path": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "variant": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "component_path",
+                            "kind",
+                            "variant"
+                          ]
+                        }
+                      },
+                      "outgoing": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "component_path": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "variant": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "component_path",
+                            "kind",
+                            "variant"
+                          ]
+                        }
+                      },
+                      "start_state": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "ref": {
+                                "type": "string"
+                              },
+                              "component_path": {
+                                "type": "string"
+                              },
+                              "kind": {
+                                "type": "string"
+                              },
+                              "variant": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "ref",
+                              "component_path",
+                              "kind",
+                              "variant"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "end_state": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "ref": {
+                                "type": "string"
+                              },
+                              "component_path": {
+                                "type": "string"
+                              },
+                              "kind": {
+                                "type": "string"
+                              },
+                              "variant": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "ref",
+                              "component_path",
+                              "kind",
+                              "variant"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "priority": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "component_path",
+                      "kind",
+                      "variant"
+                    ],
+                    "anyOf": [
+                      {
+                        "required": [
+                          "code"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "diagram_text"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "method_binding"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "object"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "code_slots"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "graph"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "deferred": {
+                        "const": true
+                      },
+                      "has_more": {
+                        "const": true
+                      },
+                      "next_cursor": {
+                        "type": "string"
+                      },
+                      "expires_utc": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "deferred",
+                      "has_more",
+                      "next_cursor",
+                      "expires_utc"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "message": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "message"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "error"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "status",
+            "requested_count",
+            "returned_count",
+            "results"
+          ]
+        }
+      ]
+    },
+    "guidelines": [
+      "For a local object interface alone, use depth:0. For wiring, preserve the requested depth/direction. The requested object is the subject of the read: its ref, name, kind, hierarchy and complete Pin IDs belong under requested_object/facts.pin_ids; neighbors are only endpoint context and never replace it. Follow facts_mapping exactly: facts.pin_ids copies requested_object.pin_ids_on_page, never neighbors.endpoint_pins. If the caller says target/output/interface, keep the named object as the requested subject; report its own facts.pin_ids, and if the destination interface was also explicitly requested, report that separate object under target_interface/target_pin_ids rather than overwriting the requested-object facts. Omit object_kinds unless the caller supplied a native object category; hierarchy is a hierarchy category, not a generic synonym for element. A later read of another object does not change this association. depth:0 has connections:[] and neighbors:[]; keep that view. Derive names/counts from returned arrays; continue only relevant cursors, without a whole Diagram read for these facts.",
+      "Query saved ASCET source/BDE only. Runtime values/scheduling, Dataset values, generated code and unsaved edits are unsupported; say so without exploratory calls for an exclusively unsupported request.",
+      "Copy every user restriction into scope: owning Component, member, kind, Variant, Implementation, Diagram and visibility. Example: only Class.calc ASDL Method => {components:[{name:\"Class\"}],members:[\"calc\"],kinds:[\"method\"],variants:[\"ASDL\"]}. A prior find does not scope later searches. Reuse the exact scope; change it only when the user changes the target. Selectors have one of name/path/ref; arrays are OR, fields are AND. When the caller asks for Variant candidates, put the exact saved strings in facts.variants (not a renamed helper field).",
+      "Find lists names, representations, language and Variant/Implementation candidates. If the caller explicitly says not to guess an owning Component/Method, ask for that owner before exploratory calls. Otherwise, if a referent is missing, or several candidates remain and the user asks to choose first, ask a direct question and leave the task unresolved (outcome partial when required). A clarification answer must contain a direct question mark (? or？). C candidates have language c; ASDL is ESDL. Preserve Variant strings exactly.",
+      "Copy actual ref strings, search_scope and next_call; never change a ref prefix/suffix. Only ref values identify citable objects; read_evidence.id is internal tracking, never a citation. Base Implementation is \"\". Keep facts associated with the same object ref and read_scope. Consume relevant pages; partial cannot prove absence.",
+      "BDE connections are saved facts, not runtime scheduling. Graphical Methods share their Diagram. Method bindings are structural facts, not source bodies. A cursor is pagination control, never evidence: keep cursor/next_cursor out of evidence_refs. evidence_refs contains only actual saved ref strings returned by a tool; for a local BDE page, use its citable_refs whitelist and never derive a ref suffix. The final response is exactly one JSON object with outcome, answer, evidence_refs, missing_evidence and facts; keep only caller-requested fields under facts. Do not add inference, inferred, saved, derived or other helper objects; put caveats in answer/missing_evidence. When has_more:true and complete coverage is requested, continuation_required/continuation_call identifies the required next step: call the same tool with exactly {cursor} until has_more:false; do not change queries, scope, direction or limit midway and then claim the original batch is complete. If replacing an incomplete search with a larger limit, copy the original queries and scope exactly, including omitted filters; do not add a guessed kind/member/Variant filter."
+    ]
+  },
+  {
+    "name": "ascet_inspect_state",
+    "description": "Inspect saved State/Junction/Transition relationships, endpoints, priority, code_slots and Method bindings. Read returned Action code refs with ascet_read_code; locate the real bound Method to read its implementation.",
+    "inputSchema": {
+      "type": "object",
+      "description": "For continuation, cursor is authoritative; other fields are ignored. Prefer only {cursor}.",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [
+            "cursor"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "refs": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 32,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128,
+                "not": {
+                  "pattern": "[\u0000\r\n]"
+                },
+                "pattern": "^s[^:]+:[dn][0-9a-z]+$"
+              }
+            },
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "not": {
+                "pattern": "[\u0000\r\n]"
+              },
+              "description": "Copy the short next_cursor handle unchanged. Send only cursor to this same tool. Never decode or edit it."
+            }
+          },
+          "required": [],
+          "oneOf": [
+            {
+              "required": [
+                "cursor"
+              ],
+              "maxProperties": 1
+            },
+            {
+              "required": [
+                "refs"
+              ],
+              "not": {
+                "required": [
+                  "cursor"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "outputSchema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "error"
+            },
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "code",
+            "message"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "string"
+            },
+            "component_path": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "variant": {
+              "type": "string"
+            },
+            "has_more": {
+              "type": "boolean"
+            },
+            "next_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "expires_utc": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            },
+            "diagram_text": {
+              "type": "string"
+            },
+            "method_binding": {
+              "type": "object"
+            },
+            "issues": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            },
+            "object": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ref",
+                "kind",
+                "name"
+              ]
+            },
+            "nodes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "kind",
+                  "name"
+                ]
+              }
+            },
+            "pins": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "connections": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "boundaries": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "graph": {
+              "type": "object"
+            },
+            "code_slots": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path",
+                  "kind",
+                  "variant"
+                ]
+              }
+            },
+            "incoming": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path",
+                  "kind",
+                  "variant"
+                ]
+              }
+            },
+            "outgoing": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "type": "string"
+                  },
+                  "component_path": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ref",
+                  "component_path",
+                  "kind",
+                  "variant"
+                ]
+              }
+            },
+            "start_state": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "ref": {
+                      "type": "string"
+                    },
+                    "component_path": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "variant": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ref",
+                    "component_path",
+                    "kind",
+                    "variant"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "end_state": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "ref": {
+                      "type": "string"
+                    },
+                    "component_path": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "variant": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ref",
+                    "component_path",
+                    "kind",
+                    "variant"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "priority": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "status": {
+              "enum": [
+                "ok",
+                "partial",
+                "changed"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "ref",
+            "component_path",
+            "kind",
+            "variant"
+          ],
+          "anyOf": [
+            {
+              "required": [
+                "code"
+              ]
+            },
+            {
+              "required": [
+                "diagram_text"
+              ]
+            },
+            {
+              "required": [
+                "method_binding"
+              ]
+            },
+            {
+              "required": [
+                "object"
+              ]
+            },
+            {
+              "required": [
+                "code_slots"
+              ]
+            },
+            {
+              "required": [
+                "graph"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "ok",
+                "partial",
+                "changed",
+                "error"
+              ]
+            },
+            "requested_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "returned_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "results": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "component_path": {
+                        "type": "string"
+                      },
+                      "kind": {
+                        "type": "string"
+                      },
+                      "variant": {
+                        "type": "string"
+                      },
+                      "has_more": {
+                        "type": "boolean"
+                      },
+                      "next_cursor": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "expires_utc": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "diagram_text": {
+                        "type": "string"
+                      },
+                      "method_binding": {
+                        "type": "object"
+                      },
+                      "issues": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "code",
+                            "message"
+                          ]
+                        }
+                      },
+                      "object": {
+                        "type": "object",
+                        "properties": {
+                          "ref": {
+                            "type": "string"
+                          },
+                          "kind": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "ref",
+                          "kind",
+                          "name"
+                        ]
+                      },
+                      "nodes": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "kind",
+                            "name"
+                          ]
+                        }
+                      },
+                      "pins": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "connections": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "boundaries": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "graph": {
+                        "type": "object"
+                      },
+                      "code_slots": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "component_path": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "variant": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "component_path",
+                            "kind",
+                            "variant"
+                          ]
+                        }
+                      },
+                      "incoming": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "component_path": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "variant": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "component_path",
+                            "kind",
+                            "variant"
+                          ]
+                        }
+                      },
+                      "outgoing": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ref": {
+                              "type": "string"
+                            },
+                            "component_path": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "variant": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ref",
+                            "component_path",
+                            "kind",
+                            "variant"
+                          ]
+                        }
+                      },
+                      "start_state": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "ref": {
+                                "type": "string"
+                              },
+                              "component_path": {
+                                "type": "string"
+                              },
+                              "kind": {
+                                "type": "string"
+                              },
+                              "variant": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "ref",
+                              "component_path",
+                              "kind",
+                              "variant"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "end_state": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "ref": {
+                                "type": "string"
+                              },
+                              "component_path": {
+                                "type": "string"
+                              },
+                              "kind": {
+                                "type": "string"
+                              },
+                              "variant": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "ref",
+                              "component_path",
+                              "kind",
+                              "variant"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "priority": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "component_path",
+                      "kind",
+                      "variant"
+                    ],
+                    "anyOf": [
+                      {
+                        "required": [
+                          "code"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "diagram_text"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "method_binding"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "object"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "code_slots"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "graph"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "deferred": {
+                        "const": true
+                      },
+                      "has_more": {
+                        "const": true
+                      },
+                      "next_cursor": {
+                        "type": "string"
+                      },
+                      "expires_utc": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "deferred",
+                      "has_more",
+                      "next_cursor",
+                      "expires_utc"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ref": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "message": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "message"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "ref",
+                      "error"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "status",
+            "requested_count",
+            "returned_count",
+            "results"
+          ]
+        }
+      ]
+    },
+    "guidelines": [
+      "Transition inspection returns endpoint identities and saved Method bindings in code_slots. These bindings are references, not implementation bodies. For a request to verify a Transition, read the chosen Transition, both start_state and end_state refs, and every relevant binding ref; the inline method name is not proof that the binding ref was read. Read Action code refs with ascet_read_code; locate the real bound Method only when its implementation is requested. Batch independent reads. A deferred:true item has no facts yet: continue its own next_cursor on this tool.",
+      "Query saved ASCET source/BDE only. Runtime values/scheduling, Dataset values, generated code and unsaved edits are unsupported; say so without exploratory calls for an exclusively unsupported request.",
+      "Copy every user restriction into scope: owning Component, member, kind, Variant, Implementation, Diagram and visibility. Example: only Class.calc ASDL Method => {components:[{name:\"Class\"}],members:[\"calc\"],kinds:[\"method\"],variants:[\"ASDL\"]}. A prior find does not scope later searches. Reuse the exact scope; change it only when the user changes the target. Selectors have one of name/path/ref; arrays are OR, fields are AND. When the caller asks for Variant candidates, put the exact saved strings in facts.variants (not a renamed helper field).",
+      "Find lists names, representations, language and Variant/Implementation candidates. If the caller explicitly says not to guess an owning Component/Method, ask for that owner before exploratory calls. Otherwise, if a referent is missing, or several candidates remain and the user asks to choose first, ask a direct question and leave the task unresolved (outcome partial when required). A clarification answer must contain a direct question mark (? or？). C candidates have language c; ASDL is ESDL. Preserve Variant strings exactly.",
+      "Copy actual ref strings, search_scope and next_call; never change a ref prefix/suffix. Only ref values identify citable objects; read_evidence.id is internal tracking, never a citation. Base Implementation is \"\". Keep facts associated with the same object ref and read_scope. Consume relevant pages; partial cannot prove absence.",
+      "BDE connections are saved facts, not runtime scheduling. Graphical Methods share their Diagram. Method bindings are structural facts, not source bodies. A cursor is pagination control, never evidence: keep cursor/next_cursor out of evidence_refs. evidence_refs contains only actual saved ref strings returned by a tool; for a local BDE page, use its citable_refs whitelist and never derive a ref suffix. The final response is exactly one JSON object with outcome, answer, evidence_refs, missing_evidence and facts; keep only caller-requested fields under facts. Do not add inference, inferred, saved, derived or other helper objects; put caveats in answer/missing_evidence. When has_more:true and complete coverage is requested, continuation_required/continuation_call identifies the required next step: call the same tool with exactly {cursor} until has_more:false; do not change queries, scope, direction or limit midway and then claim the original batch is complete. If replacing an incomplete search with a larger limit, copy the original queries and scope exactly, including omitted filters; do not add a guessed kind/member/Variant filter."
+    ]
+  }
+]

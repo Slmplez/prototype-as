@@ -4,6 +4,8 @@
 
 ## 文档入口
 
+- [代码与 BDE 搜索工具](ascet-multi-instance/tools/code-search/README.md)
+- [搜索工具任务拆分](ascet-multi-instance/tools/code-search/TASK_BREAKDOWN.zh-CN.md)
 - [完整资料包说明](ascet-multi-instance/README.md)
 - [中文操作指南与 Copilot 接入方案](ascet-multi-instance/docs/ascet-agent-background-workflow.md)
 - [多实例工具说明](ascet-multi-instance/tools/multi-instance/README.md)

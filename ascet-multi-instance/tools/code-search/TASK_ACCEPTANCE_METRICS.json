@@ -1,0 +1,308 @@
+{
+  "date": "2026-10-11",
+  "boundary": "Saved code/BDE task regression. Parameter acceptance is not semantic precision. Guarded repairs never replace first-attempt results. Not an independent database generalization benchmark.",
+  "offline": {
+    "source_log": "experiments/2026-10-11-task-offline-build-c-final.log",
+    "sha256": "cf0acebcf991dd956c64a7e2f077fd9ee04714bade0a6bd0189544aeb9d50519",
+    "tests": 827,
+    "passed": 827,
+    "failed": 0
+  },
+  "live_sdk": {
+    "source": "experiments/pi-agent-eval/2026-10-11-tasks-01/live-sdk-final-02/report.json",
+    "sha256": "532549224aa32c4e662282fc03c615e0609f3a47d001a0955c2fabad6de9e29b",
+    "passed": 16,
+    "total": 16,
+    "sources_and_graphs_unchanged": true,
+    "instance_retained": true
+  },
+  "first_attempt": {
+    "source": "experiments/pi-agent-eval/2026-10-11-tasks-01/candidate-pi-01/report.json",
+    "sha256": "34d55279ea857fbdc7a8048c4d77782f6a51b5ac40810670f9dfc6efad3415a9",
+    "summary": {
+      "passed": 70,
+      "attempted": 80,
+      "planned": 80,
+      "unique_cases": 80,
+      "semantic_passed": 70,
+      "model_service_failures": 0,
+      "completed_cases": 80,
+      "tool_errors": 2,
+      "tool_calls": 230,
+      "expected_tool_errors": 1,
+      "unexpected_tool_errors": 1,
+      "task_latency": {
+        "samples": 80,
+        "p50_ms": 6217.230199999991,
+        "p95_ms": 14517.935399999998,
+        "max_ms": 35622.664000000004
+      },
+      "first_tool_latency": {
+        "samples": 73,
+        "p50_ms": 562.7705999999889,
+        "p95_ms": 894.3046000000322,
+        "max_ms": 1076.1741000000002
+      },
+      "subsequent_tool_latency": {
+        "samples": 156,
+        "p50_ms": 137.6029000000126,
+        "p95_ms": 694.8709999999846,
+        "max_ms": 1385.4660999999905
+      },
+      "subsequent_search_latency": {
+        "samples": 0
+      }
+    },
+    "call_accuracy": {
+      "parameter_acceptance": {
+        "passed": 228,
+        "total": 230,
+        "rate": 0.991304347826087
+      },
+      "explicit_scope_compliance": {
+        "passed": 46,
+        "total": 47,
+        "rate": 0.9787234042553191
+      },
+      "unclassified_error_calls": 0,
+      "known_unnecessary_calls": 2,
+      "boundary": "Parameter acceptance is not semantic precision. Scope labels cover annotated explicit predicates only, with same-owner structural reads allowed. Unannotated call relevance remains unknown."
+    },
+    "closeout": {
+      "status": "passed",
+      "sources_and_graphs_unchanged": true,
+      "isolated_instance_retained": true,
+      "endpoint_open": true,
+      "protected_processes_unchanged": true
+    },
+    "failed_cases": [
+      "intent-locktime-countdown",
+      "intent-getter-interface",
+      "intent-shared-class",
+      "intent-missing-referent",
+      "intent-duplicate-stage",
+      "intent-runtime-now",
+      "intent-dataset-number",
+      "intent-generated-target",
+      "accept2-missing-object",
+      "accept2-missing-code"
+    ]
+  },
+  "guarded_groups": [
+    {
+      "source": "experiments/pi-agent-eval/2026-10-11-tasks-guarded-01/guarded-pi-01/report.json",
+      "sha256": "5b89af12eb3ea200d573d690a09a610af67b5b5b77952a9842d63f28edf10610",
+      "original_summary": {
+        "passed": 13,
+        "attempted": 20,
+        "planned": 20,
+        "unique_cases": 20,
+        "semantic_passed": 13,
+        "model_service_failures": 0,
+        "completed_cases": 20,
+        "tool_errors": 7,
+        "tool_calls": 65,
+        "expected_tool_errors": 1,
+        "unexpected_tool_errors": 6,
+        "task_latency": {
+          "samples": 20,
+          "p50_ms": 9355.613799999992,
+          "p95_ms": 21955.703400000013,
+          "max_ms": 51694.226800000004
+        },
+        "first_tool_latency": {
+          "samples": 14,
+          "p50_ms": 526.387699999992,
+          "p95_ms": 926.0151999999998,
+          "max_ms": 926.0151999999998
+        },
+        "subsequent_tool_latency": {
+          "samples": 45,
+          "p50_ms": 104.98790000000008,
+          "p95_ms": 640.553899999999,
+          "max_ms": 1255.4567000000025
+        },
+        "subsequent_search_latency": {
+          "samples": 0
+        }
+      },
+      "final_guard_accepted": 19,
+      "repair_events": 13,
+      "failed_cases": [
+        {
+          "id": "intent-junction-to-off",
+          "failed_checks": [
+            {
+              "name": "intent_terms",
+              "passed": false
+            },
+            {
+              "name": "intent_call_errors",
+              "passed": false
+            }
+          ]
+        },
+        {
+          "id": "holdout-negative-outgoing",
+          "failed_checks": [
+            {
+              "name": "answer_and_refs",
+              "passed": false,
+              "detail": "Unsupported answer field: intent"
+            }
+          ]
+        },
+        {
+          "id": "holdout-positive-incoming",
+          "failed_checks": [
+            {
+              "name": "answer_and_refs",
+              "passed": false,
+              "detail": "Unsupported answer field: intent"
+            }
+          ]
+        },
+        {
+          "id": "batch-pagination",
+          "failed_checks": [
+            {
+              "name": "answer_and_refs",
+              "passed": false,
+              "detail": "Unsupported answer field: intent"
+            }
+          ]
+        },
+        {
+          "id": "large-header-read-pages",
+          "failed_checks": [
+            {
+              "name": "answer_and_refs",
+              "passed": false,
+              "detail": "Unsupported answer field: intent"
+            }
+          ]
+        },
+        {
+          "id": "truncated-search-boundary",
+          "failed_checks": [
+            {
+              "name": "answer_and_refs",
+              "passed": false,
+              "detail": "Unsupported answer field: intent"
+            }
+          ]
+        },
+        {
+          "id": "cross-tool-cursor-recovery",
+          "failed_checks": [
+            {
+              "name": "answer_and_refs",
+              "passed": false,
+              "detail": "Unsupported answer field: intent"
+            }
+          ]
+        }
+      ],
+      "closeout": {
+        "status": "passed",
+        "sources_and_graphs_unchanged": true,
+        "isolated_instance_retained": true,
+        "endpoint_open": true,
+        "protected_processes_unchanged": true
+      }
+    },
+    {
+      "source": "experiments/pi-agent-eval/2026-10-11-tasks-guarded-02/guarded-pi-01/report.json",
+      "sha256": "dfce4abf9a695d9b9ad13d2fe6a8abd3a1b6b931a7dae8660822f74f9f692b52",
+      "original_summary": {
+        "passed": 16,
+        "attempted": 20,
+        "planned": 20,
+        "unique_cases": 20,
+        "semantic_passed": 16,
+        "model_service_failures": 0,
+        "completed_cases": 20,
+        "tool_errors": 4,
+        "tool_calls": 68,
+        "expected_tool_errors": 1,
+        "unexpected_tool_errors": 3,
+        "task_latency": {
+          "samples": 20,
+          "p50_ms": 8799.247000000003,
+          "p95_ms": 23658.5606,
+          "max_ms": 27012.927599999995
+        },
+        "first_tool_latency": {
+          "samples": 16,
+          "p50_ms": 527.0768999999855,
+          "p95_ms": 1578.1880999999994,
+          "max_ms": 1578.1880999999994
+        },
+        "subsequent_tool_latency": {
+          "samples": 50,
+          "p50_ms": 121.2335000000021,
+          "p95_ms": 692.5494999999937,
+          "max_ms": 1270.8767999999982
+        },
+        "subsequent_search_latency": {
+          "samples": 0
+        }
+      },
+      "final_guard_accepted": 20,
+      "repair_events": 10,
+      "failed_cases": [
+        {
+          "id": "intent-locktime-countdown",
+          "failed_checks": [
+            {
+              "name": "intent_call_errors",
+              "passed": false
+            }
+          ]
+        },
+        {
+          "id": "intent-getter-interface",
+          "failed_checks": [
+            {
+              "name": "required_outcome",
+              "passed": false
+            }
+          ]
+        },
+        {
+          "id": "intent-runtime-now",
+          "failed_checks": [
+            {
+              "name": "intent_call_errors",
+              "passed": false
+            },
+            {
+              "name": "intent_no_speculative_tools",
+              "passed": false
+            }
+          ]
+        },
+        {
+          "id": "intent-dataset-number",
+          "failed_checks": [
+            {
+              "name": "intent_call_errors",
+              "passed": false
+            },
+            {
+              "name": "intent_no_speculative_tools",
+              "passed": false
+            }
+          ]
+        }
+      ],
+      "closeout": {
+        "status": "passed",
+        "sources_and_graphs_unchanged": true,
+        "isolated_instance_retained": true,
+        "endpoint_open": true,
+        "protected_processes_unchanged": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ascet-code-search": {
+      "command": "node",
+      "args": ["E:/Repo/ASCET/tools/code-search/dist/src/mcp.js"]
+    }
+  }
+}

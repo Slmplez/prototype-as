@@ -1,0 +1,1803 @@
+{
+  "version": 2,
+  "grading_version": 4,
+  "intent_recording": "none",
+  "suite": "core",
+  "max_tool_calls": 20,
+  "timeout_ms": 240000,
+  "answer_format": "Return exactly one JSON object, without Markdown fences or surrounding prose, with outcome (located/partial/not_found/unsupported), answer (a concise explanation), evidence_refs (actual refs seen in this session), missing_evidence (strings), and facts (an object using the requested fields). In facts, name/path/kind/variant fields contain only the exact saved string; ID fields contain numbers, not explanatory text. Separate saved facts from inference. Do not invent unsupported values. Do not output a separate intent declaration. Only the final answer is JSON. Put facts at the requested level; preserve exact saved values.",
+  "group_names": {
+    "intent_paraphrase": "中文口语与需求定位",
+    "intent_scope": "正负范围约束与代码种类",
+    "intent_graph": "BDE 与状态机意图",
+    "intent_compound": "组合需求与独立查询",
+    "intent_ambiguity": "信息不足和多候选澄清",
+    "intent_context": "真实多轮指代与目标切换",
+    "intent_boundary": "保存源码的能力边界",
+    "source_arguments": "明确代码参数",
+    "graph_arguments": "BDE 范围与局部读取",
+    "state_evidence": "状态槽位与绑定",
+    "coverage_boundary": "能力边界",
+    "source_transfer": "其他 Class 的代码任务",
+    "graph_transfer": "Module、literal 与嵌套 Hierarchy",
+    "acceptance": "Previous held-out requirements, now regression",
+    "cursor": "Known pagination regression",
+    "heldout": "New requirements after code freeze; same database"
+  },
+  "cases": [
+    {
+      "id": "intent-pressure-colloquial",
+      "group": "intent_paraphrase",
+      "requirement": "帮我找一下，驾驶员施加的力转换成压力时，输出压力是在什么地方清零的？把初始化那段完整代码给我看。",
+      "intent": {
+        "actions": [
+          "locate",
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "class-init",
+      "response_fields": "component_type, representation (saved_text/bde), variant, assignments (saved assignment statements)."
+    },
+    {
+      "id": "intent-locktime-reset",
+      "group": "intent_paraphrase",
+      "requirement": "AEBLockTime 一开始为啥是零？找出清零的位置，说明这是保存的语句还是图里的连线。",
+      "intent": {
+        "actions": [
+          "locate"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AEBLockTime"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "bde-init",
+      "response_fields": "representation (saved_text/bde), variable, value (number), source_pin (only the exact Pin name), target_pin (only the exact Pin name), directly_stored_assignment (boolean)."
+    },
+    {
+      "id": "intent-locktime-countdown",
+      "group": "intent_paraphrase",
+      "requirement": "锁定计时器 AEBLockTime 是在哪儿一拍一拍减掉 C_AEBdT 的？给我完整实现。",
+      "intent": {
+        "actions": [
+          "locate",
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AEBLockTime",
+          "C_AEBdT"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "state-static-timer",
+      "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, code."
+    },
+    {
+      "id": "intent-inactive-zero",
+      "group": "intent_paraphrase",
+      "requirement": "找一下这段逻辑：AEB_AxCtrlActive_B 有效时保存 VxAct 和 AxTarRaw，无效时把修改后的值清零。我想看完整实现和两个加速度差值。",
+      "intent": {
+        "actions": [
+          "locate",
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AEB_AxCtrlActive_B",
+          "VxAct",
+          "AxTarRaw"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_search",
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "saved-method",
+      "response_fields": "component_type, variant, active_assignments (array of saved assignment statements), inactive_assignments (array), difference_assignments (only the two saved acceleration-difference statements; exclude mirror assignments)."
+    },
+    {
+      "id": "intent-whole-variable",
+      "group": "intent_scope",
+      "requirement": "只在 AEB_AxCtrlConfigFF_Modify 的 ASDL Method 中查完整变量 AxTarLim，名字带 K1 后缀的别算进去。给我总命中数。",
+      "intent": {
+        "actions": [
+          "search"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AxTarLim"
+        ],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify"
+        ],
+        "members": [],
+        "clarification_fields": [],
+        "search_scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        }
+      },
+      "response_fields": "counts [{query,total_hits}] in requested order.",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "queries": [
+          {
+            "text": "AxTarLim",
+            "mode": "identifier"
+          }
+        ]
+      }
+    },
+    {
+      "id": "intent-literal-expression",
+      "group": "intent_scope",
+      "requirement": "只在 AEB_AxCtrlConfigFF_Modify/calc_pre 的 ASDL 代码里找字面代码 AxTarRaw - AxTarLim，不要当正则。给我命中数。",
+      "intent": {
+        "actions": [
+          "search"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AxTarRaw - AxTarLim"
+        ],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify"
+        ],
+        "members": [
+          "calc_pre"
+        ],
+        "clarification_fields": [],
+        "search_scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        }
+      },
+      "response_fields": "counts [{query,total_hits}] in requested order.",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        },
+        "queries": [
+          {
+            "text": "AxTarRaw - AxTarLim",
+            "mode": "text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "intent-specific-c-variant",
+      "group": "intent_scope",
+      "requirement": "我要看 EvenValue 的 Even，版本是 'ES1112'_Physical Experiment 的 C 实现，完整读出来，别拿 ASDL 的替代。",
+      "intent": {
+        "actions": [
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [
+          "EvenValue"
+        ],
+        "members": [
+          "Even"
+        ],
+        "clarification_fields": [],
+        "read_scope": {
+          "component": "EvenValue",
+          "kind": "method",
+          "member": "Even",
+          "variant": " 'ES1112'_Physical Experiment"
+        }
+      },
+      "score_as": "saved-c-method",
+      "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines."
+    },
+    {
+      "id": "intent-class-init-only",
+      "group": "intent_scope",
+      "requirement": "只读 DBR_Force2Pressure 这个 Class 的 Init 完整代码。我说的不是状态机 Action，也不是 Module 的初始化 Process。",
+      "intent": {
+        "actions": [
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [
+          "DBR_Force2Pressure"
+        ],
+        "members": [
+          "Init"
+        ],
+        "clarification_fields": [],
+        "read_scope": {
+          "component": "DBR_Force2Pressure",
+          "kind": "method",
+          "member": "Init",
+          "variant": "ASDL"
+        }
+      },
+      "score_as": "class-init",
+      "response_fields": "component_type, representation (saved_text/bde), variant, assignments (saved assignment statements)."
+    },
+    {
+      "id": "intent-where-wired",
+      "group": "intent_graph",
+      "requirement": "C_AEB_AXCDeadZonePos 接到死区计算的哪里去了？看看真正的输出连线和目标对象的全部 Pins，别把图的拥有者当成被引用的 Class。",
+      "intent": {
+        "actions": [
+          "connections"
+        ],
+        "decision": "execute",
+        "terms": [
+          "C_AEB_AXCDeadZonePos"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "bde-neighbor",
+      "response_fields": "from_pin, to_pin, target_name, referenced_component_path."
+    },
+    {
+      "id": "intent-getter-interface",
+      "group": "intent_graph",
+      "requirement": "AEB_dFxTar 的 AEBdFxTar 是外面连线用的 getter 吧？找出它在哪个 Diagram，看看是否和 calc 共用图，不要凭空编一段文本代码。",
+      "intent": {
+        "actions": [
+          "locate",
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [
+          "AEB_dFxTar"
+        ],
+        "members": [
+          "AEBdFxTar",
+          "calc"
+        ],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "graphical-getter-diagram",
+      "response_fields": "representation (saved_text/bde), shared_diagram, methods (all saved member names on that Diagram)."
+    },
+    {
+      "id": "intent-static-not-entry",
+      "group": "intent_graph",
+      "requirement": "只看 AEB_State_Machine/Main 的 AEB_State_Off 在停留期间执行的代码，要完整的 Static Action，不是进入或退出时的 Action。",
+      "intent": {
+        "actions": [
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [
+          "AEB_State_Machine"
+        ],
+        "members": [
+          "Main/AEB_State_Off"
+        ],
+        "clarification_fields": [],
+        "read_scope": {
+          "component": "AEB_State_Machine",
+          "kind": "state_static",
+          "member": "Main/AEB_State_Off",
+          "variant": "ASDL"
+        }
+      },
+      "score_as": "state-static-timer",
+      "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, code."
+    },
+    {
+      "id": "intent-junction-to-off",
+      "group": "intent_graph",
+      "requirement": "哪条 Transition 是从 Junction 走到 AEB_State_Off 的？把两端、优先级和触发 Method 的绑定核实一下，绑定不能当实现正文。",
+      "intent": {
+        "actions": [
+          "locate"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AEB_State_Off"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "transition-binding",
+      "response_fields": "start_kind, start_id, end_kind, end_id, priority, binding_method, binding_is_body (boolean)."
+    },
+    {
+      "id": "intent-three-variables",
+      "group": "intent_compound",
+      "requirement": "在 AEB_AxCtrlConfigFF_Modify 的 ASDL Method 中同时查 AxTarRaw、VxAct、AxTarLim 三个完整变量，各自统计，不能理解成三个必须同时出现。",
+      "intent": {
+        "actions": [
+          "search"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AxTarRaw",
+          "VxAct",
+          "AxTarLim"
+        ],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify"
+        ],
+        "members": [],
+        "clarification_fields": [],
+        "search_scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        }
+      },
+      "response_fields": "counts [{query,total_hits}] in requested order.",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "queries": [
+          {
+            "text": "AxTarRaw",
+            "mode": "identifier"
+          },
+          {
+            "text": "VxAct",
+            "mode": "identifier"
+          },
+          {
+            "text": "AxTarLim",
+            "mode": "identifier"
+          }
+        ]
+      }
+    },
+    {
+      "id": "intent-two-owners",
+      "group": "intent_compound",
+      "requirement": "只列 AEB_AxCtrlConfigFF_Modify 和 DBR_Force2Pressure 两个 Component 下名字恰好叫 calc 的保存成员。不存在就如实说明，保留各自身份。",
+      "intent": {
+        "actions": [
+          "locate"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify",
+          "DBR_Force2Pressure"
+        ],
+        "members": [
+          "calc"
+        ],
+        "clarification_fields": []
+      },
+      "score_as": "common-calc-two-owners",
+      "response_fields": "total_count and results [{component_path,kind,member,variant,implementation}].",
+      "rubric": {
+        "type": "catalog",
+        "name": "calc",
+        "match": "exact",
+        "scope": {
+          "component": [
+            "AEB_AxCtrlConfigFF_Modify",
+            "DBR_Force2Pressure"
+          ],
+          "kind": "method"
+        }
+      }
+    },
+    {
+      "id": "intent-shared-class",
+      "group": "intent_compound",
+      "requirement": "AxCtrlLimGradAxMin 和 AxCtrlLimGradAxMax 是不是同一 Class 的两个对象？查清引用关系，完整读实际 Class 的 calc，并给一条真实连线。",
+      "intent": {
+        "actions": [
+          "compare"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AxCtrlLimGradAxMin",
+          "AxCtrlLimGradAxMax"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "referenced-class",
+      "response_fields": "placements (array of {name, referenced_component_path}), implementation_component_path, implementation_method. Keep placements distinct from their shared Class."
+    },
+    {
+      "id": "intent-line-window",
+      "group": "intent_compound",
+      "requirement": "我只要 AEB_AxCtrlConfigFF_Modify/calc_pre 的 ASDL 原文第 3 到第 12 行，行号保留，整个方法别都发过来。",
+      "intent": {
+        "actions": [
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify"
+        ],
+        "members": [
+          "calc_pre"
+        ],
+        "clarification_fields": [],
+        "read_scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        }
+      },
+      "score_as": "method-line-window",
+      "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, start_line, end_line (last included)."
+    },
+    {
+      "id": "intent-missing-referent",
+      "group": "intent_ambiguity",
+      "requirement": "这个时间哪里来的？",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "terms": [],
+        "components": [],
+        "members": [],
+        "clarification_fields": [
+          "symbol"
+        ],
+        "question_patterns": [
+          "(?:变量|参数|时间|计时器|名称)"
+        ],
+        "no_reads": true,
+        "no_tools": true
+      },
+      "expected_outcome": "partial",
+      "response_fields": "{}; ask the missing question in answer, list the missing information in missing_evidence."
+    },
+    {
+      "id": "intent-calc-without-owner",
+      "group": "intent_ambiguity",
+      "requirement": "把 calc 的完整代码给我看。",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "terms": [],
+        "components": [],
+        "members": [
+          "calc"
+        ],
+        "clarification_fields": [
+          "component"
+        ],
+        "question_patterns": [
+          "(?:组件|Component|Class|类)"
+        ],
+        "no_reads": true
+      },
+      "expected_outcome": "partial",
+      "response_fields": "{}; ask which owner in answer; do not pick an arbitrary calc."
+    },
+    {
+      "id": "intent-variant-unspecified",
+      "group": "intent_ambiguity",
+      "requirement": "把 EvenValue/Even 的 C 实现完整给我看，Variant 还没选，先帮我确认可选项。",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "terms": [],
+        "components": [
+          "EvenValue"
+        ],
+        "members": [
+          "Even"
+        ],
+        "clarification_fields": [
+          "variant"
+        ],
+        "question_patterns": [
+          "(?:Variant|版本|变体)"
+        ],
+        "no_reads": true,
+        "required_tools": [
+          "ascet_code_find"
+        ]
+      },
+      "expected_outcome": "partial",
+      "response_fields": "variants (all exact saved C Variant strings for this member); ask which Variant in answer.",
+      "intent_fixture": {
+        "type": "read",
+        "scope": {
+          "component": "EvenValue",
+          "kind": "method",
+          "member": "Even"
+        }
+      }
+    },
+    {
+      "id": "intent-duplicate-stage",
+      "group": "intent_ambiguity",
+      "requirement": "看看 Trial_Hierarchy_20261001_100329_c7dd0b/Main 里叫 Stage 的 Hierarchy；如果有多个，先列出来问我是哪一个，不要替我选。",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "terms": [
+          "Stage"
+        ],
+        "components": [
+          "Trial_Hierarchy_20261001_100329_c7dd0b"
+        ],
+        "members": [],
+        "clarification_fields": [
+          "hierarchy"
+        ],
+        "question_patterns": [
+          "(?:Hierarchy|层级|路径|哪一个|哪个)"
+        ],
+        "no_reads": true,
+        "required_tools": [
+          "ascet_code_find"
+        ]
+      },
+      "score_as": "duplicate-hierarchy-names",
+      "response_fields": "total_count and results [{component_path,diagram,name,kind,node_id,hierarchy}], using root for the root scope.",
+      "expected_outcome": "partial"
+    },
+    {
+      "id": "intent-followup-line-window",
+      "group": "intent_context",
+      "requirement": "现在只给我刚才那个 Method 的第 3 到第 12 行，复用刚才拿到的 ref，别重新发全文。",
+      "intent": {
+        "actions": [
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify"
+        ],
+        "members": [
+          "calc_pre"
+        ],
+        "clarification_fields": [],
+        "last_turn_only": true,
+        "reuse_previous_ref": true,
+        "read_scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        }
+      },
+      "score_as": "method-line-window",
+      "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, start_line, end_line (last included).",
+      "turns": [
+        {
+          "requirement": "先完整读取 AEB_AxCtrlConfigFF_Modify/calc_pre 的 ASDL 实现。",
+          "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, code (exact saved text)."
+        },
+        {
+          "requirement": "现在只给我刚才那个 Method 的第 3 到第 12 行，复用刚才拿到的 ref，别重新发全文。",
+          "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, start_line, end_line (last included)."
+        }
+      ]
+    },
+    {
+      "id": "intent-followup-expand-batch",
+      "group": "intent_context",
+      "requirement": "再把 VxAct 和 AxTarRaw 加上，仍在刚才的 Component 和 ASDL Method 范围，三个变量独立统计。",
+      "intent": {
+        "actions": [
+          "search"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AxTarLim",
+          "VxAct",
+          "AxTarRaw"
+        ],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify"
+        ],
+        "members": [],
+        "clarification_fields": [],
+        "last_turn_only": true,
+        "search_scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        }
+      },
+      "response_fields": "counts [{query,total_hits}] in requested order.",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "queries": [
+          {
+            "text": "AxTarLim",
+            "mode": "identifier"
+          },
+          {
+            "text": "VxAct",
+            "mode": "identifier"
+          },
+          {
+            "text": "AxTarRaw",
+            "mode": "identifier"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "requirement": "只在 AEB_AxCtrlConfigFF_Modify 的 ASDL Method 中查完整变量 AxTarLim，统计全部命中。",
+          "response_fields": "counts [{query,total_hits}] in requested order."
+        },
+        {
+          "requirement": "再把 VxAct 和 AxTarRaw 加上，仍在刚才的 Component 和 ASDL Method 范围，三个变量独立统计。",
+          "response_fields": "counts [{query,total_hits}] in requested order."
+        }
+      ]
+    },
+    {
+      "id": "intent-followup-timer",
+      "group": "intent_context",
+      "requirement": "再看它停留在 Off 状态时怎么递减，要完整代码。",
+      "intent": {
+        "actions": [
+          "read",
+          "locate"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AEBLockTime"
+        ],
+        "components": [
+          "AEB_State_Machine"
+        ],
+        "members": [],
+        "clarification_fields": [],
+        "last_turn_only": true,
+        "read_scope": {
+          "component": "AEB_State_Machine",
+          "kind": "state_static",
+          "member": "Main/AEB_State_Off",
+          "variant": "ASDL"
+        }
+      },
+      "score_as": "state-static-timer",
+      "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, code.",
+      "turns": [
+        {
+          "requirement": "先看 AEB_State_Machine 中 AEBLockTime 初始化清零的证据。",
+          "response_fields": "representation (saved_text/bde), variable, value (number), source_pin (only the exact Pin name), target_pin (only the exact Pin name), directly_stored_assignment (boolean)."
+        },
+        {
+          "requirement": "再看它停留在 Off 状态时怎么递减，要完整代码。",
+          "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, code."
+        }
+      ]
+    },
+    {
+      "id": "intent-followup-switch-owner",
+      "group": "intent_context",
+      "requirement": "改成 AEB_AxCtrlConfigFF_Modify 的 calc_pre，完整读 ASDL；这次不要继续读刚才的 Class Init。",
+      "intent": {
+        "actions": [
+          "read"
+        ],
+        "decision": "execute",
+        "terms": [],
+        "components": [
+          "AEB_AxCtrlConfigFF_Modify"
+        ],
+        "members": [
+          "calc_pre"
+        ],
+        "clarification_fields": [],
+        "last_turn_only": true,
+        "read_scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        }
+      },
+      "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, code (exact saved text).",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "member": "calc_pre",
+          "variant": "ASDL"
+        },
+        "full": true
+      },
+      "turns": [
+        {
+          "requirement": "先完整读取 DBR_Force2Pressure 的 Class Init。",
+          "response_fields": "component_type, representation (saved_text/bde), variant, assignments (saved assignment statements)."
+        },
+        {
+          "requirement": "改成 AEB_AxCtrlConfigFF_Modify 的 calc_pre，完整读 ASDL；这次不要继续读刚才的 Class Init。",
+          "response_fields": "identity {component_path,kind,member,variant,implementation}, total_lines, code (exact saved text)."
+        }
+      ]
+    },
+    {
+      "id": "intent-runtime-now",
+      "group": "intent_boundary",
+      "requirement": "现在运行中的 AEBLockTime 到底是多少？我要实时数值，不是 Init 里的初始值。",
+      "intent": {
+        "actions": [
+          "unsupported"
+        ],
+        "decision": "unsupported",
+        "terms": [
+          "AEBLockTime"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "no_reads": true,
+        "no_tools": true
+      },
+      "expected_outcome": "unsupported",
+      "response_fields": "runtime_value_supported (boolean).",
+      "rubric": {
+        "type": "unsupported",
+        "flags": {
+          "runtime_value_supported": false
+        }
+      }
+    },
+    {
+      "id": "intent-unsaved-buffer",
+      "group": "intent_boundary",
+      "requirement": "我刚在编辑器改了 calc_pre 但没保存，你查一下修改后的代码。",
+      "intent": {
+        "actions": [
+          "unsupported"
+        ],
+        "decision": "unsupported",
+        "terms": [],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "no_reads": true,
+        "no_tools": true
+      },
+      "expected_outcome": "unsupported",
+      "response_fields": "unsaved_buffers_covered (boolean).",
+      "rubric": {
+        "type": "unsupported",
+        "flags": {
+          "unsaved_buffers_covered": false
+        }
+      }
+    },
+    {
+      "id": "intent-dataset-number",
+      "group": "intent_boundary",
+      "requirement": "我要当前 Dataset 里 C_AEBdT 的数值，不是哪些代码用了它。",
+      "intent": {
+        "actions": [
+          "unsupported"
+        ],
+        "decision": "unsupported",
+        "terms": [
+          "C_AEBdT"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "no_reads": true,
+        "no_tools": true
+      },
+      "expected_outcome": "unsupported",
+      "response_fields": "dataset_values_supported (boolean).",
+      "rubric": {
+        "type": "unsupported",
+        "flags": {
+          "dataset_values_supported": false
+        }
+      }
+    },
+    {
+      "id": "intent-generated-target",
+      "group": "intent_boundary",
+      "requirement": "查生成到目标端的 C 代码里 AEBLockTime 的所有引用，只查生成代码，别用保存的 ASDL 结果替代。",
+      "intent": {
+        "actions": [
+          "unsupported"
+        ],
+        "decision": "unsupported",
+        "terms": [
+          "AEBLockTime"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "no_reads": true,
+        "no_tools": true
+      },
+      "expected_outcome": "unsupported",
+      "response_fields": "generated_code_covered (boolean).",
+      "rubric": {
+        "type": "unsupported",
+        "flags": {
+          "generated_code_covered": false
+        }
+      }
+    },
+    {
+      "id": "holdout-member-symbol",
+      "group": "source_arguments",
+      "requirement": "只在 AEB_AxCtrlConfigFF_Modify 的 calc_pre、ASDL Method 中查完整符号 AxTarRaw，大小写敏感。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "AxTarRaw"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-independent-two",
+      "group": "source_arguments",
+      "requirement": "在 AEB_AxCtrlConfigFF_Modify 的 ASDL Method 中分别统计 AEB_AXCAxLimDiff 和 loc_AxTarLim 两个完整符号，两个查询互相独立。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "AEB_AXCAxLimDiff"
+          },
+          {
+            "text": "loc_AxTarLim"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-literal-statement",
+      "group": "source_arguments",
+      "requirement": "在 AEB_AxCtrlConfigFF_Modify 的 calc_pre、ASDL Method 中按字面搜索 loc_AxTarLim = AxTarLim;，保留分号，不是正则。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        },
+        "queries": [
+          {
+            "text": "loc_AxTarLim = AxTarLim;"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-multiline-tail",
+      "group": "source_arguments",
+      "requirement": "在 AEB_AxCtrlConfigFF_Modify 的 calc_pre、ASDL Method 中搜索跨行正则 loc_AEB_AxCtrlActive_B[^;]*;\\s*loc_AxTarLim[^;]*;，启用跨行匹配。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_pre"
+        },
+        "mode": "regex",
+        "multiline": true,
+        "queries": [
+          {
+            "text": "loc_AEB_AxCtrlActive_B[^;]*;\\s*loc_AxTarLim[^;]*;"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-switch-force-owner",
+      "group": "source_arguments",
+      "requirement": "只查 DBR_Force2Pressure 的 calc、ASDL Method 中完整变量 force，不能查其他 Component，也不能匹配名称的一部分。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "DBR_Force2Pressure",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "force"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout-force-lines",
+      "group": "source_arguments",
+      "requirement": "定位 DBR_Force2Pressure 的 calc ASDL Method，只读原始第 2 到第 5 行，不要读取整篇。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。身份字段复制保存值，基础 Implementation 是空字符串。 同时返回 start_line,end_line。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "DBR_Force2Pressure",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "lines": {
+          "start": 2,
+          "end": 5
+        }
+      }
+    },
+    {
+      "id": "holdout-full-kp",
+      "group": "source_arguments",
+      "requirement": "完整读取 AEB_AxCtrlConfigFF_Modify 的 calc_Kp ASDL Method；不要用命中预览代替完整正文。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。身份字段复制保存值，基础 Implementation 是空字符串。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL",
+          "member": "calc_Kp"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "holdout-ordered-batch",
+      "group": "source_arguments",
+      "requirement": "找到 AEB_AxCtrlConfigFF_Modify 的 calc_Ki 和 calc_Ks 两个 ASDL Method，在一次批量读取中按 calc_Ki、calc_Ks、calc_Ki 的顺序返回完整保存代码，重复项必须保留。facts: order_preserved,duplicates_preserved，均为布尔值。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "full": true,
+        "batch_order": true
+      },
+      "call_expectations": {
+        "batch_members": [
+          "calc_Ki",
+          "calc_Ks",
+          "calc_Ki"
+        ]
+      }
+    },
+    {
+      "id": "holdout-module-diagrams",
+      "group": "graph_arguments",
+      "requirement": "列出 AEB5ms 的所有已保存 BDE Diagram，Public 和 Private 都要包括，目录必须完整。facts: total_count,results [{component_path,diagram,visibility}]。",
+      "rubric": {
+        "type": "catalog",
+        "target": "diagrams",
+        "scope": {
+          "component": "AEB5ms",
+          "visibility": [
+            "public",
+            "private"
+          ]
+        }
+      }
+    },
+    {
+      "id": "holdout-max-interface",
+      "group": "graph_arguments",
+      "requirement": "找到 AEB_AxTarLim/Main 中的 AxCtrlLimGradAxMax 对象，只读对象本身及全部 Pins（depth 0，direction both），不要读取引用 Class 的正文。 facts: name,kind,hierarchy,pin_ids（目标的完整 Pin ID 数组）,node_names,connection_count,boundaries_count。 facts.connections must be the complete [{from_pin_id,to_pin_id}] array for the requested depth/direction, including [] when empty.",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB_AxTarLim"
+        },
+        "diagram": "Main",
+        "node": "AxCtrlLimGradAxMax",
+        "depth": 0,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "holdout-negative-outgoing",
+      "group": "graph_arguments",
+      "requirement": "找到 AEB_dFxTar/Main 中 C_AEB_AXCDeadZoneNeg 的真实输出连线，仅展开一层 outgoing；返回完整目标接口与实际连接，不推断调度。 facts: name,kind,hierarchy,pin_ids（目标的完整 Pin ID 数组）,node_names,connection_count,boundaries_count。 facts.connections must be the complete [{from_pin_id,to_pin_id}] array for the requested depth/direction, including [] when empty.",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB_dFxTar"
+        },
+        "diagram": "Main",
+        "node": "C_AEB_AXCDeadZoneNeg",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "holdout-positive-incoming",
+      "group": "graph_arguments",
+      "requirement": "只读 AEB_dFxTar/Main 中 C_AEB_AXCDeadZonePos 对象的一层 incoming 连接。如果没有输入连接如实说明，不要改成 outgoing。 facts: name,kind,hierarchy,pin_ids（目标的完整 Pin ID 数组）,node_names,connection_count,boundaries_count。 facts.connections must be the complete [{from_pin_id,to_pin_id}] array for the requested depth/direction, including [] when empty.",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB_dFxTar"
+        },
+        "diagram": "Main",
+        "node": "C_AEB_AXCDeadZonePos",
+        "depth": 1,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "holdout-off-static",
+      "group": "state_evidence",
+      "requirement": "完整读取 AEB_State_Machine/Main/AEB_State_Off 的 Static Action ASDL 源码；先确认代码槽位，不要把 State 结构当正文。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。身份字段复制保存值，基础 Implementation 是空字符串。 facts.code 为原始完整源码。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_State_Machine",
+          "member": "Main/AEB_State_Off",
+          "kind": "state_static",
+          "variant": "ASDL"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "holdout-off-exit",
+      "group": "state_evidence",
+      "requirement": "完整读取 AEB_State_Machine/Main/AEB_State_Off 的 Exit Action ASDL 保存代码，不要读 Static 或 Entry。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。身份字段复制保存值，基础 Implementation 是空字符串。 facts.code 为原始完整源码。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_State_Machine",
+          "member": "Main/AEB_State_Off",
+          "kind": "state_exit",
+          "variant": "ASDL"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "holdout-trigger-binding",
+      "group": "state_evidence",
+      "score_as": "transition-binding",
+      "requirement": "检查 AEB_State_Machine/Main/Transition #20：读 Transition、两端对象和触发槽位，核实保存的 priority 与 Method 绑定，不能把绑定当实现。facts: start_kind,start_id,end_kind,end_id,priority,binding_method,binding_is_body。"
+    },
+    {
+      "id": "holdout-runtime-boundary",
+      "group": "coverage_boundary",
+      "score_as": "unsupported-runtime",
+      "expected_outcome": "unsupported",
+      "requirement": "我只需要 AEBLockTime 现在运行时的数值，以及 AEB_State_Machine 当前实际调度顺序。若保存代码工具不支持，请直接说明，不要先查询保存源码。facts: runtime_value_supported,live_schedule_supported。",
+      "call_expectations": {
+        "no_tools": true
+      }
+    },
+    {
+      "id": "transfer-slip-symbol",
+      "group": "source_transfer",
+      "requirement": "只查 LDM_AbsSlipCtrlWheel 的 calc ASDL Method 内完整符号 CtrlMode，大小写敏感。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "LDM_AbsSlipCtrlWheel",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "CtrlMode"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transfer-integrator-regex",
+      "group": "source_transfer",
+      "requirement": "在 AxCtrlInt 的 calc ASDL Method 中查跨行正则 if \\(Active_B\\)\\s*\\{，跨行匹配。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlInt",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "regex",
+        "multiline": true,
+        "queries": [
+          {
+            "text": "if \\(Active_B\\)\\s*\\{"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transfer-min-gradient-full",
+      "group": "source_transfer",
+      "requirement": "完整读取 AxCtrlLimMindFx 的 calc ASDL Method 原始实现。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。只复制保存值，基础 Implementation 为字符串空值。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AxCtrlLimMindFx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "transfer-slip-lines",
+      "group": "source_transfer",
+      "requirement": "只读取 LDM_AbsSlipCtrlWheel 的 calc ASDL Method 第 4 到第 8 行，不要回读全文。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。只复制保存值，基础 Implementation 为字符串空值。 facts 另含 start_line,end_line。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "LDM_AbsSlipCtrlWheel",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "lines": {
+          "start": 4,
+          "end": 8
+        }
+      }
+    },
+    {
+      "id": "transfer-module-interface",
+      "group": "graph_transfer",
+      "requirement": "在 AEB5ms/Main 中读取 LDMAxRaw 对象本身全部 Pins，depth 0、direction both；不是读取它引用的 Class 源码。 facts: name,kind,hierarchy,pin_ids（本次所查对象的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（完整局部连接数组，即使为空也要返回）、node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB5ms"
+        },
+        "diagram": "Main",
+        "node": "LDMAxRaw",
+        "depth": 0,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "transfer-literal-outgoing",
+      "group": "graph_transfer",
+      "requirement": "找到 AEBPre5ms_iBooster/Main 中名字严格等于 -400000 的 literal，读取一层 outgoing 连接并核对所查 literal 的 Pins。只解释保存的图事实。 facts: name,kind,hierarchy,pin_ids（本次所查对象的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（完整局部连接数组，即使为空也要返回）、node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEBPre5ms_iBooster"
+        },
+        "diagram": "Main",
+        "node": "-400000",
+        "object_kind": "literal",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "transfer-inner-hierarchy",
+      "group": "graph_transfer",
+      "requirement": "在 Trial_Hierarchy_20261001_100329_c7dd0b/Main 中找到名字 Stage、hierarchy 为 root/h12 的 hierarchy 对象，读取一层 both 的局部关系和边界，禁止凭 Main 推断 hierarchy。 facts: name,kind,hierarchy,pin_ids（本次所查对象的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（完整局部连接数组，即使为空也要返回）、node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "Trial_Hierarchy_20261001_100329_c7dd0b"
+        },
+        "diagram": "Main",
+        "node": "Stage",
+        "hierarchy": "root/h12",
+        "object_kind": "hierarchy",
+        "depth": 1,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "transfer-deep-instance",
+      "group": "graph_transfer",
+      "requirement": "在 Trial_GeneralCaller1_20261002_050256_d0e048/Main 中找到 root/h1/h2/h3 层级的 Instance0，读取 depth 0、direction both 的完整对象接口，不能用根层级或邻居的 Pins 替代。 facts: name,kind,hierarchy,pin_ids（本次所查对象的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（完整局部连接数组，即使为空也要返回）、node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "Trial_GeneralCaller1_20261002_050256_d0e048"
+        },
+        "diagram": "Main",
+        "node": "Instance0",
+        "hierarchy": "root/h1/h2/h3",
+        "depth": 0,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "accept2-aeb5ms",
+      "group": "acceptance",
+      "requirement": "在 AEB5ms/Main 查名为 \"AEB_light_class\" 的 element（hierarchy root），按 depth 1、direction outgoing 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Public\\AEB5ms"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70iliargg",
+        "node": "AEB_light_class",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "accept2-aebpre5ms_ibooster",
+      "group": "acceptance",
+      "requirement": "在 AEBPre5ms_iBooster/Main 查名为 \"AEBEnaEBR\" 的 element（hierarchy root），按 depth 1、direction incoming 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Public\\AEBPre5ms_iBooster"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ilu3e0g",
+        "node": "AEBEnaEBR",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "accept2-aeb_light_class",
+      "group": "acceptance",
+      "requirement": "在 AEB_light_class/Main 查名为 \"AEB_Core\" 的 element（hierarchy root），按 depth 1、direction outgoing 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Public\\AEB_light_class"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70imfno0i",
+        "node": "AEB_Core",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "accept2-aeb_axctrlfxlim",
+      "group": "acceptance",
+      "requirement": "在 AEB_AxCtrlFxLim/Main 查名为 \"calc/AEB_AxCtrlActiveK1_B\" 的 element（hierarchy root），按 depth 1、direction incoming 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AxCtrlFxLim"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ijjrngc",
+        "node": "calc/AEB_AxCtrlActiveK1_B",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "accept2-aeb_axtarlim",
+      "group": "acceptance",
+      "requirement": "在 AEB_AxTarLim/Main 查名为 \"C_AEB_AXCdAxTarMin\" 的 element（hierarchy root），按 depth 1、direction outgoing 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AxTarLim"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ik99tge",
+        "node": "C_AEB_AXCdAxTarMin",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "accept2-aeb_core",
+      "group": "acceptance",
+      "requirement": "在 AEB_Core/Main 查名为 \"AEB_AutomaticBraking\" 的 element（hierarchy root），按 depth 0、direction incoming 读取。答案对象就是这个名称，连线另一端不能代替它。facts: name,kind,hierarchy,pin_ids（所查对象本身所有 Pin 的完整 ID 数组）,connections [{from_pin_id,to_pin_id}]（本次读取范围完整数组，空时为 []）。只用实际返回的 ref 引用。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_Core"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ifb4g04",
+        "node": "AEB_AutomaticBraking",
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 0,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "accept2-code-axctrldevdeadzone",
+      "group": "acceptance",
+      "requirement": "只查 AxCtrlDevDeadZone/calc 的 ASDL Method，完整符号 AxCtrlDevDeadZonePos，区分大小写。facts: counts [{query,total_hits}]。保持 Component、Method、Variant 和 kind 限制。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlDevDeadZone",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "AxCtrlDevDeadZonePos"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept2-code-axctrllimminax",
+      "group": "acceptance",
+      "requirement": "只查 AxCtrlLimMinAx/calc 的 ASDL Method，完整符号 AxTarMin，区分大小写。facts: counts [{query,total_hits}]。保持 Component、Method、Variant 和 kind 限制。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlLimMinAx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "AxTarMin"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept2-code-dbr_force2pressure",
+      "group": "acceptance",
+      "requirement": "只查 DBR_Force2Pressure/calc 的 ASDL Method，完整符号 force，区分大小写。facts: counts [{query,total_hits}]。保持 Component、Method、Variant 和 kind 限制。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "DBR_Force2Pressure",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "force"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept2-even-lines",
+      "group": "acceptance",
+      "requirement": "EvenValue 的 Even Method，Variant 精确为 DefaultC，基础 Implementation 空字符串。只读取保存第 1 到第 2 行，返回 facts: identity {component_path,kind,member,variant,implementation},total_lines,start_line,end_line。引用实际对象 ref，禁止把内部读取编号当引用。 start_line/end_line 表示实际覆盖的保存行号（包含结束行），超过保存行数的 end 截到实际最后一行；不要把请求第 2 行当作保存内容存在第 2 行。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "EvenValue",
+          "member": "Even",
+          "kind": "method",
+          "variant": "DefaultC",
+          "implementation": "absent"
+        },
+        "lines": {
+          "start": 1,
+          "end": 2
+        },
+        "line_facts": "selected"
+      }
+    },
+    {
+      "id": "accept2-missing-object",
+      "group": "acceptance",
+      "expected_outcome": "partial",
+      "requirement": "刚才那个值从哪条线进来的？",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "no_tools": true,
+        "question_patterns": [
+          "Component|组件|对象|变量|信号"
+        ]
+      },
+      "response_fields": "facts must be {}. Ask a direct clarification question and state missing information."
+    },
+    {
+      "id": "accept2-missing-code",
+      "group": "acceptance",
+      "expected_outcome": "partial",
+      "requirement": "给我那个 calc 的实现，别猜是哪个组件。",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "no_tools": true,
+        "question_patterns": [
+          "Component|组件|对象|变量|信号"
+        ]
+      },
+      "response_fields": "facts must be {}. Ask a direct clarification question and state missing information."
+    },
+    {
+      "id": "batch-pagination",
+      "requirement": "Search AxTarRaw, VxAct and AxTarLim together as independent identifier queries scoped to AEB_AxCtrlConfigFF_Modify, initially with limit 1. Consume at least one returned cursor and finish the batch (or replace it with an equivalent larger-limit query). Batch-read at least two relevant complete saved text Methods. facts: counts (object mapping each query to its total_hits), array_semantics (independent/AND), pagination_complete (boolean).",
+      "group": "cursor"
+    },
+    {
+      "id": "large-header-read-pages",
+      "group": "cursor",
+      "max_tool_calls": 64,
+      "timeout_ms": 240000,
+      "requirement": "Read the complete saved XPass_BB00000_AEB Header in 'ES1130'_Physical Experiment by consuming every returned read page. Report identity and completeness without copying the whole body into the answer. facts: identity {component_path,kind,member,variant,implementation}, total_lines, pages_read, complete.",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "XPass_BB00000_AEB",
+          "kind": "header",
+          "variant": " 'ES1130'_Physical Experiment"
+        },
+        "full": true,
+        "paged": true
+      }
+    },
+    {
+      "id": "find-directory-pagination",
+      "group": "cursor",
+      "requirement": "List all Components with name/path containing Trial_Hierarchy, starting with limit 1. Consume a returned cursor and finish the directory. facts: total_count and results [{component_path,component_type}].",
+      "rubric": {
+        "type": "catalog",
+        "target": "components",
+        "name": "Trial_Hierarchy",
+        "match": "contains",
+        "pagination": "consume"
+      }
+    },
+    {
+      "id": "search-cursor-replay",
+      "group": "cursor",
+      "requirement": "Search identifier AxTarLim in saved ASDL Methods of AEB_AxCtrlConfigFF_Modify starting with limit 1. Call the same returned continuation cursor twice, compare the returned immutable page, and finish the search using continuation or an equivalent larger-limit query. facts: counts [{query,total_hits}].",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "AxTarLim"
+          }
+        ],
+        "pagination": "replay"
+      }
+    },
+    {
+      "id": "truncated-search-boundary",
+      "group": "cursor",
+      "expected_outcome": "partial",
+      "requirement": "Search identifier AxTarLim in saved ASDL Methods of AEB_AxCtrlConfigFF_Modify with limit 1. Stop after this first page, explicitly reporting that the remaining hits have not been inspected. Do not consume the cursor or substitute a full query. facts: counts [{query,total_hits}], complete, has_more; report a partial outcome.",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "AxTarLim"
+          }
+        ],
+        "pagination": "incomplete"
+      }
+    },
+    {
+      "id": "cross-tool-cursor-recovery",
+      "group": "cursor",
+      "requirement": "Controlled read-only recovery task: search identifier AxTarLim in AEB_AxCtrlConfigFF_Modify with limit 1. Deliberately pass its returned cursor to find, observe the cross-tool error, then consume that exact cursor on search. facts: error_observed, recovered.",
+      "rubric": {
+        "type": "recovery",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify"
+        },
+        "profile": "wrong_cursor_tool"
+      }
+    },
+    {
+      "id": "cursor-intent-variant-unspecified",
+      "group": "cursor",
+      "requirement": "把 EvenValue/Even 的 C 实现完整给我看，Variant 还没选，先帮我确认可选项。",
+      "intent": {
+        "actions": [
+          "clarify"
+        ],
+        "decision": "clarify",
+        "terms": [],
+        "components": [
+          "EvenValue"
+        ],
+        "members": [
+          "Even"
+        ],
+        "clarification_fields": [
+          "variant"
+        ],
+        "question_patterns": [
+          "(?:Variant|版本|变体)"
+        ],
+        "no_reads": true,
+        "required_tools": [
+          "ascet_code_find"
+        ]
+      },
+      "expected_outcome": "partial",
+      "response_fields": "variants (all exact saved C Variant strings for this member); ask which Variant in answer.",
+      "intent_fixture": {
+        "type": "read",
+        "scope": {
+          "component": "EvenValue",
+          "kind": "method",
+          "member": "Even"
+        }
+      },
+      "score_as": "intent-variant-unspecified"
+    },
+    {
+      "id": "cursor-holdout-negative-outgoing",
+      "group": "cursor",
+      "requirement": "找到 AEB_dFxTar/Main 中 C_AEB_AXCDeadZoneNeg 的真实输出连线，仅展开一层 outgoing；返回完整目标接口与实际连接，不推断调度。 facts: name,kind,hierarchy,pin_ids（目标的完整 Pin ID 数组）,node_names,connection_count,boundaries_count。 facts.connections must be the complete [{from_pin_id,to_pin_id}] array for the requested depth/direction, including [] when empty.",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB_dFxTar"
+        },
+        "diagram": "Main",
+        "node": "C_AEB_AXCDeadZoneNeg",
+        "depth": 1,
+        "direction": "outgoing"
+      },
+      "score_as": "holdout-negative-outgoing"
+    },
+    {
+      "id": "new-code-AxCtrlLimGradFx",
+      "group": "heldout",
+      "requirement": "完整读取 AxCtrlLimGradFx Class 的 calc Method，Variant ASDL，基础 Implementation（空字符串）。先确定保存身份再完整回读。facts: identity {component_path,kind,member,variant,implementation},total_lines。身份复制原生值，不把同名 BDE 或其他 Variant 当正文。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AxCtrlLimGradFx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL",
+          "implementation": "absent"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "new-code-AEB_AxCtrlConfigProp",
+      "group": "heldout",
+      "requirement": "完整读取 AEB_AxCtrlConfigProp Class 的 calc Method，Variant ASDL，基础 Implementation（空字符串）。先确定保存身份再完整回读。facts: identity {component_path,kind,member,variant,implementation},total_lines。身份复制原生值，不把同名 BDE 或其他 Variant 当正文。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_AxCtrlConfigProp",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL",
+          "implementation": "absent"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "new-code-AxCtrlLimDepOnFxAct",
+      "group": "heldout",
+      "requirement": "完整读取 AxCtrlLimDepOnFxAct Class 的 calc Method，Variant ASDL，基础 Implementation（空字符串）。先确定保存身份再完整回读。facts: identity {component_path,kind,member,variant,implementation},total_lines。身份复制原生值，不把同名 BDE 或其他 Variant 当正文。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AxCtrlLimDepOnFxAct",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL",
+          "implementation": "absent"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "new-code-AxCtrldFxDtPropFF",
+      "group": "heldout",
+      "requirement": "完整读取 AxCtrldFxDtPropFF Class 的 calc Method，Variant ASDL，基础 Implementation（空字符串）。先确定保存身份再完整回读。facts: identity {component_path,kind,member,variant,implementation},total_lines。身份复制原生值，不把同名 BDE 或其他 Variant 当正文。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AxCtrldFxDtPropFF",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL",
+          "implementation": "absent"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "new-bde-AEB_axControl",
+      "group": "heldout",
+      "requirement": "在 AEB_axControl/Main 查 native element \"AEB_dFxTar\"，hierarchy root，node_id 1。按 depth 1、direction both 读取完整局部对象；facts: name,kind,hierarchy,pin_ids（目标本身的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（本次范围完整连线数组）。邻居 Pins 不属于目标。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_axControl"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70iigkk0a",
+        "node": "AEB_dFxTar",
+        "node_id": 1,
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "new-bde-AEB_SM_TriggerConditions",
+      "group": "heldout",
+      "requirement": "在 AEB_SM_TriggerConditions/Main 查 native element \"AEB_Trigger_BA_From_IB\"，hierarchy root，node_id 0。按 depth 1、direction both 读取完整局部对象；facts: name,kind,hierarchy,pin_ids（目标本身的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（本次范围完整连线数组）。邻居 Pins 不属于目标。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_SM_TriggerConditions"
+        },
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igm11g6",
+        "node": "AEB_Trigger_BA_From_IB",
+        "node_id": 0,
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "new-state_static",
+      "group": "heldout",
+      "requirement": "在 AEB_State_Machine/Main 定位 Main/AEB_State_IB 的 state_static 保存代码槽位，完整读取 ASDL 正文。保留 Main Diagram 范围；State 结构不能替代槽位源码。facts: identity {component_path,kind,member,variant,implementation},total_lines。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_State_Machine",
+          "member": "Main/AEB_State_IB",
+          "kind": "state_static",
+          "variant": "ASDL",
+          "implementation": "absent"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "new-state_exit",
+      "group": "heldout",
+      "requirement": "在 AEB_State_Machine/Main 定位 Main/AEB_State_BA 的 state_exit 保存代码槽位，完整读取 ASDL 正文。保留 Main Diagram 范围；State 结构不能替代槽位源码。facts: identity {component_path,kind,member,variant,implementation},total_lines。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_State_Machine",
+          "member": "Main/AEB_State_BA",
+          "kind": "state_exit",
+          "variant": "ASDL",
+          "implementation": "absent"
+        },
+        "full": true
+      }
+    }
+  ],
+  "description": "Same 52 development requirements; v3 accepts verified native equivalent evidence and checks explicit user restrictions only. Original v2 scores retained."
+}

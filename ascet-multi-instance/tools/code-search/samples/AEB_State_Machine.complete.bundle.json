@@ -1,0 +1,817 @@
+{
+  "schema_version": 1,
+  "operation": "read_state_machine",
+  "id": null,
+  "status": "ok",
+  "complete": true,
+  "scope": "state_machine",
+  "database": "D:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+  "ascet_pid": 38520,
+  "observed_utc": "2026-10-02T01:17:37.8184443Z",
+  "first_connection": true,
+  "freshness": "live_model_read_each_request",
+  "coverage_profile": "state_machine_source_bundle_v2",
+  "excluded": [
+    "generated_code_archives",
+    "general_block_diagram_components",
+    "uncommitted_editor_buffer",
+    "semantic_symbol_references",
+    "state_transition_topology",
+    "transitive_callee_bodies"
+  ],
+  "includes_comments_and_strings": true,
+  "column_unit": "unicode_code_point_1_based",
+  "component": {
+    "oid": "040qm00100001m8714ag81ugur0dk",
+    "path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+    "type": "SGClass"
+  },
+  "diagrams": [
+    {
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+      "diagram_name": "Main"
+    }
+  ],
+  "documents": [
+    {
+      "kind": "state_entry",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/s0",
+      "member_name": "Main/AEB_State_Off",
+      "language": "esdl",
+      "text": "/* */\r\n\r\n/* Initialization of AEB-state-signals */\r\nAEBState = 10;\r\nAEBActive = false;\r\nAEBBAActive = false;\r\nAEBIBActive = false;\r\n\r\ntAEB = 0.0;",
+      "document_id": "7391f98e0f687c7440f31c9faf30e2e6e1221a465a6d6c648fbdc549d142f51d",
+      "source_sha256": "418b6b6d66fef33e5ec0d87283fa1c9c467f49c963853d8a6b84d17c7faf3ea8",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "state",
+        "element_id": 0,
+        "slot": "entry"
+      },
+      "line_count": 9
+    },
+    {
+      "kind": "state_static",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/s0",
+      "member_name": "Main/AEB_State_Off",
+      "language": "esdl",
+      "text": "/* */\r\n/* Initialization of AEB-state-signals */\r\nAEBState=11;\r\nAEBActive = false;\r\nAEBBAActive = false;\r\nAEBIBActive = false;\r\n\r\ntAEB = 0.0;\r\n\r\n/* Decrement timer for locking time */\r\nif (AEBLockTime > 0.0)\r\n{\r\n   AEBLockTime = AEBLockTime - C_AEBdT;\r\n}\r\n",
+      "document_id": "7d9d49b4dd9f438f9950f6155f349d14408c21afbbfb726abf189d174d9d03cb",
+      "source_sha256": "72b04091358b82bfa8a221891c46261fce5b22fbebcf4895f3ce663966e3436d",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "state",
+        "element_id": 0,
+        "slot": "static"
+      },
+      "line_count": 15
+    },
+    {
+      "kind": "state_exit",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/s0",
+      "member_name": "Main/AEB_State_Off",
+      "language": "esdl",
+      "text": "/* */\r\nAEBState=12;\r\n\r\n",
+      "document_id": "4a4706bd32b1b87d2785b4c7f138341fe676c5d061c8fc88fbc6d1f85997e639",
+      "source_sha256": "efff77bccd8dfb8d3c179ea7c4864ee0e4fb6109235bfce8ee6415b9fa619ab2",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "state",
+        "element_id": 0,
+        "slot": "exit"
+      },
+      "line_count": 4
+    },
+    {
+      "kind": "state_entry",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/s1",
+      "member_name": "Main/AEB_State_BA",
+      "language": "esdl",
+      "text": "/* */\r\nAEBState=30;\r\nAEBActive = true;\r\nAEBBAActive = true;\r\n\r\ntAEB = tAEB + C_AEBdT;",
+      "document_id": "f2c25d9ec066779d39bc4601cd05e4bd1f721bc6869c0bc485126eb52f473f7f",
+      "source_sha256": "7ab53035c216e156a88f570bfe54e8f9ca02c110fe499896feaf58a7a5d2e072",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "state",
+        "element_id": 1,
+        "slot": "entry"
+      },
+      "line_count": 6
+    },
+    {
+      "kind": "state_static",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/s1",
+      "member_name": "Main/AEB_State_BA",
+      "language": "esdl",
+      "text": "/* */\r\nAEBState=31;\r\n\r\ntAEB = tAEB + C_AEBdT;",
+      "document_id": "6fb9cbd3c08b4bb0b0e98f2b759883fb2e9830f537da3e9cb6e3aaf9090f939a",
+      "source_sha256": "4fa721a357466a4fd5ac94287037a8371ca6a3c234bd99e7a295aa4cdc976f1c",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "state",
+        "element_id": 1,
+        "slot": "static"
+      },
+      "line_count": 4
+    },
+    {
+      "kind": "state_exit",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/s1",
+      "member_name": "Main/AEB_State_BA",
+      "language": "esdl",
+      "text": "/* */\r\nAEBState=32;\r\nAEBBAActive = false;",
+      "document_id": "d64a36a6c59b5b3b2737e2837082b284beda14f8df3913ade8e78e425c2e388d",
+      "source_sha256": "da32470b8b8a70f61b7316c3b73c9455df241388939c0bba16c604290fb0ff95",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "state",
+        "element_id": 1,
+        "slot": "exit"
+      },
+      "line_count": 3
+    },
+    {
+      "kind": "state_entry",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/s2",
+      "member_name": "Main/AEB_State_IB",
+      "language": "esdl",
+      "text": "/* */\r\nAEBState=20;\r\nAEBActive = true;\r\nAEBIBActive = true;\r\n\r\ntAEB = tAEB + C_AEBdT;",
+      "document_id": "f8dd1dadb1f98a4bb43826a94cac0a020c9455e9c5f52afbd3932da709e1955c",
+      "source_sha256": "4a7a5d11e33eb8f5272916521695fba6f7f744db3eeea8989222bad60656bd73",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "state",
+        "element_id": 2,
+        "slot": "entry"
+      },
+      "line_count": 6
+    },
+    {
+      "kind": "state_static",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/s2",
+      "member_name": "Main/AEB_State_IB",
+      "language": "esdl",
+      "text": "/* */\r\nAEBState=21;\r\n\r\ntAEB = tAEB + C_AEBdT;",
+      "document_id": "7b070269c4ee1be6518bf038cc0fcbaa2021413e09202ef9009274473e768b3b",
+      "source_sha256": "e19846eef591db1f9a365c43e2995d5fa8eaf8c80d13662cc4621f8e9c6b126f",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "state",
+        "element_id": 2,
+        "slot": "static"
+      },
+      "line_count": 4
+    },
+    {
+      "kind": "state_exit",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/s2",
+      "member_name": "Main/AEB_State_IB",
+      "language": "esdl",
+      "text": "/* */ \r\nAEBState=22;\r\nAEBIBActive = false;",
+      "document_id": "716ad1ef149fe61a40047025f4ef5443af0404e573c7e096ebe225e992c13bff",
+      "source_sha256": "f1ac819058a6511c233f40d01aa2173271c22ff6617e70483352ed090bd60cb8",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "state",
+        "element_id": 2,
+        "slot": "exit"
+      },
+      "line_count": 3
+    },
+    {
+      "kind": "transition_trigger_binding",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t27",
+      "member_name": "Main/Transition #27",
+      "language": "method_reference",
+      "text": "trigger",
+      "document_id": "94c5ea30d573b537bc9fd76829c2a9685c2c7fec13da893f6efaa5417700b48d",
+      "source_sha256": "683259feabbf5eb39895d7a5d3f4872d6989d5fa7a3eca713251d996d99a1630",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 27,
+        "slot": "trigger"
+      },
+      "binding": {
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "method_name": "trigger",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_condition",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t27",
+      "member_name": "Main/Transition #27",
+      "language": "esdl",
+      "text": "Trigger_IB_From_Off",
+      "document_id": "95ca35204f4d59f7cb347d2a7988102118c4711614948cfa9cc1284fc13e57d5",
+      "source_sha256": "838b0689206ead9c944514bb2a7daa979532985e7ad93b1a0d271fec92106123",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 27,
+        "slot": "condition"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_trigger_binding",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t26",
+      "member_name": "Main/Transition #26",
+      "language": "method_reference",
+      "text": "trigger",
+      "document_id": "7d1141f3a3130750dfd8fc124bc80386ffed7a3e0a2d28b77a9617a5937d3682",
+      "source_sha256": "683259feabbf5eb39895d7a5d3f4872d6989d5fa7a3eca713251d996d99a1630",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 26,
+        "slot": "trigger"
+      },
+      "binding": {
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "method_name": "trigger",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_condition",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t26",
+      "member_name": "Main/Transition #26",
+      "language": "esdl",
+      "text": "Trigger_BA_From_Off",
+      "document_id": "76591e9ab64b103bf118a97e2d7c5b1e6ec892533289f429e0c6a99366647e26",
+      "source_sha256": "3d487ca0771a151415cc72bbad5ab71602506e8f3273ebe191fa41715d452cd8",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 26,
+        "slot": "condition"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_trigger_binding",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t25",
+      "member_name": "Main/Transition #25",
+      "language": "method_reference",
+      "text": "trigger",
+      "document_id": "2a9cd3e76f1b43c8d8d02ad30d0f02ed7f9229f306822be8d4fe7b3130158b23",
+      "source_sha256": "683259feabbf5eb39895d7a5d3f4872d6989d5fa7a3eca713251d996d99a1630",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 25,
+        "slot": "trigger"
+      },
+      "binding": {
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "method_name": "trigger",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_action",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t25",
+      "member_name": "Main/Transition #25",
+      "language": "esdl",
+      "text": "//Initialize AEB lock time\r\n\r\n/* Initialization of AEB-locking time */\r\nAEBLockTime = C_AEB_LockTime;",
+      "document_id": "7bd84c66760c0e476020043fd89de3bf7e3cdbb8e0a51345a13f26d5279b4eec",
+      "source_sha256": "2771f81932707da0e02dcdee752529eae3f10c5929cdb240e67d0b952f3c6abb",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 25,
+        "slot": "action"
+      },
+      "line_count": 4
+    },
+    {
+      "kind": "transition_condition",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t25",
+      "member_name": "Main/Transition #25",
+      "language": "esdl",
+      "text": "Trigger_Off_From_BA",
+      "document_id": "128b757fe6fe3c5549d8485fbe23cd1454acdd6107e3ffc27740b06f2a3ba88b",
+      "source_sha256": "bc9f10232958f3d481a608985ffda45ccfe4c7cc1c92d90842ddb3f19a78ff4c",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 25,
+        "slot": "condition"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_trigger_binding",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t24",
+      "member_name": "Main/Transition #24",
+      "language": "method_reference",
+      "text": "init_trigger",
+      "document_id": "f59ac6de4cd05918a43d21646418f2270613ae2b4ac5e1cb953a9d43b52692bd",
+      "source_sha256": "080272fff91e26d411067bad908a3c39a8b46fc5f4153250321cd14c07e6c5ef",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 24,
+        "slot": "trigger"
+      },
+      "binding": {
+        "method_alias": "0101ab0001000000db070412f3ab50eb822a0000",
+        "method_name": "init_trigger",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_trigger_binding",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t23",
+      "member_name": "Main/Transition #23",
+      "language": "method_reference",
+      "text": "trigger",
+      "document_id": "21f2cb1ed1bbd5d30b9a1ed5481d765010079fd10afd7e2c687108778a6c320d",
+      "source_sha256": "683259feabbf5eb39895d7a5d3f4872d6989d5fa7a3eca713251d996d99a1630",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 23,
+        "slot": "trigger"
+      },
+      "binding": {
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "method_name": "trigger",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_action",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t23",
+      "member_name": "Main/Transition #23",
+      "language": "esdl",
+      "text": "//Initialize AEB lock time\r\n\r\n/* Initialization of AEB-locking time */\r\nAEBLockTime = C_AEB_LockTime;",
+      "document_id": "8ce0ad1aceed914d08af029de19745779f2c52a77a2b5c0af72d44d98cdfb147",
+      "source_sha256": "2771f81932707da0e02dcdee752529eae3f10c5929cdb240e67d0b952f3c6abb",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 23,
+        "slot": "action"
+      },
+      "line_count": 4
+    },
+    {
+      "kind": "transition_condition",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t23",
+      "member_name": "Main/Transition #23",
+      "language": "esdl",
+      "text": "Trigger_Off_From_IB\r\n",
+      "document_id": "1e177bffa0f4aea551e7ab52b39da7071598afa9b6fcb1774496254d7d84a101",
+      "source_sha256": "701debb4d0210bc0eaf7e34b11e52f421acb9119e675f09fa003bfb488ecabb9",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 23,
+        "slot": "condition"
+      },
+      "line_count": 2
+    },
+    {
+      "kind": "transition_trigger_binding",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t22",
+      "member_name": "Main/Transition #22",
+      "language": "method_reference",
+      "text": "trigger",
+      "document_id": "2d012c260d1241ace846588dc788258cfce060b773375bc68c81d8da8f397ef0",
+      "source_sha256": "683259feabbf5eb39895d7a5d3f4872d6989d5fa7a3eca713251d996d99a1630",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 22,
+        "slot": "trigger"
+      },
+      "binding": {
+        "method_alias": "0101ab0001000000d90709150407d1c1c4da0000",
+        "method_name": "trigger",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_condition",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t22",
+      "member_name": "Main/Transition #22",
+      "language": "esdl",
+      "text": "Trigger_BA_From_IB",
+      "document_id": "480466b7cfec244c8e51466cd5b08e8be32be7b4b0eec023724991b37b4d3ad2",
+      "source_sha256": "218603d6617d0a8c91ef9fa039588f5813c972498a42ffc02ef248c6eddc84ec",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 22,
+        "slot": "condition"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_trigger_binding",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t21",
+      "member_name": "Main/Transition #21",
+      "language": "method_reference",
+      "text": "init_trigger",
+      "document_id": "a56ca2d8f7be83fbaf47d32f98ecac3782c8984fd5cac2ac1f6d599f1ee7230c",
+      "source_sha256": "080272fff91e26d411067bad908a3c39a8b46fc5f4153250321cd14c07e6c5ef",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 21,
+        "slot": "trigger"
+      },
+      "binding": {
+        "method_alias": "0101ab0001000000db070412f3ab50eb822a0000",
+        "method_name": "init_trigger",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "transition_trigger_binding",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "ASDL",
+      "member_id": "040ts00000001qg714eg70igttug6/t20",
+      "member_name": "Main/Transition #20",
+      "language": "method_reference",
+      "text": "init_trigger",
+      "document_id": "46a7da95295c47532c4a4f776d3a469a52c1262e2f2176e80c9ee2a43ac406bf",
+      "source_sha256": "080272fff91e26d411067bad908a3c39a8b46fc5f4153250321cd14c07e6c5ef",
+      "location": {
+        "diagram_source_oid": "040ts00000001qg714eg70igttug6",
+        "diagram_name": "Main",
+        "hierarchy_state_ids": [],
+        "element_type": "transition",
+        "element_id": 20,
+        "slot": "trigger"
+      },
+      "binding": {
+        "method_alias": "0101ab0001000000db070412f3ab50eb822a0000",
+        "method_name": "init_trigger",
+        "component_oid": "040qm00100001m8714ag81ugur0dk"
+      },
+      "line_count": 1
+    },
+    {
+      "kind": "graphical_method",
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "implementation_oid": "",
+      "variant": "BD",
+      "member_id": "0101ab0001000000da070806128c7bf1d39d0000",
+      "member_name": "init",
+      "language": "ascet_graph",
+      "text": "// ASCET graphical model representation; not handwritten ESDL or generated C.\n// Specification: Init; method: init; alias: 0101ab0001000000da070806128c7bf1d39d0000\n// sequence 10\nAEBLockTime = 0.0;\n// Supported graph nodes used by this method; full specification graph is available via read_state_machine.\n{\n  \"component_oid\": \"040qm00100001m8714ag81ugur0dk\",\n  \"specification_source_oid\": \"040ts00000001qg714eg70igttv06\",\n  \"specification_name\": \"Init\",\n  \"complete\": true,\n  \"nodes\": [\n    {\n      \"scope\": \"root\",\n      \"id\": -1,\n      \"class_name\": \"SGCodeGODB\",\n      \"element_alias\": \"\",\n      \"element_name\": \"\",\n      \"literal\": \"\",\n      \"element_class\": \"\"\n    },\n    {\n      \"scope\": \"root\",\n      \"id\": 4,\n      \"class_name\": \"SGLiteralGODB\",\n      \"element_alias\": \"\",\n      \"element_name\": \"\",\n      \"literal\": \"0.0\",\n      \"element_class\": \"\"\n    },\n    {\n      \"scope\": \"root\",\n      \"id\": 6,\n      \"class_name\": \"SGDataGODB\",\n      \"element_alias\": \"0101ab0001000000da07080612950c24ddb60000\",\n      \"element_name\": \"AEBLockTime\",\n      \"literal\": \"\",\n      \"element_class\": \"SGVariable\"\n    }\n  ],\n  \"ports\": [\n    {\n      \"scope\": \"root\",\n      \"node_id\": 4,\n      \"id\": 5,\n      \"direction\": \"return\",\n      \"operation\": \"literal\",\n      \"parameter\": \"return\",\n      \"storage_flags\": \"\"\n    },\n    {\n      \"scope\": \"root\",\n      \"node_id\": 6,\n      \"id\": 7,\n      \"direction\": \"selector\",\n      \"operation\": \"set\",\n      \"parameter\": \"aValue\",\n      \"storage_flags\": \"true/false/false\"\n    },\n    {\n      \"scope\": \"root\",\n      \"node_id\": 6,\n      \"id\": 8,\n      \"direction\": \"return\",\n      \"operation\": \"get\",\n      \"parameter\": \"return\",\n      \"storage_flags\": \"true/false/false\"\n    }\n  ],\n  \"sequences\": [\n    {\n      \"scope\": \"root\",\n      \"node_id\": 6,\n      \"id\": 9,\n      \"method_alias\": \"0101ab0001000000da070806128c7bf1d39d0000\",\n      \"number\": 10,\n      \"operation\": \"set\",\n      \"storage_flags\": \"nil/false\"\n    }\n  ],\n  \"connections\": [\n    {\n      \"scope\": \"root\",\n      \"index\": 1,\n      \"from_port\": 5,\n      \"to_port\": 7,\n      \"from_block\": null,\n      \"to_block\": null,\n      \"class_name\": \"SGConnectionGODB\"\n    }\n  ],\n  \"methods\": [\n    {\n      \"member_id\": \"0101ab0001000000da070806128c7bf1d39d0000\",\n      \"member_name\": \"init\",\n      \"is_process\": false\n    }\n  ],\n  \"issues\": []\n}",
+      "representation": "graphical_model",
+      "graphical_location": {
+        "specification_source_oid": "040ts00000001qg714eg70igttv06",
+        "specification_name": "Init"
+      },
+      "document_id": "aded2855e5129bc8b861ac373066427b7954cd6db67a95dce0d527e3f18714e2",
+      "source_sha256": "b5c97200b1b526bfd238062687b3315a9b10073b2462049be144839c16cbb278",
+      "line_count": 99
+    }
+  ],
+  "methods": [
+    {
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "owner_specification": "Main",
+      "owner_class": "SGSmSpecification",
+      "owner_source_oid": "040ts00000001qg714eg70igttug6",
+      "member_id": "0101ab0001000000db070412f3ab50eb822a0000",
+      "member_name": "init_trigger",
+      "api_class": "EtasAPITrigger",
+      "category": "trigger",
+      "is_process": false,
+      "body_status": "state_machine_event",
+      "source_document_ids": [],
+      "binding_document_ids": [
+        "f59ac6de4cd05918a43d21646418f2270613ae2b4ac5e1cb953a9d43b52692bd",
+        "a56ca2d8f7be83fbaf47d32f98ecac3782c8984fd5cac2ac1f6d599f1ee7230c",
+        "46a7da95295c47532c4a4f776d3a469a52c1262e2f2176e80c9ee2a43ac406bf"
+      ]
+    },
+    {
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "owner_specification": "Main",
+      "owner_class": "SGSmSpecification",
+      "owner_source_oid": "040ts00000001qg714eg70igttug6",
+      "member_id": "0101ab0001000000d90709150407d1c1c4da0000",
+      "member_name": "trigger",
+      "api_class": "EtasAPITrigger",
+      "category": "trigger",
+      "is_process": false,
+      "body_status": "state_machine_event",
+      "source_document_ids": [],
+      "binding_document_ids": [
+        "94c5ea30d573b537bc9fd76829c2a9685c2c7fec13da893f6efaa5417700b48d",
+        "7d1141f3a3130750dfd8fc124bc80386ffed7a3e0a2d28b77a9617a5937d3682",
+        "2a9cd3e76f1b43c8d8d02ad30d0f02ed7f9229f306822be8d4fe7b3130158b23",
+        "21f2cb1ed1bbd5d30b9a1ed5481d765010079fd10afd7e2c687108778a6c320d",
+        "2d012c260d1241ace846588dc788258cfce060b773375bc68c81d8da8f397ef0"
+      ]
+    },
+    {
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "owner_specification": "Init",
+      "owner_class": "SGBdSpecification",
+      "owner_source_oid": "040ts00000001qg714eg70igttv06",
+      "member_id": "0101ab0001000000da070806128c7bf1d39d0000",
+      "member_name": "init",
+      "api_class": "EtasAPIDiscreteMethod",
+      "category": "graphical",
+      "is_process": false,
+      "body_status": "graphical",
+      "source_document_ids": [
+        "aded2855e5129bc8b861ac373066427b7954cd6db67a95dce0d527e3f18714e2"
+      ],
+      "binding_document_ids": []
+    }
+  ],
+  "graphical_bodies": [
+    {
+      "component_oid": "040qm00100001m8714ag81ugur0dk",
+      "specification_source_oid": "040ts00000001qg714eg70igttv06",
+      "specification_name": "Init",
+      "complete": true,
+      "nodes": [
+        {
+          "scope": "root",
+          "id": -1,
+          "class_name": "SGCodeGODB",
+          "element_alias": "",
+          "element_name": "",
+          "literal": "",
+          "element_class": ""
+        },
+        {
+          "scope": "root",
+          "id": 4,
+          "class_name": "SGLiteralGODB",
+          "element_alias": "",
+          "element_name": "",
+          "literal": "0.0",
+          "element_class": ""
+        },
+        {
+          "scope": "root",
+          "id": 6,
+          "class_name": "SGDataGODB",
+          "element_alias": "0101ab0001000000da07080612950c24ddb60000",
+          "element_name": "AEBLockTime",
+          "literal": "",
+          "element_class": "SGVariable"
+        }
+      ],
+      "ports": [
+        {
+          "scope": "root",
+          "node_id": 4,
+          "id": 5,
+          "direction": "return",
+          "operation": "literal",
+          "parameter": "return",
+          "storage_flags": ""
+        },
+        {
+          "scope": "root",
+          "node_id": 6,
+          "id": 7,
+          "direction": "selector",
+          "operation": "set",
+          "parameter": "aValue",
+          "storage_flags": "true/false/false"
+        },
+        {
+          "scope": "root",
+          "node_id": 6,
+          "id": 8,
+          "direction": "return",
+          "operation": "get",
+          "parameter": "return",
+          "storage_flags": "true/false/false"
+        }
+      ],
+      "sequences": [
+        {
+          "scope": "root",
+          "node_id": 6,
+          "id": 9,
+          "method_alias": "0101ab0001000000da070806128c7bf1d39d0000",
+          "number": 10,
+          "operation": "set",
+          "storage_flags": "nil/false"
+        }
+      ],
+      "connections": [
+        {
+          "scope": "root",
+          "index": 1,
+          "from_port": 5,
+          "to_port": 7,
+          "from_block": null,
+          "to_block": null,
+          "class_name": "SGConnectionGODB"
+        }
+      ],
+      "methods": [
+        {
+          "member_id": "0101ab0001000000da070806128c7bf1d39d0000",
+          "member_name": "init",
+          "is_process": false
+        }
+      ],
+      "issues": []
+    }
+  ],
+  "unread_method_bodies": [],
+  "source_read_complete": true,
+  "binding_resolution_complete": true,
+  "coverage": {
+    "candidate_objects": 1,
+    "components": 1,
+    "text_components": 0,
+    "documents": 24,
+    "characters": 1136,
+    "containers": 1,
+    "native_directory_ms": 0,
+    "native_scan_match_encode_ms": 0,
+    "wire_characters": 10822,
+    "state_machine_components": 1,
+    "state_machine_diagrams": 1,
+    "states": 3,
+    "transitions": 8,
+    "method_bindings": 8,
+    "state_tree_max_depth": 1,
+    "transported_unique_sources": 17,
+    "transported_unique_characters": 983,
+    "graphical_specifications": 1,
+    "graphical_method_documents": 1,
+    "graphical_nodes": 3,
+    "graphical_connections": 1,
+    "returned_documents": 25,
+    "graphical_representation_characters": 2326,
+    "state_source_documents": 16,
+    "state_binding_documents": 8,
+    "inventoried_methods": 3,
+    "unread_method_bodies": 0
+  },
+  "errors": [],
+  "timings": {
+    "setup_ms": 53.186,
+    "native_read_transport_ms": 3.959299999999999,
+    "bridge_ms": 66.0395,
+    "bridge_roundtrip_ms": 173.7586,
+    "read_ms": 176.2897
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "mode": "The current assistant performs live tool use. No prewritten sequence of search/read operations, no separate model benchmark.",
+  "tasks": [
+    {"id":"sample-time", "requirement":"Locate saved code where P_AEBdT affects a timer. Explain one complete implementation with Component and Method/State evidence."},
+    {"id":"driver-override", "requirement":"Find whether driver accelerator or brake intervention inhibits AEB. Start from requirement words, discover suitable names, and distinguish proven logic from uncertain matches."},
+    {"id":"component-connection", "requirement":"Find a referenced limiting/lookup/interpolation Component in a BDE class. Read its actual external Pins and a connected Element; do not claim the called Method implementation was read."},
+    {"id":"state-time", "requirement":"Locate the State Machine behavior that updates or resets braking time. Distinguish Init, State actions and Transition code, and read complete supporting members."},
+    {"id":"out-of-scope", "requirement":"Determine whether this code-search CLI can retrieve parameter Dataset values or Formula definitions. Give the supported boundary without treating zero code hits as proof of absence."}
+  ]
+}

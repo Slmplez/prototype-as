@@ -1,0 +1,15 @@
+node_modules/
+dist/
+__pycache__/
+dist-*/
+experiments/
+CodeSearchBridge.exe
+*.dll
+*.log
+*.tmp
+/*.py
+/*validation*.json
+/native-comparison*.json
+/AGENT_JSON_EXAMPLES.json
+/AGENT_TASK_EXAMPLES.actual.json
+/BDE_OBJECT_JSON_EXAMPLES.json

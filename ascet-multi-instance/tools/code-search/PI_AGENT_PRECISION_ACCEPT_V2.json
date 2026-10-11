@@ -1,0 +1,255 @@
+{
+  "version": 2,
+  "grading_version": 2,
+  "intent_recording": "none",
+  "suite": "core",
+  "max_tool_calls": 20,
+  "timeout_ms": 240000,
+  "answer_format": "Return exactly one JSON object, without Markdown fences or surrounding prose, with outcome (located/partial/not_found/unsupported), answer (a concise explanation), evidence_refs (actual refs seen in this session), missing_evidence (strings), and facts (an object using the requested fields). In facts, name/path/kind/variant fields contain only the exact saved string; ID fields contain numbers, not explanatory text. Separate saved facts from inference. Do not invent unsupported values. Do not output a separate intent declaration. Only the final answer is JSON. Put facts at the requested level; preserve exact saved values.",
+  "group_names": {
+    "acceptance": "冻结构建后确定的新需求"
+  },
+  "cases": [
+    {
+      "id": "accept-gradient-symbol",
+      "group": "acceptance",
+      "requirement": "只查 AxCtrlLimMaxdFx 的 calc ASDL Method 中完整变量 dFxTar，大小写敏感。facts: counts [{query,total_hits}]，按查询顺序返回完整计数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlLimMaxdFx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "dFxTar"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept-independent-arbitration",
+      "group": "acceptance",
+      "requirement": "在 AxCtrlArbMinFx 的 calc ASDL Method 内分别查完整符号 AXCFxMin1 和 AXCFxMin2，独立查询。facts: counts [{query,total_hits}]。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlArbMinFx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "AXCFxMin1"
+          },
+          {
+            "text": "AXCFxMin2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept-asterisk-literal",
+      "group": "acceptance",
+      "requirement": "只在 Trq2FxVeh 的 calc ASDL Method 内搜索字面字符 *，不要解释成通配符或正则。facts: counts [{query,total_hits}]。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "Trq2FxVeh",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "text",
+        "queries": [
+          {
+            "text": "*"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept-arbitration-regex",
+      "group": "acceptance",
+      "requirement": "只在 AxCtrlArbMinFx 的 calc ASDL Method 内查跨行正则 AXCFxMin = 0\\.0;\\s*\\}，启用跨行匹配。facts: counts [{query,total_hits}]。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlArbMinFx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "regex",
+        "multiline": true,
+        "queries": [
+          {
+            "text": "AXCFxMin = 0\\.0;\\s*\\}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accept-scoped-followup",
+      "group": "acceptance",
+      "requirement": "现在只在刚才定位的那份 calc ASDL 保存代码中查完整变量 AxTarLim，不要扩大到组件其他代码。facts: counts [{query,total_hits}]。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlLimGradAx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "queries": [
+          {
+            "text": "AxTarLim"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "requirement": "定位 AxCtrlLimGradAx 的 calc ASDL Method，列出其保存身份和 ref，暂时不读正文。facts: results [{component_path,kind,member,variant,implementation}]。"
+        },
+        {
+          "requirement": "现在只在刚才定位的那份 calc ASDL 保存代码中查完整变量 AxTarLim，不要扩大到组件其他代码。facts: counts [{query,total_hits}]。"
+        }
+      ],
+      "intent": {
+        "actions": [
+          "search"
+        ],
+        "decision": "execute",
+        "last_turn_only": true,
+        "search_scope": {
+          "component": "AxCtrlLimGradAx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        }
+      }
+    },
+    {
+      "id": "accept-derivative-lines",
+      "group": "acceptance",
+      "requirement": "仅读取 dAx_dt 的 calc ASDL Method 第 8 到第 14 行。facts: identity {component_path,kind,member,variant,implementation},total_lines. Preserve base Implementation as empty string. Also start_line,end_line.",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "dAx_dt",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "lines": {
+          "start": 8,
+          "end": 14
+        }
+      }
+    },
+    {
+      "id": "accept-priority-body",
+      "group": "acceptance",
+      "requirement": "完整读取 AxCtrlPrioMinFx 的 calc ASDL Method。facts: identity {component_path,kind,member,variant,implementation},total_lines. Preserve base Implementation as empty string.",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AxCtrlPrioMinFx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "accept-ib-entry",
+      "group": "acceptance",
+      "requirement": "只读取 AEB_State_Machine/Main/AEB_State_IB 的完整 Entry Action ASDL 源码，不读 Static 或 Exit。facts: identity {component_path,kind,member,variant,implementation},total_lines. Preserve base Implementation as empty string. facts.code must contain the original entire body.",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_State_Machine",
+          "member": "Main/AEB_State_IB",
+          "kind": "state_entry",
+          "variant": "ASDL"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "accept-module-root-interface",
+      "group": "acceptance",
+      "requirement": "在 AEB5ms/Main 中只读 AEBdFxTarMax 对象自身接口，depth 0、direction both，不能用下一层连接填充本次结果。facts: name,kind,hierarchy,pin_ids,connections [{from_pin_id,to_pin_id}],node_names,connection_count,boundaries_count. Include the full requested-object Pins and connections array, even when empty.",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB5ms"
+        },
+        "diagram": "Main",
+        "node": "AEBdFxTarMax",
+        "node_id": 40,
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 0,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "accept-gradient-placement",
+      "group": "acceptance",
+      "requirement": "读取 AEB_AxTarLim/Main 的 AxCtrlLimGradAxMin 放置对象的一层 incoming 局部连接，禁止读取引用 Class 的正文。facts: name,kind,hierarchy,pin_ids,connections [{from_pin_id,to_pin_id}],node_names,connection_count,boundaries_count. Include the full requested-object Pins and connections array, even when empty.",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB_AxTarLim"
+        },
+        "diagram": "Main",
+        "node": "AxCtrlLimGradAxMin",
+        "node_id": 11,
+        "object_kind": "element",
+        "hierarchy": "root",
+        "depth": 1,
+        "direction": "incoming"
+      }
+    },
+    {
+      "id": "accept-driver-dataset",
+      "group": "acceptance",
+      "requirement": "只查询 C_InvWheelRadius_FA 当前 Dataset 数值；若工具不支持请直接说明，不搜索保存代码。facts: dataset_values_supported (boolean).",
+      "rubric": {
+        "type": "unsupported",
+        "flags": {
+          "dataset_values_supported": false
+        }
+      },
+      "expected_outcome": "unsupported",
+      "call_expectations": {
+        "no_tools": true
+      }
+    },
+    {
+      "id": "accept-edited-buffer",
+      "group": "acceptance",
+      "requirement": "我刚修改但未保存 AxCtrlPrioMinFx 的 calc。只读取未保存编辑内容，不用保存代码代替。facts: unsaved_edits_covered (boolean).",
+      "rubric": {
+        "type": "unsupported",
+        "flags": {
+          "unsaved_edits_covered": false
+        }
+      },
+      "expected_outcome": "unsupported",
+      "call_expectations": {
+        "no_tools": true
+      }
+    }
+  ],
+  "boundary": "New requirements after candidate freeze, familiar database; not independent database generalization."
+}

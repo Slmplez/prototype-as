@@ -1,0 +1,29 @@
+{
+  "request": {
+    "operation": "read",
+    "ref": [
+      "s7-BNFQCs1:dc"
+    ],
+    "if_unchanged": true
+  },
+  "response": {
+    "status": "ok",
+    "requested_count": 1,
+    "returned_count": 1,
+    "results": [
+      {
+        "ref": "s7-BNFQCs1:dc",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "kind": "transition_condition",
+        "variant": "ASDL",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igttug6",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #22",
+        "transition_id": 22,
+        "code": "Trigger_BA_From_IB",
+        "line_count": 1
+      }
+    ]
+  }
+}

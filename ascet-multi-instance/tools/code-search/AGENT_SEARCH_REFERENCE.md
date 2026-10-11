@@ -1,0 +1,30 @@
+# ASCET code tools 详细 CLI 参考
+
+按工具名调用的简短规则见 AGENT_SEARCH_PROMPT.md。本文保留原始 CLI 的 operation 请求形式。
+
+find.name 现在统一表示所选 target 的名称或路径：components 对应 component，members 对应 member，diagrams 对应 diagram；objects/states/transitions 继续使用原有 name。原有字段继续可用，冲突的重复名称条件会被拒绝。
+
+read 的 ref 必须是原样字符串或真正的 JSON 数组。例如 {"operation":"read","ref":"<实际返回的 ref>"} 或 {"operation":"read","ref":["<实际返回的 ref 1>","<实际返回的 ref 2>"]}。不要把整个数组或字符串再次 JSON.stringify，也不要在 ref 值里添加引号或方括号。参数类型错误时直接修正 read 入参，不必重新搜索。
+
+你用 ascet_code_find、ascet_code_search、ascet_code_read 定位和读取当前 ASCET Database 的保存代码及 BDE 模型。CLI 逐行发送 JSON：find/read 带 operation:"find"/"read"；search 可以省略 operation；续页只传 cursor。三个操作必须共用同一常驻 CLI 串行会话。
+
+1. 已知 Component/Method/Diagram 名称时先 find。component 按名称或路径定位；member 按 Method/Process、State/Transition 路径或 Diagram 名称定位。名称匹配是字面 contains/exact，不是通配符。省略 member 可列目录。in.component 只接受 ASCET OID 或同会话结果 ref，不能传名称、路径或目录范围；先用 find target:"components",component:"名称或完整路径" 获取 ref，再传给 in.component。Component ref 不能直接 read；成员 ref 用于 read。找图使用 target:"diagrams" 和 diagram 名称条件，包含空图、无 Method 图及状态机 Init BDE。已知图后用 in.diagram 传 whole Diagram ref 限定搜索；跨 Component 使用 ref 数组，勿把图名当身份。
+2. in.visibility:"public"/"private" 指父 Diagram 的真实 Specification 归属，省略则两边都查；不是目录名，也不是绑定 Method 的权限。与 Component、Diagram、member 范围取交集。搜索正文用 search。通常先批量传 2–6 个相关变量或关键词，limit:20；默认前后各 10 行。已知 Component 就传 in.component；知道成员、kind、Variant 或 Implementation 时增加限制。query 数组是独立查询，不要求同处一段代码。
+3. text 查字面片段，identifier 查完整标识符，regex 使用不带 / 分隔符的 ECMAScript Unicode 正则。* 只有 regex 模式下才有正则意义。文本代码支持跨行；实际换行或 dotall:true 自动启用 multiline，显式 multiline:false 可覆盖。
+4. BDE 搜索实际字段：Element 名称、引脚/调用名称、Literal、操作符/控制块/转换类型、注释、Diagram/Hierarchy 名称和引用 Component 路径。节点编号、类型标签、连线格式不参与匹配。图形跨行匹配限定在单个原始字段内。不要搜索推测出来的 x = 0; 来判断是否存在这条连线；分别搜索 x、Literal，再 read 图结构。
+5. 图形结果是 kind:diagram，用 diagram/diagram_oid 定位，diagram_methods 列出所属 Methods/Processes。in.member:calc 或 find member:calc 选择 calc 所属的整张 Diagram。find name/member 的图形结果还返回 matched_members，区分命中的图内成员与 Diagram 名称；[] 仅表示此次名称条件没有匹配图内成员，不能断言声明不存在。该查询标记在续页中保留，在新鲜 read 中省略。多个 Method 共享一张图时只返回一份；不能把全部内容归因于某个 Method，也不能把引脚名称当作已读取的被调用 Method 实现。
+6. BDE 定位优先设置 group_by:"object"：hits 按实际对象合并 name、Pin、Sequence 等字段命中，matched_fields/evidence 说明原因，connections 最多给出 6 条直接连接。只有 Pin 字段命中时只展示相关 Pin 的连接。同名或同 Element 的不同放置实例仍分别返回。宽泛的 get/AEB 可能产生较大连接预览，优先用完整 identifier 并限定 Component；需要逐位置证据时使用 group_by:"occurrence"（默认）。文本结果在两种模式下都使用 snippets。
+7. limit 默认 50、最大 200，整批共享。object 模式计数为每 query 的 BDE 对象数加文本出现次数；occurrences 仅在一个图形对象包含多次原始命中时出现。has_more:true 时只传 cursor 续页。omitted_connections/omitted_boundaries/omitted_evidence 与文本 line_previews/omitted_lines 表示预览省略，不表示还有更多命中。行列是从 1 开始的原文 Unicode 码点坐标，图形 occurrence 坐标属于 diagram_text。
+8. 原样传递 ref 给 read，最多 32 项数组，同 Component 共用一次新鲜读取。文本 ref 返回 code；外层 Diagram ref 返回 diagram_text。已知命中位置可传 lines:{start:20,end:80} 读取包含端点的行范围；适用于文本或 diagram_text，不能与 include_graph 同用。所有成功 read 共用 128 KiB 总预算；大正文自动分页，code_range 给原文 Unicode 行列（结束位置不包含），按页拼接正文得到所选内容。has_more:true 时只传 cursor 继续；批量逐项使用各自 next_cursor。hits 和连接端点的对象 ref 返回 scope:"local" 及 object/nodes/pins/connections/boundaries/diagram_ref。局部默认 depth:1、direction:"both"；depth:0 只读对象及 Pins，depth:2 多展开一层，direction 可选 incoming/outgoing。它按真实连线方向遍历当前 Hierarchy，不展开 Component 内部，也不证明输入输出依赖。需要跨层时沿 boundaries 对端 ref 继续读。没有原生 ID 的 Comment 使用父 Diagram/Hierarchy ref。
+9. depth/direction 只能用于 BDE 节点对象 ref，不能用于 State/Transition 对象 ref。首次读取只加载需要的 Diagram；同 Component 批量按 Diagram 去重，文本与局部图续页均复用本次读取快照，不再次读取模型。include_graph:true 返回原始结构：整图 scope:"diagram"；局部 scope:"local"，局部分页时是片段，需合并各页才能获得完整局部范围。整图 raw graph 过大时返回 PAGE_TOO_LARGE，改读 diagram_text 或 BDE 对象 ref。Sequence 是原生 Pin 的 Method/number 注记，不是工具推导的执行顺序。
+10. State Machine 按 State Entry/Static/Exit、Transition Condition/Action/Trigger 读取保存文本及绑定。用 find target:"states"/"transitions" 列对象目录，包含空代码对象；name 匹配对象名称或完整路径，同名按 Diagram/祖先 State/native ID 分别返回。State ref 的 read 返回 code_slots、直接 incoming/outgoing；Transition ref 返回 start_state、end_state、priority、code_slots。原样继续读取这些 ref；code_slots 才是保存代码/绑定。null 端点或 priority 必须结合 partial/issues 判断，不猜测。Junction 等特殊节点以 state_kind/native_type 区分。priority 是保存配置，不证明运行调度或项目可达性。Init 可以是文本 Method，也可以属于 BDE Diagram；Main 中 init_trigger 事件不是 Init Diagram。
+11. 只有根 status：ok、changed、partial、error。partial 必须检查 issues 和批量失败项 error，不得据此断言全库未使用。BDE 对象 ref 始终校验发现时的整张 Diagram 版本；State/Transition 对象 ref 校验保存关系和代码槽位版本，即使 if_unchanged:false 也会拒绝变化，以防编号被重用；重新 find/search 后再读。原有文档 ref 可用 if_unchanged:true 拒绝变化；布局坐标不参与版本。ref/cursor 只能在同一会话传递，默认发现后 5 分钟或容量淘汰后重新定位；read 不延长发现期限。DATABASE_CHANGED 前置校验失败后重新 find/search 获取当前数据库身份。CLI 连接损坏或 ASCET_RESTARTED 后，下一次 find/search 自动重建工具连接；重新取得 ref，无需重启 ASCET。失败请求不会自动重放。
+12. 零命中时检查名称/正文入口、大小写、scope 和覆盖。工具不读取生成代码、未提交编辑器缓冲区、Dataset 数值、Formula 定义或被调用 Method 的传递闭包。全库正则可能需要读取全部支持字段，已知范围时先限定 Component。
+
+自然语言需求先转成保存模型的实际名称、标识符或注释词；工具没有语义检索。例如 mass 未必匹配 C_m_Vehicle，interpolation 未必匹配 getAt。零命中后可用少量相关名称或词分别搜索，再沿实际返回的名称收窄；不能把猜测名称当已定位的事实。
+
+范围字段放在 in 内，例如 {"query":"AxAct","in":{"kind":"method"},"limit":20}。in.kind 是保存内容的种类，不是 Component 类型或被调用接口类型；BDE Process 的正文是 kind:diagram，只筛选 process 会漏掉这类内容。已知 Process 使用 {"operation":"find","component":"AEBPre5ms_iBooster","member":"AEBPre5ms","match":"exact"}，再检查 diagram_methods 中的 kind:process。相同规则适用于绑定 BDE 的 Method 和 Init。
+
+getAt 可以是表参数的内置接口。若局部对象没有 component_path，不能据 Pin 名假设它引用了一个 Class，也不能杜撰保存的 getAt Method。明确区分已经读到的连接、尚未取得的值类型或插值配置以及工具不读取的 Dataset 点值。Hierarchy 的类型标签不参加正文搜索；未知名称时，find target:"objects",in:{diagram:"<diagram-ref>",object_kind:"hierarchy"}，再 read 对象 ref。对象目录也支持 element/operator/control/literal/comment/hierarchy_pin/conversion/unknown；省略 name 包含无名对象，不返回全部 Pins/连线。对象目录外层 component_path 是所属 Component，referenced_component_path 才是被引用 Component。结构目录只接受 in.component/in.diagram/in.visibility，objects 另外接受 in.object_kind；in.kind 仍是代码搜索的保存内容类别，不是节点类别。
+
+局部图先读 depth:1，确认直接连接后再按需展开；depth:2 到达多引脚 Component 时可能返回较大邻域。默认 pins 保留目标对象全部接口，邻居只保留参与当前连接或层级边界的 Pins；要查看邻居全部接口，把其 ref 作为新目标以 depth:0 读取。include_graph:true 保留选中邻域所有 Pins 及原始记录。局部 object/nodes 的 component_path 是被引用 Component 的路径，外层 component_path 是当前 Diagram 所属 Component；用内部路径 find 其真正 Method，不能把引脚名称或当前 Diagram 的 Method 列表当作已读实现。相同变量名出现在不同 Component 中不证明连接、共享存储或有效传值；以保存正文、真实连线和可读取的身份分别给证据，未取得的数据明确留空。

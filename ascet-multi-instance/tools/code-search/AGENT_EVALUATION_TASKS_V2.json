@@ -1,0 +1,31 @@
+{
+  "evaluation_mode": "Independent pi model sessions with only the three delivered ASCET tools and the delivered Agent prompt. Each task gets a fresh conversation and CLI session. No filesystem, shell, reference solutions or prior task responses are visible to the model.",
+  "base_tasks": "AGENT_EVALUATION_TASKS.json",
+  "base_task_overrides": {
+    "lookup-reference": "Find a BDE lookup/table usage, read its Pins and one real upstream/downstream connection. Distinguish a referenced Class Method from a built-in table getAt interface. Read a saved called implementation only when an actual referenced Component is available; state missing table configuration explicitly.",
+    "multiline-regex": "Execute a mode:regex search that actually matches an if/else fragment across multiple saved lines. Use multiline:true with dotall:true or an explicit newline-spanning expression. Then verify the returned match range against a full read and preserve Component, member and Variant identity. A text search for separate if and else keywords does not satisfy this task.",
+    "batch-pagination": "Search AxAct, VxAct and FxDriver together using mode:identifier and a small shared limit. Consume at least one next_cursor by sending only cursor, inspect continuation counts, then exhaust this whole-database identifier batch (or replace it with the same queries/mode/scope and a larger limit). Narrow a Component and batch-read relevant saved text members. Explain independent per-query counts and pagination without assuming the queries are AND. Describing a cursor without consuming it does not satisfy this task.",
+    "init-representation": "Find Init in an actual Class outside AEB_State_Machine. Confirm component_type SGClass using the Component directory; a Module Process alone is insufficient. Identify whether Init is saved text or a BDE Diagram and read its complete supported representation. Keep Class and Module identities distinct."
+  },
+  "additional_tasks": [
+    {"id":"state-direct-relations","type":"retrieval","request_budget":6,"requirement":"In AEB_State_Machine, locate AEB_State_Off as a saved State object. Establish initial/history settings, all direct incoming/outgoing Transitions, and read its saved action slots. Use actual relationships rather than comments."},
+    {"id":"transition-structural-read","type":"retrieval","request_budget":5,"requirement":"In AEB_State_Machine/Main, read saved Transition #20. Establish the exact start and end objects, their kinds, saved priority and trigger binding. Read the returned endpoint and code-slot refs to verify them. Do not invent a code body for a Method binding."},
+    {"id":"junction-discovery","type":"retrieval","request_budget":5,"requirement":"Discover a saved Junction in AEB_State_Machine without assuming it is an ordinary State. Read its direct relationships and any stored code slots. Explain what the saved objects establish without claiming runtime reachability."},
+    {"id":"hierarchy-type-discovery","type":"retrieval","request_budget":7,"requirement":"In Trial_Hierarchy, discover Hierarchy objects by native object type rather than searching the word hierarchy in code. Read an actual boundary and both related objects using returned refs. Keep repeated names and hierarchy levels distinct."},
+    {"id":"control-object-discovery","type":"retrieval","request_budget":6,"requirement":"In AEB_AxCtrlFxLim, discover control objects by native type. Read one selected control block and its actual incoming neighborhood, including its complete Pins. Do not infer execution order from visual placement."},
+    {"id":"private-diagram-discovery","type":"retrieval","request_budget":6,"requirement":"Discover an actual Private BDE Diagram, read a small range of its diagram_text, and verify that an exact search for that Diagram is excluded by Public scope. A folder named Private is not sufficient evidence."},
+    {"id":"referenced-class-follow","type":"retrieval","request_budget":9,"requirement":"Locate the AxCtrlLimGradAxMin and AxCtrlLimGradAxMax BDE placements. Verify their actual referenced Component paths, inspect one real connection, and read a saved calc implementation of the referenced Component. Distinguish placement identity from shared Class identity."},
+    {"id":"bounded-header-read","type":"retrieval","request_budget":5,"requirement":"Discover a saved C/Header code member. Read only its first 12 saved lines, identify its Component, member kind and Variant, and report the original line range. Keep the read bounded instead of requesting all Header bodies."}
+  ],
+  "answer_requirements": {
+    "force-conversion": {"complete_text_read":true},
+    "pressure-conversion": {"complete_text_read":true},
+    "control-integrator": {"complete_text_read":true},
+    "init-representation": {"complete_text_read":true},
+    "multiline-regex": {"complete_text_read":true,"multiline_regex_match":true},
+    "batch-pagination": {"scoped_text_read":true,"complete_search":{"query":["AxAct","VxAct","FxDriver"],"mode":"identifier"}},
+    "referenced-class-follow": {"complete_text_read":true}
+  },
+  "limits": {"max_cli_requests_per_task":28,"max_task_ms":240000,"max_answer_retries":2},
+  "answer_format": "Return a single JSON object: outcome (located/partial/not_found/unsupported), answer (string), evidence_refs (array of actual refs seen in this task), missing_evidence (array of strings). State facts and inference separately; report unsupported requirements."
+}

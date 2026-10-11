@@ -1,0 +1,137 @@
+{
+  "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+  "observed_utc": "2026-10-01T11:56:57.0498023Z",
+  "examples": [
+    {
+      "query": {
+        "id": "esdl_init",
+        "query": "AEB_FxTarPT = 250000;",
+        "case_sensitive": true
+      },
+      "hit": {
+        "kind": "method",
+        "component_oid": "040qm00100001mo70s2f4l12dn000",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+        "implementation_oid": "",
+        "variant": "ASDL",
+        "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+        "member_name": "init",
+        "language": "esdl",
+        "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+        "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512",
+        "matches": [
+          {
+            "line": 1,
+            "columns": [
+              1
+            ],
+            "text": "AEB_FxTarPT = 250000;"
+          }
+        ],
+        "context": [
+          {
+            "start_line": 1,
+            "end_line": 2,
+            "lines": [
+              "AEB_FxTarPT = 250000;",
+              "AEB_LDMSelectedControllerPT = LDMSelectedController_None;"
+            ]
+          }
+        ]
+      },
+      "read_request": {
+        "operation": "read",
+        "target": {
+          "component_oid": "040qm00100001mo70s2f4l12dn000",
+          "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da"
+        },
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "expected_source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512"
+      },
+      "document": {
+        "kind": "method",
+        "component_oid": "040qm00100001mo70s2f4l12dn000",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_RedEngTorque",
+        "implementation_oid": "",
+        "variant": "ASDL",
+        "member_id": "0101ab0001000000dc07020d022356e6ac130000",
+        "member_name": "init",
+        "language": "esdl",
+        "text": "AEB_FxTarPT = 250000;\rAEB_LDMSelectedControllerPT = LDMSelectedController_None;",
+        "document_id": "9a31e927b1929f13d33661c2e3feacee20dc89a373612c70620972e7a8ad45da",
+        "source_sha256": "06a95081739e9d0979c850ea23a6d7a74acb70d8c083f4c4e99e04784abc5512"
+      }
+    },
+    {
+      "query": {
+        "id": "state_graphical_init",
+        "query": "AEBLockTime = 0.0;",
+        "case_sensitive": true
+      },
+      "hit": {
+        "kind": "graphical_method",
+        "component_oid": "040qm00100001m8714ag81ugur0dk",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "implementation_oid": "",
+        "variant": "BD",
+        "member_id": "0101ab0001000000da070806128c7bf1d39d0000",
+        "member_name": "init",
+        "language": "ascet_graph",
+        "representation": "graphical_model",
+        "graphical_location": {
+          "specification_source_oid": "040ts00000001qg714eg70igttv06",
+          "specification_name": "Init"
+        },
+        "document_id": "aded2855e5129bc8b861ac373066427b7954cd6db67a95dce0d527e3f18714e2",
+        "source_sha256": "b5c97200b1b526bfd238062687b3315a9b10073b2462049be144839c16cbb278",
+        "matches": [
+          {
+            "line": 4,
+            "columns": [
+              1
+            ],
+            "text": "AEBLockTime = 0.0;"
+          }
+        ],
+        "context": [
+          {
+            "start_line": 3,
+            "end_line": 5,
+            "lines": [
+              "// sequence 10",
+              "AEBLockTime = 0.0;",
+              "// Supported graph nodes used by this method; full specification graph is available via read_state_machine."
+            ]
+          }
+        ]
+      },
+      "read_request": {
+        "operation": "read",
+        "target": {
+          "component_oid": "040qm00100001m8714ag81ugur0dk",
+          "document_id": "aded2855e5129bc8b861ac373066427b7954cd6db67a95dce0d527e3f18714e2"
+        },
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+        "expected_source_sha256": "b5c97200b1b526bfd238062687b3315a9b10073b2462049be144839c16cbb278"
+      },
+      "document": {
+        "kind": "graphical_method",
+        "component_oid": "040qm00100001m8714ag81ugur0dk",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "implementation_oid": "",
+        "variant": "BD",
+        "member_id": "0101ab0001000000da070806128c7bf1d39d0000",
+        "member_name": "init",
+        "language": "ascet_graph",
+        "text": "// ASCET graphical model representation; not handwritten ESDL or generated C.\n// Specification: Init; method: init; alias: 0101ab0001000000da070806128c7bf1d39d0000\n// sequence 10\nAEBLockTime = 0.0;\n// Supported graph nodes used by this method; full specification graph is available via read_state_machine.\n{\n  \"component_oid\": \"040qm00100001m8714ag81ugur0dk\",\n  \"specification_source_oid\": \"040ts00000001qg714eg70igttv06\",\n  \"specification_name\": \"Init\",\n  \"complete\": true,\n  \"nodes\": [\n    {\n      \"scope\": \"root\",\n      \"id\": -1,\n      \"class_name\": \"SGCodeGODB\",\n      \"element_alias\": \"\",\n      \"element_name\": \"\",\n      \"literal\": \"\",\n      \"element_class\": \"\"\n    },\n    {\n      \"scope\": \"root\",\n      \"id\": 4,\n      \"class_name\": \"SGLiteralGODB\",\n      \"element_alias\": \"\",\n      \"element_name\": \"\",\n      \"literal\": \"0.0\",\n      \"element_class\": \"\"\n    },\n    {\n      \"scope\": \"root\",\n      \"id\": 6,\n      \"class_name\": \"SGDataGODB\",\n      \"element_alias\": \"0101ab0001000000da07080612950c24ddb60000\",\n      \"element_name\": \"AEBLockTime\",\n      \"literal\": \"\",\n      \"element_class\": \"SGVariable\"\n    }\n  ],\n  \"ports\": [\n    {\n      \"scope\": \"root\",\n      \"node_id\": 4,\n      \"id\": 5,\n      \"direction\": \"return\",\n      \"operation\": \"literal\",\n      \"parameter\": \"return\",\n      \"storage_flags\": \"\"\n    },\n    {\n      \"scope\": \"root\",\n      \"node_id\": 6,\n      \"id\": 7,\n      \"direction\": \"selector\",\n      \"operation\": \"set\",\n      \"parameter\": \"aValue\",\n      \"storage_flags\": \"true/false/false\"\n    },\n    {\n      \"scope\": \"root\",\n      \"node_id\": 6,\n      \"id\": 8,\n      \"direction\": \"return\",\n      \"operation\": \"get\",\n      \"parameter\": \"return\",\n      \"storage_flags\": \"true/false/false\"\n    }\n  ],\n  \"sequences\": [\n    {\n      \"scope\": \"root\",\n      \"node_id\": 6,\n      \"id\": 9,\n      \"method_alias\": \"0101ab0001000000da070806128c7bf1d39d0000\",\n      \"number\": 10,\n      \"operation\": \"set\",\n      \"storage_flags\": \"nil/false\"\n    }\n  ],\n  \"connections\": [\n    {\n      \"scope\": \"root\",\n      \"index\": 1,\n      \"from_port\": 5,\n      \"to_port\": 7,\n      \"from_block\": null,\n      \"to_block\": null,\n      \"class_name\": \"SGConnectionGODB\"\n    }\n  ],\n  \"methods\": [\n    {\n      \"member_id\": \"0101ab0001000000da070806128c7bf1d39d0000\",\n      \"member_name\": \"init\",\n      \"is_process\": false\n    }\n  ],\n  \"issues\": []\n}",
+        "representation": "graphical_model",
+        "graphical_location": {
+          "specification_source_oid": "040ts00000001qg714eg70igttv06",
+          "specification_name": "Init"
+        },
+        "document_id": "aded2855e5129bc8b861ac373066427b7954cd6db67a95dce0d527e3f18714e2",
+        "source_sha256": "b5c97200b1b526bfd238062687b3315a9b10073b2462049be144839c16cbb278"
+      }
+    }
+  ]
+}

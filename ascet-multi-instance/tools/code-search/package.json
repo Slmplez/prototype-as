@@ -1,0 +1,71 @@
+{
+  "name": "@ascet/code-search",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./pi": "./dist/src/pi-extension.js"
+  },
+  "pi": { "extensions": ["./dist/src/pi-extension.js"] },
+  "scripts": {
+    "build:ts": "tsc -p tsconfig.json",
+    "build:bridge": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./build.ps1 -BridgeOnly",
+    "build": "npm run build:ts && npm run build:bridge",
+    "start": "node dist/src/cli.js",
+    "start:agent": "node dist/src/cli.js --agent",
+    "start:mcp": "node dist/src/mcp.js",
+    "test": "npm run build:ts && node --test dist/test/*.test.js",
+    "verify:live": "npm run build:ts && node dist/scripts/verify-live.js",
+    "verify:advanced": "npm run build:ts && node dist/scripts/verify-advanced.js",
+    "verify:paging": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1",
+    "verify:agent": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-agent",
+    "verify:agent-polish": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-agent-polish",
+    "verify:optimization": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-optimization",
+    "verify:state-bundle": "npm run build:ts && node dist/scripts/verify-state-bundle.js",
+    "sample:state-markdown": "npm run build:ts && node dist/scripts/render-state-sample.js",
+    "verify:diagrams": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-diagrams",
+    "verify:diagram-generality": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-diagram-generality",
+    "verify:objects": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-object-search",
+    "verify:models": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-model-generality",
+    "verify:multiple-diagrams": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-multiple-diagrams",
+    "verify:cold-read": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-cold-read",
+    "verify:read-pages": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-read-pages",
+    "verify:fast-search": "npm run build:ts && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-paging.ps1 -Script verify-fast-search",
+    "verify:isolated": "npm run build:ts && node dist/scripts/verify-isolated-acceptance.js",
+    "verify:agent-latency": "npm run build:ts && node dist/scripts/verify-agent-latency.js",
+    "verify:cli-optimization": "npm run build:ts && node dist/scripts/verify-cli-optimization.js",
+    "verify:cli-acceptance": "npm run build:ts && node dist/scripts/verify-cli-acceptance.js",
+    "verify:full": "npm run build:ts && node dist/scripts/verify-full-regression.js",
+    "verify:e2e": "npm run build:ts && node dist/scripts/verify-cli-e2e.js",
+    "verify:bde-matrix": "npm run build:ts && node dist/scripts/verify-bde-matrix.js",
+    "verify:bde-latency": "npm run build:ts && node dist/scripts/verify-bde-latency.js",
+    "verify:template-copy": "npm run build:ts && node dist/scripts/verify-template-copy.js",
+    "verify:pi": "npm run build:ts && node dist/scripts/verify-pi-tools.js",
+    "verify:pi-agent": "npm run build:ts && node dist/scripts/verify-pi-agent-eval.js",
+    "verify:pi-optimize": "npm run build:ts && node dist/scripts/verify-pi-optimization.js",
+    "verify:pi-cases": "npm run build:ts && node dist/scripts/verify-pi-eval-cases.js",
+    "prepare:pi-intents": "npm run build:ts && node dist/scripts/verify-pi-intent-cases.js --write",
+    "verify:pi-intent-cases": "npm run build:ts && node dist/scripts/verify-pi-intent-cases.js",
+    "verify:pi-intent": "npm run build:ts && node dist/scripts/verify-pi-intent.js",
+    "pack:cli": "npm run build && powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./pack-cli.ps1",
+    "verify:cli-package": "npm run build:ts && node dist/scripts/verify-cli-package.js"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.0.2",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "@modelcontextprotocol/sdk": "^1.31.0"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "suite": "task_transfer",
+  "max_tool_calls": 20,
+  "timeout_ms": 180000,
+  "answer_format": "Return exactly one JSON object, without Markdown fences or surrounding prose, with outcome (located/partial/not_found/unsupported), answer (a concise explanation), evidence_refs (actual refs seen in this session), missing_evidence (strings), and facts (an object using the requested fields). In facts, name/path/kind/variant fields contain only the exact saved string; ID fields contain numbers, not explanatory text. Separate saved facts from inference. Do not invent unsupported values.",
+  "group_names": {
+    "source_transfer": "其他 Class 的代码任务",
+    "graph_transfer": "Module、literal 与嵌套 Hierarchy"
+  },
+  "cases": [
+    {
+      "id": "transfer-slip-symbol",
+      "group": "source_transfer",
+      "requirement": "只查 LDM_AbsSlipCtrlWheel 的 calc ASDL Method 内完整符号 CtrlMode，大小写敏感。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "LDM_AbsSlipCtrlWheel",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "identifier",
+        "case_sensitive": true,
+        "queries": [
+          {
+            "text": "CtrlMode"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transfer-integrator-regex",
+      "group": "source_transfer",
+      "requirement": "在 AxCtrlInt 的 calc ASDL Method 中查跨行正则 if \\(Active_B\\)\\s*\\{，跨行匹配。 facts: counts [{query,total_hits}]，按查询顺序返回真实完整命中数。",
+      "rubric": {
+        "type": "search",
+        "scope": {
+          "component": "AxCtrlInt",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "mode": "regex",
+        "multiline": true,
+        "queries": [
+          {
+            "text": "if \\(Active_B\\)\\s*\\{"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transfer-min-gradient-full",
+      "group": "source_transfer",
+      "requirement": "完整读取 AxCtrlLimMindFx 的 calc ASDL Method 原始实现。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。只复制保存值，基础 Implementation 为字符串空值。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AxCtrlLimMindFx",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "full": true
+      }
+    },
+    {
+      "id": "transfer-slip-lines",
+      "group": "source_transfer",
+      "requirement": "只读取 LDM_AbsSlipCtrlWheel 的 calc ASDL Method 第 4 到第 8 行，不要回读全文。 facts: identity {component_path,kind,member,variant,implementation}，total_lines。只复制保存值，基础 Implementation 为字符串空值。 facts 另含 start_line,end_line。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "LDM_AbsSlipCtrlWheel",
+          "member": "calc",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "lines": {
+          "start": 4,
+          "end": 8
+        }
+      }
+    },
+    {
+      "id": "transfer-module-interface",
+      "group": "graph_transfer",
+      "requirement": "在 AEB5ms/Main 中读取 LDMAxRaw 对象本身全部 Pins，depth 0、direction both；不是读取它引用的 Class 源码。 facts: name,kind,hierarchy,pin_ids（本次所查对象的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（完整局部连接数组，即使为空也要返回）、node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEB5ms"
+        },
+        "diagram": "Main",
+        "node": "LDMAxRaw",
+        "depth": 0,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "transfer-literal-outgoing",
+      "group": "graph_transfer",
+      "requirement": "找到 AEBPre5ms_iBooster/Main 中名字严格等于 -400000 的 literal，读取一层 outgoing 连接并核对所查 literal 的 Pins。只解释保存的图事实。 facts: name,kind,hierarchy,pin_ids（本次所查对象的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（完整局部连接数组，即使为空也要返回）、node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "AEBPre5ms_iBooster"
+        },
+        "diagram": "Main",
+        "node": "-400000",
+        "object_kind": "literal",
+        "depth": 1,
+        "direction": "outgoing"
+      }
+    },
+    {
+      "id": "transfer-inner-hierarchy",
+      "group": "graph_transfer",
+      "requirement": "在 Trial_Hierarchy_20261001_100329_c7dd0b/Main 中找到名字 Stage、hierarchy 为 root/h12 的 hierarchy 对象，读取一层 both 的局部关系和边界，禁止凭 Main 推断 hierarchy。 facts: name,kind,hierarchy,pin_ids（本次所查对象的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（完整局部连接数组，即使为空也要返回）、node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "Trial_Hierarchy_20261001_100329_c7dd0b"
+        },
+        "diagram": "Main",
+        "node": "Stage",
+        "hierarchy": "root/h12",
+        "object_kind": "hierarchy",
+        "depth": 1,
+        "direction": "both"
+      }
+    },
+    {
+      "id": "transfer-deep-instance",
+      "group": "graph_transfer",
+      "requirement": "在 Trial_GeneralCaller1_20261002_050256_d0e048/Main 中找到 root/h1/h2/h3 层级的 Instance0，读取 depth 0、direction both 的完整对象接口，不能用根层级或邻居的 Pins 替代。 facts: name,kind,hierarchy,pin_ids（本次所查对象的完整 Pin ID 数组）,connections [{from_pin_id,to_pin_id}]（完整局部连接数组，即使为空也要返回）、node_names,connection_count,boundaries_count。",
+      "rubric": {
+        "type": "local",
+        "scope": {
+          "component": "Trial_GeneralCaller1_20261002_050256_d0e048"
+        },
+        "diagram": "Main",
+        "node": "Instance0",
+        "hierarchy": "root/h1/h2/h3",
+        "depth": 0,
+        "direction": "both"
+      }
+    }
+  ]
+}

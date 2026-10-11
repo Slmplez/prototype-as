@@ -1,0 +1,2922 @@
+{
+  "started_utc": "2026-10-01T10:13:42.688Z",
+  "runtime": "v24.4.1",
+  "target_ms": 500,
+  "timing_boundary": "Before lazy process startup/each request write through complete JSON read and JSON.parse; includes Node, C#, ASCET read, matching and transport",
+  "ascet_state": "Already running; full oracle snapshot read first. Warm model, not a cold-load guarantee. No model edits or restart.",
+  "attempts": [
+    {
+      "phase": "new_process_warm_ascet",
+      "request": {
+        "query": "P_AEBdT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 300.1414,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 45.8089,
+        "native_read_transport_ms": 81.3297,
+        "bridge_ms": 135.2347,
+        "bridge_roundtrip_ms": 241.2289,
+        "decode_match_ms": 1.6730000000000018,
+        "decode_ms": 1.0935999999999808,
+        "match_ms": 0.579400000000021,
+        "search_ms": 242.9019
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "p_aebdt",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 101.8066,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 88.13050000000001,
+        "bridge_ms": 98.6658,
+        "bridge_roundtrip_ms": 100.52160000000003,
+        "decode_match_ms": 0.7852999999999497,
+        "decode_ms": 0.6093999999999937,
+        "match_ms": 0.17589999999995598,
+        "search_ms": 101.30689999999998
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "return",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 147.43970000000013,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 111.92790000000001,
+        "bridge_ms": 120.7962,
+        "bridge_roundtrip_ms": 132.18820000000005,
+        "decode_match_ms": 13.767399999999952,
+        "decode_ms": 7.569499999999948,
+        "match_ms": 6.197900000000004,
+        "search_ms": 145.9556
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "__codex_absent_6d50b313__",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 99.29329999999982,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 87.8927,
+        "bridge_ms": 96.90990000000001,
+        "bridge_roundtrip_ms": 98.42169999999999,
+        "decode_match_ms": 0.3109000000000606,
+        "decode_ms": 0.2679000000000542,
+        "match_ms": 0.043000000000006366,
+        "search_ms": 98.73260000000005
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "a",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 171.5703000000001,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 123.54250000000002,
+        "bridge_ms": 132.99960000000002,
+        "bridge_roundtrip_ms": 146.13300000000004,
+        "decode_match_ms": 19.24409999999989,
+        "decode_ms": 8.813699999999926,
+        "match_ms": 10.430399999999963,
+        "search_ms": 165.37709999999993
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "_",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 147.76160000000004,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 109.909,
+        "bridge_ms": 119.6164,
+        "bridge_roundtrip_ms": 131.33379999999988,
+        "decode_match_ms": 13.312000000000126,
+        "decode_ms": 5.8909000000001015,
+        "match_ms": 7.421100000000024,
+        "search_ms": 144.6458
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "C_AEBdT",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 100.15650000000005,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 87.6538,
+        "bridge_ms": 97.0334,
+        "bridge_roundtrip_ms": 98.93419999999992,
+        "decode_match_ms": 0.7368000000001302,
+        "decode_ms": 0.4773999999999887,
+        "match_ms": 0.2594000000001415,
+        "search_ms": 99.67100000000005
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "if (",
+        "case_sensitive": true,
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 96.1875,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 81.64720000000001,
+        "bridge_ms": 90.5323,
+        "bridge_roundtrip_ms": 94.26369999999997,
+        "decode_match_ms": 1.300899999999956,
+        "decode_ms": 0.8894999999999982,
+        "match_ms": 0.4113999999999578,
+        "search_ms": 95.56459999999993
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "*",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 151.47960000000012,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 111.17510000000001,
+        "bridge_ms": 121.7085,
+        "bridge_roundtrip_ms": 132.9792,
+        "decode_match_ms": 13.119700000000194,
+        "decode_ms": 6.530299999999897,
+        "match_ms": 6.589400000000296,
+        "search_ms": 146.09890000000019
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "AEBLockTime",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 102.27700000000004,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 87.2389,
+        "bridge_ms": 99.0218,
+        "bridge_roundtrip_ms": 101.14409999999998,
+        "decode_match_ms": 0.4861000000000786,
+        "decode_ms": 0.33670000000029177,
+        "match_ms": 0.14939999999978681,
+        "search_ms": 101.63020000000006
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "Trigger_IB_From_Off",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 105.73900000000003,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0006000000000000001,
+        "native_read_transport_ms": 93.3607,
+        "bridge_ms": 101.8073,
+        "bridge_roundtrip_ms": 104.91859999999997,
+        "decode_match_ms": 0.3582000000001244,
+        "decode_ms": 0.2480000000000473,
+        "match_ms": 0.11020000000007713,
+        "search_ms": 105.2768000000001
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "trigger",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 146.8998999999999,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 116.99320000000002,
+        "bridge_ms": 126.93610000000001,
+        "bridge_roundtrip_ms": 137.0626000000002,
+        "decode_match_ms": 9.420900000000074,
+        "decode_ms": 4.50189999999975,
+        "match_ms": 4.919000000000324,
+        "search_ms": 146.48350000000028
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "P_AEBdT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 91.55909999999994,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 81.22630000000001,
+        "bridge_ms": 88.6465,
+        "bridge_roundtrip_ms": 90.89889999999968,
+        "decode_match_ms": 0.29670000000032815,
+        "decode_ms": 0.24459999999999127,
+        "match_ms": 0.05210000000033688,
+        "search_ms": 91.19560000000001
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "p_aebdt",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 97.44650000000001,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 89.01089999999999,
+        "bridge_ms": 95.1315,
+        "bridge_roundtrip_ms": 96.92229999999972,
+        "decode_match_ms": 0.27440000000024156,
+        "decode_ms": 0.2195000000001528,
+        "match_ms": 0.05490000000008877,
+        "search_ms": 97.19669999999996
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "return",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 147.83279999999968,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0005,
+        "native_read_transport_ms": 113.2955,
+        "bridge_ms": 123.1302,
+        "bridge_roundtrip_ms": 134.79399999999987,
+        "decode_match_ms": 11.767299999999977,
+        "decode_ms": 5.877100000000155,
+        "match_ms": 5.8901999999998225,
+        "search_ms": 146.56129999999985
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "__codex_absent_6d50b313__",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 98.93809999999985,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 87.89200000000001,
+        "bridge_ms": 96.6774,
+        "bridge_roundtrip_ms": 98.32330000000002,
+        "decode_match_ms": 0.2943000000000211,
+        "decode_ms": 0.2606999999998152,
+        "match_ms": 0.03360000000020591,
+        "search_ms": 98.61760000000004
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "a",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 176.06659999999965,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 117.4116,
+        "bridge_ms": 126.2707,
+        "bridge_roundtrip_ms": 139.04199999999992,
+        "decode_match_ms": 18.702400000000125,
+        "decode_ms": 7.537299999999959,
+        "match_ms": 11.165100000000166,
+        "search_ms": 157.74440000000004
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "_",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 151.0844000000002,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 111.6814,
+        "bridge_ms": 120.77260000000001,
+        "bridge_roundtrip_ms": 132.28420000000006,
+        "decode_match_ms": 11.774499999999989,
+        "decode_ms": 5.76489999999967,
+        "match_ms": 6.009600000000319,
+        "search_ms": 144.05870000000004
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "C_AEBdT",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 101.10400000000027,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 88.9837,
+        "bridge_ms": 97.97460000000001,
+        "bridge_roundtrip_ms": 99.75950000000012,
+        "decode_match_ms": 0.690599999999904,
+        "decode_ms": 0.4393000000000029,
+        "match_ms": 0.25129999999990105,
+        "search_ms": 100.45010000000002
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "if (",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 99.73089999999956,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 85.8729,
+        "bridge_ms": 95.04220000000001,
+        "bridge_roundtrip_ms": 97.71929999999975,
+        "decode_match_ms": 1.5300000000002,
+        "decode_ms": 1.083599999999933,
+        "match_ms": 0.446400000000267,
+        "search_ms": 99.24929999999995
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "*",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 166.52700000000004,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 112.2869,
+        "bridge_ms": 122.3185,
+        "bridge_roundtrip_ms": 133.49490000000014,
+        "decode_match_ms": 13.301899999999932,
+        "decode_ms": 6.92049999999972,
+        "match_ms": 6.3814000000002125,
+        "search_ms": 146.79680000000008
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "AEBLockTime",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 99.82889999999952,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0005,
+        "native_read_transport_ms": 87.7427,
+        "bridge_ms": 97.5252,
+        "bridge_roundtrip_ms": 98.95370000000003,
+        "decode_match_ms": 0.4996000000001004,
+        "decode_ms": 0.42630000000008295,
+        "match_ms": 0.07330000000001746,
+        "search_ms": 99.45330000000013
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "Trigger_IB_From_Off",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 100.83749999999964,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 89.4693,
+        "bridge_ms": 98.55930000000001,
+        "bridge_roundtrip_ms": 100.18950000000041,
+        "decode_match_ms": 0.3442000000004555,
+        "decode_ms": 0.3095000000002983,
+        "match_ms": 0.03470000000015716,
+        "search_ms": 100.53370000000086
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "trigger",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 136.82759999999962,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 106.27550000000001,
+        "bridge_ms": 116.1682,
+        "bridge_roundtrip_ms": 126.89940000000024,
+        "decode_match_ms": 9.568599999999606,
+        "decode_ms": 5.429599999999482,
+        "match_ms": 4.139000000000124,
+        "search_ms": 136.46799999999985
+      },
+      "correct": true
+    },
+    {
+      "phase": "batch_12_shared",
+      "request": {
+        "queries": [
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true
+          },
+          {
+            "query": "p_aebdt"
+          },
+          {
+            "query": "return"
+          },
+          {
+            "query": "__codex_absent_6d50b313__"
+          },
+          {
+            "query": "a"
+          },
+          {
+            "query": "_"
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence"
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true
+          },
+          {
+            "query": "*"
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence"
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence"
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence"
+          }
+        ],
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 190.98129999999946,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 132.03320000000002,
+        "bridge_ms": 141.1708,
+        "bridge_roundtrip_ms": 154.71690000000035,
+        "decode_match_ms": 22.6895999999997,
+        "decode_ms": 7.540299999999661,
+        "match_ms": 15.14930000000004,
+        "search_ms": 177.40650000000005
+      },
+      "correct": true
+    },
+    {
+      "phase": "batch_64_shared_unicode",
+      "request": {
+        "queries": [
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 0
+          },
+          {
+            "query": "p_aebdt",
+            "id": 1
+          },
+          {
+            "query": "return",
+            "id": 2
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 3
+          },
+          {
+            "query": "a",
+            "id": 4
+          },
+          {
+            "query": "_",
+            "id": 5
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 6
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 7
+          },
+          {
+            "query": "*",
+            "id": 8
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 9
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 10
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 11
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 12
+          },
+          {
+            "query": "p_aebdt",
+            "id": 13
+          },
+          {
+            "query": "return",
+            "id": 14
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 15
+          },
+          {
+            "query": "a",
+            "id": 16
+          },
+          {
+            "query": "_",
+            "id": 17
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 18
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 19
+          },
+          {
+            "query": "*",
+            "id": 20
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 21
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 22
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 23
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 24
+          },
+          {
+            "query": "p_aebdt",
+            "id": 25
+          },
+          {
+            "query": "return",
+            "id": 26
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 27
+          },
+          {
+            "query": "a",
+            "id": 28
+          },
+          {
+            "query": "_",
+            "id": 29
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 30
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 31
+          },
+          {
+            "query": "*",
+            "id": 32
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 33
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 34
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 35
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 36
+          },
+          {
+            "query": "p_aebdt",
+            "id": 37
+          },
+          {
+            "query": "return",
+            "id": 38
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 39
+          },
+          {
+            "query": "a",
+            "id": 40
+          },
+          {
+            "query": "_",
+            "id": 41
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 42
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 43
+          },
+          {
+            "query": "*",
+            "id": 44
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 45
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 46
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 47
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 48
+          },
+          {
+            "query": "p_aebdt",
+            "id": 49
+          },
+          {
+            "query": "return",
+            "id": 50
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 51
+          },
+          {
+            "query": "a",
+            "id": 52
+          },
+          {
+            "query": "_",
+            "id": 53
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 54
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 55
+          },
+          {
+            "query": "*",
+            "id": 56
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 57
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 58
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 59
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 60
+          },
+          {
+            "query": "p_aebdt",
+            "id": 61
+          },
+          {
+            "query": "return",
+            "id": 62
+          },
+          {
+            "query": "中文"
+          }
+        ],
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 293.71469999999954,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 104.8888,
+        "bridge_ms": 115.11680000000001,
+        "bridge_roundtrip_ms": 129.14640000000054,
+        "decode_match_ms": 68.1226999999999,
+        "decode_ms": 8.806799999999384,
+        "match_ms": 59.31590000000051,
+        "search_ms": 197.26910000000044
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "P_AEBdT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 93.49269999999888,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 82.2262,
+        "bridge_ms": 91.259,
+        "bridge_roundtrip_ms": 92.83489999999983,
+        "decode_match_ms": 0.27269999999953143,
+        "decode_ms": 0.2309000000004744,
+        "match_ms": 0.041799999999057036,
+        "search_ms": 93.10759999999937
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "p_aebdt",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 101.27329999999893,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 89.8713,
+        "bridge_ms": 99.1465,
+        "bridge_roundtrip_ms": 100.65439999999944,
+        "decode_match_ms": 0.32740000000012515,
+        "decode_ms": 0.2260999999998603,
+        "match_ms": 0.10130000000026484,
+        "search_ms": 100.98179999999957
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "return",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 143.03859999999986,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 109.3883,
+        "bridge_ms": 119.21100000000001,
+        "bridge_roundtrip_ms": 131.08959999999934,
+        "decode_match_ms": 10.680399999999281,
+        "decode_ms": 5.832300000000032,
+        "match_ms": 4.848099999999249,
+        "search_ms": 141.76999999999862
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "__codex_absent_6d50b313__",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 103.21689999999944,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 91.85830000000001,
+        "bridge_ms": 101.4496,
+        "bridge_roundtrip_ms": 102.74049999999988,
+        "decode_match_ms": 0.202900000000227,
+        "decode_ms": 0.18460000000050059,
+        "match_ms": 0.018299999999726424,
+        "search_ms": 102.94340000000011
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "a",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 155.53639999999905,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 111.1243,
+        "bridge_ms": 120.38260000000001,
+        "bridge_roundtrip_ms": 133.10980000000018,
+        "decode_match_ms": 16.61030000000028,
+        "decode_ms": 6.963099999999031,
+        "match_ms": 9.647200000001249,
+        "search_ms": 149.72010000000046
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "_",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 147.3140000000003,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 110.65820000000001,
+        "bridge_ms": 120.95030000000001,
+        "bridge_roundtrip_ms": 132.52930000000015,
+        "decode_match_ms": 11.934699999999793,
+        "decode_ms": 5.5318999999999505,
+        "match_ms": 6.402799999999843,
+        "search_ms": 144.46399999999994
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "C_AEBdT",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 103.17119999999886,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 91.25470000000001,
+        "bridge_ms": 100.3591,
+        "bridge_roundtrip_ms": 102.05979999999909,
+        "decode_match_ms": 0.6872999999995955,
+        "decode_ms": 0.4328000000004977,
+        "match_ms": 0.2544999999990978,
+        "search_ms": 102.74709999999868
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "if (",
+        "case_sensitive": true,
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 97.75540000000001,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 83.7292,
+        "bridge_ms": 93.48870000000001,
+        "bridge_roundtrip_ms": 95.8849999999984,
+        "decode_match_ms": 1.4255000000011933,
+        "decode_ms": 0.9693000000006577,
+        "match_ms": 0.4562000000005355,
+        "search_ms": 97.31049999999959
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "*",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 146.16489999999976,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 108.0808,
+        "bridge_ms": 116.11890000000001,
+        "bridge_roundtrip_ms": 127.53850000000057,
+        "decode_match_ms": 13.561100000000806,
+        "decode_ms": 5.350500000000466,
+        "match_ms": 8.21060000000034,
+        "search_ms": 141.09960000000137
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "AEBLockTime",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 101.40259999999944,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 90.9042,
+        "bridge_ms": 99.102,
+        "bridge_roundtrip_ms": 100.66460000000006,
+        "decode_match_ms": 0.39940000000024156,
+        "decode_ms": 0.3188000000009197,
+        "match_ms": 0.08059999999932188,
+        "search_ms": 101.0640000000003
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "Trigger_IB_From_Off",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 109.75760000000082,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 98.79860000000001,
+        "bridge_ms": 107.2972,
+        "bridge_roundtrip_ms": 108.90629999999874,
+        "decode_match_ms": 0.5140000000010332,
+        "decode_ms": 0.3195000000014261,
+        "match_ms": 0.1944999999996071,
+        "search_ms": 109.42029999999977
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "trigger",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 142.91170000000056,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 110.36340000000001,
+        "bridge_ms": 119.5991,
+        "bridge_roundtrip_ms": 130.28080000000045,
+        "decode_match_ms": 12.245600000000195,
+        "decode_ms": 5.498800000001211,
+        "match_ms": 6.746799999998984,
+        "search_ms": 142.52640000000065
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "P_AEBdT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 97.09380000000056,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 80.9184,
+        "bridge_ms": 94.37020000000001,
+        "bridge_roundtrip_ms": 96.45949999999903,
+        "decode_match_ms": 0.3521999999993568,
+        "decode_ms": 0.29869999999937136,
+        "match_ms": 0.05349999999998545,
+        "search_ms": 96.81169999999838
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "p_aebdt",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 99.04569999999876,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 88.4315,
+        "bridge_ms": 96.9444,
+        "bridge_roundtrip_ms": 98.39199999999983,
+        "decode_match_ms": 0.3544999999994616,
+        "decode_ms": 0.30309999999917636,
+        "match_ms": 0.05140000000028522,
+        "search_ms": 98.74649999999929
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "return",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 148.19959999999992,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 113.1901,
+        "bridge_ms": 122.30040000000001,
+        "bridge_roundtrip_ms": 133.62820000000102,
+        "decode_match_ms": 13.147600000000239,
+        "decode_ms": 7.786000000000058,
+        "match_ms": 5.36160000000018,
+        "search_ms": 146.77580000000125
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "__codex_absent_6d50b313__",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 101.41189999999915,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 88.5168,
+        "bridge_ms": 98.76660000000001,
+        "bridge_roundtrip_ms": 100.84649999999965,
+        "decode_match_ms": 0.26670000000012806,
+        "decode_ms": 0.2363999999997759,
+        "match_ms": 0.030300000000352156,
+        "search_ms": 101.11319999999978
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "a",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 175.29010000000017,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 114.7335,
+        "bridge_ms": 123.26270000000001,
+        "bridge_roundtrip_ms": 136.04279999999926,
+        "decode_match_ms": 20.611300000000483,
+        "decode_ms": 7.820499999999811,
+        "match_ms": 12.790800000000672,
+        "search_ms": 156.65409999999974
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "_",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 155.5764999999992,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0005,
+        "native_read_transport_ms": 113.17450000000001,
+        "bridge_ms": 123.0505,
+        "bridge_roundtrip_ms": 135.35590000000047,
+        "decode_match_ms": 13.500599999999395,
+        "decode_ms": 5.94419999999991,
+        "match_ms": 7.556399999999485,
+        "search_ms": 148.85649999999987
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "C_AEBdT",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 100.92410000000018,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 89.4922,
+        "bridge_ms": 97.8083,
+        "bridge_roundtrip_ms": 99.72289999999884,
+        "decode_match_ms": 0.7149000000008527,
+        "decode_ms": 0.4401000000016211,
+        "match_ms": 0.27479999999923166,
+        "search_ms": 100.4377999999997
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "if (",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 97.21209999999883,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 85.60140000000001,
+        "bridge_ms": 93.2766,
+        "bridge_roundtrip_ms": 95.4951000000001,
+        "decode_match_ms": 1.2934000000004744,
+        "decode_ms": 0.8901999999998225,
+        "match_ms": 0.4032000000006519,
+        "search_ms": 96.78850000000057
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "*",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 166.53850000000057,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 114.3714,
+        "bridge_ms": 122.6909,
+        "bridge_roundtrip_ms": 133.89829999999893,
+        "decode_match_ms": 13.129500000000917,
+        "decode_ms": 5.473900000000867,
+        "match_ms": 7.6556000000000495,
+        "search_ms": 147.02779999999984
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "AEBLockTime",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 99.69180000000051,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 88.22250000000001,
+        "bridge_ms": 97.12870000000001,
+        "bridge_roundtrip_ms": 98.75480000000061,
+        "decode_match_ms": 0.5619999999998981,
+        "decode_ms": 0.33920000000034634,
+        "match_ms": 0.2227999999995518,
+        "search_ms": 99.31680000000051
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "Trigger_IB_From_Off",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 105.47260000000097,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 94.74900000000001,
+        "bridge_ms": 103.1194,
+        "bridge_roundtrip_ms": 104.77429999999913,
+        "decode_match_ms": 0.37780000000020664,
+        "decode_ms": 0.2793999999994412,
+        "match_ms": 0.09840000000076543,
+        "search_ms": 105.15209999999934
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "trigger",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 143.67209999999977,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 113.46110000000002,
+        "bridge_ms": 122.2847,
+        "bridge_roundtrip_ms": 134.4509999999991,
+        "decode_match_ms": 8.854699999999866,
+        "decode_ms": 4.725800000000163,
+        "match_ms": 4.128899999999703,
+        "search_ms": 143.30569999999898
+      },
+      "correct": true
+    },
+    {
+      "phase": "batch_12_shared",
+      "request": {
+        "queries": [
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true
+          },
+          {
+            "query": "p_aebdt"
+          },
+          {
+            "query": "return"
+          },
+          {
+            "query": "__codex_absent_6d50b313__"
+          },
+          {
+            "query": "a"
+          },
+          {
+            "query": "_"
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence"
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true
+          },
+          {
+            "query": "*"
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence"
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence"
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence"
+          }
+        ],
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 189.5717999999997,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 123.9777,
+        "bridge_ms": 133.81130000000002,
+        "bridge_roundtrip_ms": 146.56900000000132,
+        "decode_match_ms": 29.670899999999165,
+        "decode_ms": 7.69419999999991,
+        "match_ms": 21.976699999999255,
+        "search_ms": 176.2399000000005
+      },
+      "correct": true
+    },
+    {
+      "phase": "batch_64_shared_unicode",
+      "request": {
+        "queries": [
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 0
+          },
+          {
+            "query": "p_aebdt",
+            "id": 1
+          },
+          {
+            "query": "return",
+            "id": 2
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 3
+          },
+          {
+            "query": "a",
+            "id": 4
+          },
+          {
+            "query": "_",
+            "id": 5
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 6
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 7
+          },
+          {
+            "query": "*",
+            "id": 8
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 9
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 10
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 11
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 12
+          },
+          {
+            "query": "p_aebdt",
+            "id": 13
+          },
+          {
+            "query": "return",
+            "id": 14
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 15
+          },
+          {
+            "query": "a",
+            "id": 16
+          },
+          {
+            "query": "_",
+            "id": 17
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 18
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 19
+          },
+          {
+            "query": "*",
+            "id": 20
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 21
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 22
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 23
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 24
+          },
+          {
+            "query": "p_aebdt",
+            "id": 25
+          },
+          {
+            "query": "return",
+            "id": 26
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 27
+          },
+          {
+            "query": "a",
+            "id": 28
+          },
+          {
+            "query": "_",
+            "id": 29
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 30
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 31
+          },
+          {
+            "query": "*",
+            "id": 32
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 33
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 34
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 35
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 36
+          },
+          {
+            "query": "p_aebdt",
+            "id": 37
+          },
+          {
+            "query": "return",
+            "id": 38
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 39
+          },
+          {
+            "query": "a",
+            "id": 40
+          },
+          {
+            "query": "_",
+            "id": 41
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 42
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 43
+          },
+          {
+            "query": "*",
+            "id": 44
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 45
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 46
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 47
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 48
+          },
+          {
+            "query": "p_aebdt",
+            "id": 49
+          },
+          {
+            "query": "return",
+            "id": 50
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 51
+          },
+          {
+            "query": "a",
+            "id": 52
+          },
+          {
+            "query": "_",
+            "id": 53
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 54
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 55
+          },
+          {
+            "query": "*",
+            "id": 56
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 57
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 58
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 59
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 60
+          },
+          {
+            "query": "p_aebdt",
+            "id": 61
+          },
+          {
+            "query": "return",
+            "id": 62
+          },
+          {
+            "query": "中文"
+          }
+        ],
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 299.10030000000006,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 103.1219,
+        "bridge_ms": 112.6761,
+        "bridge_roundtrip_ms": 126.57409999999982,
+        "decode_match_ms": 69.72630000000026,
+        "decode_ms": 9.892499999999927,
+        "match_ms": 59.83380000000034,
+        "search_ms": 196.30040000000008
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "P_AEBdT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 89.99009999999907,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 78.3379,
+        "bridge_ms": 87.69210000000001,
+        "bridge_roundtrip_ms": 89.25140000000101,
+        "decode_match_ms": 0.34100000000034925,
+        "decode_ms": 0.2947999999996682,
+        "match_ms": 0.04620000000068103,
+        "search_ms": 89.59240000000136
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "p_aebdt",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 106.77189999999973,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 95.62280000000001,
+        "bridge_ms": 104.54910000000001,
+        "bridge_roundtrip_ms": 106.10660000000098,
+        "decode_match_ms": 0.3437999999987369,
+        "decode_ms": 0.2595000000001164,
+        "match_ms": 0.08429999999862048,
+        "search_ms": 106.45039999999972
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "return",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 147.1248999999989,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 111.4718,
+        "bridge_ms": 121.1589,
+        "bridge_roundtrip_ms": 133.64600000000064,
+        "decode_match_ms": 12.029300000000148,
+        "decode_ms": 6.699300000000221,
+        "match_ms": 5.329999999999927,
+        "search_ms": 145.6753000000008
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "__codex_absent_6d50b313__",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 98.30409999999756,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 88.4024,
+        "bridge_ms": 96.3245,
+        "bridge_roundtrip_ms": 97.8125,
+        "decode_match_ms": 0.232399999998961,
+        "decode_ms": 0.21649999999863212,
+        "match_ms": 0.015900000000328873,
+        "search_ms": 98.04489999999896
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "a",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 159.71050000000105,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 113.7698,
+        "bridge_ms": 123.0383,
+        "bridge_roundtrip_ms": 135.7446000000018,
+        "decode_match_ms": 17.870599999998376,
+        "decode_ms": 7.894099999997707,
+        "match_ms": 9.97650000000067,
+        "search_ms": 153.6152000000002
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "_",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 148.21670000000086,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 112.24280000000002,
+        "bridge_ms": 121.0446,
+        "bridge_roundtrip_ms": 132.8582000000024,
+        "decode_match_ms": 12.607899999999063,
+        "decode_ms": 6.140099999996892,
+        "match_ms": 6.467800000002171,
+        "search_ms": 145.46610000000146
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "C_AEBdT",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 104.83789999999863,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 92.49430000000001,
+        "bridge_ms": 101.54950000000001,
+        "bridge_roundtrip_ms": 103.66049999999814,
+        "decode_match_ms": 0.552800000001298,
+        "decode_ms": 0.368399999999383,
+        "match_ms": 0.18440000000191503,
+        "search_ms": 104.21329999999944
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "if (",
+        "case_sensitive": true,
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 99.49660000000222,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 86.2861,
+        "bridge_ms": 95.6491,
+        "bridge_roundtrip_ms": 97.8868999999977,
+        "decode_match_ms": 1.183499999999185,
+        "decode_ms": 0.8074000000015076,
+        "match_ms": 0.3760999999976775,
+        "search_ms": 99.07039999999688
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "*",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 147.80519999999888,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 108.0392,
+        "bridge_ms": 116.4229,
+        "bridge_roundtrip_ms": 128.26280000000042,
+        "decode_match_ms": 13.820499999997992,
+        "decode_ms": 5.639899999998306,
+        "match_ms": 8.180599999999686,
+        "search_ms": 142.08329999999842
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "AEBLockTime",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 98.10490000000209,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 87.16010000000001,
+        "bridge_ms": 95.652,
+        "bridge_roundtrip_ms": 97.36319999999978,
+        "decode_match_ms": 0.4036999999989348,
+        "decode_ms": 0.32259999999951106,
+        "match_ms": 0.08109999999942374,
+        "search_ms": 97.76689999999871
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "Trigger_IB_From_Off",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 96.46220000000176,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 86.263,
+        "bridge_ms": 94.4071,
+        "bridge_roundtrip_ms": 95.86439999999857,
+        "decode_match_ms": 0.32960000000093714,
+        "decode_ms": 0.29720000000088476,
+        "match_ms": 0.03240000000005239,
+        "search_ms": 96.1939999999995
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared",
+      "request": {
+        "query": "trigger",
+        "mode": "identifier_occurrence",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 135.6645000000026,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 106.72690000000001,
+        "bridge_ms": 114.7672,
+        "bridge_roundtrip_ms": 125.79950000000099,
+        "decode_match_ms": 9.505199999999604,
+        "decode_ms": 4.961299999999028,
+        "match_ms": 4.543900000000576,
+        "search_ms": 135.3047000000006
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "P_AEBdT",
+        "mode": "identifier_occurrence",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 89.6929999999993,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 79.3649,
+        "bridge_ms": 87.1665,
+        "bridge_roundtrip_ms": 88.98589999999967,
+        "decode_match_ms": 0.43439999999827705,
+        "decode_ms": 0.39249999999810825,
+        "match_ms": 0.0419000000001688,
+        "search_ms": 89.42029999999795
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "p_aebdt",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 98.03199999999924,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 87.12970000000001,
+        "bridge_ms": 94.90650000000001,
+        "bridge_roundtrip_ms": 97.45850000000064,
+        "decode_match_ms": 0.31999999999970896,
+        "decode_ms": 0.27590000000054715,
+        "match_ms": 0.04409999999916181,
+        "search_ms": 97.77850000000035
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "return",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 142.674500000001,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 108.44160000000001,
+        "bridge_ms": 118.1199,
+        "bridge_roundtrip_ms": 129.2664999999979,
+        "decode_match_ms": 12.167800000002899,
+        "decode_ms": 6.589100000001054,
+        "match_ms": 5.578700000001845,
+        "search_ms": 141.4343000000008
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "__codex_absent_6d50b313__",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 97.47460000000137,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 86.7471,
+        "bridge_ms": 95.2853,
+        "bridge_roundtrip_ms": 96.94640000000072,
+        "decode_match_ms": 0.2569000000003143,
+        "decode_ms": 0.23830000000089058,
+        "match_ms": 0.018599999999423744,
+        "search_ms": 97.20330000000104
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "a",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 172.46519999999873,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 110.34040000000002,
+        "bridge_ms": 119.28410000000001,
+        "bridge_roundtrip_ms": 131.98419999999896,
+        "decode_match_ms": 21.34690000000046,
+        "decode_ms": 13.926100000000588,
+        "match_ms": 7.420799999999872,
+        "search_ms": 153.33109999999942
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "_",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 149.01850000000195,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 108.85230000000001,
+        "bridge_ms": 117.80300000000001,
+        "bridge_roundtrip_ms": 129.6248999999989,
+        "decode_match_ms": 12.017700000000332,
+        "decode_ms": 6.035700000000361,
+        "match_ms": 5.981999999999971,
+        "search_ms": 141.64259999999922
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "C_AEBdT",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 100.71319999999832,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 88.36340000000001,
+        "bridge_ms": 97.747,
+        "bridge_roundtrip_ms": 99.73699999999735,
+        "decode_match_ms": 0.5395000000025902,
+        "decode_ms": 0.35740000000078,
+        "match_ms": 0.18210000000181026,
+        "search_ms": 100.27649999999994
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "if (",
+        "case_sensitive": true,
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 94.96459999999934,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 82.24140000000001,
+        "bridge_ms": 91.0605,
+        "bridge_roundtrip_ms": 93.4275000000016,
+        "decode_match_ms": 1.1320999999988999,
+        "decode_ms": 0.7705999999998312,
+        "match_ms": 0.3614999999990687,
+        "search_ms": 94.5596000000005
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "*",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 160.9436999999998,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 108.5164,
+        "bridge_ms": 116.9864,
+        "bridge_roundtrip_ms": 128.60870000000068,
+        "decode_match_ms": 11.731099999997241,
+        "decode_ms": 5.231899999998859,
+        "match_ms": 6.499199999998382,
+        "search_ms": 140.33979999999792
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "AEBLockTime",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 97.36900000000242,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 86.80170000000001,
+        "bridge_ms": 95.1888,
+        "bridge_roundtrip_ms": 96.66649999999936,
+        "decode_match_ms": 0.35499999999956344,
+        "decode_ms": 0.28320000000167056,
+        "match_ms": 0.07179999999789288,
+        "search_ms": 97.02149999999892
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "Trigger_IB_From_Off",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 102.17569999999978,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0001,
+        "native_read_transport_ms": 90.9333,
+        "bridge_ms": 99.8874,
+        "bridge_roundtrip_ms": 101.65060000000085,
+        "decode_match_ms": 0.2708999999995285,
+        "decode_ms": 0.23849999999947613,
+        "match_ms": 0.03240000000005239,
+        "search_ms": 101.92150000000038
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_expanded",
+      "request": {
+        "query": "trigger",
+        "mode": "identifier_occurrence",
+        "result_format": "expanded",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 142.5596000000005,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0002,
+        "native_read_transport_ms": 112.08990000000001,
+        "bridge_ms": 122.5788,
+        "bridge_roundtrip_ms": 132.86009999999806,
+        "decode_match_ms": 9.272100000001956,
+        "decode_ms": 4.8686000000016065,
+        "match_ms": 4.403500000000349,
+        "search_ms": 142.1322
+      },
+      "correct": true
+    },
+    {
+      "phase": "batch_12_shared",
+      "request": {
+        "queries": [
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true
+          },
+          {
+            "query": "p_aebdt"
+          },
+          {
+            "query": "return"
+          },
+          {
+            "query": "__codex_absent_6d50b313__"
+          },
+          {
+            "query": "a"
+          },
+          {
+            "query": "_"
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence"
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true
+          },
+          {
+            "query": "*"
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence"
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence"
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence"
+          }
+        ],
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 192.09619999999995,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.00030000000000000003,
+        "native_read_transport_ms": 124.29020000000001,
+        "bridge_ms": 133.79080000000002,
+        "bridge_roundtrip_ms": 146.99860000000263,
+        "decode_match_ms": 24.8224999999984,
+        "decode_ms": 8.183999999997468,
+        "match_ms": 16.63850000000093,
+        "search_ms": 171.82110000000102
+      },
+      "correct": true
+    },
+    {
+      "phase": "batch_64_shared_unicode",
+      "request": {
+        "queries": [
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 0
+          },
+          {
+            "query": "p_aebdt",
+            "id": 1
+          },
+          {
+            "query": "return",
+            "id": 2
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 3
+          },
+          {
+            "query": "a",
+            "id": 4
+          },
+          {
+            "query": "_",
+            "id": 5
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 6
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 7
+          },
+          {
+            "query": "*",
+            "id": 8
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 9
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 10
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 11
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 12
+          },
+          {
+            "query": "p_aebdt",
+            "id": 13
+          },
+          {
+            "query": "return",
+            "id": 14
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 15
+          },
+          {
+            "query": "a",
+            "id": 16
+          },
+          {
+            "query": "_",
+            "id": 17
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 18
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 19
+          },
+          {
+            "query": "*",
+            "id": 20
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 21
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 22
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 23
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 24
+          },
+          {
+            "query": "p_aebdt",
+            "id": 25
+          },
+          {
+            "query": "return",
+            "id": 26
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 27
+          },
+          {
+            "query": "a",
+            "id": 28
+          },
+          {
+            "query": "_",
+            "id": 29
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 30
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 31
+          },
+          {
+            "query": "*",
+            "id": 32
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 33
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 34
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 35
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 36
+          },
+          {
+            "query": "p_aebdt",
+            "id": 37
+          },
+          {
+            "query": "return",
+            "id": 38
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 39
+          },
+          {
+            "query": "a",
+            "id": 40
+          },
+          {
+            "query": "_",
+            "id": 41
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 42
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 43
+          },
+          {
+            "query": "*",
+            "id": 44
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 45
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 46
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 47
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 48
+          },
+          {
+            "query": "p_aebdt",
+            "id": 49
+          },
+          {
+            "query": "return",
+            "id": 50
+          },
+          {
+            "query": "__codex_absent_6d50b313__",
+            "id": 51
+          },
+          {
+            "query": "a",
+            "id": 52
+          },
+          {
+            "query": "_",
+            "id": 53
+          },
+          {
+            "query": "C_AEBdT",
+            "mode": "identifier_occurrence",
+            "id": 54
+          },
+          {
+            "query": "if (",
+            "case_sensitive": true,
+            "id": 55
+          },
+          {
+            "query": "*",
+            "id": 56
+          },
+          {
+            "query": "AEBLockTime",
+            "mode": "identifier_occurrence",
+            "id": 57
+          },
+          {
+            "query": "Trigger_IB_From_Off",
+            "mode": "identifier_occurrence",
+            "id": 58
+          },
+          {
+            "query": "trigger",
+            "mode": "identifier_occurrence",
+            "id": 59
+          },
+          {
+            "query": "P_AEBdT",
+            "mode": "identifier_occurrence",
+            "case_sensitive": true,
+            "id": 60
+          },
+          {
+            "query": "p_aebdt",
+            "id": 61
+          },
+          {
+            "query": "return",
+            "id": 62
+          },
+          {
+            "query": "中文"
+          }
+        ],
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 287.1394,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0004,
+        "native_read_transport_ms": 99.7265,
+        "bridge_ms": 110.33720000000001,
+        "bridge_roundtrip_ms": 124.07900000000154,
+        "decode_match_ms": 62.33499999999913,
+        "decode_ms": 8.9487999999983,
+        "match_ms": 53.38620000000083,
+        "search_ms": 186.41400000000067
+      },
+      "correct": true
+    },
+    {
+      "phase": "resident_shared_after_invalid",
+      "request": {
+        "query": "return",
+        "result_format": "shared",
+        "expected_database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1"
+      },
+      "elapsed_ms": 143.91469999999754,
+      "status": "ok",
+      "complete": true,
+      "timings": {
+        "setup_ms": 0.0005,
+        "native_read_transport_ms": 109.7436,
+        "bridge_ms": 118.7249,
+        "bridge_roundtrip_ms": 130.22679999999673,
+        "decode_match_ms": 12.010300000001735,
+        "decode_ms": 6.129800000002433,
+        "match_ms": 5.8804999999993015,
+        "search_ms": 142.23709999999846
+      },
+      "correct": true
+    }
+  ],
+  "source_hashes": {
+    "CodeSearchBridge.cs": "c466b515f687447e462246c12e7eb5eac05553d53fa7281eed4b222eb8324181",
+    "CodeSearchBridge.exe": "2ab9d6d7c82f70a8d58faaa77cb2953b8cf3e4afc4e3bb0c787d1bb7efe311c7",
+    "native-snapshot.st": "4e9ab7636d22d0ada3f511d2bfe9248f0dacbe0b46e9939d39b3d60d28f28914",
+    "state-source-reader.st": "c099d09fb8f86f6eeb3e90fa80d197943f7203e1919dd48fd7ebfe47eae45999",
+    "src/bridge.ts": "b82503d29a4cb837a6423600d8c408fffc237a533072745a64d286e6412d1728",
+    "src/protocol.ts": "fc7c639106227c058cbde3f3ca88fda53775ebc8b59b64037d5585bd713ded1c",
+    "src/matcher.ts": "be72dd0f0360c2c65736b7ac09db6e87e3e262c4787d13e1307e17d41e642bf5",
+    "src/search.ts": "e649bfcd229421082656c220b9a5fb73007538d292b234814e55747a51bd3b0d",
+    "src/cli.ts": "4aa4daa55bd738365f7882f7ec3d46fc252e1469ccb30c4554d4716b81629003",
+    "src/validation.ts": "41d5a092aabee67a7ad6c7d2da215dec339f21013d5df8dda6d5dd3294faa307"
+  },
+  "database": "d:\\ETASData\\ASCET6.4\\Database\\AEB_1",
+  "ascet_pid": 13536,
+  "coverage": {
+    "candidate_objects": 269,
+    "components": 145,
+    "text_components": 98,
+    "documents": 799,
+    "characters": 2762194,
+    "containers": 213,
+    "native_directory_ms": 63,
+    "native_scan_match_encode_ms": 31,
+    "wire_characters": 843034,
+    "state_machine_components": 5,
+    "state_machine_diagrams": 5,
+    "states": 13,
+    "transitions": 19,
+    "method_bindings": 14,
+    "state_tree_max_depth": 1,
+    "transported_unique_sources": 194,
+    "transported_unique_characters": 655980
+  },
+  "document_kinds": {
+    "method": 389,
+    "state_entry": 7,
+    "state_static": 7,
+    "state_exit": 7,
+    "transition_trigger_binding": 14,
+    "transition_condition": 13,
+    "header": 120,
+    "external_c": 120,
+    "external_h": 120,
+    "transition_action": 2
+  },
+  "invalid_then_valid_passed": true,
+  "native_comparisons": [
+    {
+      "query": "P_AEBdT",
+      "equal": true,
+      "lines": 1,
+      "scope": "native text component Find only; CRLF line semantics"
+    },
+    {
+      "query": "return",
+      "equal": true,
+      "lines": 330,
+      "scope": "native text component Find only; CRLF line semantics"
+    },
+    {
+      "query": "a",
+      "equal": true,
+      "lines": 1531,
+      "scope": "native text component Find only; CRLF line semantics"
+    }
+  ],
+  "source_fingerprint_before": "e7b7292448de3524f8453ffbe59c8a2ba35796092f79dd5d287d5eb02c073f23",
+  "source_fingerprint_after": "e7b7292448de3524f8453ffbe59c8a2ba35796092f79dd5d287d5eb02c073f23",
+  "model_stable": true,
+  "latency": {
+    "new_process_warm_ascet": {
+      "samples": 1,
+      "min_ms": 300.1414,
+      "median_ms": 300.1414,
+      "p95_ms": 300.1414,
+      "max_ms": 300.1414,
+      "over_500ms": 0
+    },
+    "resident_shared": {
+      "samples": 35,
+      "min_ms": 89.99009999999907,
+      "median_ms": 105.73900000000003,
+      "p95_ms": 159.71050000000105,
+      "max_ms": 171.5703000000001,
+      "over_500ms": 0
+    },
+    "resident_expanded": {
+      "samples": 36,
+      "min_ms": 89.6929999999993,
+      "median_ms": 101.25794999999971,
+      "p95_ms": 175.29010000000017,
+      "max_ms": 176.06659999999965,
+      "over_500ms": 0
+    },
+    "batch_12_shared": {
+      "samples": 3,
+      "min_ms": 189.5717999999997,
+      "median_ms": 190.98129999999946,
+      "p95_ms": 192.09619999999995,
+      "max_ms": 192.09619999999995,
+      "over_500ms": 0
+    },
+    "batch_64_shared_unicode": {
+      "samples": 3,
+      "min_ms": 287.1394,
+      "median_ms": 293.71469999999954,
+      "p95_ms": 299.10030000000006,
+      "max_ms": 299.10030000000006,
+      "over_500ms": 0
+    },
+    "resident_shared_after_invalid": {
+      "samples": 1,
+      "min_ms": 143.91469999999754,
+      "median_ms": 143.91469999999754,
+      "p95_ms": 143.91469999999754,
+      "max_ms": 143.91469999999754,
+      "over_500ms": 0
+    }
+  },
+  "correctness_passed": true,
+  "resident_target_passed": true,
+  "finished_utc": "2026-10-01T10:14:04.299Z"
+}

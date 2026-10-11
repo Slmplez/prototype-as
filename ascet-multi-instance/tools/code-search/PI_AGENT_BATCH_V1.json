@@ -1,0 +1,82 @@
+{
+  "version": 2,
+  "grading_version": 5,
+  "intent_recording": "none",
+  "suite": "core",
+  "max_tool_calls": 20,
+  "timeout_ms": 240000,
+  "answer_format": "Return exactly one JSON object, without Markdown fences or surrounding prose, with outcome (located/partial/not_found/unsupported), answer (a concise explanation), evidence_refs (actual refs seen in this session), missing_evidence (strings), and facts (an object using the requested fields). In facts, name/path/kind/variant fields contain only the exact saved string; ID fields contain numbers, not explanatory text. Separate saved facts from inference. Do not invent unsupported values. Do not output a separate intent declaration. Only the final answer is JSON. Put facts at the requested level; preserve exact saved values.",
+  "group_names": {
+    "batch_regression": "BDE引用、重复批量、查询分页、长源码回读"
+  },
+  "cases": [
+    {
+      "id": "intent-shared-class",
+      "group": "batch_regression",
+      "requirement": "AxCtrlLimGradAxMin 和 AxCtrlLimGradAxMax 是不是同一 Class 的两个对象？查清引用关系，完整读实际 Class 的 calc，并给一条真实连线。",
+      "intent": {
+        "actions": [
+          "compare"
+        ],
+        "decision": "execute",
+        "terms": [
+          "AxCtrlLimGradAxMin",
+          "AxCtrlLimGradAxMax"
+        ],
+        "components": [],
+        "members": [],
+        "clarification_fields": [],
+        "required_tools": [
+          "ascet_code_read"
+        ]
+      },
+      "score_as": "referenced-class",
+      "response_fields": "placements (array of {name, referenced_component_path}), implementation_component_path, implementation_method. Keep placements distinct from their shared Class."
+    },
+    {
+      "id": "holdout-ordered-batch",
+      "group": "batch_regression",
+      "requirement": "找到 AEB_AxCtrlConfigFF_Modify 的 calc_Ki 和 calc_Ks 两个 ASDL Method，在一次批量读取中按 calc_Ki、calc_Ks、calc_Ki 的顺序返回完整保存代码，重复项必须保留。facts: order_preserved,duplicates_preserved，均为布尔值。",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "AEB_AxCtrlConfigFF_Modify",
+          "kind": "method",
+          "variant": "ASDL"
+        },
+        "full": true,
+        "batch_order": true
+      },
+      "call_expectations": {
+        "batch_members": [
+          "calc_Ki",
+          "calc_Ks",
+          "calc_Ki"
+        ]
+      }
+    },
+    {
+      "id": "batch-pagination",
+      "requirement": "Search AxTarRaw, VxAct and AxTarLim together as independent identifier queries scoped to AEB_AxCtrlConfigFF_Modify, initially with limit 1. Consume at least one returned cursor and finish the batch (or replace it with an equivalent larger-limit query). Batch-read at least two relevant complete saved text Methods. facts: counts (object mapping each query to its total_hits), array_semantics (independent/AND), pagination_complete (boolean).",
+      "group": "batch_regression"
+    },
+    {
+      "id": "large-header-read-pages",
+      "group": "batch_regression",
+      "max_tool_calls": 64,
+      "timeout_ms": 240000,
+      "requirement": "Read the complete saved XPass_BB00000_AEB Header in 'ES1130'_Physical Experiment by consuming every returned read page. Report identity and completeness without copying the whole body into the answer. facts: identity {component_path,kind,member,variant,implementation}, total_lines, pages_read, complete.",
+      "rubric": {
+        "type": "read",
+        "scope": {
+          "component": "XPass_BB00000_AEB",
+          "kind": "header",
+          "variant": " 'ES1130'_Physical Experiment"
+        },
+        "full": true,
+        "paged": true
+      }
+    }
+  ],
+  "description": "Targeted known regressions only. Two independent first attempts for every case/build, no retry selection. Same database/model. Does not replace the full 80-case run."
+}
