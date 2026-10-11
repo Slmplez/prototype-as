@@ -1,6 +1,8 @@
-# Experiment 0.2 增强功能及验收
+# Experiment 0.3 增强功能及验收
 
 2026-10-11，在隔离 ASCET 6.4 Offline PC 实例上完成多阶段用例、数值结构数据读写、原生波形解析和 DCM 往返。MCP 工具由16个增加到19个，新增 `exp_read_data`、`exp_write_data`、`exp_waveform`；其他能力扩展现有工具。CLI、MCP与TypeScript Broker共用实现。
+
+0.3继续完成多阶段用例原生录波、20×10二维特性表实测和DCM逐项导入核对。工具数量保持19个，扩展现有接口。
 
 ## 多阶段输入与断言
 
@@ -57,7 +59,9 @@ condition为`{"equals":数值/布尔/枚举名}`或`{"min":数值,"max":数值}`
 
 曲线实测：值10→9.5→10；坐标8.32回读8.3203125，报告量化差异。非法索引、区间外值、下降坐标以及量化后重合坐标均在第一处写入前拒绝。
 
-数组和矩阵在单独ESDL fixture中验收：3元素数组、3×2矩阵，读写首尾单元后，方法`return ArrayParam[0] + MatrixParam[0][0];`的运行输出确实为19；随后恢复原数组和矩阵。fixture只存在于隔离数据库，不修改AEB算法，也不随源码发布。二维特性表的访问分支已接入，但独立的二维表单元与坐标写入未在本次单独验收。
+数组和矩阵在单独ESDL fixture中验收：3元素数组、3×2矩阵，读写首尾单元后，方法`return ArrayParam[0] + MatrixParam[0][0];`的运行输出确实为19；随后恢复原数组和矩阵。fixture只存在于隔离数据库，不修改AEB算法，也不随源码发布。
+
+二维特性表使用AEB的`P_AEB_AXCKpVxAxPartMod_table`，实测维度20×10，首尾单元分别写入0.125和0.25，xAxis/yAxis第二个坐标均写入1.25，再完整恢复。越界索引、下降坐标和重合坐标整批拒绝。实测发现二维表值矩阵的原生逐单元写入不能可靠持久化；0.3显式写出值矩阵，并从仿真内存重新读取每个单元，再与最终完整结构核对，避免仅根据本地对象回读报告成功。普通矩阵及曲线也使用重新读取的值验收。
 
 ## 原生波形采集与分析
 
@@ -76,7 +80,23 @@ configure显式替换已有Data Logger的通道，返回previousChannels；要�
 
 完整波形保存为`artifacts/waveforms/<SHA256>.json`，返回rawArtifact。统计在全量数据上计算，包括数量、min/max/mean/RMS、最终值、转换总数和梯形积分；transitions最多保留1000个，超出时transitionsTruncated:true，完整values/time仍保留。maxPoints只影响响应中的时间/值预览，不影响完整文件或统计。
 
-`completeFile:true`表示已解析所有声明的记录和通道；`completeSimulation:false`明确不推断未记录的变量或时间段。原生记录器采样可能包含重复时间戳。后台快照用例仍要求记录器未活动；原生完整记录采用上面的显式工具流程。
+`completeFile:true`表示已解析所有声明的记录和通道；`completeSimulation:false`明确不推断未记录的变量或时间段。原生记录器采样可能包含重复时间戳。
+
+### 多阶段用例自动录波
+
+在caseSpec加入：
+
+```json
+{"recording":{"path":"E:\\captures\\fresh-case.dat","signalRefs":["activeRef","stateRef"],"maxPoints":100}}
+```
+
+recording.signalRefs省略时默认使用用例signalRefs。预检要求原生Data Logger已存在并停止、输出文件不存在、全部通道为可读标量。在初始化和初始标定完成后配置通道并启动，阶段执行期间持续原生采集。终止后停止并核对停止状态，使用停止前的实际文件路径解析，最后恢复原通道（包括空通道列表）和输出路径。不保存实验环境。
+
+exp_results和exp_job.result中的nativeRecording返回artifact、waveform和restoration。waveform包含全量指标与完整JSON文件路径；recording.maxPoints只控制该波形预览，exp_results.maxPoints仍控制快照预览。断言使用快照，未改为连续信号断言。
+
+成功、断言失败、协作取消或连接仍有效的执行失败均尝试完成录波和恢复。连接失效后不再调用原生清理，报告outcome_unknown，需显式重新连接检查。记录器停止、解析或恢复失败不会报告用例成功，也不自动重放。已有活动记录器仍要求调用方先显式停止。
+
+AEB三阶段录波实测产生53条记录，保留0→1→0活动转换；25个快照和5个断言通过。实际取消用例保留3条原生记录并完成解析、通道和输出恢复。
 
 AEB实机生成MDF 2.00，39条原生记录、3个业务通道加TIME。解析保留全部记录，ESPAEBDecAct的0→1转换和制动力输出均可见；返回5点预览仍使用全部39点计算统计。另有独立MDF3测试，覆盖12位有符号打包通道、线性物理转换、全量统计和损坏文件拒绝。
 
@@ -86,11 +106,26 @@ AEB实机生成MDF 2.00，39条原生记录、3个业务通道加TIME。解析�
 
 导入支持`expected:[{"signalRef":"pRef","value":0.4}]`，返回实际回读与逐项passed；不匹配时返回PARAMETER_READBACK_MISMATCH。原生导入可能忽略不属于当前实验或不可导入的参数；selected readback不能证明任意第三方DCM每个条目都已加载。
 
+0.3增加`audit:true`：解析输入后保存相同字节的独立副本，原生导入使用该副本；导入前后各做一次完整DCM导出，按参数名、类型、维度、物理值和坐标逐项核对。数值格式差异不构成失败；说明、单位等元数据不参与数值状态匹配。最多16MiB输入、20000个条目和200万个解码数据单元。重复名称、未闭合块、错误维度或非有限值在原生导入前拒绝。
+
+| audit.entries.status | 含义 |
+| --- | --- |
+| matched | 重导出的值和坐标匹配输入；changedFromBaseline指明是否确实观察到变化 |
+| mismatch | 重导出存在该条目，但物理值、坐标、类型或维度不同；保留差异证据 |
+| not_exported | 重导出中没有该精确名称，不能证明导入已应用；可能为未知或不可导出参数 |
+| unsupported | 分组/共享坐标参数或未识别字段无法独立核对 |
+
+审计统计覆盖全部输入条目；响应最多预览200项，rawArtifact保存全部结果及输入/前后导出哈希。matched且原本已匹配不证明发生过写入；not_exported也不伪报为确定的原生“忽略”。依赖参数排除、量化或原生拒绝可能导致mismatch，工具以实际状态为准。
+
+`strictAudit:true`要求同时设置audit:true且全部条目匹配，否则导入后返回DCM_AUDIT_MISMATCH。原生导入报已知错误时仍尝试重导出并保留逐项审计；导入结果未知时立即停止，不重放、不继续原生核对；导入后无法导出时返回DCM_AUDIT_INCOMPLETE。以上均不回滚已发生的参数修改。默认audit未启用时保留原有快速导入路径。
+
 本次AEB全量往返：导出135006字节DCM，包含638个FESTWERT、47个KENNLINIE和12个KENNFELD块；修改一个标量参数和曲线，导入后回读恢复，再重导出。除创建时间等文件头注释外，**全部697个数据块文本一致**。原生导入自动排除依赖参数，该模型的完整重导出仍与基线一致。没有修改AEB模型源码来满足验收。
+
+0.3逐项审计实测697/697匹配，其中标量和曲线两项观察到导入前后变化。追加一个不存在的参数后，完整报告697项匹配、1项not_exported，strictAudit明确拒绝通过。
 
 ## 复验与发布范围
 
-`npm.cmd test`：21/21；`verify:enhanced`：AEB多阶段、曲线、全量DCM往返和MDF采集解析；`verify:structured`：独立ESDL数组矩阵模型；`verify:live`：PID常量/pulse激励、分段用例、多阶段输入、取消及性能；`verify:mcp`：19工具协议烟测；`verify:guards`：原生边界校验；`verify:aeb-behavior`：原有8场景/39检查点回归。
+`npm.cmd test`：33/33；`verify:enhanced`：AEB多阶段自动录波和取消、曲线/二维表值与坐标、全量DCM逐项审计/未知参数及MDF解析；`verify:structured`：独立ESDL数组矩阵模型；`verify:live`：PID常量/pulse激励、分段用例、多阶段输入、取消及性能；`verify:mcp`：19工具协议烟测；`verify:guards`：原生边界校验；`verify:aeb-behavior`：原有8场景/39检查点回归。
 
 运行这些测试前设置ASCET_EXPERIMENT_MANIFEST。verify:structured另外要求ASCET_STRUCTURED_FIXTURE指向已准备的隔离ESDL组件，可用ASCET_STRUCTURED_CONFIGURATION指定配置，默认Default。该组件需有参数ArrayParam(3)、MatrixParam(3×2)，compute方法返回两者首单元之和，周期事件为compute。测试结束关闭实验；AEB验收恢复参数和记录通道，不提交数据库。
 

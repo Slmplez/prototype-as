@@ -1,6 +1,6 @@
 # ASCET Experiment Agent Tools
 
-面向 ASCET 6.4 Offline PC 的工具。提供 19 个 MCP 工具、JSONL 入口和 TypeScript Broker，已在独立实例的 PID 示例和指定 AEB iBooster 项目中完成打开实验、发现信号、批量标定、有界步进、模型响应、分段取数与断言。
+面向 ASCET 6.4 Offline PC 的工具，当前版本 0.3.0。提供 19 个 MCP 工具、JSONL 入口和 TypeScript Broker，支持多阶段用例自动录波、二维特性表标定和 DCM 逐项导入核对，已在隔离 PID、ESDL 和指定 AEB iBooster 项目中验收。
 
 ## 使用
 
@@ -38,17 +38,17 @@ MCP 客户端直接启动 `node E:\Repo\ASCET\tools\experiment\dist\src\mcp.js`�
 | `exp_read` | 一次原生调用批量读取最多 128 个标量，physical 或 hex。 |
 | `exp_write` | 暂停状态下批量写入最多 64 个数值、布尔或枚举名称标量；完整检查资格，逐项写入和回读。非事务，不自动重放。 |
 | `exp_configure` | 按 revision 修改事件/激励、创建标量通道；save 保存环境，`commitDatabase:true` 显式提交整个绑定数据库的待保存变更。 |
-| `exp_read_data` / `exp_write_data` | 物理值数组、矩阵、曲线和坐标轴读写；最多4096单元、512个修改，0基索引，整批预检后逐单元写入回读，不改变维度。 |
-| `exp_parameters` | 重置和依赖更新；DCM导出验证文件和哈希，导入可附 expected 标量回读检查。AEB全量文件往返已验收。 |
+| `exp_read_data` / `exp_write_data` | 数组、矩阵、曲线、二维特性表及坐标轴；最多4096单元、512个修改，0基索引，整批预检、写入仿真内存后重新读取核对，不改变维度。 |
+| `exp_parameters` | 重置和依赖更新；DCM导出、expected 标量回读；`audit:true` 对全部输入条目比较导入前后重导出，`strictAudit:true` 要求全部匹配。 |
 | `exp_control` | start、pause、stop、close；另有 start/stop OS 和 measurement 原生入口，Offline PC 会明确拒绝在线动作。关闭必须传 `discardUnsaved:true`。 |
 | `exp_step` | 一个事件、一段仿真时间，或以标量比较器为条件的有界步进；条件模式逐事件执行并受 maxEvents/maxWallTimeMs 约束。 |
 | `exp_record` | 查询、显式替换既有记录器通道、设置新输出、启动和停止；停止返回实际落盘文件和哈希。 |
 | `exp_waveform` | 完整解析MDF 2/3声明的数值记录，计算全量统计、RMS、梯形积分和转换点，保存完整JSON波形，返回有上限的预览。 |
-| `exp_run_case` | 多阶段标定或常量激励、实际持续时间、采样间隔；最终值、范围、到达、保持时间和状态转换断言。兼容原chunks用例。 |
+| `exp_run_case` | 多阶段标定或常量激励及采样断言；可选 recording 管理既有记录器，自动启动、停止、解析波形并恢复通道与输出路径。兼容原chunks用例。 |
 | `exp_job` | 查询、请求在下一段结束后取消；请求取消不代表立刻停止。 |
 | `exp_results` | 返回有上限的快照序列、统计、断言和完整 JSON 文件路径。 |
 
-返回 `capabilities` 明示能力。在线控制适配器、事件编辑、标量通道创建、条件步进、环境保存和 Data Logger 控制已接入；在线目标仍未实测。数组、矩阵、曲线、MDF文件解析和DCM往返已通过隔离实例验收，详见[增强功能说明](docs/enhanced-experiment-20261011.md)。分段快照用例可以使用带有已停止记录器的实验；记录器活动或状态未知时，需要先显式执行 `exp_record(action="stop")`。完整原生波形使用 exp_record → exp_step/exp_write → exp_record(stop) → exp_waveform；多阶段后台用例仍返回快照，不能与活动记录器同时运行。
+返回 `capabilities` 明示能力。在线目标仍未实测。数组、矩阵、曲线、二维特性表、MDF文件解析和DCM逐项核对已通过隔离实例验收，详见[增强功能说明](docs/enhanced-experiment-20261011.md)。提交用例前，记录器必须已停止；`caseSpec.recording` 自动管理本次录波，也可继续使用 exp_record → exp_step/exp_write → exp_record(stop) → exp_waveform。用例结果同时保留快照和独立的 `nativeRecording` 原生波形证据。
 
 事件模式限定为原生支持的 `segment`、`timeSynchron`、`singleShot`、`signalled`；`timeSynchron` 的 delay 必须大于 0，单位为秒。修改后核对实际值并返回新的 revision，可用于下一次连续修改。`save` 默认只保存当前环境到数据库对象，返回 `databaseCommitted:false`；只有明确传入 `commitDatabase:true` 才提交数据库并返回 `databaseCommitted:true`，该提交可能包含同一数据库中的其他待保存变更。
 
@@ -79,9 +79,11 @@ MCP 客户端直接启动 `node E:\Repo\ASCET\tools\experiment\dist\src\mcp.js`�
 }
 ```
 
-`preserve` 要求已经暂停。`reset` 会在需要时先推进一个事件，再重置变量、参数，最后应用传入的 writes；它不承诺把仿真时钟归零。start 可能依据 ASCET 选项重新初始化参数，所以用例通过暂停状态下的 step 保持已写入值。
+`preserve` 要求已经暂停。`reset` 依次停止、重置变量和参数、推进一个初始化事件，再应用初始 writes；它不承诺把仿真时钟归零。start 可能依据 ASCET 选项重新初始化参数，所以用例通过暂停状态下的 step 保持已写入值。
 
-`Steps=1` 是一个事件，不是一轮所有任务。按秒步进仍受事件边界影响，例如请求 0.05 秒可能实际前进 0.049 秒；响应提供实际起止时间。`exp_results.source=quiescent_snapshot_series`，`completeWaveform=false`，结果不是原生 Data Logger 的完整波形。范围断言只针对最后一个快照。
+在 `caseSpec` 加入 `"recording":{"path":"E:\\captures\\new-case.dat","signalRefs":["输出引用"],"maxPoints":100}` 即可自动录波。省略 recording.signalRefs 时记录 caseSpec.signalRefs。输出文件不能已经存在；实验需有已停止的原生 Data Logger。完成、断言失败、协作取消或连接仍有效的执行失败都会停止录波、解析已完成文件，并恢复原通道和输出路径。连接丢失时保留 outcome_unknown，不发送清理或重放请求。
+
+`Steps=1` 是一个事件，不是一轮所有任务。按秒步进仍受事件边界影响，响应提供实际起止时间。`exp_results.source=quiescent_snapshot_series` 和 `completeWaveform=false` 描述快照序列；启用 recording 后，完整记录文件、哈希、解析结果和恢复情况位于 `nativeRecording`。`range` 检查时间窗口内全部采样点，旧版 `{min,max}` 检查最后一个快照；均不推断采样点之间的行为。
 
 ## 实现和性能
 

@@ -374,7 +374,7 @@ internal static class ExperimentHost
             || (op == "write_data" && n >= 7 && n <= 2051 && (n - 3) % 4 == 0)
             || (op == "step" && n == 2 && (args[0] == "Steps" || args[0] == "Seconds"))
             || (op == "parameters" && ((n == 1 && new HashSet<string> { "reset_variables", "reset_parameters", "update_dependent" }.Contains(args[0])) || (n == 2 && (args[0] == "load" || args[0] == "save"))))
-            || (op == "record" && ((n == 1 && (args[0] == "start" || args[0] == "stop")) || (n == 2 && args[0] == "set_output") || (n >= 2 && n <= 129 && args[0] == "configure")))
+            || (op == "record" && ((n == 1 && (args[0] == "start" || args[0] == "stop")) || (n == 2 && args[0] == "set_output") || (n >= 1 && n <= 129 && args[0] == "configure")))
             || ((op == "start_os" || op == "stop_os" || op == "start_measurement" || op == "stop_measurement") && n == 0)
             || (op == "event" && n >= 4 && n % 2 == 0 && new HashSet<string> { "enabled", "Delay", "Phase", "Prio", "Mode" }.Contains(args[2]))
             || (op == "create_stimulus" && n == 8 && (args[3] == "constant" || args[3] == "pulse"));

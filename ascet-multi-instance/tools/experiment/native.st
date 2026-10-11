@@ -122,14 +122,16 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
                 logger uiController logDatas do: [:old | environment labelTable keysAndValuesDo: [:label :node |
                     (node isReadable and: [(environment getSimInstanceForNode: node) == old]) ifTrue: [previous add: label]
                 ]].
+                guard value: (previous size = logger uiController getUsedChannels and: [previous size <= 128]) value: 'LOGGER_PREVIOUS_CHANNELS_NOT_RESTORABLE'.
                 2 to: args size do: [:i | | data |
                     data := service getReadableDataElementForExperimentLabel: (args at: i).
                     guard value: (service getLastErrorNumber = 0 and: [(dataKind value: data) = 'scalar']) value: 'LOGGER_SCALAR_REQUIRED'.
+                    guard value: (datas includes: data) not value: 'DUPLICATE_LOGGER_DATA'.
                     datas add: data
                 ].
                 service suppressDialogsAndExecInUI: [logger uiController removeAllLogData. logger uiController logDatas: (SortedCollection new sortBlock: [:a :b | a wName <= b wName]). datas do: [:data | logger uiController addLogData: data]].
                 result at: 'previousChannels' put: previous.
-                result at: 'channelsConfigured' put: (logger uiController getUsedChannels = datas size)
+                result at: 'channelsConfigured' put: (logger uiController getUsedChannels = datas size and: [datas allSatisfy: [:data | logger uiController logDatas includes: data]])
             ].
             (args at: 1) = 'set_output' ifTrue: [service setDataLoggerFile: (args at: 2)].
             (args at: 1) = 'start' ifTrue: [service startDataLogging].
@@ -167,15 +169,29 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
                     api handleExceptionsIn: [
                         part = 'values' ifTrue: [
                             (#('curve' 'map') includes: kind) ifTrue: [target := data values] ifFalse: [target := data].
-                            shape size = 2 ifTrue: [target at: x at: y putPhys: (cell at: 'requested'). cell at: 'after' put: (target physAt: x at: y)] ifFalse: [target at: x putPhys: (cell at: 'requested'). cell at: 'after' put: (target physAt: x)]
+                            shape size = 2 ifTrue: [
+                                target at: x at: y putPhys: (cell at: 'requested').
+                                kind = 'map' ifTrue: [guard value: target write value: 'MAP_VALUE_WRITE_REJECTED'].
+                                target readOnlineData. cell at: 'after' put: (target physAt: x at: y)
+                            ] ifFalse: [target at: x putPhys: (cell at: 'requested'). target readOnlineData. cell at: 'after' put: (target physAt: x)]
                         ] ifFalse: [
                             target := part = 'xAxis' ifTrue: [data xDistribution] ifFalse: [data yDistribution].
-                            target at: x putPhys: (cell at: 'requested'). cell at: 'after' put: (target physAt: x)
-                        ]. cell at: 'status' put: 'applied'
+                            target at: x putPhys: (cell at: 'requested'). target readOnlineData. cell at: 'after' put: (target physAt: x)
+                        ].
+                        guard value: ((cell at: 'after') = (target getPhysValue: (target getImplValue: (cell at: 'requested')))) value: 'CELL_NOT_PERSISTED'.
+                        cell at: 'status' put: 'applied'
                     ] ifFail: [:e | cell at: 'status' put: 'failed'; at: 'error' put: e printString. continue := false]
                 ]].
                 result at: 'cells' put: cells.
-                snapshot := dataSnapshot value: data
+                snapshot := dataSnapshot value: data.
+                cells do: [:cell | (cell at: 'status') = 'applied' ifTrue: [ | actual part |
+                    part := cell at: 'part'.
+                    actual := part = 'values' ifTrue: [shape size = 2
+                        ifTrue: [((snapshot at: 'values') at: (cell at: 'x') + 1) at: (cell at: 'y') + 1]
+                        ifFalse: [(snapshot at: 'values') at: (cell at: 'x') + 1]]
+                        ifFalse: [((snapshot at: 'axes') at: part) at: (cell at: 'x') + 1].
+                    actual = (cell at: 'after') ifFalse: [cell at: 'status' put: 'failed'; at: 'error' put: 'CELL_READBACK_CHANGED'; at: 'after' put: actual]
+                ]]
             ]. result at: 'data' put: snapshot. AaaResult reset
         ].
         readValue := [:label |

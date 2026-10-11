@@ -53,20 +53,58 @@ try {
   const original = (await call('exp_read', { signalRefs: [scalar] })).values[0].numericValue;
   const exported = await call('exp_parameters', { action: 'save', path: dcm }); saved = true;
   assert.ok(exported.artifact.bytes > 100);
+  const map = ref('P_AEB_AXCKpVxAxPartMod_table');
+  const mapBefore = (await call('exp_read_data', { signalRef: map })).data;
+  assert.equal(mapBefore.kind, 'map'); assert.deepEqual(mapBefore.shape, [20, 10]);
+  const mapChanged = await call('exp_write_data', { signalRef: map, shape: mapBefore.shape, cells: [
+    { part: 'values', index: [0, 0], value: .125 }, { part: 'values', index: [19, 9], value: .25 },
+    { part: 'xAxis', index: [1], value: 1.25 }, { part: 'yAxis', index: [1], value: 1.25 }
+  ] });
+  assert.equal(mapChanged.data.values[0][0], .125); assert.equal(mapChanged.data.values[19][9], .25);
+  assert.equal(mapChanged.data.axes.xAxis[1], 1.25); assert.equal(mapChanged.data.axes.yAxis[1], 1.25);
+  for (const bad of [
+    [{ part: 'values', index: [0, 0], value: .5 }, { part: 'yAxis', index: [1], value: -1 }],
+    [{ part: 'values', index: [20, 0], value: .5 }],
+    [{ part: 'values', index: [0, 0], value: .5 }, { part: 'xAxis', index: [1], value: mapChanged.data.axes.xAxis[2] }]
+  ]) {
+    const rejected = await call('exp_write_data', { signalRef: map, shape: mapBefore.shape, cells: bad }, false);
+    assert.equal(rejected.error.code, 'PRECONDITION_FAILED');
+    assert.deepEqual((await call('exp_read_data', { signalRef: map })).data, mapChanged.data);
+  }
+  await call('exp_write_data', { signalRef: map, shape: mapBefore.shape, cells: [
+    { part: 'values', index: [0, 0], value: mapBefore.values[0][0] }, { part: 'values', index: [19, 9], value: mapBefore.values[19][9] },
+    { part: 'xAxis', index: [1], value: mapBefore.axes.xAxis[1] }, { part: 'yAxis', index: [1], value: mapBefore.axes.yAxis[1] }
+  ] });
+  assert.deepEqual((await call('exp_read_data', { signalRef: map })).data, mapBefore);
+  report.characteristicMap = { before: mapBefore, changed: mapChanged.data, restored: true };
+  report.checks.push('live 20x10 characteristic map first/last cells and both axes, invalid-batch rejection before writes, full restoration');
   await call('exp_write', { writes: [{ signalRef: scalar, value: original + .1 }] });
   await call('exp_write_data', { signalRef: curve, shape: before.shape, cells: [{ part: 'values', index: [0], value: 8.5 }] });
-  const imported = await call('exp_parameters', { action: 'load', path: dcm, expected: [{ signalRef: scalar, value: original }] });
+  const imported = await call('exp_parameters', { action: 'load', path: dcm, audit: true, strictAudit: true, expected: [{ signalRef: scalar, value: original }] });
   assert.equal(imported.verification[0].passed, true);
+  assert.equal(imported.audit.inputEntries, 697); assert.equal(imported.audit.allMatched, true);
   assert.deepEqual((await call('exp_read_data', { signalRef: curve })).data, before);
   const second = await call('exp_parameters', { action: 'save', path: join(root, 'roundtrip.dcm') });
   const content = (bytes: Buffer) => bytes.toString('latin1').split('KONSERVIERUNG_FORMAT')[1].replace(/\r\n/g, '\n');
   assert.equal(content(await readFile(dcm)), content(await readFile(second.artifact.path)), 'All exported DCM blocks must round-trip unchanged.');
   report.dcm = { export: exported.artifact, import: imported.verification };
   report.dcm.roundtrip = second.artifact;
+  report.dcm.audit = imported.audit;
   report.checks.push('native DCM save -> change scalar and curve -> load -> scalar/curve readback and all re-exported DCM blocks identical');
+  const unknownPath = join(root, 'with-unknown.dcm');
+  await writeFile(unknownPath, Buffer.concat([await readFile(dcm), Buffer.from('\nFESTWERT Agent_UnknownParameter_20261011\n WERT 1\nEND\n')]));
+  const unknown = await call('exp_parameters', { action: 'load', path: unknownPath, audit: true, strictAudit: true }, false);
+  assert.equal(unknown.ok, false);
+  assert.ok(['DCM_AUDIT_MISMATCH', 'ASCET_OPERATION_FAILED'].includes(unknown.error.code), JSON.stringify(unknown));
+  const unknownAudit = unknown.error.evidence.audit;
+  assert.equal(unknownAudit.inputEntries, 698); assert.equal(unknownAudit.counts.not_exported, 1); assert.equal(unknownAudit.counts.matched, 697);
+  const fullAudit = JSON.parse(await readFile(unknownAudit.rawArtifact, 'utf8'));
+  assert.equal(fullAudit.entries.find((e: any) => e.name === 'Agent_UnknownParameter_20261011').status, 'not_exported');
+  report.dcm.unknownEntry = unknown; report.checks.push('full DCM per-entry audit and strict rejection for unknown input parameter');
   const active = ref('ESPAEBDecAct'), state = ref(stateLabel);
   const submitted = await call('exp_run_case', { requestId: randomUUID(), caseSpec: {
     initialization: 'reset', signalRefs: [active, state], writes: writes(base),
+    recording: { path: join(root, 'staged-capture.dat'), signalRefs: [active, state, ref('LDMCor_AEB_FxTar')], maxPoints: 5 },
     stages: [
       { name: 'idle', durationSeconds: .05, sampleSeconds: .01 },
       { name: 'activate', durationSeconds: .1, sampleSeconds: .01, writes: writes({ CM_AebDecCtrlAct: true }) },
@@ -83,7 +121,21 @@ try {
   assert.equal(job.status, 'completed', JSON.stringify(job));
   const result = await call('exp_results', { runId: submitted.runId });
   assert.equal(result.stages.length, 3); assert.ok(result.assertions.every((a: any) => a.passed));
+  assert.equal(result.nativeRecording.status, 'parsed'); assert.equal(result.nativeRecording.restoration.restored, true);
+  const caseActivity = result.nativeRecording.waveform.channels.find((c: any) => c.name === 'ESPAEBDecAct');
+  assert.ok(caseActivity.metrics.count > 5); assert.ok(caseActivity.transitions.some((t: any) => t.from === 0 && t.to === 1));
+  assert.ok(caseActivity.transitions.some((t: any) => t.from === 1 && t.to === 0));
   report.stagedCase = result; report.checks.push('three real AEB stages and five temporal/state assertions');
+  report.checks.push('multi-stage case automatically records native waveform, parses all records and restores logger channels/output');
+  const cancelled = await call('exp_run_case', { requestId: randomUUID(), caseSpec: { initialization: 'preserve', signalRefs: [active, state],
+    stages: [{ name: 'cancel-live', durationSeconds: 2, sampleSeconds: .01 }], recording: { path: join(root, 'cancelled-capture.dat'), maxPoints: 5 } } });
+  let partial; do { await delay(25); partial = await call('exp_job', { jobId: cancelled.jobId, action: 'get' }); } while (partial.completedChunks < 1 && ['queued', 'running'].includes(partial.status));
+  await call('exp_job', { jobId: cancelled.jobId, action: 'cancel' });
+  do { await delay(25); partial = await call('exp_job', { jobId: cancelled.jobId, action: 'get' }); } while (['queued', 'running'].includes(partial.status));
+  assert.equal(partial.status, 'cancelled', JSON.stringify(partial));
+  report.cancelledCase = await call('exp_results', { runId: cancelled.runId });
+  assert.equal(report.cancelledCase.nativeRecording.status, 'parsed'); assert.equal(report.cancelledCase.nativeRecording.restoration.restored, true);
+  report.checks.push('live cooperative cancellation finalizes and parses partial recording, then restores recorder');
   await call('exp_control', { action: 'stop' }); await call('exp_step', { mode: 'events', value: 1 }); await call('exp_write', { writes: writes(base) });
   const configured = await call('exp_record', { action: 'configure', signalRefs: [active, state, ref('LDMCor_AEB_FxTar')] });
   assert.equal(configured.recording.channelCount, 3);

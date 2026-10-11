@@ -1,11 +1,12 @@
 import { randomUUID, createHash } from 'node:crypto';
-import { mkdir, readFile, open, rename, access } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, open, rename, access } from 'node:fs/promises';
 import { isAbsolute, resolve, join } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 import { Bridge, ROOT, ToolError, type NativeClient, type Snapshot, type NativeReply } from './bridge.js';
 import { validate } from './contracts.js';
 import { normalizeCase, evaluateAssertions } from './cases.js';
 import { parseMdf, previewWaveform } from './waveform.js';
+import { parseDcm, auditDcm } from './dcm.js';
 
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const stamp = () => new Date().toISOString();
@@ -22,6 +23,7 @@ export const capabilities = {
   nativeRecordingControl: true, nativeLogParsing: ['MDF2', 'MDF3'], recordingChannelConfiguration: true,
   stagedCases: true, temporalAssertions: ['final', 'range', 'eventually', 'hold', 'transition'],
   dcmRoundTripVerified: true,
+  caseRecording: true, dcmEntryAudit: true, characteristicMaps: true,
 };
 export class Broker {
   private sessions = new Map<string, Session>();
@@ -44,11 +46,7 @@ export class Broker {
       else if (name === 'exp_job') result = await this.job(args);
       else if (name === 'exp_results') result = await this.results(args);
       else if (name === 'exp_waveform') {
-        const file = await this.fileArtifact(args.path, 64 * 1024 * 1024);
-        const parsed = parseMdf(file.bytes);
-        const artifact = file.sha256 + '.json';
-        await this.persist(join(this.artifactRoot, 'waveforms'), artifact, { ...parsed, source: file.metadata });
-        result = { ...previewWaveform(parsed, args.maxPoints ?? 200), source: file.metadata, rawArtifact: join(this.artifactRoot, 'waveforms', artifact), metricsScope: 'all_records_before_downsampling' };
+        result = await this.waveform(args.path, args.maxPoints ?? 200);
       }
       else {
         const session = this.sessions.get(args.sessionId);
@@ -140,6 +138,46 @@ export class Broker {
       const sha256 = createHash('sha256').update(bytes).digest('hex');
       return { bytes, sha256, metadata: { path: resolve(path), bytes: bytes.length, sha256 } };
     } finally { await f.close(); }
+  }
+  private async freshPath(path: string) {
+    if (!isAbsolute(path)) throw new ToolError('ABSOLUTE_PATH_REQUIRED', path);
+    try { await access(path); throw new ToolError('FILE_EXISTS', 'Output refuses to overwrite an existing file.'); }
+    catch (e: any) { if (e.code !== 'ENOENT') throw e; }
+  }
+  private async waveform(path: string, maxPoints: number) {
+    const file = await this.fileArtifact(path, 64 * 1024 * 1024);
+    const parsed = parseMdf(file.bytes), artifact = file.sha256 + '.json';
+    await this.persist(join(this.artifactRoot, 'waveforms'), artifact, { ...parsed, source: file.metadata });
+    return { ...previewWaveform(parsed, maxPoints), source: file.metadata, rawArtifact: join(this.artifactRoot, 'waveforms', artifact), metricsScope: 'all_records_before_downsampling' };
+  }
+  private async auditedImport(s: Session, source: Awaited<ReturnType<Broker['fileArtifact']>>) {
+    const input = parseDcm(source.bytes);
+    if (!input.entries.length) throw new ToolError('INVALID_DCM', 'Audit requires at least one parameter entry.');
+    const directory = join(this.artifactRoot, 'dcm', randomUUID()); await mkdir(directory, { recursive: true });
+    // Import an immutable copy of the exact bytes that were parsed and hashed.
+    const pinned = join(directory, 'input.dcm'); await writeFile(pinned, source.bytes, { flag: 'wx' });
+    const exportState = async (name: string) => {
+      const path = join(directory, name + '.dcm');
+      const reply = await this.native(s, 'parameters', ['save', path], 60_000);
+      const file = await this.fileArtifact(path);
+      return { file, document: parseDcm(file.bytes), nativeMs: reply.nativeMs };
+    };
+    const before = await exportState('before');
+    let imported: NativeReply | undefined, failure: ToolError | undefined;
+    try { imported = await this.native(s, 'parameters', ['load', pinned], 60_000); }
+    catch (e) {
+      if (!(e instanceof ToolError) || e.outcomeUnknown || s.invalid || e.code !== 'ASCET_OPERATION_FAILED') throw e;
+      failure = e;
+    }
+    let after: Awaited<ReturnType<typeof exportState>>;
+    try { after = await exportState('after'); }
+    catch (e) { throw new ToolError('DCM_AUDIT_INCOMPLETE', 'Import was dispatched, but full re-export verification failed. Inspect before proceeding.', e instanceof ToolError && e.outcomeUnknown, { source: source.metadata, baseline: before.file.metadata, importError: failure?.message, error: String(e) }); }
+    const audit = { ...auditDcm(input, before.document, after.document), source: source.metadata, pinnedInput: (await this.fileArtifact(pinned)).metadata,
+      baseline: before.file.metadata, reexport: after.file.metadata, nativeImportError: failure ? { code: failure.code, message: failure.message, evidence: failure.evidence } : undefined };
+    await this.persist(directory, 'audit.json', audit);
+    const preview = { ...audit, entries: audit.entries.slice(0, 200), entriesTruncated: audit.entries.length > 200, rawArtifact: join(directory, 'audit.json') };
+    if (failure) throw new ToolError(failure.code, failure.message, false, { audit: preview });
+    return { audit: preview, nativeMs: before.nativeMs + imported!.nativeMs + after.nativeMs };
   }
   private async read(s: Session, refs: string[], representation = 'physical') {
     const items = refs.map(ref => this.signal(s, ref));
@@ -249,17 +287,20 @@ export class Broker {
       }
       case 'exp_parameters': {
         if (a.expected) this.validateWrites(s, a.expected);
+        if (a.strictAudit && !a.audit) throw new ToolError('INVALID_ARGUMENT', 'strictAudit requires audit=true.');
         let artifact: any;
         if (a.path) {
           if (!isAbsolute(a.path)) throw new ToolError('ABSOLUTE_PATH_REQUIRED', a.path);
           if (a.action === 'load') { artifact = await this.fileArtifact(a.path); if (!/KONSERVIERUNG_FORMAT\s+[12]\.0/.test(artifact.bytes.toString('latin1'))) throw new ToolError('INVALID_DCM', 'DCM header is missing.'); }
           else { try { await access(a.path); throw new ToolError('FILE_EXISTS', 'Parameter save refuses to overwrite an existing file.'); } catch (e: any) { if (e.code !== 'ENOENT') throw e; } }
         }
-        const r = await this.native(s, 'parameters', a.path ? [a.action, a.path] : [a.action], a.path ? 60_000 : 5000);
+        const r = a.action === 'load' && a.audit ? await this.auditedImport(s, artifact) : await this.native(s, 'parameters', a.path ? [a.action, a.path] : [a.action], a.path ? 60_000 : 5000);
         if (a.action === 'save') { artifact = await this.fileArtifact(a.path); if (!/KONSERVIERUNG_FORMAT\s+[12]\.0/.test(artifact.bytes.toString('latin1'))) throw new ToolError('INVALID_DCM_EXPORT', 'Export did not produce a DCM file.'); }
         const verification = a.expected ? (await this.read(s, a.expected.map((w: any) => w.signalRef))).values.map((v: any, i: number) => ({ signalRef: v.signalRef, expected: a.expected[i].value, actual: v.value, passed: String(a.expected[i].value) === v.value })) : [];
-        if (verification.some((v: any) => !v.passed)) throw new ToolError('PARAMETER_READBACK_MISMATCH', 'DCM import returned, but requested readback did not match.', false, { artifact: artifact.metadata, verification });
-        return this.envelope(s, { action: a.action, path: a.path, artifact: artifact?.metadata, verification, importScope: a.action === 'load' ? 'native_import_with_selected_readback' : undefined }, r.nativeMs);
+        const audit = 'audit' in r ? r.audit : undefined;
+        if (verification.some((v: any) => !v.passed)) throw new ToolError('PARAMETER_READBACK_MISMATCH', 'DCM import returned, but requested readback did not match.', false, { artifact: artifact.metadata, verification, audit });
+        if (a.strictAudit && !audit?.allMatched) throw new ToolError('DCM_AUDIT_MISMATCH', 'Import completed, but some input entries could not be verified. No rollback or replay.', false, { artifact: artifact.metadata, audit, verification });
+        return this.envelope(s, { action: a.action, path: a.path, artifact: artifact?.metadata, verification, audit, importScope: a.action === 'load' ? a.audit ? 'native_import_with_full_reexport_audit' : 'native_import_with_selected_readback' : undefined }, r.nativeMs);
       }
       case 'exp_control': {
         const r = await this.native(s, a.action);
@@ -369,6 +410,10 @@ export class Broker {
       return { jobId, runId: previous.runId, status: previous.status, reused: true };
     }
     spec.signalRefs.forEach((r: string) => this.signal(s, r));
+    if (spec.recording) {
+      (spec.recording.signalRefs ?? spec.signalRefs).forEach((r: string) => this.signal(s, r));
+      await this.freshPath(spec.recording.path);
+    }
     if (spec.writes) this.validateWrites(s, spec.writes);
     const normalized = normalizeCase(spec);
     for (const stage of normalized.stages) if (stage.writes) this.validateWrites(s, stage.writes);
@@ -384,13 +429,20 @@ export class Broker {
   private async runCase(s: Session, job: Job, spec: any) {
     const samples: any[] = [];
     const run: any = { runId: job.runId, source: 'quiescent_snapshot_series', completeWaveform: false, sampling: 'after_each_bounded_step', requested: spec, samples, startedAt: stamp() };
+    let previousChannels: string[] | undefined, previousFile: string | undefined, startAttempted = false;
     try {
       job.status = 'running'; job.stage = 'preflight'; await this.saveJob(job);
       await this.saveRun(run);
       const config = (await this.native(s, 'configuration')).result;
       if (config.recording?.available && config.recording.logging !== false)
-        throw new ToolError('LOGGER_CASE_UNSUPPORTED', 'Stop the existing Data Logger explicitly before running a snapshot case.');
+        throw new ToolError('LOGGER_CASE_UNSUPPORTED', 'Stop the existing Data Logger explicitly before submitting a case.');
       run.recordingBefore = config.recording;
+      if (spec.recording) {
+        if (!config.recording?.available) throw new ToolError('NO_DATA_LOGGER', 'Open a native Data Logger in this experiment before requesting case recording.');
+        await this.freshPath(spec.recording.path);
+        previousFile = config.recording.file;
+        run.nativeRecording = { status: 'not_started', requested: spec.recording, completeSimulation: false };
+      }
       if (!Object.entries(config.events.EventSimChannels).some(([name, v]: [string, any]) => name !== 'generateData' && v.enabled)) throw new ToolError('NO_ACTIVE_MODEL_EVENTS', 'No enabled model events.');
       if (!['stopped', 'paused'].includes(config.state ?? '')) throw new ToolError('CASE_REQUIRES_QUIESCENT', 'Pause or stop before running a case.');
       if (spec.initialization === 'preserve' && config.state !== 'paused') throw new ToolError('PRESERVE_REQUIRES_PAUSED', 'First step from stopped can auto-initialize.');
@@ -413,6 +465,21 @@ export class Broker {
       if (spec.writes?.length) { job.stage = 'calibration'; await this.saveJob(job); await this.write(s, spec.writes); }
       run.startSimTimeSeconds = s.snapshot.simTimeSeconds;
       run.stages = [];
+      if (spec.recording) {
+        job.stage = 'recording_setup'; await this.saveJob(job);
+        const items = (spec.recording.signalRefs ?? spec.signalRefs).map((ref: string) => this.signal(s, ref));
+        const configured = await this.native(s, 'record', ['configure', ...items.map((i: Signal) => i.label)]);
+        previousChannels = configured.result.previousChannels;
+        run.nativeRecording.previousChannels = previousChannels;
+        if (!configured.result.channelsConfigured || !Array.isArray(previousChannels)) throw new ToolError('LOGGER_CHANNEL_READBACK_MISMATCH', 'Recorder channel setup did not confirm its outcome.', false, configured.result);
+        await this.native(s, 'record', ['set_output', spec.recording.path]);
+        await this.freshPath(s.snapshot.recording!.file!);
+        run.nativeRecording.outputPath = s.snapshot.recording!.file;
+        startAttempted = true;
+        const started = await this.native(s, 'record', ['start']);
+        if (started.result.recording?.logging !== true) throw new ToolError('LOGGER_START_NOT_CONFIRMED', 'Recorder did not confirm logging.', false, started.result);
+        run.nativeRecording.status = 'recording';
+      }
       const collect = async (stage: string, advancedSeconds: number) => {
         const data = await this.read(s, spec.signalRefs);
         const sample = { timeSeconds: s.snapshot.simTimeSeconds, values: data.values, advancedSeconds, stage };
@@ -462,6 +529,54 @@ export class Broker {
       job.status = error.outcomeUnknown ? 'outcome_unknown' : 'failed';
       job.error = { code: error.code, message: error.message, outcomeUnknown: error.outcomeUnknown, evidence: error.evidence };
     } finally {
+      if (run.nativeRecording) {
+        job.stage = 'recording_finalize';
+        if (s.invalid) {
+          run.nativeRecording.status = 'outcome_unknown';
+          run.nativeRecording.restoration = { attempted: false, reason: 'Connection invalid; detach, reattach and inspect. No automatic native replay.' };
+          if (startAttempted) { job.status = 'outcome_unknown'; job.error = { code: 'CASE_RECORDING_OUTCOME_UNKNOWN', message: 'Recorder was dispatched before connection loss; inspect explicitly.', outcomeUnknown: true, cause: job.error }; }
+        } else {
+          let cleanupError: any;
+          try {
+            if (startAttempted) {
+              const before = (await this.native(s, 'inspect')).result.recording;
+              if (before?.logging !== true) throw new ToolError('LOGGER_CAPTURE_UNCONFIRMED', 'Case recorder was stopped or changed externally; capture cannot be confirmed.', false, before);
+              const outputPath = before.file;
+              if (outputPath !== run.nativeRecording.outputPath) throw new ToolError('LOGGER_OUTPUT_CHANGED', 'Recorder output changed externally; do not assume ownership of the current capture.', false, before);
+              const stopped = await this.native(s, 'record', ['stop']);
+              if (stopped.result.recording?.logging !== false) throw new ToolError('LOGGER_STOP_NOT_CONFIRMED', 'Recording completion is uncertain.', false, stopped.result);
+              run.nativeRecording.artifact = (await this.fileArtifact(outputPath!, 64 * 1024 * 1024)).metadata;
+              run.nativeRecording.status = 'captured';
+              run.nativeRecording.waveform = await this.waveform(outputPath!, spec.recording.maxPoints ?? 200);
+              run.nativeRecording.status = 'parsed';
+            }
+          } catch (e) {
+            const error = e instanceof ToolError ? e : new ToolError('CASE_RECORDING_FAILED', String(e));
+            run.nativeRecording.error = { code: error.code, message: error.message, outcomeUnknown: error.outcomeUnknown, evidence: error.evidence };
+            cleanupError = run.nativeRecording.error;
+          }
+          // Restore only after a confirmed stopped recorder, and never after a lost connection.
+          if (previousChannels && !s.invalid) {
+            try {
+              const observed = (await this.native(s, 'inspect')).result.recording;
+              if (observed?.logging !== false) throw new ToolError('LOGGER_RESTORE_REQUIRES_STOPPED', 'Inspect active or unknown recorder before restoring.');
+              const restored = await this.native(s, 'record', ['configure', ...previousChannels]);
+              if (!restored.result.channelsConfigured) throw new ToolError('LOGGER_RESTORE_FAILED', 'Previous channels could not be confirmed.', false, restored.result);
+              if (previousFile) await this.native(s, 'record', ['set_output', previousFile]);
+              run.nativeRecording.restoration = { attempted: true, restored: true, channels: previousChannels, outputPath: previousFile };
+            } catch (e) {
+              const error = e instanceof ToolError ? e : new ToolError('LOGGER_RESTORE_FAILED', String(e));
+              run.nativeRecording.restoration = { attempted: true, restored: false, error: { code: error.code, message: error.message, outcomeUnknown: error.outcomeUnknown } };
+              cleanupError ??= run.nativeRecording.restoration.error;
+            }
+          }
+          if (cleanupError) {
+            job.status = cleanupError.outcomeUnknown || s.invalid ? 'outcome_unknown' : 'failed';
+            job.error ??= cleanupError;
+          }
+        }
+        if (job.result) job.result.nativeRecording = run.nativeRecording;
+      }
       job.stage = 'finished'; run.status = job.status; run.finishedAt = stamp(); run.error = job.error;
       try { await this.saveRun(run); await this.saveJob(job); }
       catch (e) { job.status = 'outcome_unknown'; job.error = { code: 'ARTIFACT_WRITE_FAILED', message: String(e), outcomeUnknown: true }; }
