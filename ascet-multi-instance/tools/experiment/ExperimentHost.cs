@@ -360,11 +360,12 @@ internal static class ExperimentHost
     {
         foreach (string value in args)
         {
-            bool hasStamp = op == "stimulus" || op == "event" || op == "create_stimulus";
+            bool hasStamp = op == "stimulus" || op == "event" || op == "create_stimulus" || op == "save";
             if (value == null || value.Length > (hasStamp ? 32768 : 2048) || value.IndexOf('\0') >= 0 || (!hasStamp && value.IndexOfAny(new char[] { '\r', '\n' }) >= 0)) throw new ArgumentException("Invalid text argument");
         }
         int n = args.Length;
-        bool valid = (new HashSet<string> { "inspect", "configuration", "start", "pause", "stop", "close", "save" }.Contains(op) && n == 0)
+        bool valid = (new HashSet<string> { "inspect", "configuration", "start", "pause", "stop", "close" }.Contains(op) && n == 0)
+            || (op == "save" && (n == 0 || (n == 2 && (args[1] == "commit_database" || args[1] == "environment_only"))))
             || (op == "catalog" && n == 1) || (op == "open" && n == 2) || (op == "signals" && n == 4)
             || (op == "stimulus" && n == 7 && (args[1] == "constant" || args[1] == "pulse"))
             || (op == "read" && n >= 2 && n <= 129 && (args[0] == "physical" || args[0] == "hex"))
@@ -410,6 +411,8 @@ internal static class ExperimentHost
                     if (!Double.TryParse(args[i], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out value) || Double.IsInfinity(value) || Double.IsNaN(value)) throw new ArgumentException("Finite event value required");
                 }
                 if (key == "enabled" && args[i] != "true" && args[i] != "false") throw new ArgumentException("Event enabled must be true or false");
+                if (key == "Mode" && !new HashSet<string> { "segment", "timeSynchron", "singleShot", "signalled" }.Contains(args[i])) throw new ArgumentException("Unsupported event mode");
+                if (key == "Delay" && Double.Parse(args[i], System.Globalization.CultureInfo.InvariantCulture) < 0) throw new ArgumentException("Event delay cannot be negative");
             }
         }
         if (op == "create_stimulus")

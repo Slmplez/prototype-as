@@ -7,7 +7,7 @@ import { validate } from './contracts.js';
 
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const stamp = () => new Date().toISOString();
-const mutations = new Set(['open', 'close', 'start', 'pause', 'stop', 'start_os', 'stop_os', 'start_measurement', 'stop_measurement', 'step', 'write', 'stimulus', 'event', 'parameters', 'record']);
+const mutations = new Set(['open', 'close', 'start', 'pause', 'stop', 'start_os', 'stop_os', 'start_measurement', 'stop_measurement', 'step', 'write', 'stimulus', 'create_stimulus', 'event', 'save', 'parameters', 'record']);
 type Signal = { signalRef: string; label: string; epoch: number; scalar: boolean; calibratable: boolean; readable: boolean; displayLabel: string };
 type Session = { id: string; client: NativeClient; snapshot: Snapshot; epoch: number; refs: Map<string, Signal>; tail: Promise<unknown>; busyJob?: string; invalid?: boolean };
 type Job = { jobId: string; runId: string; sessionId: string; requestId: string; fingerprint: string; status: string; stage: string; completedChunks: number; requestedChunks: number; cancelRequested: boolean; submittedAt: string; error?: any; result?: any };
@@ -188,10 +188,10 @@ export class Broker {
         return { detached: true, sessionId: s.id };
       }
       case 'exp_inspect': { const r = await this.native(s, 'inspect'); return this.envelope(s, {}, r.nativeMs); }
-      case 'exp_catalog': { const r = await this.native(s, 'catalog', [a.query ?? '']); return this.envelope(s, { components: r.result.components, limit: 200, truncated: r.result.components.length === 200 }, r.nativeMs); }
+      case 'exp_catalog': { const query = (a.query ?? '').replaceAll('/', '\\').replace(/^\\+/, ''); const r = await this.native(s, 'catalog', [query], 30_000); return this.envelope(s, { components: r.result.components, limit: 200, truncated: r.result.components.length === 200 }, r.nativeMs); }
       case 'exp_open': {
         const before = (await this.native(s, 'inspect')).result;
-        const componentPath = a.componentPath.replaceAll('/', '\\');
+        const componentPath = a.componentPath.replaceAll('/', '\\').replace(/^\\+/, '');
         if (before.open) {
           if (before.componentPath?.toLowerCase() === componentPath.toLowerCase() && before.configuration === a.configuration) return this.envelope(s, { reused: true });
           throw new ToolError('EXPERIMENT_ALREADY_OPEN', 'Close the existing experiment explicitly before opening another.', false, before);
@@ -249,8 +249,10 @@ export class Broker {
         if (a.expectedRevision !== revision) throw new ToolError('CONFIGURATION_CHANGED', 'Read current configuration and use its revision.', false, { revision, configuration });
         if (!['stopped', 'paused'].includes(r.result.state ?? '')) throw new ToolError('CONFIGURATION_REQUIRES_QUIESCENT', 'Pause or stop before validating/applying stimulus.');
         if (a.action === 'save') {
-          const saved = await this.native(s, 'save');
-          return this.envelope(s, { saved: true, revision: hash([s.id, s.epoch, saved.result.configurationStamp]) }, saved.nativeMs);
+          const saved = await this.native(s, 'save', [r.result.configurationStamp, a.commitDatabase ? 'commit_database' : 'environment_only'], a.commitDatabase ? 30_000 : 5000);
+          const databaseCommitted = saved.result.databaseCommitted === true;
+          if (a.commitDatabase && !databaseCommitted) throw new ToolError('CONFIG_READBACK_MISMATCH', 'Environment save returned without confirming database commit.', true, saved.result);
+          return this.envelope(s, { saved: true, databaseCommitted, revision: hash([s.id, s.epoch, saved.result.configurationStamp]) }, saved.nativeMs);
         }
         if (a.action === 'create') {
           const v = a.stimulus; const item = this.signal(s, v.signalRef);
@@ -264,12 +266,19 @@ export class Broker {
         if (a.section === 'event') {
           const event = configuration.events?.EventSimChannels?.[a.event.name];
           if (!event) throw new ToolError('EVENT_NOT_CONFIGURED', a.event.name);
+          const mode = a.event.mode ?? event.Mode;
+          const period = a.event.delay ?? event.Delay;
+          if (mode === 'timeSynchron' && !(typeof period === 'number' && period > 0))
+            throw new ToolError('INVALID_ARGUMENT', 'A timeSynchron event requires a positive delay in seconds.');
           const requested: string[] = [];
           for (const [key, nativeKey] of [['enabled', 'enabled'], ['delay', 'Delay'], ['phase', 'Phase'], ['priority', 'Prio'], ['mode', 'Mode']] as const) if (a.event[key] !== undefined) requested.push(nativeKey, String(a.event[key]));
           if (!requested.length) throw new ToolError('INVALID_ARGUMENT', 'At least one event property is required.');
           if (a.action === 'validate') return this.envelope(s, { valid: true, before: event, requested: a.event, revision });
           const after = await this.native(s, 'event', [r.result.configurationStamp, a.event.name, ...requested]);
           const actual = after.result.events?.EventSimChannels?.[a.event.name];
+          const keys = { enabled: 'enabled', delay: 'Delay', phase: 'Phase', priority: 'Prio', mode: 'Mode' };
+          if (!actual || Object.entries(keys).some(([key, nativeKey]) => a.event[key] !== undefined && actual[nativeKey] !== a.event[key]))
+            throw new ToolError('CONFIG_READBACK_MISMATCH', 'Event may be partially applied. Inspect readback.', false, { before: event, requested: a.event, actual });
           return this.envelope(s, { before: event, actual, revision: hash([s.id, s.epoch, after.result.configurationStamp]) }, after.nativeMs);
         }
         const old = configuration.stimuli.find((c: any) => c.channel === a.stimulus.channel);
@@ -325,16 +334,19 @@ export class Broker {
       job.status = 'running'; job.stage = 'preflight'; await this.saveJob(job);
       await this.saveRun(run);
       const config = (await this.native(s, 'configuration')).result;
-      if (config.recording?.available) throw new ToolError('LOGGER_CASE_UNSUPPORTED', 'Segmented snapshot cases cannot guarantee existing logger file behavior.');
+      if (config.recording?.available && config.recording.logging !== false)
+        throw new ToolError('LOGGER_CASE_UNSUPPORTED', 'Stop the existing Data Logger explicitly before running a snapshot case.');
+      run.recordingBefore = config.recording;
       if (!Object.entries(config.events.EventSimChannels).some(([name, v]: [string, any]) => name !== 'generateData' && v.enabled)) throw new ToolError('NO_ACTIVE_MODEL_EVENTS', 'No enabled model events.');
       if (!['stopped', 'paused'].includes(config.state ?? '')) throw new ToolError('CASE_REQUIRES_QUIESCENT', 'Pause or stop before running a case.');
       if (spec.initialization === 'preserve' && config.state !== 'paused') throw new ToolError('PRESERVE_REQUIRES_PAUSED', 'First step from stopped can auto-initialize.');
       if (job.cancelRequested) { job.status = 'cancelled'; return; }
       if (spec.initialization === 'reset') {
         job.stage = 'initialization'; await this.saveJob(job);
-        if (config.state === 'stopped') await this.step(s, 'events', 1);
+        if (config.state !== 'stopped') await this.native(s, 'stop');
         await this.native(s, 'parameters', ['reset_variables']);
         await this.native(s, 'parameters', ['reset_parameters']);
+        await this.step(s, 'events', 1);
       }
       if (spec.writes?.length) { job.stage = 'calibration'; await this.saveJob(job); await this.write(s, spec.writes); }
       run.startSimTimeSeconds = s.snapshot.simTimeSeconds;

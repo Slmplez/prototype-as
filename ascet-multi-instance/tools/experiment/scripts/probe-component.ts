@@ -18,6 +18,9 @@ try {
   if (attached.observedState.open) await broker.call('exp_control', { sessionId, action: 'close', discardUnsaved: true });
   const catalog = await broker.call('exp_catalog', { sessionId, query: componentPath });
   report.catalog = catalog.ok ? catalog.components : catalog.error;
+  if (!catalog.ok) throw new Error(JSON.stringify(catalog.error));
+  if (!catalog.components?.some((item: any) => item.path.toLowerCase() === componentPath.replaceAll('/', '\\').replace(/^\\+/, '').toLowerCase()))
+    throw new Error('Requested component was not found in the current database.');
   for (const configuration of configurations) {
     const opened = await broker.call('exp_open', { sessionId, componentPath, configuration });
     const attempt: any = { configuration, ok: opened.ok, error: opened.error, observedState: opened.observedState };
@@ -26,6 +29,8 @@ try {
       try { attempt.diagnostics = await readFile(opened.error.evidence.diagnosticsFile, 'utf8'); } catch (error) { attempt.diagnosticsReadError = String(error); }
     }
     report.attempts.push(attempt);
+    if (['SESSION_INVALID', 'NATIVE_TIMEOUT', 'HOST_EXITED', 'PROTOCOL_ERROR'].includes(opened.error?.code))
+      throw new Error(JSON.stringify(opened.error));
     if (opened.ok) {
       const inspected = await broker.call('exp_inspect', { sessionId });
       const signals = await broker.call('exp_signals', { sessionId, query: '', kind: 'all', offset: 0, limit: 200 });

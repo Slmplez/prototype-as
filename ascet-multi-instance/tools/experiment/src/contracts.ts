@@ -14,16 +14,16 @@ const createdStimulus = object({ channel: text, signalRef: id, mode: enumeration
 const defs = [
   ['exp_attach', '绑定已运行的独立 ASCET 实例，保持独占连接；不打开或切换数据库。', object({ instanceRef: text }, [])],
   ['exp_detach', '释放连接和会话；不关闭实验或 ASCET。', object(session)],
-  ['exp_catalog', '查询当前数据库组件路径，最多 200 项；路径用于 exp_open。', object({ ...session, query: { type: 'string', maxLength: 128 } }, ['sessionId'])],
+  ['exp_catalog', '查询当前数据库组件路径，最多 200 项；完整组件路径优先直接解析，路径用于 exp_open。', object({ ...session, query: { type: 'string', maxLength: 1024 } }, ['sessionId'])],
   ['exp_open', '打开 Offline PC 实验并核对实际配置。已有不同实验时必须先显式关闭；失败返回构建日志。', object({ ...session, componentPath: text, configuration: text })],
   ['exp_inspect', '一次调用读取身份、运行状态、仿真秒数及记录器状态。', object(session)],
   ['exp_signals', '发现原生标签并返回会话内 signalRef；displayLabel 不能代替原生标签。', object({ ...session, query: { type: 'string', maxLength: 128 }, kind: enumeration('all', 'calibration'), offset: integer(0, 1000000), limit: integer(1, 200) }, ['sessionId'])],
-  ['exp_configure', '读取配置，或校验并修改数值激励和事件；save 显式持久化当前环境，所有修改要求最新 revision。', { oneOf: [
+  ['exp_configure', '读取配置，或校验并修改数值激励和事件；save 保存环境，commitDatabase=true 同时将整个绑定数据库的待保存变更落盘。所有修改要求最新 revision。', { oneOf: [
     object({ ...session, action: { const: 'read' } }),
     object({ ...session, action: enumeration('validate', 'apply'), expectedRevision: id, stimulus }),
     object({ ...session, action: { const: 'create' }, expectedRevision: id, stimulus: createdStimulus }),
-    object({ ...session, action: { const: 'save' }, expectedRevision: id }),
-    object({ ...session, action: enumeration('validate', 'apply'), expectedRevision: id, section: { const: 'event' }, event: object({ name: text, enabled: { type: 'boolean' }, delay: number, phase: number, priority: integer(-1000000, 1000000), mode: text }, ['name']) }),
+    object({ ...session, action: { const: 'save' }, expectedRevision: id, commitDatabase: { type: 'boolean' } }, ['sessionId', 'action', 'expectedRevision']),
+    object({ ...session, action: enumeration('validate', 'apply'), expectedRevision: id, section: { const: 'event' }, event: object({ name: text, enabled: { type: 'boolean' }, delay: { type: 'number', minimum: 0 }, phase: number, priority: integer(-1000000, 1000000), mode: enumeration('segment', 'timeSynchron', 'singleShot', 'signalled') }, ['name']) }),
   ] }],
   ['exp_read', '一次原生调用批量读取至多 128 个标量。运行中为顺序读取，不承诺同时采样。', object({ ...session, signalRefs: refs, representation: enumeration('physical', 'hex') }, ['sessionId', 'signalRefs'])],
   ['exp_write', '暂停时批量标定数值标量，完整检查资格后顺序写入并回读；非事务。停止后先步进初始化，以免 start 覆盖值。', object({ ...session, writes })],

@@ -28,7 +28,7 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
             guard value: (controller isSimPause or: [controller isSimOff]) value: 'REQUIRES_PAUSED_OR_STOPPED'
         ].
         operation = 'write' ifTrue: [guard value: controller isSimPause value: 'WRITE_REQUIRES_PAUSED_TO_PRESERVE_VALUES'].
-        configurationStamp := view isNil ifTrue: [''] ifFalse: [
+        configurationStamp := [view isNil ifTrue: [''] ifFalse: [
             | stream |
             stream := WriteStream on: (String new: 1024).
             stream nextPutAll: simulator getConfig storeString.
@@ -39,21 +39,31 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
                     nextPutAll: channel offset storeString; nextPut: $|; nextPutAll: channel amplitude storeString; nextPut: $|;
                     nextPutAll: channel frequence storeString; nextPut: $|; nextPutAll: channel phase storeString; nextPut: $|
             ]. stream contents
-        ].
+        ]].
         AaaResult reset.
         operation = 'catalog' ifTrue: [
-            | rows db |
+            | rows db exact query |
             rows := OrderedCollection new. db := api currentOpenedDatabase.
+            query := (args at: 1) copyReplaceAll: '/' with: '\'.
+            exact := nil.
+            (query includes: $\) ifTrue: [
+                exact := api etasMainCtrl getDatabaseItemByPath: query asPathname
+            ].
+            (exact notNil and: [exact isValidObject and: [exact isContainer not]]) ifTrue: [
+                | item |
+                item := exact getAPIHandle.
+                rows add: (Dictionary new at: 'path' put: item getFolderPathName; at: 'oid' put: item getOID; yourself)
+            ] ifFalse: [
             (db library queryExactForClassNames: RBTopFolder itemWithSpecClassNames) search do: [:key |
                 | component item path |
                 component := key getObjectIfUndefined: [:unused | nil].
                 (component notNil and: [component isValidObject and: [component isContainer not]]) ifTrue: [
                     item := component getAPIHandle. path := item getFolderPathName.
-                    (path asLowercase includesSubstring: (args at: 1) asLowercase) ifTrue: [
+                    (path asLowercase includesSubstring: query asLowercase) ifTrue: [
                         rows size < 200 ifTrue: [rows add: (Dictionary new at: 'path' put: path; at: 'oid' put: item getOID; yourself)]
                     ]
                 ]
-            ]. result at: 'components' put: rows
+            ]]. result at: 'components' put: rows
         ].
         operation = 'open' ifTrue: [service openExperiment: (args at: 1) configuration: (args at: 2)].
         operation = 'close' ifTrue: [service closeExperiment].
@@ -163,7 +173,20 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
                     amplitude: (args at: 6) asFloat; frequence: (args at: 7) asFloat; phase: (args at: 8) asFloat
             ]
         ].
-        operation = 'save' ifTrue: [service suppressDialogsAndExecInUI: [environment saveExperiment]].
+        operation = 'save' ifTrue: [
+            | commit |
+            args isEmpty ifFalse: [guard value: (configurationStamp value = (args at: 1)) value: 'CONFIGURATION_CHANGED'].
+            commit := args isEmpty not and: [(args at: 2) = 'commit_database'].
+            service suppressDialogsAndExecInUI: [
+                environment saveExperiment isNil ifTrue: [api error: 'EXPERIMENT_SAVE_REJECTED'].
+                commit ifTrue: [
+                    | committed |
+                    committed := api currentOpenedDatabase commitDatabase.
+                    (committed isKindOf: EtasAPIDatabase) ifFalse: [api error: 'DATABASE_COMMIT_FAILED']
+                ]
+            ].
+            result at: 'databaseCommitted' put: commit
+        ].
         operation = 'step' ifTrue: [
             guard value: ((simulator getConfig at: 'EventSimChannels') values anySatisfy: [:event | event at: 'enabled']) value: 'NO_ENABLED_EVENTS'.
             service setStepMode: (args at: 1) stepValue: (args at: 2).

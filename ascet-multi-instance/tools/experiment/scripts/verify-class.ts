@@ -12,6 +12,8 @@ const enableEvent = process.env.ASCET_TEST_ENABLE_EVENT;
 const artifactRoot = join(ROOT, 'artifacts', 'class-live-' + new Date().toISOString().replaceAll(/[:.]/g, '-'));
 const broker = new Broker({ artifactRoot });
 const report: any = { manifest, componentPath, configuration, started: new Date().toISOString() };
+report.simulationStepped = false;
+report.modelResponseVerified = false;
 let sessionId = '';
 try {
   const attached = await broker.call('exp_attach', { instanceRef: manifest });
@@ -43,6 +45,7 @@ try {
     const stepped = await broker.call('exp_step', { sessionId, mode: 'events', value: 1 });
     assert.equal(stepped.ok, true, JSON.stringify(stepped));
     report.step = stepped;
+    report.simulationStepped = true;
   } else if (enableEvent) {
     const candidate = config.configuration.events?.EventSimChannels?.[enableEvent];
     assert.ok(candidate, `Event ${enableEvent} was not found in the selected configuration.`);
@@ -52,6 +55,7 @@ try {
     assert.equal(stepped.ok, true, JSON.stringify(stepped));
     report.eventEnabled = applied.actual;
     report.step = stepped;
+    report.simulationStepped = true;
     if (signals.signals.length) {
       const afterRead = await broker.call('exp_read', { sessionId, signalRefs: [signals.signals[0].signalRef] });
       assert.equal(afterRead.ok, true, JSON.stringify(afterRead));

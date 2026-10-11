@@ -18,9 +18,18 @@ try {
   const stamp = configuration.configurationStamp;
   const a = await b.request('stimulus', ['in/compute', 'constant', '.75', '1', '1', '0', stamp]);
   assert.equal(a.result.stimuli.find((x: any) => x.channel === 'in/compute').offset, .75);
+  assert.notEqual(a.result.configurationStamp, stamp, 'A mutation must return the updated stamp.');
   await assert.rejects(b.request('stimulus', ['in/compute', 'constant', '.25', '1', '1', '0', stamp]), (e: any) => e.code === 'PRECONDITION_FAILED' && e.message === 'CONFIGURATION_CHANGED' && !e.outcomeUnknown);
   const actual = (await b.request('configuration')).result;
   assert.equal(actual.stimuli.find((x: any) => x.channel === 'in/compute').offset, .75);
+  assert.equal(a.result.configurationStamp, actual.configurationStamp);
+  const chained = await b.request('stimulus', ['in/compute', 'constant', '.5', '1', '1', '0', a.result.configurationStamp]);
+  assert.equal(chained.result.stimuli.find((x: any) => x.channel === 'in/compute').offset, .5);
+  await assert.rejects(b.request('save', [stamp, 'environment_only']), (e: any) => e.code === 'PRECONDITION_FAILED' && e.message === 'CONFIGURATION_CHANGED' && !e.outcomeUnknown);
+  const saved = await b.request('save', [chained.result.configurationStamp, 'environment_only']);
+  assert.equal(saved.result.databaseCommitted, false);
+  report.checks.push('save compares the native stamp and commits the database only when explicitly requested');
+  report.checks.push('updated native stamp supports chained mutations');
   report.checks.push('native precondition rejection retains connection', 'raw host rejects condition stepping', 'configuration compare-and-apply rejects stale native stamp without writing');
   report.passed = true;
 } finally {
