@@ -1,0 +1,3737 @@
+{
+  "before": {
+    "diagram": "Main",
+    "diagram_kind": "block_diagram",
+    "entries": [
+      {
+        "anchor": [
+          300,
+          100
+        ],
+        "kind": "node",
+        "native_class": "SGOperatorGO",
+        "operator": "+",
+        "pins": [
+          "p2",
+          "p3",
+          "p4"
+        ],
+        "position": [
+          290,
+          90
+        ],
+        "ref": "n1",
+        "size": [
+          20,
+          20
+        ]
+      },
+      {
+        "anchor": [
+          100,
+          100
+        ],
+        "kind": "node",
+        "literal": "1.0",
+        "native_class": "SGLiteralGO",
+        "pins": [
+          "p6"
+        ],
+        "position": [
+          80,
+          93
+        ],
+        "ref": "n5",
+        "size": [
+          40,
+          14
+        ]
+      },
+      {
+        "input": false,
+        "kind": "pin",
+        "name": "out#1",
+        "output": true,
+        "owner": "n1",
+        "ref": "p2",
+        "sequence": null
+      },
+      {
+        "input": true,
+        "kind": "pin",
+        "name": "in#1",
+        "output": false,
+        "owner": "n1",
+        "ref": "p3",
+        "sequence": null
+      },
+      {
+        "input": true,
+        "kind": "pin",
+        "name": "in#2",
+        "output": false,
+        "owner": "n1",
+        "ref": "p4",
+        "sequence": null
+      },
+      {
+        "input": false,
+        "kind": "pin",
+        "name": "get/get",
+        "output": true,
+        "owner": "n5",
+        "ref": "p6",
+        "sequence": null
+      }
+    ],
+    "generation": 4,
+    "identity": "native_object_registry_guarded_by_graphics_source_in_current_ASCET_process",
+    "lookup_edges": 0,
+    "lookup_nodes": 2,
+    "targets": []
+  },
+  "material": {
+    "actual_native_objects": null,
+    "actual_source_objects": null,
+    "component_oid": "040ts00000001qg7185g75ap26ii6",
+    "created_native_ref": null,
+    "created_original_retained": false,
+    "diagram": "Main",
+    "drawing_after": null,
+    "drawing_before": {
+      "collection": "o2",
+      "complete": true,
+      "diagram": "Main",
+      "members": [
+        "o3",
+        "o4"
+      ],
+      "native_token": "edit_7d20d069c5ded21c1271fdba97eeb64cd7c06af32cc084c60ceded3fe72dfaa8",
+      "numbers": [
+        1,
+        2
+      ],
+      "parent": "o1",
+      "profile": "native_drawing_order_v1"
+    },
+    "endpoint_identity_verified": true,
+    "full_current_verified": true,
+    "graphical_actual": null,
+    "graphical_before": {
+      "complete": true,
+      "objects": [
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v50",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v51"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "EtasIcon",
+          "kind": "boundary",
+          "ref": "v40",
+          "value": null
+        },
+        {
+          "class": "RBConnectionPointBranch",
+          "kind": "fields",
+          "ref": "v128",
+          "value": [
+            {
+              "class": "SGResultConnectorGO",
+              "ref": "v126"
+            },
+            {
+              "class": "Dictionary",
+              "ref": "v129"
+            },
+            {
+              "class": "Point",
+              "ref": "v130"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Set",
+              "ref": "v131"
+            }
+          ]
+        },
+        {
+          "class": "Dictionary",
+          "kind": "collection",
+          "ref": "v78",
+          "value": []
+        },
+        {
+          "class": "Dictionary",
+          "kind": "collection",
+          "ref": "v129",
+          "value": []
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v52",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "Dictionary",
+          "kind": "collection",
+          "ref": "v100",
+          "value": []
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v113",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "CgDeviceIndependentImage",
+          "kind": "boundary",
+          "ref": "v23",
+          "value": null
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v20",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "OrderedCollection",
+          "kind": "collection",
+          "ref": "v53",
+          "value": [
+            {
+              "class": "SGBlockInterfaceElementGO",
+              "ref": "v54"
+            },
+            {
+              "class": "SGBlockInterfaceElementGO",
+              "ref": "v68"
+            },
+            {
+              "class": "SGBlockInterfaceElementGO",
+              "ref": "v82"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v112",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v113"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Set",
+          "kind": "collection",
+          "ref": "v80",
+          "value": []
+        },
+        {
+          "class": "Set",
+          "kind": "collection",
+          "ref": "v131",
+          "value": []
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v114",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v56",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "SGOperatorGO",
+          "kind": "fields",
+          "ref": "v31",
+          "value": [
+            {
+              "class": "Dictionary",
+              "ref": "v32"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGBlockDiagram",
+              "ref": "v28"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v35"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v36"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "RBIconGO",
+              "ref": "v37"
+            },
+            {
+              "class": "RBFrameGO",
+              "ref": "v41"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Array",
+              "ref": "v48"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "ByteArray",
+              "ref": "v97"
+            },
+            {
+              "class": "String",
+              "ref": "v96"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v55",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v56"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Array",
+          "kind": "collection",
+          "ref": "v134",
+          "value": [
+            {
+              "class": "SGAliasMethod",
+              "ref": "v135"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v132",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "120"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "class": "SGImageGO",
+          "kind": "fields",
+          "ref": "v18",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGCodeGO",
+              "ref": "v2"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v19"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v21"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v22"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "199"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "CgDeviceIndependentImage",
+              "ref": "v23"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            }
+          ]
+        },
+        {
+          "class": "SGAliasMethod",
+          "kind": "boundary",
+          "ref": "v135",
+          "value": null
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v72",
+          "value": [
+            43,
+            95,
+            105,
+            110,
+            95,
+            49
+          ]
+        },
+        {
+          "class": "SGBlockInterfaceElementGO",
+          "kind": "fields",
+          "ref": "v54",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGReturnPortGO",
+              "ref": "v49"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v55"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v57"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "2"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "String",
+              "ref": "v58"
+            },
+            {
+              "class": "SGResultConnectorGO",
+              "ref": "v59"
+            }
+          ]
+        },
+        {
+          "class": "ByteArray",
+          "kind": "value",
+          "ref": "v97",
+          "value": [
+            1,
+            1,
+            222,
+            0,
+            0,
+            0,
+            0,
+            0,
+            234,
+            7,
+            10,
+            11,
+            3,
+            149,
+            89,
+            48,
+            173,
+            35,
+            0,
+            0
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v130",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "130"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v81",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "290"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v36",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v125",
+          "value": [
+            103,
+            101,
+            116
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v21",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "SGOffsetNameGO",
+          "kind": "fields",
+          "ref": "v11",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGCodeGO",
+              "ref": "v2"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v12"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v13"
+            },
+            {
+              "class": "String",
+              "ref": "v14"
+            },
+            {
+              "class": "CgFont",
+              "ref": "v15"
+            },
+            {
+              "class": "Symbol",
+              "value": "#TaCenter"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v16"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v57",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v79",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "280"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v124",
+          "value": [
+            114,
+            101,
+            116,
+            117,
+            114,
+            110
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v61",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v84",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "OrderedCollection",
+          "kind": "collection",
+          "ref": "v30",
+          "value": [
+            {
+              "class": "SGOperatorGO",
+              "ref": "v31"
+            },
+            {
+              "class": "SGLiteralGO",
+              "ref": "v98"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v60",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v61"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v83",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v84"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "SGBlockDiagram",
+          "kind": "fields",
+          "ref": "v28",
+          "value": [
+            {
+              "class": "SGModule",
+              "ref": "v29"
+            },
+            {
+              "class": "OrderedCollection",
+              "ref": "v30"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "2"
+            },
+            {
+              "class": "SGHierarchyWrapperGO",
+              "ref": "v1"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v12",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "SGResultConnectorGO",
+          "kind": "fields",
+          "ref": "v59",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGBlockInterfaceElementGO",
+              "ref": "v54"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v60"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v62"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBConnectionPointBranch",
+              "ref": "v63"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "2"
+            },
+            {
+              "class": "Symbol",
+              "value": "#left"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "Point",
+              "ref": "v67"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "class": "SGBlockInterfaceElementGO",
+          "kind": "fields",
+          "ref": "v82",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGReturnPortGO",
+              "ref": "v49"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v83"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v85"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "2"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "String",
+              "ref": "v86"
+            },
+            {
+              "class": "SGArgumentConnectorGO",
+              "ref": "v87"
+            }
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v96",
+          "value": [
+            43
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v101",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v20"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Dictionary",
+          "kind": "collection",
+          "ref": "v111",
+          "value": []
+        },
+        {
+          "class": "SGLiteralGO",
+          "kind": "fields",
+          "ref": "v98",
+          "value": [
+            {
+              "class": "Dictionary",
+              "ref": "v99"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGBlockDiagram",
+              "ref": "v28"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v101"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v102"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "2"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBFrameGO",
+              "ref": "v103"
+            },
+            {
+              "class": "SGNameGO",
+              "ref": "v110"
+            },
+            {
+              "class": "OrderedCollection",
+              "ref": "v116"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "5"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v133"
+            },
+            {
+              "class": "Array",
+              "ref": "v134"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v85",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "Dictionary",
+          "kind": "collection",
+          "ref": "v34",
+          "value": []
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v89",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "SGHierarchyWrapperGO",
+          "kind": "fields",
+          "ref": "v1",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGCodeGO",
+              "ref": "v2"
+            },
+            {
+              "class": "SGBlockDiagram",
+              "ref": "v28"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "String",
+              "ref": "v136"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v88",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v89"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v62",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v102",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v33",
+          "value": [
+            115,
+            112,
+            101,
+            99,
+            105,
+            97,
+            108,
+            86,
+            105,
+            101,
+            119,
+            73,
+            110,
+            102,
+            111
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v16",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "-3"
+            }
+          ]
+        },
+        {
+          "class": "SGArgumentConnectorGO",
+          "kind": "fields",
+          "ref": "v87",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGBlockInterfaceElementGO",
+              "ref": "v82"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v88"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v90"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBConnectionPointBranch",
+              "ref": "v91"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "4"
+            },
+            {
+              "class": "Symbol",
+              "value": "#up"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "Point",
+              "ref": "v95"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v136",
+          "value": [
+            76,
+            97,
+            110,
+            100,
+            115,
+            99,
+            97,
+            112,
+            101
+          ]
+        },
+        {
+          "class": "RBConnectionPointBranch",
+          "kind": "fields",
+          "ref": "v63",
+          "value": [
+            {
+              "class": "SGResultConnectorGO",
+              "ref": "v59"
+            },
+            {
+              "class": "Dictionary",
+              "ref": "v64"
+            },
+            {
+              "class": "Point",
+              "ref": "v65"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Set",
+              "ref": "v66"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v3",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v4"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v95",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "300"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "110"
+            }
+          ]
+        },
+        {
+          "class": "Dictionary",
+          "kind": "collection",
+          "ref": "v64",
+          "value": []
+        },
+        {
+          "class": "SGCodeGO",
+          "kind": "fields",
+          "ref": "v2",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v5"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBFrameGO",
+              "ref": "v6"
+            },
+            {
+              "class": "SGOffsetNameGO",
+              "ref": "v11"
+            },
+            {
+              "class": "OrderedCollection",
+              "ref": "v17"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "-1"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGImageGO",
+              "ref": "v18"
+            },
+            {
+              "class": "Point",
+              "ref": "v24"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGNameGO",
+              "ref": "v25"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v43",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBAreaStyle",
+          "kind": "fields",
+          "ref": "v46",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v47"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v93",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "300"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "120"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v42",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v43"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v47",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "65535"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "65535"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "65535"
+            }
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v39",
+          "value": [
+            66,
+            68,
+            69,
+            65,
+            68,
+            68
+          ]
+        },
+        {
+          "class": "RBAreaStyle",
+          "kind": "fields",
+          "ref": "v108",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v109"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v90",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v109",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "65535"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "65535"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "65535"
+            }
+          ]
+        },
+        {
+          "class": "Set",
+          "kind": "collection",
+          "ref": "v66",
+          "value": []
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v38",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "301"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "101"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v5",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "RBFrameGO",
+          "kind": "fields",
+          "ref": "v41",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGOperatorGO",
+              "ref": "v31"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v42"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v44"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v45"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "RBAreaStyle",
+              "ref": "v46"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v45",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "300"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "class": "RBConnectionPointBranch",
+          "kind": "fields",
+          "ref": "v91",
+          "value": [
+            {
+              "class": "SGArgumentConnectorGO",
+              "ref": "v87"
+            },
+            {
+              "class": "Dictionary",
+              "ref": "v92"
+            },
+            {
+              "class": "Point",
+              "ref": "v93"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Set",
+              "ref": "v94"
+            }
+          ]
+        },
+        {
+          "class": "SGNameGO",
+          "kind": "fields",
+          "ref": "v25",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGCodeGO",
+              "ref": "v2"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v26"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v27"
+            },
+            {
+              "class": "String",
+              "ref": "v14"
+            },
+            {
+              "class": "CgFont",
+              "ref": "v15"
+            },
+            {
+              "class": "Symbol",
+              "value": "#TaCenter"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            }
+          ]
+        },
+        {
+          "class": "Dictionary",
+          "kind": "collection",
+          "ref": "v92",
+          "value": []
+        },
+        {
+          "class": "SGModule",
+          "kind": "boundary",
+          "ref": "v29",
+          "value": null
+        },
+        {
+          "class": "OrderedCollection",
+          "kind": "collection",
+          "ref": "v17",
+          "value": []
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v26",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v44",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "Set",
+          "kind": "collection",
+          "ref": "v94",
+          "value": []
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v10",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v4",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBIconGO",
+          "kind": "fields",
+          "ref": "v37",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGOperatorGO",
+              "ref": "v31"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v38"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "16"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "16"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "String",
+              "ref": "v39"
+            },
+            {
+              "class": "EtasIcon",
+              "ref": "v40"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v8",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v119",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v27",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v7",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v8"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v118",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v119"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v24",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v107",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "class": "Dictionary",
+          "kind": "collection",
+          "ref": "v32",
+          "value": [
+            [
+              {
+                "class": "String",
+                "ref": "v33"
+              },
+              {
+                "class": "Dictionary",
+                "ref": "v34"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v86",
+          "value": [
+            43,
+            95,
+            105,
+            110,
+            95,
+            50
+          ]
+        },
+        {
+          "class": "SGReturnPortGO",
+          "kind": "fields",
+          "ref": "v117",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGLiteralGO",
+              "ref": "v98"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v118"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v120"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "OrderedCollection",
+              "ref": "v121"
+            },
+            {
+              "class": "String",
+              "ref": "v125"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "String",
+              "ref": "v125"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v70",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBFrameGO",
+          "kind": "fields",
+          "ref": "v6",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGCodeGO",
+              "ref": "v2"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v7"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v9"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v69",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v70"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Array",
+          "kind": "collection",
+          "ref": "v48",
+          "value": [
+            {
+              "class": "SGReturnPortGO",
+              "ref": "v49"
+            }
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v115",
+          "value": [
+            49,
+            46,
+            48
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v120",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "SGBlockInterfaceElementGO",
+          "kind": "fields",
+          "ref": "v68",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGReturnPortGO",
+              "ref": "v49"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v69"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v71"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "2"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "String",
+              "ref": "v72"
+            },
+            {
+              "class": "SGArgumentConnectorGO",
+              "ref": "v73"
+            }
+          ]
+        },
+        {
+          "class": "OrderedCollection",
+          "kind": "collection",
+          "ref": "v121",
+          "value": [
+            {
+              "class": "SGBlockInterfaceElementGO",
+              "ref": "v122"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v133",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "20"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "class": "OrderedCollection",
+          "kind": "collection",
+          "ref": "v116",
+          "value": [
+            {
+              "class": "SGReturnPortGO",
+              "ref": "v117"
+            }
+          ]
+        },
+        {
+          "class": "Dictionary",
+          "kind": "collection",
+          "ref": "v99",
+          "value": [
+            [
+              {
+                "class": "String",
+                "ref": "v33"
+              },
+              {
+                "class": "Dictionary",
+                "ref": "v100"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v9",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v19",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v20"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v22",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v35",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v20"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "SGBlockInterfaceElementGO",
+          "kind": "fields",
+          "ref": "v122",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGReturnPortGO",
+              "ref": "v117"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v118"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v123"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "2"
+            },
+            {
+              "class": "String",
+              "ref": "v124"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "String",
+              "ref": "v125"
+            },
+            {
+              "class": "SGResultConnectorGO",
+              "ref": "v126"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v71",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v75",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v13",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v105",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v74",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v75"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBLineStyle",
+          "kind": "fields",
+          "ref": "v104",
+          "value": [
+            {
+              "class": "CgRGBColor",
+              "ref": "v105"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "1"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v14",
+          "value": [
+            68,
+            117,
+            109,
+            109,
+            121
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v123",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "SGArgumentConnectorGO",
+          "kind": "fields",
+          "ref": "v73",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGBlockInterfaceElementGO",
+              "ref": "v68"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v74"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v76"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBConnectionPointBranch",
+              "ref": "v77"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "Symbol",
+              "value": "#right"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "Point",
+              "ref": "v81"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "class": "SGResultConnectorGO",
+          "kind": "fields",
+          "ref": "v126",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGBlockInterfaceElementGO",
+              "ref": "v122"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v118"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v127"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBConnectionPointBranch",
+              "ref": "v128"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "6"
+            },
+            {
+              "class": "Symbol",
+              "value": "#left"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "Point",
+              "ref": "v132"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "class": "String",
+          "kind": "value",
+          "ref": "v58",
+          "value": [
+            103,
+            101,
+            116
+          ]
+        },
+        {
+          "class": "RBFrameGO",
+          "kind": "fields",
+          "ref": "v103",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGLiteralGO",
+              "ref": "v98"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v104"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v106"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v107"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "20"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "7"
+            },
+            {
+              "class": "RBAreaStyle",
+              "ref": "v108"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            },
+            {
+              "class": "False",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v67",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "310"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "class": "SGReturnPortGO",
+          "kind": "fields",
+          "ref": "v49",
+          "value": [
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGOperatorGO",
+              "ref": "v31"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v50"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v52"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "OrderedCollection",
+              "ref": "v53"
+            },
+            {
+              "class": "String",
+              "ref": "v96"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            }
+          ]
+        },
+        {
+          "class": "CgFont",
+          "kind": "boundary",
+          "ref": "v15",
+          "value": null
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v76",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v65",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "320"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v127",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "Point",
+          "kind": "fields",
+          "ref": "v106",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "class": "SGNameGO",
+          "kind": "fields",
+          "ref": "v110",
+          "value": [
+            {
+              "class": "Dictionary",
+              "ref": "v111"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "SGLiteralGO",
+              "ref": "v98"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "RBLineStyle",
+              "ref": "v112"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "3"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v114"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Point",
+              "ref": "v107"
+            },
+            {
+              "class": "String",
+              "ref": "v115"
+            },
+            {
+              "class": "CgFont",
+              "ref": "v15"
+            },
+            {
+              "class": "Symbol",
+              "value": "#TaCenter"
+            },
+            {
+              "class": "True",
+              "value": "true"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            }
+          ]
+        },
+        {
+          "class": "CgRGBColor",
+          "kind": "fields",
+          "ref": "v51",
+          "value": [
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            },
+            {
+              "class": "SmallInteger",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "class": "RBConnectionPointBranch",
+          "kind": "fields",
+          "ref": "v77",
+          "value": [
+            {
+              "class": "SGArgumentConnectorGO",
+              "ref": "v73"
+            },
+            {
+              "class": "Dictionary",
+              "ref": "v78"
+            },
+            {
+              "class": "Point",
+              "ref": "v79"
+            },
+            {
+              "class": "UndefinedObject",
+              "value": "nil"
+            },
+            {
+              "class": "Set",
+              "ref": "v80"
+            }
+          ]
+        }
+      ],
+      "profile": "native_graphical_current_v1"
+    },
+    "managed_inverse_enabled": false,
+    "model_setters_called": 0,
+    "module_references": {
+      "after": null,
+      "before": {
+        "owner_database_record_references": [
+          [
+            "040ts00000001qg714eg871b7b9g4",
+            "SGLibrary"
+          ],
+          [
+            "040ts00000001qg7185g75ap26ii6",
+            "SGModule"
+          ],
+          [
+            "040ts00000001qg7185g75ap42ji6",
+            "SGClassImplConfig"
+          ],
+          [
+            "040ts00000001qg7185g75ap42k26",
+            "SGClassValueConfig"
+          ],
+          [
+            "040ts00000001qg7185g75ap42ki6",
+            "SGImplConfiguration"
+          ],
+          [
+            "040ts00000001qg7185g75ap42l26",
+            "SGValueConfiguration"
+          ]
+        ],
+        "owner_references": [
+          [
+            "040ts00000001qg714eg871b7b9g4",
+            "SGLibrary"
+          ],
+          [
+            "040ts00000001qg7185g75ap26ii6",
+            "SGModule"
+          ],
+          [
+            "040ts00000001qg7185g75ap42ji6",
+            "SGClassImplConfig"
+          ],
+          [
+            "040ts00000001qg7185g75ap42k26",
+            "SGClassValueConfig"
+          ],
+          [
+            "040ts00000001qg7185g75ap42ki6",
+            "SGImplConfiguration"
+          ],
+          [
+            "040ts00000001qg7185g75ap42l26",
+            "SGValueConfiguration"
+          ]
+        ]
+      },
+      "complete": true,
+      "component_oid": "040ts00000001qg7185g75ap26ii6",
+      "full_commit_resource_closure": false,
+      "generation": 4,
+      "inverse_authorized": false,
+      "model_setters_called": 0,
+      "native_token": "edit_7d20d069c5ded21c1271fdba97eeb64cd7c06af32cc084c60ceded3fe72dfaa8",
+      "profile": "native_module_inbound_references_v1",
+      "store_called": false
+    },
+    "native_token": "edit_7d20d069c5ded21c1271fdba97eeb64cd7c06af32cc084c60ceded3fe72dfaa8",
+    "operation": "connect_data",
+    "original_native_objects": 136,
+    "original_source_objects": 48,
+    "parent_after": null,
+    "parent_before": {
+      "collection": "o2",
+      "complete": true,
+      "diagram": "Main",
+      "members": [
+        "o3",
+        "o4"
+      ],
+      "native_token": "edit_7d20d069c5ded21c1271fdba97eeb64cd7c06af32cc084c60ceded3fe72dfaa8",
+      "parent": "o1",
+      "profile": "native_parent_order_v1"
+    },
+    "phase": "prepared",
+    "profile": "native_connect_material_v2",
+    "source": "p6",
+    "source_root_preserved": true,
+    "store_called": false,
+    "target": "p3",
+    "write_authorized": false
+  }
+}

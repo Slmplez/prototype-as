@@ -1,5 +1,15 @@
 # BDE delivery status, 2026-10-11
 
+2026-10-11 后续增量：复用现有私有 ASCET PID40652 / port32631，未关闭、启动或重启。连线材料、写前守卫、历史及两个新引用模板均通过实际 Smalltalk 编译；共享 `bde_module_reference_snapshot.st` 先冻结 database-record 入站列表，再读取 loaded/merged 列表，避免把合并后的采样当作原数据库采样。多个现有隔离 Module 的两次只读引用观察一致。新增三方 OID/class 语义逆候选和生产 journal 绑定：只使用已确认 forward 的原 before/after，保留无关增删/类型变化，任一引用集合冲突时不提供整个候选；未知结果不提升为已恢复。87 项定向离线测试通过（含 14 项新增），生产 C# 桥接编译与 canonical/staged 检查通过。
+
+在核对私有 manifest、镜像 hash、进程 epoch、数据库、dirty 和 pending 后，仅新建 `Trial_ConnectReferences_20261011_034859_7419e31d`，含字面量和加法块、0 条连线。该 fixture 创建调用了 StoreToCache，不能称为整轮零写入。随后 **正式 v2 prepare → inspect_prepared → discard_prepared 在线通过**，原 native/public 全观察前后相同；该 prepare 实验未派发 apply/store/inverse，401 请求帧/400 响应帧。先前 AEB_Core 非 Module guard 拒绝、三个旧样例无可用引脚组合及两次探针构建失败均保留。
+
+本增量证明运行时编译、引用采集和连线写前材料路径；**v2 capture_attached、持久引用 patch/inverse、T5.1 实际连线完整回退和 60 项 Message 矩阵仍未完成**。语义逆候选不授权数据库写入，也不授予 connection history。43 required 和全交付状态不升级。
+
+[本轮增量与复现](../analysis/bde-experiments/2026-10-11/bde-module-reference-preflight-increment-01/README.md) · [生产准备在线结果](../analysis/bde-experiments/2026-10-11/bde-connect-reference-preflight-04/result.json)
+
+以下段落保留此前时点记录，其中“当前/尚未/没有运行中的 ASCET”只对应当时状态。
+
 2026-10-11 增量：T3.1 已增加生产 `native_connect_material_v2` 路径，显式 `ASCET_BD_CONNECT_REFERENCES=module_inbound_v1` 才开启。原 `connect_material` 调用内冻结 Module loaded/database-record 两套入站引用，写前 native guard 再检查原引用，WAL 保存完整 before/after，`bd_diff` 离线复算 added/removed。73 项相关离线控制通过；C# bridge 编译与 canonical/staged 一致性检查通过。当前没有运行中的 ASCET；没有启动或重启、没有 native 调用，新 Smalltalk 尚未在 ASCET 编译/执行。新 profile 不授予数据库 inverse，Python journal 和 native history 均阻止图形回退冒充完整引用恢复；保留原材料。T3.1 在线验收、T5.1 connect 闭环和整体交付仍未完成。
 
 [本轮结果](../analysis/bde-experiments/2026-10-11/bde-module-reference-journal-01/result.json)

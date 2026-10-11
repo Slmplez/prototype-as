@@ -8,9 +8,9 @@
    native source orderRecord orderBefore drawingBefore receipt originalSourceMembers
    edge api afterOrder afterDrawing sourceAfter nativeAfter orderAfter drawingAfter
    endpoints edgeRecord retained anchors boundaries detachedGuard answer combinedNativeAfter
-   actualValues actualEncoded alias reservations graphicalActual referenceProfile referenceRows
+   actualValues actualEncoded alias reservations graphicalActual referenceProfile
    referenceRead referenceOwner referenceDBObject referenceBefore referenceAfter referenceReceipt |
- (helpers isArray and: [helpers size = 5 and: [context isArray and: [context size = 3]]])
+ (helpers isArray and: [helpers size = 6 and: [context isArray and: [context size = 3]]])
    ifFalse: [component error: 'Fixed connect material helpers and token/mode required'].
  token := context first. mode := context at: 2. referenceProfile := context last.
  (#('none' 'module_inbound_v1') includes: referenceProfile)
@@ -104,20 +104,11 @@
      (component class name asString = 'EtasAPIModuleBDE' and: [component item class name asString = 'SGModule'])
        ifFalse: [component error: 'Exact native Module BDE owner required for inbound reference capture'].
      referenceOwner := component item. referenceDBObject := referenceOwner dbObject.
-     referenceRows := [:referenceRecord |
-       referenceRecord isError ifTrue: [component error: 'Module inbound reference query failed'].
-       referenceRecord isReferencedBys size > 4096
-         ifTrue: [component error: 'Complete Module inbound reference bound exceeded'].
-       ((referenceRecord isReferencedBys collect: [:key |
-         Array with: key globalIdString copy with: key className asString copy])
-         asSortedCollection: [:a :b | a first = b first ifTrue: [a last < b last] ifFalse: [a first < b first]]) asArray
-     ].
      referenceRead := [
        (component item == referenceOwner and: [referenceOwner dbObject == referenceDBObject and: [
          (root at: 'owner') == referenceOwner and: [(root at: 'generation') = (material at: 'generation')]]])
          ifFalse: [component error: 'Original Module reference owner/database/generation expired'].
-       Dictionary new at: 'owner_references' put: (referenceRows value: referenceDBObject readReferences);
-         at: 'owner_database_record_references' put: (referenceRows value: referenceDBObject readIsReferencedByOnly); yourself
+       (helpers at: 6) value: component
      ].
      material at: 'profile' put: 'native_connect_material_v2';
        at: 'moduleReferenceReader' put: referenceRead; at: 'moduleReferenceProfile' put: referenceProfile.
@@ -183,7 +174,7 @@
    retained := Array with: edge with: parent with: (afterOrder indexOf: edge) with: endpoints.
    edgeRecord := orderRecord copy. edgeRecord at: 'retained' put: retained;
      at: 'operation' put: 'disconnect_data'; at: 'deletedEdgeAPIs' put: (Array with: api).
-   ((helpers last value: component value: edgeRecord value: 'capture') == true)
+   (((helpers at: 5) value: component value: edgeRecord value: 'capture') == true)
      ifFalse: [component error: 'Actual created endpoint registration capture failed'].
    nativeAfter := helpers first value: component value: (Array with: diagram topGraphicalHierarchy).
    (nativeAfter isKindOf: Dictionary) ifFalse: [component error: nativeAfter asString].
@@ -268,7 +259,7 @@
    ((record at: 'created') == (material at: 'createdAPI') and: [
      (material at: 'createdAPI') diagramElement == (material at: 'created')])
      ifFalse: [component error: 'Created connection API or native identity replaced'].
-   ((helpers last value: component value: (material at: 'edgeRecord')
+   (((helpers at: 5) value: component value: (material at: 'edgeRecord')
      value: (mode = 'inspect_detached' ifTrue: ['detached'] ifFalse: ['attached'])) == true)
      ifFalse: [component error: 'Actual retained connect endpoint guard failed'].
    (material at: 'detachedGuard') at: 'verify' ifAbsent: [component error: 'Detached original-reference checkpoint missing'].

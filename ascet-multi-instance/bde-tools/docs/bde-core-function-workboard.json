@@ -1,5 +1,17 @@
 {
-  "current_increment_key": "latest_module_reference_journal_increment",
+  "current_increment_key": "latest_module_reference_preflight_increment",
+  "latest_module_reference_preflight_increment": {
+    "source": "analysis/bde-experiments/2026-10-11/bde-module-reference-preflight-increment-01/result.json",
+    "node": "T3.1",
+    "status": "prepared_capture_live_verified_attached_and_inverse_pending",
+    "offline_controls_passed": 87,
+    "production_prepare_inspect_discard_verified": true,
+    "journal_bound_semantic_inverse_plan": true,
+    "capture_attached_verified": false,
+    "persistent_reference_inverse_implemented": false,
+    "next": "Bind actual attached capture and complete persistent reference patch/inverse before T5.1 edit acceptance",
+    "full_delivery": false
+  },
   "latest_module_reference_journal_increment": {
     "source": "analysis/bde-experiments/2026-10-11/bde-module-reference-journal-01/result.json",
     "node": "T3.1",

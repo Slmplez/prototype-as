@@ -53,5 +53,14 @@ ASCET evidence. The new `native_connect_material_v2` path is enabled only by
 `ASCET_BD_CONNECT_REFERENCES=module_inbound_v1` together with the fixed retained
 Main connection profiles. It records Module inbound references in the existing
 material dispatch and rejects graphical-only history until a persistent
-reference inverse is implemented. Its Smalltalk runtime compilation and
-execution remain unverified.
+reference inverse is implemented. Fixed Smalltalk runtime compilation, the
+shared read-only reference collector and production v2 prepare/inspect/discard
+have now passed inside an existing private ASCET session. Actual attached v2
+capture and persistent reference inverse remain unverified. The semantic
+three-way inverse planner is bound to confirmed original journals, preserves
+unrelated memberships and rejects overlaps, but grants no database write or
+inverse authority. See `evidence/2026-10-11/module-reference-preflight/`.
+
+The selected portable suite passes 103 tests. It is offline package validation;
+the native preparation evidence is a separate result and not a complete edit
+lifecycle acceptance.

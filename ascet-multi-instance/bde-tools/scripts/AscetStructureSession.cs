@@ -632,7 +632,11 @@ class AscetStructureSession
             array.appendParameter(native); array.appendParameter(source); array.appendParameter(parentOrder); array.appendParameter(drawing);
             component.call(array); var baseHelpers = array.ResultRemoteObject; blocks.Add(baseHelpers);
             var extend = new InstanceMethodCall(baseHelpers, "copyWith:", component);
-            extend.appendParameter(endpoint); component.call(extend); var helpers = extend.ResultRemoteObject; blocks.Add(helpers);
+            extend.appendParameter(endpoint); component.call(extend); var endpointHelpers = extend.ResultRemoteObject; blocks.Add(endpointHelpers);
+            var referenceReader = references == "module_inbound_v1" ? fixedCompile("bde_module_reference_snapshot.st") : null;
+            var extendReferences = new InstanceMethodCall(endpointHelpers, "copyWith:", component);
+            extendReferences.appendParameter(referenceReader); component.call(extendReferences);
+            var helpers = extendReferences.ResultRemoteObject; blocks.Add(helpers);
             var factory = fixedCompile("bde_connect_material.st");
             var bind = new InstanceMethodCall(factory, "value:", component); bind.appendParameter(helpers); component.call(bind);
             var capture = bind.ResultRemoteObject; blocks.Add(capture);

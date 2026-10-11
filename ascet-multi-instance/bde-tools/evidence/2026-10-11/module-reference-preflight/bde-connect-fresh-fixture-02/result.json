@@ -1,0 +1,45 @@
+{
+  "profile": "bde_connect_fixture_v1",
+  "passed": true,
+  "manifest": "E:\\Repo\\ASCET\\analysis\\search-tools-acceptance\\2026-10-02\\agent-a\\instance.json",
+  "port": 32631,
+  "pid": 40652,
+  "process_epoch": "40652/2026-10-11T01:26:22.5375589Z",
+  "intent": "Trial_ConnectReferences_20261011_034859_7419e31d",
+  "stage": "finished",
+  "ascet_started_or_restarted": false,
+  "full_delivery": false,
+  "source_manifest": {
+    "AscetConnectFixture.cs": "f62e7363b02de235d329717e85df6281adbd272379d048842b53178d9f58ae44",
+    "AscetStructureRead.cs": "7b548d69a32a67bf10f5b7b799f260d7310ed0858d66a01e2c22f768d9cf6099"
+  },
+  "quarantine": "C:\\Users\\ZJR\\AppData\\Local\\AscetBdeTools\\pending\\a1549f34b8b33ea0cfdfd4193dbe08704d386a1f0b175cad0696f4d946c593c6.json",
+  "wire": {
+    "connections": 1,
+    "request": {
+      "bytes": 2619,
+      "frames": 38,
+      "parse_error": null,
+      "incomplete_bytes": 0
+    },
+    "response": {
+      "bytes": 1181,
+      "frames": 37,
+      "parse_error": null,
+      "incomplete_bytes": 0
+    },
+    "errors": []
+  },
+  "native": {
+    "passed": true,
+    "intent": "Trial_ConnectReferences_20261011_034859_7419e31d",
+    "stage": "finished",
+    "connection_edit_dispatched": false,
+    "component": "BDE_Tool_Experiments\\Trial_ConnectReferences_20261011_034859_7419e31d",
+    "component_oid": "040ts00000001qg7185g75ap26ii6",
+    "node_count": 2,
+    "edge_count": 0,
+    "store_to_cache_called": true
+  },
+  "quarantine_confirmed": true
+}

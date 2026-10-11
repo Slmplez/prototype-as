@@ -70,6 +70,32 @@ def one(events, kind):
     return values[0]
 
 
+def reference_inverse_plan(log, token, current):
+    """Bind a semantic-only candidate to one confirmed durable v2 forward.
+
+    No live call or WAL change occurs here. The original before/after cannot
+    be supplied by the caller, inferred from CURRENT, or replaced by a later
+    observation. Epoch/raw/reciprocal closure is still missing, so this never
+    grants retained connect history or persistent inverse authority.
+    """
+    events = log.read(token); intent = events[0]['payload']
+    if (intent.get('operation') != 'connect_data' or intent.get('diagram') != 'Main'
+            or intent.get('arguments', [None])[0] != []
+            or log.receipt(token, events)['status'] != 'applied_observed'):
+        raise JournalError('REVERT_UNAVAILABLE', 'One confirmed complete Main connection forward required for reference planning')
+    prepared, actual = one(events, 'prepared'), one(events, 'observed')
+    material = forward_material(intent, prepared, actual.get('connect_material_actual'), token)
+    from bd_structure_journal import postcondition
+    if ('module_references' not in material or actual != forward_observation(actual['after'], material)
+            or not postcondition(intent, prepared['before'], actual['after'])):
+        raise JournalError('REVERT_UNAVAILABLE', 'Complete durable actual Module reference proof required')
+    from bd_module_references import plan_inverse
+    result = plan_inverse(material['module_references'], current, token=token, component_oid=intent['domain']['oid'])
+    result.update(journal_bound=True, original_domain=clone(intent['domain']),
+        durable_actual_sha256=fingerprint(actual))
+    return result
+
+
 def forward_material(source, prepared, value, token):
     from bd_connect_material import validate
     bindings = dict(token=token, component_oid=source['domain']['oid'],

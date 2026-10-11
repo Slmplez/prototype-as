@@ -1,3 +1,13 @@
+## 2026-10-11 Module reference runtime preflight and semantic inverse
+
+复用现有 PID40652 / port32631，未启停 ASCET。五个固定模板实际编译通过；共享引用读取器在多个隔离 Module 上两次观察一致，严格区分 database-record 和 loaded/merged 入站列表。三方语义逆候选及 journal 绑定完成，87 项相关离线测试通过；候选保留无关修改，拒绝重叠引用或缺失原 before，始终不授权持久 inverse。
+
+新建两节点隔离 Trial Module 后，正式生产 v2 prepare/inspect/discard 在线通过；前后 native/public 观察一致。prepare-only 实验 401 请求帧/400 响应帧，响应 268,218 bytes；未派发连接 apply、store 或 inverse。fixture 创建另有公开 factory/StoreToCache 写入，不混入零写入结论。旧样例无可用连接组合及构建/类型失败保持原 verdict。
+
+v2 编辑后的实际引用采集、数据库引用 patch/inverse、真实编辑回退闭环与 Message 60 项矩阵仍未通过；本次不升级完整 required case。
+
+[增量报告及复现命令](../analysis/bde-experiments/2026-10-11/bde-module-reference-preflight-increment-01/README.md) · [在线 prepare](../analysis/bde-experiments/2026-10-11/bde-connect-reference-preflight-04/result.json)
+
 ## 2026-10-07 CTIFil bytecode audit and guarded write-plan projection
 
 反编译方法表二次审计确认 `CTIFil` 六个写/增改 selector 的 bytecode hex 完整且长度一致；独立解码还确认固定/可变入口的 lookup → `~= 0` → add/update → status return 形状。`leaf_bytecode_complete=true`、`leaf_bytecode_semantics_pattern_verified=true`，但没有恢复可审计源码语义，所以 `source_semantics_proven=false`。真实 retained source payload 经过 agent-facing `bde_commit_write_plan` 后得到 6,334 logical/allocated bytes、0 个变更范围和 `status=blocked`；新增的 `bde_commit_revert_plan` 采用同一 payload 合同计算 `after → before` 逆向候选，单元测试确认无关字节保留及重叠冲突拒绝。即使形状审计全部为真，独立 inverse-authorization 门仍会保持阻断。无 Cebra/native 写调用。事务 inverse、持久 rollback/inverse selector、write/inverse 授权仍缺失，不能算持久编辑或回退通过。

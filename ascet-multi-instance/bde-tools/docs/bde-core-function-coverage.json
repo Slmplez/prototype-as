@@ -1,5 +1,18 @@
 {
-  "current_increment_key": "latest_module_reference_journal_increment",
+  "current_increment_key": "latest_module_reference_preflight_increment",
+  "latest_module_reference_preflight_increment": {
+    "source": "analysis/bde-experiments/2026-10-11/bde-module-reference-preflight-increment-01/result.json",
+    "status": "prepared_capture_live_verified_attached_and_inverse_pending",
+    "native_profile": "native_connect_material_v2",
+    "offline_controls_passed": 87,
+    "smalltalk_runtime_compile_verified": true,
+    "reference_collector_execution_verified": true,
+    "production_prepare_inspect_discard_verified": true,
+    "journal_bound_semantic_inverse_plan": true,
+    "capture_attached_verified": false,
+    "persistent_reference_inverse_implemented": false,
+    "full_delivery": false
+  },
   "latest_module_reference_journal_increment": {
     "source": "analysis/bde-experiments/2026-10-11/bde-module-reference-journal-01/result.json",
     "status": "implemented_offline_native_unverified",

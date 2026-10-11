@@ -1,0 +1,78 @@
+{
+  "profile": "bde_module_reference_preflight_increment_v1",
+  "date": "2026-10-11",
+  "node": "T3.1",
+  "source_manifest": {
+    "scripts/bd_module_references.py": "2607fdf9f2ec7026ce5251f04e3f50f61fa66f26ba91f5403e016d3ca8f08db3",
+    "scripts/bd_connect_journal.py": "774471eb513a61a6f509b910e14c4286debd47f7a71596edc62c655de0c7aaf0",
+    "scripts/bd_native_structure.py": "b540b001426d68d17f8642eba328a8eaff06dc15b8b33fb9ea1ba5b4a643737f",
+    "scripts/AscetStructureSession.cs": "89d9846db2014ed7a5324aae557ef48b179a23c4ec5af3e3b8a5669428e0d0a6",
+    "scripts/bde_connect_material.st": "7c232e673682357267adbc7d4495266cf1f05af561c7e024f1d18a0089fd609c",
+    "scripts/bde_module_reference_snapshot.st": "15aa604746c05bbacf05410d5deea332b2e11f4ad0b7878281ee2f071654f327",
+    "scripts/bde_module_reference_probe.st": "48db7a18d99d86bb8e8fd17936b6db727ef419cc77a43352eedecc93e990ad35",
+    "scripts/AscetConnectCompileProbe.cs": "c637d749afd2f224d5968b716ef44eca830feb3e949a6534ef295788b0c41d65",
+    "scripts/bde_connect_compile_probe.py": "0c5ca94ad57ebb3ffba5c2471407106a586b095fa5213a50bf92372fb4cded11",
+    "scripts/AscetConnectFixture.cs": "f62e7363b02de235d329717e85df6281adbd272379d048842b53178d9f58ae44",
+    "scripts/bde_connect_fixture.py": "920a01abf10a67fb93a492ced81414730331bc4ddf448eedde9e13ca0dd3bd31",
+    "scripts/bde_connect_reference_preflight.py": "c3b7a66da364cddce79dca593c333f39f75a909ee5a70ef878ffd05eadd13457",
+    "scripts/bde_main_workflow.py": "081444b5dcdf8d529eb2f827b0ce5d0085453e5bca6ad120f67f9cb0951b5352",
+    "scripts/test_bd_module_reference_inverse.py": "947861855af190f991f703851c0d743b0ad409544b7a7c0c0d76081e2228b408"
+  },
+  "offline_controls_passed": 87,
+  "new_semantic_and_journal_controls": 14,
+  "offline_result_source": "recorded terminal run exit_code=0, Ran 87 tests, OK",
+  "production_bridge_compile_passed": true,
+  "canonical_staged_check_passed": true,
+  "smalltalk_runtime_compile_verified": true,
+  "reference_collector_execution_verified": true,
+  "production_prepare_inspect_discard_verified": true,
+  "prepared_material_released": true,
+  "observed_original_unchanged": true,
+  "read_evidence": "analysis/bde-experiments/2026-10-11/bde-connect-reference-read-05/result.json",
+  "prepare_evidence": "analysis/bde-experiments/2026-10-11/bde-connect-reference-preflight-04/result.json",
+  "fixture_evidence": "analysis/bde-experiments/2026-10-11/bde-connect-fresh-fixture-02/result.json",
+  "prepare_wire": {
+    "connections": 1,
+    "request": {
+      "bytes": 272037,
+      "frames": 401,
+      "parse_error": null,
+      "incomplete_bytes": 0
+    },
+    "response": {
+      "bytes": 268218,
+      "frames": 400,
+      "parse_error": null,
+      "incomplete_bytes": 0
+    },
+    "errors": []
+  },
+  "process_epoch": "40652/2026-10-11T01:26:22.5375589Z",
+  "port": 32631,
+  "fixture_component": "BDE_Tool_Experiments\\Trial_ConnectReferences_20261011_034859_7419e31d",
+  "fixture_oid": "040ts00000001qg7185g75ap26ii6",
+  "fixture_creation_store_to_cache_called": true,
+  "fixture_retained_for_next_experiment": true,
+  "journal_bound_semantic_inverse_plan": true,
+  "capture_attached_verified": false,
+  "connection_edit_dispatched": false,
+  "persistent_reference_inverse_implemented": false,
+  "old_epoch_replayed": false,
+  "ascet_started_or_restarted": false,
+  "message_topology_matrix_completed": 0,
+  "message_topology_matrix_total": 60,
+  "full_delivery": false,
+  "preserved_failures": [
+    "bde-connect-runtime-compile-01",
+    "bde-connect-reference-read-01",
+    "bde-connect-reference-preflight-01",
+    "bde-connect-reference-preflight-02",
+    "bde-connect-reference-preflight-03",
+    "bde-connect-fresh-fixture-01"
+  ],
+  "next": [
+    "actual attached reference capture",
+    "persistent raw and reciprocal reference patch/inverse closure",
+    "fresh T5.1 complete edit/diff/display/conflict/revert"
+  ]
+}

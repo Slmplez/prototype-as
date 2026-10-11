@@ -6,7 +6,7 @@ import unittest
 ROOT = Path(__file__).resolve().parent
 sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tests')]
 MODULES = (
-    'test_bd_module_references', 'test_bd_connect_journal', 'test_bd_connect_material',
+    'test_bd_module_references', 'test_bd_module_reference_inverse', 'test_bd_connect_journal', 'test_bd_connect_material',
     'test_bd_connect_history', 'test_bd_connect_local_history', 'test_bd_connect_local_plan',
     'test_bd_structural_diff_route', 'test_bd_structure_conflicts',
     'test_bd_read_contract', 'test_bd_write_contract', 'test_bd_pagination_integrity',
