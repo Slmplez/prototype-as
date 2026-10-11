@@ -20,12 +20,14 @@ SOURCES = ('AscetConnectCompileProbe.cs', 'AscetStructureRead.cs',
     'bde_connect_material.st', 'bde_structure_stage_guard.st', 'bde_connect_history.st',
     'bde_module_reference_snapshot.st', 'bde_module_reference_probe.st', 'bd_module_references.py',
     'bde_commit_reference_record.st', 'bde_module_persistent_references.st', 'bde_value_probe.st',
-    'bd_module_persistent_references.py', 'bd_persistent_references.py')
+    'bd_module_persistent_references.py', 'bd_persistent_references.py',
+    'bde_reference_leaf_noop.st', 'bde_detached_value_reader.st', 'bde_reference_leaf_lifecycle.st')
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, required=True)
+    parser.add_argument('--target-key', action='append', default=[], help='Explicit 20-byte reference key as lowercase hex; up to 16 identity inputs, not original images')
     parser.add_argument('--pid', type=int, required=True)
     selection = parser.add_mutually_exclusive_group()
     selection.add_argument('--component', help='Optional exact existing Module path; read only')
@@ -34,6 +36,10 @@ def main():
     parser.add_argument('--allow-incomplete-observation', action='store_true', help='Validate retained failed-read evidence; does not pass complete raw capture')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
+    from bd_module_persistent_references import target_requests
+    targets = target_requests(args.target_key)
+    if targets and not args.persistent_references:
+        parser.error('--target-key requires --persistent-references')
     if args.persistent_references and not args.component:
         parser.error('--persistent-references requires --component')
     if args.allow_incomplete_observation and not args.persistent_references:
@@ -81,7 +87,8 @@ def main():
                     try:
                         native = subprocess.run([str(binary), str(args.pid), str(output / 'native.json')]
                             + ([args.component] if args.component else ['--list-trials'] if args.list_trials else [])
-                            + (['--persistent-references'] if args.persistent_references else []),
+                            + (['--persistent-references'] if args.persistent_references else [])
+                            + ([','.join(targets)] if targets else []),
                             env=environment, capture_output=True, timeout=60)
                         (output / 'native.stdout.log').write_bytes(native.stdout)
                         (output / 'native.stderr.log').write_bytes(native.stderr)

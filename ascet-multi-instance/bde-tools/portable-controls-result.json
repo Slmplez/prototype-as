@@ -1,0 +1,8 @@
+{
+  "profile": "bde_portable_source_controls_v1",
+  "exit_code": 0,
+  "tests": 183,
+  "offline_only": true,
+  "online_acceptance": false,
+  "full_delivery": false
+}

@@ -2,7 +2,7 @@
 from copy import deepcopy
 import unittest
 
-from bd_module_persistent_references import PROFILE, validate, summarize, validate_receipt, differences
+from bd_module_persistent_references import PROFILE, REQUESTED_PROFILE, target_requests, validate, summarize, validate_receipt, differences
 from test_bd_persistent_references import fixture as reference_fixture, payload_v2
 
 OWNER, SOURCE, TARGET, OTHER = ([value] * 20 for value in (10, 20, 30, 40))
@@ -153,6 +153,72 @@ def bound_receipt(phase, token, oid=OID, generation=108):
         generation=generation, phase=phase, before=before, after=after if phase == 'attached' else None,
         prepared_native_record_bound=True, model_setters_called=0, store_called=False, commit_called=False,
         write_authorized=False, inverse_authorized=False, full_commit_resource_closure=False)
+
+
+def requested_snapshot(*, absent=False):
+    value = snapshot()
+    value.update(profile=REQUESTED_PROFILE, requested_reciprocal_targets=[OTHER], reciprocal_targets=[TARGET, OTHER])
+    value['reciprocal_records'].append(absent_record(OTHER, 'owner_referenced_by') if absent
+        else record(OTHER, 'owner_referenced_by', [OTHER]))
+    value['membership_checks'].extend([
+        dict(owner_key=key, target_key=OTHER, outgoing_member=False, inbound_owner_count=0, consistent=True)
+        for key in (OWNER, SOURCE)])
+    return value
+
+
+class RequestedFiniteReferenceTests(unittest.TestCase):
+    def test_explicit_existing_and_absent_target_captured_before_any_outgoing_reference(self):
+        for absent in (False, True):
+            value = requested_snapshot(absent=absent)
+            self.assertEqual(validate(value, component_oid=OID), value)
+            self.assertEqual(summarize(value, component_oid=OID)['record_reads'], 6)
+            self.assertIs(value['original_edit_before_bound'], False)
+
+    def test_request_canonicalization_does_not_coerce_or_deduplicate(self):
+        keys = [bytes(OTHER).hex(), bytes(TARGET).hex()]
+        self.assertEqual(target_requests(keys), sorted(keys))
+        for bad in (None, (), 'ab', [keys[0], keys[0]], ['AB' * 20], [0], ['a' * 39],
+                    [f'{i:040x}' for i in range(17)]):
+            with self.subTest(bad=bad), self.assertRaises(ValueError): target_requests(bad)
+
+    def test_declared_targets_cannot_be_omitted_from_raw_census(self):
+        value = requested_snapshot(); value['reciprocal_targets'].pop()
+        value['reciprocal_records'].pop(); value['membership_checks'] = value['membership_checks'][:2]
+        with self.assertRaises(ValueError): validate(value, component_oid=OID)
+
+    def test_v2_requests_must_be_exact_nonempty_sorted_distinct_bounded(self):
+        for bad in ([], [OTHER, OTHER], [OTHER, TARGET], [OTHER[:-1]], [[True] * 20],
+                    [[i] * 20 for i in range(17)]):
+            value = requested_snapshot(); value['requested_reciprocal_targets'] = bad
+            with self.subTest(bad=bad), self.assertRaises(ValueError): validate(value, component_oid=OID)
+
+    def test_requested_target_already_outgoing_is_read_once_in_union(self):
+        value = snapshot(); value.update(profile=REQUESTED_PROFILE, requested_reciprocal_targets=[TARGET])
+        self.assertEqual(summarize(value, component_oid=OID)['record_reads'], 5)
+
+    def test_v1_cannot_sneak_in_extended_coverage(self):
+        value = requested_snapshot(); value['profile'] = PROFILE
+        with self.assertRaises(ValueError): validate(value, component_oid=OID)
+
+    def test_actual_receipt_cannot_change_planned_target_binding(self):
+        proof = bound_receipt('attached', 'edit_' + 'a' * 64)
+        proof['before'] = requested_snapshot(); proof['after'] = deepcopy(proof['before'])
+        self.assertEqual(differences(proof), [])
+        proof['after']['requested_reciprocal_targets'] = [TARGET, OTHER]
+        with self.assertRaisesRegex(ValueError, 'rebind'): differences(proof)
+
+    def test_adapter_requires_its_exact_original_requested_keys(self):
+        from bd_native_structure import NativeStructureAdapter
+        adapter = NativeStructureAdapter.__new__(NativeStructureAdapter)
+        adapter.connect_persistent_reference_capture_capable = True
+        adapter.connect_reference_capture_capable = True
+        adapter.connect_reference_targets = [bytes(OTHER).hex()]
+        material = dict(profile='native_connect_material_v3',
+            module_persistent_references=dict(before=requested_snapshot()))
+        adapter._check_connect_reference_profile(material)
+        adapter.connect_reference_targets = [bytes(TARGET).hex()]
+        with self.assertRaisesRegex(ValueError, 'exact original request'):
+            adapter._check_connect_reference_profile(material)
 
 
 class BoundFiniteReferenceTests(unittest.TestCase):

@@ -38,6 +38,7 @@ T0 运行时身份与安全边界
 1. **T3.1**：把 Message 拓扑引用差异接入生产 `bd_connect_journal` 的 native receipt。
    2026-10-11 后续：固定 Smalltalk 编译、共享引用读取、生产 v2 prepare/inspect/discard 在线通过；三方语义逆候选和 journal 绑定完成，87 项离线控制通过。复用现有 PID40652/32631，未启停；capture_attached 和持久引用 patch/inverse 未验收，T3.1 仍未完成。见 `bde-module-reference-preflight-increment-01`。
    同日继续：v3 冻结 Module/source/reciprocal 的有限原始记录与 absence，生产准备/检查/释放和双层拒写在线通过，完整 native/public bookends 不变。原始字节三方逆规划、actual diff 与 WAL 绑定完成，138 项离线控制通过；新目标 original before、absence lifecycle executor、持久 writer/inverse 仍未闭合，T3.1 继续未完成。见 `bde-finite-module-reference-increment-02`。
+   最新：明确 requested targets 原始记录进入同次 v3 prepare，15 条完整有限读取和双拒写在线通过；已有 record 原样写回、原 absent source 空记录创建/删除/恢复已实测并经 fresh read 独立确认。167 项相关离线控制通过。获一次授权仅私有实例恢复重启，旧 pending 保留。非空/变长引用、通用 persistent inverse 和 actual attached 仍缺，T3.1 不升级。见 `bde-reference-leaf-lifecycle-increment-02`。
 2. **T5.1**：在新的隔离组件中只验证一条 `connect_data` 闭环：edit → actual diff → BDE display → conflict check → revert。
 3. **T5.2**：验证 `disconnect_data` 和 `delete_node`，确认删除的声明体、引用和布局恢复。
 4. **T3.2**：把已验证的连接/删除材料接入回退自身和无关修改保留。

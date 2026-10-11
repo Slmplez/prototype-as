@@ -93,7 +93,7 @@ class NativeStructureAdapter(NativeLiteralAdapter):
     local_field_inverse_capable = False
     field_execution_required = True
 
-    def __init__(self, component, diagram='Main', **options):
+    def __init__(self, component, diagram='Main', connect_reference_targets=None, **options):
         super().__init__(component, **options)
         self.diagram = diagram
         environment = os.environ if self.environment is None else self.environment
@@ -193,6 +193,10 @@ class NativeStructureAdapter(NativeLiteralAdapter):
             raise ValueError('Module inbound references require fixed retained Main connection material')
         self.connect_reference_capture_capable = reference_profile in ('module_inbound_v1', 'module_persistent_v1')
         self.connect_persistent_reference_capture_capable = reference_profile == 'module_persistent_v1'
+        from bd_module_persistent_references import target_requests
+        self.connect_reference_targets = target_requests([] if connect_reference_targets is None else connect_reference_targets)
+        if self.connect_reference_targets and not self.connect_persistent_reference_capture_capable:
+            raise ValueError('Explicit target capture requires fixed persistent Main connection material')
         managed_topology = environment.get('ASCET_BD_MANAGED_TOPOLOGY_INVERSE')
         if managed_topology is not None and managed_topology != 'native_source_v1':
             raise ValueError('Unknown fixed managed topology profile')
@@ -264,8 +268,10 @@ class NativeStructureAdapter(NativeLiteralAdapter):
                 if before.get('targets') != []:
                     raise ValueError('Exact retained connect history requires full Main preparation')
                 from bd_connect_material import validate
-                self.connect_material_prepared = validate(self._exchange({'cmd': 'connect_material',
-                    'action': 'prepare', 'token': token}), token=token, component_oid=domain['oid'],
+                material_request = {'cmd': 'connect_material', 'action': 'prepare', 'token': token}
+                if self.connect_reference_targets:
+                    material_request['persistent_target_keys'] = self.connect_reference_targets.copy()
+                self.connect_material_prepared = validate(self._exchange(material_request), token=token, component_oid=domain['oid'],
                     source=arguments[1], target=arguments[2], phase='prepared')
                 self._check_connect_reference_profile(self.connect_material_prepared)
                 if self.connect_reference_capture_capable and self.connect_material_prepared['module_references']['generation'] != before.get('generation'):
@@ -421,6 +427,12 @@ class NativeStructureAdapter(NativeLiteralAdapter):
             'native_connect_material_v2' if self.connect_reference_capture_capable else 'native_connect_material_v1')
         if material['profile'] != expected:
             raise ValueError('Connect reference coverage differs from the explicit fixed capture profile')
+        if expected == 'native_connect_material_v3':
+            from bd_module_persistent_references import target_requests
+            targets = material['module_persistent_references']['before'].get('requested_reciprocal_targets', [])
+            actual = target_requests([bytes(key).hex() for key in targets])
+            if actual != getattr(self, 'connect_reference_targets', []):
+                raise ValueError('Prepared native target coverage differs from this exact original request')
 
     def prepare_connect_history(self, domain, token, owner, state, result_id):
         if not self.connect_history_capable:

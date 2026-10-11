@@ -1,9 +1,28 @@
 "Finite existing Module/source reference-record observation. No model/store/write
  dispatch and no whole-file census. Read effects on the CTree cursor are not
  restoration proof. This current observation must never replace an old before."
-[:decoder | [:component |
+[:configuration |
+ | decoder requested digits |
+ decoder := configuration. requested := #(). digits := '0123456789abcdef'.
+ configuration isArray ifTrue: [
+   configuration size = 2 ifFalse: [configuration error: 'Exact decoder and bounded target request required'].
+   decoder := configuration first. requested := configuration last.
+   (requested isArray and: [requested size <= 16])
+     ifFalse: [configuration error: 'At most 16 explicit finite target keys required'].
+   requested := (requested collect: [:hex | | key |
+     (hex isString and: [hex size = 40 and: [hex allSatisfy: [:char | digits includes: char]]])
+       ifFalse: [configuration error: 'Exact lowercase 40-hex target key required'].
+     key := ((1 to: 20) collect: [:index |
+       ((digits indexOf: (hex at: index * 2 - 1)) - 1) * 16
+         + ((digits indexOf: (hex at: index * 2)) - 1)]) asArray. key]) asArray.
+   requested asSet size = requested size ifFalse: [configuration error: 'Duplicate explicit finite target key'].
+   requested := (requested asSortedCollection: [:a :b | | index | index := 1.
+     [index <= 20 and: [(a at: index) = (b at: index)]] whileTrue: [index := index + 1].
+     index <= 20 and: [(a at: index) < (b at: index)]]) asArray
+ ].
+ [:component |
  | owner ownerDB diagram source sourceDB backend leaf file slot bytes read rows owners targets
-   ownerKeys total addTarget reciprocal checks complete freshDiagram |
+   ownerKeys total addTarget reciprocal checks complete freshDiagram snapshotResult |
  (component class name asString = 'EtasAPIModuleBDE' and: [component item class name asString = 'SGModule'])
    ifFalse: [component error: 'Exact existing Module BDE required for finite references'].
  owner := component item. ownerDB := owner dbObject. diagram := component getDiagram: 'Main'.
@@ -73,6 +92,7 @@
  owners := OrderedCollection new. targets := OrderedCollection new. ownerKeys := OrderedCollection new.
  addTarget := [:key | (targets includes: key) ifFalse: [
    targets size >= 8192 ifTrue: [component error: 'Finite reciprocal target bound exceeded']. targets add: key copy]].
+ requested do: [:key | addTarget value: key].
  (Array with: ownerDB with: sourceDB) doWithIndex: [:db :index | | key entry outgoing incoming |
    key := db uniqueKeyValue. key size = 20 ifFalse: [component error: 'Exact existing owner key required'].
    (ownerKeys includes: key asArray) ifTrue: [component error: 'Distinct finite reference owners required'].
@@ -117,11 +137,13 @@
    (slot value: sourceDB value: 'interface') == backend and: [
    (slot value: backend value: 'referenceInterface') == leaf and: [(slot value: leaf value: 'ctIFIL') == file]]]]]]]])
    ifFalse: [component error: 'Finite reference owner/source/backend expired during read'].
- Dictionary new at: 'profile' put: 'native_module_persistent_reference_snapshot_v1';
+ snapshotResult := Dictionary new at: 'profile' put: 'native_module_persistent_reference_snapshot_v1';
    at: 'component_oid' put: component getOID; at: 'owners' put: owners asArray;
    at: 'reciprocal_targets' put: targets; at: 'reciprocal_records' put: reciprocal asArray;
    at: 'membership_checks' put: checks asArray; at: 'complete' put: complete;
    at: 'model_setters_called' put: 0; at: 'store_called' put: false; at: 'commit_called' put: false;
    at: 'original_edit_before_bound' put: false; at: 'cross_process_atomic' put: false;
    at: 'full_commit_resource_closure' put: false; at: 'write_authorized' put: false; at: 'inverse_authorized' put: false; yourself
+ . requested isEmpty ifFalse: [snapshotResult at: 'profile' put: 'native_module_persistent_reference_snapshot_v2';
+   at: 'requested_reciprocal_targets' put: (requested collect: [:key | key copy]) asArray]. snapshotResult
 ]]

@@ -1,5 +1,27 @@
 {
-  "current_increment_key": "latest_finite_module_reference_increment",
+  "current_increment_key": "latest_requested_reference_leaf_increment",
+  "latest_requested_reference_leaf_increment": {
+    "source": "analysis/bde-experiments/2026-10-11/bde-reference-leaf-lifecycle-increment-02/result.json",
+    "node": "T3.1",
+    "status": "explicit_original_targets_and_empty_leaf_lifecycle_live_verified_general_inverse_pending",
+    "offline_controls_passed": 167,
+    "requested_target_original_prepare_verified": true,
+    "production_prepare_inspect_discard_verified": true,
+    "python_and_native_write_refusal_verified": true,
+    "existing_raw_record_noop_verified": true,
+    "absent_empty_record_create_delete_verified": true,
+    "independent_fresh_read_confirmations": true,
+    "writer_replayed": false,
+    "capture_attached_verified": false,
+    "nonempty_reference_lifecycle_verified": false,
+    "persistent_reference_inverse_implemented": false,
+    "complete_message_lifecycle_cases_passed": 0,
+    "approved_private_restarts": 1,
+    "normal_business_instance_restarted": false,
+    "old_epoch_pending_retained": true,
+    "full_delivery": false,
+    "next": "Nonempty/resized record lifecycle then finite persistent patch/inverse and T5.1 actual connect closure"
+  },
   "latest_finite_module_reference_increment": {
     "source": "analysis/bde-experiments/2026-10-11/bde-finite-module-reference-increment-02/result.json",
     "status": "finite_original_prepare_live_verified_persistent_executor_pending",

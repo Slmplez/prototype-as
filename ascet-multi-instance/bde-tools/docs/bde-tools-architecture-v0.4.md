@@ -1,5 +1,7 @@
 # BDE tools v0.4：读取、精确编辑、修改记录与原生显示
 
+2026-10-11 原始引用扩展：固定内部 `persistent_target_keys` 仅用于 fresh prepare，最多16个唯一 lowercase40-hex身份键；采集实际 outgoing 与请求目标的原始入站记录/absence，native receipt 冻结确切请求覆盖，inspect/current不能重绑。研究 leaf writer 仅在隔离 Trial 已核对身份、dirty、原始before并fsync后，经parent固定握手执行；跨STORE pending建立在READY之后，unknown保留且不重试。已有record原样写回与原absent空record创建/删除已在线确认；生产v3 apply/revert门仍拒绝，通用非空持久patch/inverse尚缺。
+
 2026-10-07 payload 层：在只读 serializer configuration 回执中加入 source `CTreeSearchObjectRecord` 的完整逻辑/allocated bytes、fixed/blob 长度和 owner key 守卫。该层只导出 retained before payload；禁止把它当成 fresh serialized after 或持久写授权。
 
 [payload 层证据](../analysis/bde-experiments/2026-10-07/bde-serializer-payload-preview-increment-01/README.md)

@@ -31,6 +31,17 @@ class AscetStructureSession
         return AscetStructureRead.ProcessEpoch();
     }
     static string Text(Dictionary<string, object> request, string key) { return (string)request[key]; }
+    static string[] Strings(object value)
+    {
+        var values = value as object[];
+        if (values == null || values.Length > 16) throw new Exception("Bounded explicit string array required");
+        var result = new string[values.Length];
+        for (int i = 0; i < values.Length; ++i) {
+            if (!(values[i] is string)) throw new Exception("Exact explicit target string required");
+            result[i] = (string)values[i];
+        }
+        return result;
+    }
     static object FieldFailureCompensationStatus(Dictionary<string, object> request)
     {
         string failureToken = Text(request, "token"), failureTransaction = Text(request, "transaction"),
@@ -612,6 +623,8 @@ class AscetStructureSession
         string references = Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_REFERENCES") ?? "none";
         if (references != "none" && references != "module_inbound_v1" && references != "module_persistent_v1")
             throw new Exception("Unknown fixed Module inbound reference capture profile");
+        if (request.ContainsKey("persistent_target_keys") && references != "module_persistent_v1")
+            throw new Exception("Explicit targets require fixed persistent reference capture");
         if (!System.Text.RegularExpressions.Regex.IsMatch(token, @"^edit_[0-9a-f]{64}$") ||
                 Array.IndexOf(new [] { "prepare", "inspect_prepared", "capture_attached", "inspect_attached", "inspect_detached", "inspect_original" }, mode) < 0)
             throw new Exception("Exact retained connect token and fixed material action required");
@@ -640,8 +653,22 @@ class AscetStructureSession
             if (references == "module_persistent_v1") {
                 var decoder = fixedCompile("bde_commit_reference_record.st");
                 var persistentFactory = fixedCompile("bde_module_persistent_references.st");
+                string[] targets = request.ContainsKey("persistent_target_keys") ? Strings(request["persistent_target_keys"]) : new string[0];
+                if (targets.Length > 16) throw new Exception("At most 16 explicit finite reference targets required");
+                var seenTargets = new HashSet<string>(StringComparer.Ordinal);
+                foreach (string key in targets) {
+                    if (!System.Text.RegularExpressions.Regex.IsMatch(key, "^[0-9a-f]{40}$") || !seenTargets.Add(key))
+                        throw new Exception("Distinct lowercase 40-hex explicit reference targets required");
+                }
+                Array.Sort(targets, StringComparer.Ordinal);
+                Identifiable persistentConfiguration = decoder;
+                if (targets.Length != 0) {
+                    var configurePersistent = component.createClassMethodCall("Array", "with:with:");
+                    configurePersistent.appendParameter(decoder); configurePersistent.appendParameter(targets); component.call(configurePersistent);
+                    persistentConfiguration = configurePersistent.ResultRemoteObject; blocks.Add(persistentConfiguration);
+                }
                 var bindPersistent = new InstanceMethodCall(persistentFactory, "value:", component);
-                bindPersistent.appendParameter(decoder); component.call(bindPersistent);
+                bindPersistent.appendParameter(persistentConfiguration); component.call(bindPersistent);
                 var persistentReader = bindPersistent.ResultRemoteObject; blocks.Add(persistentReader);
                 var extendPersistent = new InstanceMethodCall(helpers, "copyWith:", component);
                 extendPersistent.appendParameter(persistentReader); component.call(extendPersistent);
@@ -652,7 +679,16 @@ class AscetStructureSession
             var capture = bind.ResultRemoteObject; blocks.Add(capture);
             if (component.getClassName(capture) != "BlockContextTemplate") throw new Exception("Fixed connect material binding failed");
             var call = new InstanceMethodCall(capture, "value:value:", component);
-            call.appendParameter(component); call.appendParameter(new [] { token, mode, references }); component.call(call);
+            call.appendParameter(component);
+            if (request.ContainsKey("persistent_target_keys")) {
+                var materialContext = component.createClassMethodCall("Array", "with:with:with:with:");
+                materialContext.appendParameter(token); materialContext.appendParameter(mode); materialContext.appendParameter(references);
+                var contextTargets = Strings(request["persistent_target_keys"]); Array.Sort(contextTargets, StringComparer.Ordinal);
+                materialContext.appendParameter(contextTargets);
+                component.call(materialContext); var context = materialContext.ResultRemoteObject; blocks.Add(context);
+                call.appendParameter(context);
+            } else call.appendParameter(new [] { token, mode, references });
+            component.call(call);
             string evidence = call.ResultString;
             if (evidence.StartsWith("BDE_", StringComparison.Ordinal)) throw new Exception(evidence);
             return AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(evidence));

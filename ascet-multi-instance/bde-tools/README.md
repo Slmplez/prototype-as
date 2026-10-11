@@ -72,6 +72,19 @@ but the persistent writer/inverse and actual attached capture remain unverified.
 Any raw conflict or missing original target capture suppresses all candidates.
 See `evidence/2026-10-11/finite-module-references/` for results and failures.
 
-The selected portable suite passes 154 tests. It is offline package validation;
-the native preparation evidence is a separate result and not a complete edit
-lifecycle acceptance.
+Fresh v3 preparation can now freeze up to 16 explicit new target identities,
+including original existing records or exact absence. Actual isolated research
+proved an existing record no-op write and absent empty-record create/delete,
+with complete raw equality and fresh independent confirmations. The original
+failed verifier results remain preserved; no writer was replayed for recovery.
+Only one explicitly approved private recovery restart occurred, and old epoch
+pending evidence remains. Production apply/inverse still refuses because
+nonempty/resized references and general durable inverse remain open. See
+`evidence/2026-10-11/requested-reference-leaf-lifecycle/`.
+
+The selected portable suite passes 183 tests, including the new fixed-handshake,
+full raw/absence and zero-leaf refusal controls. Its actual result is saved in
+`portable-controls.log` and `portable-controls-result.json`.
+It is offline package validation, separate from live native evidence and
+complete T0–T9 lifecycle acceptance. The hourly automation is paused; active
+development continues directly in the existing task.

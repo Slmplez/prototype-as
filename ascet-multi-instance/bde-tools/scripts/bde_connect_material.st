@@ -10,10 +10,15 @@
    endpoints edgeRecord retained anchors boundaries detachedGuard answer combinedNativeAfter
    actualValues actualEncoded alias reservations graphicalActual referenceProfile
    referenceRead referenceOwner referenceDBObject referenceBefore referenceAfter referenceReceipt
-   persistentRead persistentBefore persistentAfter persistentReceipt |
- (helpers isArray and: [(#(6 7) includes: helpers size) and: [context isArray and: [context size = 3]]])
+   persistentRead persistentBefore persistentAfter persistentReceipt requestedTargets |
+ (helpers isArray and: [(#(6 7) includes: helpers size) and: [context isArray and: [#(3 4) includes: context size]]])
    ifFalse: [component error: 'Fixed connect material helpers and token/mode required'].
- token := context first. mode := context at: 2. referenceProfile := context last.
+ token := context first. mode := context at: 2. referenceProfile := context at: 3.
+ requestedTargets := context size = 4 ifTrue: [context last] ifFalse: [#()].
+ (requestedTargets isArray and: [requestedTargets size <= 16])
+   ifFalse: [component error: 'Bounded fixed finite reference targets required'].
+ (requestedTargets isEmpty not and: [referenceProfile ~= 'module_persistent_v1'])
+   ifTrue: [component error: 'Explicit target coverage requires persistent reference profile'].
  (#('none' 'module_inbound_v1' 'module_persistent_v1') includes: referenceProfile)
    ifFalse: [component error: 'Unknown fixed Module inbound reference profile'].
  helpers size = (referenceProfile = 'module_persistent_v1' ifTrue: [7] ifFalse: [6])
@@ -98,6 +103,7 @@
      at: 'beforeValues' put: ((root at: 'copyObservation') value: (root at: 'observationValues'));
      at: 'ids' put: (root at: 'ids'); at: 'beforeIds' put: (root at: 'ids') copy;
      at: 'beforeCounter' put: (root at: 'counter');
+     at: 'persistentTargetRequests' put: requestedTargets copy;
      at: 'orderRecord' put: orderRecord; at: 'parentBefore' put: (orderBefore at: 'value');
      at: 'drawingBefore' put: (drawingBefore at: 'value'); at: 'phase' put: 'prepared'; yourself.
    "Retain the material before querying additional resources so a failed
@@ -148,6 +154,8 @@
  sourcePin := material at: 'sourcePin'. targetPin := material at: 'targetPin'.
  (material at: 'moduleReferenceProfile' ifAbsent: ['none']) = referenceProfile
    ifFalse: [component error: 'Original connect reference coverage cannot be rebound'].
+ context size = 4 ifTrue: [requestedTargets = (material at: 'persistentTargetRequests')
+   ifFalse: [component error: 'Original explicit reference target requests cannot be rebound']].
  ((record at: 'source') == (sourcePin at: 'api') and: [(record at: 'target') == (targetPin at: 'api') and: [
    (pinMatches value: sourcePin) and: [pinMatches value: targetPin]]])
    ifFalse: [component error: 'Original connect endpoint identity or geometry changed'].

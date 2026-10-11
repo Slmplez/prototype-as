@@ -1,5 +1,15 @@
 # BDE delivery status, 2026-10-11
 
+最新检查点：**明确新目标的原始引用记录已接入同次生产 prepare；已有记录原样写回，以及 source 原不存在记录的创建/删除/精确恢复均有隔离在线证据**。空记录恢复后全部 13 条有限读取（原始 bytes、未解析尾部及 absence）等于真正 original before，编辑器 dirty=0；独立 fresh read 确认后只清除本次 pending，不重放 leaf writer，不改写原失败 verdict。
+
+最终带请求读取为 2 owners / 11 targets / 15 reads，13 existing + 2 absent，semantic 3,037 bytes / raw 4,473 bytes，membership 不一致为 0。生产 v3 prepare/inspect/discard 与 Python/C# 拒写仍通过，public/native bookends 不变。167 项定向控制通过并保存完整日志；不与历史重叠结果累计。
+
+获用户一次授权后，仅私有 PID40652 恢复重启为 PID56068，epoch `56068/2026-10-11T05:04:48.9951162Z`；正常业务实例未动。旧 epoch pending 和失败材料保留，旧 token 不重绑。每小时自动化保持 PAUSED，当前会话直接推进。
+
+**T3.1、T5.1 和整体交付仍未完成**：当前 leaf 实验不调用 model setter/store/commit/flush，不能证明非空/变长引用、通用持久 inverse、数据库其他关联资源恢复或真实连线闭环。Message 完整生命周期仍 0/60；43 required 不升级。下一节点为非空引用记录创建/变长/删除、完整有限 persistent patch/inverse，再实际 connect → diff → 原 BDE 显示 → 冲突 → revert。
+
+[最新增量及复现](../analysis/bde-experiments/2026-10-11/bde-reference-leaf-lifecycle-increment-02/README.md) · [完整复算结果](../analysis/bde-experiments/2026-10-11/bde-reference-leaf-lifecycle-increment-02/result.json)。以下是历史检查点。
+
 最新增量（2026-10-11）：有限原始引用读取、生产 v3 prepare/inspect/discard、Python 与 C# 拒写守卫在线通过。复用 PID40652 / 32631，未启停 ASCET；两个已有隔离 Module 分别覆盖 2 个 owner、9/10 个 reciprocal targets、13/14 次记录读取，原始尾部字节与 undefined-record absence 都明确保留。v3 将原始记录绑定到本次准备 token，并保留实际 diff/WAL 的入口；原始字节三方逆候选与 journal 绑定完成，138 项相关离线控制通过。候选仍无 native 持久写入执行器，不能算实际连线回退、Message 矩阵或 T0–T9 完成交付。
 
 [本轮证据与复现](../analysis/bde-experiments/2026-10-11/bde-finite-module-reference-increment-02/README.md) · [在线 v3 准备及双层拒写](../analysis/bde-experiments/2026-10-11/bde-finite-connect-preflight-05/result.json)

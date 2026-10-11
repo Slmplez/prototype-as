@@ -43,6 +43,12 @@ def main():
         raise ValueError('Successful complete finite current reference read required')
     native, port, pid = proof['native'], proof['port'], proof['pid']
     component = native['module_read']['component']
+    targets = []
+    if args.persistent_references:
+        from bd_module_persistent_references import validate as validate_finite, target_requests
+        original_snapshot = validate_finite(native['module_read']['persistent_observations'][1],
+            component_oid=native['module_read']['component_oid'])
+        targets = target_requests([bytes(key).hex() for key in original_snapshot.get('requested_reciprocal_targets', [])])
     if not re.fullmatch(r'BDE_Tool_Experiments\\Trial_[A-Za-z0-9_]+', component):
         raise ValueError('Existing isolated Trial Module required')
     if endpoint_process(port) != pid:
@@ -78,6 +84,7 @@ def main():
             with proxy(upstream_port=port) as wire:
                 try:
                     with NativeStructureAdapter(component, timeout=40,
+                            connect_reference_targets=targets,
                             environment=dict(environment, ASCET_BD_PROBE_PORT=str(wire['port']))) as adapter:
                         result['stage'] = 'observe'; save()
                         before = adapter.observe(domain, []); public_before = adapter.observe_public(domain)

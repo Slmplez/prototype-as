@@ -3,12 +3,44 @@ from copy import deepcopy
 import unittest
 
 from bd_finite_reference_inverse import plan
-from test_bd_module_persistent_references import OID, OWNER, SOURCE, TARGET, OTHER, record, absent_record, bound_receipt
+from test_bd_module_persistent_references import OID, OWNER, SOURCE, TARGET, OTHER, record, absent_record, bound_receipt, requested_snapshot
 
 TOKEN = 'edit_' + 'a' * 64
 
 
 class RawFiniteInverseTests(unittest.TestCase):
+    def requested_forward(self, absent=False):
+        proof = bound_receipt('attached', TOKEN); proof['before'] = requested_snapshot(absent=absent)
+        after = deepcopy(proof['before'])
+        after['owners'][0]['records'][0] = record(OWNER, 'owner_references', [TARGET, TARGET, OTHER])
+        after['reciprocal_records'][1] = record(OTHER, 'owner_referenced_by', [OTHER, OWNER])
+        after['membership_checks'][2].update(outgoing_member=True, inbound_owner_count=1)
+        proof['after'] = after
+        return proof
+
+    def test_new_outgoing_target_uses_its_real_original_requested_record(self):
+        proof = self.requested_forward()
+        result = plan(proof, proof['after'], token=TOKEN, component_oid=OID, generation=108)
+        self.assertEqual(result['status'], 'planned_only'); self.assertEqual(len(result['patches']), 2)
+        self.assertEqual(result['unsupported'], [])
+        self.assertEqual(result['patches'][1]['candidate'], proof['before']['reciprocal_records'][1])
+        self.assertIs(result['write_authorized'], False)
+
+    def test_exact_absence_before_new_reference_retains_lifecycle_gap(self):
+        proof = self.requested_forward(absent=True)
+        result = plan(proof, proof['after'], token=TOKEN, component_oid=OID, generation=108)
+        self.assertEqual(result['status'], 'unsupported'); self.assertEqual(result['patches'], [])
+        self.assertEqual(result['unsupported'][0]['reason'], 'absent_record_lifecycle_executor_unverified')
+
+    def test_current_must_reobserve_original_explicit_target(self):
+        proof = bound_receipt('attached', TOKEN); proof['before'] = requested_snapshot()
+        proof['after'] = deepcopy(proof['before']); current = deepcopy(proof['after'])
+        current['profile'] = 'native_module_persistent_reference_snapshot_v1'
+        current.pop('requested_reciprocal_targets'); current['reciprocal_targets'].pop()
+        current['reciprocal_records'].pop(); current['membership_checks'] = current['membership_checks'][:2]
+        with self.assertRaisesRegex(ValueError, 'omitted'):
+            plan(proof, current, token=TOKEN, component_oid=OID, generation=108)
+
     def test_raw_tail_inverse_preserves_unrelated_current_byte_change(self):
         proof = bound_receipt('attached', TOKEN); current = deepcopy(proof['after'])
         current['reciprocal_records'][0]['allocated_bytes'][-2] ^= 2

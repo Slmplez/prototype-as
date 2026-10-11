@@ -1,3 +1,13 @@
+## 2026-10-11 Explicit target originals and reference leaf lifecycle
+
+明确新目标键（最多16个唯一20-byte键）进入同次 production prepare，读取原 outgoing targets 与请求 targets 的 union，保留 existing raw 和 CTError101 exact absence。最终生产 prepare/inspect/discard、公开/原生全图 bookends 与 Python/C# 双拒写通过。最终有限观察15条，semantic3,037 / raw4,473 bytes，无 membership 不一致。
+
+已有 Module DBReferenceList 原样写回实测1次，随后独立原始字节/fresh read 确认；source 原 absent DBReferenceList 则实际创建64-byte empty record并精确删除，各1次leaf调用，恢复完整原 before、dirty0。delete 返回 SmallInteger，既有 write 返回 CTSpaceCheckingIFil；原校验器错误的 failed verdict 保留，confirm native_calls=0、writer_replayed=false。零写拒绝实验由终止native回复和两个0计数确认，未重放。
+
+私有故障后获用户一次恢复重启授权；正常业务实例未动，旧 epoch pending 未清除，旧 token 未重绑。不存在/prepare/stdout preamble/返回类型/测试cwd等失败材料保留。最终167相关离线控制及源码/证据hash冻结通过；该结果不授予生产连线或持久inverse权限、不升级43required。非空/变长记录、通用恢复和T5.1实际闭环继续开发。
+
+[最新复算与命令](../analysis/bde-experiments/2026-10-11/bde-reference-leaf-lifecycle-increment-02/README.md)。以下是历史检查点。
+
 ## 2026-10-11 Module reference runtime preflight and semantic inverse
 
 复用现有 PID40652 / port32631，未启停 ASCET。五个固定模板实际编译通过；共享引用读取器在多个隔离 Module 上两次观察一致，严格区分 database-record 和 loaded/merged 入站列表。三方语义逆候选及 journal 绑定完成，87 项相关离线测试通过；候选保留无关修改，拒绝重叠引用或缺失原 before，始终不授权持久 inverse。

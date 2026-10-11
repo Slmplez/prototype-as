@@ -6,6 +6,7 @@ import hashlib
 from bd_persistent_references import decode
 
 PROFILE = 'native_module_persistent_reference_snapshot_v1'
+REQUESTED_PROFILE = 'native_module_persistent_reference_snapshot_v2'
 KEYS = frozenset(('profile component_oid owners reciprocal_targets reciprocal_records '
     'membership_checks complete model_setters_called store_called commit_called '
     'original_edit_before_bound cross_process_atomic full_commit_resource_closure '
@@ -19,6 +20,15 @@ def _key(value):
             or any(type(byte) is not int or not 0 <= byte <= 255 for byte in value)):
         raise ValueError('Exact finite 20-byte reference key required')
     return tuple(value)
+
+
+def target_requests(value):
+    """Canonical explicit finite keys. These are identity inputs, never before images."""
+    if (not isinstance(value, list) or len(value) > 16
+            or any(not isinstance(key, str) or re.fullmatch(r'[0-9a-f]{40}', key) is None for key in value)
+            or len(set(value)) != len(value)):
+        raise ValueError('At most 16 distinct exact lowercase 40-hex finite target keys required')
+    return sorted(value)
 
 
 def _record(row, key, role):
@@ -65,7 +75,9 @@ def validate(value, *, component_oid, require_complete=True):
     resource closure. Missing/failed records are retained by the native probe
     but do not pass this complete snapshot contract.
     """
-    if (not isinstance(value, dict) or set(value) != KEYS or value['profile'] != PROFILE
+    requested_profile = isinstance(value, dict) and value.get('profile') == REQUESTED_PROFILE
+    required_keys = KEYS | {'requested_reciprocal_targets'} if requested_profile else KEYS
+    if (not isinstance(value, dict) or set(value) != required_keys or value['profile'] not in (PROFILE, REQUESTED_PROFILE)
             or not isinstance(component_oid, str) or not component_oid
             or value['component_oid'] != component_oid or type(value['complete']) is not bool
             or type(value['model_setters_called']) is not int or value['model_setters_called'] != 0
@@ -92,7 +104,13 @@ def validate(value, *, component_oid, require_complete=True):
         for expected_role, row in zip(('owner_references', 'owner_referenced_by'), owner['records']):
             parsed = _record(row, key, expected_role)
             (outgoing if expected_role == 'owner_references' else inbound)[key] = parsed
-    expected_targets = sorted({tuple(entry['global_id'])
+    requested = value.get('requested_reciprocal_targets', [])
+    if (not isinstance(requested, list) or len(requested) > 16 or (requested_profile and not requested)):
+        raise ValueError('Nonempty bounded explicit target requests required for v2')
+    requested_keys = [_key(key) for key in requested]
+    if requested_keys != sorted(set(requested_keys)):
+        raise ValueError('Exact sorted distinct explicit target keys required')
+    expected_targets = sorted(set(requested_keys) | {tuple(entry['global_id'])
         for parsed in outgoing.values() if parsed is not None for entry in parsed.get('entries', [])})
     targets, records = value['reciprocal_targets'], value['reciprocal_records']
     if (not isinstance(targets, list) or len(targets) > 8192
@@ -170,6 +188,8 @@ def validate_receipt(value, *, token, component_oid, generation, phase):
             raise ValueError('Prepared finite references cannot invent an after image')
     else:
         validate(value['after'], component_oid=component_oid)
+        if value['before'].get('requested_reciprocal_targets', []) != value['after'].get('requested_reciprocal_targets', []):
+            raise ValueError('Finite after cannot rebind original requested target coverage')
         if [(o['role'], o['oid'], o['key']) for o in value['before']['owners']] != [
                 (o['role'], o['oid'], o['key']) for o in value['after']['owners']]:
             raise ValueError('Finite after image replaced an original Module/source identity')

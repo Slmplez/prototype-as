@@ -16,7 +16,8 @@ class AscetConnectCompileProbe
     static readonly string[] Templates = {
         "bde_connect_material.st", "bde_structure_stage_guard.st", "bde_connect_history.st",
         "bde_module_reference_snapshot.st", "bde_module_reference_probe.st",
-        "bde_commit_reference_record.st", "bde_module_persistent_references.st", "bde_value_probe.st"
+        "bde_commit_reference_record.st", "bde_module_persistent_references.st", "bde_value_probe.st",
+        "bde_reference_leaf_noop.st", "bde_detached_value_reader.st", "bde_reference_leaf_lifecycle.st"
     };
 
     static object ListTrialModules(AscetDataBase database)
@@ -36,7 +37,7 @@ class AscetConnectCompileProbe
         }
     }
 
-    static object ReadReferences(AscetDataBase database, string path, bool persistent)
+    static object ReadReferences(AscetDataBase database, string path, bool persistent, string[] targets)
     {
         path = path.Trim('\\'); int slash = path.LastIndexOf('\\');
         if (slash < 1 || slash == path.Length - 1 || path.Contains(".."))
@@ -68,8 +69,14 @@ class AscetConnectCompileProbe
             if (persistent) {
                 var decoder = AscetStructureRead.Compile(component, "bde_commit_reference_record.st"); blocks.Add(decoder);
                 var persistentFactory = AscetStructureRead.Compile(component, "bde_module_persistent_references.st"); blocks.Add(persistentFactory);
+                Identifiable configuration = decoder;
+                if (targets.Length != 0) {
+                    var configure = component.createClassMethodCall("Array", "with:with:");
+                    configure.appendParameter(decoder); configure.appendParameter(targets); component.call(configure);
+                    configuration = configure.ResultRemoteObject; blocks.Add(configuration);
+                }
                 var bindPersistent = new InstanceMethodCall(persistentFactory, "value:", component);
-                bindPersistent.appendParameter(decoder); component.call(bindPersistent);
+                bindPersistent.appendParameter(configuration); component.call(bindPersistent);
                 var persistentReader = bindPersistent.ResultRemoteObject; blocks.Add(persistentReader);
                 var serializer = AscetStructureRead.Compile(component, "bde_value_probe.st"); blocks.Add(serializer);
                 var bindSerializer = new InstanceMethodCall(serializer, "value:", component);
@@ -100,10 +107,17 @@ class AscetConnectCompileProbe
     static int Main(string[] args)
     {
         int expectedPid;
-        if ((args.Length < 2 || args.Length > 4) || !Int32.TryParse(args[0], out expectedPid)
+        if ((args.Length < 2 || args.Length > 5) || !Int32.TryParse(args[0], out expectedPid)
                 || expectedPid < 1 || File.Exists(args[1])) return 2;
-        bool persistent = args.Length == 4 && args[3] == "--persistent-references";
-        if (args.Length == 4 && (!persistent || args[2] == "--list-trials")) return 2;
+        bool persistent = args.Length >= 4 && args[3] == "--persistent-references";
+        if (args.Length >= 4 && (!persistent || args[2] == "--list-trials")) return 2;
+        string[] targets = args.Length == 5 ? args[4].Split(',') : new string[0];
+        if (targets.Length > 16) return 2;
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+        foreach (string key in targets) {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(key, "^[0-9a-f]{40}$") || !seen.Add(key)) return 2;
+        }
+        Array.Sort(targets, StringComparer.Ordinal);
         var result = new Dictionary<string, object> {
             { "profile", "bde_connect_fixed_compile_probe_v1" }, { "passed", false },
             { "model_setters_called", 0 }, { "store_called", false },
@@ -150,7 +164,7 @@ class AscetConnectCompileProbe
             }
             if (args.Length >= 3) {
                 if (args[2] == "--list-trials") result["trial_modules"] = ListTrialModules(database);
-                else result["module_read"] = ReadReferences(database, args[2], persistent);
+                else result["module_read"] = ReadReferences(database, args[2], persistent, targets);
             }
             var current = ascet.GetCurrentDataBase();
             try {

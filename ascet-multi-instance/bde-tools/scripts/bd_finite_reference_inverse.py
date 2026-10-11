@@ -35,6 +35,9 @@ def _payload(row):
 def plan(receipt, current, *, token, component_oid, generation):
     receipt = validate_receipt(receipt, token=token, component_oid=component_oid, generation=generation, phase='attached')
     current = validate(current, component_oid=component_oid)
+    required_targets = receipt['before'].get('requested_reciprocal_targets', [])
+    if not all(target in current['reciprocal_targets'] for target in required_targets):
+        raise ValueError('Current finite inverse omitted an original explicitly requested target')
     original_owners = [(row['role'], row['oid'], row['key']) for row in receipt['before']['owners']]
     if [(row['role'], row['oid'], row['key']) for row in current['owners']] != original_owners:
         raise ValueError('Current finite inverse replaced an original Module/source owner')
