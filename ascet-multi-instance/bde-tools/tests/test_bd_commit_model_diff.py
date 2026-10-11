@@ -106,6 +106,8 @@ class CommitModelDiffTests(unittest.TestCase):
 
     def test_fixed_before_and_current_class_profiles_match(self):
         root=Path(__file__).parent
+        if not (root/'bde_commit_registered_models.st').is_file():
+            root=root.parent/'scripts'
         a=(root/'bde_commit_registered_models.st').read_text();b=(root/'bde_commit_registered_models_current.st').read_text()
         for name in ('rootClasses','fieldClasses','collectionClasses'):
             self.assertEqual(re.findall(r"'([^']*)'",re.search(name+r' := #\((.*?)\)\.',a,re.S).group(1)),

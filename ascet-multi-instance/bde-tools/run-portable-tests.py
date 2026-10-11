@@ -6,6 +6,8 @@ import unittest
 ROOT = Path(__file__).resolve().parent
 sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tests')]
 MODULES = (
+    'test_bde_registered_model_patch_study', 'test_bd_commit_model_diff', 'test_bd_commit_model_images',
+    'test_bd_field_inverse', 'test_bd_parent_order_inverse',
     'test_bde_connect_runtime_study', 'test_bde_connect_runtime_confirm', 'test_bd_commit_owner_current',
     'test_bd_connect_owner_inverse', 'test_bd_connect_owner_records',
     'test_bde_private_layout_probe', 'test_bde_source_payload_probe',

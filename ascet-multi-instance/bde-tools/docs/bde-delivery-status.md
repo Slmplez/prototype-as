@@ -1,5 +1,8 @@
 # BDE delivery status, 2026-10-11
 
+2026-10-11 本轮补齐 SG 三段快照到原生精确 patch 的适配。真实 v6 原材料只读预检 271/271 对象、0候选；六类新分配测试对象完成 undo/redo/再次undo（各7原语），保留无关字段/键/成员/顺序插入；触碰冲突0原语拒绝，5项原生材料拒绝通过。44项定向离线控制通过，1,026源码冻结、4,092归档hash核对。初始共享成员重排失败保持拒绝；这不是已注册模型/Store/持久回退验收。Message0/60、43required、T3.1/T5.1、full_delivery=false保持；未启停ASCET。[合同](bde-registered-model-patch.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-registered-model-patch-increment-02/README.md)。
+
+
 最新接入：v6 CURRENT owner完整查询与正式`bd_inspect`/WAL/离线`bd_diff`/history已在线通过。两类owner/六条记录完整双读原字节相同；8处CTree读取效应保留。真实prepare-only WAL拒写，正式7页diff与独立复算相同、零native帧。完整新准备包含12 SG根/271图像及16,017条引用基线；首次函数地址字节变化导致的严格守卫失败保留，未放宽守卫，使用独立新token重新准备通过。53项离线controls从1,019冻结源码通过、5,073归档hash核对。仍无Store/Commit/生产inverse，整体T3.1/T5.1、Message0/60、43required/full_delivery=false保持；未启停ASCET。[合同](bde-commit-owner-current.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-commit-owner-current-increment-01/README.md)。
 
 当前新增在线通过：隔离 Module/Main 实际连线→删除→原生字段恢复，捕获3处既有图形变化、12个新增对象、2个恢复原语。完整公开/原生bookends精确相同；新连接完整owner/reference双读确认原状态，本次pending已清。9项控制从139冻结源码通过，2,082归档hash核对。**此实验无Store/Commit，只闭合内存图形恢复**；生产持久连线/逆门仍关闭，Message0/60、T3.1/T5.1、43 required及整体交付未升级。接续完整Store资源准备在引用文件census阶段明确失败，未派发编辑，原始失败材料保留并继续诊断；没有新启停ASCET。[内存闭环证据](../analysis/bde-experiments/2026-10-11/bde-connect-runtime-increment-01/README.md)。

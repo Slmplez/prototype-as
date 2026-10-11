@@ -1,5 +1,8 @@
 ## 2026-10-11 Finite native patch executor
 
+2026-10-11 本轮补齐 SG 三段快照到原生精确 patch 的适配。真实 v6 原材料只读预检 271/271 对象、0候选；六类新分配测试对象完成 undo/redo/再次undo（各7原语），保留无关字段/键/成员/顺序插入；触碰冲突0原语拒绝，5项原生材料拒绝通过。44项定向离线控制通过，1,026源码冻结、4,092归档hash核对。初始共享成员重排失败保持拒绝；这不是已注册模型/Store/持久回退验收。Message0/60、43required、T3.1/T5.1、full_delivery=false保持；未启停ASCET。[合同](bde-registered-model-patch.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-registered-model-patch-increment-02/README.md)。
+
+
 最新v6 CURRENT增量：完整原owner/current六条记录、原token/身份绑定及实际diff进入正式WAL；生产`bd_inspect`→7页离线`bd_diff`和history在线通过，离线帧数0。原记录字节相同，8处CTree fixedRecord读取效应未隐藏。53项离线controls、1,019冻结源码、5,073归档hash通过。首次完整census的函数地址守卫失败与C#编译失败保留；未放宽native guard、不重放旧准备、未启停。Store/model/cache/持久inverse和完整交付仍未完成。[本轮证据](../analysis/bde-experiments/2026-10-11/bde-commit-owner-current-increment-01/README.md) · [合同](bde-commit-owner-current.md)。
 
 当前内存闭环：真实connect/remove、3处existing变化、12个new objects、2个native restore primitives及完整公共/原生bookends通过；独立新连接完整owner/reference双读确认原状态，pending经零native确认清除。9个离线controls从139冻结源码通过，2,082归档hash核对。没有Store/Commit/persistent writer，不称为持久连线或生产inverse验收；Message0/60、43 required/T3.1/T5.1/full_delivery=false保持。Store前完整资源准备的引用文件census失败仍待诊断，未写模型、不重启、不重放。见[可复现证据](../analysis/bde-experiments/2026-10-11/bde-connect-runtime-increment-01/README.md)。

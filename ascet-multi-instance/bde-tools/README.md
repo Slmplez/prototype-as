@@ -1,5 +1,7 @@
 # ASCET BDE Agent Tools
 
+Latest registered SG prerequisite: strict three-part snapshot adapter, actual private undo/redo/second undo (7 primitives each), conflict refusal and unrelated-change preservation; real v6 retained 271-object preflight with zero candidate cells. No registered-model edit, Store, cache restoration or persistent inverse acceptance. Shared-member reorder remains unsupported. See docs/bde-registered-model-patch.md and evidence/2026-10-11/registered-model-patch/. Full delivery remains false.
+
 Latest verified increments: actual isolated memory connect/remove/restoration
 without Store, and v6 CURRENT owners bound to original material in production
 inspection WAL, seven-page offline diff and history. Full raw records remain

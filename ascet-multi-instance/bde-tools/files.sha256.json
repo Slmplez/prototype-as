@@ -134,13 +134,13 @@
     },
     {
       "path": "docs/bde-core-function-workboard.json",
-      "bytes": 215765,
-      "sha256": "429d3d4fabf41dcf5c5b8b23ae4ae010856fc6c9a60bdb678b65461db9e19c64"
+      "bytes": 217050,
+      "sha256": "1759b5f832f1b6877b527a6cacedd9101f4f3c7608944c313f9b0f7c4386d834"
     },
     {
       "path": "docs/bde-delivery-status.md",
-      "bytes": 169415,
-      "sha256": "1c50dda433b4c9757d56bd5af138b136170bc102e351fafbcfb92d78421fc987"
+      "bytes": 170131,
+      "sha256": "a340077d3a9547033efe0840e0ad8a26e62cd44dc88a77748fb1f4cf8b6fb124"
     },
     {
       "path": "docs/bde-detached-graphical-material.md",
@@ -298,6 +298,11 @@
       "sha256": "783943f874195ea6a37440e86eac689d2647c7f26b3d1dad5af3946c9b0a6954"
     },
     {
+      "path": "docs/bde-registered-model-patch.md",
+      "bytes": 3515,
+      "sha256": "51824a9a3f4e126ae844f1b706a284fd3321e2a56b4ca4460e36e8d9be08bd7b"
+    },
+    {
       "path": "docs/bde-retained-layout-recovery.md",
       "bytes": 3174,
       "sha256": "0986712aede23a077244c97f24e67fd69e2b0e8cc2debf141390f1ee89d222df"
@@ -359,8 +364,8 @@
     },
     {
       "path": "docs/bde-tools-experiment-report.md",
-      "bytes": 512896,
-      "sha256": "a287ba19645ddb58f0b885c490635c41ec75e33d68293e541c169bb9245d4457"
+      "bytes": 513612,
+      "sha256": "3d684f6f36ab6fb75d4655741949913b52cdc7506f275eee595c8de765e43d3b"
     },
     {
       "path": "docs/bde-tools-task-nodes-v1.md",
@@ -953,6 +958,26 @@
       "sha256": "3f1e752f2e5ba867f21f4bcb14d8db02b5a29c2ef73740b8e42ea60714642918"
     },
     {
+      "path": "evidence/2026-10-11/registered-model-patch/controls.log",
+      "bytes": 7335,
+      "sha256": "70ef0c48b8134f28bfad36fbd950de06a44ad4db056f9f4a5b99a59812b0d89c"
+    },
+    {
+      "path": "evidence/2026-10-11/registered-model-patch/failed-portable-controls.log",
+      "bytes": 69122,
+      "sha256": "0f70f8ff1debd694d9e7fb750374b689c4b0c14028ca20a2ba145ff415345f60"
+    },
+    {
+      "path": "evidence/2026-10-11/registered-model-patch/README.md",
+      "bytes": 1498,
+      "sha256": "788aa907cfd42f914b1d177b05d9b0745a59852011836230ff68b389cb76fbff"
+    },
+    {
+      "path": "evidence/2026-10-11/registered-model-patch/result.json",
+      "bytes": 115718,
+      "sha256": "e47318a5896d9aee184ce7f8213cb7169f299d66963506dc58e6ebd4cdaa8150"
+    },
+    {
       "path": "evidence/2026-10-11/requested-reference-leaf-lifecycle/controls.log",
       "bytes": 30691,
       "sha256": "98a3ef646ac44c1e4a6a9583da916ec75d6eb7a66ad6d78c08a357d5e5c0e86f"
@@ -969,28 +994,28 @@
     },
     {
       "path": "manifest.json",
-      "bytes": 1809,
-      "sha256": "f867ebd8fbda924ca60ab0a1d7254a8223cf7c38a599fac6a964de0fa4ee0ee9"
+      "bytes": 2035,
+      "sha256": "11392d4bbbcd0e935a8694c9ad6b25c0763bb682b416490dd5e789f4455952d1"
     },
     {
       "path": "portable-controls-result.json",
       "bytes": 222,
-      "sha256": "22b6dd4f2d0b4433d29142f7799f2d12178315d45804cd43d5201228bc504ad4"
+      "sha256": "786064fc051bed15bf0f20dc6e6b59a7070eacc15872b9457d5b15881717474b"
     },
     {
       "path": "portable-controls.log",
-      "bytes": 60599,
-      "sha256": "0844579a61a98b21204e853af3b479275f97b251a16a9a5a4a893f26fdd860a1"
+      "bytes": 67830,
+      "sha256": "98990617f7b6b7a139ceb2a53342787e0cb9d2cfa9262abc5c12ea5bb5b76705"
     },
     {
       "path": "README.md",
-      "bytes": 8847,
-      "sha256": "e40afca2a950f6f0aeb53bb45b95361e9d5475ea01eddbeebbe1b9e5ee4c4cd7"
+      "bytes": 9341,
+      "sha256": "9c4930ffb49430924c6fc843c5531a0d15fe91a43e5ad2d36f37d9304f7c08e2"
     },
     {
       "path": "run-portable-tests.py",
-      "bytes": 1890,
-      "sha256": "5b926717e7a348a5125acff1cc002ad6783fe1f72822966adb2760d07672d12b"
+      "bytes": 2058,
+      "sha256": "c4478d6ec2a3ede4a9f9f8cb21ab891237c33a571cdbebf5e679d8eb51f21195"
     },
     {
       "path": "scripts/AscetBatchFormatProbe.cs",
@@ -1264,8 +1289,8 @@
     },
     {
       "path": "scripts/AscetStructureSession.cs",
-      "bytes": 274956,
-      "sha256": "9f5724e6ec25f6adb8eb95f653916c4dec2f005dbbf9c1d594770b1392dd22dc"
+      "bytes": 279284,
+      "sha256": "c556e63fb996a082718b7e2264ce8a1d56a9b1a31a84c7993713d845b90c32e8"
     },
     {
       "path": "scripts/bd_array_values.py",
@@ -1769,8 +1794,8 @@
     },
     {
       "path": "scripts/bd_native_structure.py",
-      "bytes": 54730,
-      "sha256": "819ace435803575b7861a0fc05aee04a064eb5d86c01120af45a330648e32cc2"
+      "bytes": 54914,
+      "sha256": "5c47471377f7afc8a38fe6c50a3681b589802393552327adf14a6a141a6437e3"
     },
     {
       "path": "scripts/bd_parent_order_effects.py",
@@ -3614,8 +3639,8 @@
     },
     {
       "path": "scripts/bde_main_workflow.py",
-      "bytes": 23993,
-      "sha256": "809f9ffd5d10edbb0f6f346f1fb78b0fe242496cd82ae382e4bc0cd7e4c82a6f"
+      "bytes": 24123,
+      "sha256": "afab503ee02aecc55ccb90321d30f3b445053f6f63f8d9ddf2d5927d5ffb469e"
     },
     {
       "path": "scripts/bde_main_workflow_witness.st",
@@ -4253,6 +4278,36 @@
       "sha256": "1a5571d40e0369c23d85241253f58ebb1f129889f03b07e1c5059db5725509ef"
     },
     {
+      "path": "scripts/bde_registered_model_patch.st",
+      "bytes": 3577,
+      "sha256": "c73ae49ab4ec570bd3446f3953647589a95709129c5a5177a895cb1af08c82d5"
+    },
+    {
+      "path": "scripts/bde_registered_model_patch_fixture.json",
+      "bytes": 16350,
+      "sha256": "4ddf44bc8bb38629bd45b4ab8f73b1bfec8f0c52fd75387d645fe56a91c5c4af"
+    },
+    {
+      "path": "scripts/bde_registered_model_patch_increment.py",
+      "bytes": 6978,
+      "sha256": "a3aaf497accd75a53da58f98d33e3c4d687df7255e5170ee77bf78739d3c6527"
+    },
+    {
+      "path": "scripts/bde_registered_model_patch_preflight.st",
+      "bytes": 2974,
+      "sha256": "47bd0ebd00ccec21bb5be1529055f5c57ce8fcab8d5352b747f352e626532b21"
+    },
+    {
+      "path": "scripts/bde_registered_model_patch_private.st",
+      "bytes": 10102,
+      "sha256": "5861eb30737cb640440063f683df796e800f787d5ccc5e838ba57ed327bb550d"
+    },
+    {
+      "path": "scripts/bde_registered_model_patch_study.py",
+      "bytes": 14724,
+      "sha256": "95f31e530c75662b7e43fff9c7b40e382704485f966c4c037f1ee0e6d74227d5"
+    },
+    {
       "path": "scripts/bde_rejection_recovery_experiment.py",
       "bytes": 7026,
       "sha256": "8a7463c81814fbecd5ff618a6ba5004783ca91716b6d4a13af926ab87aa83785"
@@ -4848,6 +4903,11 @@
       "sha256": "628cb39dcc6e8df1027b9de6b578cdde90d91bc27901db13af04e62db83d933e"
     },
     {
+      "path": "tests/bde_registered_model_patch_fixture.json",
+      "bytes": 16350,
+      "sha256": "4ddf44bc8bb38629bd45b4ab8f73b1bfec8f0c52fd75387d645fe56a91c5c4af"
+    },
+    {
       "path": "tests/bde_write_contract_cases.json",
       "bytes": 89505,
       "sha256": "9eaa420745aaa0f6b59812a0b8a7013dff6e0240df28bb79c6650f3d10c9e4e3"
@@ -5069,8 +5129,8 @@
     },
     {
       "path": "tests/test_bd_commit_model_diff.py",
-      "bytes": 8280,
-      "sha256": "fa812a7a71ef694fd7959e5532bf8ad2f10160bbbf3d6081d6e872419832843f"
+      "bytes": 8386,
+      "sha256": "4257b8d862b16424ae6c9f4c52c4d7a5c5977ddc26931adbbc639c0f8b47b36c"
     },
     {
       "path": "tests/test_bd_commit_model_images.py",
@@ -5946,6 +6006,11 @@
       "path": "tests/test_bde_reference_leaf_noop_probe.py",
       "bytes": 4956,
       "sha256": "bcb4b6d1423c7206b558e823168917fdd987ad55d033277f71c703767d00b94e"
+    },
+    {
+      "path": "tests/test_bde_registered_model_patch_study.py",
+      "bytes": 2310,
+      "sha256": "298d9a3fefb7f4eb378818a27932b27a5523b8081ded22bbb7a1b6b8cc4a760a"
     },
     {
       "path": "tests/test_bde_retained_delete_restoration.py",

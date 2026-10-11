@@ -961,6 +961,46 @@ class AscetStructureSession
             }
         }
     }
+    static object RegisteredModelPatch(Dictionary<string, object> request, bool privateControl) {
+        string modelPatchToken = privateControl ? "" : Text(request, "token");
+        if (diagram != "Main" || !path.TrimStart('\\').StartsWith("BDE_Tool_Experiments\\Trial_", StringComparison.Ordinal)
+                || Environment.GetEnvironmentVariable("ASCET_BD_REGISTERED_MODEL_PATCH_STUDY") != "isolated_v1"
+                || (!privateControl && !System.Text.RegularExpressions.Regex.IsMatch(modelPatchToken, @"^edit_[0-9a-f]{64}$")))
+            throw new Exception("Fixed isolated registered-model patch study required; no production inverse");
+        var modelPatchBlocks = new List<Identifiable>(); bool modelPatchKnown = true;
+        try {
+            var modelPatchOrder = AscetStructureRead.Compile(component, "bde_native_collection_merge.st"); modelPatchBlocks.Add(modelPatchOrder);
+            var modelPatchFieldFactory = AscetStructureRead.Compile(component, "bde_native_field_patch.st"); modelPatchBlocks.Add(modelPatchFieldFactory);
+            var modelPatchFieldBind = new InstanceMethodCall(modelPatchFieldFactory, "value:", component);
+            modelPatchFieldBind.appendParameter(modelPatchOrder); component.call(modelPatchFieldBind);
+            var modelPatchFields = modelPatchFieldBind.ResultRemoteObject; modelPatchBlocks.Add(modelPatchFields);
+            var modelPatchFactory = AscetStructureRead.Compile(component, "bde_registered_model_patch.st"); modelPatchBlocks.Add(modelPatchFactory);
+            var modelPatchBind = new InstanceMethodCall(modelPatchFactory, "value:", component);
+            modelPatchBind.appendParameter(modelPatchFields); component.call(modelPatchBind);
+            var modelPatchPlanner = modelPatchBind.ResultRemoteObject; modelPatchBlocks.Add(modelPatchPlanner);
+            var modelPatchCurrent = AscetStructureRead.Compile(component, "bde_commit_registered_models_current.st"); modelPatchBlocks.Add(modelPatchCurrent);
+            var modelPatchHelpersCall = component.createClassMethodCall("Array", "with:with:");
+            modelPatchHelpersCall.appendParameter(modelPatchCurrent); modelPatchHelpersCall.appendParameter(modelPatchPlanner);
+            component.call(modelPatchHelpersCall); var modelPatchHelpers = modelPatchHelpersCall.ResultRemoteObject; modelPatchBlocks.Add(modelPatchHelpers);
+            var modelPatchStudyFactory = AscetStructureRead.Compile(component, privateControl ? "bde_registered_model_patch_private.st" : "bde_registered_model_patch_preflight.st");
+            modelPatchBlocks.Add(modelPatchStudyFactory);
+            var modelPatchStudyBind = new InstanceMethodCall(modelPatchStudyFactory, "value:", component);
+            modelPatchStudyBind.appendParameter(modelPatchHelpers); component.call(modelPatchStudyBind);
+            var modelPatchStudy = modelPatchStudyBind.ResultRemoteObject; modelPatchBlocks.Add(modelPatchStudy);
+            var modelPatchCall = new InstanceMethodCall(modelPatchStudy, privateControl ? "value:" : "value:value:", component);
+            modelPatchCall.appendParameter(component); if (!privateControl) modelPatchCall.appendParameter(modelPatchToken);
+            modelPatchKnown = false; component.call(modelPatchCall); string modelPatchEncoded = modelPatchCall.ResultString;
+            if (String.IsNullOrEmpty(modelPatchEncoded)) throw new Exception("Unknown registered-model study; preserve materials without replay");
+            modelPatchKnown = true;
+            if (modelPatchEncoded.StartsWith("BDE_", StringComparison.Ordinal)) throw new Exception(modelPatchEncoded);
+            return AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(modelPatchEncoded));
+        } finally {
+            if (modelPatchKnown) for (int i = modelPatchBlocks.Count - 1; i >= 0; --i) {
+                var modelPatchRelease = component.createControlMessageCall("destroyObjectForId:");
+                modelPatchRelease.appendParameter(modelPatchBlocks[i].getIdentifier()); component.call(modelPatchRelease); modelPatchRelease.getResultVoid();
+            }
+        }
+    }
     static object CommitModelsDiffPrivate() {
             if (diagram != "Main" || !path.TrimStart('\\').StartsWith("BDE_Tool_Experiments\\Trial_", StringComparison.Ordinal))
                 throw new Exception("Fixed isolated private SG diff context required");
@@ -1466,6 +1506,8 @@ class AscetStructureSession
         if (command == "create_finalize_compile") return CreateHistory(request, true, true);
         if (command == "create_finalize") return CreateHistory(request, false, true);
 #if BDE_MAIN_WORKFLOW_EVAL
+        if (command == "registered_model_patch_preflight") return RegisteredModelPatch(request, false);
+        if (command == "registered_model_patch_private") return RegisteredModelPatch(request, true);
         if (command == "message_before_study") return MessageBeforeStudy(request);
         if (command == "commit_models_diff_private") return CommitModelsDiffPrivate();
         if (command == "commit_control_diff_private") return CommitControlDiffPrivate(request);
