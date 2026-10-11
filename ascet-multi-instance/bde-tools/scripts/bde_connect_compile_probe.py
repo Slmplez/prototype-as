@@ -25,7 +25,8 @@ SOURCES = ('AscetConnectCompileProbe.cs', 'AscetStructureRead.cs',
     'bde_connect_preparation_guard_probe.st', 'bde_finite_reference_patch.st', 'bde_finite_reference_patch_probe.st',
     'bde_finite_reference_patch_guard_probe.st', 'bd_finite_reference_patch.py', 'bd_finite_reference_inverse.py',
     'bd_edit_journal.py', 'bde_persistent_owner_records.st', 'bde_persistent_owner_noop.st', 'bd_persistent_owner_records.py',
-    'bde_persistent_owner_patch.st', 'bd_persistent_owner_patch.py', 'bde_persistent_owner_patch_probe.st')
+    'bde_persistent_owner_patch.st', 'bd_persistent_owner_patch.py', 'bde_persistent_owner_patch_probe.st', 'bde_fresh_serializer_prepare.st',
+    'bde_fresh_serializer_inventory.st', 'bde_fresh_serializer_inventory_reader.st', 'bde_fresh_serializer_dump.st')
 
 
 def main():
@@ -38,6 +39,8 @@ def main():
     selection.add_argument('--list-trials', action='store_true', help='Read existing isolated ModuleBDE names only')
     parser.add_argument('--persistent-references', action='store_true', help='Also read finite Module/source raw reference records twice; requires --component')
     parser.add_argument('--owner-records', action='store_true', help='Also read complete isolated Module/source search object records twice; requires --persistent-references')
+    parser.add_argument('--serializer-workbench', action='store_true', help='Construct private isolated serializer work objects; no dump/load/write; requires --owner-records')
+    parser.add_argument('--serializer-inventory', type=int, help='Capture actual source graph/callbacks from an existing retained workbench; no dump/load/write')
     control_selection = parser.add_mutually_exclusive_group()
     control_selection.add_argument('--native-guard-controls', action='store_true', help='Execute staged guard on three detached non-executable test frames; no production edit')
     control_selection.add_argument('--finite-guard-controls', action='store_true', help='Execute finite patch preparation controls plus empty zero-writer executor; requires complete persistent read')
@@ -52,6 +55,10 @@ def main():
         parser.error('--persistent-references requires --component')
     if args.owner_records and (not args.persistent_references or args.allow_incomplete_observation):
         parser.error('--owner-records requires complete --persistent-references')
+    if args.serializer_workbench and not args.owner_records:
+        parser.error('--serializer-workbench requires --owner-records')
+    if args.serializer_inventory is not None and (not args.owner_records or args.serializer_workbench or not 1 <= args.serializer_inventory <= 16):
+        parser.error('--serializer-inventory requires --owner-records, index 1..16 and no --serializer-workbench')
     if args.native_guard_controls and not args.component:
         parser.error('--native-guard-controls requires --component')
     if args.finite_guard_controls and (not args.persistent_references or not args.component):
@@ -105,7 +112,9 @@ def main():
                             + ([','.join(targets)] if targets else [])
                             + (['--native-guard-controls'] if args.native_guard_controls else [])
                             + (['--finite-guard-controls'] if args.finite_guard_controls else [])
-                            + (['--owner-records'] if args.owner_records else []),
+                            + (['--owner-records'] if args.owner_records else [])
+                            + (['--serializer-workbench'] if args.serializer_workbench else [])
+                            + (['--serializer-inventory:' + str(args.serializer_inventory)] if args.serializer_inventory is not None else []),
                             env=environment, capture_output=True, timeout=60)
                         (output / 'native.stdout.log').write_bytes(native.stdout)
                         (output / 'native.stderr.log').write_bytes(native.stderr)
@@ -159,6 +168,33 @@ def main():
                         or any(value['references'] != values[0] for value in owners)):
                     raise ValueError('Two full owner observations and independent references must agree')
                 result['persistent_owner_records_stable'] = True
+            if args.serializer_workbench:
+                witness = read['serializer_workbench']
+                if (witness['profile'] != 'isolated_fresh_serializer_workbench_v1'
+                        or witness['component_oid'] != read['component_oid'] or witness['before'] != owners[0]
+                        or type(witness['workbench_index']) is not int or not 1 <= witness['workbench_index'] <= 16
+                        or witness['private_work_objects'] != 4 or type(witness['model_setters_called']) is not int
+                        or witness['model_setters_called'] != 0 or any(witness[k] is not False for k in (
+                            'serialization_called', 'store_called', 'commit_called', 'persistent_write_called',
+                            'call_closure_complete', 'serialization_authorized'))
+                        or any(type(v) is not bool for v in witness['checks'].values())
+                        or any(witness['checks'][k] is not True for k in ('original_fields_and_collections_preserved',
+                            'shared_class_tables_preserved', 'complete_owner_records_preserved', 'private_roles_distinct', 'loader_has_no_backend'))):
+                    raise ValueError('Exact private constructor witness with unchanged originals required')
+                result['fresh_serializer_workbench_constructed'] = True
+                result['fresh_serializer_configuration_equivalent'] = all(witness['checks'].values())
+            if args.serializer_inventory is not None:
+                witness = read['serializer_inventory']
+                if (witness['profile'] != 'isolated_fresh_serializer_inventory_v1'
+                        or witness['component_oid'] != read['component_oid'] or witness['workbench_index'] != args.serializer_inventory
+                        or witness['before'] != owners[0] or witness['after'] != owners[0]
+                        or type(witness['objects']) is not int or not 1 <= witness['objects'] <= 16384
+                        or type(witness['model_setters_called']) is not int or witness['model_setters_called'] != 0
+                        or any(witness[k] is not False for k in ('serialization_called', 'store_called', 'commit_called',
+                            'persistent_write_called', 'call_closure_complete', 'serialization_authorized'))):
+                    raise ValueError('Exact retained source graph inventory without serialization or writes required')
+                result['fresh_serializer_source_inventory_captured'] = True
+                result['fresh_serializer_source_inventory_blockers'] = witness['blockers']
             if args.finite_guard_controls:
                 guard = read['finite_patch_guard_controls']
                 if (guard['profile'] != 'finite_reference_patch_native_guards_v1'

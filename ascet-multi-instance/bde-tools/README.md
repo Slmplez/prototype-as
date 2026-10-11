@@ -122,3 +122,5 @@ full raw/absence and zero-leaf refusal controls. Its actual result is saved in
 It is offline package validation, separate from live native evidence and
 complete T0–T9 lifecycle acceptance. The hourly automation is paused; active
 development continues directly in the existing task.
+
+Private source serializer construction/configuration and actual graph inventory passed online on one isolated Module. The one-shot dump bridge and independent confirmation contract are implemented, but native dump preparation failed before parent readiness and ToolAPI subsequently rejected a new handle. No dump success, persistent graphical edit, connection inverse or full delivery is asserted. Corrected exception handling remains unverified online. See `docs/bde-fresh-source-serializer.md` and `evidence/2026-10-11/fresh-source-serializer/`.

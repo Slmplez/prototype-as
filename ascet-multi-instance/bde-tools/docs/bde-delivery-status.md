@@ -1,5 +1,9 @@
 # BDE delivery status, 2026-10-11
 
+2026-10-11 fresh serializer 后续：四个私有工作对象、九项等价检查及58对象/103 byte values实际图inventory在线通过。单次dump、durable before/dispatch、独立确认器已实现；63项相关离线控制在冻结155源码目录通过，C# bridge编译通过。首次dump准备因未捕获的ByteArray special-root守卫异常超时，未收到READY，父进程未授权，未生成dispatch/pending，未取得native terminal；私有ToolAPI随后拒绝新句柄。已补异常捕获和root分派边界，但修正未在线验证；未启停ASCET。实际dump、proxy extraction、graphical payload与真实连接inverse仍未验证，Message0/60、required/T0–T9不升级，full_delivery=false。[合同](bde-fresh-source-serializer.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-fresh-serializer-increment-02/README.md)。
+
+
+
 2026-10-11 owner-record 后续：已实现隔离 Module/Main source 的完整 CTreeSearchObjectRecord 读取与 native patch executor。修正 search global ID 的分段布局，原 raw no-op、六阶段版本字段变更/分项 inverse/redo/inverse 在线通过；source inverse 保留另一 owner 的实际修改。7 类 preparation 拒绝、8 次 replay/stale 拒写、私有导出隔离、新连接完整 owner/reference 双读及 public bookends 精确恢复均通过，本次 pending 已清。此层只验证记录版本字段，尚未验证图形 payload 序列化、模型/source/cache closure 或 formal owner journal invocation；production v3/history 门保持关闭、Message0/60、43 required 与整体交付不升级。未启停 ASCET。[合同](bde-persistent-owner-patch.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-owner-patch-increment-01/README.md)。以下旧段保留历史时点。
 
 最新有限执行器增量：隔离 Module/source 原生 patch executor 已实现并在线通过六阶段 1→2→1→absence→2→absence，12 次 leaf write、2 次 delete；6 次 replay、1 次 stale preparation、1 次准备后 stale execution 均零 writer 拒绝。另有 7 类真实 native 准备拒绝和空 executor 的私有导出隔离验证。新连接完整两读与公开 Module bookends 精确等于原 before，本次 pending 经零 native confirmer 清除，`exact_observation_restored=true`。208 项相关离线控制通过，953 源文件冻结/277 归档 hash 核对。WAL-bound 固定参数生成已接入但仅有离线绑定控制；production v3/history 仍关闭。正式 connect/model/source/cache/owner-object closure、Message 0/60、43 required、业务恢复和最终交付继续未完成。未启停 ASCET。[证据](../analysis/bde-experiments/2026-10-11/bde-finite-patch-increment-01/README.md) · [合同](bde-finite-reference-patch.md)。以下各段按历史时点保留。

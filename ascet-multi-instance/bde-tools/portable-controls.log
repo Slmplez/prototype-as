@@ -1,3 +1,16 @@
+test_fresh_drift_and_other_epoch_and_dispatch_mismatch_refuse (test_bde_fresh_serializer_dump_probe.DumpConfirmationTests.test_fresh_drift_and_other_epoch_and_dispatch_mismatch_refuse) ... ok
+test_independent_full_confirmation_never_replays (test_bde_fresh_serializer_dump_probe.DumpConfirmationTests.test_independent_full_confirmation_never_replays) ... ok
+test_only_exact_bound_pending_can_be_cleared (test_bde_fresh_serializer_dump_probe.DumpConfirmationTests.test_only_exact_bound_pending_can_be_cleared) ... ok
+test_complete_payload_octets_size_and_extra_fields_required (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_complete_payload_octets_size_and_extra_fields_required) ... ok
+test_each_original_raw_record_and_reference_image_is_validated (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_each_original_raw_record_and_reference_image_is_validated) ... ok
+test_fixed_command_follows_parent_authorization (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_fixed_command_follows_parent_authorization) ... ok
+test_inventory_missing_coverage_dispatch_and_boolean_counts_refused (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_inventory_missing_coverage_dispatch_and_boolean_counts_refused) ... ok
+test_no_write_counters_and_permissions_cannot_be_widened (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_no_write_counters_and_permissions_cannot_be_widened) ... ok
+test_preparation_cannot_hide_previous_dump_or_mutated_current (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_preparation_cannot_hide_previous_dump_or_mutated_current) ... ok
+test_rejected_parent_does_not_dispatch_command (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_rejected_parent_does_not_dispatch_command) ... ok
+test_runtime_unknown_dirty_cleanup_and_hidden_writer_refused (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_runtime_unknown_dirty_cleanup_and_hidden_writer_refused) ... ok
+test_synthetic_success_only_certifies_receipt_not_live_serialization (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_synthetic_success_only_certifies_receipt_not_live_serialization) ... ok
+test_valid_different_payload_is_reported_not_called_format_equivalence (test_bde_fresh_serializer_dump_probe.DumpReceiptTests.test_valid_different_payload_is_reported_not_called_format_equivalence) ... ok
 test_capture_does_not_grant_writer_or_closure (test_bd_persistent_owner_records.OwnerRecordTests.test_capture_does_not_grant_writer_or_closure) ... ok
 test_each_key_region_tamper_rejected (test_bd_persistent_owner_records.OwnerRecordTests.test_each_key_region_tamper_rejected) ... ok
 test_nonzero_transaction_exact_position (test_bd_persistent_owner_records.OwnerRecordTests.test_nonzero_transaction_exact_position) ... ok
@@ -256,6 +269,6 @@ test_dead_bridge_stdin_flush_does_not_replace_the_primary_failure (test_bd_nativ
 test_every_pipe_is_closed_after_multiple_cleanup_errors (test_bd_native_adapter_cleanup.AdapterCleanupTests.test_every_pipe_is_closed_after_multiple_cleanup_errors) ... ok
 
 ----------------------------------------------------------------------
-Ran 256 tests in 8.251s
+Ran 269 tests in 8.232s
 
 OK

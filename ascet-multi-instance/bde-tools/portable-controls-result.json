@@ -1,9 +1,8 @@
 {
-  "profile": "bde_portable_controls_v1",
+  "profile": "bde_portable_offline_controls_v1",
   "passed": true,
-  "tests": 256,
+  "tests": 269,
   "exit_code": 0,
-  "native_calls": 0,
-  "full_delivery": false,
-  "transcript_location": "portable-controls.log"
+  "online_acceptance": false,
+  "full_delivery": false
 }

@@ -28,15 +28,15 @@ SOURCES = ('AscetReferenceLeafNoopProbe.cs', 'AscetStructureRead.cs', 'bde_refer
     'bde_value_probe.st', 'bd_module_persistent_references.py', 'bd_persistent_references.py')
 
 
-def run_handshake(command, *, environment, output, authorize, timeout=60, lifecycle=False, nonempty=False, finite_patch=False, owner_noop=False, owner_patch=False):
+def run_handshake(command, *, environment, output, authorize, timeout=60, lifecycle=False, nonempty=False, finite_patch=False, owner_noop=False, owner_patch=False, serializer_dump=False):
     """No native writer command until parent validates fsynced before and starts WAL.
 
     The only stdin command is fixed WRITE_NOOP. The native host independently
     rechecks owner/current before writing. A timeout after authorization never
     clears the marker or retries. Failed preparation needs no write quarantine.
     """
-    ready = b'BDE_OWNER_PATCH_READY' if owner_patch else b'BDE_PERSISTENT_OWNER_READY' if owner_noop else b'BDE_FINITE_PATCH_READY' if finite_patch else b'BDE_REFERENCE_NONEMPTY_READY' if nonempty else b'BDE_REFERENCE_LIFECYCLE_READY' if lifecycle else b'BDE_REFERENCE_NOOP_READY'
-    writer_command = b'EXECUTE_OWNER_PATCH_LIFECYCLE\n' if owner_patch else b'WRITE_ORIGINAL_OWNER_RECORDS_NOOP\n' if owner_noop else b'EXECUTE_FINITE_PATCH_LIFECYCLE\n' if finite_patch else b'WRITE_RECIPROCAL_RESIZE_AND_RESTORE\n' if nonempty else b'WRITE_EMPTY_AND_REMOVE\n' if lifecycle else b'WRITE_NOOP\n'
+    ready = b'BDE_FRESH_SERIALIZER_READY' if serializer_dump else b'BDE_OWNER_PATCH_READY' if owner_patch else b'BDE_PERSISTENT_OWNER_READY' if owner_noop else b'BDE_FINITE_PATCH_READY' if finite_patch else b'BDE_REFERENCE_NONEMPTY_READY' if nonempty else b'BDE_REFERENCE_LIFECYCLE_READY' if lifecycle else b'BDE_REFERENCE_NOOP_READY'
+    writer_command = b'SERIALIZE_FRESH_SOURCE_ONCE\n' if serializer_dump else b'EXECUTE_OWNER_PATCH_LIFECYCLE\n' if owner_patch else b'WRITE_ORIGINAL_OWNER_RECORDS_NOOP\n' if owner_noop else b'EXECUTE_FINITE_PATCH_LIFECYCLE\n' if finite_patch else b'WRITE_RECIPROCAL_RESIZE_AND_RESTORE\n' if nonempty else b'WRITE_EMPTY_AND_REMOVE\n' if lifecycle else b'WRITE_NOOP\n'
     with (output / 'native.stderr.log').open('wb') as stderr:
         child = subprocess.Popen(command, env=environment, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=stderr)
         first_line = queue.Queue(maxsize=1)

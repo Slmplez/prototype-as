@@ -20,7 +20,8 @@ class AscetConnectCompileProbe
         "bde_reference_leaf_noop.st", "bde_detached_value_reader.st", "bde_reference_leaf_lifecycle.st",
         "bde_connect_preparation_guard_probe.st", "bde_finite_reference_patch.st", "bde_finite_reference_patch_probe.st",
         "bde_finite_reference_patch_guard_probe.st", "bde_persistent_owner_records.st", "bde_persistent_owner_noop.st",
-        "bde_persistent_owner_patch.st", "bde_persistent_owner_patch_probe.st"
+        "bde_persistent_owner_patch.st", "bde_persistent_owner_patch_probe.st", "bde_fresh_serializer_prepare.st",
+        "bde_fresh_serializer_inventory.st", "bde_fresh_serializer_inventory_reader.st", "bde_fresh_serializer_dump.st"
     };
 
     static object ListTrialModules(AscetDataBase database)
@@ -40,7 +41,7 @@ class AscetConnectCompileProbe
         }
     }
 
-    static object ReadReferences(AscetDataBase database, string path, bool persistent, string[] targets, bool guardControls, bool finiteGuardControls, bool ownerRecords)
+    static object ReadReferences(AscetDataBase database, string path, bool persistent, string[] targets, bool guardControls, bool finiteGuardControls, bool ownerRecords, bool serializerWorkbench, int inventoryIndex)
     {
         path = path.Trim('\\'); int slash = path.LastIndexOf('\\');
         if (slash < 1 || slash == path.Length - 1 || path.Contains(".."))
@@ -111,6 +112,41 @@ class AscetConnectCompileProbe
                         ownerImages.Add(AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(encoded)));
                     }
                     result["owner_probe_blocks_invoked"] = 2;
+                    if (serializerWorkbench) {
+                        var workbenchFactory = AscetStructureRead.Compile(component, "bde_fresh_serializer_prepare.st"); blocks.Add(workbenchFactory);
+                        var bindWorkbench = new InstanceMethodCall(workbenchFactory, "value:", component);
+                        bindWorkbench.appendParameter(ownerReader); component.call(bindWorkbench);
+                        var workbenchReader = bindWorkbench.ResultRemoteObject; blocks.Add(workbenchReader);
+                        var bindWorkbenchSerializer = new InstanceMethodCall(serializer, "value:", component);
+                        bindWorkbenchSerializer.appendParameter(workbenchReader); component.call(bindWorkbenchSerializer);
+                        var workbenchProbe = bindWorkbenchSerializer.ResultRemoteObject; blocks.Add(workbenchProbe);
+                        var callWorkbench = new InstanceMethodCall(workbenchProbe, "value:", component);
+                        callWorkbench.appendParameter(component); component.call(callWorkbench);
+                        string encoded = callWorkbench.ResultString;
+                        if (encoded.StartsWith("BDE_", StringComparison.Ordinal)) throw new Exception(encoded);
+                        result["serializer_workbench"] = AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(encoded));
+                    }
+                    if (inventoryIndex != 0) {
+                        var inventoryFactory = AscetStructureRead.Compile(component, "bde_fresh_serializer_inventory.st"); blocks.Add(inventoryFactory);
+                        var bindInventory = new InstanceMethodCall(inventoryFactory, "value:", component);
+                        bindInventory.appendParameter(ownerReader); component.call(bindInventory);
+                        var inventory = bindInventory.ResultRemoteObject; blocks.Add(inventory);
+                        var configureInventory = component.createClassMethodCall("Array", "with:with:");
+                        configureInventory.appendParameter(inventory); configureInventory.appendParameter(inventoryIndex); component.call(configureInventory);
+                        var inventoryConfig = configureInventory.ResultRemoteObject; blocks.Add(inventoryConfig);
+                        var inventoryWrapper = AscetStructureRead.Compile(component, "bde_fresh_serializer_inventory_reader.st"); blocks.Add(inventoryWrapper);
+                        var bindInventoryWrapper = new InstanceMethodCall(inventoryWrapper, "value:", component);
+                        bindInventoryWrapper.appendParameter(inventoryConfig); component.call(bindInventoryWrapper);
+                        var inventoryReader = bindInventoryWrapper.ResultRemoteObject; blocks.Add(inventoryReader);
+                        var bindInventorySerializer = new InstanceMethodCall(serializer, "value:", component);
+                        bindInventorySerializer.appendParameter(inventoryReader); component.call(bindInventorySerializer);
+                        var inventoryProbe = bindInventorySerializer.ResultRemoteObject; blocks.Add(inventoryProbe);
+                        var callInventory = new InstanceMethodCall(inventoryProbe, "value:", component);
+                        callInventory.appendParameter(component); component.call(callInventory);
+                        string encoded = callInventory.ResultString;
+                        if (encoded.StartsWith("BDE_", StringComparison.Ordinal)) throw new Exception(encoded);
+                        result["serializer_inventory"] = AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(encoded));
+                    }
                 }
                 if (finiteGuardControls) {
                     Func<Identifiable, Identifiable, Identifiable> bindNative = (f, p) => {
@@ -157,6 +193,14 @@ class AscetConnectCompileProbe
 
     static int Main(string[] args)
     {
+        int inventoryIndex = 0;
+        if (args.Length > 0 && args[args.Length - 1].StartsWith("--serializer-inventory:", StringComparison.Ordinal)) {
+            if (!Int32.TryParse(args[args.Length - 1].Substring("--serializer-inventory:".Length), out inventoryIndex)
+                    || inventoryIndex < 1 || inventoryIndex > 16) return 2;
+            Array.Resize(ref args, args.Length - 1);
+        }
+        bool serializerWorkbench = args.Length > 0 && args[args.Length - 1] == "--serializer-workbench";
+        if (serializerWorkbench) Array.Resize(ref args, args.Length - 1);
         bool ownerRecords = args.Length > 0 && args[args.Length - 1] == "--owner-records";
         if (ownerRecords) Array.Resize(ref args, args.Length - 1);
         bool guardControls = args.Length > 0 && args[args.Length - 1] == "--native-guard-controls";
@@ -177,6 +221,8 @@ class AscetConnectCompileProbe
         if (guardControls && (args.Length < 3 || args[2] == "--list-trials")) return 2;
         if (finiteGuardControls && !persistent) return 2;
         if (ownerRecords && !persistent) return 2;
+        if (serializerWorkbench && !ownerRecords) return 2;
+        if (inventoryIndex != 0 && (!ownerRecords || serializerWorkbench)) return 2;
         var result = new Dictionary<string, object> {
             { "profile", "bde_connect_fixed_compile_probe_v1" }, { "passed", false },
             { "model_setters_called", 0 }, { "store_called", false },
@@ -223,7 +269,7 @@ class AscetConnectCompileProbe
             }
             if (args.Length >= 3) {
                 if (args[2] == "--list-trials") result["trial_modules"] = ListTrialModules(database);
-                else result["module_read"] = ReadReferences(database, args[2], persistent, targets, guardControls, finiteGuardControls, ownerRecords);
+                else result["module_read"] = ReadReferences(database, args[2], persistent, targets, guardControls, finiteGuardControls, ownerRecords, serializerWorkbench, inventoryIndex);
             }
             var current = ascet.GetCurrentDataBase();
             try {

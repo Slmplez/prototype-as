@@ -1,0 +1,110 @@
+{
+  "archived_source_hashes_checked": 115,
+  "ascet_started_or_restarted": false,
+  "attempted_dump": {
+    "dispatch_created": false,
+    "dump_success": false,
+    "failure": "Uncaught pre-readiness ByteArray special-root guard; parent timed out; native child killed",
+    "native_terminal_reply_received": false,
+    "parent_authorized": false,
+    "pending_created": false
+  },
+  "bridge_compile_passed": true,
+  "complete_message_lifecycle_cases_passed": 0,
+  "corrected_smalltalk_runtime_compilation_verified": false,
+  "evidence_sha256": {
+    "bde-fresh-serializer-dump-live-02/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bde-fresh-serializer-dump-live-02/native.stderr.log": "6f291478c8a382a758c9d6b3b94f7fb9a2ef85854cf29f93cab3664474a4d090",
+    "bde-fresh-serializer-dump-live-02/result.json": "2c0ac68cc99b209508d2ec8007dfae26e511a2871be0dbabaa65056dfd1fbd32",
+    "bde-fresh-serializer-inventory-live-02/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bde-fresh-serializer-inventory-live-02/native.json": "0ae3e564ec421e595b6e80e37a9d3a20d35d3969776e23566a96f80644c69301",
+    "bde-fresh-serializer-inventory-live-02/native.stderr.log": "33d57da02ad7a7cf4f1f57534ba78455117b6229a5e22af168f885657e478e6b",
+    "bde-fresh-serializer-inventory-live-02/result.json": "13e51fe8fdbe0b10beddfb5b9c42cba2f5ec20563172a3e9ebca0144cfba3227",
+    "bde-fresh-serializer-post-refusal-health-01/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bde-fresh-serializer-post-refusal-health-01/native.json": "b48dea6f13c76b8cf6a051f3cb590218fef91cf5d523b8b4c6d0da07add3ac2e",
+    "bde-fresh-serializer-post-refusal-health-01/native.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bde-fresh-serializer-post-refusal-health-01/result.json": "8138f095509e51859f5960a8d7034070dfdb188dbf35bf35c99fda68bfcab31b",
+    "bde-fresh-serializer-workbench-live-08/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bde-fresh-serializer-workbench-live-08/native.json": "8ad955517c34565529e130c38eb0700fe0e02a388b421dedcee6bd8c1b31b6b8",
+    "bde-fresh-serializer-workbench-live-08/native.stderr.log": "533ef2722923c521fad368bea01c2609f8cb909fb79472365b3c9796330b520a",
+    "bde-fresh-serializer-workbench-live-08/result.json": "ba3db711f87ccc677ead4027fd255806b1dddf07b326e9f5ddb26c8a018e83f0"
+  },
+  "frozen_source_files": 155,
+  "full_delivery": false,
+  "native_calls_by_report": 0,
+  "offline_controls": {
+    "executed_from_frozen_sources": true,
+    "exit_code": 0,
+    "modules": [
+      "test_bde_fresh_serializer_dump_probe",
+      "test_bde_persistent_owner_patch_probe",
+      "test_bde_persistent_owner_noop_probe",
+      "test_bde_persistent_owner_noop_confirm",
+      "test_bd_persistent_owner_records",
+      "test_bd_persistent_owner_patch",
+      "test_bde_reference_leaf_noop_probe",
+      "test_bde_reference_leaf_lifecycle_probe"
+    ],
+    "online_acceptance": false,
+    "tests": 63
+  },
+  "old_epoch_rebound": false,
+  "online_constructor": {
+    "checks": {
+      "class_table_equivalent": true,
+      "complete_owner_records_preserved": true,
+      "instvar_table_equivalent": true,
+      "loader_has_no_backend": true,
+      "omissions_equivalent": true,
+      "original_fields_and_collections_preserved": true,
+      "private_roles_distinct": true,
+      "shared_class_tables_preserved": true,
+      "strategy_equivalent": true
+    },
+    "config_equivalent": true,
+    "private_work_roles": 4
+  },
+  "online_inventory": {
+    "blockers": [],
+    "boundary_class_counts": {},
+    "byte_values": 103,
+    "class_counts": {
+      "Array": 21,
+      "ByteArray": 3,
+      "CgRGBColor": 5,
+      "DBObject": 1,
+      "Dictionary": 6,
+      "Point": 8,
+      "RBAreaStyle": 2,
+      "RBLineStyle": 3,
+      "SGCodeGODB": 1,
+      "SGLiteralGODB": 1,
+      "SGOperatorGODB": 1,
+      "SGTopGraphicsBlockDB": 1,
+      "String": 5
+    },
+    "objects": 58,
+    "serialization_called": false
+  },
+  "passed": true,
+  "production_connection_inverse_available": false,
+  "production_write_authorized": false,
+  "profile": "bde_fresh_source_serializer_checkpoint_v1",
+  "proxy_extraction_verified": false,
+  "remaining": [
+    "Recover private ToolAPI with explicit authorization",
+    "Fresh epoch-bound preparation/inventory and one-shot source dump",
+    "Native proxy extraction and actual graphical payload",
+    "Combined owner/reference/model/source/cache journal-bound inverse",
+    "Real connect/diff/BDE display/conflict/revert, then remaining T0-T9 required gates"
+  ],
+  "runtime_status": {
+    "latest_null_handle_response_bytes": 16,
+    "new_api_handle_available": false,
+    "restart_executed": false,
+    "user_no_restart_constraint_preserved": true
+  },
+  "source_dump_verified": false,
+  "unknown_writer_replayed": false,
+  "source_manifest_location": "package files.sha256.json"
+}

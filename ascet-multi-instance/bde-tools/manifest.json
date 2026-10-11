@@ -25,8 +25,9 @@
   "native_safety": {
     "writes_require": "isolated Trial_* component and explicit structural write gate",
     "unknown_outcome": "preserve the journal and quarantine; never retry automatically",
-    "stale_epoch": "reject before opening a native session"
+    "stale_epoch": "reject before opening a native session",
+    "source_serializer": "research only; corrected native preparation and dump not validated; no production write authorization"
   },
-  "latest_increment": "evidence/2026-10-11/persistent-owner-patch/result.json",
-  "portable_tests_passed": 256
+  "latest_increment": "evidence/2026-10-11/fresh-source-serializer/result.json",
+  "portable_tests_passed": 269
 }
