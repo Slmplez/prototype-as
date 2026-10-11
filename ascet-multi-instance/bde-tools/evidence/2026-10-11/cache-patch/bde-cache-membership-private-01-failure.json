@@ -1,0 +1,8 @@
+{
+  "profile": "bde_cache_membership_study_v1",
+  "passed": false,
+  "stage": null,
+  "native_calls": null,
+  "error": "Exact seven native memberships/derived dirty censuses differ",
+  "full_delivery": false
+}

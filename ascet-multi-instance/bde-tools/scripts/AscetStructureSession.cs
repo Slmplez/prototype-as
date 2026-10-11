@@ -961,6 +961,47 @@ class AscetStructureSession
             }
         }
     }
+    static object CacheMembershipPatch(Dictionary<string, object> request, bool privateControl, bool stateControl = false) {
+        string token = Text(request, "token");
+        if (diagram != "Main" || !path.TrimStart('\\').StartsWith("BDE_Tool_Experiments\\Trial_", StringComparison.Ordinal)
+                || Environment.GetEnvironmentVariable("ASCET_BD_CACHE_MEMBERSHIP_STUDY") != "isolated_v1"
+                || !System.Text.RegularExpressions.Regex.IsMatch(token, @"^edit_[0-9a-f]{64}$"))
+            throw new Exception("Fixed isolated cache membership study required; no production inverse");
+        var blocks = new List<Identifiable>(); bool replyKnown = true;
+        try {
+            var planner = AscetStructureRead.Compile(component, "bde_cache_membership_patch.st"); blocks.Add(planner);
+            if (stateControl) {
+                var order = AscetStructureRead.Compile(component, "bde_native_collection_merge.st"); blocks.Add(order);
+                var fieldFactory = AscetStructureRead.Compile(component, "bde_native_field_patch.st"); blocks.Add(fieldFactory);
+                var fieldBind = new InstanceMethodCall(fieldFactory, "value:", component);
+                fieldBind.appendParameter(order); component.call(fieldBind); var field = fieldBind.ResultRemoteObject; blocks.Add(field);
+                var adapter = AscetStructureRead.Compile(component, "bde_registered_model_patch.st"); blocks.Add(adapter);
+                var adapterBind = new InstanceMethodCall(adapter, "value:", component);
+                adapterBind.appendParameter(field); component.call(adapterBind); var direct = adapterBind.ResultRemoteObject; blocks.Add(direct);
+                var helpersCall = component.createClassMethodCall("Array", "with:with:");
+                helpersCall.appendParameter(planner); helpersCall.appendParameter(direct); component.call(helpersCall);
+                var helpers = helpersCall.ResultRemoteObject; blocks.Add(helpers);
+                var stateFactory = AscetStructureRead.Compile(component, "bde_cache_state_patch.st"); blocks.Add(stateFactory);
+                var stateBind = new InstanceMethodCall(stateFactory, "value:", component);
+                stateBind.appendParameter(helpers); component.call(stateBind); planner = stateBind.ResultRemoteObject; blocks.Add(planner);
+            }
+            var factory = AscetStructureRead.Compile(component, stateControl ? "bde_cache_state_private.st" : privateControl ? "bde_cache_membership_private.st" : "bde_cache_membership_preflight.st"); blocks.Add(factory);
+            var bind = new InstanceMethodCall(factory, "value:", component);
+            bind.appendParameter(planner); component.call(bind); var study = bind.ResultRemoteObject; blocks.Add(study);
+            var call = new InstanceMethodCall(study, "value:value:", component);
+            call.appendParameter(component); call.appendParameter(token);
+            replyKnown = false; component.call(call); string encoded = call.ResultString;
+            if (String.IsNullOrEmpty(encoded)) throw new Exception("Unknown cache study; preserve materials without replay");
+            replyKnown = true;
+            if (encoded.StartsWith("BDE_", StringComparison.Ordinal)) throw new Exception(encoded);
+            return AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(encoded));
+        } finally {
+            if (replyKnown) for (int i = blocks.Count - 1; i >= 0; --i) {
+                var release = component.createControlMessageCall("destroyObjectForId:");
+                release.appendParameter(blocks[i].getIdentifier()); component.call(release); release.getResultVoid();
+            }
+        }
+    }
     static object RegisteredModelPatch(Dictionary<string, object> request, bool privateControl) {
         string modelPatchToken = privateControl ? "" : Text(request, "token");
         if (diagram != "Main" || !path.TrimStart('\\').StartsWith("BDE_Tool_Experiments\\Trial_", StringComparison.Ordinal)
@@ -1506,6 +1547,9 @@ class AscetStructureSession
         if (command == "create_finalize_compile") return CreateHistory(request, true, true);
         if (command == "create_finalize") return CreateHistory(request, false, true);
 #if BDE_MAIN_WORKFLOW_EVAL
+        if (command == "cache_membership_preflight") return CacheMembershipPatch(request, false);
+        if (command == "cache_membership_private") return CacheMembershipPatch(request, true);
+        if (command == "cache_state_private") return CacheMembershipPatch(request, true, true);
         if (command == "registered_model_patch_preflight") return RegisteredModelPatch(request, false);
         if (command == "registered_model_patch_private") return RegisteredModelPatch(request, true);
         if (command == "message_before_study") return MessageBeforeStudy(request);

@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "tests": 67,
+  "failed_test": "test_preflight_original_key_bytes_required",
+  "reason": "Negative control assigned 1 to an original byte already equal to 1, so there was no tamper. Fixed by XOR 1. This file is a diagnostic summary of the original command output, not a raw test log.",
+  "fixed_controls_passed": 67,
+  "online_acceptance": false
+}

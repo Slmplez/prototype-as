@@ -80,6 +80,8 @@ def build_oracle(output, *, scope_lifecycle=False):
              "bde_overlay.st", "bde_field_material_probe.st", "bde_native_field_patch.st",
              "bde_native_field_patch_private.st", "bde_native_field_order_plan.st", "bde_field_execution_status.st",
              "bde_registered_model_patch.st", "bde_registered_model_patch_preflight.st", "bde_registered_model_patch_private.st",
+             "bde_cache_membership_patch.st", "bde_cache_membership_preflight.st", "bde_cache_membership_private.st",
+             "bde_cache_state_patch.st", "bde_cache_state_private.st",
              "bde_field_source_probe.st", "bde_persisted_source_graph.st",
              "bde_field_source_alias_private.st", "bde_field_source_alias_plan.st",
              "bde_field_inverse_values.st", "bde_field_inverse_values_private.st", "bde_observation_copy.st",

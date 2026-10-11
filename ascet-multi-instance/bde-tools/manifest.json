@@ -29,8 +29,9 @@
     "source_serializer": "research only; changed private payload and isolated source record roundtrip verified; no live model/cache/Store/Commit or production inverse authorization",
     "owner_journal": "original full owner/reference v4 preparation verified; composite inverse is an offline proposal; actual connection/model/cache inverse and external reciprocal writes remain gated",
     "owner_current": "same retained v6 owner identities and six complete records checked; production inspection WAL and offline diff/history verified; no Store or persistent inverse authorization",
-    "registered_model_patch": "strict retained schema adapter and private executor verified; read-only 271-object preflight; no registered model/Store/cache/persistent inverse authority; shared-member reorder unsupported"
+    "registered_model_patch": "strict retained schema adapter and private executor verified; read-only 271-object preflight; no registered model/Store/cache/persistent inverse authority; shared-member reorder unsupported",
+    "cache_inverse": "logical membership and joint entry/proxy direct fields verified only in fresh private caches; exact original 15-member preflight and full graph/cache bookends; registered cache/Store/joint resource inverse remains gated"
   },
-  "latest_increment": "evidence/2026-10-11/registered-model-patch/result.json",
-  "portable_tests_passed": 389
+  "latest_increment": "evidence/2026-10-11/cache-patch/result.json",
+  "portable_tests_passed": 431
 }

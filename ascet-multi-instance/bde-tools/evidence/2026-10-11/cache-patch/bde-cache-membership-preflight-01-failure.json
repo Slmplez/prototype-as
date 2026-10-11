@@ -1,0 +1,8 @@
+{
+  "profile": null,
+  "passed": false,
+  "stage": "offline_original_validation",
+  "native_calls": 0,
+  "error": "Exact 20-byte key/native cache entry required",
+  "full_delivery": false
+}

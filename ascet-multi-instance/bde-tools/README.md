@@ -1,5 +1,8 @@
 # ASCET BDE Agent Tools
 
+Latest cache prerequisite: complete original 15-member no-write preflight, guarded private membership undo/redo/second undo (3 primitives each), and joint membership/dirty-field inverse (5 primitives each). Seven stages and five zero-primitive execution conflicts pass; independent key/proxy-name changes survive. Full graph/live-cache membership bookends remain identical. No registered cache restoration, Store/Commit or production inverse acceptance. New same-dispatch originals are still needed; v6 cannot be backfilled from CURRENT. See docs/bde-cache-inverse.md and evidence/2026-10-11/cache-patch/. Full delivery remains false.
+
+
 Latest registered SG prerequisite: strict three-part snapshot adapter, actual private undo/redo/second undo (7 primitives each), conflict refusal and unrelated-change preservation; real v6 retained 271-object preflight with zero candidate cells. No registered-model edit, Store, cache restoration or persistent inverse acceptance. Shared-member reorder remains unsupported. See docs/bde-registered-model-patch.md and evidence/2026-10-11/registered-model-patch/. Full delivery remains false.
 
 Latest verified increments: actual isolated memory connect/remove/restoration

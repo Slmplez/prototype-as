@@ -1,5 +1,7 @@
 ## 2026-10-11 Finite native patch executor
 
+2026-10-11 缓存恢复增量：完整原v6的15条cache成员只读预检通过，原key/entry身份与bytes不变、0候选；原缓存存在20字节及32字节AccessRights键。新分配私有cache完成undo/redo/再次undo（各3成员原语）；联合执行器各3成员+2脏状态字段原语，7阶段完整成员/修改登记核对、保留无关新增与proxy名称，全部原direct字段终态核对通过。5次真实执行冲突各0原语拒绝，原材料缺失与重放拒绝。公开/native全图及15成员live-cache前后bookends一致；未启停ASCET、未写registered cache、未Store/Commit。首次身份标签/修改列表类型判断失败及20字节限定拒绝保留。67项定向离线控制通过。旧v6不能补造原proxy字段；下一项是新同次prepare完整捕获，联合model/source/cache/owner恢复仍未闭合，Message0/60、43required、T3.1/T5.1、业务恢复hold、full_delivery=false不升级。[合同](bde-cache-inverse.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-cache-patch-increment-02/README.md)。
+
 2026-10-11 本轮补齐 SG 三段快照到原生精确 patch 的适配。真实 v6 原材料只读预检 271/271 对象、0候选；六类新分配测试对象完成 undo/redo/再次undo（各7原语），保留无关字段/键/成员/顺序插入；触碰冲突0原语拒绝，5项原生材料拒绝通过。44项定向离线控制通过，1,026源码冻结、4,092归档hash核对。初始共享成员重排失败保持拒绝；这不是已注册模型/Store/持久回退验收。Message0/60、43required、T3.1/T5.1、full_delivery=false保持；未启停ASCET。[合同](bde-registered-model-patch.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-registered-model-patch-increment-02/README.md)。
 
 

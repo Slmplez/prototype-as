@@ -1,0 +1,2324 @@
+{
+  "native_token": "edit_7db2680d18957794f62e8f2f4c33eaf27695648f028b6cec6e34ec1ed2f3919b",
+  "component_oid": "040ts00000001qg7185g75ap26ii6",
+  "generation": 1,
+  "original_capture": {
+    "before_read": {
+      "storage": {
+        "class": "AbtHighCapacityLookupTable",
+        "kind": "boundary",
+        "ref": "r61"
+      },
+      "cache_entries": [
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r6"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r6"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r5",
+                  "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    3,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "DBDatabaseInfo",
+                  "kind": "boundary",
+                  "ref": "r7"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "6"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r5",
+            "value": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 00h 00h 00h 00h 00h 00h 00h 00h 00h 00h 00h 00h 00h 00h 00h 03h 00h 00h 00h 00h  )\r\n0000000000000000000000000c000000 (asPrintableString)",
+          "registered_object": {
+            "class": "DBDatabaseInfo",
+            "kind": "boundary",
+            "ref": "r7"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r24"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r24"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r23",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "DBStatistics",
+                  "kind": "boundary",
+                  "ref": "r25"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "3"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r23",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              7,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h 00h 00h 00h 00h 00h 00h 00h 07h 00h 00h 00h 00h  )\r\n040ts00000000000000000000s000000 (asPrintableString)",
+          "registered_object": {
+            "class": "DBStatistics",
+            "kind": "boundary",
+            "ref": "r25"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r9"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r9"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r8",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    8,
+                    1,
+                    4,
+                    34,
+                    109,
+                    196,
+                    42,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGDBSettings",
+                  "kind": "boundary",
+                  "ref": "r10"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "8"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r8",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              8,
+              1,
+              4,
+              34,
+              109,
+              196,
+              42,
+              0,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 08h 01h 04h 22h 6Dh C4h 2Ah 00h 00h 00h  )\r\n040ts00000001qg7100g88jdogl00000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGDBSettings",
+            "kind": "boundary",
+            "ref": "r10"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r15"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r15"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r14",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    8,
+                    1,
+                    4,
+                    101,
+                    145,
+                    130,
+                    122,
+                    33,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGLibrary",
+                  "kind": "boundary",
+                  "ref": "r16"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16195"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r14",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              8,
+              1,
+              4,
+              101,
+              145,
+              130,
+              122,
+              33,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 08h 01h 04h 65h 91h 82h 7Ah 21h 00h 00h  )\r\n040ts00000001qg7100g8pchg9t22000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGLibrary",
+            "kind": "boundary",
+            "ref": "r16"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r12"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r12"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r11",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    8,
+                    1,
+                    4,
+                    101,
+                    146,
+                    77,
+                    143,
+                    33,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGLibrary",
+                  "kind": "boundary",
+                  "ref": "r13"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16196"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r11",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              8,
+              1,
+              4,
+              101,
+              146,
+              77,
+              143,
+              33,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 08h 01h 04h 65h 92h 4Dh 8Fh 21h 00h 00h  )\r\n040ts00000001qg7100g8pci9m7i2000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGLibrary",
+            "kind": "boundary",
+            "ref": "r13"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r42"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r42"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r41",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    8,
+                    1,
+                    5,
+                    119,
+                    91,
+                    90,
+                    115,
+                    49,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGLibrary",
+                  "kind": "boundary",
+                  "ref": "r43"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16194"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r41",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              8,
+              1,
+              5,
+              119,
+              91,
+              90,
+              115,
+              49,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 08h 01h 05h 77h 5Bh 5Ah 73h 31h 00h 00h  )\r\n040ts00000001qg7100gatqrb9pj2000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGLibrary",
+            "kind": "boundary",
+            "ref": "r43"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r33"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r33"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r32",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    9,
+                    29,
+                    3,
+                    130,
+                    142,
+                    70,
+                    179,
+                    17,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGLibrary",
+                  "kind": "boundary",
+                  "ref": "r34"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16197"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r32",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              9,
+              29,
+              3,
+              130,
+              142,
+              70,
+              179,
+              17,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 09h 1Dh 03h 82h 8Eh 46h B3h 11h 00h 00h  )\r\n040ts00000001qg714eg70ke8qph2000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGLibrary",
+            "kind": "boundary",
+            "ref": "r34"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r21"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r21"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r20",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    9,
+                    29,
+                    4,
+                    28,
+                    43,
+                    58,
+                    211,
+                    2,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGLibrary",
+                  "kind": "boundary",
+                  "ref": "r22"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16363"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r20",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              9,
+              29,
+              4,
+              28,
+              43,
+              58,
+              211,
+              2,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 09h 1Dh 04h 1Ch 2Bh 3Ah D3h 02h 00h 00h  )\r\n040ts00000001qg714eg871b7b9g4000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGLibrary",
+            "kind": "boundary",
+            "ref": "r22"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r18"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r18"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r17",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    10,
+                    11,
+                    3,
+                    149,
+                    89,
+                    17,
+                    165,
+                    35,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGModule",
+                  "kind": "boundary",
+                  "ref": "r19"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16362"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r17",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              10,
+              11,
+              3,
+              149,
+              89,
+              17,
+              165,
+              35,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 0Ah 0Bh 03h 95h 59h 11h A5h 23h 00h 00h  )\r\n040ts00000001qg7185g75ap26ii6000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGModule",
+            "kind": "boundary",
+            "ref": "r19"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r39"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r39"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r17",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    10,
+                    11,
+                    3,
+                    149,
+                    89,
+                    17,
+                    165,
+                    35,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "CTError",
+                  "kind": "boundary",
+                  "ref": "r40"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16361"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r38",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              10,
+              11,
+              3,
+              149,
+              89,
+              17,
+              165,
+              35,
+              0,
+              0,
+              65,
+              99,
+              99,
+              101,
+              115,
+              115,
+              82,
+              105,
+              103,
+              104,
+              116,
+              115
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 0Ah 0Bh 03h 95h 59h 11h A5h 23h 00h 00h 41h 63h 63h 65h 73h 73h 52h 69h 67h 68h 74h 73h  )\r\n040ts00000001qg7185g75ap26ii600085hm6pbjed96ipr8ehpg (asPrintableString)",
+          "registered_object": {
+            "class": "CTError",
+            "kind": "boundary",
+            "ref": "r40"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r27"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r27"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r26",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    10,
+                    11,
+                    3,
+                    149,
+                    89,
+                    32,
+                    167,
+                    35,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGClassImplConfig",
+                  "kind": "boundary",
+                  "ref": "r28"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16202"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r26",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              10,
+              11,
+              3,
+              149,
+              89,
+              32,
+              167,
+              35,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 0Ah 0Bh 03h 95h 59h 20h A7h 23h 00h 00h  )\r\n040ts00000001qg7185g75ap42ji6000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGClassImplConfig",
+            "kind": "boundary",
+            "ref": "r28"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r30"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r30"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r29",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    10,
+                    11,
+                    3,
+                    149,
+                    89,
+                    32,
+                    168,
+                    35,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGClassValueConfig",
+                  "kind": "boundary",
+                  "ref": "r31"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16200"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r29",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              10,
+              11,
+              3,
+              149,
+              89,
+              32,
+              168,
+              35,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 0Ah 0Bh 03h 95h 59h 20h A8h 23h 00h 00h  )\r\n040ts00000001qg7185g75ap42k26000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGClassValueConfig",
+            "kind": "boundary",
+            "ref": "r31"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r2"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r2"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r1",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    10,
+                    11,
+                    3,
+                    149,
+                    89,
+                    32,
+                    169,
+                    35,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGImplConfiguration",
+                  "kind": "boundary",
+                  "ref": "r4"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "14909"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r1",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              10,
+              11,
+              3,
+              149,
+              89,
+              32,
+              169,
+              35,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 0Ah 0Bh 03h 95h 59h 20h A9h 23h 00h 00h  )\r\n040ts00000001qg7185g75ap42ki6000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGImplConfiguration",
+            "kind": "boundary",
+            "ref": "r4"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r36"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r36"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r35",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    10,
+                    11,
+                    3,
+                    149,
+                    89,
+                    32,
+                    170,
+                    35,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGValueConfiguration",
+                  "kind": "boundary",
+                  "ref": "r37"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "14910"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r35",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              10,
+              11,
+              3,
+              149,
+              89,
+              32,
+              170,
+              35,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 0Ah 0Bh 03h 95h 59h 20h AAh 23h 00h 00h  )\r\n040ts00000001qg7185g75ap42l26000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGValueConfiguration",
+            "kind": "boundary",
+            "ref": "r37"
+          }
+        },
+        {
+          "entry": {
+            "class": "DBCacheObject",
+            "kind": "boundary",
+            "ref": "r45"
+          },
+          "image": {
+            "binding": {
+              "class": "DBCacheObject",
+              "kind": "boundary",
+              "ref": "r45"
+            },
+            "field_names": [
+              "istate",
+              "globalId",
+              "interface",
+              "object",
+              "bytes",
+              "referenceCount",
+              "timeStamp",
+              "linkObject"
+            ],
+            "fields": [
+              {
+                "name": "istate",
+                "slot": 1,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "globalId",
+                "slot": 2,
+                "value": {
+                  "class": "ByteArray",
+                  "kind": "value",
+                  "ref": "r44",
+                  "value": [
+                    1,
+                    1,
+                    222,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    234,
+                    7,
+                    10,
+                    11,
+                    3,
+                    149,
+                    89,
+                    32,
+                    171,
+                    35,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "name": "interface",
+                "slot": 3,
+                "value": {
+                  "class": "DBReferenceInterface32",
+                  "kind": "boundary",
+                  "ref": "r3"
+                }
+              },
+              {
+                "name": "object",
+                "slot": 4,
+                "value": {
+                  "class": "SGTopGraphicsBlockDB",
+                  "kind": "boundary",
+                  "ref": "r46"
+                }
+              },
+              {
+                "name": "bytes",
+                "slot": 5,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              },
+              {
+                "name": "referenceCount",
+                "slot": 6,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "0"
+                }
+              },
+              {
+                "name": "timeStamp",
+                "slot": 7,
+                "value": {
+                  "class": "SmallInteger",
+                  "kind": "atom",
+                  "value": "16260"
+                }
+              },
+              {
+                "name": "linkObject",
+                "slot": 8,
+                "value": {
+                  "class": "UndefinedObject",
+                  "kind": "atom",
+                  "value": "nil"
+                }
+              }
+            ]
+          },
+          "key": {
+            "class": "ByteArray",
+            "kind": "value",
+            "ref": "r44",
+            "value": [
+              1,
+              1,
+              222,
+              0,
+              0,
+              0,
+              0,
+              0,
+              234,
+              7,
+              10,
+              11,
+              3,
+              149,
+              89,
+              32,
+              171,
+              35,
+              0,
+              0
+            ]
+          },
+          "key_text": "ByteArray ( 01h 01h DEh 00h 00h 00h 00h 00h EAh 07h 0Ah 0Bh 03h 95h 59h 20h ABh 23h 00h 00h  )\r\n040ts00000001qg7185g75ap42li6000 (asPrintableString)",
+          "registered_object": {
+            "class": "SGTopGraphicsBlockDB",
+            "kind": "boundary",
+            "ref": "r46"
+          }
+        }
+      ],
+      "cache_size": 15
+    }
+  }
+}
