@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "ascet-experiment": {
+      "command": "node",
+      "args": [
+        "C:\\path\\to\\prototype-as\\ascet-multi-instance\\tools\\experiment\\dist\\src\\mcp.js"
+      ],
+      "env": {
+        "ASCET_API_DLL": "E:\\ETAS\\ASCET6.4\\cebra\\Etas.AscetNET.dll",
+        "ASCET_EXPERIMENT_MANIFEST": "C:\\path\\to\\isolated-instance\\instance.json"
+      }
+    }
+  }
+}

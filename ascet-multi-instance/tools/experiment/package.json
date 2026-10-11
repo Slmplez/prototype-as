@@ -1,0 +1,23 @@
+{
+  "name": "@ascet/experiment-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "exports": { ".": "./dist/src/index.js" },
+  "scripts": {
+    "build:ts": "tsc -p tsconfig.json",
+    "build:host": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File build.ps1",
+    "build": "npm run build:ts && npm run build:host",
+    "test": "npm run build:ts && node --test dist/test/*.test.js",
+    "start": "node dist/src/cli.js",
+    "start:mcp": "node dist/src/mcp.js",
+    "verify:live": "npm run build && node dist/scripts/verify-live.js",
+    "verify:class": "npm run build:ts && node dist/scripts/verify-class.js",
+    "probe:component": "npm run build:ts && node dist/scripts/probe-component.js",
+    "verify:mcp": "npm run build:ts && node dist/scripts/verify-mcp.js",
+    "verify:guards": "npm run build && node dist/scripts/verify-native-guards.js"
+  },
+  "dependencies": { "@modelcontextprotocol/sdk": "^1.31.0", "ajv": "^8.20.0" },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}
