@@ -44,9 +44,9 @@ export function createAscetExtension(options: AscetExtensionOptions = {}) {
       const text = Array.isArray(assistant?.content) ? assistant.content.filter((part: any) => part?.type === 'text').map((part: any) => part.text).join('\n') : '';
       const validation = owner.validateFinalAnswer(text);
       if (requireIntent) {
-        let intent: unknown;
-        try { intent = JSON.parse(text).intent; } catch { /* JSON validation already records the format failure. */ }
-        validation.errors.push(...intentState.validateFinal(intent));
+        let intent: unknown, outcome: unknown;
+        try { const answer = JSON.parse(text); intent = answer?.intent; outcome = answer?.outcome; } catch { /* JSON validation already records the format failure. */ }
+        validation.errors.push(...intentState.validateFinal(intent, outcome));
         validation.valid = validation.errors.length === 0;
       }
       if (validation.valid) return { entries: [{ type: 'custom', customType: 'ascet_answer_validation', data: { status: 'accepted' } }] };

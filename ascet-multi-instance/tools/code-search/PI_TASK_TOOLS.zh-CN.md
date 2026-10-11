@@ -4,6 +4,10 @@
 
 当前交付与验收见 [TASK_ACCEPTANCE.zh-CN.md](TASK_ACCEPTANCE.zh-CN.md)。task profile 默认启用最终引用/BDE Pin 校验和逐用户请求 Intent 守卫。生产守卫与关闭守卫的首次采样分别记录；历史结果保留在下文。
 
+本轮补充规则：普通代码/符号搜索不猜测 `kinds:["method"]`；只有明确限定 Method 时才加此过滤。State/Transition 的 Action 正文使用 `ascet_read_code`，拓扑和 Method binding 使用 `ascet_inspect_state`，按返回的 `read_tool/next_call` 分组读取。Junction 属于 State Machine 拓扑，用 `find target:states`，不是 BDE `object_kinds`。
+
+独占的不支持请求、需要先澄清的请求直接返回带 intent 的最终 JSON，不调用工具。`intent.decision:unsupported` 对应 `outcome:unsupported`；`clarify` 对应 `partial`。`located` 表示请求所需证据已读全；若只要求定位图形 Method 和共用 Diagram，不要求不存在的文本正文。额外用途未证实应在 answer 说明；若用户明确要求核实该用途，未找到证据仍应返回 partial。保存的赋值与连接不能证明执行周期或运行时调度。
+
 ## 加载与 CLI
 
 ```powershell

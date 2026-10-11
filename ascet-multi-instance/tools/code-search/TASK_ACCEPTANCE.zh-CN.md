@@ -1,5 +1,7 @@
 # 五项任务交付与验收（2026-10-11）
 
+本文件保留 build A/C 的验收成绩。后续 build D 的打磨、独立首答与生产守卫记录见 [TASK_POLISH.zh-CN.md](TASK_POLISH.zh-CN.md) 和 TASK_POLISH_METRICS.json；不把不同构建、样本或修复结果拼接为一个成功率。
+
 范围为保存的代码、BDE、State/Transition 和 Agent 调用可靠性。task profile 提供 ascet_find、ascet_search_code、ascet_search_bde、ascet_read_code、ascet_read_bde、ascet_inspect_state 六个工具；Pi 可以并发发起调用，CLI/Bridge 内部协调原生读取。
 
 ## 已实现

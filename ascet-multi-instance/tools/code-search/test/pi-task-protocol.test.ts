@@ -5,9 +5,9 @@ import { getToolContracts } from '../src/tool-contracts.js';
 import { validateToolArguments } from '@earendil-works/pi-ai';
 import { TaskIntentState } from '../src/task-intent.js';
 import { validatePiFinalAnswer } from '../src/pi-answer-validation.js';
-import { projectTaskModel } from '../src/task-tools.js';
+import { projectTaskModel, projectTaskResponse } from '../src/task-tools.js';
 import { AgentEvidence } from '../src/agent-evidence.js';
-import { splitPiEvalAnswer, acceptedTaskSettlements } from '../scripts/pi-eval-answer.js';
+import { splitPiEvalAnswer, acceptedTaskSettlements, piEvalAnswerFormat } from '../scripts/pi-eval-answer.js';
 
 const intent = { action: 'connections', decision: 'execute', terms: ['Stage'], scope: { components: ['Controller'], members: [] }, clarification_fields: [] };
 const answer = (refs: string[] = []) => JSON.stringify({ outcome: 'partial', answer: 'Need saved evidence', evidence_refs: refs, missing_evidence: ['read'], facts: {}, intent });
@@ -38,6 +38,43 @@ test('intent guard keeps the first declaration across model turns and resets onl
   assert.match(state.beforeTool()!, /INTENT_TOOL_NOT_ALLOWED/);
   state.reset(); state.observe(JSON.stringify({ intent: { ...intent, decision: 'clarify', action: 'clarify' } }));
   assert.match(state.beforeTool()!, /INTENT_TOOL_NOT_ALLOWED/);
+});
+
+test('terminal intents need no calls and cannot claim a completed supported task', () => {
+  for (const decision of ['unsupported', 'clarify']) {
+    const state = new TaskIntentState();
+    const terminal = { ...intent, action: decision, decision };
+    const outcome = decision === 'unsupported' ? 'unsupported' : 'partial';
+    assert.deepEqual(state.validateFinal(terminal, outcome), []);
+    assert.equal(state.validateFinal(terminal, 'located').length, 1);
+    state.observe(JSON.stringify({ intent: terminal }));
+    assert.match(state.beforeTool()!, /INTENT_TOOL_NOT_ALLOWED/);
+    assert.deepEqual(state.validateFinal(terminal, outcome), []);
+    assert.equal(state.validateFinal(intent, 'partial').length, 1);
+  }
+});
+
+test('production-guard evaluation never contradicts the task protocol on unannotated cases', () => {
+  const format = 'Return exactly one JSON object. Do not output a separate intent declaration. Only the final answer is JSON.';
+  const intentFormat = ' Also include intent: protocol metadata.';
+  for (const profile of ['task', 'baseline']) for (const guards of [false, true]) for (const annotation of [false, true]) {
+    const result = piEvalAnswerFormat(format, profile, guards, annotation, intentFormat);
+    const requiresIntent = annotation || (profile === 'task' && guards);
+    assert.equal(result.includes('Do not output a separate intent declaration.'), !requiresIntent);
+    assert.equal(result.includes(intentFormat), requiresIntent);
+    if (requiresIntent) assert.match(result, /unsupported\/clarify.*no tools/);
+    else assert.equal(result, format);
+  }
+});
+
+test('State Machine Action text and bindings advertise distinct directly callable readers', () => {
+  for (const kind of ['state_entry', 'state_static', 'state_exit', 'transition_trigger', 'transition_condition', 'transition_action']) {
+    const code = projectTaskResponse({ ref: 'sabc:d1', kind, component_path: 'Controller', variant: 'ASDL' });
+    assert.deepEqual(code.next_call, { tool: 'ascet_read_code', arguments: { refs: [code.ref] } });
+    const binding = projectTaskResponse({ ref: 'sabc:d2', kind: kind + '_binding', variant: 'BD' });
+    assert.deepEqual(binding.next_call, { tool: 'ascet_inspect_state', arguments: { refs: [binding.ref] } });
+  }
+  for (const kind of ['state', 'transition']) assert.equal(projectTaskResponse({ ref: 'sabc:d3', kind }).read_tool, 'ascet_inspect_state');
 });
 
 test('task eval permits protocol intent on unannotated cases without permitting extra answer fields', () => {

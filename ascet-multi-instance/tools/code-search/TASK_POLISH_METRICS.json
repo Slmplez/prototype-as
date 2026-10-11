@@ -1,0 +1,715 @@
+{
+  "date": "2026-10-11",
+  "boundary": "Saved-code/BDE regression on an existing database, not an independent holdout. Prompt protocol alignment changed in guarded runs; do not attribute score differences solely to the model or tools. Guards validate facts/refs, not arbitrary prose. All original failures and auxiliary intent failures remain in reports.",
+  "offline": {
+    "source": "experiments/2026-10-11-polish-d-offline-02.log",
+    "sha256": "de0390b6595eb0256071a96e9be8f8e58fa47ac8d744548a348662ecdef525a7",
+    "tests": 830,
+    "passed": 830,
+    "failed": 0
+  },
+  "live_sdk": {
+    "source": "experiments/pi-agent-eval/2026-10-11-polish-d-live/report.json",
+    "sha256": "f86b74602e3108678baf1f62b7b9e129c59a4b7199c86b306440eb948ac56ce8",
+    "passed": 16,
+    "total": 16,
+    "sources_and_graphs_unchanged": true,
+    "instance_retained": true
+  },
+  "first_attempt": {
+    "source": "experiments/pi-agent-eval/2026-10-11-polish-d-first/candidate-pi-01/report.json",
+    "sha256": "5403f7935c553b13bd70cd6ae59a53d5ef71964baedf5bf07993f841f6f23db8",
+    "summary": {
+      "passed": 72,
+      "attempted": 80,
+      "planned": 80,
+      "unique_cases": 80,
+      "semantic_passed": 72,
+      "model_service_failures": 0,
+      "completed_cases": 80,
+      "tool_errors": 1,
+      "tool_calls": 208,
+      "expected_tool_errors": 1,
+      "unexpected_tool_errors": 0,
+      "task_latency": {
+        "samples": 80,
+        "p50_ms": 6511.665399999998,
+        "p95_ms": 16602.384900000005,
+        "max_ms": 38158.616500000004
+      },
+      "first_tool_latency": {
+        "samples": 71,
+        "p50_ms": 740.7396999999182,
+        "p95_ms": 884.5966999999946,
+        "max_ms": 1221.1603999999934
+      },
+      "subsequent_tool_latency": {
+        "samples": 136,
+        "p50_ms": 205.5615000000107,
+        "p95_ms": 990.4934000000067,
+        "max_ms": 1815.6797999999835
+      },
+      "subsequent_search_latency": {
+        "samples": 0
+      }
+    },
+    "call_accuracy": {
+      "parameter_acceptance": {
+        "passed": 207,
+        "total": 208,
+        "rate": 0.9951923076923077
+      },
+      "explicit_scope_compliance": {
+        "passed": 45,
+        "total": 50,
+        "rate": 0.9
+      },
+      "unclassified_error_calls": 0,
+      "known_unnecessary_calls": 0,
+      "boundary": "Parameter acceptance is not semantic precision. Scope labels cover annotated explicit predicates only, with same-owner structural reads allowed. Unannotated call relevance remains unknown."
+    },
+    "native_source_checks": {
+      "passed": 50,
+      "total": 50
+    },
+    "scoring_errors": 0,
+    "dimensions": {
+      "tool_behavior_passed": {
+        "passed": 28,
+        "total": 31
+      },
+      "evidence_and_facts_passed": {
+        "passed": 72,
+        "total": 80
+      },
+      "answer_contract_passed": {
+        "passed": 77,
+        "total": 80
+      }
+    },
+    "intent_recognition": {
+      "passed": 14,
+      "total": 31
+    },
+    "tool_errors": {
+      "total": 1,
+      "unexpected": 0
+    },
+    "final_guard_accepted": 0,
+    "repair_events": 0,
+    "failed_cases": [
+      {
+        "id": "intent-where-wired",
+        "checks": [
+          {
+            "name": "saved_edge_facts",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-getter-interface",
+        "checks": [
+          {
+            "name": "shared_graphical_members",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-three-variables",
+        "checks": [
+          {
+            "name": "native_counts",
+            "passed": false
+          },
+          {
+            "name": "search_count_facts",
+            "passed": false
+          },
+          {
+            "name": "intent_component_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_search_scope",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-calc-without-owner",
+        "checks": [
+          {
+            "name": "answer_and_refs",
+            "passed": false,
+            "detail": "outcome must be located, partial, not_found or unsupported; answer must be a nonempty string; evidence_refs must be an array of nonempty strings; missing_evidence must be an array of nonempty strings"
+          },
+          {
+            "name": "strict_json_format",
+            "passed": false
+          },
+          {
+            "name": "required_outcome",
+            "passed": false
+          },
+          {
+            "name": "facts_object",
+            "passed": false
+          },
+          {
+            "name": "intent_schema",
+            "passed": false
+          },
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_component_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_question",
+            "passed": false
+          },
+          {
+            "name": "intent_no_resolved_claim",
+            "passed": false
+          },
+          {
+            "name": "final_intent_schema",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-duplicate-stage",
+        "checks": [
+          {
+            "name": "answer_and_refs",
+            "passed": false,
+            "detail": "outcome must be located, partial, not_found or unsupported; answer must be a nonempty string; evidence_refs must be an array of nonempty strings; missing_evidence must be an array of nonempty strings"
+          },
+          {
+            "name": "strict_json_format",
+            "passed": false
+          },
+          {
+            "name": "required_outcome",
+            "passed": false
+          },
+          {
+            "name": "facts_object",
+            "passed": false
+          },
+          {
+            "name": "relevant_directory_citation",
+            "passed": false
+          },
+          {
+            "name": "directory_facts",
+            "passed": false
+          },
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_question",
+            "passed": false
+          },
+          {
+            "name": "intent_no_resolved_claim",
+            "passed": false
+          },
+          {
+            "name": "final_intent_schema",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-runtime-now",
+        "checks": [
+          {
+            "name": "answer_and_refs",
+            "passed": false,
+            "detail": "outcome must be located, partial, not_found or unsupported; answer must be a nonempty string; evidence_refs must be an array of nonempty strings; missing_evidence must be an array of nonempty strings"
+          },
+          {
+            "name": "strict_json_format",
+            "passed": false
+          },
+          {
+            "name": "required_outcome",
+            "passed": false
+          },
+          {
+            "name": "facts_object",
+            "passed": false
+          },
+          {
+            "name": "unsupported_capability_facts",
+            "passed": false
+          },
+          {
+            "name": "intent_schema",
+            "passed": false
+          },
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_terms",
+            "passed": false
+          },
+          {
+            "name": "intent_component_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          },
+          {
+            "name": "final_intent_schema",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "batch-pagination",
+        "checks": [
+          {
+            "name": "cursor_consumed",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "cross-tool-cursor-recovery",
+        "checks": [
+          {
+            "name": "recovery_facts",
+            "passed": false
+          }
+        ]
+      }
+    ],
+    "auxiliary_failed_checks": [
+      {
+        "id": "intent-literal-expression",
+        "checks": [
+          {
+            "name": "intent_schema",
+            "passed": false
+          },
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_terms",
+            "passed": false
+          },
+          {
+            "name": "intent_component_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-specific-c-variant",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-static-not-entry",
+        "checks": [
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-junction-to-off",
+        "checks": [
+          {
+            "name": "intent_terms",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-shared-class",
+        "checks": [
+          {
+            "name": "intent_schema",
+            "passed": false
+          },
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_terms",
+            "passed": false
+          },
+          {
+            "name": "intent_component_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-line-window",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-missing-referent",
+        "checks": [
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-variant-unspecified",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-followup-timer",
+        "checks": [
+          {
+            "name": "intent_terms",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-unsaved-buffer",
+        "checks": [
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-generated-target",
+        "checks": [
+          {
+            "name": "intent_schema",
+            "passed": false
+          },
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_terms",
+            "passed": false
+          },
+          {
+            "name": "intent_component_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          },
+          {
+            "name": "final_intent_schema",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "accept2-missing-code",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "cursor-intent-variant-unspecified",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      }
+    ],
+    "closeout": {
+      "status": "passed",
+      "sources_and_graphs_unchanged": true,
+      "isolated_instance_retained": true,
+      "endpoint_open": true,
+      "protected_processes_unchanged": true
+    }
+  },
+  "guarded": {
+    "source": "experiments/pi-agent-eval/2026-10-11-polish-d-guarded/guarded-pi-01/report.json",
+    "sha256": "5194f6c39ceefee4ca6d04827bbdbb58be55d92a1d4de66bfc9c524e245eb6fe",
+    "summary": {
+      "passed": 19,
+      "attempted": 20,
+      "planned": 20,
+      "unique_cases": 20,
+      "semantic_passed": 19,
+      "model_service_failures": 0,
+      "completed_cases": 20,
+      "tool_errors": 2,
+      "tool_calls": 67,
+      "expected_tool_errors": 1,
+      "unexpected_tool_errors": 1,
+      "task_latency": {
+        "samples": 20,
+        "p50_ms": 9888.658500000005,
+        "p95_ms": 18173.2436,
+        "max_ms": 29202.2549
+      },
+      "first_tool_latency": {
+        "samples": 14,
+        "p50_ms": 804.9642999999924,
+        "p95_ms": 1574.0483999999997,
+        "max_ms": 1574.0483999999997
+      },
+      "subsequent_tool_latency": {
+        "samples": 52,
+        "p50_ms": 245.66960000000108,
+        "p95_ms": 2284.1177999999927,
+        "max_ms": 2824.2727999999915
+      },
+      "subsequent_search_latency": {
+        "samples": 0
+      }
+    },
+    "call_accuracy": {
+      "parameter_acceptance": {
+        "passed": 65,
+        "total": 67,
+        "rate": 0.9701492537313433
+      },
+      "explicit_scope_compliance": {
+        "passed": 8,
+        "total": 8,
+        "rate": 1
+      },
+      "unclassified_error_calls": 0,
+      "known_unnecessary_calls": 0,
+      "boundary": "Parameter acceptance is not semantic precision. Scope labels cover annotated explicit predicates only, with same-owner structural reads allowed. Unannotated call relevance remains unknown."
+    },
+    "native_source_checks": {
+      "passed": 21,
+      "total": 21
+    },
+    "scoring_errors": 0,
+    "dimensions": {
+      "tool_behavior_passed": {
+        "passed": 14,
+        "total": 14
+      },
+      "evidence_and_facts_passed": {
+        "passed": 19,
+        "total": 20
+      },
+      "answer_contract_passed": {
+        "passed": 20,
+        "total": 20
+      }
+    },
+    "intent_recognition": {
+      "passed": 9,
+      "total": 14
+    },
+    "tool_errors": {
+      "total": 2,
+      "unexpected": 1
+    },
+    "final_guard_accepted": 20,
+    "repair_events": 5,
+    "failed_cases": [
+      {
+        "id": "cross-tool-cursor-recovery",
+        "checks": [
+          {
+            "name": "recovery_facts",
+            "passed": false
+          }
+        ]
+      }
+    ],
+    "auxiliary_failed_checks": [
+      {
+        "id": "intent-getter-interface",
+        "checks": [
+          {
+            "name": "intent_component_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-static-not-entry",
+        "checks": [
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-shared-class",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_terms",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-missing-referent",
+        "checks": [
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-duplicate-stage",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      }
+    ],
+    "closeout": {
+      "status": "passed",
+      "sources_and_graphs_unchanged": true,
+      "isolated_instance_retained": true,
+      "endpoint_open": true,
+      "protected_processes_unchanged": true
+    }
+  }
+}

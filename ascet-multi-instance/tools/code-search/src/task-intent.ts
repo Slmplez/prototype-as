@@ -1,6 +1,6 @@
 import { isRecord } from './validation.js';
 
-export const TASK_INTENT_PROTOCOL = 'Before the first ASCET tool call in EACH user prompt, emit a text block containing exactly {"intent":{"action":"locate|search|read|connections|compare|clarify|unsupported","decision":"execute|clarify|unsupported","terms":[],"scope":{"components":[],"members":[]},"clarification_fields":[]}}. Select one action and decision, not the pipe-separated alternatives. Every list contains strings: intent.scope.components uses ["Controller"], never tool selectors such as [{"name":"Controller"}]. Record the user goal and restrictions, including prior-turn restrictions; do not add owners discovered incidentally. Copy that intent into the final JSON. A repair is part of the same user prompt.';
+export const TASK_INTENT_PROTOCOL = 'First decide whether the current user request is executable. decision unsupported or clarify is terminal: return the final JSON with intent and NO tool calls; do not locate a symbol merely to confirm a known capability limit. Only for decision execute, before the first ASCET tool call in EACH user prompt, emit a text block containing exactly {"intent":{"action":"locate|search|read|connections|compare","decision":"execute","terms":[],"scope":{"components":[],"members":[]},"clarification_fields":[]}}. Choose one action, not the pipe-separated alternatives. For terminal decisions use the matching action unsupported or clarify. Every list contains strings: intent.scope.components uses ["Controller"], never tool selectors such as [{"name":"Controller"}]. Record the user goal and restrictions, including prior-turn restrictions; do not add owners discovered incidentally. Copy that intent into the final JSON. A repair is part of the same user prompt.';
 
 export function validTaskIntent(value: unknown): boolean {
   if (!isRecord(value) || Object.keys(value).some(key => !['action', 'decision', 'terms', 'scope', 'clarification_fields'].includes(key))) return false;
@@ -41,12 +41,17 @@ export class TaskIntentState {
     this.called = true;
     return undefined;
   }
-  validateFinal(value: unknown): string[] {
+  validateFinal(value: unknown, outcome?: unknown): string[] {
     if (!validTaskIntent(value)) return ['Final answer requires a valid intent object'];
     const canonical = (v: any): any => Array.isArray(v) ? v.map(canonical) : isRecord(v)
       ? Object.fromEntries(Object.keys(v).sort().map(key => [key, canonical(v[key])])) : v;
-    if (this.called && JSON.stringify(canonical(value)) !== JSON.stringify(canonical(this.intent)))
+    if (this.intent && JSON.stringify(canonical(value)) !== JSON.stringify(canonical(this.intent)))
       return ['Final intent must match the declaration before this user prompt\'s first tool call'];
+    const intent = value as Record<string, unknown>;
+    if (outcome !== undefined && intent.decision === 'unsupported' && outcome !== 'unsupported')
+      return ['intent.decision unsupported requires outcome unsupported'];
+    if (outcome !== undefined && intent.decision === 'clarify' && outcome !== 'partial')
+      return ['intent.decision clarify requires outcome partial and a clarification question'];
     return [];
   }
 }

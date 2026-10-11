@@ -28,7 +28,7 @@ import { labelCallAccuracy, summarizeCallAccuracy } from './pi-call-accuracy.js'
 import { primaryCheck, scoreDimensions, validatePiEvalContract } from './pi-eval-contract.js';
 import { namedStateObjects, assertFrozenSourceErrors } from './pi-eval-source-context.js';
 import { retainAgentInstance, verifyRunningAgentInstance } from './agent-instance-retention.js';
-import { splitPiEvalAnswer, acceptedTaskSettlements } from './pi-eval-answer.js';
+import { splitPiEvalAnswer, acceptedTaskSettlements, piEvalAnswerFormat } from './pi-eval-answer.js';
 
 type Row = { tool: AgentToolName; args: any; request: Record<string, unknown>; response: any; is_error: boolean;
   ms: number; details: any; model_bytes: number; structured_bytes: number; expected_error?: boolean; turn?: number };
@@ -274,10 +274,7 @@ async function runCase(task: any) {
   const diagnostics = createWriteStream(join(directory, runID + '.stderr.log'));
   const result: any = { id: task.id, execution_id: runID, group: task.group, repetition: task.repetition, requirement: task.requirement, started_utc: new Date().toISOString(), calls, raw_assistant_messages: [], final_guard_events: [], settled: false, timeout: false, budget_exceeded: false, usage: { input: 0, output: 0, cache_read: 0, cost: 0 }, protocol_errors: [] };
   const intentFormat = ' Also include intent: {action: locate/search/read/connections/compare/clarify/unsupported, decision: execute/clarify/unsupported, terms: string[], scope: {components: string[], members: string[]}, clarification_fields: string[]}. terms are positive requested search symbols/fragments, not excluded terms. scope records user constraints, including constraints resolved from prior turns; do not add a discovered owner the user never constrained. Empty lists are allowed. clarification_fields uses symbol/component/variant/hierarchy when those are missing. Choose action for the current user goal, not every intermediate tool.';
-  const taskAnswerFormat = task.intent
-    ? plan.answer_format.replace('Do not output a separate intent declaration.', '').replace('Only the final answer is JSON.', 'The final answer is JSON; the pre-tool intent block is separate.') +
-      (plan.answer_format.includes('Also include intent:') ? '' : intentFormat)
-    : plan.answer_format;
+  const taskAnswerFormat = piEvalAnswerFormat(plan.answer_format, profile, guarded, Boolean(task.intent), intentFormat);
   const intentProtocol = task.intent ? '\nBefore your first tool call in EACH user turn, emit an assistant text block containing exactly one JSON object with ONLY this intent field: {"intent":{"action":"...","decision":"...","terms":[],"scope":{"components":[],"members":[]},"clarification_fields":[]}}. This declaration is separate from the final answer and must be emitted before tools. The final JSON must also include the intent field.' : '';
   const prompt = (turn: { requirement: string; response_fields?: string }) => turn.requirement + '\nFinish within ' + callBudget + ' total tool calls for this conversation. ' + taskAnswerFormat + intentProtocol +
     (turn.response_fields ? '\nResponse schema only (not reference answers): facts: ' + turn.response_fields : '');

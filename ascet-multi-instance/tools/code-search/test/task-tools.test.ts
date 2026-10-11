@@ -23,7 +23,8 @@ test('task profile registers six bounded schemas with mutually separate read arg
   const contracts = getToolContracts('task'); assert.equal(contracts.length, 6);
   assert.equal(new Set(contracts.map(c => c.name)).size, 6);
   for (const c of contracts) {
-    assert.ok(c.guidelines.length <= 6);
+    assert.ok(c.guidelines.length <= 8);
+    assert.ok(Buffer.byteLength(c.guidelines.join('\n')) < 10000);
     assert.ok(Buffer.byteLength(JSON.stringify(c.inputSchema)) < 10000);
   }
   validateTaskInput('ascet_search_code', { queries: [{ text: 'x', mode: 'identifier' }] });
