@@ -1,0 +1,25 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.equinox.p2.engine_2.1.0.v20110511.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.equinox.internal.p2.engine.PhaseSet
+----------------------------
+
+perform(org.eclipse.equinox.internal.p2.engine.EngineSession org.eclipse.equinox.internal.p2.engine.Operand[] org.eclipse.core.runtime.IProgressMonitor )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [10[CATCHBLOCK]], but top level block is 9[CATCHBLOCK]
+validate(org.eclipse.equinox.internal.p2.engine.ActionManager org.eclipse.equinox.p2.engine.IProfile org.eclipse.equinox.internal.p2.engine.Operand[] org.eclipse.equinox.p2.engine.ProvisioningContext org.eclipse.core.runtime.IProgressMonitor )
+  Loose catch block
+
+
+org.eclipse.equinox.internal.p2.engine.SimpleProfileRegistry
+----------------------------
+
+restore()
+  Unable to fully structure code
+
+
+org.eclipse.equinox.internal.p2.engine.phases.CertificateChecker
+----------------------------
+
+persistTrustedCertificates(java.security.cert.Certificate[] )
+  Loose catch block

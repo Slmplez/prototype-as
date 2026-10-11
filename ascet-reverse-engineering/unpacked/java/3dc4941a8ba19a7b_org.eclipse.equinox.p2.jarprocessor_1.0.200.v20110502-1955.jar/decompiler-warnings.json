@@ -1,0 +1,17 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/p2/jarprocessor/unsigner/Unsigner.java",
+    "line": 29,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/jarprocessor/unsigner/Unsigner.java",
+    "line": 33,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/jarprocessor/unsigner/Unsigner.java",
+    "line": 51,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  }
+]

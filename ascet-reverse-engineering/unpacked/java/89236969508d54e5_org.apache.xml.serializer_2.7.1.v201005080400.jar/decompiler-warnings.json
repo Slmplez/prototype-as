@@ -1,0 +1,22 @@
+[
+  {
+    "file": "org/apache/xml/serializer/ObjectFactory.java",
+    "line": 69,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xml/serializer/ToHTMLStream.java",
+    "line": 924,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xml/serializer/WriterToUTF8Buffered.java",
+    "line": 50,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "org/apache/xml/serializer/WriterToUTF8Buffered.java",
+    "line": 111,
+    "text": "* WARNING - void declaration"
+  }
+]

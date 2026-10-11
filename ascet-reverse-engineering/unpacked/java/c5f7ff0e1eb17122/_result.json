@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/archives/10fd53a5e96c4d2e_org.eclipse.core.resources_3.7.100.v20110510-0712.jar/ant_tasks/resources-ant.jar",
+  "sha256": "c5f7ff0e1eb1712288bf7c8c9e02558d7898ba770b8434a8bd4124155fcd5723",
+  "kind": "java",
+  "output": "unpacked/java/c5f7ff0e1eb17122",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 4,
+  "input_classes": 4,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/archives/10fd53a5e96c4d2e_org.eclipse.core.resources_3.7.100.v20110510-0712.jar/ant_tasks/resources-ant.jar"
+  ],
+  "top_level_classes_checked": 4,
+  "missing_top_level_java_files": 0
+}

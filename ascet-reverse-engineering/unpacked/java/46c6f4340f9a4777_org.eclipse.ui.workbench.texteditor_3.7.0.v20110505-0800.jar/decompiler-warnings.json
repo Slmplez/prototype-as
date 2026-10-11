@@ -1,0 +1,112 @@
+[
+  {
+    "file": "org/eclipse/ui/texteditor/AbstractTextEditor.java",
+    "line": 1990,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/texteditor/AbstractTextEditor.java",
+    "line": 2000,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/texteditor/AbstractTextEditor.java",
+    "line": 2044,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/texteditor/AbstractTextEditor.java",
+    "line": 2082,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/texteditor/JoinLinesAction.java",
+    "line": 124,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/HippieCompletionEngine.java",
+    "line": 375,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DiffRegion.java",
+    "line": 60,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DiffRegion.java",
+    "line": 92,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DocumentLineDiffer.java",
+    "line": 200,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DocumentLineDiffer.java",
+    "line": 248,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DocumentLineDiffer.java",
+    "line": 335,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DocumentLineDiffer.java",
+    "line": 489,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DocumentLineDiffer.java",
+    "line": 664,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DocumentLineDiffer.java",
+    "line": 945,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DocumentLineDiffer.java",
+    "line": 992,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DocumentLineDiffer.java",
+    "line": 1035,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/quickdiff/DocumentLineDiffer.java",
+    "line": 1092,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/texteditor/rulers/RulerColumnPlacement.java",
+    "line": 47,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/texteditor/rulers/RulerColumnRegistry.java",
+    "line": 73,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/texteditor/rulers/RulerColumnRegistry.java",
+    "line": 88,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/texteditor/spelling/SpellingReconcileStrategy.java",
+    "line": 147,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/texteditor/templates/TemplateVariableProcessor.java",
+    "line": 82,
+    "text": "* Unable to fully structure code"
+  }
+]

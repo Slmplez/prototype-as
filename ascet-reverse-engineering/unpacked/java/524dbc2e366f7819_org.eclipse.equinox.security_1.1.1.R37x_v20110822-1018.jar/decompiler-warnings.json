@@ -1,0 +1,77 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/PasswordProviderSelector.java",
+    "line": 135,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/PasswordProviderSelector.java",
+    "line": 199,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/PasswordProviderSelector.java",
+    "line": 210,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesContainer.java",
+    "line": 32,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesContainer.java",
+    "line": 47,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesContainer.java",
+    "line": 71,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesContainer.java",
+    "line": 81,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesContainer.java",
+    "line": 91,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesContainer.java",
+    "line": 101,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesMapper.java",
+    "line": 94,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesMapper.java",
+    "line": 114,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesMapper.java",
+    "line": 128,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesRoot.java",
+    "line": 200,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesRoot.java",
+    "line": 352,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/security/storage/SecurePreferencesRoot.java",
+    "line": 362,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

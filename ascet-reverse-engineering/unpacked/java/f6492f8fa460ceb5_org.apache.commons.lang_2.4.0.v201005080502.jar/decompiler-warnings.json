@@ -1,0 +1,77 @@
+[
+  {
+    "file": "org/apache/commons/lang/builder/HashCodeBuilder.java",
+    "line": 36,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/builder/ToStringStyle.java",
+    "line": 134,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/enum/Enum.java",
+    "line": 38,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/enums/Enum.java",
+    "line": 38,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/exception/ExceptionUtils.java",
+    "line": 32,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/exception/ExceptionUtils.java",
+    "line": 48,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/exception/ExceptionUtils.java",
+    "line": 100,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/exception/ExceptionUtils.java",
+    "line": 111,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/exception/ExceptionUtils.java",
+    "line": 122,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/exception/ExceptionUtils.java",
+    "line": 133,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/exception/ExceptionUtils.java",
+    "line": 230,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/exception/NestableDelegate.java",
+    "line": 111,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/exception/NestableDelegate.java",
+    "line": 123,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/apache/commons/lang/text/ExtendedMessageFormat.java",
+    "line": 145,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/commons/lang/time/FastDateFormat.java",
+    "line": 227,
+    "text": "* WARNING - void declaration"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.workbench.texteditor_3.7.0.v20110505-0800.jar",
+  "sha256": "46c6f4340f9a47770311e4581f4a989fd2e9256e5581fa5dd68cb1b9bd489f23",
+  "kind": "java",
+  "output": "unpacked/java/46c6f4340f9a4777_org.eclipse.ui.workbench.texteditor_3.7.0.v20110505-0800.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 162,
+  "input_classes": 342,
+  "warning_lines": 22,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.workbench.texteditor_3.7.0.v20110505-0800.jar"
+  ],
+  "top_level_classes_checked": 162,
+  "missing_top_level_java_files": 0
+}

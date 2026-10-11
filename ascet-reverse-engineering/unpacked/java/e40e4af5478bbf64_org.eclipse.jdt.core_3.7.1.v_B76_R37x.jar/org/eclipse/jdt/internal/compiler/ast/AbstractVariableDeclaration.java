@@ -1,0 +1,103 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package org.eclipse.jdt.internal.compiler.ast;
+
+import org.eclipse.jdt.internal.compiler.ast.Annotation;
+import org.eclipse.jdt.internal.compiler.ast.Expression;
+import org.eclipse.jdt.internal.compiler.ast.Statement;
+import org.eclipse.jdt.internal.compiler.ast.TypeReference;
+import org.eclipse.jdt.internal.compiler.flow.FlowContext;
+import org.eclipse.jdt.internal.compiler.flow.FlowInfo;
+import org.eclipse.jdt.internal.compiler.lookup.BlockScope;
+import org.eclipse.jdt.internal.compiler.lookup.InvocationSite;
+import org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding;
+import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
+
+public abstract class AbstractVariableDeclaration
+extends Statement
+implements InvocationSite {
+    public int declarationEnd;
+    public int declarationSourceEnd;
+    public int declarationSourceStart;
+    public int hiddenVariableDepth;
+    public Expression initialization;
+    public int modifiers;
+    public int modifiersSourceStart;
+    public Annotation[] annotations;
+    public char[] name;
+    public TypeReference type;
+    public static final int FIELD = 1;
+    public static final int INITIALIZER = 2;
+    public static final int ENUM_CONSTANT = 3;
+    public static final int LOCAL_VARIABLE = 4;
+    public static final int PARAMETER = 5;
+    public static final int TYPE_PARAMETER = 6;
+
+    public FlowInfo analyseCode(BlockScope currentScope, FlowContext flowContext, FlowInfo flowInfo) {
+        return flowInfo;
+    }
+
+    public TypeBinding[] genericTypeArguments() {
+        return null;
+    }
+
+    public abstract int getKind();
+
+    public boolean isSuperAccess() {
+        return false;
+    }
+
+    public boolean isTypeAccess() {
+        return false;
+    }
+
+    public StringBuffer printStatement(int indent, StringBuffer output) {
+        this.printAsExpression(indent, output);
+        switch (this.getKind()) {
+            case 3: {
+                return output.append(',');
+            }
+        }
+        return output.append(';');
+    }
+
+    public StringBuffer printAsExpression(int indent, StringBuffer output) {
+        AbstractVariableDeclaration.printIndent(indent, output);
+        AbstractVariableDeclaration.printModifiers(this.modifiers, output);
+        if (this.annotations != null) {
+            AbstractVariableDeclaration.printAnnotations(this.annotations, output);
+        }
+        if (this.type != null) {
+            this.type.print(0, output).append(' ');
+        }
+        output.append(this.name);
+        switch (this.getKind()) {
+            case 3: {
+                if (this.initialization == null) break;
+                this.initialization.printExpression(indent, output);
+                break;
+            }
+            default: {
+                if (this.initialization == null) break;
+                output.append(" = ");
+                this.initialization.printExpression(indent, output);
+            }
+        }
+        return output;
+    }
+
+    public void resolve(BlockScope scope) {
+    }
+
+    public void setActualReceiverType(ReferenceBinding receiverType) {
+    }
+
+    public void setDepth(int depth) {
+        this.hiddenVariableDepth = depth;
+    }
+
+    public void setFieldIndex(int depth) {
+    }
+}
+

@@ -1,0 +1,32 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/p2/artifact/repository/CompositeArtifactRepository.java",
+    "line": 496,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/artifact/repository/simple/DownloadJob.java",
+    "line": 53,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/artifact/repository/simple/SimpleArtifactRepository.java",
+    "line": 226,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/artifact/repository/simple/SimpleArtifactRepository.java",
+    "line": 1097,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/artifact/repository/simple/SimpleArtifactRepository.java",
+    "line": 1146,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/artifact/repository/simple/SimpleArtifactRepository.java",
+    "line": 1172,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

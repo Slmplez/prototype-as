@@ -1,0 +1,2 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.core.filesystem_1.3.100.v20110423-0524.jar
+Decompiled with CFR 0.152

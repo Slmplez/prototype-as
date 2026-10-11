@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface.text_3.7.1.r371_v20110825-0800.jar",
+  "sha256": "116305239e4a6412309953e76ee97ac572eaf9248f072d6c077c9bdedf8cf249",
+  "kind": "java",
+  "output": "unpacked/java/116305239e4a6412_org.eclipse.jface.text_3.7.1.r371_v20110825-0800.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 324,
+  "input_classes": 646,
+  "warning_lines": 54,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface.text_3.7.1.r371_v20110825-0800.jar"
+  ],
+  "top_level_classes_checked": 324,
+  "missing_top_level_java_files": 0
+}

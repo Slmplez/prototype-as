@@ -1,0 +1,27 @@
+[
+  {
+    "file": "org/eclipse/sphinx/platform/resources/MarkerJob.java",
+    "line": 63,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/platform/resources/MarkerJob.java",
+    "line": 78,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/platform/resources/MarkerJob.java",
+    "line": 92,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/platform/resources/ResourceDeltaVisitor.java",
+    "line": 54,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "org/eclipse/sphinx/platform/stats/PerformanceStatsLog.java",
+    "line": 342,
+    "text": "* Unable to fully structure code"
+  }
+]

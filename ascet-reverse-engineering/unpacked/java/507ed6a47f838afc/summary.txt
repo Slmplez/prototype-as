@@ -1,0 +1,2 @@
+Summary for E:\Repo\ASCET\unpacked\archives\20b981d9ee46c49d_org.eclipse.jdt.launching_3.6.1.v20110803_r371.jar\lib\launchingsupport.jar
+Decompiled with CFR 0.152

@@ -1,0 +1,347 @@
+[
+  {
+    "file": "-Module-.cs",
+    "line": 108,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EINTERFACE_UUID_IEtasTimeFactoryAdvanced/*Field data (rva=0x2f600) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 112,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EINTERFACE_UUID_IPiecewiseLinearCorrection/*Field data (rva=0x2f5f0) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 116,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EMODULE_UUID_EtasTimeFactory/*Field data (rva=0x2f5e0) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 120,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EINTERFACE_UUID_IEtasTimeFactory/*Field data (rva=0x2f5d0) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 124,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EINTERFACE_UUID_IHighResolutionCounter/*Field data (rva=0x2f5c0) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 128,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EINTERFACE_UUID_IWaitForEvents/*Field data (rva=0x2f5b0) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 132,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EINTERFACE_UUID_IWaitableTickTimer/*Field data (rva=0x2f5a0) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 136,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EINTERFACE_UUID_IClock/*Field data (rva=0x2f590) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 140,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EINTERFACE_UUID_ICorrectionFunction/*Field data (rva=0x2f580) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 144,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x72f3f262_002EINTERFACE_UUID_IWaitableTimer/*Field data (rva=0x2f570) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 148,
+    "text": "internal static EtasUUID _003FA0x72f3f262_002EINTERFACE_UUID_IEtasCharString/*Field data (rva=0x2f560) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 152,
+    "text": "internal static EtasUUID _003FA0x72f3f262_002EMODULE_UUID_CEtasCharString/*Field data (rva=0x2f550) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 156,
+    "text": "internal static EtasUUID _003FA0x72f3f262_002EINTERFACE_UUID_IGetEtasError/*Field data (rva=0x2f540) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 160,
+    "text": "internal static EtasUUID _003FA0x72f3f262_002EINTERFACE_UUID_IEtasError/*Field data (rva=0x2f530) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 164,
+    "text": "internal static EtasUUID _003FA0x72f3f262_002EMODULE_UUID_CEtasError/*Field data (rva=0x2f520) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 168,
+    "text": "internal static EtasUUID _003FA0x72f3f262_002EINTERFACE_UUID_IEtasWideCharString/*Field data (rva=0x2f510) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 172,
+    "text": "internal static EtasUUID _003FA0x72f3f262_002EMODULE_UUID_CEtasWideCharString/*Field data (rva=0x2f500) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 176,
+    "text": "internal static EtasUUID _003FA0x72f3f262_002EINTERFACE_UUID_IEtasUnknown/*Field data (rva=0x2f4f0) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 180,
+    "text": "internal static string_generator _003FA0x72f3f262_002Eetas_uuid_generator/*Field data (rva=0x2e98f) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 184,
+    "text": "internal unsafe static sbyte* _003Fdigits_end_0040_003F1_003F_003Fget_value_0040string_generator_0040etas_0040_0040ABEED_0040Z_00404QBDB/*Field data (rva=0x31a50) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 186,
+    "text": "internal static uint _003F_003F_B_003F1_003F_003Fget_value_0040string_generator_0040etas_0040_0040ABEED_0040Z_004051/*Field data (rva=0x31a54) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 336,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EINTERFACE_UUID_IEtasTimeFactoryAdvanced/*Field data (rva=0x30388) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 340,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EINTERFACE_UUID_IPiecewiseLinearCorrection/*Field data (rva=0x30378) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 344,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EMODULE_UUID_EtasTimeFactory/*Field data (rva=0x30368) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 348,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EINTERFACE_UUID_IEtasTimeFactory/*Field data (rva=0x30358) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 352,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EINTERFACE_UUID_IHighResolutionCounter/*Field data (rva=0x30348) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 356,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EINTERFACE_UUID_IWaitForEvents/*Field data (rva=0x30338) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 360,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EINTERFACE_UUID_IWaitableTickTimer/*Field data (rva=0x30328) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 364,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EINTERFACE_UUID_IClock/*Field data (rva=0x30318) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 368,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EINTERFACE_UUID_ICorrectionFunction/*Field data (rva=0x30308) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 372,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0x7379f631_002EINTERFACE_UUID_IWaitableTimer/*Field data (rva=0x302f8) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 376,
+    "text": "internal static EtasUUID _003FA0x7379f631_002EINTERFACE_UUID_IEtasCharString/*Field data (rva=0x302e8) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 380,
+    "text": "internal static EtasUUID _003FA0x7379f631_002EMODULE_UUID_CEtasCharString/*Field data (rva=0x302d8) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 384,
+    "text": "internal static EtasUUID _003FA0x7379f631_002EINTERFACE_UUID_IGetEtasError/*Field data (rva=0x302c8) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 388,
+    "text": "internal static EtasUUID _003FA0x7379f631_002EINTERFACE_UUID_IEtasError/*Field data (rva=0x302b8) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 392,
+    "text": "internal static EtasUUID _003FA0x7379f631_002EMODULE_UUID_CEtasError/*Field data (rva=0x302a8) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 396,
+    "text": "internal static EtasUUID _003FA0x7379f631_002EINTERFACE_UUID_IEtasWideCharString/*Field data (rva=0x30298) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 400,
+    "text": "internal static EtasUUID _003FA0x7379f631_002EMODULE_UUID_CEtasWideCharString/*Field data (rva=0x30288) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 404,
+    "text": "internal static EtasUUID _003FA0x7379f631_002EINTERFACE_UUID_IEtasUnknown/*Field data (rva=0x30278) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 408,
+    "text": "internal static string_generator _003FA0x7379f631_002Eetas_uuid_generator/*Field data (rva=0x2f7d7) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 426,
+    "text": "internal static EtasUUID _003FA0xbf0d1a87_002EINTERFACE_UUID_IEtasCharString/*Field data (rva=0x313f4) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 430,
+    "text": "internal static EtasUUID _003FA0xbf0d1a87_002EMODULE_UUID_CEtasCharString/*Field data (rva=0x313e4) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 442,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EINTERFACE_UUID_IEtasTimeFactoryAdvanced/*Field data (rva=0x313d4) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 446,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EINTERFACE_UUID_IPiecewiseLinearCorrection/*Field data (rva=0x313c4) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 450,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EMODULE_UUID_EtasTimeFactory/*Field data (rva=0x313b4) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 454,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EINTERFACE_UUID_IEtasTimeFactory/*Field data (rva=0x313a4) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 458,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EINTERFACE_UUID_IHighResolutionCounter/*Field data (rva=0x31394) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 462,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EINTERFACE_UUID_IWaitForEvents/*Field data (rva=0x31384) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 466,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EINTERFACE_UUID_IWaitableTickTimer/*Field data (rva=0x31374) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 470,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EINTERFACE_UUID_IClock/*Field data (rva=0x31364) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 474,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EINTERFACE_UUID_ICorrectionFunction/*Field data (rva=0x31354) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 478,
+    "text": "internal static EtasUUID EtasTime_002E_003FA0xbf0d1a87_002EINTERFACE_UUID_IWaitableTimer/*Field data (rva=0x31344) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 482,
+    "text": "internal static EtasUUID _003FA0xbf0d1a87_002EINTERFACE_UUID_IGetEtasError/*Field data (rva=0x31334) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 486,
+    "text": "internal static EtasUUID _003FA0xbf0d1a87_002EINTERFACE_UUID_IEtasError/*Field data (rva=0x31324) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 490,
+    "text": "internal static EtasUUID _003FA0xbf0d1a87_002EMODULE_UUID_CEtasError/*Field data (rva=0x31314) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 494,
+    "text": "internal static EtasUUID _003FA0xbf0d1a87_002EINTERFACE_UUID_IEtasWideCharString/*Field data (rva=0x31304) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 498,
+    "text": "internal static EtasUUID _003FA0xbf0d1a87_002EMODULE_UUID_CEtasWideCharString/*Field data (rva=0x312f4) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 502,
+    "text": "internal static EtasUUID _003FA0xbf0d1a87_002EINTERFACE_UUID_IEtasUnknown/*Field data (rva=0x312e4) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 506,
+    "text": "internal static string_generator _003FA0xbf0d1a87_002Eetas_uuid_generator/*Field data (rva=0x305ee) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 508,
+    "text": "internal static int ___0040_0040_PchSym__004000_0040UzfglyfrowUrmxzUormvBGUhkJUhemUsziwdzivzxxvhhUxlwrmtuiznvdlipUkilqvxgUvgzhgrnvUvgzhgrnvwlgmvgUivovzhvUhgwzucOlyq_0040/*Field data (rva=0x31404) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 561,
+    "text": "internal static bool _003FInitializedPerProcess_0040DefaultDomain_0040_003CCrtImplementationDetails_003E_0040_00402_NA/*Field data (rva=0x318a3) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 563,
+    "text": "internal static bool _003FEntered_0040DefaultDomain_0040_003CCrtImplementationDetails_003E_0040_00402_NA/*Field data (rva=0x318a0) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 565,
+    "text": "internal static bool _003FInitializedNative_0040DefaultDomain_0040_003CCrtImplementationDetails_003E_0040_00402_NA/*Field data (rva=0x318a1) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 567,
+    "text": "internal static int _003FCount_0040AllDomains_0040_003CCrtImplementationDetails_003E_0040_00402HA/*Field data (rva=0x3189c) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 583,
+    "text": "internal static bool _003FInitializedNativeFromCCTOR_0040DefaultDomain_0040_003CCrtImplementationDetails_003E_0040_00402_NA/*Field data (rva=0x318a2) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 599,
+    "text": "internal static uint _003FA0xc6172590_002E__exit_list_size/*Field data (rva=0x31a28) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 604,
+    "text": "internal unsafe static delegate*<void>* _003FA0xc6172590_002E__onexitbegin_m/*Field data (rva=0x31a20) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 606,
+    "text": "internal unsafe static delegate*<void>* _003FA0xc6172590_002E__onexitend_m/*Field data (rva=0x31a24) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 628,
+    "text": "internal unsafe static volatile void* __native_startup_lock/*Field data (rva=0x31bdc) could not be foundin any section!*/;"
+  }
+]

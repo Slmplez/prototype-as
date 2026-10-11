@@ -1,0 +1,11 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\com.google.guava_10.0.1.v201203051515.jar
+Decompiled with CFR 0.152
+
+
+com.google.common.util.concurrent.Futures
+----------------------------
+
+run()
+  Loose catch block
+setOneValue(int java.util.concurrent.Future<? extends V> )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 3 blocks at once

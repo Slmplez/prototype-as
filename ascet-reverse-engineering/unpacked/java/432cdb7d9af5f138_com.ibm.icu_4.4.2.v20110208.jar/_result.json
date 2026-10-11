@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.ibm.icu_4.4.2.v20110208.jar",
+  "sha256": "432cdb7d9af5f138fbfd1902c197f01a314422a7db760e291cab2c76d8d65be8",
+  "kind": "java",
+  "output": "unpacked/java/432cdb7d9af5f138_com.ibm.icu_4.4.2.v20110208.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 374,
+  "input_classes": 802,
+  "warning_lines": 105,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.ibm.icu_4.4.2.v20110208.jar"
+  ],
+  "top_level_classes_checked": 374,
+  "missing_top_level_java_files": 0
+}

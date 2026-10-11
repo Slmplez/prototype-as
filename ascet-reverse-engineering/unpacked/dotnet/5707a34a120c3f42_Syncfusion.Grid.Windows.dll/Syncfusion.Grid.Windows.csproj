@@ -1,0 +1,91 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Syncfusion.Grid.Windows</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Syncfusion.Windows.Forms.Grid.Base.Resources.SFCOLUMN.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Base.Resources.SFHEIGHT.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Base.Resources.SFROW.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Base.Resources.SFROWRTL.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Base.Resources.SFSELDRG.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Base.Resources.SFWIDTH.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Design.Resources.DefaultMenuItems.xml" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Design.Resources.MainToolbarItems.xml" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFARROW.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFARROWR.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFCOLLAPSE.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFCOLLAPSING.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFEXPAND.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFEXPANDING.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFPENCIL.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFPENCILR.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFSTAR.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.MouseController.RedDownArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Extensions.MouseController.RedUpArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.GridCurrentCellTab.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Resources.Browse.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridAwareTextBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridDataBoundGrid.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridListControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridRecordNavigationControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Resources.info.png" />
+    <None Remove="Syncfusion.Windows.Forms.Grid.Resources.sfgrid.ico" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Base.Resources.SFCOLUMN.CUR" LogicalName="Syncfusion.Windows.Forms.Grid.Base.Resources.SFCOLUMN.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Base.Resources.SFHEIGHT.CUR" LogicalName="Syncfusion.Windows.Forms.Grid.Base.Resources.SFHEIGHT.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Base.Resources.SFROW.CUR" LogicalName="Syncfusion.Windows.Forms.Grid.Base.Resources.SFROW.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Base.Resources.SFROWRTL.CUR" LogicalName="Syncfusion.Windows.Forms.Grid.Base.Resources.SFROWRTL.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Base.Resources.SFSELDRG.CUR" LogicalName="Syncfusion.Windows.Forms.Grid.Base.Resources.SFSELDRG.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Base.Resources.SFWIDTH.CUR" LogicalName="Syncfusion.Windows.Forms.Grid.Base.Resources.SFWIDTH.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Design.Resources.DefaultMenuItems.xml" LogicalName="Syncfusion.Windows.Forms.Grid.Design.Resources.DefaultMenuItems.xml" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Design.Resources.MainToolbarItems.xml" LogicalName="Syncfusion.Windows.Forms.Grid.Design.Resources.MainToolbarItems.xml" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFARROW.BMP" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFARROW.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFARROWR.BMP" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFARROWR.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFCOLLAPSE.BMP" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFCOLLAPSE.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFCOLLAPSING.BMP" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFCOLLAPSING.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFEXPAND.BMP" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFEXPAND.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFEXPANDING.BMP" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFEXPANDING.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFPENCIL.BMP" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFPENCIL.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFPENCILR.BMP" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFPENCILR.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFSTAR.BMP" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.DataBound.Resources.SFSTAR.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.MouseController.RedDownArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.MouseController.RedDownArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Extensions.MouseController.RedUpArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Grid.Extensions.MouseController.RedUpArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.GridCurrentCellTab.bmp" LogicalName="Syncfusion.Windows.Forms.Grid.GridCurrentCellTab.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Resources.Browse.bmp" LogicalName="Syncfusion.Windows.Forms.Grid.Resources.Browse.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridAwareTextBox.bmp" LogicalName="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridAwareTextBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridControl.bmp" LogicalName="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridDataBoundGrid.bmp" LogicalName="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridDataBoundGrid.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridListControl.bmp" LogicalName="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridListControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridRecordNavigationControl.bmp" LogicalName="Syncfusion.Windows.Forms.Grid.ToolboxIcons.GridRecordNavigationControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Resources.info.png" LogicalName="Syncfusion.Windows.Forms.Grid.Resources.info.png" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Grid.Resources.sfgrid.ico" LogicalName="Syncfusion.Windows.Forms.Grid.Resources.sfgrid.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Syncfusion.Shared.Base">
+      <HintPath>..\..\installation\bin\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Syncfusion.Shared.Windows">
+      <HintPath>..\..\installation\bin\Syncfusion.Shared.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="Syncfusion.Core">
+      <HintPath>..\..\installation\bin\Syncfusion.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Base">
+      <HintPath>..\..\installation\bin\Syncfusion.Grid.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+  </ItemGroup>
+</Project>

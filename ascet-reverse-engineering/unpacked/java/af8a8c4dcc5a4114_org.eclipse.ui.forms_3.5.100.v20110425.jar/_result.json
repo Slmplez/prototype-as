@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.forms_3.5.100.v20110425.jar",
+  "sha256": "af8a8c4dcc5a4114d8ad1ed4d2ae7d53fdca35efe3c5c4311877dea6e4a5c3a3",
+  "kind": "java",
+  "output": "unpacked/java/af8a8c4dcc5a4114_org.eclipse.ui.forms_3.5.100.v20110425.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 82,
+  "input_classes": 173,
+  "warning_lines": 1,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.forms_3.5.100.v20110425.jar"
+  ],
+  "top_level_classes_checked": 82,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "file": "org/sat4j/AbstractLauncher.java",
+    "line": 72,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

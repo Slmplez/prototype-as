@@ -1,0 +1,142 @@
+[
+  {
+    "file": "org/eclipse/jface/action/CoolBarManager.java",
+    "line": 294,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/action/CoolBarManager.java",
+    "line": 324,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/jface/action/CoolBarManager.java",
+    "line": 328,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/jface/action/CoolBarManager.java",
+    "line": 347,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/jface/action/LegacyActionTools.java",
+    "line": 95,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/layout/LayoutGenerator.java",
+    "line": 57,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/operation/AccumulatingProgressMonitor.java",
+    "line": 35,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/operation/AccumulatingProgressMonitor.java",
+    "line": 63,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/operation/AccumulatingProgressMonitor.java",
+    "line": 87,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/operation/ModalContext.java",
+    "line": 34,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/operation/ModalContext.java",
+    "line": 200,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/jface/operation/ModalContext.java",
+    "line": 204,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/jface/operation/ModalContext.java",
+    "line": 224,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/jface/preference/PreferenceDialog.java",
+    "line": 618,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/jface/preference/PreferenceDialog.java",
+    "line": 622,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/jface/preference/PreferenceDialog.java",
+    "line": 642,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/jface/viewers/ArrayContentProvider.java",
+    "line": 16,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/viewers/CustomHashtable.java",
+    "line": 255,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/window/ApplicationWindow.java",
+    "line": 277,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/wizard/WizardDialog.java",
+    "line": 481,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/bindings/keys/KeySequenceText.java",
+    "line": 112,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/viewers/deferred/BackgroundContentProvider.java",
+    "line": 260,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/viewers/deferred/BackgroundContentProvider.java",
+    "line": 321,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/viewers/deferred/ConcurrentTableUpdator.java",
+    "line": 47,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/viewers/deferred/ConcurrentTableUpdator.java",
+    "line": 61,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/viewers/deferred/ConcurrentTableUpdator.java",
+    "line": 104,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/viewers/deferred/ConcurrentTableUpdator.java",
+    "line": 130,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/viewers/deferred/ConcurrentTableUpdator.java",
+    "line": 154,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

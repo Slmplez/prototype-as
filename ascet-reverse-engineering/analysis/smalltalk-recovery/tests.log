@@ -1,0 +1,32 @@
+test_between_handler (__main__.NativeEvidence.test_between_handler) ... ok
+test_block_activation_stack_and_context_locals (__main__.NativeEvidence.test_block_activation_stack_and_context_locals) ... ok
+test_captured_variable_chain_read_and_write (__main__.NativeEvidence.test_captured_variable_chain_read_and_write) ... ok
+test_false_and_true_branches (__main__.NativeEvidence.test_false_and_true_branches) ... ok
+test_inline_block_creation_fields_and_jump (__main__.NativeEvidence.test_inline_block_creation_fields_and_jump) ... ok
+test_integer_binary_handlers (__main__.NativeEvidence.test_integer_binary_handlers) ... ok
+test_method_entry_argument_order_and_initial_self (__main__.NativeEvidence.test_method_entry_argument_order_and_initial_self) ... ok
+test_nonlocal_return_finds_home_method_frame (__main__.NativeEvidence.test_nonlocal_return_finds_home_method_frame) ... ok
+test_return_modes (__main__.NativeEvidence.test_return_modes) ... ok
+test_all_bound_records_are_reconstructed (__main__.RecoveryChecks.test_all_bound_records_are_reconstructed) ... ok
+test_all_layouts_and_shared_code_targets (__main__.RecoveryChecks.test_all_layouts_and_shared_code_targets) ... ok
+test_esstring_global_literal (__main__.RecoveryChecks.test_esstring_global_literal) ... ok
+test_inline_capture_write_uses_outer_local (__main__.RecoveryChecks.test_inline_capture_write_uses_outer_local) ... ok
+test_inline_nonlocal_return_remains_method_return (__main__.RecoveryChecks.test_inline_nonlocal_return_remains_method_return) ... ok
+test_invalid_capture_depth_and_block_extent_rejected (__main__.RecoveryChecks.test_invalid_capture_depth_and_block_extent_rejected) ... ok
+test_legacy_esmethodarray_binding (__main__.RecoveryChecks.test_legacy_esmethodarray_binding) ... ok
+test_legacy_scalar_literals (__main__.RecoveryChecks.test_legacy_scalar_literals) ... ok
+test_legacy_string_literal_preserves_raw_bytes (__main__.RecoveryChecks.test_legacy_string_literal_preserves_raw_bytes) ... ok
+test_loaded_discards_result_and_returns_self (__main__.RecoveryChecks.test_loaded_discards_result_and_returns_self) ... ok
+test_pool_key_is_one_based_and_hash_masked (__main__.RecoveryChecks.test_pool_key_is_one_based_and_hash_masked) ... ok
+test_reject_invalid_branch_and_unknown_opcode (__main__.RecoveryChecks.test_reject_invalid_branch_and_unknown_opcode) ... ok
+test_snapshot_class_references_and_no_dynamic_compiled_methods (__main__.RecoveryChecks.test_snapshot_class_references_and_no_dynamic_compiled_methods) ... ok
+test_special_entry_uses_declared_fallback_frame (__main__.RecoveryChecks.test_special_entry_uses_declared_fallback_frame) ... ok
+test_structured_native_object_literals (__main__.RecoveryChecks.test_structured_native_object_literals) ... ok
+test_structured_parameter_spec_literal (__main__.RecoveryChecks.test_structured_parameter_spec_literal) ... ok
+test_type9_relocation_dereferences_dependency_slot (__main__.RecoveryChecks.test_type9_relocation_dereferences_dependency_slot) ... ok
+test_unbound_method_has_only_block_template_references (__main__.RecoveryChecks.test_unbound_method_has_only_block_template_references) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 4.743s
+
+OK

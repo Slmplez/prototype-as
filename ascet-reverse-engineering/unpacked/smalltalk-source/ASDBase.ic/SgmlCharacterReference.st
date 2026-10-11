@@ -1,0 +1,25 @@
+"Statically reconstructed from ASCET image; generated names; not original source. Runtime equivalence not tested."
+
+"ASDBase.ic method 0x2007677c; bytecode file offset 0x9757c8"
+!SgmlCharacterReference methodsFor: 'recovered'!
+isCharacterReference
+    ^true
+! !
+
+"ASDBase.ic method 0x20165574; bytecode file offset 0xa61e40"
+!SgmlCharacterReference methodsFor: 'recovered'!
+printOn: recoveredArg1
+    | recoveredValue0 recoveredValue1 recoveredValue2 recoveredValue3 recoveredValue4 recoveredValue5 recoveredValue6 |
+    recoveredValue0 := recoveredArg1.
+    recoveredValue1 := CRO.
+    (recoveredValue0) nextPutAll: (recoveredValue1).
+    recoveredValue2 := (self) contents.
+    recoveredValue3 := (recoveredValue2) asInteger.
+    recoveredValue4 := recoveredArg1.
+    (recoveredValue3) printOn: (recoveredValue4).
+    recoveredValue5 := recoveredArg1.
+    recoveredValue6 := REFC.
+    (recoveredValue5) nextPutAll: (recoveredValue6).
+    ^self
+! !
+

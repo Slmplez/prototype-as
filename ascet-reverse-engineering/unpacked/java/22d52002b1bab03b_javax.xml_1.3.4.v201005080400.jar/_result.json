@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/javax.xml_1.3.4.v201005080400.jar",
+  "sha256": "22d52002b1bab03b51372c197411a7aee2a5d80f8a3f767eeeace71d1e0c4ad2",
+  "kind": "java",
+  "output": "unpacked/java/22d52002b1bab03b_javax.xml_1.3.4.v201005080400.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 249,
+  "input_classes": 303,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/javax.xml_1.3.4.v201005080400.jar"
+  ],
+  "top_level_classes_checked": 249,
+  "missing_top_level_java_files": 0
+}

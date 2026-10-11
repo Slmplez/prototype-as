@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/Web Service/EtasToolStarter.exe",
+  "sha256": "968bc995b7afcc99e9e09e4ed0f59d97dfd91b01c5e9ab86a96e1806959f7ac8",
+  "kind": "managed",
+  "output": "unpacked/dotnet/968bc995b7afcc99_EtasToolStarter.exe",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 7,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Web Service/EtasToolStarter.exe"
+  ]
+}

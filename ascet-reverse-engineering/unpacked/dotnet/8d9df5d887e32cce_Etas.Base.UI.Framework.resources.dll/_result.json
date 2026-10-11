@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/de-ch/Etas.Base.UI.Framework.resources.dll",
+  "sha256": "8d9df5d887e32cce18a03cd3cdb983913a5af9e794378157f127ee6e43fea9dd",
+  "kind": "managed",
+  "output": "unpacked/dotnet/8d9df5d887e32cce_Etas.Base.UI.Framework.resources.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 1,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/de-ch/Etas.Base.UI.Framework.resources.dll"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/EtasTimeDotNet.dll",
+  "sha256": "dd28cbabc7506add8e70891f2e99a5575a7eb239e08edf7d78fcba046febc017",
+  "kind": "managed",
+  "output": "unpacked/dotnet/dd28cbabc7506add_EtasTimeDotNet.dll",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 537,
+  "warning_lines": 69,
+  "aliases": [
+    "unpacked/installation/bin/EtasTimeDotNet.dll"
+  ]
+}

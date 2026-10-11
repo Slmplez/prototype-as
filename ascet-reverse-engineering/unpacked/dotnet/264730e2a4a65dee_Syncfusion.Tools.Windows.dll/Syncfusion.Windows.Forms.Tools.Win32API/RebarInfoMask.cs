@@ -1,0 +1,17 @@
+namespace Syncfusion.Windows.Forms.Tools.Win32API;
+
+public enum RebarInfoMask
+{
+	RBBIM_STYLE = 1,
+	RBBIM_COLORS = 2,
+	RBBIM_TEXT = 4,
+	RBBIM_IMAGE = 8,
+	RBBIM_CHILD = 0x10,
+	RBBIM_CHILDSIZE = 0x20,
+	RBBIM_SIZE = 0x40,
+	RBBIM_BACKGROUND = 0x80,
+	RBBIM_ID = 0x100,
+	RBBIM_IDEALSIZE = 0x200,
+	RBBIM_LPARAM = 0x400,
+	BBIM_HEADERSIZE = 0x800
+}

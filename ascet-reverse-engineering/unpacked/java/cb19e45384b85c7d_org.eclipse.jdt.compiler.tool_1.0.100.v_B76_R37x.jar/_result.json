@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.compiler.tool_1.0.100.v_B76_R37x.jar",
+  "sha256": "cb19e45384b85c7d82d44e2a0fed4c13b4b4727e3395d8c3709cfca6244f41d9",
+  "kind": "java",
+  "output": "unpacked/java/cb19e45384b85c7d_org.eclipse.jdt.compiler.tool_1.0.100.v_B76_R37x.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 8,
+  "input_classes": 17,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.compiler.tool_1.0.100.v_B76_R37x.jar"
+  ],
+  "top_level_classes_checked": 8,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.security_1.1.1.R37x_v20110822-1018.jar",
+  "sha256": "524dbc2e366f78198f1a73c34f748e1b3ae99cea51144b86440e714e59966df1",
+  "kind": "java",
+  "output": "unpacked/java/524dbc2e366f7819_org.eclipse.equinox.security_1.1.1.R37x_v20110822-1018.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 48,
+  "input_classes": 53,
+  "warning_lines": 15,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.security_1.1.1.R37x_v20110822-1018.jar"
+  ],
+  "top_level_classes_checked": 48,
+  "missing_top_level_java_files": 0
+}

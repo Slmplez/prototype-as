@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/cebra/ClassESDLConcurrentTest.exe",
+  "sha256": "4815b359a533ef59e910a0b1041b85af07277f2572af95fd84a13ad01eefc210",
+  "kind": "managed",
+  "output": "unpacked/dotnet/4815b359a533ef59_ClassESDLConcurrentTest.exe",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 2,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/cebra/ClassESDLConcurrentTest.exe"
+  ]
+}

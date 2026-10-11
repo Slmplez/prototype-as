@@ -1,0 +1,137 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/app/Activator.java",
+    "line": 175,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/Activator.java",
+    "line": 210,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/AppPersistence.java",
+    "line": 122,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/AppPersistence.java",
+    "line": 132,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/AppPersistence.java",
+    "line": 149,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/AppPersistence.java",
+    "line": 169,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/AppPersistence.java",
+    "line": 187,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/AppPersistence.java",
+    "line": 297,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/AppPersistence.java",
+    "line": 479,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppContainer.java",
+    "line": 158,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppContainer.java",
+    "line": 177,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppContainer.java",
+    "line": 248,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppContainer.java",
+    "line": 339,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppContainer.java",
+    "line": 526,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppContainer.java",
+    "line": 539,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppContainer.java",
+    "line": 599,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppContainer.java",
+    "line": 622,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppContainer.java",
+    "line": 685,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppDescriptor.java",
+    "line": 132,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppDescriptor.java",
+    "line": 146,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppHandle.java",
+    "line": 107,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppHandle.java",
+    "line": 121,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/app/EclipseAppHandle.java",
+    "line": 191,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/service/application/ApplicationDescriptor.java",
+    "line": 354,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/service/application/ApplicationDescriptor.java",
+    "line": 377,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/service/application/ApplicationDescriptor.java",
+    "line": 427,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/service/application/ApplicationDescriptor.java",
+    "line": 451,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

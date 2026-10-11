@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar",
+  "sha256": "453d6f5e9d3f1682ed0eb86110231b6182f1d6d2a95fd2c528496818a01383ac",
+  "kind": "java",
+  "output": "unpacked/java/453d6f5e9d3f1682_org.apache.commons.logging_1.0.4.v201101211617.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 13,
+  "input_classes": 18,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar"
+  ],
+  "top_level_classes_checked": 13,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.swt.win32.win32.x86_3.7.1.v3738a.jar",
+  "sha256": "7e0d48280d5867c2126d8845afcf2839fce8e893ee61ab6ac0805ae1068c756b",
+  "kind": "java",
+  "output": "unpacked/java/7e0d48280d5867c2_org.eclipse.swt.win32.win32.x86_3.7.1.v3738a.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 793,
+  "input_classes": 1078,
+  "warning_lines": 51,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.swt.win32.win32.x86_3.7.1.v3738a.jar"
+  ],
+  "top_level_classes_checked": 793,
+  "missing_top_level_java_files": 0
+}

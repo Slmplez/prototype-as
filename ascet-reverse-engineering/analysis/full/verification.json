@@ -1,0 +1,8 @@
+{
+  "snapshot_files_verified": 11986,
+  "snapshot_mismatches": [],
+  "missing_binary_stages": [],
+  "orphan_class_paths": 0,
+  "unique_class_bytes_covered_by_java_inputs": 28686,
+  "java_top_level_files_missing": 0
+}

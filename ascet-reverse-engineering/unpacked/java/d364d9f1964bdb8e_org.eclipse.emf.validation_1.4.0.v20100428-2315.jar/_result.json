@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar",
+  "sha256": "d364d9f1964bdb8e4ffa38eb2ba33b76e8d8cd301ca5413e321cebb1c491f80f",
+  "kind": "java",
+  "output": "unpacked/java/d364d9f1964bdb8e_org.eclipse.emf.validation_1.4.0.v20100428-2315.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 137,
+  "input_classes": 203,
+  "warning_lines": 23,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"
+  ],
+  "top_level_classes_checked": 137,
+  "missing_top_level_java_files": 0
+}

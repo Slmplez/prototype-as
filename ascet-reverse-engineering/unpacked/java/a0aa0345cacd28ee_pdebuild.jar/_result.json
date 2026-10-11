@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.build_3.7.0.v20110512-1320/pdebuild.jar",
+  "sha256": "a0aa0345cacd28eeb527eb0f9e34f5a6f3d8950bb4b8cf738355548890ca6e90",
+  "kind": "java",
+  "output": "unpacked/java/a0aa0345cacd28ee_pdebuild.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 83,
+  "input_classes": 99,
+  "warning_lines": 2,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.build_3.7.0.v20110512-1320/pdebuild.jar"
+  ],
+  "top_level_classes_checked": 83,
+  "missing_top_level_java_files": 0
+}

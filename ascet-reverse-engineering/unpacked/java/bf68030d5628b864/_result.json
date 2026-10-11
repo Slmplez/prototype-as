@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/archives/b7c13142ae1e2cd6_org.eclipse.ant.core_3.2.300.v20110511.jar/lib/antsupportlib.jar",
+  "sha256": "bf68030d5628b864c0f988c0daa410d87a3f3131f9aee553abeb1184199b4f8a",
+  "kind": "java",
+  "output": "unpacked/java/bf68030d5628b864",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 14,
+  "input_classes": 16,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/archives/b7c13142ae1e2cd6_org.eclipse.ant.core_3.2.300.v20110511.jar/lib/antsupportlib.jar"
+  ],
+  "top_level_classes_checked": 14,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,25 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package com.etas.amd620.core.ComponentMain;
+
+import com.etas.amd620.core.ComponentMain.ArgumentsComplexType;
+import com.etas.amd620.core.ComponentMain.LocalsComplexType;
+import com.etas.amd620.core.ComponentMain.MethodBaseT;
+import com.etas.amd620.core.ComponentMain.ReturnT;
+
+public interface MethodT
+extends MethodBaseT {
+    public ArgumentsComplexType getArguments();
+
+    public void setArguments(ArgumentsComplexType var1);
+
+    public ReturnT getReturn();
+
+    public void setReturn(ReturnT var1);
+
+    public LocalsComplexType getLocals();
+
+    public void setLocals(LocalsComplexType var1);
+}
+

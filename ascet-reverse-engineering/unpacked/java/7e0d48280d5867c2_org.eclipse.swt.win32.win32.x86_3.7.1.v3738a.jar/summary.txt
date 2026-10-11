@@ -1,0 +1,149 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.swt.win32.win32.x86_3.7.1.v3738a.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.swt.browser.External
+----------------------------
+
+convertToJS(java.lang.Object org.eclipse.swt.internal.mozilla.nsIComponentManager )
+  Unable to fully structure code
+
+
+org.eclipse.swt.custom.BusyIndicator
+----------------------------
+
+showWhile(org.eclipse.swt.widgets.Display java.lang.Runnable )
+  Unable to fully structure code
+
+
+org.eclipse.swt.custom.StyledText
+----------------------------
+
+getText(org.eclipse.swt.accessibility.AccessibleTextEvent )
+  Unable to fully structure code
+
+
+org.eclipse.swt.custom.StyledTextRenderer
+----------------------------
+
+addMerge(org.eclipse.swt.custom.StyleRange[] int int int )
+  Unable to fully structure code
+getRangeIndex(int int int )
+  Unable to fully structure code
+
+
+org.eclipse.swt.dnd.URLTransfer
+----------------------------
+
+nativeToJava(org.eclipse.swt.dnd.TransferData )
+  Unable to fully structure code
+
+
+org.eclipse.swt.graphics.Image
+----------------------------
+
+init(org.eclipse.swt.graphics.Device org.eclipse.swt.graphics.Image org.eclipse.swt.graphics.ImageData org.eclipse.swt.graphics.ImageData )
+  Unable to fully structure code
+
+
+org.eclipse.swt.graphics.ImageData
+----------------------------
+
+blit(int byte[] int int int int int int int byte[] byte[] byte[] int byte[] int int int byte[] int int int int int int int byte[] byte[] byte[] boolean boolean )
+  Unable to fully structure code
+blit(int byte[] int int int int int int int byte[] byte[] byte[] int byte[] int int int byte[] int int int int int int int int int int boolean boolean )
+  Unable to fully structure code
+
+
+org.eclipse.swt.graphics.ImageLoader
+----------------------------
+
+load(java.lang.String )
+  Loose catch block
+
+
+org.eclipse.swt.internal.image.JPEGDecoder
+----------------------------
+
+jpeg_make_d_derived_tbl(org.eclipse.swt.internal.image.JPEGDecoder$jpeg_decompress_struct boolean int org.eclipse.swt.internal.image.JPEGDecoder$d_derived_tbl )
+  Unable to fully structure code
+loadFromByteStream(java.io.InputStream org.eclipse.swt.graphics.ImageLoader )
+  Unable to fully structure code
+
+
+org.eclipse.swt.internal.image.JPEGFileFormat
+----------------------------
+
+encodeACCoefficients(int[] int )
+  Unable to fully structure code
+
+
+org.eclipse.swt.internal.image.JPEGHuffmanTable
+----------------------------
+
+initialize()
+  Unable to fully structure code
+
+
+org.eclipse.swt.internal.image.LZWCodec
+----------------------------
+
+encodeLoop()
+  Unable to fully structure code
+
+
+org.eclipse.swt.internal.image.PngHuffmanTable
+----------------------------
+
+generateTable(int[] )
+  Unable to fully structure code
+
+
+org.eclipse.swt.internal.mozilla.nsID
+----------------------------
+
+Parse(java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.swt.internal.ole.win32.IDispatch
+----------------------------
+
+GetIDsOfNames(org.eclipse.swt.internal.ole.win32.GUID java.lang.String[] int int int[] )
+  Unable to fully structure code
+
+
+org.eclipse.swt.internal.ole.win32.ITypeInfo
+----------------------------
+
+GetIDsOfNames(java.lang.String[] int int[] )
+  Unable to fully structure code
+
+
+org.eclipse.swt.widgets.Composite
+----------------------------
+
+_getChildren()
+  Unable to fully structure code
+
+
+org.eclipse.swt.widgets.Control
+----------------------------
+
+WM_SYSCOMMAND(int int )
+  Handled duff style switch with additional control
+  Handled impossible loop by duplicating code
+
+
+org.eclipse.swt.widgets.Display
+----------------------------
+
+post(org.eclipse.swt.widgets.Event )
+  Unable to fully structure code
+
+
+org.eclipse.swt.widgets.EventTable
+----------------------------
+
+sendEvent(org.eclipse.swt.widgets.Event )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 3[WHILELOOP]

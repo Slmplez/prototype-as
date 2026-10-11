@@ -1,0 +1,11 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package autosar40.system.fibex.fibexcore.corecommunication;
+
+import autosar40.system.fibex.fibexcore.coretopology.CommConnectorPort;
+
+public interface IPduPort
+extends CommConnectorPort {
+}
+

@@ -1,0 +1,242 @@
+[
+  {
+    "file": "org/eclipse/debug/core/DebugPlugin.java",
+    "line": 159,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/core/DebugPlugin.java",
+    "line": 173,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/core/DebugPlugin.java",
+    "line": 562,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/debug/core/DebugPlugin.java",
+    "line": 566,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/debug/core/DebugPlugin.java",
+    "line": 584,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/debug/core/DebugPlugin.java",
+    "line": 767,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/core/model/RuntimeProcess.java",
+    "line": 138,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/core/model/RuntimeProcess.java",
+    "line": 293,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/core/model/RuntimeProcess.java",
+    "line": 294,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/debug/core/model/RuntimeProcess.java",
+    "line": 340,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/core/sourcelookup/AbstractSourceLookupDirector.java",
+    "line": 244,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/core/sourcelookup/AbstractSourceLookupDirector.java",
+    "line": 508,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/debug/core/sourcelookup/containers/ExternalArchiveSourceContainer.java",
+    "line": 47,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/BreakpointManager.java",
+    "line": 102,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/BreakpointManager.java",
+    "line": 205,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/BreakpointManager.java",
+    "line": 226,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/BreakpointManager.java",
+    "line": 724,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/BreakpointManager.java",
+    "line": 751,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/BreakpointManager.java",
+    "line": 954,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/ExpressionManager.java",
+    "line": 213,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/ExpressionManager.java",
+    "line": 260,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/ExpressionManager.java",
+    "line": 298,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/ExpressionManager.java",
+    "line": 345,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/ExpressionManager.java",
+    "line": 387,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/InputStreamMonitor.java",
+    "line": 32,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/InputStreamMonitor.java",
+    "line": 78,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 560,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 655,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 659,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 677,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 739,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 986,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 1138,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 1155,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 1194,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 1217,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 1243,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 1260,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/LaunchManager.java",
+    "line": 1645,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/OutputStreamMonitor.java",
+    "line": 65,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/StreamsProxy.java",
+    "line": 50,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/SystemVariableResolver.java",
+    "line": 46,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/WatchExpression.java",
+    "line": 84,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/WatchExpression.java",
+    "line": 102,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/WatchExpression.java",
+    "line": 145,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/WatchExpression.java",
+    "line": 207,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/sourcelookup/SourceLookupUtils.java",
+    "line": 27,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/debug/internal/core/sourcelookup/SourceLookupUtils.java",
+    "line": 47,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

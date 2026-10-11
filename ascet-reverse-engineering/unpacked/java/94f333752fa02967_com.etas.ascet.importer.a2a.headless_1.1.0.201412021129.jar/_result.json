@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a.headless_1.1.0.201412021129.jar",
+  "sha256": "94f333752fa02967d73b3156a47aed882fea567ca1c3b73e6af86560d9263f79",
+  "kind": "java",
+  "output": "unpacked/java/94f333752fa02967_com.etas.ascet.importer.a2a.headless_1.1.0.201412021129.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 3,
+  "input_classes": 3,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a.headless_1.1.0.201412021129.jar"
+  ],
+  "top_level_classes_checked": 3,
+  "missing_top_level_java_files": 0
+}

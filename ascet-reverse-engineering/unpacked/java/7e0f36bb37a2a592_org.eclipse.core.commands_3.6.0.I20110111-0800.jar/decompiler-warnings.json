@@ -1,0 +1,82 @@
+[
+  {
+    "file": "org/eclipse/core/commands/CommandManager.java",
+    "line": 397,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 62,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 157,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 206,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 255,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 307,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 324,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 359,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 409,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 434,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 488,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 529,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 717,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 797,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 840,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/commands/operations/DefaultOperationHistory.java",
+    "line": 862,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

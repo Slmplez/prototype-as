@@ -1,0 +1,260 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.apache.xerces_2.9.0.v201101211617.jar
+Decompiled with CFR 0.152
+
+
+org.apache.html.dom.ObjectFactory
+----------------------------
+
+createObject(java.lang.String java.lang.String java.lang.String )
+  Unable to fully structure code
+findJarServiceProvider(java.lang.String )
+  Loose catch block
+
+
+org.apache.xerces.dom.CoreDOMImplementationImpl
+----------------------------
+
+getValidator(java.lang.String java.lang.String )
+  Unable to fully structure code
+getDTDLoader(java.lang.String )
+  Unable to fully structure code
+
+
+org.apache.xerces.dom.ObjectFactory
+----------------------------
+
+createObject(java.lang.String java.lang.String java.lang.String )
+  Unable to fully structure code
+findJarServiceProvider(java.lang.String )
+  Loose catch block
+
+
+org.apache.xerces.dom.RangeImpl
+----------------------------
+
+traverseRightBoundary(org.w3c.dom.Node int )
+  Unable to fully structure code
+traverseLeftBoundary(org.w3c.dom.Node int )
+  Unable to fully structure code
+getRootContainer(org.w3c.dom.Node )
+  Unable to fully structure code
+isLegalContainer(org.w3c.dom.Node )
+  Unable to fully structure code
+
+
+org.apache.xerces.dom.TextImpl
+----------------------------
+
+canModifyPrev(org.w3c.dom.Node )
+  Unable to fully structure code
+canModifyNext(org.w3c.dom.Node )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.XML11EntityScanner
+----------------------------
+
+scanContent(org.apache.xerces.xni.XMLString )
+  Unable to fully structure code
+scanLiteral(int org.apache.xerces.xni.XMLString )
+  Unable to fully structure code
+scanData(java.lang.String org.apache.xerces.util.XMLStringBuffer )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.XMLDTDScannerImpl
+----------------------------
+
+scanTextDecl()
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.XMLDocumentFragmentScannerImpl
+----------------------------
+
+dispatch(boolean )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.XMLDocumentScannerImpl
+----------------------------
+
+dispatch(boolean )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.XMLEntityScanner
+----------------------------
+
+scanName()
+  Unable to fully structure code
+scanNCName()
+  Unable to fully structure code
+scanContent(org.apache.xerces.xni.XMLString )
+  Unable to fully structure code
+scanLiteral(int org.apache.xerces.xni.XMLString )
+  Unable to fully structure code
+scanData(java.lang.String org.apache.xerces.util.XMLStringBuffer )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.dv.ObjectFactory
+----------------------------
+
+createObject(java.lang.String java.lang.String java.lang.String )
+  Unable to fully structure code
+findJarServiceProvider(java.lang.String )
+  Loose catch block
+
+
+org.apache.xerces.impl.dv.dtd.ListDatatypeValidator
+----------------------------
+
+validate(java.lang.String org.apache.xerces.impl.dv.ValidationContext )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.dv.xs.DecimalDV
+----------------------------
+
+initD(java.lang.String )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.dv.xs.XSSimpleTypeDecl
+----------------------------
+
+normalize(java.lang.String short )
+  Unable to fully structure code
+normalize(java.lang.Object short )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.xpath.XPath
+----------------------------
+
+scanNCName(java.lang.String int int )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.xpath.regex.REUtil
+----------------------------
+
+main(java.lang.String[] )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.xpath.regex.RegexParser
+----------------------------
+
+parseFactor()
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.xpath.regex.RegularExpression
+----------------------------
+
+matchCharArray(org.apache.xerces.impl.xpath.regex.RegularExpression$Context org.apache.xerces.impl.xpath.regex.Op int int int )
+  Could not resolve type clashes
+matchString(org.apache.xerces.impl.xpath.regex.RegularExpression$Context org.apache.xerces.impl.xpath.regex.Op int int int )
+  Could not resolve type clashes
+matchCharacterIterator(org.apache.xerces.impl.xpath.regex.RegularExpression$Context org.apache.xerces.impl.xpath.regex.Op int int int )
+  Could not resolve type clashes
+
+
+org.apache.xerces.impl.xs.XMLSchemaValidator
+----------------------------
+
+processAttributes(org.apache.xerces.xni.QName org.apache.xerces.xni.XMLAttributes org.apache.xerces.impl.xs.XSAttributeGroupDecl )
+  Unable to fully structure code
+  Could not resolve type clashes
+
+
+org.apache.xerces.impl.xs.XSModelImpl
+----------------------------
+
+getComponentsByNamespace(short java.lang.String )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.xs.identity.XPathMatcher
+----------------------------
+
+startElement(org.apache.xerces.xni.QName org.apache.xerces.xni.XMLAttributes )
+  Unable to fully structure code
+
+
+org.apache.xerces.impl.xs.traversers.XSAttributeChecker
+----------------------------
+
+normalize(java.lang.String short )
+  Unable to fully structure code
+
+
+org.apache.xerces.parsers.ObjectFactory
+----------------------------
+
+createObject(java.lang.String java.lang.String java.lang.String )
+  Unable to fully structure code
+findJarServiceProvider(java.lang.String )
+  Loose catch block
+
+
+org.apache.xerces.util.URI
+----------------------------
+
+initializePath(java.lang.String int )
+  Unable to fully structure code
+
+
+org.apache.xerces.xinclude.ObjectFactory
+----------------------------
+
+createObject(java.lang.String java.lang.String java.lang.String )
+  Unable to fully structure code
+findJarServiceProvider(java.lang.String )
+  Loose catch block
+
+
+org.apache.xerces.xpointer.ElementSchemePointer
+----------------------------
+
+scanNCName(java.lang.String int int )
+  Unable to fully structure code
+
+
+org.apache.xerces.xpointer.XPointerHandler
+----------------------------
+
+scanNCName(java.lang.String int int )
+  Unable to fully structure code
+
+
+org.apache.xml.serialize.BaseMarkupSerializer
+----------------------------
+
+printText(char[] int int boolean boolean )
+  Unable to fully structure code
+
+
+org.apache.xml.serialize.ObjectFactory
+----------------------------
+
+createObject(java.lang.String java.lang.String java.lang.String )
+  Unable to fully structure code
+findJarServiceProvider(java.lang.String )
+  Loose catch block
+
+
+org.apache.xml.serialize.XML11Serializer
+----------------------------
+
+printText(char[] int int boolean boolean )
+  Unable to fully structure code
+
+
+org.apache.xml.serialize.XMLSerializer
+----------------------------
+
+printText(char[] int int boolean boolean )
+  Unable to fully structure code

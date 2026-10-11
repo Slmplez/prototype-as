@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.update.configurator_3.3.100.v20100512.jar",
+  "sha256": "3bbc93f6f4fb7d396104f32638f2e8561e7a378a823e6712ef1d3fbff613ebe4",
+  "kind": "java",
+  "output": "unpacked/java/3bbc93f6f4fb7d39_org.eclipse.update.configurator_3.3.100.v20100512.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 30,
+  "input_classes": 37,
+  "warning_lines": 2,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.update.configurator_3.3.100.v20100512.jar"
+  ],
+  "top_level_classes_checked": 30,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,222 @@
+[
+  {
+    "image": "ASDBase.ic",
+    "address": "0x204c8f64",
+    "file_offset": 14440464,
+    "bytecode_bytes": 153,
+    "literal_count": 31,
+    "block_literals": [
+      {
+        "image": "ASDBase.ic",
+        "address": "0x280b3bb4"
+      },
+      {
+        "image": "ASDBase.ic",
+        "address": "0x280133d4"
+      },
+      {
+        "image": "ASDBase.ic",
+        "address": "0x2802bbcc"
+      },
+      {
+        "image": "ASDBase.ic",
+        "address": "0x28045790"
+      },
+      {
+        "image": "ASDBase.ic",
+        "address": "0x2805e808"
+      },
+      {
+        "image": "ASDBase.ic",
+        "address": "0x28077e2c"
+      },
+      {
+        "image": "ASDBase.ic",
+        "address": "0x280911ac"
+      },
+      {
+        "image": "ASDBase.ic",
+        "address": "0x280aa458"
+      },
+      {
+        "image": "ASDBase.ic",
+        "address": "0x28009d40"
+      }
+    ],
+    "relocated_addresses": {
+      "ascet.icx": [
+        "0x3dff09c"
+      ],
+      "ASDBase.ic": [
+        "0x204c8f64"
+      ]
+    },
+    "references": [
+      {
+        "image": "ascet.icx",
+        "file_offset": 23669180,
+        "pointer": "0x3dff09d",
+        "kind": "object_word",
+        "object_address": "0x3899d48",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ascet.icx",
+        "file_offset": 23707728,
+        "pointer": "0x3dff09d",
+        "kind": "object_word",
+        "object_address": "0x38833d8",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ascet.icx",
+        "file_offset": 23808072,
+        "pointer": "0x3dff09d",
+        "kind": "object_word",
+        "object_address": "0x387bbd8",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ascet.icx",
+        "file_offset": 23913484,
+        "pointer": "0x3dff09d",
+        "kind": "object_word",
+        "object_address": "0x38557e4",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ascet.icx",
+        "file_offset": 24016004,
+        "pointer": "0x3dff09d",
+        "kind": "object_word",
+        "object_address": "0x384e89c",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ascet.icx",
+        "file_offset": 24119976,
+        "pointer": "0x3dff09d",
+        "kind": "object_word",
+        "object_address": "0x3827ee8",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ascet.icx",
+        "file_offset": 24223272,
+        "pointer": "0x3dff09d",
+        "kind": "object_word",
+        "object_address": "0x3801280",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ascet.icx",
+        "file_offset": 24326356,
+        "pointer": "0x3dff09d",
+        "kind": "object_word",
+        "object_address": "0x37ef32c",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ascet.icx",
+        "file_offset": 24365104,
+        "pointer": "0x3dff09d",
+        "kind": "object_word",
+        "object_address": "0x37d8adc",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ASDBase.ic",
+        "file_offset": 16606384,
+        "pointer": "0x204c8f65",
+        "kind": "object_word",
+        "object_address": "0x28009d40",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ASDBase.ic",
+        "file_offset": 16644932,
+        "pointer": "0x204c8f65",
+        "kind": "object_word",
+        "object_address": "0x280133d4",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ASDBase.ic",
+        "file_offset": 16745276,
+        "pointer": "0x204c8f65",
+        "kind": "object_word",
+        "object_address": "0x2802bbcc",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ASDBase.ic",
+        "file_offset": 16850688,
+        "pointer": "0x204c8f65",
+        "kind": "object_word",
+        "object_address": "0x28045790",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ASDBase.ic",
+        "file_offset": 16953208,
+        "pointer": "0x204c8f65",
+        "kind": "object_word",
+        "object_address": "0x2805e808",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ASDBase.ic",
+        "file_offset": 17057180,
+        "pointer": "0x204c8f65",
+        "kind": "object_word",
+        "object_address": "0x28077e2c",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ASDBase.ic",
+        "file_offset": 17160476,
+        "pointer": "0x204c8f65",
+        "kind": "object_word",
+        "object_address": "0x280911ac",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ASDBase.ic",
+        "file_offset": 17263560,
+        "pointer": "0x204c8f65",
+        "kind": "object_word",
+        "object_address": "0x280aa458",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      },
+      {
+        "image": "ASDBase.ic",
+        "file_offset": 17302308,
+        "pointer": "0x204c8f65",
+        "kind": "object_word",
+        "object_address": "0x280b3bb4",
+        "word_index": 0,
+        "object_class": "EsCompactBlockContextTemplate"
+      }
+    ],
+    "method_array_references": [],
+    "body_source": "orphan-ASDBase.ic-0x204c8f64.body.txt",
+    "body_instruction_count": 50
+  }
+]

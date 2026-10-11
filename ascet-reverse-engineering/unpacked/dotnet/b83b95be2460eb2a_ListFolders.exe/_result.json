@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/cebra/ListFolders.exe",
+  "sha256": "b83b95be2460eb2ae2d68153f8359da11ebfdf00b4684fa78a2a4f07e9732a2b",
+  "kind": "managed",
+  "output": "unpacked/dotnet/b83b95be2460eb2a_ListFolders.exe",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 2,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/cebra/ListFolders.exe"
+  ]
+}

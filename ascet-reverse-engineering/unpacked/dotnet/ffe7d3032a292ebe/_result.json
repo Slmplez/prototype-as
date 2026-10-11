@@ -1,0 +1,14 @@
+{
+  "source": "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/_AEA26CD57095BA4CEF34C1416A5610A4",
+  "sha256": "ffe7d3032a292ebe30273f515c33c04bba9509ab314476efb5242ef1ac20e78f",
+  "kind": "managed",
+  "output": "unpacked/dotnet/ffe7d3032a292ebe",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 711,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/_AEA26CD57095BA4CEF34C1416A5610A4",
+    "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/decoded-files/TARGETDIR/CaliberRMSDK80.NET.dll"
+  ]
+}

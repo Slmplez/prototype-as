@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="Phone_English" xml:space="preserve"><value>Phone:</value></data>
+  <data name="CloseButton_Japan" xml:space="preserve"><value>閉じる</value></data>
+  <data name="CloseButton_China" xml:space="preserve"><value>关闭</value></data>
+  <data name="CancelButton_English" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Lang_EnUs" xml:space="preserve"><value>English</value></data>
+  <data name="CloseButton_France" xml:space="preserve"><value>Fermer</value></data>
+  <data name="HotlineContact_German" xml:space="preserve"><value>Hotline Kontakt:</value></data>
+  <data name="RebootTitle_France" xml:space="preserve"><value>Redémarrage requis</value></data>
+  <data name="USA_Japan" xml:space="preserve"><value>米国：</value></data>
+  <data name="USA_China" xml:space="preserve"><value>美国:</value></data>
+  <data name="RebootTitle_German" xml:space="preserve"><value>Neustart erforderlich</value></data>
+  <data name="CloseButton_German" xml:space="preserve"><value>Schließen</value></data>
+  <data name="HotlineContact_France" xml:space="preserve"><value>Votre contact de support technique:</value></data>
+  <data name="CancelButton_Japan" xml:space="preserve"><value>ｷｬﾝｾﾙ</value></data>
+  <data name="CancelButton_China" xml:space="preserve"><value>取消</value></data>
+  <data name="GreatBritain_China" xml:space="preserve"><value>英国:</value></data>
+  <data name="Europe_English" xml:space="preserve"><value>Europe
+(except France, Belgium
+and Luxembourg):</value></data>
+  <data name="GreatBritain_Japan" xml:space="preserve"><value>英国：</value></data>
+  <data name="FrBeLux_German" xml:space="preserve"><value>Frankreich, Belgien, Luxemburg:</value></data>
+  <data name="FrBeLux_France" xml:space="preserve"><value>France, Belgique, Luxembourg:</value></data>
+  <data name="RebootTitle_Japan" xml:space="preserve"><value>再起動が必要です</value></data>
+  <data name="RebootTitle_China" xml:space="preserve"><value>需要重启</value></data>
+  <data name="HotlineContact_English" xml:space="preserve"><value>Your hotline contact:</value></data>
+  <data name="RebootMessage_German" xml:space="preserve"><value>{0} hat erkannt, dass eine frühere Installation noch nicht fertig ist, da ein Neustart erforderlich war und noch nicht ausgeführt ist. Sie müssen den Computer vor der Anwendung {0} neu starten.</value></data>
+  <data name="RebootMessage_France" xml:space="preserve"><value>{0} a détecté que son installation précédente n'était terminée puisqu'un redémarrage était requis et qu'il n'a pas encore eu lieu. Vous devez redémarrer votre ordinateur avant d'utiliser {0}.</value></data>
+  <data name="USA_English" xml:space="preserve"><value>USA:</value></data>
+  <data name="China_China" xml:space="preserve"><value>中国:</value></data>
+  <data name="China_Japan" xml:space="preserve"><value>中国：</value></data>
+  <data name="NotShowAgain_Japan" xml:space="preserve"><value>次回からこのﾀﾞｲｱﾛｸﾞを表示しない</value></data>
+  <data name="NotShowAgain_China" xml:space="preserve"><value>不再显示</value></data>
+  <data name="FrBeLux_Japan" xml:space="preserve"><value>フランス・ベルギー・ルクセンブルグ：</value></data>
+  <data name="FrBeLux_China" xml:space="preserve"><value>法国，比利时，卢森堡 :</value></data>
+  <data name="DontShowOnStartup_German" xml:space="preserve"><value>Beim Starten nicht anzeigen</value></data>
+  <data name="Korea_Japan" xml:space="preserve"><value>韓国：</value></data>
+  <data name="China_France" xml:space="preserve"><value>République populaire Chine:</value></data>
+  <data name="Korea_China" xml:space="preserve"><value>韩国:</value></data>
+  <data name="DontShowOnStartup_France" xml:space="preserve"><value>Ne pas afficher au démarrage</value></data>
+  <data name="China_German" xml:space="preserve"><value>China:</value></data>
+  <data name="Japan_English" xml:space="preserve"><value>Japan:</value></data>
+  <data name="DontShowOnStartup_Japan" xml:space="preserve"><value>起動時に表示しない</value></data>
+  <data name="DontShowOnStartup_China" xml:space="preserve"><value>启动时不再显示</value></data>
+  <data name="China_English" xml:space="preserve"><value>China:</value></data>
+  <data name="DontShowOnStartup_English" xml:space="preserve"><value>Do not show on startup</value></data>
+  <data name="India_English" xml:space="preserve"><value>India:</value></data>
+  <data name="AcceptButton_English" xml:space="preserve"><value>Acknowledged</value></data>
+  <data name="Japan_Japan" xml:space="preserve"><value>日本：</value></data>
+  <data name="Japan_China" xml:space="preserve"><value>日本:</value></data>
+  <data name="Korea_English" xml:space="preserve"><value>Korea:</value></data>
+  <data name="AcceptButton_German" xml:space="preserve"><value>Bestätigt</value></data>
+  <data name="RebootMessage_English" xml:space="preserve"><value>{0} has detected that the previous installation was not finished since a reboot was needed and not performed. You must reboot your computer before using {0}.</value></data>
+  <data name="FrBeLux_English" xml:space="preserve"><value>France, Belgium, Luxembourg:</value></data>
+  <data name="Europe_German" xml:space="preserve"><value>Europa (ausgenommen Frankreich,
+Belgien und Luxemburg):</value></data>
+  <data name="CancelButton_German" xml:space="preserve"><value>Abbrechen</value></data>
+  <data name="USA_German" xml:space="preserve"><value>USA:</value></data>
+  <data name="Europe_France" xml:space="preserve"><value>Europe
+(saut la France, la Belgique et le
+Luxembourg):</value></data>
+  <data name="CancelButton_France" xml:space="preserve"><value>Annuler</value></data>
+  <data name="Korea_German" xml:space="preserve"><value>Korea:</value></data>
+  <data name="Korea_France" xml:space="preserve"><value>Corée:</value></data>
+  <data name="NotShowAgain_English" xml:space="preserve"><value>Do not show again</value></data>
+  <data name="USA_France" xml:space="preserve"><value>USA:</value></data>
+  <data name="RebootTitle_English" xml:space="preserve"><value>Reboot needed</value></data>
+  <data name="NotShowAgain_German" xml:space="preserve"><value>Nicht wieder anzeigen</value></data>
+  <data name="Lang_Pt" xml:space="preserve"><value>Portuguese</value></data>
+  <data name="Lang_Ro" xml:space="preserve"><value>Romanian</value></data>
+  <data name="Lang_It" xml:space="preserve"><value>Italian</value></data>
+  <data name="Lang_Ko" xml:space="preserve"><value>Korean</value></data>
+  <data name="Lang_Jp" xml:space="preserve"><value>日本語</value></data>
+  <data name="Lang_Es" xml:space="preserve"><value>Spanish</value></data>
+  <data name="Lang_De" xml:space="preserve"><value>Deutsch</value></data>
+  <data name="Lang_Fr" xml:space="preserve"><value>Français</value></data>
+  <data name="Lang_Ch" xml:space="preserve"><value>中文</value></data>
+  <data name="GreatBritain_English" xml:space="preserve"><value>Great Britain:</value></data>
+  <data name="NotShowAgain_France" xml:space="preserve"><value>Ne plus afficher</value></data>
+  <data name="HotlineContact_China" xml:space="preserve"><value>热线联系方式:</value></data>
+  <data name="HotlineContact_Japan" xml:space="preserve"><value>ホットライン窓口：</value></data>
+  <data name="RebootMessage_China" xml:space="preserve"><value>{0}监测到由于重新需要启动但重启并未执行所以先前的安装还未完成.在使用{0}前您必须重启电脑.</value></data>
+  <data name="RebootMessage_Japan" xml:space="preserve"><value>{0} のｲﾝｽﾄｰﾙが完了していません。前回のｲﾝｽﾄｰﾙ後にPC再起動が行われなかったためです。{0}を使用する前にPCを再起動してください。</value></data>
+  <data name="Europe_China" xml:space="preserve"><value>欧洲
+（法国，比利时和卢森堡除外）:</value></data>
+  <data name="Europe_Japan" xml:space="preserve"><value>欧州 （フランス・ベルギー・
+ルクセンブルグ・英国を除く）:</value></data>
+  <data name="Phone_China" xml:space="preserve"><value>电话:</value></data>
+  <data name="Phone_Japan" xml:space="preserve"><value>Phone:</value></data>
+  <data name="Phone_German" xml:space="preserve"><value>Telefon:</value></data>
+  <data name="CloseButton_English" xml:space="preserve"><value>Close</value></data>
+  <data name="Phone_France" xml:space="preserve"><value>Tél.:</value></data>
+  <data name="India_France" xml:space="preserve"><value>Inde:</value></data>
+  <data name="GreatBritain_German" xml:space="preserve"><value>Großbritannien:</value></data>
+  <data name="GreatBritain_France" xml:space="preserve"><value>Royaume-Uni:</value></data>
+  <data name="India_German" xml:space="preserve"><value>Indien:</value></data>
+  <data name="SafetyAdvice" xml:space="preserve"><value> Safety Advice</value></data>
+  <data name="Japan_German" xml:space="preserve"><value>Japan:</value></data>
+  <data name="Japan_France" xml:space="preserve"><value>Japon:</value></data>
+  <data name="ETAS" xml:space="preserve"><value>ETAS</value></data>
+  <data name="India_China" xml:space="preserve"><value>印度:</value></data>
+  <data name="India_Japan" xml:space="preserve"><value>インド：</value></data>
+  </root>

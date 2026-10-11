@@ -1,0 +1,27 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/simpleconfigurator/ConfigApplier.java",
+    "line": 281,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/simpleconfigurator/ConfigApplier.java",
+    "line": 294,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/simpleconfigurator/SimpleConfiguratorImpl.java",
+    "line": 99,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/simpleconfigurator/SimpleConfiguratorImpl.java",
+    "line": 124,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/simpleconfigurator/SimpleConfiguratorImpl.java",
+    "line": 135,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

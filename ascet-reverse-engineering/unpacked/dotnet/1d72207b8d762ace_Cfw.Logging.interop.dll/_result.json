@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/Cfw.Logging.interop.dll",
+  "sha256": "1d72207b8d762ace0df2d40b6f998549cda20bc8136e8402f0c8f9366b5f6d1f",
+  "kind": "managed",
+  "output": "unpacked/dotnet/1d72207b8d762ace_Cfw.Logging.interop.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 6,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/Cfw.Logging.interop.dll"
+  ]
+}

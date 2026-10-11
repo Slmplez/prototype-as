@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ant.core_3.2.300.v20110511.jar",
+  "sha256": "b7c13142ae1e2cd659b26ca5d14deabbc725dc616e1acb0986836e1d1957c2a1",
+  "kind": "java",
+  "output": "unpacked/java/b7c13142ae1e2cd6_org.eclipse.ant.core_3.2.300.v20110511.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 22,
+  "input_classes": 26,
+  "warning_lines": 5,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ant.core_3.2.300.v20110511.jar"
+  ],
+  "top_level_classes_checked": 22,
+  "missing_top_level_java_files": 0
+}

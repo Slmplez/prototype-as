@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="ResetToolBarMenu" xml:space="preserve"><value>&amp;Reset Toolbar</value></data>
+  <data name="MoreButtonsItemsText" xml:space="preserve"><value>Show &amp;More Buttons</value></data>
+  <data name="MdiListMenuItem" xml:space="preserve"><value>Window List</value></data>
+  <data name="ToolTipCaptionButtonClose" xml:space="preserve"><value>Close</value></data>
+  <data name="ColorPickerMoreColorsButton" xml:space="preserve"><value>More Colors...</value></data>
+  <data name="QuickAccessDialogCommands" xml:space="preserve"><value>&amp;Choose commands from:</value></data>
+  <data name="NotifyCustomizationResetTitle" xml:space="preserve"><value>Customization Reset Information</value></data>
+  <data name="QuickAccessRemoveItem" xml:space="preserve"><value>&amp;Remove from Quick Access Toolbar</value></data>
+  <data name="MergedBarNamePrefix" xml:space="preserve"><value>Merged</value></data>
+  <data name="ColorEditorColorsLabel" xml:space="preserve"><value>Colors:</value></data>
+  <data name="ResetBarItem" xml:space="preserve"><value>Reset</value></data>
+  <data name="Delete" xml:space="preserve"><value>Delete...</value></data>
+  <data name="ImageAndText" xml:space="preserve"><value>Image and Text</value></data>
+  <data name="SuccesfulToolbarResetMessage" xml:space="preserve"><value>The toolbar has been restored. The restored toolbar will be shown the next time you open the application.</value></data>
+  <data name="TabSplitterHorizontalSplit" xml:space="preserve"><value>Horizontal Split</value></data>
+  <data name="MenuItemDockToLeft" xml:space="preserve"><value>Left</value></data>
+  <data name="MoveToPrevGroupMenuItemText" xml:space="preserve"><value>Move to p&amp;revious Tab Group</value></data>
+  <data name="TextOnlyInMenus" xml:space="preserve"><value>Text Only (in Menus)</value></data>
+  <data name="MoreWindowsCaptionInMenu" xml:space="preserve"><value>More Windows...</value></data>
+  <data name="QuickAccessDialogButtonAdd" xml:space="preserve"><value>&amp;Add&gt;&gt;</value></data>
+  <data name="MenuItemDockToBottom" xml:space="preserve"><value>Bottom</value></data>
+  <data name="TabSplitterExpandPane" xml:space="preserve"><value>Expand Pane</value></data>
+  <data name="ShortMiscelaneousText" xml:space="preserve"><value>Misc</value></data>
+  <data name="TabSplitterVerticalSplit" xml:space="preserve"><value>Vertical Split</value></data>
+  <data name="ColorEditorOKButton" xml:space="preserve"><value>OK</value></data>
+  <data name="ColorEditorNewLabel" xml:space="preserve"><value>New</value></data>
+  <data name="TextOnlyAlways" xml:space="preserve"><value>Text Only (Always)</value></data>
+  <data name="MovePrevMenuItemText" xml:space="preserve"><value>Move Previous</value></data>
+  <data name="MoveNextMenuItemText" xml:space="preserve"><value>Move Next</value></data>
+  <data name="Rename" xml:space="preserve"><value>Rename...</value></data>
+  <data name="QuickAccessCustomizeMenu" xml:space="preserve"><value>&amp;Customize Quick Access Toolbar...</value></data>
+  <data name="NotifyRecentlyUsedItemsReset" xml:space="preserve"><value>Your recorded usage data has been removed. The menus and commands will be restored the next time you open this application.</value></data>
+  <data name="NewMenu" xml:space="preserve"><value>New Menu</value></data>
+  <data name="SuccesfulResetMessageBoxTitle" xml:space="preserve"><value>Toolbar Reset Successful.</value></data>
+  <data name="NewVertGroupMenuItemText" xml:space="preserve"><value>New &amp;Vertical Tab Group</value></data>
+  <data name="RibbonFormShortcutConfirmTitle" xml:space="preserve"><value>Shortcut is already used</value></data>
+  <data name="StatusStripMenuCaption" xml:space="preserve"><value>Customize Status Bar</value></data>
+  <data name="ColorEditorLumLabel" xml:space="preserve"><value>Lum:</value></data>
+  <data name="GenericOKButtonText" xml:space="preserve"><value>&amp;OK</value></data>
+  <data name="NewToolbarName" xml:space="preserve"><value>New Toolbar Name:</value></data>
+  <data name="InvalidToolbarDeleteWarning" xml:space="preserve"><value>Please select a Toolbar Item in the listbox to Delete.</value></data>
+  <data name="FewerButtonsItemsText" xml:space="preserve"><value>Show &amp;Fewer Buttons</value></data>
+  <data name="ToolTipCaptionButtonPin" xml:space="preserve"><value>Auto Hide</value></data>
+  <data name="ColorPickerStandardColorsGroup" xml:space="preserve"><value>Standard Colors</value></data>
+  <data name="MDIChildMenuItemText" xml:space="preserve"><value>&amp;MDI Child</value></data>
+  <data name="HideMenuItemText" xml:space="preserve"><value>&amp;Hide</value></data>
+  <data name="DeleteAll" xml:space="preserve"><value>Delete All...</value></data>
+  <data name="QuickAccessMinimizeTheRibbon" xml:space="preserve"><value>Mi&amp;nimize the Ribbon</value></data>
+  <data name="DockPanelAutoHideButtonToolTip" xml:space="preserve"><value>Auto Hide</value></data>
+  <data name="ColorEditorSatLabel" xml:space="preserve"><value>Sat:</value></data>
+  <data name="ToolbarNameEntryDialogCaption" xml:space="preserve"><value>Toolbar Name Entry Dialog</value></data>
+  <data name="QuickAccessDialogDropDownName" xml:space="preserve"><value>Start menu</value></data>
+  <data name="MainMenu" xml:space="preserve"><value>Main Menu</value></data>
+  <data name="ToolTipCaptionButtonMenu" xml:space="preserve"><value>Window Position</value></data>
+  <data name="ColorPickerStateButton" xml:space="preserve"><value>Automatic</value></data>
+  <data name="DefaultMenuItemText" xml:space="preserve"><value>Default</value></data>
+  <data name="DeleteConfirmDlgCaption" xml:space="preserve"><value>Delete Confirmation Dialog</value></data>
+  <data name="AddOrRemoveButtons" xml:space="preserve"><value>Add or Remove Buttons</value></data>
+  <data name="DuplicateNameWarning" xml:space="preserve"><value>{0} is already in use. Please specify a different unique name.</value></data>
+  <data name="CancelMenuItemText" xml:space="preserve"><value>C&amp;ancel</value></data>
+  <data name="CustomizationResetConfirmTitle" xml:space="preserve"><value>Confirm Reset.</value></data>
+  <data name="NewHorzGroupMenuItemText" xml:space="preserve"><value>New Hori&amp;zontal Tab Group</value></data>
+  <data name="QuickAccessDialogButtonRemove" xml:space="preserve"><value>&lt;&lt;&amp;Remove</value></data>
+  <data name="MenuItemDockTo" xml:space="preserve"><value>Dock to</value></data>
+  <data name="GroupBarDropDownToolTip" xml:space="preserve"><value>Configure Buttons</value></data>
+  <data name="CategoryBehavior" xml:space="preserve"><value>Behavior</value></data>
+  <data name="CloseMenuItemText" xml:space="preserve"><value>&amp;Close</value></data>
+  <data name="Add" xml:space="preserve"><value>Add...</value></data>
+  <data name="Cut" xml:space="preserve"><value>Cu&amp;t</value></data>
+  <data name="FloatingMenuItemText" xml:space="preserve"><value>&amp;Floating</value></data>
+  <data name="MdiListActivateButton" xml:space="preserve"><value>Activate</value></data>
+  <data name="Paste" xml:space="preserve"><value>&amp;Paste</value></data>
+  <data name="CategoryAppearance" xml:space="preserve"><value>Appearance</value></data>
+  <data name="ColorEditorBlueLabel" xml:space="preserve"><value>Blue:</value></data>
+  <data name="GenericCancelButtonText" xml:space="preserve"><value>&amp;Cancel</value></data>
+  <data name="QuickAccessDialogButtonOk" xml:space="preserve"><value>OK</value></data>
+  <data name="QuickAccessDialogButtonReset" xml:space="preserve"><value>Reset</value></data>
+  <data name="ColorEditorGreenLabel" xml:space="preserve"><value>Green:</value></data>
+  <data name="ColorPickerCustomColorsGroup" xml:space="preserve"><value>Custom Colors</value></data>
+  <data name="TabSplitterSwapPanes" xml:space="preserve"><value>Swap Panes</value></data>
+  <data name="NotifyCustomizationReset" xml:space="preserve"><value>Customized information is reset. However, the menus and commands will only be restored to the default state the next time you open this application.</value></data>
+  <data name="AutoHideMenuItemText" xml:space="preserve"><value>&amp;Auto-Hide</value></data>
+  <data name="RibbonFormShortcutConfirmText" xml:space="preserve"><value>Do you want to change assignment?</value></data>
+  <data name="MdiListCancelButton" xml:space="preserve"><value>Close</value></data>
+  <data name="QuickAccessPlaceAboveRibbon" xml:space="preserve"><value>&amp;Place Quick Access Toolbar above the Ribbon</value></data>
+  <data name="QuickAccessDialogButtonCancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="ColorEditorCancelButton" xml:space="preserve"><value>Cancel</value></data>
+  <data name="TabbedMDIMenuItemText" xml:space="preserve"><value>&amp;Tabbed Document</value></data>
+  <data name="ColorEditorRedLabel" xml:space="preserve"><value>Red:</value></data>
+  <data name="ToolbarDeleteConfirmation" xml:space="preserve"><value>Are you sure you want to delete the selected Toolbar item?</value></data>
+  <data name="ToolTipCaptionButtonRestore" xml:space="preserve"><value>Restore</value></data>
+  <data name="DockPanelMaximizeButtonToolTip" xml:space="preserve"><value>Maximize</value></data>
+  <data name="RecentlyUsedItemsResetConfirmTitle" xml:space="preserve"><value>Confirm Reset.</value></data>
+  <data name="DockPanelCloseButtonToolTip" xml:space="preserve"><value>Close</value></data>
+  <data name="ToolStripItemHelpButton" xml:space="preserve"><value>Help</value></data>
+  <data name="BeginAGroup" xml:space="preserve"><value>Begin A Group</value></data>
+  <data name="ColorEditorColorModelLabel" xml:space="preserve"><value>Color Model:</value></data>
+  <data name="ToolTipCaptionButtonMaximize" xml:space="preserve"><value>Maximize</value></data>
+  <data name="TabSplitterCollapsePane" xml:space="preserve"><value>Collapse Pane</value></data>
+  <data name="DescriptionBarItemText" xml:space="preserve"><value>Description</value></data>
+  <data name="ColorEditorCurrentLabel" xml:space="preserve"><value>Current</value></data>
+  <data name="DeleteMenuItemText" xml:space="preserve"><value>Delete</value></data>
+  <data name="MenuItemDockToTop" xml:space="preserve"><value>Top</value></data>
+  <data name="QuickAccessAddItem" xml:space="preserve"><value>&amp;Add to Quick Access Toolbar</value></data>
+  <data name="NameCaption" xml:space="preserve"><value>Name:</value></data>
+  <data name="ColorPickerThemeColorsGroup" xml:space="preserve"><value>Theme Colors</value></data>
+  <data name="MoveToNextGroupMenuItemText" xml:space="preserve"><value>Move to Ne&amp;xt Gab Group</value></data>
+  <data name="MenuItemDockToRight" xml:space="preserve"><value>Right</value></data>
+  <data name="ToolTipCaptionButtonMinimize" xml:space="preserve"><value>Minimize</value></data>
+  <data name="DockableMenuItemText" xml:space="preserve"><value>Doc&amp;kable</value></data>
+  <data name="ColorPickerRecentColorsGroup" xml:space="preserve"><value>Recent Colors</value></data>
+  <data name="QuickAccessPlaceBelowRibbon" xml:space="preserve"><value>&amp;Place Quick Access Toolbar below the Ribbon</value></data>
+  <data name="ColorEditorCustomTab" xml:space="preserve"><value>Custom</value></data>
+  <data name="ColorEditorHueLabel" xml:space="preserve"><value>Hue:</value></data>
+  <data name="ColorEditorStandardTab" xml:space="preserve"><value>Standard</value></data>
+  <data name="QuickAccessCustomizeCaption" xml:space="preserve"><value>Customize Quick Access Toolbar</value></data>
+  <data name="CategoryAction" xml:space="preserve"><value>Action</value></data>
+  <data name="DockPanelRestoreButtonToolTip" xml:space="preserve"><value>Restore</value></data>
+  <data name="RecentlyUsedItemsResetConfirm" xml:space="preserve"><value>This will delete the record of the commands you've used in this application and restore the default set of visible commands in the menus and toolbars. It will not undo any explicit customization. Are you sure you want to do this?</value></data>
+  <data name="CustomizationResetConfirm" xml:space="preserve"><value>This will reset all explicit customization done on the menus and toolbars. Are you sure you want to do this?</value></data>
+  <data name="DockPanelMenuButtonToolTip" xml:space="preserve"><value>Window Position</value></data>
+  <data name="CustomMenu" xml:space="preserve"><value>Custom Menu</value></data>
+  <data name="CustomizeMenu" xml:space="preserve"><value>Customize...</value></data>
+  <data name="CategoryData" xml:space="preserve"><value>Data</value></data>
+  <data name="Copy" xml:space="preserve"><value>&amp;Copy</value></data>
+  <data name="Undo" xml:space="preserve"><value>&amp;Undo</value></data>
+  </root>

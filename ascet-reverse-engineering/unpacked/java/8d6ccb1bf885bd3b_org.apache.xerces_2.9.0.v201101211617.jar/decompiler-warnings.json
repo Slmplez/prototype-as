@@ -1,0 +1,222 @@
+[
+  {
+    "file": "org/apache/html/dom/ObjectFactory.java",
+    "line": 31,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/dom/CoreDOMImplementationImpl.java",
+    "line": 188,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/dom/CoreDOMImplementationImpl.java",
+    "line": 298,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/dom/ObjectFactory.java",
+    "line": 31,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/dom/RangeImpl.java",
+    "line": 937,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/dom/RangeImpl.java",
+    "line": 977,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/dom/RangeImpl.java",
+    "line": 1095,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/dom/RangeImpl.java",
+    "line": 1117,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/dom/TextImpl.java",
+    "line": 131,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "org/apache/xerces/dom/TextImpl.java",
+    "line": 184,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/dom/TextImpl.java",
+    "line": 233,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XML11EntityScanner.java",
+    "line": 454,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XML11EntityScanner.java",
+    "line": 552,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XML11EntityScanner.java",
+    "line": 650,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XMLDocumentFragmentScannerImpl.java",
+    "line": 706,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XMLDocumentScannerImpl.java",
+    "line": 731,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XMLDTDScannerImpl.java",
+    "line": 275,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XMLEntityScanner.java",
+    "line": 134,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XMLEntityScanner.java",
+    "line": 180,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XMLEntityScanner.java",
+    "line": 291,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XMLEntityScanner.java",
+    "line": 381,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/XMLEntityScanner.java",
+    "line": 471,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/parsers/AbstractDOMParser.java",
+    "line": 1209,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "org/apache/xerces/parsers/ObjectFactory.java",
+    "line": 31,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/util/URI.java",
+    "line": 433,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/xinclude/ObjectFactory.java",
+    "line": 31,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/xpointer/ElementSchemePointer.java",
+    "line": 311,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/xpointer/XPointerHandler.java",
+    "line": 443,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/dv/ObjectFactory.java",
+    "line": 31,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/xpath/XPath.java",
+    "line": 808,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/xs/XMLSchemaValidator.java",
+    "line": 1294,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/xs/XSModelImpl.java",
+    "line": 178,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/dv/dtd/ListDatatypeValidator.java",
+    "line": 20,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/dv/xs/DecimalDV.java",
+    "line": 64,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/dv/xs/XSSimpleTypeDecl.java",
+    "line": 1378,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/dv/xs/XSSimpleTypeDecl.java",
+    "line": 1428,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/xpath/regex/RegexParser.java",
+    "line": 627,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/xpath/regex/REUtil.java",
+    "line": 175,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/xs/identity/XPathMatcher.java",
+    "line": 77,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xerces/impl/xs/traversers/XSAttributeChecker.java",
+    "line": 602,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xml/serialize/BaseMarkupSerializer.java",
+    "line": 876,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xml/serialize/ObjectFactory.java",
+    "line": 31,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xml/serialize/XML11Serializer.java",
+    "line": 241,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/apache/xml/serialize/XMLSerializer.java",
+    "line": 724,
+    "text": "* Unable to fully structure code"
+  }
+]

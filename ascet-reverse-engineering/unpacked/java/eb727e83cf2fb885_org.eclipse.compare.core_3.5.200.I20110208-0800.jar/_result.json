@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.compare.core_3.5.200.I20110208-0800.jar",
+  "sha256": "eb727e83cf2fb8857843aec089c477ae81fb5bb0f321cad01e562e519d29a203",
+  "kind": "java",
+  "output": "unpacked/java/eb727e83cf2fb885_org.eclipse.compare.core_3.5.200.I20110208-0800.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 26,
+  "input_classes": 29,
+  "warning_lines": 3,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.compare.core_3.5.200.I20110208-0800.jar"
+  ],
+  "top_level_classes_checked": 26,
+  "missing_top_level_java_files": 0
+}

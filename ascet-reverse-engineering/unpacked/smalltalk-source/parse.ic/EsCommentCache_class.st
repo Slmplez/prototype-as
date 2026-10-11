@@ -1,0 +1,11 @@
+"Statically reconstructed from ASCET image; generated names; not original source. Runtime equivalence not tested."
+
+"parse.ic method 0x20001248; bytecode file offset 0x168f8"
+!EsCommentCache class methodsFor: 'recovered'!
+new
+    | recoveredValue0 recoveredValue1 |
+    recoveredValue0 := super new.
+    recoveredValue1 := (recoveredValue0) initialize.
+    ^recoveredValue1
+! !
+

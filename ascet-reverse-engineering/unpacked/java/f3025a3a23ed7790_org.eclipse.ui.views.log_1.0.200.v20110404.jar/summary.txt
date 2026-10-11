@@ -1,0 +1,11 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.ui.views.log_1.0.200.v20110404.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.ui.internal.views.log.LogView
+----------------------------
+
+setLogFile(java.io.File )
+  Exception : java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+reloadLog()
+  Exception : java.lang.IndexOutOfBoundsException: Index: 0, Size: 0

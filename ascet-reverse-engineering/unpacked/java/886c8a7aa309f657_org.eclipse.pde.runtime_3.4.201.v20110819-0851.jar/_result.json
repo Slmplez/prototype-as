@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.runtime_3.4.201.v20110819-0851.jar",
+  "sha256": "886c8a7aa309f6575397100ecc744dd17e78ba530401ffd42c013c7c698129c8",
+  "kind": "java",
+  "output": "unpacked/java/886c8a7aa309f657_org.eclipse.pde.runtime_3.4.201.v20110819-0851.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 46,
+  "input_classes": 76,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.runtime_3.4.201.v20110819-0851.jar"
+  ],
+  "top_level_classes_checked": 46,
+  "missing_top_level_java_files": 0
+}

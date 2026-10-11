@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.serialization_3.2.3.201302190046.jar",
+  "sha256": "9ea09f27fc67af6951f21207a016927fd470890dda9b84ada36c2587f25d6249",
+  "kind": "java",
+  "output": "unpacked/java/9ea09f27fc67af69_org.artop.aal.serialization_3.2.3.201302190046.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 28,
+  "input_classes": 33,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.serialization_3.2.3.201302190046.jar"
+  ],
+  "top_level_classes_checked": 28,
+  "missing_top_level_java_files": 0
+}

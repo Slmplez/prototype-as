@@ -1,0 +1,32 @@
+[
+  {
+    "file": "org/eclipse/ui/internal/views/log/LogView.java",
+    "line": 751,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/ui/internal/views/log/LogView.java",
+    "line": 755,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/ui/internal/views/log/LogView.java",
+    "line": 791,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/ui/internal/views/log/LogView.java",
+    "line": 926,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/ui/internal/views/log/LogView.java",
+    "line": 930,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/ui/internal/views/log/LogView.java",
+    "line": 966,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  }
+]

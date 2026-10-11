@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/archives/6a5c69ad3345e896_org.eclipse.equinox.p2.director.app_1.0.300.v20110505.jar/ant_tasks/director-ant.jar",
+  "sha256": "78da5a7dfd873d3271aed5076ea882f1097c597cbc0ff9886a710af75693c6cd",
+  "kind": "java",
+  "output": "unpacked/java/78da5a7dfd873d32",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 1,
+  "input_classes": 2,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/archives/6a5c69ad3345e896_org.eclipse.equinox.p2.director.app_1.0.300.v20110505.jar/ant_tasks/director-ant.jar"
+  ],
+  "top_level_classes_checked": 1,
+  "missing_top_level_java_files": 0
+}

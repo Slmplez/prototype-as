@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20110502-1955.jar",
+  "sha256": "9958b943b802746f38b5e15f2220e089f85f0595692bbde5ab5423d760ae28a0",
+  "kind": "java",
+  "output": "unpacked/java/9958b943b802746f_org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20110502-1955.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 4,
+  "input_classes": 6,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20110502-1955.jar"
+  ],
+  "top_level_classes_checked": 4,
+  "missing_top_level_java_files": 0
+}

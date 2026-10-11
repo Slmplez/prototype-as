@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.osgi.services_3.3.0.v20110513.jar",
+  "sha256": "8751da79fb7100ee10e69f95f9b8e460e78d687520cc0fed333a8b947217b22b",
+  "kind": "java",
+  "output": "unpacked/java/8751da79fb7100ee_org.eclipse.osgi.services_3.3.0.v20110513.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 71,
+  "input_classes": 73,
+  "warning_lines": 6,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.osgi.services_3.3.0.v20110513.jar"
+  ],
+  "top_level_classes_checked": 71,
+  "missing_top_level_java_files": 0
+}

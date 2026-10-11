@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/cebra/CheckPID.exe",
+  "sha256": "04dc6172c270ef897a1caf5d51fbe4396a291cbec508cb4da384a9db4ecb22fb",
+  "kind": "managed",
+  "output": "unpacked/dotnet/04dc6172c270ef89_CheckPID.exe",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 2,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/cebra/CheckPID.exe"
+  ]
+}

@@ -1,0 +1,61 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.equinox.p2.metadata_2.1.0.v20110510.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.equinox.internal.p2.metadata.EnumDefinition
+----------------------------
+
+getEnumDefinition(java.util.List<java.util.List<java.lang.String>> )
+  Unable to fully structure code
+equals(java.lang.Object )
+  Unable to fully structure code
+
+
+org.eclipse.equinox.internal.p2.metadata.VersionFormatParser
+----------------------------
+
+parseOne(java.util.List<java.lang.Comparable<?>> java.lang.String int org.eclipse.equinox.internal.p2.metadata.VersionFormat$TreeInfo )
+  Unable to fully structure code
+
+
+org.eclipse.equinox.internal.p2.metadata.VersionVector
+----------------------------
+
+equals(java.lang.Comparable<?>[] java.lang.Comparable<?> java.lang.Comparable<?>[] java.lang.Comparable<?> )
+  Unable to fully structure code
+
+
+org.eclipse.equinox.internal.p2.metadata.expression.Binary
+----------------------------
+
+appendLDAPEscaped(java.lang.StringBuffer java.lang.String boolean )
+  Unable to fully structure code
+
+
+org.eclipse.equinox.internal.p2.metadata.expression.CompoundIterator
+----------------------------
+
+positionNext()
+  Unable to fully structure code
+  Could not resolve type clashes
+
+
+org.eclipse.equinox.internal.p2.metadata.expression.Expression
+----------------------------
+
+equals(org.eclipse.equinox.internal.p2.metadata.expression.Expression[] org.eclipse.equinox.internal.p2.metadata.expression.Expression[] )
+  Unable to fully structure code
+
+
+org.eclipse.equinox.internal.p2.metadata.expression.MatchIteratorFilter
+----------------------------
+
+positionNext()
+  Unable to fully structure code
+
+
+org.eclipse.equinox.p2.metadata.expression.SimplePattern
+----------------------------
+
+match(java.lang.CharSequence int )
+  Unable to fully structure code

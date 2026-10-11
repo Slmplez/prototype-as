@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/ETASShared11/cebra/cebra.zip",
+  "sha256": "71ee3d4150b1f6b6153c4ecaeed017f6df118eb82bf026f7a8e622c796fa69a8",
+  "kind": "java",
+  "output": "unpacked/java/71ee3d4150b1f6b6",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 67,
+  "input_classes": 71,
+  "warning_lines": 2,
+  "aliases": [
+    "unpacked/installation/ETASShared11/cebra/cebra.zip"
+  ],
+  "top_level_classes_checked": 67,
+  "missing_top_level_java_files": 0
+}

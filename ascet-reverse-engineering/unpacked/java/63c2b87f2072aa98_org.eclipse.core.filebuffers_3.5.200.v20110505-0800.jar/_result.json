@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filebuffers_3.5.200.v20110505-0800.jar",
+  "sha256": "63c2b87f2072aa982419fda56aa36a457ba90b8aa2350267a9a71e4e18eb7ee3",
+  "kind": "java",
+  "output": "unpacked/java/63c2b87f2072aa98_org.eclipse.core.filebuffers_3.5.200.v20110505-0800.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 39,
+  "input_classes": 70,
+  "warning_lines": 47,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filebuffers_3.5.200.v20110505-0800.jar"
+  ],
+  "top_level_classes_checked": 39,
+  "missing_top_level_java_files": 0
+}

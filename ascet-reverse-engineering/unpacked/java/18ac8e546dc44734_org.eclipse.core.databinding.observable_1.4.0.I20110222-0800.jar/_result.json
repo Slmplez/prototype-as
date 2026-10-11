@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding.observable_1.4.0.I20110222-0800.jar",
+  "sha256": "18ac8e546dc4473452d75326321eb69426ce3e75994f0886d14fc4f6547b2460",
+  "kind": "java",
+  "output": "unpacked/java/18ac8e546dc44734_org.eclipse.core.databinding.observable_1.4.0.I20110222-0800.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 106,
+  "input_classes": 244,
+  "warning_lines": 6,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding.observable_1.4.0.I20110222-0800.jar"
+  ],
+  "top_level_classes_checked": 106,
+  "missing_top_level_java_files": 0
+}

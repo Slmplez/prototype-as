@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.metadata_2.1.0.v20110510.jar",
+  "sha256": "a86b91bd4e0ba896a90ea29dfd0f4ad0507afd4197fab0fd0056a68962fe4ecd",
+  "kind": "java",
+  "output": "unpacked/java/a86b91bd4e0ba896_org.eclipse.equinox.p2.metadata_2.1.0.v20110510.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 142,
+  "input_classes": 211,
+  "warning_lines": 15,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.metadata_2.1.0.v20110510.jar"
+  ],
+  "top_level_classes_checked": 142,
+  "missing_top_level_java_files": 0
+}

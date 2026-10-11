@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar",
+  "sha256": "5ae961efead9b1b848a6327a07f7278c52d70aaaf86e39c2bafb9b750aa77ab1",
+  "kind": "java",
+  "output": "unpacked/java/5ae961efead9b1b8_org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 58,
+  "input_classes": 103,
+  "warning_lines": 22,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar"
+  ],
+  "top_level_classes_checked": 58,
+  "missing_top_level_java_files": 0
+}

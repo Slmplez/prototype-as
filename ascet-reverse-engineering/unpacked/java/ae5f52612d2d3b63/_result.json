@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/archives/3dc4941a8ba19a7b_org.eclipse.equinox.p2.jarprocessor_1.0.200.v20110502-1955.jar/lib/jarprocessor-ant.jar",
+  "sha256": "ae5f52612d2d3b635f5966f3c8c09c5f249c68bb681fb273057b0b9dfa44de75",
+  "kind": "java",
+  "output": "unpacked/java/ae5f52612d2d3b63",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 3,
+  "input_classes": 4,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/archives/3dc4941a8ba19a7b_org.eclipse.equinox.p2.jarprocessor_1.0.200.v20110502-1955.jar/lib/jarprocessor-ant.jar"
+  ],
+  "top_level_classes_checked": 3,
+  "missing_top_level_java_files": 0
+}

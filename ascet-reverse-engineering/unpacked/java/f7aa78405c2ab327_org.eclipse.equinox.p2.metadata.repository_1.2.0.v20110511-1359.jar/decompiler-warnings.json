@@ -1,0 +1,17 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/repository/LocalMetadataRepository.java",
+    "line": 206,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/repository/LocalMetadataRepository.java",
+    "line": 334,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/repository/LocalMetadataRepository.java",
+    "line": 364,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

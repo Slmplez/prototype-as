@@ -1,0 +1,7 @@
+[
+  {
+    "file": "gautosar/util/GAutosarPackage.java",
+    "line": 176,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

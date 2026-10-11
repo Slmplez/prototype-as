@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.resources_3.7.100.v20110510-0712.jar",
+  "sha256": "10fd53a5e96c4d2efc5c34a88ab4ce38dbd2a58014089651c63fdbddbe2c7329",
+  "kind": "java",
+  "output": "unpacked/java/10fd53a5e96c4d2e_org.eclipse.core.resources_3.7.100.v20110510-0712.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 276,
+  "input_classes": 378,
+  "warning_lines": 53,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.resources_3.7.100.v20110510-0712.jar"
+  ],
+  "top_level_classes_checked": 276,
+  "missing_top_level_java_files": 0
+}

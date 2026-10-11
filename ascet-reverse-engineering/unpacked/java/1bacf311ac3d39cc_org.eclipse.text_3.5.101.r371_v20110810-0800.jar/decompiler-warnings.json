@@ -1,0 +1,127 @@
+[
+  {
+    "file": "org/eclipse/jface/text/AbstractDocument.java",
+    "line": 848,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/text/link/LinkedModeManager.java",
+    "line": 86,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/text/projection/ProjectionDocumentManager.java",
+    "line": 57,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 36,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 46,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 56,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 66,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 76,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 86,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 96,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 106,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 116,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 126,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 136,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 146,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 156,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationMap.java",
+    "line": 166,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationModel.java",
+    "line": 80,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationModel.java",
+    "line": 132,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationModel.java",
+    "line": 226,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationModel.java",
+    "line": 281,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationModel.java",
+    "line": 390,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationModel.java",
+    "line": 417,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationModel.java",
+    "line": 443,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationModel.java",
+    "line": 477,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

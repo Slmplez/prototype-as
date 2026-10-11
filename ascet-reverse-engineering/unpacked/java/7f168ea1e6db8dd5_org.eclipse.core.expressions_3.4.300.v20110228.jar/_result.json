@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.expressions_3.4.300.v20110228.jar",
+  "sha256": "7f168ea1e6db8dd530e92581ad65daf1f3e1c65766a1900ed96fc721eee0869f",
+  "kind": "java",
+  "output": "unpacked/java/7f168ea1e6db8dd5_org.eclipse.core.expressions_3.4.300.v20110228.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 44,
+  "input_classes": 52,
+  "warning_lines": 2,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.expressions_3.4.300.v20110228.jar"
+  ],
+  "top_level_classes_checked": 44,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filesystem.win32.x86_1.1.300.v20110423-0524.jar",
+  "sha256": "cf69c06e5a335b147f88df9936f8b2c80676588b2316846ef0f2b08375abbfa0",
+  "kind": "java",
+  "output": "unpacked/java/cf69c06e5a335b14_org.eclipse.core.filesystem.win32.x86_1.1.300.v20110423-0524.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 0,
+  "input_classes": 0,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filesystem.win32.x86_1.1.300.v20110423-0524.jar"
+  ],
+  "top_level_classes_checked": 0,
+  "missing_top_level_java_files": 0
+}

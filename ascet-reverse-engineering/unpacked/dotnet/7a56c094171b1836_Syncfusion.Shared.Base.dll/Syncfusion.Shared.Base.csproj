@@ -1,0 +1,173 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Syncfusion.Shared.Base</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Syncfusion.Windows.Forms.ButtonAdv.resources.Browse.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ButtonAdv.resources.Calculator.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ButtonAdv.resources.Check.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ButtonAdv.resources.Currency.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ButtonAdv.resources.Redo.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ButtonAdv.resources.Undo.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.DownFilled.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.DownOut.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.LeftFilled.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.LeftOut.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.RightFilled.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.RightOut.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.UpFilled.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.UpOut.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.RecordNavigate.ArrowPaint.star.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Scrolling.IMALL.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Scrolling.IMHORZ.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.Scrolling.IMVERT.BMP" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.AutoLabel.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.BorderLayout.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.ButtonAdv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.CardLayout.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.ColorPickerButton.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.ColorUIControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.ComboBoxBase.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.ComboDropDown.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.CurrencyTextBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.DoubleTextBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.EditableList.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.FlowLayout.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.FolderBrowser.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.GradientPanel.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.GradientPanelExt.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.GridBagLayout.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.GridLayout.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.groupbar.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.groupviewcontrol.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.IntegerTextBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.MaskedEditBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.PercentTextBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.PopupControlContainer.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.ProgressBarEx.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.RecordNavigationBar.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.RecordNavigationControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.ScrollersFrame.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.SplitterControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.TabBarSplitterControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.TextBoxExt.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.TypeLoader.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.VS2010DownFilled.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.VS2010DownOut.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.VS2010LeftFilled.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.VS2010LeftOut.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.VS2010RightFilled.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.VS2010RightOut.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.VS2010UpFilled.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Images.VS2010UpOut.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.BannerTextProvider.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ToolboxIcons.Imagelistadv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Office2007Form.HelpButton.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Office2007Form.SystemButtons.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.ColorPicker.colordlg.data" />
+    <None Remove="Syncfusion.Windows.Forms.Images.Down.png" />
+    <None Remove="Syncfusion.Windows.Forms.Images.downFill.png" />
+    <None Remove="Syncfusion.Windows.Forms.Images.Up.png" />
+    <None Remove="Syncfusion.Windows.Forms.Images.upFill.png" />
+    <None Remove="Syncfusion.Windows.Forms.GroupBar.CollapseButton.png" />
+    <None Remove="Syncfusion.Windows.Forms.GroupBar.ExpandButton.png" />
+    <None Remove="Syncfusion.Windows.Forms.Scrolling.IMA.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Scrolling.IMD.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Scrolling.IML.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Scrolling.IMR.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Scrolling.IMU.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ButtonAdv.resources.Browse.bmp" LogicalName="Syncfusion.Windows.Forms.ButtonAdv.resources.Browse.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ButtonAdv.resources.Calculator.bmp" LogicalName="Syncfusion.Windows.Forms.ButtonAdv.resources.Calculator.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ButtonAdv.resources.Check.bmp" LogicalName="Syncfusion.Windows.Forms.ButtonAdv.resources.Check.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ButtonAdv.resources.Currency.bmp" LogicalName="Syncfusion.Windows.Forms.ButtonAdv.resources.Currency.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ButtonAdv.resources.Redo.bmp" LogicalName="Syncfusion.Windows.Forms.ButtonAdv.resources.Redo.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ButtonAdv.resources.Undo.bmp" LogicalName="Syncfusion.Windows.Forms.ButtonAdv.resources.Undo.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.DownFilled.bmp" LogicalName="Syncfusion.Windows.Forms.Images.DownFilled.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.DownOut.bmp" LogicalName="Syncfusion.Windows.Forms.Images.DownOut.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.LeftFilled.bmp" LogicalName="Syncfusion.Windows.Forms.Images.LeftFilled.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.LeftOut.bmp" LogicalName="Syncfusion.Windows.Forms.Images.LeftOut.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.RightFilled.bmp" LogicalName="Syncfusion.Windows.Forms.Images.RightFilled.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.RightOut.bmp" LogicalName="Syncfusion.Windows.Forms.Images.RightOut.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.UpFilled.bmp" LogicalName="Syncfusion.Windows.Forms.Images.UpFilled.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.UpOut.bmp" LogicalName="Syncfusion.Windows.Forms.Images.UpOut.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.RecordNavigate.ArrowPaint.star.bmp" LogicalName="Syncfusion.Windows.Forms.RecordNavigate.ArrowPaint.star.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Scrolling.IMALL.BMP" LogicalName="Syncfusion.Windows.Forms.Scrolling.IMALL.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Scrolling.IMHORZ.BMP" LogicalName="Syncfusion.Windows.Forms.Scrolling.IMHORZ.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Scrolling.IMVERT.BMP" LogicalName="Syncfusion.Windows.Forms.Scrolling.IMVERT.BMP" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.AutoLabel.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.AutoLabel.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.BorderLayout.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.BorderLayout.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.ButtonAdv.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.ButtonAdv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.CardLayout.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.CardLayout.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.ColorPickerButton.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.ColorPickerButton.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.ColorUIControl.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.ColorUIControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.ComboBoxBase.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.ComboBoxBase.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.ComboDropDown.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.ComboDropDown.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.CurrencyTextBox.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.CurrencyTextBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.DoubleTextBox.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.DoubleTextBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.EditableList.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.EditableList.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.FlowLayout.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.FlowLayout.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.FolderBrowser.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.FolderBrowser.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.GradientPanel.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.GradientPanel.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.GradientPanelExt.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.GradientPanelExt.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.GridBagLayout.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.GridBagLayout.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.GridLayout.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.GridLayout.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.groupbar.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.groupbar.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.groupviewcontrol.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.groupviewcontrol.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.IntegerTextBox.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.IntegerTextBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.MaskedEditBox.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.MaskedEditBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.PercentTextBox.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.PercentTextBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.PopupControlContainer.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.PopupControlContainer.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.ProgressBarEx.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.ProgressBarEx.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.RecordNavigationBar.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.RecordNavigationBar.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.RecordNavigationControl.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.RecordNavigationControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.ScrollersFrame.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.ScrollersFrame.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.SplitterControl.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.SplitterControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.TabBarSplitterControl.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.TabBarSplitterControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.TextBoxExt.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.TextBoxExt.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.TypeLoader.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.TypeLoader.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.VS2010DownFilled.bmp" LogicalName="Syncfusion.Windows.Forms.Images.VS2010DownFilled.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.VS2010DownOut.bmp" LogicalName="Syncfusion.Windows.Forms.Images.VS2010DownOut.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.VS2010LeftFilled.bmp" LogicalName="Syncfusion.Windows.Forms.Images.VS2010LeftFilled.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.VS2010LeftOut.bmp" LogicalName="Syncfusion.Windows.Forms.Images.VS2010LeftOut.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.VS2010RightFilled.bmp" LogicalName="Syncfusion.Windows.Forms.Images.VS2010RightFilled.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.VS2010RightOut.bmp" LogicalName="Syncfusion.Windows.Forms.Images.VS2010RightOut.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.VS2010UpFilled.bmp" LogicalName="Syncfusion.Windows.Forms.Images.VS2010UpFilled.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.VS2010UpOut.bmp" LogicalName="Syncfusion.Windows.Forms.Images.VS2010UpOut.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.BannerTextProvider.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.BannerTextProvider.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ToolboxIcons.Imagelistadv.bmp" LogicalName="Syncfusion.Windows.Forms.ToolboxIcons.Imagelistadv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Office2007Form.HelpButton.bmp" LogicalName="Syncfusion.Windows.Forms.Office2007Form.HelpButton.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Office2007Form.SystemButtons.bmp" LogicalName="Syncfusion.Windows.Forms.Office2007Form.SystemButtons.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.ColorPicker.colordlg.data" LogicalName="Syncfusion.Windows.Forms.ColorPicker.colordlg.data" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.Down.png" LogicalName="Syncfusion.Windows.Forms.Images.Down.png" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.downFill.png" LogicalName="Syncfusion.Windows.Forms.Images.downFill.png" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.Up.png" LogicalName="Syncfusion.Windows.Forms.Images.Up.png" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Images.upFill.png" LogicalName="Syncfusion.Windows.Forms.Images.upFill.png" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.GroupBar.CollapseButton.png" LogicalName="Syncfusion.Windows.Forms.GroupBar.CollapseButton.png" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.GroupBar.ExpandButton.png" LogicalName="Syncfusion.Windows.Forms.GroupBar.ExpandButton.png" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Scrolling.IMA.CUR" LogicalName="Syncfusion.Windows.Forms.Scrolling.IMA.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Scrolling.IMD.CUR" LogicalName="Syncfusion.Windows.Forms.Scrolling.IMD.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Scrolling.IML.CUR" LogicalName="Syncfusion.Windows.Forms.Scrolling.IML.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Scrolling.IMR.CUR" LogicalName="Syncfusion.Windows.Forms.Scrolling.IMR.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Scrolling.IMU.CUR" LogicalName="Syncfusion.Windows.Forms.Scrolling.IMU.CUR" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Data" />
+    <Reference Include="Syncfusion.Core">
+      <HintPath>..\..\installation\bin\Syncfusion.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,16 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.equinox.common_3.6.0.v20110523.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.core.internal.runtime.AdapterManager
+----------------------------
+
+classForName(org.eclipse.core.runtime.IAdapterFactory java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.core.runtime.Path
+----------------------------
+
+equals(java.lang.Object )
+  Unable to fully structure code

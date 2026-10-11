@@ -1,0 +1,23 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.equinox.p2.publisher_1.2.0.v20110511.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.equinox.p2.publisher.AdviceFileAdvice
+----------------------------
+
+loadAdviceMap(org.eclipse.core.runtime.IPath org.eclipse.core.runtime.IPath )
+  Unable to fully structure code
+
+
+org.eclipse.equinox.p2.publisher.actions.JREAction
+----------------------------
+
+loadProfile(java.io.InputStream )
+  Loose catch block
+
+
+org.eclipse.equinox.spi.p2.publisher.PublisherHelper
+----------------------------
+
+computeMD5(java.io.File )
+  Loose catch block

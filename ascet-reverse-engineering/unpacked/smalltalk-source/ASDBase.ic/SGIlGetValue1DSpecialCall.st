@@ -1,0 +1,117 @@
+"Statically reconstructed from ASCET image; generated names; not original source. Runtime equivalence not tested."
+
+"ASDBase.ic method 0x2001f100; bytecode file offset 0x92209c"
+!SGIlGetValue1DSpecialCall methodsFor: 'recovered'!
+label
+    ^'getValueOneD'
+! !
+
+"ASDBase.ic method 0x20055cec; bytecode file offset 0x952a9c"
+!SGIlGetValue1DSpecialCall methodsFor: 'recovered'!
+ileAcceptNodeVisitor: recoveredArg1
+    | recoveredValue0 recoveredValue1 |
+    recoveredValue0 := recoveredArg1.
+    recoveredValue1 := (recoveredValue0) getValue1DSpecialCall: (self).
+    ^recoveredValue1
+! !
+
+"ASDBase.ic method 0x200c828c; bytecode file offset 0x9c4d2c"
+!SGIlGetValue1DSpecialCall methodsFor: 'recovered'!
+expandSpecialCall: recoveredArg1 on: recoveredArg2
+    | recoveredValue0 recoveredValue1 recoveredValue2 recoveredValue3 |
+    recoveredValue0 := recoveredArg2.
+    recoveredValue1 := recoveredArg1.
+    recoveredValue2 := (self) receiver.
+    recoveredValue3 := (recoveredValue2) type.
+    (recoveredValue0) getValueServices: (recoveredValue1) type: (recoveredValue3).
+    ^self
+! !
+
+"ASDBase.ic method 0x20286fd8; bytecode file offset 0xb83974"
+!SGIlGetValue1DSpecialCall methodsFor: 'recovered'!
+serviceFullKey
+    | recoveredLocal1 recoveredStack0 recoveredStack1 recoveredStack2 recoveredStack3 recoveredPC recoveredStep |
+    recoveredStack0 := self.
+    recoveredPC := 4.
+    [true] whileTrue: [
+        recoveredStep := recoveredPC.
+        recoveredStep = 4 ifTrue: [
+            recoveredStack0 := (recoveredStack0) receiver.
+            recoveredPC := 5.
+        ].
+        recoveredStep = 5 ifTrue: [
+            recoveredStack0 := (recoveredStack0) type.
+            recoveredPC := 6.
+        ].
+        recoveredStep = 6 ifTrue: [
+            recoveredLocal1 := recoveredStack0.
+            recoveredPC := 7.
+        ].
+        recoveredStep = 7 ifTrue: [
+            recoveredStack0 := Array.
+            recoveredPC := 9.
+        ].
+        recoveredStep = 9 ifTrue: [
+            recoveredStack1 := 'GETVALUE'.
+            recoveredPC := 11.
+        ].
+        recoveredStep = 11 ifTrue: [
+            recoveredStack2 := recoveredLocal1.
+            recoveredPC := 12.
+        ].
+        recoveredStep = 12 ifTrue: [
+            recoveredStack2 := (recoveredStack2) isStatic.
+            recoveredPC := 14.
+        ].
+        recoveredStep = 14 ifTrue: [
+            (recoveredStack2) ifTrue: [recoveredPC := 18] ifFalse: [recoveredPC := 24].
+        ].
+        recoveredStep = 18 ifTrue: [
+            recoveredStack2 := 'FIXED'.
+            recoveredPC := 20.
+        ].
+        recoveredStep = 20 ifTrue: [
+            recoveredPC := 26.
+        ].
+        recoveredStep = 24 ifTrue: [
+            recoveredStack2 := ''.
+            recoveredPC := 26.
+        ].
+        recoveredStep = 26 ifTrue: [
+            recoveredStack1 := (recoveredStack1) , (recoveredStack2).
+            recoveredPC := 28.
+        ].
+        recoveredStep = 28 ifTrue: [
+            recoveredStack2 := '1'.
+            recoveredPC := 30.
+        ].
+        recoveredStep = 30 ifTrue: [
+            recoveredStack1 := (recoveredStack1) , (recoveredStack2).
+            recoveredPC := 32.
+        ].
+        recoveredStep = 32 ifTrue: [
+            recoveredStack2 := recoveredLocal1.
+            recoveredPC := 33.
+        ].
+        recoveredStep = 33 ifTrue: [
+            recoveredStack2 := (recoveredStack2) values.
+            recoveredPC := 35.
+        ].
+        recoveredStep = 35 ifTrue: [
+            recoveredStack2 := (recoveredStack2) getImplType.
+            recoveredPC := 37.
+        ].
+        recoveredStep = 37 ifTrue: [
+            recoveredStack2 := (recoveredStack2) asShortCType.
+            recoveredPC := 39.
+        ].
+        recoveredStep = 39 ifTrue: [
+            recoveredStack0 := (recoveredStack0) with: (recoveredStack1) with: (recoveredStack2).
+            recoveredPC := 41.
+        ].
+        recoveredStep = 41 ifTrue: [
+            ^recoveredStack0
+        ].
+    ]
+! !
+

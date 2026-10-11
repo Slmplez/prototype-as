@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.simpleconfigurator_1.0.200.v20110502-1955.jar",
+  "sha256": "8db74ddfc6cad626ec4fe1f1e35a835cab549a38020f89ebd893c993354fefdc",
+  "kind": "java",
+  "output": "unpacked/java/8db74ddfc6cad626_org.eclipse.equinox.simpleconfigurator_1.0.200.v20110502-1955.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 14,
+  "input_classes": 15,
+  "warning_lines": 5,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.simpleconfigurator_1.0.200.v20110502-1955.jar"
+  ],
+  "top_level_classes_checked": 14,
+  "missing_top_level_java_files": 0
+}

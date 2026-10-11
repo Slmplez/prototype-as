@@ -1,0 +1,27 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  gautosar.ggenericstructure.gvarianthandling.GAttributeValueVariationPoint
+ *  org.eclipse.emf.ecore.util.FeatureMap
+ */
+package autosar21.swcomponent.datatype.valuemodel;
+
+import autosar21.genericstructure.infrastructure.ARObject;
+import gautosar.ggenericstructure.gvarianthandling.GAttributeValueVariationPoint;
+import org.eclipse.emf.ecore.util.FeatureMap;
+
+public interface ValueByFormula
+extends ARObject,
+GAttributeValueVariationPoint {
+    public FeatureMap getMixed();
+
+    public void unsetMixed();
+
+    public boolean isSetMixed();
+
+    public String getMixedText();
+
+    public void setMixedText(String var1);
+}
+

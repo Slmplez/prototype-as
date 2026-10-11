@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.variables_3.2.500.v20110511.jar",
+  "sha256": "4c437a510b1d0f6f4e8e8312c57fe5c850a76830c6426e7a00bf1623c25eb1a5",
+  "kind": "java",
+  "output": "unpacked/java/4c437a510b1d0f6f_org.eclipse.core.variables_3.2.500.v20110511.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 16,
+  "input_classes": 18,
+  "warning_lines": 1,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.variables_3.2.500.v20110511.jar"
+  ],
+  "top_level_classes_checked": 16,
+  "missing_top_level_java_files": 0
+}

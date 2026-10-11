@@ -1,0 +1,2 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.artop.eel.serialization_1.0.0.201302082307.jar
+Decompiled with CFR 0.152

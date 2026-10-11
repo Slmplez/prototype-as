@@ -1,0 +1,72 @@
+[
+  {
+    "file": "org/eclipse/jdt/launching/JavaRuntime.java",
+    "line": 260,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/launching/JavaRuntime.java",
+    "line": 1567,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/launching/SocketUtil.java",
+    "line": 16,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/launching/JREContainerInitializer.java",
+    "line": 224,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/launching/LaunchingPlugin.java",
+    "line": 587,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/launching/RuntimeClasspathEntryListComparator.java",
+    "line": 30,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/launching/StandardVMDebugger.java",
+    "line": 76,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/launching/environments/AccessRuleParticipant.java",
+    "line": 32,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/launching/environments/EnvironmentsManager.java",
+    "line": 155,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/launching/environments/ExecutionEnvironment.java",
+    "line": 204,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/launching/environments/ExecutionEnvironmentDescription.java",
+    "line": 276,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/launching/sourcelookup/ArchiveSourceLocation.java",
+    "line": 53,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/launching/sourcelookup/ArchiveSourceLocation.java",
+    "line": 68,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/launching/sourcelookup/ArchiveSourceLocation.java",
+    "line": 134,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

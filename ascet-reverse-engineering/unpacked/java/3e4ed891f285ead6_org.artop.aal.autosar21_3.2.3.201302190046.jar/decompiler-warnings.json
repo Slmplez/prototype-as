@@ -1,0 +1,7 @@
+[
+  {
+    "file": "autosar21/util/Autosar21Package.java",
+    "line": 215,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "file": "org/eclipse/swt/awt/SWT_AWT.java",
+    "line": 83,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/awt/SWT_AWT.java",
+    "line": 103,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/browser/External.java",
+    "line": 629,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/custom/BusyIndicator.java",
+    "line": 15,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/custom/StyledText.java",
+    "line": 3999,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/custom/StyledTextRenderer.java",
+    "line": 133,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/custom/StyledTextRenderer.java",
+    "line": 712,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/dnd/URLTransfer.java",
+    "line": 68,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/graphics/Device.java",
+    "line": 80,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/graphics/Device.java",
+    "line": 220,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/graphics/Device.java",
+    "line": 257,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/graphics/Device.java",
+    "line": 314,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/graphics/Device.java",
+    "line": 597,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/graphics/Device.java",
+    "line": 647,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/graphics/Device.java",
+    "line": 673,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/graphics/Image.java",
+    "line": 1539,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/graphics/ImageData.java",
+    "line": 1562,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/graphics/ImageData.java",
+    "line": 2202,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Composite.java",
+    "line": 52,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 526,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 573,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 1053,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 1237,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 1407,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 1932,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 2146,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 2811,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 2812,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 3055,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 3813,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 3881,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Display.java",
+    "line": 4062,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/EventTable.java",
+    "line": 87,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/swt/widgets/EventTable.java",
+    "line": 91,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/EventTable.java",
+    "line": 109,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Synchronizer.java",
+    "line": 29,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Synchronizer.java",
+    "line": 60,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Synchronizer.java",
+    "line": 77,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Synchronizer.java",
+    "line": 101,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/widgets/Synchronizer.java",
+    "line": 141,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/internal/image/JPEGDecoder.java",
+    "line": 2864,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/internal/image/JPEGDecoder.java",
+    "line": 3142,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/internal/image/JPEGFileFormat.java",
+    "line": 1018,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/internal/image/JPEGHuffmanTable.java",
+    "line": 502,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/internal/image/LZWCodec.java",
+    "line": 139,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/internal/image/PngHuffmanTable.java",
+    "line": 41,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/internal/mozilla/nsID.java",
+    "line": 35,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/internal/mozilla/XPCOMObject.java",
+    "line": 31,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/internal/ole/win32/COMObject.java",
+    "line": 22,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/swt/internal/ole/win32/IDispatch.java",
+    "line": 20,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/swt/internal/ole/win32/ITypeInfo.java",
+    "line": 80,
+    "text": "* Unable to fully structure code"
+  }
+]

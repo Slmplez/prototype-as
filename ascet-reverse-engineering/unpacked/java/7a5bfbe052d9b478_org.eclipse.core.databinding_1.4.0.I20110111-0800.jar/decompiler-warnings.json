@@ -1,0 +1,22 @@
+[
+  {
+    "file": "org/eclipse/core/databinding/conversion/NumberToStringConverter.java",
+    "line": 173,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/databinding/conversion/StringToNumberParser.java",
+    "line": 22,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/databinding/conversion/StringToNumberParser.java",
+    "line": 57,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/databinding/validation/NumberToNumberValidator.java",
+    "line": 33,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

@@ -1,0 +1,594 @@
+{
+  "totals": {
+    "method_records": 179893,
+    "shared_code": 105925,
+    "binding_observations": 343944,
+    "bindings": 179892,
+    "reconstructed_bindings": 179892,
+    "straight_line": 127688,
+    "reconstructed_records": 179892,
+    "control_flow": 52204,
+    "methods_with_inline_blocks": 20057,
+    "inline_blocks": 36029,
+    "class_files": 11911,
+    "unbound_records": 1
+  },
+  "images": [
+    {
+      "image": "abtdah.ic",
+      "counts": {
+        "method_records": 797,
+        "shared_code": 314,
+        "binding_observations": 797,
+        "bindings": 797,
+        "reconstructed_bindings": 797,
+        "straight_line": 615,
+        "reconstructed_records": 797,
+        "control_flow": 182,
+        "methods_with_inline_blocks": 48,
+        "inline_blocks": 59,
+        "class_files": 119
+      },
+      "reasons": {}
+    },
+    {
+      "image": "abtdau.ic",
+      "counts": {
+        "method_records": 513,
+        "shared_code": 161,
+        "binding_observations": 513,
+        "bindings": 513,
+        "reconstructed_bindings": 513,
+        "straight_line": 354,
+        "reconstructed_records": 513,
+        "control_flow": 159,
+        "methods_with_inline_blocks": 42,
+        "inline_blocks": 57,
+        "class_files": 59
+      },
+      "reasons": {}
+    },
+    {
+      "image": "abtdbf.ic",
+      "counts": {
+        "method_records": 216,
+        "shared_code": 41,
+        "binding_observations": 216,
+        "bindings": 216,
+        "reconstructed_bindings": 216,
+        "straight_line": 116,
+        "reconstructed_records": 216,
+        "control_flow": 100,
+        "methods_with_inline_blocks": 42,
+        "inline_blocks": 62,
+        "class_files": 25
+      },
+      "reasons": {}
+    },
+    {
+      "image": "abtdbh.ic",
+      "counts": {
+        "method_records": 814,
+        "shared_code": 298,
+        "binding_observations": 814,
+        "bindings": 814,
+        "reconstructed_bindings": 814,
+        "straight_line": 548,
+        "reconstructed_records": 814,
+        "control_flow": 266,
+        "methods_with_inline_blocks": 106,
+        "inline_blocks": 139,
+        "class_files": 87
+      },
+      "reasons": {}
+    },
+    {
+      "image": "abtdol.ic",
+      "counts": {
+        "method_records": 40,
+        "shared_code": 6,
+        "binding_observations": 40,
+        "bindings": 40,
+        "reconstructed_bindings": 40,
+        "straight_line": 24,
+        "reconstructed_records": 40,
+        "control_flow": 16,
+        "methods_with_inline_blocks": 3,
+        "inline_blocks": 3,
+        "class_files": 8
+      },
+      "reasons": {}
+    },
+    {
+      "image": "abtxmlp.ic",
+      "counts": {
+        "method_records": 1296,
+        "shared_code": 706,
+        "binding_observations": 1296,
+        "bindings": 1296,
+        "reconstructed_bindings": 1296,
+        "straight_line": 966,
+        "reconstructed_records": 1296,
+        "control_flow": 330,
+        "methods_with_inline_blocks": 116,
+        "inline_blocks": 129,
+        "class_files": 135
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ascet.icx",
+      "counts": {
+        "class_files": 0
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ASDBase.ic",
+      "counts": {
+        "method_records": 131680,
+        "shared_code": 80468,
+        "binding_observations": 258917,
+        "bindings": 131679,
+        "reconstructed_bindings": 131679,
+        "straight_line": 91817,
+        "reconstructed_records": 131679,
+        "control_flow": 39862,
+        "methods_with_inline_blocks": 15960,
+        "inline_blocks": 29767,
+        "unbound_records": 1,
+        "class_files": 8021
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ASDConvUtil_base.ic",
+      "counts": {
+        "method_records": 174,
+        "shared_code": 49,
+        "binding_observations": 301,
+        "bindings": 174,
+        "reconstructed_bindings": 174,
+        "straight_line": 101,
+        "reconstructed_records": 174,
+        "control_flow": 73,
+        "methods_with_inline_blocks": 47,
+        "inline_blocks": 118,
+        "class_files": 29
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ASDDocumentor.ic",
+      "counts": {
+        "method_records": 1206,
+        "shared_code": 606,
+        "binding_observations": 2399,
+        "bindings": 1206,
+        "reconstructed_bindings": 1206,
+        "straight_line": 621,
+        "reconstructed_records": 1206,
+        "control_flow": 585,
+        "methods_with_inline_blocks": 201,
+        "inline_blocks": 347,
+        "class_files": 30
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ASDGenUtil_base.ic",
+      "counts": {
+        "method_records": 387,
+        "binding_observations": 697,
+        "bindings": 387,
+        "reconstructed_bindings": 387,
+        "straight_line": 263,
+        "reconstructed_records": 387,
+        "shared_code": 128,
+        "control_flow": 124,
+        "methods_with_inline_blocks": 76,
+        "inline_blocks": 152,
+        "class_files": 54
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ASDStartup.ic",
+      "counts": {
+        "method_records": 3,
+        "shared_code": 1,
+        "binding_observations": 4,
+        "bindings": 3,
+        "reconstructed_bindings": 3,
+        "straight_line": 2,
+        "reconstructed_records": 3,
+        "control_flow": 1,
+        "class_files": 3
+      },
+      "reasons": {}
+    },
+    {
+      "image": "async.ic",
+      "counts": {
+        "method_records": 315,
+        "shared_code": 86,
+        "binding_observations": 565,
+        "bindings": 315,
+        "reconstructed_bindings": 315,
+        "straight_line": 240,
+        "reconstructed_records": 315,
+        "control_flow": 75,
+        "methods_with_inline_blocks": 11,
+        "inline_blocks": 19,
+        "class_files": 29
+      },
+      "reasons": {}
+    },
+    {
+      "image": "cfsnls.ic",
+      "counts": {
+        "method_records": 1779,
+        "shared_code": 740,
+        "binding_observations": 3396,
+        "bindings": 1779,
+        "reconstructed_bindings": 1779,
+        "straight_line": 1311,
+        "reconstructed_records": 1779,
+        "control_flow": 468,
+        "methods_with_inline_blocks": 138,
+        "inline_blocks": 205,
+        "class_files": 172
+      },
+      "reasons": {}
+    },
+    {
+      "image": "dbgrun.ic",
+      "counts": {
+        "method_records": 299,
+        "shared_code": 104,
+        "binding_observations": 542,
+        "bindings": 299,
+        "reconstructed_bindings": 299,
+        "straight_line": 221,
+        "reconstructed_records": 299,
+        "control_flow": 78,
+        "methods_with_inline_blocks": 39,
+        "inline_blocks": 50,
+        "class_files": 24
+      },
+      "reasons": {}
+    },
+    {
+      "image": "dde.ic",
+      "counts": {
+        "method_records": 253,
+        "shared_code": 53,
+        "binding_observations": 506,
+        "bindings": 253,
+        "reconstructed_bindings": 253,
+        "straight_line": 172,
+        "reconstructed_records": 253,
+        "control_flow": 81,
+        "methods_with_inline_blocks": 37,
+        "inline_blocks": 51,
+        "class_files": 21
+      },
+      "reasons": {}
+    },
+    {
+      "image": "drgdrp.ic",
+      "counts": {
+        "method_records": 218,
+        "binding_observations": 407,
+        "bindings": 218,
+        "reconstructed_bindings": 218,
+        "straight_line": 171,
+        "reconstructed_records": 218,
+        "shared_code": 84,
+        "control_flow": 47,
+        "methods_with_inline_blocks": 12,
+        "inline_blocks": 15,
+        "class_files": 31
+      },
+      "reasons": {}
+    },
+    {
+      "image": "EHOOKS.ic",
+      "counts": {
+        "method_records": 432,
+        "shared_code": 150,
+        "binding_observations": 432,
+        "bindings": 432,
+        "reconstructed_bindings": 432,
+        "straight_line": 270,
+        "reconstructed_records": 432,
+        "control_flow": 162,
+        "methods_with_inline_blocks": 82,
+        "inline_blocks": 173,
+        "class_files": 31
+      },
+      "reasons": {}
+    },
+    {
+      "image": "eprun.ic",
+      "counts": {
+        "method_records": 7,
+        "binding_observations": 12,
+        "bindings": 7,
+        "reconstructed_bindings": 7,
+        "straight_line": 5,
+        "reconstructed_records": 7,
+        "control_flow": 2,
+        "class_files": 2
+      },
+      "reasons": {}
+    },
+    {
+      "image": "eshell.ic",
+      "counts": {
+        "method_records": 124,
+        "shared_code": 12,
+        "binding_observations": 124,
+        "bindings": 124,
+        "reconstructed_bindings": 124,
+        "straight_line": 52,
+        "reconstructed_records": 124,
+        "control_flow": 72,
+        "methods_with_inline_blocks": 9,
+        "inline_blocks": 11,
+        "class_files": 8
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ETargetCommon.ic",
+      "counts": {
+        "method_records": 389,
+        "shared_code": 182,
+        "binding_observations": 389,
+        "bindings": 389,
+        "reconstructed_bindings": 389,
+        "straight_line": 303,
+        "reconstructed_records": 389,
+        "control_flow": 86,
+        "methods_with_inline_blocks": 58,
+        "inline_blocks": 79,
+        "class_files": 26
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ETargetCommonToolbox.ic",
+      "counts": {
+        "method_records": 2,
+        "binding_observations": 2,
+        "bindings": 2,
+        "reconstructed_bindings": 2,
+        "straight_line": 1,
+        "reconstructed_records": 2,
+        "control_flow": 1,
+        "class_files": 1
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ETargetPrototyping.ic",
+      "counts": {
+        "method_records": 29,
+        "binding_observations": 29,
+        "bindings": 29,
+        "reconstructed_bindings": 29,
+        "straight_line": 29,
+        "reconstructed_records": 29,
+        "shared_code": 14,
+        "class_files": 2
+      },
+      "reasons": {}
+    },
+    {
+      "image": "extwid.ic",
+      "counts": {
+        "method_records": 5068,
+        "shared_code": 2492,
+        "binding_observations": 10046,
+        "bindings": 5068,
+        "reconstructed_bindings": 5068,
+        "straight_line": 3396,
+        "reconstructed_records": 5068,
+        "control_flow": 1672,
+        "methods_with_inline_blocks": 386,
+        "inline_blocks": 495,
+        "class_files": 225
+      },
+      "reasons": {}
+    },
+    {
+      "image": "HwAccessETarget.ic",
+      "counts": {
+        "method_records": 405,
+        "shared_code": 164,
+        "binding_observations": 405,
+        "bindings": 405,
+        "reconstructed_bindings": 405,
+        "straight_line": 249,
+        "reconstructed_records": 405,
+        "control_flow": 156,
+        "methods_with_inline_blocks": 56,
+        "inline_blocks": 80,
+        "class_files": 33
+      },
+      "reasons": {}
+    },
+    {
+      "image": "kernel.ic",
+      "counts": {
+        "method_records": 4360,
+        "binding_observations": 8720,
+        "bindings": 4360,
+        "reconstructed_bindings": 4360,
+        "straight_line": 3058,
+        "reconstructed_records": 4360,
+        "shared_code": 1695,
+        "control_flow": 1302,
+        "methods_with_inline_blocks": 587,
+        "inline_blocks": 804,
+        "class_files": 287
+      },
+      "reasons": {}
+    },
+    {
+      "image": "lib.ic",
+      "counts": {
+        "method_records": 2921,
+        "shared_code": 988,
+        "binding_observations": 5365,
+        "bindings": 2921,
+        "reconstructed_bindings": 2921,
+        "straight_line": 1965,
+        "reconstructed_records": 2921,
+        "control_flow": 956,
+        "methods_with_inline_blocks": 696,
+        "inline_blocks": 1403,
+        "class_files": 190
+      },
+      "reasons": {}
+    },
+    {
+      "image": "ole.ic",
+      "counts": {
+        "method_records": 346,
+        "shared_code": 55,
+        "binding_observations": 658,
+        "bindings": 346,
+        "reconstructed_bindings": 346,
+        "straight_line": 152,
+        "reconstructed_records": 346,
+        "control_flow": 194,
+        "methods_with_inline_blocks": 14,
+        "inline_blocks": 19,
+        "class_files": 33
+      },
+      "reasons": {}
+    },
+    {
+      "image": "oleb.ic",
+      "counts": {
+        "method_records": 263,
+        "binding_observations": 525,
+        "bindings": 263,
+        "reconstructed_bindings": 263,
+        "straight_line": 145,
+        "reconstructed_records": 263,
+        "shared_code": 42,
+        "control_flow": 118,
+        "methods_with_inline_blocks": 5,
+        "inline_blocks": 8,
+        "class_files": 14
+      },
+      "reasons": {}
+    },
+    {
+      "image": "parse.ic",
+      "counts": {
+        "method_records": 957,
+        "shared_code": 359,
+        "binding_observations": 1907,
+        "bindings": 957,
+        "reconstructed_bindings": 957,
+        "straight_line": 697,
+        "reconstructed_records": 957,
+        "control_flow": 260,
+        "methods_with_inline_blocks": 69,
+        "inline_blocks": 103,
+        "class_files": 117
+      },
+      "reasons": {}
+    },
+    {
+      "image": "psupp.ic",
+      "counts": {
+        "method_records": 12918,
+        "shared_code": 10277,
+        "binding_observations": 25798,
+        "bindings": 12918,
+        "reconstructed_bindings": 12918,
+        "straight_line": 11823,
+        "reconstructed_records": 12918,
+        "control_flow": 1095,
+        "methods_with_inline_blocks": 190,
+        "inline_blocks": 232,
+        "class_files": 1075
+      },
+      "reasons": {}
+    },
+    {
+      "image": "sci.ic",
+      "counts": {
+        "method_records": 652,
+        "shared_code": 269,
+        "binding_observations": 1278,
+        "bindings": 652,
+        "reconstructed_bindings": 652,
+        "straight_line": 449,
+        "reconstructed_records": 652,
+        "control_flow": 203,
+        "methods_with_inline_blocks": 52,
+        "inline_blocks": 56,
+        "class_files": 85
+      },
+      "reasons": {}
+    },
+    {
+      "image": "winsys.ic",
+      "counts": {
+        "method_records": 5828,
+        "shared_code": 2695,
+        "binding_observations": 11642,
+        "bindings": 5828,
+        "reconstructed_bindings": 5828,
+        "straight_line": 3854,
+        "reconstructed_records": 5828,
+        "control_flow": 1974,
+        "methods_with_inline_blocks": 358,
+        "inline_blocks": 506,
+        "class_files": 380
+      },
+      "reasons": {}
+    },
+    {
+      "image": "xxx.ic",
+      "counts": {
+        "method_records": 513,
+        "shared_code": 251,
+        "binding_observations": 513,
+        "bindings": 513,
+        "reconstructed_bindings": 513,
+        "straight_line": 200,
+        "reconstructed_records": 513,
+        "control_flow": 313,
+        "methods_with_inline_blocks": 89,
+        "inline_blocks": 150,
+        "class_files": 32
+      },
+      "reasons": {}
+    },
+    {
+      "image": "xxx_dyn.ic",
+      "counts": {
+        "method_records": 4689,
+        "binding_observations": 4689,
+        "bindings": 4689,
+        "reconstructed_bindings": 4689,
+        "straight_line": 3498,
+        "reconstructed_records": 4689,
+        "shared_code": 2435,
+        "control_flow": 1191,
+        "methods_with_inline_blocks": 528,
+        "inline_blocks": 737,
+        "class_files": 523
+      },
+      "reasons": {}
+    }
+  ],
+  "validation": "Native handler backed static reconstruction; no ASCET execution or recompilation."
+}

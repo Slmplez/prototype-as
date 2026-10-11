@@ -1,0 +1,246 @@
+"Statically reconstructed from ASCET image; generated names; not original source. Runtime equivalence not tested."
+
+"psupp.ic method 0x20000620; bytecode file offset 0x153f24"
+!OSLargeText class methodsFor: 'recovered'!
+lineDelimiter
+    | recoveredValue0 |
+    recoveredValue0 := Delimiter.
+    ^recoveredValue0
+! !
+
+"psupp.ic method 0x20000674; bytecode file offset 0x153f24"
+!OSLargeText class methodsFor: 'recovered'!
+windowClass
+    | recoveredValue0 |
+    recoveredValue0 := LargeTextClass.
+    ^recoveredValue0
+! !
+
+"psupp.ic method 0x2000a04c; bytecode file offset 0x15e0d8"
+!OSLargeText class methodsFor: 'recovered'!
+withDelimiter: recoveredArg1
+    | recoveredValue0 recoveredValue1 recoveredValue2 |
+    recoveredValue0 := OSWidget.
+    recoveredValue1 := recoveredArg1.
+    recoveredValue2 := (recoveredValue0) withCrLf: (recoveredValue1).
+    ^recoveredValue2
+! !
+
+"psupp.ic method 0x2001e7e4; bytecode file offset 0x1720a0"
+!OSLargeText class methodsFor: 'recovered'!
+releaseWindowProc
+    | recoveredValue0 recoveredValue1 recoveredValue2 |
+    recoveredValue0 := OS.
+    recoveredValue1 := LargeTextClass.
+    recoveredValue2 := HInstance.
+    (recoveredValue0) unregisterClass: (recoveredValue1) hinst: (recoveredValue2).
+    ^self
+! !
+
+"psupp.ic method 0x2002abc4; bytecode file offset 0x17e474"
+!OSLargeText class methodsFor: 'recovered'!
+initializeAfterLoad
+    | recoveredValue0 recoveredValue1 recoveredValue2 recoveredValue3 |
+    recoveredValue0 := String.
+    recoveredValue1 := Cr.
+    recoveredValue2 := Lf.
+    recoveredValue3 := (recoveredValue0) with: (recoveredValue1) with: (recoveredValue2).
+    Delimiter := recoveredValue3.
+    MaxLength := 2147483647.
+    ^self
+! !
+
+"psupp.ic method 0x2002bedc; bytecode file offset 0x17f7c8"
+!OSLargeText class methodsFor: 'recovered'!
+background
+    | recoveredStack0 recoveredStack1 recoveredStack2 recoveredStack3 recoveredPC recoveredStep |
+    recoveredStack0 := self.
+    recoveredPC := 4.
+    [true] whileTrue: [
+        recoveredStep := recoveredPC.
+        recoveredStep = 4 ifTrue: [
+            recoveredStack1 := Is95Shell.
+            recoveredPC := 6.
+        ].
+        recoveredStep = 6 ifTrue: [
+            (recoveredStack1) ifTrue: [recoveredPC := 10] ifFalse: [recoveredPC := 16].
+        ].
+        recoveredStep = 10 ifTrue: [
+            recoveredStack1 := OS.
+            recoveredPC := 12.
+        ].
+        recoveredStep = 12 ifTrue: [
+            recoveredStack2 := ColorWindow.
+            recoveredPC := 14.
+        ].
+        recoveredStep = 14 ifTrue: [
+            recoveredStack1 := (recoveredStack1) getSysColor: (recoveredStack2).
+            recoveredPC := 15.
+        ].
+        recoveredStep = 15 ifTrue: [
+            ^recoveredStack1
+        ].
+        recoveredStep = 16 ifTrue: [
+            recoveredStack0 := super background.
+            recoveredPC := 20.
+        ].
+        recoveredStep = 20 ifTrue: [
+            ^recoveredStack0
+        ].
+    ]
+! !
+
+"psupp.ic method 0x2003cce4; bytecode file offset 0x1905d0"
+!OSLargeText class methodsFor: 'recovered'!
+initializeWindowProc
+    | recoveredLocal1 recoveredLocal2 recoveredLocal3 recoveredStack0 recoveredStack1 recoveredStack2 recoveredStack3 recoveredStack4 recoveredStack5 recoveredPC recoveredStep |
+    recoveredStack0 := self.
+    recoveredPC := 4.
+    [true] whileTrue: [
+        recoveredStep := recoveredPC.
+        recoveredStep = 4 ifTrue: [
+            recoveredStack1 := HInstance.
+            recoveredPC := 6.
+        ].
+        recoveredStep = 6 ifTrue: [
+            recoveredStack2 := WindowClass.
+            recoveredPC := 8.
+        ].
+        recoveredStep = 8 ifTrue: [
+            recoveredStack3 := OSWndclass.
+            recoveredPC := 10.
+        ].
+        recoveredStep = 10 ifTrue: [
+            recoveredStack3 := (recoveredStack3) new.
+            recoveredPC := 11.
+        ].
+        recoveredStep = 11 ifTrue: [
+            recoveredStack4 := recoveredStack3.
+            recoveredPC := 12.
+        ].
+        recoveredStep = 12 ifTrue: [
+            recoveredLocal3 := recoveredStack4.
+            recoveredPC := 13.
+        ].
+        recoveredStep = 13 ifTrue: [
+            (recoveredStack1) getClassInfo: (recoveredStack2) lpwc: (recoveredStack3).
+            recoveredPC := 15.
+        ].
+        recoveredStep = 15 ifTrue: [
+            recoveredStack1 := LargeTextClass.
+            recoveredPC := 17.
+        ].
+        recoveredStep = 17 ifTrue: [
+            (recoveredStack1 == nil) ifTrue: [recoveredPC := 28] ifFalse: [recoveredPC := 20].
+        ].
+        recoveredStep = 20 ifTrue: [
+            recoveredStack1 := LargeTextClass.
+            recoveredPC := 22.
+        ].
+        recoveredStep = 22 ifTrue: [
+            recoveredStack1 := (recoveredStack1) isInFixedSpace.
+            recoveredPC := 24.
+        ].
+        recoveredStep = 24 ifTrue: [
+            (recoveredStack1) ifTrue: [recoveredPC := 36] ifFalse: [recoveredPC := 28].
+        ].
+        recoveredStep = 28 ifTrue: [
+            recoveredStack1 := 'LARGETEXT'.
+            recoveredPC := 30.
+        ].
+        recoveredStep = 30 ifTrue: [
+            recoveredStack1 := (recoveredStack1) asPSZ.
+            recoveredPC := 32.
+        ].
+        recoveredStep = 32 ifTrue: [
+            recoveredStack1 := (recoveredStack1) makeFixed.
+            recoveredPC := 34.
+        ].
+        recoveredStep = 34 ifTrue: [
+            LargeTextClass := recoveredStack1.
+            recoveredPC := 36.
+        ].
+        recoveredStep = 36 ifTrue: [
+            recoveredStack1 := OSStringZ.
+            recoveredPC := 38.
+        ].
+        recoveredStep = 38 ifTrue: [
+            recoveredStack2 := LargeTextClass.
+            recoveredPC := 40.
+        ].
+        recoveredStep = 40 ifTrue: [
+            recoveredStack1 := (recoveredStack1) reference: (recoveredStack2).
+            recoveredPC := 42.
+        ].
+        recoveredStep = 42 ifTrue: [
+            recoveredLocal2 := recoveredStack1.
+            recoveredPC := 43.
+        ].
+        recoveredStep = 43 ifTrue: [
+            recoveredStack1 := CsDblclks.
+            recoveredPC := 45.
+        ].
+        recoveredStep = 45 ifTrue: [
+            recoveredStack2 := CsBytealignclient.
+            recoveredPC := 47.
+        ].
+        recoveredStep = 47 ifTrue: [
+            recoveredStack1 := (recoveredStack1) bitOr: (recoveredStack2).
+            recoveredPC := 49.
+        ].
+        recoveredStep = 49 ifTrue: [
+            recoveredLocal1 := recoveredStack1.
+            recoveredPC := 50.
+        ].
+        recoveredStep = 50 ifTrue: [
+            recoveredStack1 := recoveredLocal3.
+            recoveredPC := 51.
+        ].
+        recoveredStep = 51 ifTrue: [
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 52.
+        ].
+        recoveredStep = 52 ifTrue: [
+            recoveredStack3 := recoveredLocal1.
+            recoveredPC := 53.
+        ].
+        recoveredStep = 53 ifTrue: [
+            (recoveredStack2) style: (recoveredStack3).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 56.
+        ].
+        recoveredStep = 56 ifTrue: [
+            recoveredStack3 := recoveredLocal2.
+            recoveredPC := 57.
+        ].
+        recoveredStep = 57 ifTrue: [
+            (recoveredStack2) lpszClassName: (recoveredStack3).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 60.
+        ].
+        recoveredStep = 60 ifTrue: [
+            recoveredStack3 := HInstanceNull.
+            recoveredPC := 62.
+        ].
+        recoveredStep = 62 ifTrue: [
+            recoveredStack4 := IdcIbeam.
+            recoveredPC := 64.
+        ].
+        recoveredStep = 64 ifTrue: [
+            recoveredStack3 := (recoveredStack3) loadCursor: (recoveredStack4).
+            recoveredPC := 66.
+        ].
+        recoveredStep = 66 ifTrue: [
+            (recoveredStack2) hCursor: (recoveredStack3).
+            recoveredPC := 68.
+        ].
+        recoveredStep = 68 ifTrue: [
+            (recoveredStack1) registerClass.
+            recoveredPC := 70.
+        ].
+        recoveredStep = 70 ifTrue: [
+            ^recoveredStack0
+        ].
+    ]
+! !
+

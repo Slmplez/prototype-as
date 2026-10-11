@@ -1,0 +1,527 @@
+[
+  {
+    "file": "com/ibm/icu/impl/BMPSet.java",
+    "line": 66,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/ICULocaleService.java",
+    "line": 96,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICUNotifier.java",
+    "line": 17,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICUNotifier.java",
+    "line": 42,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICUNotifier.java",
+    "line": 65,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICUNotifier.java",
+    "line": 97,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICUNotifier.java",
+    "line": 108,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICURWLock.java",
+    "line": 112,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICURWLock.java",
+    "line": 135,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICURWLock.java",
+    "line": 147,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICURWLock.java",
+    "line": 170,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICUService.java",
+    "line": 207,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/ICUService.java",
+    "line": 279,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/IntTrieBuilder.java",
+    "line": 373,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/JavaTimeZone.java",
+    "line": 70,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/LocaleDisplayNamesImpl.java",
+    "line": 27,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/LocaleIDs.java",
+    "line": 95,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/LocaleIDs.java",
+    "line": 120,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/Normalizer2Impl.java",
+    "line": 132,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/Normalizer2Impl.java",
+    "line": 177,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/Normalizer2Impl.java",
+    "line": 216,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/Normalizer2Impl.java",
+    "line": 1517,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/PatternTokenizer.java",
+    "line": 218,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/SoftCache.java",
+    "line": 18,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/TrieIterator.java",
+    "line": 70,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/UBiDiProps.java",
+    "line": 107,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UBiDiProps.java",
+    "line": 123,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCaseProps.java",
+    "line": 401,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCaseProps.java",
+    "line": 417,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCharacterName.java",
+    "line": 138,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCharacterName.java",
+    "line": 216,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCharacterName.java",
+    "line": 286,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCharacterName.java",
+    "line": 376,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCharacterName.java",
+    "line": 549,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCharacterName.java",
+    "line": 710,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCharacterName.java",
+    "line": 743,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCharacterName.java",
+    "line": 798,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UCharacterName.java",
+    "line": 838,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/UPropertyAliases.java",
+    "line": 174,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/lang/UCharacter.java",
+    "line": 1207,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/lang/UCharacterNameIterator.java",
+    "line": 91,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/AnyTransliterator.java",
+    "line": 181,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/Bidi.java",
+    "line": 1366,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/BidiLine.java",
+    "line": 15,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/CollationElementIterator.java",
+    "line": 207,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/CollationElementIterator.java",
+    "line": 1118,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/CollationRuleParser.java",
+    "line": 128,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/CollationRuleParser.java",
+    "line": 1136,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/DateTimePatternGenerator.java",
+    "line": 398,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DateTimePatternGenerator.java",
+    "line": 457,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DateTimePatternGenerator.java",
+    "line": 468,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DateTimePatternGenerator.java",
+    "line": 504,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DateTimePatternGenerator.java",
+    "line": 533,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DecimalFormat.java",
+    "line": 193,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DecimalFormat.java",
+    "line": 323,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DecimalFormat.java",
+    "line": 362,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DecimalFormat.java",
+    "line": 383,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DecimalFormat.java",
+    "line": 400,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/DecimalFormat.java",
+    "line": 1260,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/DecimalFormat.java",
+    "line": 1695,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/DecimalFormat.java",
+    "line": 1861,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/DecimalFormat.java",
+    "line": 2080,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/DictionaryBasedBreakIterator.java",
+    "line": 61,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/DigitList.java",
+    "line": 221,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/NFRuleSet.java",
+    "line": 303,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/PluralRules.java",
+    "line": 87,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "com/ibm/icu/text/RbnfScannerProviderImpl.java",
+    "line": 20,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/RbnfScannerProviderImpl.java",
+    "line": 91,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/RbnfScannerProviderImpl.java",
+    "line": 140,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/RuleBasedCollator.java",
+    "line": 943,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/RuleBasedCollator.java",
+    "line": 1054,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/RuleBasedCollator.java",
+    "line": 1197,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/RuleBasedCollator.java",
+    "line": 1303,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/RuleBasedCollator.java",
+    "line": 2014,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/RuleBasedNumberFormat.java",
+    "line": 552,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/RuleBasedTransliterator.java",
+    "line": 26,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/SimpleDateFormat.java",
+    "line": 1336,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/StringPrep.java",
+    "line": 113,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/text/UCharacterIterator.java",
+    "line": 130,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/UnicodeCompressor.java",
+    "line": 92,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/UnicodeDecompressor.java",
+    "line": 37,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/UnicodeSet.java",
+    "line": 1794,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/UTF16.java",
+    "line": 275,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/UTF16.java",
+    "line": 308,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/UTF16.java",
+    "line": 341,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/text/UTF16.java",
+    "line": 956,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/util/Calendar.java",
+    "line": 1145,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/util/EasterRule.java",
+    "line": 34,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/EasterRule.java",
+    "line": 51,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/EasterRule.java",
+    "line": 73,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/IslamicCalendar.java",
+    "line": 169,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/RuleBasedTimeZone.java",
+    "line": 358,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/util/SimpleDateRule.java",
+    "line": 47,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/SimpleDateRule.java",
+    "line": 65,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/SimpleDateRule.java",
+    "line": 91,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/ULocale.java",
+    "line": 110,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/ULocale.java",
+    "line": 375,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/ULocale.java",
+    "line": 472,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/util/UResourceBundle.java",
+    "line": 127,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/util/UResourceBundle.java",
+    "line": 143,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/locale/LanguageTag.java",
+    "line": 486,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/locale/LanguageTag.java",
+    "line": 540,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/locale/LanguageTag.java",
+    "line": 569,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "com/ibm/icu/impl/duration/impl/ResourceBasedPeriodFormatterDataService.java",
+    "line": 57,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/ibm/icu/impl/duration/impl/YMDDateFormatter.java",
+    "line": 38,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

@@ -1,0 +1,23 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.equinox.p2.publisher.eclipse_1.0.0.v20110511\pdepublishing.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.equinox.internal.p2.publisher.eclipse.FeatureParser
+----------------------------
+
+parse(java.io.File )
+  Loose catch block
+
+
+org.eclipse.equinox.p2.publisher.eclipse.BundlesAction
+----------------------------
+
+basicLoadManifest(java.io.File )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+org.eclipse.pde.internal.swt.tools.IconExe
+----------------------------
+
+load(java.lang.String )
+  Loose catch block

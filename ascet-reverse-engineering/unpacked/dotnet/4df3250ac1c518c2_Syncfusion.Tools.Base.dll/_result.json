@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/Syncfusion.Tools.Base.dll",
+  "sha256": "4df3250ac1c518c2306483ad36d99f0dc7e8827072b2135f95d4c521faff311b",
+  "kind": "managed",
+  "output": "unpacked/dotnet/4df3250ac1c518c2_Syncfusion.Tools.Base.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 4,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/Syncfusion.Tools.Base.dll"
+  ]
+}

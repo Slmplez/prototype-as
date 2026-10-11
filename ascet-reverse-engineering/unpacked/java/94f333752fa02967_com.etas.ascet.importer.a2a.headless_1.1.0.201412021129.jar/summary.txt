@@ -1,0 +1,2 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\com.etas.ascet.importer.a2a.headless_1.1.0.201412021129.jar
+Decompiled with CFR 0.152

@@ -1,0 +1,102 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/p2/persistence/XMLWriter.java",
+    "line": 83,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/Credentials.java",
+    "line": 47,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/Credentials.java",
+    "line": 51,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/Credentials.java",
+    "line": 69,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 138,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 179,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 205,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 279,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 346,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 367,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 477,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 557,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 589,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 625,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 908,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 1005,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 1033,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 1057,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 1081,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/repository/helpers/AbstractRepositoryManager.java",
+    "line": 1172,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

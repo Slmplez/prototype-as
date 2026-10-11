@@ -1,0 +1,53 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.jdt.launching_3.6.1.v20110803_r371.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.jdt.internal.launching.JREContainerInitializer
+----------------------------
+
+requestClasspathContainerUpdate(org.eclipse.core.runtime.IPath org.eclipse.jdt.core.IJavaProject org.eclipse.jdt.core.IClasspathContainer )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.launching.RuntimeClasspathEntryListComparator
+----------------------------
+
+equalsIgnoreWhitespace(java.lang.String java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.launching.StandardVMDebugger
+----------------------------
+
+run(org.eclipse.jdt.launching.VMRunnerConfiguration org.eclipse.debug.core.ILaunch org.eclipse.core.runtime.IProgressMonitor )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.launching.environments.AccessRuleParticipant
+----------------------------
+
+getAccessRules(org.eclipse.jdt.launching.environments.IExecutionEnvironment org.eclipse.jdt.launching.IVMInstall org.eclipse.jdt.launching.LibraryLocation[] org.eclipse.jdt.core.IJavaProject )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.launching.environments.ExecutionEnvironment
+----------------------------
+
+getJavaProfileProperties(org.osgi.framework.Bundle java.lang.String )
+  Loose catch block
+
+
+org.eclipse.jdt.launching.SocketUtil
+----------------------------
+
+findUnusedLocalPort(java.lang.String int int )
+  Unable to fully structure code
+findFreePort()
+  Loose catch block
+
+
+org.eclipse.jdt.launching.environments.ExecutionEnvironmentDescription
+----------------------------
+
+getSourceMap()
+  Unable to fully structure code

@@ -1,0 +1,27 @@
+[
+  {
+    "file": "org/eclipse/ant/core/AntRunner.java",
+    "line": 238,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/ant/core/AntRunner.java",
+    "line": 242,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/ant/core/AntRunner.java",
+    "line": 260,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/ant/internal/core/AntClassLoader.java",
+    "line": 96,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ant/internal/core/contentDescriber/AntHandler.java",
+    "line": 51,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

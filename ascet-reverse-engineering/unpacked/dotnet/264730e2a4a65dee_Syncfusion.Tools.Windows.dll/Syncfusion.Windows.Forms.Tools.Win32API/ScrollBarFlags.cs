@@ -1,0 +1,15 @@
+namespace Syncfusion.Windows.Forms.Tools.Win32API;
+
+public enum ScrollBarFlags
+{
+	SBS_HORZ = 0,
+	SBS_VERT = 1,
+	SBS_TOPALIGN = 2,
+	SBS_LEFTALIGN = 2,
+	SBS_BOTTOMALIGN = 4,
+	SBS_RIGHTALIGN = 4,
+	SBS_SIZEBOXTOPLEFTALIGN = 2,
+	SBS_SIZEBOXBOTTOMRIGHTALIGN = 4,
+	SBS_SIZEBOX = 8,
+	SBS_SIZEGRIP = 16
+}

@@ -1,0 +1,177 @@
+[
+  {
+    "file": "org/eclipse/team/core/RepositoryProvider.java",
+    "line": 91,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/team/core/subscribers/Subscriber.java",
+    "line": 61,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/core/subscribers/Subscriber.java",
+    "line": 73,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/core/subscribers/Subscriber.java",
+    "line": 101,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/core/synchronize/SyncInfoSet.java",
+    "line": 125,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/core/synchronize/SyncInfoSet.java",
+    "line": 135,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/core/synchronize/SyncInfoSet.java",
+    "line": 393,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/core/synchronize/SyncInfoTree.java",
+    "line": 147,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/core/variants/ThreeWaySynchronizer.java",
+    "line": 71,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/core/variants/ThreeWaySynchronizer.java",
+    "line": 81,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/core/variants/ThreeWaySynchronizer.java",
+    "line": 157,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/team/core/variants/ThreeWaySynchronizer.java",
+    "line": 317,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/BackgroundEventHandler.java",
+    "line": 91,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/BackgroundEventHandler.java",
+    "line": 214,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/DefaultFileModificationValidator.java",
+    "line": 48,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/DefaultFileModificationValidator.java",
+    "line": 98,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/StringMatcher.java",
+    "line": 90,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/team/internal/core/mapping/CompoundResourceTraversal.java",
+    "line": 233,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/streams/PollingInputStream.java",
+    "line": 35,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/team/internal/core/streams/PollingOutputStream.java",
+    "line": 120,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/team/internal/core/streams/TimeoutInputStream.java",
+    "line": 46,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/streams/TimeoutInputStream.java",
+    "line": 174,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/streams/TimeoutInputStream.java",
+    "line": 305,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/streams/TimeoutOutputStream.java",
+    "line": 42,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/streams/TimeoutOutputStream.java",
+    "line": 144,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/streams/TimeoutOutputStream.java",
+    "line": 275,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/subscribers/BatchingLock.java",
+    "line": 51,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/subscribers/BatchingLock.java",
+    "line": 63,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/subscribers/BatchingLock.java",
+    "line": 79,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/subscribers/BatchingLock.java",
+    "line": 115,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/subscribers/BatchingLock.java",
+    "line": 147,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/subscribers/ContentComparator.java",
+    "line": 99,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/team/internal/core/subscribers/ContentComparator.java",
+    "line": 103,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/team/internal/core/subscribers/ContentComparator.java",
+    "line": 121,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/team/internal/core/subscribers/DiffTreeStatistics.java",
+    "line": 40,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

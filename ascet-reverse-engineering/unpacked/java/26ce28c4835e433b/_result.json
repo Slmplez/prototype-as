@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.autosar40_3.2.3.201302190046.jar",
+  "sha256": "26ce28c4835e433b2470febcb46f6c1f9afb7a1dfd5dfc2c2218ca107eba2050",
+  "kind": "java",
+  "output": "unpacked/java/26ce28c4835e433b",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 2844,
+  "input_classes": 3334,
+  "warning_lines": 1,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.autosar40_3.2.3.201302190046.jar"
+  ],
+  "top_level_classes_checked": 2844,
+  "missing_top_level_java_files": 0
+}

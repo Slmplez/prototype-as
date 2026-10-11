@@ -1,0 +1,53 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.team.core_3.6.0.I20110525-0800.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.team.core.RepositoryProvider
+----------------------------
+
+map(org.eclipse.core.resources.IProject java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.team.core.variants.ThreeWaySynchronizer
+----------------------------
+
+setRemoteBytes(org.eclipse.core.resources.IResource byte[] )
+  Unable to fully structure code
+
+
+org.eclipse.team.internal.core.BackgroundEventHandler
+----------------------------
+
+processEvents(org.eclipse.core.runtime.IProgressMonitor )
+  Handled impossible loop by duplicating code
+
+
+org.eclipse.team.internal.core.StringMatcher
+----------------------------
+
+match(java.lang.String int int )
+  Unable to fully structure code
+
+
+org.eclipse.team.internal.core.streams.PollingInputStream
+----------------------------
+
+close()
+  Unable to fully structure code
+
+
+org.eclipse.team.internal.core.streams.PollingOutputStream
+----------------------------
+
+close()
+  Unable to fully structure code
+
+
+org.eclipse.team.internal.core.subscribers.ContentComparator
+----------------------------
+
+compare(java.lang.Object java.lang.Object org.eclipse.core.runtime.IProgressMonitor )
+  Loose catch block
+contentsEqual(java.io.InputStream java.io.InputStream boolean )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [38[DOLOOP]], but top level block is 10[TRYBLOCK]

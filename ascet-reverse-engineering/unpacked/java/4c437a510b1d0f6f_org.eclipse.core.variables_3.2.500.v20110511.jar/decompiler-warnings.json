@@ -1,0 +1,7 @@
+[
+  {
+    "file": "org/eclipse/core/internal/variables/StringVariableManager.java",
+    "line": 425,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

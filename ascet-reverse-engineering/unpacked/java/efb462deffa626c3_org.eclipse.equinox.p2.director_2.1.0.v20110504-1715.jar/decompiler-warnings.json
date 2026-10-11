@@ -1,0 +1,17 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/p2/director/AttachmentHelper.java",
+    "line": 36,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/director/Projector.java",
+    "line": 977,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/director/Projector.java",
+    "line": 1080,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

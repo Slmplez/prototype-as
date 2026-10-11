@@ -1,0 +1,112 @@
+[
+  {
+    "file": "org/eclipse/emf/transaction/impl/ReadWriteValidatorImpl.java",
+    "line": 213,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 131,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 176,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 209,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 355,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 365,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 375,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 712,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 824,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 836,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionalEditingDomainImpl.java",
+    "line": 850,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionChangeRecorder.java",
+    "line": 178,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/impl/TransactionImpl.java",
+    "line": 90,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/internal/Tracing.java",
+    "line": 40,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/util/Lock.java",
+    "line": 52,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/util/Lock.java",
+    "line": 79,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/util/Lock.java",
+    "line": 148,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/util/Lock.java",
+    "line": 302,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/util/Lock.java",
+    "line": 438,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/util/Lock.java",
+    "line": 439,
+    "text": "* WARNING - Removed back jump from a try to a catch block - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/transaction/util/Lock.java",
+    "line": 440,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/emf/transaction/util/Lock.java",
+    "line": 513,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

@@ -1,0 +1,117 @@
+[
+  {
+    "file": "org/eclipse/emf/validation/internal/EMFModelValidationPlugin.java",
+    "line": 216,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/EMFModelValidationPlugin.java",
+    "line": 227,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/EMFModelValidationPlugin.java",
+    "line": 243,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/ConstraintRegistry.java",
+    "line": 45,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/ConstraintRegistry.java",
+    "line": 55,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/ConstraintRegistry.java",
+    "line": 69,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/ConstraintRegistry.java",
+    "line": 162,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/EventTypeService.java",
+    "line": 80,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/EventTypeService.java",
+    "line": 121,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/EventTypeService.java",
+    "line": 131,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/ModelValidationService.java",
+    "line": 157,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/ModelValidationService.java",
+    "line": 197,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/ModelValidationService.java",
+    "line": 349,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/service/ModelValidationService.java",
+    "line": 374,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/service/ClientContext.java",
+    "line": 414,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/service/ClientContext.java",
+    "line": 436,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/service/ClientContextManager.java",
+    "line": 69,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/service/ClientContextManager.java",
+    "line": 119,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/service/ClientContextManager.java",
+    "line": 255,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/service/TraversalStrategyManager.java",
+    "line": 97,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/service/TraversalStrategyManager.java",
+    "line": 195,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/util/StringMatcher.java",
+    "line": 94,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/emf/validation/internal/util/XmlConstraintFactory.java",
+    "line": 52,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

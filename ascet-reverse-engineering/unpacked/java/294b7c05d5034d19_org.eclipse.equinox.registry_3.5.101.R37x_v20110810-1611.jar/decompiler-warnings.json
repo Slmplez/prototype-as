@@ -1,0 +1,192 @@
+[
+  {
+    "file": "org/eclipse/core/internal/registry/ExtensionRegistry.java",
+    "line": 202,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/ExtensionRegistry.java",
+    "line": 608,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/ExtensionRegistry.java",
+    "line": 618,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/ExtensionRegistry.java",
+    "line": 887,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/ExtensionRegistry.java",
+    "line": 903,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/ExtensionRegistry.java",
+    "line": 931,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/ExtensionRegistry.java",
+    "line": 935,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/ExtensionRegistry.java",
+    "line": 953,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/ExtensionRegistry.java",
+    "line": 1213,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/ReadWriteMonitor.java",
+    "line": 11,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 205,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 271,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 325,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 352,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 437,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 459,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 482,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 486,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 504,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 508,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 566,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 570,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 588,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 677,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 681,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/TableReader.java",
+    "line": 699,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/osgi/EclipseBundleListener.java",
+    "line": 60,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/osgi/EclipseBundleListener.java",
+    "line": 185,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/registry/osgi/EclipseBundleListener.java",
+    "line": 208,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/dynamichelpers/ExtensionTracker.java",
+    "line": 56,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/dynamichelpers/ExtensionTracker.java",
+    "line": 69,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/dynamichelpers/ExtensionTracker.java",
+    "line": 82,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/dynamichelpers/ExtensionTracker.java",
+    "line": 122,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/dynamichelpers/ExtensionTracker.java",
+    "line": 159,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/dynamichelpers/ExtensionTracker.java",
+    "line": 179,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/dynamichelpers/ExtensionTracker.java",
+    "line": 196,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/dynamichelpers/ExtensionTracker.java",
+    "line": 214,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/dynamichelpers/ExtensionTracker.java",
+    "line": 230,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

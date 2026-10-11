@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/Syncfusion.Shared.Windows.dll",
+  "sha256": "aa8cf898d2590735c4379823144d9c3d5c23ca8dffd297285c6ddaea4ae919ff",
+  "kind": "managed",
+  "output": "unpacked/dotnet/aa8cf898d2590735_Syncfusion.Shared.Windows.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 29,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/Syncfusion.Shared.Windows.dll"
+  ]
+}

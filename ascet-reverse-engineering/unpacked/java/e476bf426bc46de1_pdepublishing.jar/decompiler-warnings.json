@@ -1,0 +1,27 @@
+[
+  {
+    "file": "org/eclipse/equinox/p2/publisher/eclipse/BundlesAction.java",
+    "line": 167,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "org/eclipse/equinox/p2/publisher/eclipse/BundlesAction.java",
+    "line": 512,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/equinox/p2/publisher/eclipse/BundlesAction.java",
+    "line": 516,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/equinox/p2/publisher/eclipse/BundlesAction.java",
+    "line": 534,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/pde/internal/swt/tools/IconExe.java",
+    "line": 80,
+    "text": "System.err.println(\"Warning - no icons detected in \\\"\" + program + \"\\\".\");"
+  }
+]

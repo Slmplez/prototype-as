@@ -1,0 +1,152 @@
+[
+  {
+    "file": "org/eclipse/ui/console/IOConsole.java",
+    "line": 37,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/console/IOConsole.java",
+    "line": 67,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/console/IOConsole.java",
+    "line": 109,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/console/IOConsole.java",
+    "line": 120,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/console/TextConsole.java",
+    "line": 61,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/console/TextConsole.java",
+    "line": 296,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/console/TextConsole.java",
+    "line": 306,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsoleDocumentAdapter.java",
+    "line": 51,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsoleManager.java",
+    "line": 82,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsoleManager.java",
+    "line": 92,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsoleManager.java",
+    "line": 115,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsoleManager.java",
+    "line": 141,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsoleManager.java",
+    "line": 162,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsoleManager.java",
+    "line": 353,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsoleManager.java",
+    "line": 363,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsoleManager.java",
+    "line": 405,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsolePatternMatcher.java",
+    "line": 46,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsolePatternMatcher.java",
+    "line": 74,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsolePatternMatcher.java",
+    "line": 90,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsolePatternMatcher.java",
+    "line": 109,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/ConsolePatternMatcher.java",
+    "line": 166,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/IOConsolePartitioner.java",
+    "line": 121,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/IOConsolePartitioner.java",
+    "line": 133,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/IOConsolePartitioner.java",
+    "line": 164,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/IOConsolePartitioner.java",
+    "line": 224,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/IOConsolePartitioner.java",
+    "line": 258,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/IOConsolePartitioner.java",
+    "line": 269,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/IOConsolePartitioner.java",
+    "line": 379,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/IOConsolePartitioner.java",
+    "line": 412,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/console/IOConsolePartitioner.java",
+    "line": 534,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

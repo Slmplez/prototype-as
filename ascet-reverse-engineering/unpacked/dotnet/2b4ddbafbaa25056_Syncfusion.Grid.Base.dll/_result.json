@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/Syncfusion.Grid.Base.dll",
+  "sha256": "2b4ddbafbaa2505672fbd8478745eb4da3810f552c9527b8a6dba3d31401f7c6",
+  "kind": "managed",
+  "output": "unpacked/dotnet/2b4ddbafbaa25056_Syncfusion.Grid.Base.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 3,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/Syncfusion.Grid.Base.dll"
+  ]
+}

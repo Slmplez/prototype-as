@@ -1,0 +1,2 @@
+Summary for E:\Repo\ASCET\unpacked\archives\3dc4941a8ba19a7b_org.eclipse.equinox.p2.jarprocessor_1.0.200.v20110502-1955.jar\lib\jarprocessor-ant.jar
+Decompiled with CFR 0.152

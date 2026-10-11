@@ -1,0 +1,94 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.ui.workbench_3.7.0.I20110519-0100.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.ui.actions.ContributedAction
+----------------------------
+
+runWithEvent(org.eclipse.swt.widgets.Event )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+org.eclipse.ui.application.WorkbenchAdvisor
+----------------------------
+
+run()
+  Unable to fully structure code
+
+
+org.eclipse.ui.internal.EditorReference
+----------------------------
+
+createPartHelper()
+  Unable to fully structure code
+
+
+org.eclipse.ui.internal.LayoutTreeNode
+----------------------------
+
+sameDirection(boolean org.eclipse.ui.internal.LayoutTreeNode )
+  Unable to fully structure code
+
+
+org.eclipse.ui.internal.WorkbenchPage
+----------------------------
+
+restoreState(org.eclipse.ui.IMemento org.eclipse.ui.IPerspectiveDescriptor )
+  Loose catch block
+
+
+org.eclipse.ui.internal.WorkbenchWindow
+----------------------------
+
+restoreState(org.eclipse.ui.IMemento org.eclipse.ui.IPerspectiveDescriptor )
+  Unable to fully structure code
+  Could not resolve type clashes
+
+
+org.eclipse.ui.internal.about.AboutBundleGroupData
+----------------------------
+
+getFeatureImageCrc()
+  Loose catch block
+
+
+org.eclipse.ui.internal.decorators.DecorationScheduler
+----------------------------
+
+run(org.eclipse.core.runtime.IProgressMonitor )
+  Unable to fully structure code
+
+
+org.eclipse.ui.internal.keys.BindingPersistence
+----------------------------
+
+readBindingsFromPreferences(org.eclipse.ui.IMemento org.eclipse.jface.bindings.BindingManager org.eclipse.ui.commands.ICommandService )
+  Unable to fully structure code
+
+
+org.eclipse.ui.internal.keys.KeysPreferencePage
+----------------------------
+
+setVisible(boolean )
+  Unable to fully structure code
+
+
+org.eclipse.ui.internal.misc.StringMatcher
+----------------------------
+
+match(java.lang.String int int )
+  Unable to fully structure code
+
+
+org.eclipse.ui.internal.progress.ProgressManager
+----------------------------
+
+run()
+  Loose catch block
+
+
+org.eclipse.ui.operations.OperationHistoryActionHandler
+----------------------------
+
+run()
+  Loose catch block

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/archives/912ddc1f4cb5606f_org.eclipse.pde.core_3.7.1.v20110822-2108.jar/ant_tasks/pde-ant.jar",
+  "sha256": "cfcf0fdc450c5eb5247bce219035206780e02b301e0e03eb298767c441e3ee6e",
+  "kind": "java",
+  "output": "unpacked/java/cfcf0fdc450c5eb5",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 5,
+  "input_classes": 5,
+  "warning_lines": 1,
+  "aliases": [
+    "unpacked/archives/912ddc1f4cb5606f_org.eclipse.pde.core_3.7.1.v20110822-2108.jar/ant_tasks/pde-ant.jar"
+  ],
+  "top_level_classes_checked": 5,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="MoreButtonsItemsText" xml:space="preserve"><value>Show &amp;More Buttons</value></data>
+  <data name="ScrollUp" xml:space="preserve"><value>Scroll Up</value></data>
+  <data name="RecordNavigationBarAddNewRecord" xml:space="preserve"><value>Add new Record</value></data>
+  <data name="DescriptionMenuItemText" xml:space="preserve"><value>Description</value></data>
+  <data name="RecordNavigationBarRecordCount" xml:space="preserve"><value>Record Count</value></data>
+  <data name="TabBarPageOnTabBarPage" xml:space="preserve"><value>A TabBarPage cannot be added to another TabBarPage.  TabBarPages can only be added to TabBarControls.</value></data>
+  <data name="RecordNavigationBarNextRecord" xml:space="preserve"><value>Next Record</value></data>
+  <data name="Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="ResetMenuItemText" xml:space="preserve"><value>Reset</value></data>
+  <data name="Bottom" xml:space="preserve"><value>Bottom</value></data>
+  <data name="InvalidLowBoundArgumentEx" xml:space="preserve"><value>'{1}' is not a valid value for '{0}'.  '{0}' must be greater than or equal to {2}.</value></data>
+  <data name="ScrollRight" xml:space="preserve"><value>Scroll Right</value></data>
+  <data name="RecordNavigationBarRecord" xml:space="preserve"><value>Record</value></data>
+  <data name="PageUp" xml:space="preserve"><value>Page Up</value></data>
+  <data name="TabBarSplitterControlAdd" xml:space="preserve"><value>Add Tab</value></data>
+  <data name="FewerButtonsItemsText" xml:space="preserve"><value>Show &amp;Fewer Buttons</value></data>
+  <data name="GroupBarExpandButtonToolTip" xml:space="preserve"><value>Expand the Navigation Pane</value></data>
+  <data name="TabBarToolTipEmptyIcon" xml:space="preserve"><value>'{0}' must not be empty.</value></data>
+  <data name="StyleCategoryAppearance" xml:space="preserve"><value>Appearance</value></data>
+  <data name="ColorEditorPaletteTab" xml:space="preserve"><value>Palette</value></data>
+  <data name="RecordNavigationBarFirstRecord" xml:space="preserve"><value>First Record</value></data>
+  <data name="PageDown" xml:space="preserve"><value>Page Down</value></data>
+  <data name="PageLeft" xml:space="preserve"><value>Page Left</value></data>
+  <data name="PageRight" xml:space="preserve"><value>Page Right</value></data>
+  <data name="TopLeftBottomRight" xml:space="preserve"><value>top, left, bottom, right </value></data>
+  <data name="TabBarControlAdd" xml:space="preserve"><value>Add Tab</value></data>
+  <data name="RightEdge" xml:space="preserve"><value>Right Edge</value></data>
+  <data name="GroupBarDropDownToolTip" xml:space="preserve"><value>Configure Buttons</value></data>
+  <data name="CategoryBehavior" xml:space="preserve"><value>Behavior</value></data>
+  <data name="TabBarSplitterControlRemove" xml:space="preserve"><value>Remove Tab</value></data>
+  <data name="Cut" xml:space="preserve"><value>Cu&amp;t</value></data>
+  <data name="Top" xml:space="preserve"><value>Top</value></data>
+  <data name="Error" xml:space="preserve"><value>Simulating Error.</value></data>
+  <data name="Paste" xml:space="preserve"><value>&amp;Paste</value></data>
+  <data name="SelectAll" xml:space="preserve"><value>Select All</value></data>
+  <data name="CategoryAppearance" xml:space="preserve"><value>Appearance</value></data>
+  <data name="GroupBarMinimizeButtonToolTip" xml:space="preserve"><value>Minimize the Navigation Pane</value></data>
+  <data name="LeftEdge" xml:space="preserve"><value>Left Edge</value></data>
+  <data name="GroupBarAddRemoveButton" xml:space="preserve"><value>&amp;Add or Remove Buttons</value></data>
+  <data name="RecordNavigationBarPreviousRecord" xml:space="preserve"><value>Previous Record</value></data>
+  <data name="TextParseFailedFormat" xml:space="preserve"><value>Failed to parse Text("{0}") expected text in the format "{1}".</value></data>
+  <data name="ModName" xml:space="preserve"><value>Module Name is {0}</value></data>
+  <data name="RecordNavigationBarCurrentRecord" xml:space="preserve"><value>Current Record</value></data>
+  <data name="InvalidArgument" xml:space="preserve"><value>'{1}' is not a valid value for '{0}'.</value></data>
+  <data name="ColorEditorSystemTab" xml:space="preserve"><value>System</value></data>
+  <data name="ScrollHere" xml:space="preserve"><value>Scroll Here</value></data>
+  <data name="ScrollLeft" xml:space="preserve"><value>Scroll Left</value></data>
+  <data name="ScrollDown" xml:space="preserve"><value>Scroll Down</value></data>
+  <data name="ColorEditorStandardTab" xml:space="preserve"><value>Web</value></data>
+  <data name="InvalidLowBoundArgumentEx2" xml:space="preserve"><value>Value {0} too small and out of range. Lower Bounds is {1}.</value></data>
+  <data name="TabBarControlRemove" xml:space="preserve"><value>Remove Tab</value></data>
+  <data name="CategoryAction" xml:space="preserve"><value>Action</value></data>
+  <data name="GroupBarNavigationPaneTooltip" xml:space="preserve"><value>Click to expand Navigation Pane</value></data>
+  <data name="CategoryData" xml:space="preserve"><value>Data</value></data>
+  <data name="RecordNavigationBarLastRecord" xml:space="preserve"><value>Last Record</value></data>
+  <data name="Copy" xml:space="preserve"><value>&amp;Copy</value></data>
+  <data name="Undo" xml:space="preserve"><value>&amp;Undo</value></data>
+  <data name="Test" xml:space="preserve"><value>Hello World!</value></data>
+  </root>

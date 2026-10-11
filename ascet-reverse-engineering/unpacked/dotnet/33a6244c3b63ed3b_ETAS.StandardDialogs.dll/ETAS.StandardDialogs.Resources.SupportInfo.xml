@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (http://www.altova.com) by Victor Delgado (ETAS GmbH) -->
+<SupportInformation>
+	<Subsidiary>
+		<Name>ETAS GmbH</Name>
+		<Address>Borsigstrasse 14; 70469 Stuttgart, Germany</Address>
+		<SDLocation>Europe</SDLocation>
+		<IncludedInStdDlgs>1</IncludedInStdDlgs>
+		<Image />
+		<SalesInfo>
+			<SalesContactPhone>+49 711 3423-2102</SalesContactPhone>
+			<SalesContactFax>+49 711 3423-2106</SalesContactFax>
+			<SalesContactEmail>sales.de@etas.com</SalesContactEmail>
+		</SalesInfo>
+		<SupportInfo>
+			<Product>
+				<ProductName>ASCET</ProductName>
+				<SupportContactPhone>+49 711 3423-2311</SupportContactPhone>
+				<SupportContactEmail>ec.support.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INTECRIO</ProductName>
+				<SupportContactPhone>+49 711 3423-2311</SupportContactPhone>
+				<SupportContactEmail>ec.support.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>LABCAR</ProductName>
+				<SupportContactPhone>+49 711 3423-2314</SupportContactPhone>
+				<SupportContactEmail>labcar.support.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INCA</ProductName>
+				<SupportContactPhone>+49 711 3423-2315</SupportContactPhone>
+				<SupportContactEmail>mcd.support.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>ODX</ProductName>
+				<SupportContactPhone>+49 711 3423-2316</SupportContactPhone>
+				<SupportContactEmail>odx.support.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>EE</ProductName>
+				<SupportContactPhone>+49 711 3423-2314</SupportContactPhone>
+				<SupportContactEmail>labcar.support.de@etas.com</SupportContactEmail>
+			</Product>
+		</SupportInfo>
+	</Subsidiary>
+	<Subsidiary>
+		<Name>ETAS S.A.S</Name>
+		<Address>32 avenue Michelet BP 170 93404 Saint-Ouen Cedex , France</Address>
+		<SDLocation>FrBeLux</SDLocation>
+		<IncludedInStdDlgs>1</IncludedInStdDlgs>
+		<Image />
+		<SalesInfo>
+			<SalesContactPhone>+ 33 1 75 34 50 50</SalesContactPhone>
+			<SalesContactFax>+ 33 1 40 10 11 64</SalesContactFax>
+			<SalesContactEmail>sales.fr@etas.com</SalesContactEmail>
+		</SalesInfo>
+		<SupportInfo>
+			<Product>
+				<ProductName>ASCET</ProductName>
+				<SupportContactPhone>+33 1 75 34 50 68 </SupportContactPhone>
+				<SupportContactEmail>support.fr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INTECRIO</ProductName>
+				<SupportContactPhone>+33 1 75 34 50 68 </SupportContactPhone>
+				<SupportContactEmail>support.fr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>LABCAR</ProductName>
+				<SupportContactPhone>+33 1 75 34 50 68 </SupportContactPhone>
+				<SupportContactEmail>support.fr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INCA</ProductName>
+				<SupportContactPhone>+33 1 75 34 50 68 </SupportContactPhone>
+				<SupportContactEmail>mcd.support.fr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>ODX</ProductName>
+				<SupportContactPhone>+33 1 75 34 50 68 </SupportContactPhone>
+				<SupportContactEmail>support.fr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>EE</ProductName>
+				<SupportContactPhone>+33 1 75 34 50 68 </SupportContactPhone>
+				<SupportContactEmail>support.fr@etas.com</SupportContactEmail>
+			</Product>
+		</SupportInfo>
+	</Subsidiary>
+	<Subsidiary>
+		<Name>ETAS Ltd.</Name>
+		<Address>Unit 2A; Meteor Business Park; Meteor Centre; Mansfield Road;Derby DE21 4SU; United Kingdom</Address>
+		<SDLocation>GreatBritain</SDLocation>
+		<IncludedInStdDlgs>1</IncludedInStdDlgs>
+		<Image />
+		<SalesInfo>
+			<SalesContactPhone>+44 1332 253770</SalesContactPhone>
+			<SalesContactFax>+44 1332 253779</SalesContactFax>
+			<SalesContactEmail>sales.uk@etas.com</SalesContactEmail>
+		</SalesInfo>
+		<SupportInfo>
+			<Product>
+				<ProductName>ASCET</ProductName>
+				<SupportContactPhone>+49 711 3423-2311</SupportContactPhone>
+				<SupportContactEmail>ascet.hotline.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INTECRIO</ProductName>
+				<SupportContactPhone>+49 711 3423-2311</SupportContactPhone>
+				<SupportContactEmail>intecrio.hotline.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>LABCAR</ProductName>
+				<SupportContactPhone>+49 711 3423-2314</SupportContactPhone>
+				<SupportContactEmail>labcar.hotline.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INCA</ProductName>
+				<SupportContactPhone>+49 711 3423-2315</SupportContactPhone>
+				<SupportContactEmail>inca.hotline.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>ODX</ProductName>
+				<SupportContactPhone>+49 711 3423-2316</SupportContactPhone>
+				<SupportContactEmail>odx.hotline.de@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>Technical Support</ProductName>
+				<SupportContactPhone>+44 1332 253777</SupportContactPhone>
+				<SupportContactEmail>support.uk@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>EE</ProductName>
+				<SupportContactPhone>+49 711 3423-2314</SupportContactPhone>
+				<SupportContactEmail>labcar.hotline.de@etas.com</SupportContactEmail>
+			</Product>
+		</SupportInfo>
+	</Subsidiary>
+	<Subsidiary>
+		<Name>ETAS Inc.</Name>
+		<Address>3021 Miller Road, Ann Arbor, MI 48103, USA</Address>
+		<SDLocation>USA</SDLocation>
+		<IncludedInStdDlgs>1</IncludedInStdDlgs>
+		<Image />
+		<SalesInfo>
+			<SalesContactPhone>+1 888 382-7462 ext. 2002</SalesContactPhone>
+			<SalesContactFax>+1 734 302-2020</SalesContactFax>
+			<SalesContactEmail>sales.us@etas.com</SalesContactEmail>
+		</SalesInfo>
+		<SupportInfo>
+			<Product>
+				<ProductName>ASCET</ProductName>
+				<SupportContactPhone>+1-888-382-7462 ext. 2000</SupportContactPhone>
+				<SupportContactEmail>support.us@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INTECRIO</ProductName>
+				<SupportContactPhone>+1-888-382-7462 ext. 2000</SupportContactPhone>
+				<SupportContactEmail>support.us@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>LABCAR</ProductName>
+				<SupportContactPhone>+1-888-382-7462 ext. 2000</SupportContactPhone>
+				<SupportContactEmail>support.us@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INCA</ProductName>
+				<SupportContactPhone>+1-888-382-7462 ext. 2000</SupportContactPhone>
+				<SupportContactEmail>mcd.support.us@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>ODX</ProductName>
+				<SupportContactPhone>+1-888-382-7462 ext. 2000</SupportContactPhone>
+				<SupportContactEmail>support.us@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>Technical Support</ProductName>
+				<SupportContactPhone>+1-888-382-7462 ext. 2000</SupportContactPhone>
+				<SupportContactEmail>support.us@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>EE</ProductName>
+				<SupportContactPhone>+1-888-382-7462 ext. 2000</SupportContactPhone>
+				<SupportContactEmail>support.us@etas.com</SupportContactEmail>
+			</Product>
+		</SupportInfo>
+	</Subsidiary>
+	<Subsidiary>
+		<Name>ETAS K.K.</Name>
+		<Address>Queen's Tower C-17F, 2-3-5, Minatomirai, Nishi-ku, Yokohama 220-6217, Japan</Address>
+		<SDLocation>Japan</SDLocation>
+		<IncludedInStdDlgs>1</IncludedInStdDlgs>
+		<Image />
+		<SalesInfo>
+			<SalesContactPhone>+81 45 222-0900</SalesContactPhone>
+			<SalesContactFax>+81 45 222-0956</SalesContactFax>
+			<SalesContactEmail>sales.jp@etas.com</SalesContactEmail>
+		</SalesInfo>
+		<SupportInfo>
+			<Product>
+				<ProductName>ASCET</ProductName>
+				<SupportContactPhone>+81-45-222-0951</SupportContactPhone>
+				<SupportContactEmail>ec.hotline.jp@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INTECRIO</ProductName>
+				<SupportContactPhone>+81-45-222-0951</SupportContactPhone>
+				<SupportContactEmail>ec.hotline.jp@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>RTA</ProductName>
+				<SupportContactPhone>+81-45-222-0951</SupportContactPhone>
+				<SupportContactEmail>ec.hotline.jp@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>LABCAR</ProductName>
+				<SupportContactPhone>+81-45-222-0952</SupportContactPhone>
+				<SupportContactEmail>labcar.hotline.jp@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INCA</ProductName>
+				<SupportContactPhone>+81-45-222-0950</SupportContactPhone>
+				<SupportContactEmail>inca.hotline.jp@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>ODX</ProductName>
+				<SupportContactPhone>+81-45-222-0950</SupportContactPhone>
+				<SupportContactEmail>inca.hotline.jp@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>EE</ProductName>
+				<SupportContactPhone>+81 45 222-0950</SupportContactPhone>
+				<SupportContactEmail>labcar.hotline.jp@etas.com</SupportContactEmail>
+			</Product>
+		</SupportInfo>
+	</Subsidiary>
+	<Subsidiary>
+		<Name>ETAS Korea Co., Ltd.</Name>
+		<Address>4F, JVM Bldg. 67-6, Yangjae-dong, Seocho-gu, Seoul 137-889, Korea</Address>
+		<SDLocation>Korea</SDLocation>
+		<IncludedInStdDlgs>1</IncludedInStdDlgs>
+		<Image />
+		<SalesInfo>
+			<SalesContactPhone>+82 31 326 6200</SalesContactPhone>
+			<SalesContactFax>+82 31 326 6209</SalesContactFax>
+			<SalesContactEmail>sales.kr@etas.com</SalesContactEmail>
+		</SalesInfo>
+		<SupportInfo>
+			<Product>
+				<ProductName>ASCET</ProductName>
+				<SupportContactPhone>+82 31 326 6200</SupportContactPhone>
+				<SupportContactEmail>ec.hotline.kr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INTECRIO</ProductName>
+				<SupportContactPhone>+82 31 326 6200</SupportContactPhone>
+				<SupportContactEmail>ec.hotline.kr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>RTA</ProductName>
+				<SupportContactPhone>+82 31 326 6200</SupportContactPhone>
+				<SupportContactEmail>ec.hotline.kr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>LABCAR</ProductName>
+				<SupportContactPhone>+82 31 326 6200</SupportContactPhone>
+				<SupportContactEmail>labcar.hotline.kr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INCA</ProductName>
+				<SupportContactPhone>+82 31 326 6200</SupportContactPhone>
+				<SupportContactEmail>inca.hotline.kr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>ODX</ProductName>
+				<SupportContactPhone>+82 31 326 6200</SupportContactPhone>
+				<SupportContactEmail>odx.hotline.kr@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>EE</ProductName>
+				<SupportContactPhone>+82 31 326 6200</SupportContactPhone>
+				<SupportContactEmail>labcar.hotline.kr@etas.com</SupportContactEmail>
+			</Product>
+		</SupportInfo>
+	</Subsidiary>
+	<Subsidiary>
+		<Name>ETAS (Shanghai) Co., Ltd.</Name>
+		<Address>333 Fuquan Road North IBP, Changning District Shanghai 200335, P.R. China</Address>
+		<SDLocation>China</SDLocation>
+		<IncludedInStdDlgs>1</IncludedInStdDlgs>
+		<Image />
+		<SalesInfo>
+			<SalesContactPhone>+86 21 2218 5858</SalesContactPhone>
+			<SalesContactFax>+86 21 5037 2221</SalesContactFax>
+			<SalesContactEmail>sales.cn@etas.com</SalesContactEmail>
+		</SalesInfo>
+		<SupportInfo>
+			<Product>
+				<ProductName>ASCET</ProductName>
+				<SupportContactPhone>+86 21 2218 5858</SupportContactPhone>
+				<SupportContactEmail>support.cn@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INTECRIO</ProductName>
+				<SupportContactPhone>+86 21 2218 5858</SupportContactPhone>
+				<SupportContactEmail>support.cn@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>RTA</ProductName>
+				<SupportContactPhone>+86 21 2218 5858</SupportContactPhone>
+				<SupportContactEmail>support.cn@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>LABCAR</ProductName>
+				<SupportContactPhone>+86 21 2218 5858</SupportContactPhone>
+				<SupportContactEmail>support.cn@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INCA</ProductName>
+				<SupportContactPhone>+86 21 2218 5858</SupportContactPhone>
+				<SupportContactEmail>mcd.support.cn@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>ODX</ProductName>
+				<SupportContactPhone>+86 21 2218 5858</SupportContactPhone>
+				<SupportContactEmail>support.cn@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>EE</ProductName>
+				<SupportContactPhone>+86 21 2218 5858</SupportContactPhone>
+				<SupportContactEmail>support.cn@etas.com</SupportContactEmail>
+			</Product>
+		</SupportInfo>
+	</Subsidiary>
+	<Subsidiary>
+		<Name>ETAS Automotive India Pvt. Ltd.</Name>
+		<Address>Pritech Park Trust ,Campus 4A Block 4th floor,ECOSPACE business park Bellandur ,Bangalore – 560103, India</Address>
+		<SDLocation>India</SDLocation>
+		<IncludedInStdDlgs>1</IncludedInStdDlgs>
+		<Image />
+		<SalesInfo>
+			<SalesContactPhone>+91 80 6783 6333</SalesContactPhone>
+			<SalesContactFax></SalesContactFax>
+			<SalesContactEmail>sales.in@etas.com</SalesContactEmail>
+		</SalesInfo>
+		<SupportInfo>
+			<Product>
+				<ProductName>ASCET</ProductName>
+				<SupportContactPhone>+91 80 6783 6555</SupportContactPhone>
+				<SupportContactEmail>support.in@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INTECRIO</ProductName>
+				<SupportContactPhone>+91 80 6783 6555</SupportContactPhone>
+				<SupportContactEmail>support.in@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>RTA</ProductName>
+				<SupportContactPhone>+91 80 6783 6555</SupportContactPhone>
+				<SupportContactEmail>support.in@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>LABCAR</ProductName>
+				<SupportContactPhone>+91 80 6783 6555</SupportContactPhone>
+				<SupportContactEmail>support.in@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>INCA</ProductName>
+				<SupportContactPhone>+91 80 6783 6555</SupportContactPhone>
+				<SupportContactEmail>mcd.support.in@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>ODX</ProductName>
+				<SupportContactPhone>+91 80 6783 6555</SupportContactPhone>
+				<SupportContactEmail>support.in@etas.com</SupportContactEmail>
+			</Product>
+			<Product>
+				<ProductName>EE</ProductName>
+				<SupportContactPhone>+91 80 6783 6555</SupportContactPhone>
+				<SupportContactEmail>support.in@etas.com</SupportContactEmail>
+			</Product>
+		</SupportInfo>
+	</Subsidiary>
+	<Subsidiary>
+		<Name>Vetronix Corp.</Name>
+		<Address>2030 Alameda Padre Serra, Santa Barbara, CA 93103, USA</Address>
+		<SDLocation>USA</SDLocation>
+		<IncludedInStdDlgs>0</IncludedInStdDlgs>
+		<Image />
+		<SalesInfo>
+			<SalesContactPhone>+1 805 966-2000</SalesContactPhone>
+			<SalesContactFax>+1 805 965-3497</SalesContactFax>
+			<SalesContactEmail>sales.us@etas.com</SalesContactEmail>
+		</SalesInfo>
+		<SupportInfo>
+			<Product>
+				<ProductName>Technical Support</ProductName>
+				<SupportContactPhone>+1 800 321-4889 and press 2</SupportContactPhone>
+				<SupportContactEmail>support.us@etas.com</SupportContactEmail>
+			</Product>
+		</SupportInfo>
+	</Subsidiary>
+	<Subsidiary>
+		<Name>ETAS Ltd.</Name>
+		<Address>Atlas House, Osbaldwick Link Road, Osbaldwick, York YO10 3JB, United Kingdom</Address>
+		<SDLocation>GreatBritain</SDLocation>
+		<IncludedInStdDlgs>0</IncludedInStdDlgs>
+		<Image>"C:\TESTS\SD.ETAS_SUPPORT_INFO\ETAS Contact Addresses Worldwide_files\internal_information_2_temp.gif"</Image>
+		<SalesInfo>
+			<SalesContactPhone>+44 1904 562580</SalesContactPhone>
+			<SalesContactFax>+44 1904 562581</SalesContactFax>
+			<SalesContactEmail>sales.uk@etas.com</SalesContactEmail>
+		</SalesInfo>
+	</Subsidiary>
+</SupportInformation>

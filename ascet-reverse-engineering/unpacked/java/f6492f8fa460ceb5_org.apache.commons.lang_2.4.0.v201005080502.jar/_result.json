@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.lang_2.4.0.v201005080502.jar",
+  "sha256": "f6492f8fa460ceb5561b59bfa9814419884c587af8872f185039ca12bc4f1a24",
+  "kind": "java",
+  "output": "unpacked/java/f6492f8fa460ceb5_org.apache.commons.lang_2.4.0.v201005080502.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 80,
+  "input_classes": 127,
+  "warning_lines": 15,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.lang_2.4.0.v201005080502.jar"
+  ],
+  "top_level_classes_checked": 80,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/Etas.Base.ComSupport.dll",
+  "sha256": "e34db0b33b15e7f0cd57843d655d91ffb528bac3e743aafe54f794bd555ad5f2",
+  "kind": "managed",
+  "output": "unpacked/dotnet/e34db0b33b15e7f0_Etas.Base.ComSupport.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 7,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/Etas.Base.ComSupport.dll"
+  ]
+}

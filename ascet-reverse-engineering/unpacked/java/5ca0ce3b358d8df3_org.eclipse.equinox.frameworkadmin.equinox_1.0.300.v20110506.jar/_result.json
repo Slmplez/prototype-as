@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.frameworkadmin.equinox_1.0.300.v20110506.jar",
+  "sha256": "5ca0ce3b358d8df3c16e3b2116100035dfc626780346061a7326929a9b6409cd",
+  "kind": "java",
+  "output": "unpacked/java/5ca0ce3b358d8df3_org.eclipse.equinox.frameworkadmin.equinox_1.0.300.v20110506.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 13,
+  "input_classes": 13,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.frameworkadmin.equinox_1.0.300.v20110506.jar"
+  ],
+  "top_level_classes_checked": 13,
+  "missing_top_level_java_files": 0
+}

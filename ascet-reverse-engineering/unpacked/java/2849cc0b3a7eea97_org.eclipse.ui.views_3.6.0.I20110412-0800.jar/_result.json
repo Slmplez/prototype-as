@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.views_3.6.0.I20110412-0800.jar",
+  "sha256": "2849cc0b3a7eea97520e2bb5a9f10eed0d811f406595d157e9bc1592e918b0ab",
+  "kind": "java",
+  "output": "unpacked/java/2849cc0b3a7eea97_org.eclipse.ui.views_3.6.0.I20110412-0800.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 36,
+  "input_classes": 56,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.views_3.6.0.I20110412-0800.jar"
+  ],
+  "top_level_classes_checked": 36,
+  "missing_top_level_java_files": 0
+}

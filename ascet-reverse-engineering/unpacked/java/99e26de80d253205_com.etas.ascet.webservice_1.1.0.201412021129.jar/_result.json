@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.webservice_1.1.0.201412021129.jar",
+  "sha256": "99e26de80d2532050b7dd76febe5f8942766f87a6d2c369b7b8b43ae14a82969",
+  "kind": "java",
+  "output": "unpacked/java/99e26de80d253205_com.etas.ascet.webservice_1.1.0.201412021129.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 6,
+  "input_classes": 6,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.webservice_1.1.0.201412021129.jar"
+  ],
+  "top_level_classes_checked": 6,
+  "missing_top_level_java_files": 0
+}

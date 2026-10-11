@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.sat4j.core_2.3.0.v20110329.jar",
+  "sha256": "3e6c4a633ede8c24a86559cf9fc2231840dbf032398a38a960677723906728c1",
+  "kind": "java",
+  "output": "unpacked/java/3e6c4a633ede8c24_org.sat4j.core_2.3.0.v20110329.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 150,
+  "input_classes": 170,
+  "warning_lines": 1,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.sat4j.core_2.3.0.v20110329.jar"
+  ],
+  "top_level_classes_checked": 150,
+  "missing_top_level_java_files": 0
+}

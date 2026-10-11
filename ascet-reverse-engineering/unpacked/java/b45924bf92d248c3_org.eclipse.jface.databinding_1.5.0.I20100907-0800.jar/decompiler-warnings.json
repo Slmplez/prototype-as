@@ -1,0 +1,42 @@
+[
+  {
+    "file": "org/eclipse/jface/databinding/swt/SWTObservables.java",
+    "line": 33,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/databinding/provisional/swt/SWTUtil.java",
+    "line": 43,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/databinding/provisional/swt/SWTUtil.java",
+    "line": 66,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/databinding/provisional/swt/WorkQueue.java",
+    "line": 32,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/databinding/provisional/swt/WorkQueue.java",
+    "line": 50,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/databinding/provisional/swt/WorkQueue.java",
+    "line": 64,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/databinding/provisional/swt/WorkQueue.java",
+    "line": 78,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/databinding/provisional/swt/WorkQueue.java",
+    "line": 89,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

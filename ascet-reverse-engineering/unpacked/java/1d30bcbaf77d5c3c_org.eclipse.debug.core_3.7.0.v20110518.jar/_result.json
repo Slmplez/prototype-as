@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.debug.core_3.7.0.v20110518.jar",
+  "sha256": "1d30bcbaf77d5c3c250a6c8e6ec8b16a9c762d6245d5ce9751f5bf0f8582f18a",
+  "kind": "java",
+  "output": "unpacked/java/1d30bcbaf77d5c3c_org.eclipse.debug.core_3.7.0.v20110518.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 188,
+  "input_classes": 241,
+  "warning_lines": 48,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.debug.core_3.7.0.v20110518.jar"
+  ],
+  "top_level_classes_checked": 188,
+  "missing_top_level_java_files": 0
+}

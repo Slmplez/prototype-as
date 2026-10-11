@@ -1,0 +1,9 @@
+Summary for E:\Repo\ASCET\unpacked\archives\912ddc1f4cb5606f_org.eclipse.pde.core_3.7.1.v20110822-2108.jar\ant_tasks\pde-ant.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.pde.internal.core.ant.ConvertSchemaToHTML
+----------------------------
+
+execute()
+  Unable to fully structure code

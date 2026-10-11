@@ -1,0 +1,1923 @@
+[
+  {
+    "path": "unpacked/installation/ascet.icx",
+    "size": 25606360,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000014",
+      "0x00000001",
+      "0x00000040",
+      "0x00000100",
+      "0xdeadbeef"
+    ],
+    "dependencies": []
+  },
+  {
+    "path": "unpacked/installation/icsrun/abtdah.ic",
+    "size": 156532,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000005",
+      "0x00000000",
+      "0x0000000f",
+      "0x00000000",
+      "0xbcc03f7b"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "643ec0bc030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ff3ec0bc020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 576,
+        "trailer_hex": "733ec0bc020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 848,
+        "trailer_hex": "a93ec0bc020000000000000000000000"
+      },
+      {
+        "name": "abtdbh.ic",
+        "file_offset": 1120,
+        "trailer_hex": "3b3fc0bc020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1392
+  },
+  {
+    "path": "unpacked/installation/icsrun/abtdau.ic",
+    "size": 123052,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x0000000a",
+      "0x00000000",
+      "0x0000000f",
+      "0x00000000",
+      "0xbcc03fa2"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "643ec0bc030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ff3ec0bc020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 576,
+        "trailer_hex": "733ec0bc020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 848,
+        "trailer_hex": "a93ec0bc020000000000000000000000"
+      },
+      {
+        "name": "abtdbh.ic",
+        "file_offset": 1120,
+        "trailer_hex": "3b3fc0bc020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1392,
+        "trailer_hex": "313fc0bc020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 1664,
+        "trailer_hex": "c83ec0bc020000000000000000000000"
+      },
+      {
+        "name": "abtdah.ic",
+        "file_offset": 1936,
+        "trailer_hex": "7b3fc0bc020000000000000000000000"
+      },
+      {
+        "name": "abtdbf.ic",
+        "file_offset": 2208,
+        "trailer_hex": "5b3fc0bc020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2480,
+        "trailer_hex": "0e3fc0bc020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 2752
+  },
+  {
+    "path": "unpacked/installation/icsrun/abtdbf.ic",
+    "size": 52928,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000004",
+      "0x00000000",
+      "0x0000000f",
+      "0x00000000",
+      "0xbcc03f5b"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "643ec0bc030000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 304,
+        "trailer_hex": "733ec0bc020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "a93ec0bc020000000000000000000000"
+      },
+      {
+        "name": "abtdbh.ic",
+        "file_offset": 848,
+        "trailer_hex": "3b3fc0bc020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1120
+  },
+  {
+    "path": "unpacked/installation/icsrun/abtdbh.ic",
+    "size": 155380,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000001",
+      "0x00000000",
+      "0x0000000f",
+      "0x00000000",
+      "0xbcc03f3b"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "643ec0bc030000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 304
+  },
+  {
+    "path": "unpacked/installation/icsrun/abtdol.ic",
+    "size": 12552,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000005",
+      "0x00000000",
+      "0x0000000f",
+      "0x00000000",
+      "0xbcc040df"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "643ec0bc030000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 304,
+        "trailer_hex": "733ec0bc020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "a93ec0bc020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 848,
+        "trailer_hex": "c83ec0bc020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 1120,
+        "trailer_hex": "5c40c0bc020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1392
+  },
+  {
+    "path": "unpacked/installation/icsrun/abtxmlp.ic",
+    "size": 227240,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000007",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xbcc045e7"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "643ec0bc030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ff3ec0bc020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 576,
+        "trailer_hex": "733ec0bc020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 848,
+        "trailer_hex": "a93ec0bc020000000000000000000000"
+      },
+      {
+        "name": "abtdbh.ic",
+        "file_offset": 1120,
+        "trailer_hex": "3b3fc0bc020000000000000000000000"
+      },
+      {
+        "name": "abtdah.ic",
+        "file_offset": 1392,
+        "trailer_hex": "7b3fc0bc020000000000000000000000"
+      },
+      {
+        "name": "abtdbf.ic",
+        "file_offset": 1664,
+        "trailer_hex": "5b3fc0bc020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1936
+  },
+  {
+    "path": "unpacked/installation/icsrun/ASDBase.ic",
+    "size": 22249660,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x0000000e",
+      "0x00000000",
+      "0x00000026",
+      "0x00000000",
+      "0xd4f42792"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 3840
+  },
+  {
+    "path": "unpacked/installation/icsrun/ASDConvUtil_base.ic",
+    "size": 79776,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x0000000f",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xd4f427bc"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4112
+  },
+  {
+    "path": "unpacked/installation/icsrun/ASDDocumentor.ic",
+    "size": 352696,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x0000000f",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xd4f427b3"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4112
+  },
+  {
+    "path": "unpacked/installation/icsrun/ASDGenUtil_base.ic",
+    "size": 125020,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x0000000f",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xd4f427c5"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4112
+  },
+  {
+    "path": "unpacked/installation/icsrun/ASDStartup.ic",
+    "size": 10012,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000013",
+      "0x00000000",
+      "0x0000000e",
+      "0x00000000",
+      "0xd828d693"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dbgrun.ic",
+        "file_offset": 576,
+        "trailer_hex": "819e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 848,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 1120,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1392,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1664,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1936,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 2208,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2480,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2752,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 3024,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3296,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3568,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3840,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 4112,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      },
+      {
+        "name": "ASDConvUtil_base.ic",
+        "file_offset": 4384,
+        "trailer_hex": "bc27f4d4020000000000000000000000"
+      },
+      {
+        "name": "ASDDocumentor.ic",
+        "file_offset": 4656,
+        "trailer_hex": "b327f4d4020000000000000000000000"
+      },
+      {
+        "name": "ASDGenUtil_base.ic",
+        "file_offset": 4928,
+        "trailer_hex": "c527f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 5200
+  },
+  {
+    "path": "unpacked/installation/icsrun/async.ic",
+    "size": 57512,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000001",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9eca"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 304
+  },
+  {
+    "path": "unpacked/installation/icsrun/cfsnls.ic",
+    "size": 330996,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000002",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9e98"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 304,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 576
+  },
+  {
+    "path": "unpacked/installation/icsrun/dbgrun.ic",
+    "size": 54680,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000001",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9e81"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 304
+  },
+  {
+    "path": "unpacked/installation/icsrun/dde.ic",
+    "size": 53064,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000002",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9e94"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 304,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 576
+  },
+  {
+    "path": "unpacked/installation/icsrun/drgdrp.ic",
+    "size": 46960,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000004",
+      "0x00000000",
+      "0x0000000f",
+      "0x00000000",
+      "0xcf9e9eb6"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 304,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 848,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1120
+  },
+  {
+    "path": "unpacked/installation/icsrun/EHOOKS.ic",
+    "size": 119328,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000010",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xd145c338"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "3cc145d1020000000000000000000000"
+      },
+      {
+        "name": "ASDXMLExportImport.ic",
+        "file_offset": 4112,
+        "trailer_hex": "dfc245d1020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4384
+  },
+  {
+    "path": "unpacked/installation/icsrun/eprun.ic",
+    "size": 7192,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000004",
+      "0x00000000",
+      "0x0000000f",
+      "0x00000000",
+      "0xcf9e9ec3"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 304,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 848,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1120
+  },
+  {
+    "path": "unpacked/installation/icsrun/eshell.ic",
+    "size": 32792,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000004",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9f599b"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 304,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 848,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1120
+  },
+  {
+    "path": "unpacked/installation/icsrun/ETargetCommon.ic",
+    "size": 101664,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000010",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xd4f42891"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      },
+      {
+        "name": "HwAccessETarget.ic",
+        "file_offset": 4112,
+        "trailer_hex": "3728f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4384
+  },
+  {
+    "path": "unpacked/installation/icsrun/extwid.ic",
+    "size": 724968,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000004",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9ea4"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 304,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 848,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1120
+  },
+  {
+    "path": "unpacked/installation/icsrun/HwAccessETarget.ic",
+    "size": 96564,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x0000000f",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xd4f42837"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4112
+  },
+  {
+    "path": "unpacked/installation/icsrun/kernel.ic",
+    "size": 725472,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000001",
+      "0x12345678",
+      "0x00000020",
+      "0x00000001",
+      "0x0000000e",
+      "0x00000000",
+      "0xcf9e9e7f"
+    ],
+    "dependencies": []
+  },
+  {
+    "path": "unpacked/installation/icsrun/lib.ic",
+    "size": 590772,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000004",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9eb0"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 304,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 576,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 848,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1120
+  },
+  {
+    "path": "unpacked/installation/icsrun/ole.ic",
+    "size": 85348,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000005",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9ebc"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 304,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 848,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 1120,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1392
+  },
+  {
+    "path": "unpacked/installation/icsrun/oleb.ic",
+    "size": 56176,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000002",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9e91"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 304,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 576
+  },
+  {
+    "path": "unpacked/installation/icsrun/parse.ic",
+    "size": 192992,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000003",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9ea9"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 304,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 576,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 848
+  },
+  {
+    "path": "unpacked/installation/icsrun/psupp.ic",
+    "size": 2535408,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000001",
+      "0x00000000",
+      "0x00000013",
+      "0x00000000",
+      "0xcf9e9e87"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 304
+  },
+  {
+    "path": "unpacked/installation/icsrun/sci.ic",
+    "size": 154372,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000004",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9ed1"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 1120
+  },
+  {
+    "path": "unpacked/installation/icsrun/winsys.ic",
+    "size": 1058652,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000003",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xcf9e9e9e"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 304,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 576,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 848
+  },
+  {
+    "path": "unpacked/installation/icsrun/xxx_dyn.ic",
+    "size": 855644,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000010",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xd4f444a3"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      },
+      {
+        "name": "xxx.ic",
+        "file_offset": 4112,
+        "trailer_hex": "c828f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4384
+  },
+  {
+    "path": "unpacked/installation/toolbox/ETargetCommonToolbox.ic",
+    "size": 9832,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000011",
+      "0x00000000",
+      "0x0000000f",
+      "0x00000000",
+      "0xd4f428a2"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      },
+      {
+        "name": "HwAccessETarget.ic",
+        "file_offset": 4112,
+        "trailer_hex": "3728f4d4020000000000000000000000"
+      },
+      {
+        "name": "ETargetCommon.ic",
+        "file_offset": 4384,
+        "trailer_hex": "9128f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4656
+  },
+  {
+    "path": "unpacked/installation/toolbox/ETargetPrototyping.ic",
+    "size": 13060,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x00000011",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xd59baed3"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      },
+      {
+        "name": "HwAccessETarget.ic",
+        "file_offset": 4112,
+        "trailer_hex": "3728f4d4020000000000000000000000"
+      },
+      {
+        "name": "ETargetCommon.ic",
+        "file_offset": 4384,
+        "trailer_hex": "9128f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4656
+  },
+  {
+    "path": "unpacked/installation/toolbox/xxx.ic",
+    "size": 147040,
+    "header_words_le": [
+      "0x4f54491a",
+      "0x00000004",
+      "0x12345678",
+      "0x0000000f",
+      "0x00000000",
+      "0x00000011",
+      "0x00000000",
+      "0xd4f428c8"
+    ],
+    "dependencies": [
+      {
+        "name": "kernel.ic",
+        "file_offset": 32,
+        "trailer_hex": "7f9e9ecf030000000000000000000000"
+      },
+      {
+        "name": "async.ic",
+        "file_offset": 304,
+        "trailer_hex": "ca9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "psupp.ic",
+        "file_offset": 576,
+        "trailer_hex": "879e9ecf020000000000000000000000"
+      },
+      {
+        "name": "cfsnls.ic",
+        "file_offset": 848,
+        "trailer_hex": "989e9ecf020000000000000000000000"
+      },
+      {
+        "name": "dde.ic",
+        "file_offset": 1120,
+        "trailer_hex": "949e9ecf020000000000000000000000"
+      },
+      {
+        "name": "oleb.ic",
+        "file_offset": 1392,
+        "trailer_hex": "919e9ecf020000000000000000000000"
+      },
+      {
+        "name": "parse.ic",
+        "file_offset": 1664,
+        "trailer_hex": "a99e9ecf020000000000000000000000"
+      },
+      {
+        "name": "sci.ic",
+        "file_offset": 1936,
+        "trailer_hex": "d19e9ecf020000000000000000000000"
+      },
+      {
+        "name": "winsys.ic",
+        "file_offset": 2208,
+        "trailer_hex": "9e9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "drgdrp.ic",
+        "file_offset": 2480,
+        "trailer_hex": "b69e9ecf020000000000000000000000"
+      },
+      {
+        "name": "extwid.ic",
+        "file_offset": 2752,
+        "trailer_hex": "a49e9ecf020000000000000000000000"
+      },
+      {
+        "name": "lib.ic",
+        "file_offset": 3024,
+        "trailer_hex": "b09e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ole.ic",
+        "file_offset": 3296,
+        "trailer_hex": "bc9e9ecf020000000000000000000000"
+      },
+      {
+        "name": "eprun.ic",
+        "file_offset": 3568,
+        "trailer_hex": "c39e9ecf020000000000000000000000"
+      },
+      {
+        "name": "ASDBase.ic",
+        "file_offset": 3840,
+        "trailer_hex": "9227f4d4020000000000000000000000"
+      }
+    ],
+    "dependency_table_end": 4112
+  }
+]

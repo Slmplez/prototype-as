@@ -1,0 +1,9 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.sphinx.platform_0.7.0.201302172347.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.sphinx.platform.stats.PerformanceStatsLog
+----------------------------
+
+appendPaddedInt(int int java.lang.StringBuffer )
+  Unable to fully structure code

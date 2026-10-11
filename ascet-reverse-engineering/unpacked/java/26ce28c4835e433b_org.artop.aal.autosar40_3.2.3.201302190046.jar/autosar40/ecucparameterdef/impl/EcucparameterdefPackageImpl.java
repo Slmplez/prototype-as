@@ -1,0 +1,2547 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  gautosar.gcommonstructure.gbasetypes.GbasetypesPackage
+ *  gautosar.gcommonstructure.gconstants.GconstantsPackage
+ *  gautosar.gcommonstructure.gdatadefproperties.GdatadefpropertiesPackage
+ *  gautosar.gcommonstructure.gimplementation.GimplementationPackage
+ *  gautosar.gcommonstructure.ginternalbehavior.GinternalbehaviorPackage
+ *  gautosar.gcommonstructure.gmodedeclaration.GmodedeclarationPackage
+ *  gautosar.gcommonstructure.gresourceconsumption.GresourceconsumptionPackage
+ *  gautosar.gcommonstructure.gsystemconstant.GsystemconstantPackage
+ *  gautosar.gecucdescription.GecucdescriptionPackage
+ *  gautosar.gecucparameterdef.GecucparameterdefPackage
+ *  gautosar.ggenericstructure.gformulalanguage.GformulalanguagePackage
+ *  gautosar.ggenericstructure.ggeneraltemplateclasses.gdocumentation.GdocumentationPackage
+ *  gautosar.ggenericstructure.ggeneraltemplateclasses.gdocumentation.gtextmodel.ginlinetextmodel.GinlinetextmodelPackage
+ *  gautosar.ggenericstructure.ggeneraltemplateclasses.gdocumentation.gtextmodel.glanguagedatamodel.GlanguagedatamodelPackage
+ *  gautosar.ggenericstructure.ggeneraltemplateclasses.gdocumentation.gtextmodel.gmultilanguagedata.GmultilanguagedataPackage
+ *  gautosar.ggenericstructure.ggeneraltemplateclasses.gprimitivetypes.GprimitivetypesPackage
+ *  gautosar.ggenericstructure.ginfrastructure.GinfrastructurePackage
+ *  gautosar.ggenericstructure.gprimitivetypes.GprimitivetypesPackage
+ *  gautosar.ggenericstructure.gvarianthandling.GvarianthandlingPackage
+ *  gautosar.gswcomponents.gcommunication.GcommunicationPackage
+ *  gautosar.gswcomponents.gcomponents.GcomponentsPackage
+ *  gautosar.gswcomponents.gcomponents.ginstancerefs.GinstancerefsPackage
+ *  gautosar.gswcomponents.gcomposition.GcompositionPackage
+ *  gautosar.gswcomponents.gcomposition.ginstancerefs.GinstancerefsPackage
+ *  gautosar.gswcomponents.gdatatype.gcomputationmethod.GcomputationmethodPackage
+ *  gautosar.gswcomponents.gdatatype.gdataprototypes.GdataprototypesPackage
+ *  gautosar.gswcomponents.gdatatype.gdatatypes.GdatatypesPackage
+ *  gautosar.gswcomponents.gdatatype.gdatatypes.glocalconstraints.GlocalconstraintsPackage
+ *  gautosar.gswcomponents.gdatatype.gunits.GunitsPackage
+ *  gautosar.gswcomponents.gportinterface.GportinterfacePackage
+ *  gautosar.gswcomponents.gswcimplementation.GswcimplementationPackage
+ *  gautosar.gswcomponents.gswcinternalbehavior.GswcinternalbehaviorPackage
+ *  gautosar.gswcomponents.gswcinternalbehavior.gdataelements.GdataelementsPackage
+ *  gautosar.gswcomponents.gswcinternalbehavior.gmodedeclarationgroup.GmodedeclarationgroupPackage
+ *  gautosar.gswcomponents.gswcinternalbehavior.gperinstancememory.GperinstancememoryPackage
+ *  gautosar.gswcomponents.gswcinternalbehavior.grteevents.GrteeventsPackage
+ *  gautosar.gswcomponents.gswcinternalbehavior.gservercall.GservercallPackage
+ *  gautosar.gsystem.GsystemPackage
+ *  org.eclipse.emf.ecore.EAttribute
+ *  org.eclipse.emf.ecore.EClass
+ *  org.eclipse.emf.ecore.EClassifier
+ *  org.eclipse.emf.ecore.EEnum
+ *  org.eclipse.emf.ecore.EFactory
+ *  org.eclipse.emf.ecore.ENamedElement
+ *  org.eclipse.emf.ecore.EOperation
+ *  org.eclipse.emf.ecore.EPackage$Registry
+ *  org.eclipse.emf.ecore.EReference
+ *  org.eclipse.emf.ecore.EcorePackage
+ *  org.eclipse.emf.ecore.impl.EPackageImpl
+ */
+package autosar40.ecucparameterdef.impl;
+
+import autosar40.autosartoplevelstructure.AutosartoplevelstructurePackage;
+import autosar40.autosartoplevelstructure.impl.AutosartoplevelstructurePackageImpl;
+import autosar40.bswmodule.bswbehavior.BswbehaviorPackage;
+import autosar40.bswmodule.bswbehavior.impl.BswbehaviorPackageImpl;
+import autosar40.bswmodule.bswimplementation.BswimplementationPackage;
+import autosar40.bswmodule.bswimplementation.impl.BswimplementationPackageImpl;
+import autosar40.bswmodule.bswinterfaces.BswinterfacesPackage;
+import autosar40.bswmodule.bswinterfaces.impl.BswinterfacesPackageImpl;
+import autosar40.bswmodule.bswoverview.BswoverviewPackage;
+import autosar40.bswmodule.bswoverview.impl.BswoverviewPackageImpl;
+import autosar40.commonstructure.auxillaryobjects.AuxillaryobjectsPackage;
+import autosar40.commonstructure.auxillaryobjects.impl.AuxillaryobjectsPackageImpl;
+import autosar40.commonstructure.axis.AxisPackage;
+import autosar40.commonstructure.axis.impl.AxisPackageImpl;
+import autosar40.commonstructure.basetypes.BasetypesPackage;
+import autosar40.commonstructure.basetypes.impl.BasetypesPackageImpl;
+import autosar40.commonstructure.calibrationparameter.CalibrationparameterPackage;
+import autosar40.commonstructure.calibrationparameter.impl.CalibrationparameterPackageImpl;
+import autosar40.commonstructure.calibrationvalue.CalibrationvaluePackage;
+import autosar40.commonstructure.calibrationvalue.impl.CalibrationvaluePackageImpl;
+import autosar40.commonstructure.constants.ConstantsPackage;
+import autosar40.commonstructure.constants.impl.ConstantsPackageImpl;
+import autosar40.commonstructure.datadefproperties.DatadefpropertiesPackage;
+import autosar40.commonstructure.datadefproperties.impl.DatadefpropertiesPackageImpl;
+import autosar40.commonstructure.datadictionaryproxies.DatadictionaryproxiesPackage;
+import autosar40.commonstructure.datadictionaryproxies.impl.DatadictionaryproxiesPackageImpl;
+import autosar40.commonstructure.filter.FilterPackage;
+import autosar40.commonstructure.filter.impl.FilterPackageImpl;
+import autosar40.commonstructure.flatmap.FlatmapPackage;
+import autosar40.commonstructure.flatmap.impl.FlatmapPackageImpl;
+import autosar40.commonstructure.globalconstraints.GlobalconstraintsPackage;
+import autosar40.commonstructure.globalconstraints.impl.GlobalconstraintsPackageImpl;
+import autosar40.commonstructure.implementation.ImplementationPackage;
+import autosar40.commonstructure.implementation.impl.ImplementationPackageImpl;
+import autosar40.commonstructure.implementationdatatypes.ImplementationdatatypesPackage;
+import autosar40.commonstructure.implementationdatatypes.impl.ImplementationdatatypesPackageImpl;
+import autosar40.commonstructure.internalbehavior.InternalbehaviorPackage;
+import autosar40.commonstructure.internalbehavior.impl.InternalbehaviorPackageImpl;
+import autosar40.commonstructure.measurementcalibrationsupport.MeasurementcalibrationsupportPackage;
+import autosar40.commonstructure.measurementcalibrationsupport.impl.MeasurementcalibrationsupportPackageImpl;
+import autosar40.commonstructure.modedeclaration.ModedeclarationPackage;
+import autosar40.commonstructure.modedeclaration.impl.ModedeclarationPackageImpl;
+import autosar40.commonstructure.resourceconsumption.ResourceconsumptionPackage;
+import autosar40.commonstructure.resourceconsumption.executiontime.ExecutiontimePackage;
+import autosar40.commonstructure.resourceconsumption.executiontime.impl.ExecutiontimePackageImpl;
+import autosar40.commonstructure.resourceconsumption.heapusage.HeapusagePackage;
+import autosar40.commonstructure.resourceconsumption.heapusage.impl.HeapusagePackageImpl;
+import autosar40.commonstructure.resourceconsumption.impl.ResourceconsumptionPackageImpl;
+import autosar40.commonstructure.resourceconsumption.memorysectionusage.MemorysectionusagePackage;
+import autosar40.commonstructure.resourceconsumption.memorysectionusage.impl.MemorysectionusagePackageImpl;
+import autosar40.commonstructure.resourceconsumption.stackusage.StackusagePackage;
+import autosar40.commonstructure.resourceconsumption.stackusage.impl.StackusagePackageImpl;
+import autosar40.commonstructure.serviceneeds.ServiceneedsPackage;
+import autosar40.commonstructure.serviceneeds.impl.ServiceneedsPackageImpl;
+import autosar40.commonstructure.serviceprocesstask.ServiceprocesstaskPackage;
+import autosar40.commonstructure.serviceprocesstask.impl.ServiceprocesstaskPackageImpl;
+import autosar40.commonstructure.swcbswmapping.SwcbswmappingPackage;
+import autosar40.commonstructure.swcbswmapping.impl.SwcbswmappingPackageImpl;
+import autosar40.commonstructure.swclass.SwclassPackage;
+import autosar40.commonstructure.swclass.impl.SwclassPackageImpl;
+import autosar40.commonstructure.systemconstant.SystemconstantPackage;
+import autosar40.commonstructure.systemconstant.impl.SystemconstantPackageImpl;
+import autosar40.commonstructure.timing.TimingPackage;
+import autosar40.commonstructure.timing.timingconstraint.TimingconstraintPackage;
+import autosar40.commonstructure.timing.timingconstraint.ageconstraint.AgeconstraintPackage;
+import autosar40.commonstructure.timing.timingconstraint.ageconstraint.impl.AgeconstraintPackageImpl;
+import autosar40.commonstructure.timing.timingconstraint.eventtriggeringconstraint.EventtriggeringconstraintPackage;
+import autosar40.commonstructure.timing.timingconstraint.eventtriggeringconstraint.impl.EventtriggeringconstraintPackageImpl;
+import autosar40.commonstructure.timing.timingconstraint.executionorderconstraint.ExecutionorderconstraintPackage;
+import autosar40.commonstructure.timing.timingconstraint.executionorderconstraint.impl.ExecutionorderconstraintPackageImpl;
+import autosar40.commonstructure.timing.timingconstraint.executiontimeconstraint.ExecutiontimeconstraintPackage;
+import autosar40.commonstructure.timing.timingconstraint.executiontimeconstraint.impl.ExecutiontimeconstraintPackageImpl;
+import autosar40.commonstructure.timing.timingconstraint.impl.TimingconstraintPackageImpl;
+import autosar40.commonstructure.timing.timingconstraint.latencytimingconstraint.LatencytimingconstraintPackage;
+import autosar40.commonstructure.timing.timingconstraint.latencytimingconstraint.impl.LatencytimingconstraintPackageImpl;
+import autosar40.commonstructure.timing.timingconstraint.offsetconstraint.OffsetconstraintPackage;
+import autosar40.commonstructure.timing.timingconstraint.offsetconstraint.impl.OffsetconstraintPackageImpl;
+import autosar40.commonstructure.timing.timingconstraint.synchronizationtimingconstraint.SynchronizationtimingconstraintPackage;
+import autosar40.commonstructure.timing.timingconstraint.synchronizationtimingconstraint.impl.SynchronizationtimingconstraintPackageImpl;
+import autosar40.commonstructure.timing.timingdescription.TimingdescriptionPackage;
+import autosar40.commonstructure.timing.timingdescription.impl.TimingdescriptionPackageImpl;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventbsw.TdeventbswPackage;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventbsw.impl.TdeventbswPackageImpl;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventbswinternalbehavior.TdeventbswinternalbehaviorPackage;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventbswinternalbehavior.impl.TdeventbswinternalbehaviorPackageImpl;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventcom.TdeventcomPackage;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventcom.impl.TdeventcomPackageImpl;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventcomplex.TdeventcomplexPackage;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventcomplex.impl.TdeventcomplexPackageImpl;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventoccurrenceexpression.TdeventoccurrenceexpressionPackage;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventoccurrenceexpression.impl.TdeventoccurrenceexpressionPackageImpl;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventoccurrenceexpression.instancerefs.impl.InstancerefsPackageImpl;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventswcinternalbehavior.TdeventswcinternalbehaviorPackage;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventswcinternalbehavior.impl.TdeventswcinternalbehaviorPackageImpl;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventvfb.TdeventvfbPackage;
+import autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventvfb.impl.TdeventvfbPackageImpl;
+import autosar40.commonstructure.triggerdeclaration.TriggerdeclarationPackage;
+import autosar40.commonstructure.triggerdeclaration.impl.TriggerdeclarationPackageImpl;
+import autosar40.ecucdescription.EcucdescriptionPackage;
+import autosar40.ecucdescription.impl.EcucdescriptionPackageImpl;
+import autosar40.ecucparameterdef.EcucAbstractReferenceDef;
+import autosar40.ecucparameterdef.EcucAbstractStringParamDef;
+import autosar40.ecucparameterdef.EcucAbstractStringParamDefContent;
+import autosar40.ecucparameterdef.EcucAddInfoParamDef;
+import autosar40.ecucparameterdef.EcucAffectionEnum;
+import autosar40.ecucparameterdef.EcucBooleanParamDef;
+import autosar40.ecucparameterdef.EcucChoiceContainerDef;
+import autosar40.ecucparameterdef.EcucChoiceReferenceDef;
+import autosar40.ecucparameterdef.EcucCommonAttributes;
+import autosar40.ecucparameterdef.EcucConditionFormula;
+import autosar40.ecucparameterdef.EcucConditionSpecification;
+import autosar40.ecucparameterdef.EcucConfigurationClassAffection;
+import autosar40.ecucparameterdef.EcucConfigurationClassEnum;
+import autosar40.ecucparameterdef.EcucConfigurationVariantEnum;
+import autosar40.ecucparameterdef.EcucContainerDef;
+import autosar40.ecucparameterdef.EcucDefinitionCollection;
+import autosar40.ecucparameterdef.EcucDefinitionElement;
+import autosar40.ecucparameterdef.EcucDerivationSpecification;
+import autosar40.ecucparameterdef.EcucEnumerationLiteralDef;
+import autosar40.ecucparameterdef.EcucEnumerationParamDef;
+import autosar40.ecucparameterdef.EcucFloatParamDef;
+import autosar40.ecucparameterdef.EcucForeignReferenceDef;
+import autosar40.ecucparameterdef.EcucFunctionNameDef;
+import autosar40.ecucparameterdef.EcucFunctionNameDefConditional;
+import autosar40.ecucparameterdef.EcucFunctionNameDefContent;
+import autosar40.ecucparameterdef.EcucImplementationConfigurationClass;
+import autosar40.ecucparameterdef.EcucInstanceReferenceDef;
+import autosar40.ecucparameterdef.EcucIntegerParamDef;
+import autosar40.ecucparameterdef.EcucLinkerSymbolDef;
+import autosar40.ecucparameterdef.EcucLinkerSymbolDefConditional;
+import autosar40.ecucparameterdef.EcucLinkerSymbolDefContent;
+import autosar40.ecucparameterdef.EcucModuleDef;
+import autosar40.ecucparameterdef.EcucMultilineStringParamDef;
+import autosar40.ecucparameterdef.EcucMultilineStringParamDefConditional;
+import autosar40.ecucparameterdef.EcucMultilineStringParamDefContent;
+import autosar40.ecucparameterdef.EcucParamConfContainerDef;
+import autosar40.ecucparameterdef.EcucParameterDef;
+import autosar40.ecucparameterdef.EcucParameterDerivationFormula;
+import autosar40.ecucparameterdef.EcucQuery;
+import autosar40.ecucparameterdef.EcucQueryExpression;
+import autosar40.ecucparameterdef.EcucReferenceDef;
+import autosar40.ecucparameterdef.EcucStringParamDef;
+import autosar40.ecucparameterdef.EcucStringParamDefConditional;
+import autosar40.ecucparameterdef.EcucStringParamDefContent;
+import autosar40.ecucparameterdef.EcucSymbolicNameReferenceDef;
+import autosar40.ecucparameterdef.EcucparameterdefFactory;
+import autosar40.ecucparameterdef.EcucparameterdefPackage;
+import autosar40.ecuresource.EcuresourcePackage;
+import autosar40.ecuresource.hwelementcategory.HwelementcategoryPackage;
+import autosar40.ecuresource.hwelementcategory.impl.HwelementcategoryPackageImpl;
+import autosar40.ecuresource.impl.EcuresourcePackageImpl;
+import autosar40.genericstructure.abstractstructure.AbstractstructurePackage;
+import autosar40.genericstructure.abstractstructure.impl.AbstractstructurePackageImpl;
+import autosar40.genericstructure.documentationonm1.Documentationonm1Package;
+import autosar40.genericstructure.documentationonm1.impl.Documentationonm1PackageImpl;
+import autosar40.genericstructure.formulalanguage.FormulalanguagePackage;
+import autosar40.genericstructure.formulalanguage.impl.FormulalanguagePackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.admindata.AdmindataPackage;
+import autosar40.genericstructure.generaltemplateclasses.admindata.impl.AdmindataPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.anyinstanceref.AnyinstancerefPackage;
+import autosar40.genericstructure.generaltemplateclasses.anyinstanceref.impl.AnyinstancerefPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.arobject.ArobjectPackage;
+import autosar40.genericstructure.generaltemplateclasses.arobject.impl.ArobjectPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.arpackage.ArpackagePackage;
+import autosar40.genericstructure.generaltemplateclasses.arpackage.impl.ArpackagePackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.annotation.AnnotationPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.annotation.impl.AnnotationPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.BlockelementsPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.figure.FigurePackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.figure.impl.FigurePackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.formula.FormulaPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.formula.impl.FormulaPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.gerneralparameters.GerneralparametersPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.gerneralparameters.impl.GerneralparametersPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.impl.BlockelementsPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.listelements.ListelementsPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.listelements.impl.ListelementsPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.note.NotePackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.note.impl.NotePackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.oasisexchangetable.OasisexchangetablePackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.oasisexchangetable.impl.OasisexchangetablePackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.paginationandview.PaginationandviewPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.paginationandview.impl.PaginationandviewPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.requirementstracing.RequirementstracingPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.requirementstracing.impl.RequirementstracingPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.synopsis.SynopsisPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.synopsis.impl.SynopsisPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.chapters.ChaptersPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.chapters.impl.ChaptersPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.msrquery.MsrqueryPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.msrquery.impl.MsrqueryPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.inlineattributeenums.InlineattributeenumsPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.inlineattributeenums.impl.InlineattributeenumsPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.inlinetextelements.InlinetextelementsPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.inlinetextelements.impl.InlinetextelementsPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.inlinetextmodel.InlinetextmodelPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.inlinetextmodel.impl.InlinetextmodelPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.languagedatamodel.LanguagedatamodelPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.languagedatamodel.impl.LanguagedatamodelPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.multilanguagedata.MultilanguagedataPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.multilanguagedata.impl.MultilanguagedataPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.singlelanguagedata.SinglelanguagedataPackage;
+import autosar40.genericstructure.generaltemplateclasses.documentation.textmodel.singlelanguagedata.impl.SinglelanguagedataPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.elementcollection.ElementcollectionPackage;
+import autosar40.genericstructure.generaltemplateclasses.elementcollection.impl.ElementcollectionPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.engineeringobject.EngineeringobjectPackage;
+import autosar40.genericstructure.generaltemplateclasses.engineeringobject.impl.EngineeringobjectPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.generalannotation.GeneralannotationPackage;
+import autosar40.genericstructure.generaltemplateclasses.generalannotation.impl.GeneralannotationPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.identifiable.IdentifiablePackage;
+import autosar40.genericstructure.generaltemplateclasses.identifiable.impl.IdentifiablePackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.multidimensionaltime.MultidimensionaltimePackage;
+import autosar40.genericstructure.generaltemplateclasses.multidimensionaltime.impl.MultidimensionaltimePackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.primitivetypes.PrimitivetypesPackage;
+import autosar40.genericstructure.generaltemplateclasses.primitivetypes.impl.PrimitivetypesPackageImpl;
+import autosar40.genericstructure.generaltemplateclasses.specialdata.SpecialdataPackage;
+import autosar40.genericstructure.generaltemplateclasses.specialdata.impl.SpecialdataPackageImpl;
+import autosar40.standardization.abstractblueprintstructure.AbstractblueprintstructurePackage;
+import autosar40.standardization.abstractblueprintstructure.impl.AbstractblueprintstructurePackageImpl;
+import autosar40.standardization.blueprintdedicated.genericblueprint.GenericblueprintPackage;
+import autosar40.standardization.blueprintdedicated.genericblueprint.impl.GenericblueprintPackageImpl;
+import autosar40.standardization.blueprintdedicated.portinterfaceblueprint.PortinterfaceblueprintPackage;
+import autosar40.standardization.blueprintdedicated.portinterfaceblueprint.impl.PortinterfaceblueprintPackageImpl;
+import autosar40.standardization.blueprintdedicated.portprotoypeblueprint.PortprotoypeblueprintPackage;
+import autosar40.standardization.blueprintdedicated.portprotoypeblueprint.impl.PortprotoypeblueprintPackageImpl;
+import autosar40.standardization.blueprintmapping.BlueprintmappingPackage;
+import autosar40.standardization.blueprintmapping.impl.BlueprintmappingPackageImpl;
+import autosar40.standardization.keyword.KeywordPackage;
+import autosar40.standardization.keyword.impl.KeywordPackageImpl;
+import autosar40.swcomponent.applicationattributes.ApplicationattributesPackage;
+import autosar40.swcomponent.applicationattributes.impl.ApplicationattributesPackageImpl;
+import autosar40.swcomponent.communication.CommunicationPackage;
+import autosar40.swcomponent.communication.impl.CommunicationPackageImpl;
+import autosar40.swcomponent.components.ComponentsPackage;
+import autosar40.swcomponent.components.impl.ComponentsPackageImpl;
+import autosar40.swcomponent.components.instancerefs.InstancerefsPackage;
+import autosar40.swcomponent.composition.CompositionPackage;
+import autosar40.swcomponent.composition.impl.CompositionPackageImpl;
+import autosar40.swcomponent.datatype.computationmethod.ComputationmethodPackage;
+import autosar40.swcomponent.datatype.computationmethod.impl.ComputationmethodPackageImpl;
+import autosar40.swcomponent.datatype.dataprototypes.DataprototypesPackage;
+import autosar40.swcomponent.datatype.dataprototypes.impl.DataprototypesPackageImpl;
+import autosar40.swcomponent.datatype.datatypes.DatatypesPackage;
+import autosar40.swcomponent.datatype.datatypes.impl.DatatypesPackageImpl;
+import autosar40.swcomponent.datatype.localconstraints.LocalconstraintsPackage;
+import autosar40.swcomponent.datatype.localconstraints.impl.LocalconstraintsPackageImpl;
+import autosar40.swcomponent.datatype.recordlayout.RecordlayoutPackage;
+import autosar40.swcomponent.datatype.recordlayout.impl.RecordlayoutPackageImpl;
+import autosar40.swcomponent.datatype.units.UnitsPackage;
+import autosar40.swcomponent.datatype.units.impl.UnitsPackageImpl;
+import autosar40.swcomponent.endtoendprotection.EndtoendprotectionPackage;
+import autosar40.swcomponent.endtoendprotection.impl.EndtoendprotectionPackageImpl;
+import autosar40.swcomponent.measurementandcalibration.calibrationparametervalues.CalibrationparametervaluesPackage;
+import autosar40.swcomponent.measurementandcalibration.calibrationparametervalues.impl.CalibrationparametervaluesPackageImpl;
+import autosar40.swcomponent.measurementandcalibration.interpolationroutinemappingset.InterpolationroutinemappingsetPackage;
+import autosar40.swcomponent.measurementandcalibration.interpolationroutinemappingset.impl.InterpolationroutinemappingsetPackageImpl;
+import autosar40.swcomponent.nvblockcomponent.NvblockcomponentPackage;
+import autosar40.swcomponent.nvblockcomponent.impl.NvblockcomponentPackageImpl;
+import autosar40.swcomponent.portinterface.PortinterfacePackage;
+import autosar40.swcomponent.portinterface.impl.PortinterfacePackageImpl;
+import autosar40.swcomponent.softwarecomponentdocumentation.SoftwarecomponentdocumentationPackage;
+import autosar40.swcomponent.softwarecomponentdocumentation.impl.SoftwarecomponentdocumentationPackageImpl;
+import autosar40.swcomponent.swcimplementation.SwcimplementationPackage;
+import autosar40.swcomponent.swcimplementation.impl.SwcimplementationPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.SwcinternalbehaviorPackage;
+import autosar40.swcomponent.swcinternalbehavior.dataelements.DataelementsPackage;
+import autosar40.swcomponent.swcinternalbehavior.dataelements.impl.DataelementsPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.dataelements.instancerefsusage.InstancerefsusagePackage;
+import autosar40.swcomponent.swcinternalbehavior.dataelements.instancerefsusage.impl.InstancerefsusagePackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.impl.SwcinternalbehaviorPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.includeddatatypes.IncludeddatatypesPackage;
+import autosar40.swcomponent.swcinternalbehavior.includeddatatypes.impl.IncludeddatatypesPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.instantiationdatadefprops.InstantiationdatadefpropsPackage;
+import autosar40.swcomponent.swcinternalbehavior.instantiationdatadefprops.impl.InstantiationdatadefpropsPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.modedeclarationgroup.ModedeclarationgroupPackage;
+import autosar40.swcomponent.swcinternalbehavior.modedeclarationgroup.impl.ModedeclarationgroupPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.perinstancememory.PerinstancememoryPackage;
+import autosar40.swcomponent.swcinternalbehavior.perinstancememory.impl.PerinstancememoryPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.portapioptions.PortapioptionsPackage;
+import autosar40.swcomponent.swcinternalbehavior.portapioptions.impl.PortapioptionsPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.rteevents.RteeventsPackage;
+import autosar40.swcomponent.swcinternalbehavior.rteevents.impl.RteeventsPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.runnableentity.RunnableentityPackage;
+import autosar40.swcomponent.swcinternalbehavior.runnableentity.impl.RunnableentityPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.servercall.ServercallPackage;
+import autosar40.swcomponent.swcinternalbehavior.servercall.impl.ServercallPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.servicemapping.ServicemappingPackage;
+import autosar40.swcomponent.swcinternalbehavior.servicemapping.impl.ServicemappingPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.trigger.TriggerPackage;
+import autosar40.swcomponent.swcinternalbehavior.trigger.impl.TriggerPackageImpl;
+import autosar40.swcomponent.swcinternalbehavior.varianthandling.VarianthandlingPackage;
+import autosar40.swcomponent.swcinternalbehavior.varianthandling.impl.VarianthandlingPackageImpl;
+import autosar40.system.SystemPackage;
+import autosar40.system.datamapping.DatamappingPackage;
+import autosar40.system.datamapping.impl.DatamappingPackageImpl;
+import autosar40.system.ecuresourcemapping.EcuresourcemappingPackage;
+import autosar40.system.ecuresourcemapping.impl.EcuresourcemappingPackageImpl;
+import autosar40.system.fibex.fibex4can.cancommunication.CancommunicationPackage;
+import autosar40.system.fibex.fibex4can.cancommunication.impl.CancommunicationPackageImpl;
+import autosar40.system.fibex.fibex4can.cantopology.CantopologyPackage;
+import autosar40.system.fibex.fibex4can.cantopology.impl.CantopologyPackageImpl;
+import autosar40.system.fibex.fibex4ethernet.ethernetcommunication.EthernetcommunicationPackage;
+import autosar40.system.fibex.fibex4ethernet.ethernetcommunication.impl.EthernetcommunicationPackageImpl;
+import autosar40.system.fibex.fibex4ethernet.ethernettopology.EthernettopologyPackage;
+import autosar40.system.fibex.fibex4ethernet.ethernettopology.impl.EthernettopologyPackageImpl;
+import autosar40.system.fibex.fibex4flexray.flexraycommunication.FlexraycommunicationPackage;
+import autosar40.system.fibex.fibex4flexray.flexraycommunication.impl.FlexraycommunicationPackageImpl;
+import autosar40.system.fibex.fibex4flexray.flexraytopology.FlexraytopologyPackage;
+import autosar40.system.fibex.fibex4flexray.flexraytopology.impl.FlexraytopologyPackageImpl;
+import autosar40.system.fibex.fibex4lin.lincommunication.LincommunicationPackage;
+import autosar40.system.fibex.fibex4lin.lincommunication.impl.LincommunicationPackageImpl;
+import autosar40.system.fibex.fibex4lin.lintopology.LintopologyPackage;
+import autosar40.system.fibex.fibex4lin.lintopology.impl.LintopologyPackageImpl;
+import autosar40.system.fibex.fibex4multiplatform.Fibex4multiplatformPackage;
+import autosar40.system.fibex.fibex4multiplatform.impl.Fibex4multiplatformPackageImpl;
+import autosar40.system.fibex.fibex4ttcan.ttcancommunication.TtcancommunicationPackage;
+import autosar40.system.fibex.fibex4ttcan.ttcancommunication.impl.TtcancommunicationPackageImpl;
+import autosar40.system.fibex.fibex4ttcan.ttcantopology.TtcantopologyPackage;
+import autosar40.system.fibex.fibex4ttcan.ttcantopology.impl.TtcantopologyPackageImpl;
+import autosar40.system.fibex.fibexcore.FibexcorePackage;
+import autosar40.system.fibex.fibexcore.corecommunication.CorecommunicationPackage;
+import autosar40.system.fibex.fibexcore.corecommunication.impl.CorecommunicationPackageImpl;
+import autosar40.system.fibex.fibexcore.corecommunication.timing.impl.TimingPackageImpl;
+import autosar40.system.fibex.fibexcore.coretopology.CoretopologyPackage;
+import autosar40.system.fibex.fibexcore.coretopology.impl.CoretopologyPackageImpl;
+import autosar40.system.fibex.fibexcore.impl.FibexcorePackageImpl;
+import autosar40.system.impl.SystemPackageImpl;
+import autosar40.system.networkmanagement.NetworkmanagementPackage;
+import autosar40.system.networkmanagement.impl.NetworkmanagementPackageImpl;
+import autosar40.system.pncmapping.PncmappingPackage;
+import autosar40.system.pncmapping.impl.PncmappingPackageImpl;
+import autosar40.system.signalpaths.SignalpathsPackage;
+import autosar40.system.signalpaths.impl.SignalpathsPackageImpl;
+import autosar40.system.swmapping.SwmappingPackage;
+import autosar40.system.swmapping.impl.SwmappingPackageImpl;
+import autosar40.system.transportprotocols.TransportprotocolsPackage;
+import autosar40.system.transportprotocols.impl.TransportprotocolsPackageImpl;
+import gautosar.gcommonstructure.gbasetypes.GbasetypesPackage;
+import gautosar.gcommonstructure.gconstants.GconstantsPackage;
+import gautosar.gcommonstructure.gdatadefproperties.GdatadefpropertiesPackage;
+import gautosar.gcommonstructure.gimplementation.GimplementationPackage;
+import gautosar.gcommonstructure.ginternalbehavior.GinternalbehaviorPackage;
+import gautosar.gcommonstructure.gmodedeclaration.GmodedeclarationPackage;
+import gautosar.gcommonstructure.gresourceconsumption.GresourceconsumptionPackage;
+import gautosar.gcommonstructure.gsystemconstant.GsystemconstantPackage;
+import gautosar.gecucdescription.GecucdescriptionPackage;
+import gautosar.gecucparameterdef.GecucparameterdefPackage;
+import gautosar.ggenericstructure.gformulalanguage.GformulalanguagePackage;
+import gautosar.ggenericstructure.ggeneraltemplateclasses.gdocumentation.GdocumentationPackage;
+import gautosar.ggenericstructure.ggeneraltemplateclasses.gdocumentation.gtextmodel.ginlinetextmodel.GinlinetextmodelPackage;
+import gautosar.ggenericstructure.ggeneraltemplateclasses.gdocumentation.gtextmodel.glanguagedatamodel.GlanguagedatamodelPackage;
+import gautosar.ggenericstructure.ggeneraltemplateclasses.gdocumentation.gtextmodel.gmultilanguagedata.GmultilanguagedataPackage;
+import gautosar.ggenericstructure.ggeneraltemplateclasses.gprimitivetypes.GprimitivetypesPackage;
+import gautosar.ggenericstructure.ginfrastructure.GinfrastructurePackage;
+import gautosar.ggenericstructure.gvarianthandling.GvarianthandlingPackage;
+import gautosar.gswcomponents.gcommunication.GcommunicationPackage;
+import gautosar.gswcomponents.gcomponents.GcomponentsPackage;
+import gautosar.gswcomponents.gcomponents.ginstancerefs.GinstancerefsPackage;
+import gautosar.gswcomponents.gcomposition.GcompositionPackage;
+import gautosar.gswcomponents.gdatatype.gcomputationmethod.GcomputationmethodPackage;
+import gautosar.gswcomponents.gdatatype.gdataprototypes.GdataprototypesPackage;
+import gautosar.gswcomponents.gdatatype.gdatatypes.GdatatypesPackage;
+import gautosar.gswcomponents.gdatatype.gdatatypes.glocalconstraints.GlocalconstraintsPackage;
+import gautosar.gswcomponents.gdatatype.gunits.GunitsPackage;
+import gautosar.gswcomponents.gportinterface.GportinterfacePackage;
+import gautosar.gswcomponents.gswcimplementation.GswcimplementationPackage;
+import gautosar.gswcomponents.gswcinternalbehavior.GswcinternalbehaviorPackage;
+import gautosar.gswcomponents.gswcinternalbehavior.gdataelements.GdataelementsPackage;
+import gautosar.gswcomponents.gswcinternalbehavior.gmodedeclarationgroup.GmodedeclarationgroupPackage;
+import gautosar.gswcomponents.gswcinternalbehavior.gperinstancememory.GperinstancememoryPackage;
+import gautosar.gswcomponents.gswcinternalbehavior.grteevents.GrteeventsPackage;
+import gautosar.gswcomponents.gswcinternalbehavior.gservercall.GservercallPackage;
+import gautosar.gsystem.GsystemPackage;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+public class EcucparameterdefPackageImpl
+extends EPackageImpl
+implements EcucparameterdefPackage {
+    private EClass ecucAbstractStringParamDefEClass = null;
+    private EClass ecucParameterDefEClass = null;
+    private EClass ecucCommonAttributesEClass = null;
+    private EClass ecucDefinitionElementEClass = null;
+    private EClass ecucConditionSpecificationEClass = null;
+    private EClass ecucQueryEClass = null;
+    private EClass ecucQueryExpressionEClass = null;
+    private EClass ecucConditionFormulaEClass = null;
+    private EClass ecucImplementationConfigurationClassEClass = null;
+    private EClass ecucConfigurationClassAffectionEClass = null;
+    private EClass ecucDerivationSpecificationEClass = null;
+    private EClass ecucParameterDerivationFormulaEClass = null;
+    private EClass ecucAddInfoParamDefEClass = null;
+    private EClass ecucBooleanParamDefEClass = null;
+    private EClass ecucChoiceContainerDefEClass = null;
+    private EClass ecucContainerDefEClass = null;
+    private EClass ecucParamConfContainerDefEClass = null;
+    private EClass ecucChoiceReferenceDefEClass = null;
+    private EClass ecucDefinitionCollectionEClass = null;
+    private EClass ecucModuleDefEClass = null;
+    private EClass ecucEnumerationLiteralDefEClass = null;
+    private EClass ecucEnumerationParamDefEClass = null;
+    private EClass ecucFloatParamDefEClass = null;
+    private EClass ecucForeignReferenceDefEClass = null;
+    private EClass ecucFunctionNameDefEClass = null;
+    private EClass ecucFunctionNameDefConditionalEClass = null;
+    private EClass ecucFunctionNameDefContentEClass = null;
+    private EClass ecucAbstractStringParamDefContentEClass = null;
+    private EClass ecucInstanceReferenceDefEClass = null;
+    private EClass ecucIntegerParamDefEClass = null;
+    private EClass ecucLinkerSymbolDefEClass = null;
+    private EClass ecucLinkerSymbolDefConditionalEClass = null;
+    private EClass ecucLinkerSymbolDefContentEClass = null;
+    private EClass ecucMultilineStringParamDefEClass = null;
+    private EClass ecucMultilineStringParamDefConditionalEClass = null;
+    private EClass ecucMultilineStringParamDefContentEClass = null;
+    private EClass ecucReferenceDefEClass = null;
+    private EClass ecucStringParamDefEClass = null;
+    private EClass ecucStringParamDefConditionalEClass = null;
+    private EClass ecucStringParamDefContentEClass = null;
+    private EClass ecucSymbolicNameReferenceDefEClass = null;
+    private EClass ecucAbstractReferenceDefEClass = null;
+    private EEnum ecucConfigurationClassEnumEEnum = null;
+    private EEnum ecucConfigurationVariantEnumEEnum = null;
+    private EEnum ecucAffectionEnumEEnum = null;
+    private static boolean isInited = false;
+    private boolean isCreated = false;
+    private boolean isInitialized = false;
+
+    private EcucparameterdefPackageImpl() {
+        super("http://autosar.org/schema/r4.0/autosar40/ecucpd", (EFactory)EcucparameterdefFactory.eINSTANCE);
+    }
+
+    public static EcucparameterdefPackage init() {
+        if (isInited) {
+            return (EcucparameterdefPackage)EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/ecucpd");
+        }
+        EcucparameterdefPackageImpl theEcucparameterdefPackage = (EcucparameterdefPackageImpl)(EPackage.Registry.INSTANCE.get((Object)"http://autosar.org/schema/r4.0/autosar40/ecucpd") instanceof EcucparameterdefPackageImpl ? EPackage.Registry.INSTANCE.get((Object)"http://autosar.org/schema/r4.0/autosar40/ecucpd") : new EcucparameterdefPackageImpl());
+        isInited = true;
+        gautosar.ggenericstructure.gprimitivetypes.GprimitivetypesPackage.eINSTANCE.eClass();
+        GinfrastructurePackage.eINSTANCE.eClass();
+        GdocumentationPackage.eINSTANCE.eClass();
+        GmultilanguagedataPackage.eINSTANCE.eClass();
+        GlanguagedatamodelPackage.eINSTANCE.eClass();
+        GinlinetextmodelPackage.eINSTANCE.eClass();
+        GprimitivetypesPackage.eINSTANCE.eClass();
+        GvarianthandlingPackage.eINSTANCE.eClass();
+        GformulalanguagePackage.eINSTANCE.eClass();
+        GecucparameterdefPackage.eINSTANCE.eClass();
+        GecucdescriptionPackage.eINSTANCE.eClass();
+        GcomponentsPackage.eINSTANCE.eClass();
+        GinstancerefsPackage.eINSTANCE.eClass();
+        GportinterfacePackage.eINSTANCE.eClass();
+        GdatatypesPackage.eINSTANCE.eClass();
+        GlocalconstraintsPackage.eINSTANCE.eClass();
+        GdataprototypesPackage.eINSTANCE.eClass();
+        GcomputationmethodPackage.eINSTANCE.eClass();
+        GunitsPackage.eINSTANCE.eClass();
+        GcompositionPackage.eINSTANCE.eClass();
+        gautosar.gswcomponents.gcomposition.ginstancerefs.GinstancerefsPackage.eINSTANCE.eClass();
+        GswcinternalbehaviorPackage.eINSTANCE.eClass();
+        GrteeventsPackage.eINSTANCE.eClass();
+        GdataelementsPackage.eINSTANCE.eClass();
+        GperinstancememoryPackage.eINSTANCE.eClass();
+        GmodedeclarationgroupPackage.eINSTANCE.eClass();
+        GservercallPackage.eINSTANCE.eClass();
+        GswcimplementationPackage.eINSTANCE.eClass();
+        GcommunicationPackage.eINSTANCE.eClass();
+        GimplementationPackage.eINSTANCE.eClass();
+        GresourceconsumptionPackage.eINSTANCE.eClass();
+        GmodedeclarationPackage.eINSTANCE.eClass();
+        GinternalbehaviorPackage.eINSTANCE.eClass();
+        GconstantsPackage.eINSTANCE.eClass();
+        GdatadefpropertiesPackage.eINSTANCE.eClass();
+        GbasetypesPackage.eINSTANCE.eClass();
+        GsystemconstantPackage.eINSTANCE.eClass();
+        GsystemPackage.eINSTANCE.eClass();
+        EcorePackage.eINSTANCE.eClass();
+        EcuresourcePackageImpl theEcuresourcePackage = (EcuresourcePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/er") instanceof EcuresourcePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/er") : EcuresourcePackage.eINSTANCE);
+        HwelementcategoryPackageImpl theHwelementcategoryPackage = (HwelementcategoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/er/hec") instanceof HwelementcategoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/er/hec") : HwelementcategoryPackage.eINSTANCE);
+        FormulalanguagePackageImpl theFormulalanguagePackage = (FormulalanguagePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/fl") instanceof FormulalanguagePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/fl") : FormulalanguagePackage.eINSTANCE);
+        AbstractstructurePackageImpl theAbstractstructurePackage = (AbstractstructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/as") instanceof AbstractstructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/as") : AbstractstructurePackage.eINSTANCE);
+        autosar40.genericstructure.varianthandling.impl.VarianthandlingPackageImpl theVarianthandlingPackage = (autosar40.genericstructure.varianthandling.impl.VarianthandlingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/vh") instanceof autosar40.genericstructure.varianthandling.impl.VarianthandlingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/vh") : autosar40.genericstructure.varianthandling.VarianthandlingPackage.eINSTANCE);
+        Documentationonm1PackageImpl theDocumentationonm1Package = (Documentationonm1PackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/dom") instanceof Documentationonm1PackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/dom") : Documentationonm1Package.eINSTANCE);
+        IdentifiablePackageImpl theIdentifiablePackage = (IdentifiablePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/i") instanceof IdentifiablePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/i") : IdentifiablePackage.eINSTANCE);
+        ChaptersPackageImpl theChaptersPackage = (ChaptersPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/c") instanceof ChaptersPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/c") : ChaptersPackage.eINSTANCE);
+        MsrqueryPackageImpl theMsrqueryPackage = (MsrqueryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/mq") instanceof MsrqueryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/mq") : MsrqueryPackage.eINSTANCE);
+        AnnotationPackageImpl theAnnotationPackage = (AnnotationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/a") instanceof AnnotationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/a") : AnnotationPackage.eINSTANCE);
+        InlineattributeenumsPackageImpl theInlineattributeenumsPackage = (InlineattributeenumsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/iae") instanceof InlineattributeenumsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/iae") : InlineattributeenumsPackage.eINSTANCE);
+        InlinetextelementsPackageImpl theInlinetextelementsPackage = (InlinetextelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/ite") instanceof InlinetextelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/ite") : InlinetextelementsPackage.eINSTANCE);
+        SinglelanguagedataPackageImpl theSinglelanguagedataPackage = (SinglelanguagedataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/sld") instanceof SinglelanguagedataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/sld") : SinglelanguagedataPackage.eINSTANCE);
+        InlinetextmodelPackageImpl theInlinetextmodelPackage = (InlinetextmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/itm") instanceof InlinetextmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/itm") : InlinetextmodelPackage.eINSTANCE);
+        LanguagedatamodelPackageImpl theLanguagedatamodelPackage = (LanguagedatamodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/ldm") instanceof LanguagedatamodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/ldm") : LanguagedatamodelPackage.eINSTANCE);
+        MultilanguagedataPackageImpl theMultilanguagedataPackage = (MultilanguagedataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/md") instanceof MultilanguagedataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/tm/md") : MultilanguagedataPackage.eINSTANCE);
+        BlockelementsPackageImpl theBlockelementsPackage = (BlockelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be") instanceof BlockelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be") : BlockelementsPackage.eINSTANCE);
+        PaginationandviewPackageImpl thePaginationandviewPackage = (PaginationandviewPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/pav") instanceof PaginationandviewPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/pav") : PaginationandviewPackage.eINSTANCE);
+        OasisexchangetablePackageImpl theOasisexchangetablePackage = (OasisexchangetablePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/oet") instanceof OasisexchangetablePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/oet") : OasisexchangetablePackage.eINSTANCE);
+        FormulaPackageImpl theFormulaPackage = (FormulaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/formula") instanceof FormulaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/formula") : FormulaPackage.eINSTANCE);
+        FigurePackageImpl theFigurePackage = (FigurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/figure") instanceof FigurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/figure") : FigurePackage.eINSTANCE);
+        RequirementstracingPackageImpl theRequirementstracingPackage = (RequirementstracingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/rt") instanceof RequirementstracingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/rt") : RequirementstracingPackage.eINSTANCE);
+        SynopsisPackageImpl theSynopsisPackage = (SynopsisPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/s") instanceof SynopsisPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/s") : SynopsisPackage.eINSTANCE);
+        GerneralparametersPackageImpl theGerneralparametersPackage = (GerneralparametersPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/gp") instanceof GerneralparametersPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/gp") : GerneralparametersPackage.eINSTANCE);
+        ListelementsPackageImpl theListelementsPackage = (ListelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/le") instanceof ListelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/le") : ListelementsPackage.eINSTANCE);
+        NotePackageImpl theNotePackage = (NotePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/n") instanceof NotePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/n") : NotePackage.eINSTANCE);
+        PrimitivetypesPackageImpl thePrimitivetypesPackage = (PrimitivetypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/pt") instanceof PrimitivetypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/pt") : PrimitivetypesPackage.eINSTANCE);
+        AnyinstancerefPackageImpl theAnyinstancerefPackage = (AnyinstancerefPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/air") instanceof AnyinstancerefPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/air") : AnyinstancerefPackage.eINSTANCE);
+        ArpackagePackageImpl theArpackagePackage = (ArpackagePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/arp") instanceof ArpackagePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/arp") : ArpackagePackage.eINSTANCE);
+        ElementcollectionPackageImpl theElementcollectionPackage = (ElementcollectionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/ec") instanceof ElementcollectionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/ec") : ElementcollectionPackage.eINSTANCE);
+        GeneralannotationPackageImpl theGeneralannotationPackage = (GeneralannotationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/ga") instanceof GeneralannotationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/ga") : GeneralannotationPackage.eINSTANCE);
+        AdmindataPackageImpl theAdmindataPackage = (AdmindataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/ad") instanceof AdmindataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/ad") : AdmindataPackage.eINSTANCE);
+        SpecialdataPackageImpl theSpecialdataPackage = (SpecialdataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/sd") instanceof SpecialdataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/sd") : SpecialdataPackage.eINSTANCE);
+        MultidimensionaltimePackageImpl theMultidimensionaltimePackage = (MultidimensionaltimePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/mt") instanceof MultidimensionaltimePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/mt") : MultidimensionaltimePackage.eINSTANCE);
+        EngineeringobjectPackageImpl theEngineeringobjectPackage = (EngineeringobjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/eo") instanceof EngineeringobjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/eo") : EngineeringobjectPackage.eINSTANCE);
+        ArobjectPackageImpl theArobjectPackage = (ArobjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/ao") instanceof ArobjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/ao") : ArobjectPackage.eINSTANCE);
+        FilterPackageImpl theFilterPackage = (FilterPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/f") instanceof FilterPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/f") : FilterPackage.eINSTANCE);
+        FlatmapPackageImpl theFlatmapPackage = (FlatmapPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/fm") instanceof FlatmapPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/fm") : FlatmapPackage.eINSTANCE);
+        DatadefpropertiesPackageImpl theDatadefpropertiesPackage = (DatadefpropertiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/ddp") instanceof DatadefpropertiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/ddp") : DatadefpropertiesPackage.eINSTANCE);
+        DatadictionaryproxiesPackageImpl theDatadictionaryproxiesPackage = (DatadictionaryproxiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/dp") instanceof DatadictionaryproxiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/dp") : DatadictionaryproxiesPackage.eINSTANCE);
+        MeasurementcalibrationsupportPackageImpl theMeasurementcalibrationsupportPackage = (MeasurementcalibrationsupportPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/mcs") instanceof MeasurementcalibrationsupportPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/mcs") : MeasurementcalibrationsupportPackage.eINSTANCE);
+        ImplementationdatatypesPackageImpl theImplementationdatatypesPackage = (ImplementationdatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/idt") instanceof ImplementationdatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/idt") : ImplementationdatatypesPackage.eINSTANCE);
+        InternalbehaviorPackageImpl theInternalbehaviorPackage = (InternalbehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/ib") instanceof InternalbehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/ib") : InternalbehaviorPackage.eINSTANCE);
+        ModedeclarationPackageImpl theModedeclarationPackage = (ModedeclarationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/md") instanceof ModedeclarationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/md") : ModedeclarationPackage.eINSTANCE);
+        AxisPackageImpl theAxisPackage = (AxisPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/a") instanceof AxisPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/a") : AxisPackage.eINSTANCE);
+        CalibrationvaluePackageImpl theCalibrationvaluePackage = (CalibrationvaluePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/cv") instanceof CalibrationvaluePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/cv") : CalibrationvaluePackage.eINSTANCE);
+        CalibrationparameterPackageImpl theCalibrationparameterPackage = (CalibrationparameterPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/cp") instanceof CalibrationparameterPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/cp") : CalibrationparameterPackage.eINSTANCE);
+        BasetypesPackageImpl theBasetypesPackage = (BasetypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/bt") instanceof BasetypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/bt") : BasetypesPackage.eINSTANCE);
+        GlobalconstraintsPackageImpl theGlobalconstraintsPackage = (GlobalconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/gc") instanceof GlobalconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/gc") : GlobalconstraintsPackage.eINSTANCE);
+        AuxillaryobjectsPackageImpl theAuxillaryobjectsPackage = (AuxillaryobjectsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/ao") instanceof AuxillaryobjectsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/ao") : AuxillaryobjectsPackage.eINSTANCE);
+        ConstantsPackageImpl theConstantsPackage = (ConstantsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/c") instanceof ConstantsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/c") : ConstantsPackage.eINSTANCE);
+        TriggerdeclarationPackageImpl theTriggerdeclarationPackage = (TriggerdeclarationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/td") instanceof TriggerdeclarationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/td") : TriggerdeclarationPackage.eINSTANCE);
+        ImplementationPackageImpl theImplementationPackage = (ImplementationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/implementation") instanceof ImplementationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/implementation") : ImplementationPackage.eINSTANCE);
+        SwcbswmappingPackageImpl theSwcbswmappingPackage = (SwcbswmappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/sbm") instanceof SwcbswmappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/sbm") : SwcbswmappingPackage.eINSTANCE);
+        ServiceneedsPackageImpl theServiceneedsPackage = (ServiceneedsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/sn") instanceof ServiceneedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/sn") : ServiceneedsPackage.eINSTANCE);
+        ResourceconsumptionPackageImpl theResourceconsumptionPackage = (ResourceconsumptionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc") instanceof ResourceconsumptionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc") : ResourceconsumptionPackage.eINSTANCE);
+        MemorysectionusagePackageImpl theMemorysectionusagePackage = (MemorysectionusagePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc/msu") instanceof MemorysectionusagePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc/msu") : MemorysectionusagePackage.eINSTANCE);
+        StackusagePackageImpl theStackusagePackage = (StackusagePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc/su") instanceof StackusagePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc/su") : StackusagePackage.eINSTANCE);
+        HeapusagePackageImpl theHeapusagePackage = (HeapusagePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc/hu") instanceof HeapusagePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc/hu") : HeapusagePackage.eINSTANCE);
+        ExecutiontimePackageImpl theExecutiontimePackage = (ExecutiontimePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc/et") instanceof ExecutiontimePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/rc/et") : ExecutiontimePackage.eINSTANCE);
+        ServiceprocesstaskPackageImpl theServiceprocesstaskPackage = (ServiceprocesstaskPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/spt") instanceof ServiceprocesstaskPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/spt") : ServiceprocesstaskPackage.eINSTANCE);
+        SwclassPackageImpl theSwclassPackage = (SwclassPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/sclass") instanceof SwclassPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/sclass") : SwclassPackage.eINSTANCE);
+        autosar40.commonstructure.timing.impl.TimingPackageImpl theTimingPackage = (autosar40.commonstructure.timing.impl.TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t") instanceof autosar40.commonstructure.timing.impl.TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t") : TimingPackage.eINSTANCE);
+        TimingconstraintPackageImpl theTimingconstraintPackage = (TimingconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc") instanceof TimingconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc") : TimingconstraintPackage.eINSTANCE);
+        AgeconstraintPackageImpl theAgeconstraintPackage = (AgeconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/ac") instanceof AgeconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/ac") : AgeconstraintPackage.eINSTANCE);
+        ExecutiontimeconstraintPackageImpl theExecutiontimeconstraintPackage = (ExecutiontimeconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/etimeconstraint") instanceof ExecutiontimeconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/etimeconstraint") : ExecutiontimeconstraintPackage.eINSTANCE);
+        EventtriggeringconstraintPackageImpl theEventtriggeringconstraintPackage = (EventtriggeringconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/etriggeringconstraint") instanceof EventtriggeringconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/etriggeringconstraint") : EventtriggeringconstraintPackage.eINSTANCE);
+        LatencytimingconstraintPackageImpl theLatencytimingconstraintPackage = (LatencytimingconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/ltc") instanceof LatencytimingconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/ltc") : LatencytimingconstraintPackage.eINSTANCE);
+        OffsetconstraintPackageImpl theOffsetconstraintPackage = (OffsetconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/oc") instanceof OffsetconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/oc") : OffsetconstraintPackage.eINSTANCE);
+        SynchronizationtimingconstraintPackageImpl theSynchronizationtimingconstraintPackage = (SynchronizationtimingconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/stc") instanceof SynchronizationtimingconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/stc") : SynchronizationtimingconstraintPackage.eINSTANCE);
+        ExecutionorderconstraintPackageImpl theExecutionorderconstraintPackage = (ExecutionorderconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/eoc") instanceof ExecutionorderconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/tc/eoc") : ExecutionorderconstraintPackage.eINSTANCE);
+        TimingdescriptionPackageImpl theTimingdescriptionPackage = (TimingdescriptionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td") instanceof TimingdescriptionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td") : TimingdescriptionPackage.eINSTANCE);
+        TdeventoccurrenceexpressionPackageImpl theTdeventoccurrenceexpressionPackage = (TdeventoccurrenceexpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdeoe") instanceof TdeventoccurrenceexpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdeoe") : TdeventoccurrenceexpressionPackage.eINSTANCE);
+        autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventoccurrenceexpression.instancerefsusage.impl.InstancerefsusagePackageImpl theInstancerefsusagePackage = (autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventoccurrenceexpression.instancerefsusage.impl.InstancerefsusagePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdeoe/iru") instanceof autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventoccurrenceexpression.instancerefsusage.impl.InstancerefsusagePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdeoe/iru") : autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventoccurrenceexpression.instancerefsusage.InstancerefsusagePackage.eINSTANCE);
+        InstancerefsPackageImpl theInstancerefsPackage = (InstancerefsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdeoe/ir") instanceof InstancerefsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdeoe/ir") : autosar40.commonstructure.timing.timingdescription.timingdescriptionevents.tdeventoccurrenceexpression.instancerefs.InstancerefsPackage.eINSTANCE);
+        TdeventswcinternalbehaviorPackageImpl theTdeventswcinternalbehaviorPackage = (TdeventswcinternalbehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdesib") instanceof TdeventswcinternalbehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdesib") : TdeventswcinternalbehaviorPackage.eINSTANCE);
+        TdeventcomPackageImpl theTdeventcomPackage = (TdeventcomPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdecom") instanceof TdeventcomPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdecom") : TdeventcomPackage.eINSTANCE);
+        TdeventbswPackageImpl theTdeventbswPackage = (TdeventbswPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdeb") instanceof TdeventbswPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdeb") : TdeventbswPackage.eINSTANCE);
+        TdeventbswinternalbehaviorPackageImpl theTdeventbswinternalbehaviorPackage = (TdeventbswinternalbehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdebib") instanceof TdeventbswinternalbehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdebib") : TdeventbswinternalbehaviorPackage.eINSTANCE);
+        TdeventcomplexPackageImpl theTdeventcomplexPackage = (TdeventcomplexPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdecomplex") instanceof TdeventcomplexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdecomplex") : TdeventcomplexPackage.eINSTANCE);
+        TdeventvfbPackageImpl theTdeventvfbPackage = (TdeventvfbPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdev") instanceof TdeventvfbPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/t/td/tde/tdev") : TdeventvfbPackage.eINSTANCE);
+        SystemconstantPackageImpl theSystemconstantPackage = (SystemconstantPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/sconstant") instanceof SystemconstantPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/cs/sconstant") : SystemconstantPackage.eINSTANCE);
+        EndtoendprotectionPackageImpl theEndtoendprotectionPackage = (EndtoendprotectionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/etep") instanceof EndtoendprotectionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/etep") : EndtoendprotectionPackage.eINSTANCE);
+        InterpolationroutinemappingsetPackageImpl theInterpolationroutinemappingsetPackage = (InterpolationroutinemappingsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/mac/irms") instanceof InterpolationroutinemappingsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/mac/irms") : InterpolationroutinemappingsetPackage.eINSTANCE);
+        CalibrationparametervaluesPackageImpl theCalibrationparametervaluesPackage = (CalibrationparametervaluesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/mac/cpv") instanceof CalibrationparametervaluesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/mac/cpv") : CalibrationparametervaluesPackage.eINSTANCE);
+        DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/d") instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/d") : DatatypesPackage.eINSTANCE);
+        RecordlayoutPackageImpl theRecordlayoutPackage = (RecordlayoutPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/rl") instanceof RecordlayoutPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/rl") : RecordlayoutPackage.eINSTANCE);
+        UnitsPackageImpl theUnitsPackage = (UnitsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/u") instanceof UnitsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/u") : UnitsPackage.eINSTANCE);
+        LocalconstraintsPackageImpl theLocalconstraintsPackage = (LocalconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/lc") instanceof LocalconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/lc") : LocalconstraintsPackage.eINSTANCE);
+        ComputationmethodPackageImpl theComputationmethodPackage = (ComputationmethodPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/cm") instanceof ComputationmethodPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/cm") : ComputationmethodPackage.eINSTANCE);
+        DataprototypesPackageImpl theDataprototypesPackage = (DataprototypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/dp") instanceof DataprototypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/d/dp") : DataprototypesPackage.eINSTANCE);
+        SwcinternalbehaviorPackageImpl theSwcinternalbehaviorPackage = (SwcinternalbehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib") instanceof SwcinternalbehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib") : SwcinternalbehaviorPackage.eINSTANCE);
+        ServicemappingPackageImpl theServicemappingPackage = (ServicemappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/smapping") instanceof ServicemappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/smapping") : ServicemappingPackage.eINSTANCE);
+        DataelementsPackageImpl theDataelementsPackage = (DataelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/de") instanceof DataelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/de") : DataelementsPackage.eINSTANCE);
+        InstancerefsusagePackageImpl theInstancerefsusagePackage_1 = (InstancerefsusagePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/de/iru") instanceof InstancerefsusagePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/de/iru") : InstancerefsusagePackage.eINSTANCE);
+        PerinstancememoryPackageImpl thePerinstancememoryPackage = (PerinstancememoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/pim") instanceof PerinstancememoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/pim") : PerinstancememoryPackage.eINSTANCE);
+        InstantiationdatadefpropsPackageImpl theInstantiationdatadefpropsPackage = (InstantiationdatadefpropsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/iddp") instanceof InstantiationdatadefpropsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/iddp") : InstantiationdatadefpropsPackage.eINSTANCE);
+        PortapioptionsPackageImpl thePortapioptionsPackage = (PortapioptionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/papio") instanceof PortapioptionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/papio") : PortapioptionsPackage.eINSTANCE);
+        RteeventsPackageImpl theRteeventsPackage = (RteeventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/rtee") instanceof RteeventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/rtee") : RteeventsPackage.eINSTANCE);
+        TriggerPackageImpl theTriggerPackage = (TriggerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/t") instanceof TriggerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/t") : TriggerPackage.eINSTANCE);
+        ModedeclarationgroupPackageImpl theModedeclarationgroupPackage = (ModedeclarationgroupPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/mdg") instanceof ModedeclarationgroupPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/mdg") : ModedeclarationgroupPackage.eINSTANCE);
+        ServercallPackageImpl theServercallPackage = (ServercallPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/sc") instanceof ServercallPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/sc") : ServercallPackage.eINSTANCE);
+        VarianthandlingPackageImpl theVarianthandlingPackage_1 = (VarianthandlingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/vh") instanceof VarianthandlingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/vh") : VarianthandlingPackage.eINSTANCE);
+        IncludeddatatypesPackageImpl theIncludeddatatypesPackage = (IncludeddatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/idt") instanceof IncludeddatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/idt") : IncludeddatatypesPackage.eINSTANCE);
+        RunnableentityPackageImpl theRunnableentityPackage = (RunnableentityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/re") instanceof RunnableentityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/sib/re") : RunnableentityPackage.eINSTANCE);
+        ComponentsPackageImpl theComponentsPackage = (ComponentsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/components") instanceof ComponentsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/components") : ComponentsPackage.eINSTANCE);
+        autosar40.swcomponent.components.instancerefs.impl.InstancerefsPackageImpl theInstancerefsPackage_1 = (autosar40.swcomponent.components.instancerefs.impl.InstancerefsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/components/ir") instanceof autosar40.swcomponent.components.instancerefs.impl.InstancerefsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/components/ir") : InstancerefsPackage.eINSTANCE);
+        CommunicationPackageImpl theCommunicationPackage = (CommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/communication") instanceof CommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/communication") : CommunicationPackage.eINSTANCE);
+        CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/composition") instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/composition") : CompositionPackage.eINSTANCE);
+        autosar40.swcomponent.composition.instancerefs.impl.InstancerefsPackageImpl theInstancerefsPackage_2 = (autosar40.swcomponent.composition.instancerefs.impl.InstancerefsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/composition/ir") instanceof autosar40.swcomponent.composition.instancerefs.impl.InstancerefsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/composition/ir") : autosar40.swcomponent.composition.instancerefs.InstancerefsPackage.eINSTANCE);
+        SoftwarecomponentdocumentationPackageImpl theSoftwarecomponentdocumentationPackage = (SoftwarecomponentdocumentationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/scd") instanceof SoftwarecomponentdocumentationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/scd") : SoftwarecomponentdocumentationPackage.eINSTANCE);
+        NvblockcomponentPackageImpl theNvblockcomponentPackage = (NvblockcomponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/nbc") instanceof NvblockcomponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/nbc") : NvblockcomponentPackage.eINSTANCE);
+        ApplicationattributesPackageImpl theApplicationattributesPackage = (ApplicationattributesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/aa") instanceof ApplicationattributesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/aa") : ApplicationattributesPackage.eINSTANCE);
+        SwcimplementationPackageImpl theSwcimplementationPackage = (SwcimplementationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/si") instanceof SwcimplementationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/si") : SwcimplementationPackage.eINSTANCE);
+        PortinterfacePackageImpl thePortinterfacePackage = (PortinterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/pi") instanceof PortinterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/pi") : PortinterfacePackage.eINSTANCE);
+        autosar40.swcomponent.portinterface.instancerefs.impl.InstancerefsPackageImpl theInstancerefsPackage_3 = (autosar40.swcomponent.portinterface.instancerefs.impl.InstancerefsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/pi/ir") instanceof autosar40.swcomponent.portinterface.instancerefs.impl.InstancerefsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/swc/pi/ir") : autosar40.swcomponent.portinterface.instancerefs.InstancerefsPackage.eINSTANCE);
+        EcucdescriptionPackageImpl theEcucdescriptionPackage = (EcucdescriptionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/ecucd") instanceof EcucdescriptionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/ecucd") : EcucdescriptionPackage.eINSTANCE);
+        BswbehaviorPackageImpl theBswbehaviorPackage = (BswbehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/bb") instanceof BswbehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/bb") : BswbehaviorPackage.eINSTANCE);
+        BswoverviewPackageImpl theBswoverviewPackage = (BswoverviewPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/bo") instanceof BswoverviewPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/bo") : BswoverviewPackage.eINSTANCE);
+        autosar40.bswmodule.bswoverview.instancerefs.impl.InstancerefsPackageImpl theInstancerefsPackage_4 = (autosar40.bswmodule.bswoverview.instancerefs.impl.InstancerefsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/bo/ir") instanceof autosar40.bswmodule.bswoverview.instancerefs.impl.InstancerefsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/bo/ir") : autosar40.bswmodule.bswoverview.instancerefs.InstancerefsPackage.eINSTANCE);
+        BswimplementationPackageImpl theBswimplementationPackage = (BswimplementationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/bimplementation") instanceof BswimplementationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/bimplementation") : BswimplementationPackage.eINSTANCE);
+        BswinterfacesPackageImpl theBswinterfacesPackage = (BswinterfacesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/binterfaces") instanceof BswinterfacesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/bm/binterfaces") : BswinterfacesPackage.eINSTANCE);
+        SystemPackageImpl theSystemPackage = (SystemPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system") instanceof SystemPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system") : SystemPackage.eINSTANCE);
+        SwmappingPackageImpl theSwmappingPackage = (SwmappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/sw") instanceof SwmappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/sw") : SwmappingPackage.eINSTANCE);
+        autosar40.system.instancerefs.impl.InstancerefsPackageImpl theInstancerefsPackage_5 = (autosar40.system.instancerefs.impl.InstancerefsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/ir") instanceof autosar40.system.instancerefs.impl.InstancerefsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/ir") : autosar40.system.instancerefs.InstancerefsPackage.eINSTANCE);
+        CancommunicationPackageImpl theCancommunicationPackage = (CancommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcan/cc") instanceof CancommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcan/cc") : CancommunicationPackage.eINSTANCE);
+        CantopologyPackageImpl theCantopologyPackage = (CantopologyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcan/ct") instanceof CantopologyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcan/ct") : CantopologyPackage.eINSTANCE);
+        TtcantopologyPackageImpl theTtcantopologyPackage = (TtcantopologyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/ft/tt") instanceof TtcantopologyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/ft/tt") : TtcantopologyPackage.eINSTANCE);
+        TtcancommunicationPackageImpl theTtcancommunicationPackage = (TtcancommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/ft/tc") instanceof TtcancommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/ft/tc") : TtcancommunicationPackage.eINSTANCE);
+        EthernetcommunicationPackageImpl theEthernetcommunicationPackage = (EthernetcommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fe/ec") instanceof EthernetcommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fe/ec") : EthernetcommunicationPackage.eINSTANCE);
+        EthernettopologyPackageImpl theEthernettopologyPackage = (EthernettopologyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fe/et") instanceof EthernettopologyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fe/et") : EthernettopologyPackage.eINSTANCE);
+        FlexraycommunicationPackageImpl theFlexraycommunicationPackage = (FlexraycommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/ff/fc") instanceof FlexraycommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/ff/fc") : FlexraycommunicationPackage.eINSTANCE);
+        FlexraytopologyPackageImpl theFlexraytopologyPackage = (FlexraytopologyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/ff/ft") instanceof FlexraytopologyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/ff/ft") : FlexraytopologyPackage.eINSTANCE);
+        LincommunicationPackageImpl theLincommunicationPackage = (LincommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fl/lc") instanceof LincommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fl/lc") : LincommunicationPackage.eINSTANCE);
+        LintopologyPackageImpl theLintopologyPackage = (LintopologyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fl/lt") instanceof LintopologyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fl/lt") : LintopologyPackage.eINSTANCE);
+        Fibex4multiplatformPackageImpl theFibex4multiplatformPackage = (Fibex4multiplatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fm") instanceof Fibex4multiplatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fm") : Fibex4multiplatformPackage.eINSTANCE);
+        FibexcorePackageImpl theFibexcorePackage = (FibexcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcore") instanceof FibexcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcore") : FibexcorePackage.eINSTANCE);
+        CorecommunicationPackageImpl theCorecommunicationPackage = (CorecommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcore/cc") instanceof CorecommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcore/cc") : CorecommunicationPackage.eINSTANCE);
+        TimingPackageImpl theTimingPackage_1 = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcore/cc/t") instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcore/cc/t") : autosar40.system.fibex.fibexcore.corecommunication.timing.TimingPackage.eINSTANCE);
+        CoretopologyPackageImpl theCoretopologyPackage = (CoretopologyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcore/ct") instanceof CoretopologyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/f/fcore/ct") : CoretopologyPackage.eINSTANCE);
+        DatamappingPackageImpl theDatamappingPackage = (DatamappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/dm") instanceof DatamappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/dm") : DatamappingPackage.eINSTANCE);
+        TransportprotocolsPackageImpl theTransportprotocolsPackage = (TransportprotocolsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/tp") instanceof TransportprotocolsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/tp") : TransportprotocolsPackage.eINSTANCE);
+        SignalpathsPackageImpl theSignalpathsPackage = (SignalpathsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/sp") instanceof SignalpathsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/sp") : SignalpathsPackage.eINSTANCE);
+        EcuresourcemappingPackageImpl theEcuresourcemappingPackage = (EcuresourcemappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/ecurm") instanceof EcuresourcemappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/ecurm") : EcuresourcemappingPackage.eINSTANCE);
+        PncmappingPackageImpl thePncmappingPackage = (PncmappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/pm") instanceof PncmappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/pm") : PncmappingPackage.eINSTANCE);
+        NetworkmanagementPackageImpl theNetworkmanagementPackage = (NetworkmanagementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/nm") instanceof NetworkmanagementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/nm") : NetworkmanagementPackage.eINSTANCE);
+        autosar40.system.endtoendprotection.impl.EndtoendprotectionPackageImpl theEndtoendprotectionPackage_1 = (autosar40.system.endtoendprotection.impl.EndtoendprotectionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/etep") instanceof autosar40.system.endtoendprotection.impl.EndtoendprotectionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/system/etep") : autosar40.system.endtoendprotection.EndtoendprotectionPackage.eINSTANCE);
+        GenericblueprintPackageImpl theGenericblueprintPackage = (GenericblueprintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/bd/gb") instanceof GenericblueprintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/bd/gb") : GenericblueprintPackage.eINSTANCE);
+        PortinterfaceblueprintPackageImpl thePortinterfaceblueprintPackage = (PortinterfaceblueprintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/bd/pib") instanceof PortinterfaceblueprintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/bd/pib") : PortinterfaceblueprintPackage.eINSTANCE);
+        PortprotoypeblueprintPackageImpl thePortprotoypeblueprintPackage = (PortprotoypeblueprintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/bd/ppb") instanceof PortprotoypeblueprintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/bd/ppb") : PortprotoypeblueprintPackage.eINSTANCE);
+        BlueprintmappingPackageImpl theBlueprintmappingPackage = (BlueprintmappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/bm") instanceof BlueprintmappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/bm") : BlueprintmappingPackage.eINSTANCE);
+        KeywordPackageImpl theKeywordPackage = (KeywordPackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/k") instanceof KeywordPackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/k") : KeywordPackage.eINSTANCE);
+        AbstractblueprintstructurePackageImpl theAbstractblueprintstructurePackage = (AbstractblueprintstructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/abs") instanceof AbstractblueprintstructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/abs") : AbstractblueprintstructurePackage.eINSTANCE);
+        AutosartoplevelstructurePackageImpl theAutosartoplevelstructurePackage = (AutosartoplevelstructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/atls") instanceof AutosartoplevelstructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/atls") : AutosartoplevelstructurePackage.eINSTANCE);
+        theEcucparameterdefPackage.createPackageContents();
+        theEcuresourcePackage.createPackageContents();
+        theHwelementcategoryPackage.createPackageContents();
+        theFormulalanguagePackage.createPackageContents();
+        theAbstractstructurePackage.createPackageContents();
+        theVarianthandlingPackage.createPackageContents();
+        theDocumentationonm1Package.createPackageContents();
+        theIdentifiablePackage.createPackageContents();
+        theChaptersPackage.createPackageContents();
+        theMsrqueryPackage.createPackageContents();
+        theAnnotationPackage.createPackageContents();
+        theInlineattributeenumsPackage.createPackageContents();
+        theInlinetextelementsPackage.createPackageContents();
+        theSinglelanguagedataPackage.createPackageContents();
+        theInlinetextmodelPackage.createPackageContents();
+        theLanguagedatamodelPackage.createPackageContents();
+        theMultilanguagedataPackage.createPackageContents();
+        theBlockelementsPackage.createPackageContents();
+        thePaginationandviewPackage.createPackageContents();
+        theOasisexchangetablePackage.createPackageContents();
+        theFormulaPackage.createPackageContents();
+        theFigurePackage.createPackageContents();
+        theRequirementstracingPackage.createPackageContents();
+        theSynopsisPackage.createPackageContents();
+        theGerneralparametersPackage.createPackageContents();
+        theListelementsPackage.createPackageContents();
+        theNotePackage.createPackageContents();
+        thePrimitivetypesPackage.createPackageContents();
+        theAnyinstancerefPackage.createPackageContents();
+        theArpackagePackage.createPackageContents();
+        theElementcollectionPackage.createPackageContents();
+        theGeneralannotationPackage.createPackageContents();
+        theAdmindataPackage.createPackageContents();
+        theSpecialdataPackage.createPackageContents();
+        theMultidimensionaltimePackage.createPackageContents();
+        theEngineeringobjectPackage.createPackageContents();
+        theArobjectPackage.createPackageContents();
+        theFilterPackage.createPackageContents();
+        theFlatmapPackage.createPackageContents();
+        theDatadefpropertiesPackage.createPackageContents();
+        theDatadictionaryproxiesPackage.createPackageContents();
+        theMeasurementcalibrationsupportPackage.createPackageContents();
+        theImplementationdatatypesPackage.createPackageContents();
+        theInternalbehaviorPackage.createPackageContents();
+        theModedeclarationPackage.createPackageContents();
+        theAxisPackage.createPackageContents();
+        theCalibrationvaluePackage.createPackageContents();
+        theCalibrationparameterPackage.createPackageContents();
+        theBasetypesPackage.createPackageContents();
+        theGlobalconstraintsPackage.createPackageContents();
+        theAuxillaryobjectsPackage.createPackageContents();
+        theConstantsPackage.createPackageContents();
+        theTriggerdeclarationPackage.createPackageContents();
+        theImplementationPackage.createPackageContents();
+        theSwcbswmappingPackage.createPackageContents();
+        theServiceneedsPackage.createPackageContents();
+        theResourceconsumptionPackage.createPackageContents();
+        theMemorysectionusagePackage.createPackageContents();
+        theStackusagePackage.createPackageContents();
+        theHeapusagePackage.createPackageContents();
+        theExecutiontimePackage.createPackageContents();
+        theServiceprocesstaskPackage.createPackageContents();
+        theSwclassPackage.createPackageContents();
+        theTimingPackage.createPackageContents();
+        theTimingconstraintPackage.createPackageContents();
+        theAgeconstraintPackage.createPackageContents();
+        theExecutiontimeconstraintPackage.createPackageContents();
+        theEventtriggeringconstraintPackage.createPackageContents();
+        theLatencytimingconstraintPackage.createPackageContents();
+        theOffsetconstraintPackage.createPackageContents();
+        theSynchronizationtimingconstraintPackage.createPackageContents();
+        theExecutionorderconstraintPackage.createPackageContents();
+        theTimingdescriptionPackage.createPackageContents();
+        theTdeventoccurrenceexpressionPackage.createPackageContents();
+        theInstancerefsusagePackage.createPackageContents();
+        theInstancerefsPackage.createPackageContents();
+        theTdeventswcinternalbehaviorPackage.createPackageContents();
+        theTdeventcomPackage.createPackageContents();
+        theTdeventbswPackage.createPackageContents();
+        theTdeventbswinternalbehaviorPackage.createPackageContents();
+        theTdeventcomplexPackage.createPackageContents();
+        theTdeventvfbPackage.createPackageContents();
+        theSystemconstantPackage.createPackageContents();
+        theEndtoendprotectionPackage.createPackageContents();
+        theInterpolationroutinemappingsetPackage.createPackageContents();
+        theCalibrationparametervaluesPackage.createPackageContents();
+        theDatatypesPackage.createPackageContents();
+        theRecordlayoutPackage.createPackageContents();
+        theUnitsPackage.createPackageContents();
+        theLocalconstraintsPackage.createPackageContents();
+        theComputationmethodPackage.createPackageContents();
+        theDataprototypesPackage.createPackageContents();
+        theSwcinternalbehaviorPackage.createPackageContents();
+        theServicemappingPackage.createPackageContents();
+        theDataelementsPackage.createPackageContents();
+        theInstancerefsusagePackage_1.createPackageContents();
+        thePerinstancememoryPackage.createPackageContents();
+        theInstantiationdatadefpropsPackage.createPackageContents();
+        thePortapioptionsPackage.createPackageContents();
+        theRteeventsPackage.createPackageContents();
+        theTriggerPackage.createPackageContents();
+        theModedeclarationgroupPackage.createPackageContents();
+        theServercallPackage.createPackageContents();
+        theVarianthandlingPackage_1.createPackageContents();
+        theIncludeddatatypesPackage.createPackageContents();
+        theRunnableentityPackage.createPackageContents();
+        theComponentsPackage.createPackageContents();
+        theInstancerefsPackage_1.createPackageContents();
+        theCommunicationPackage.createPackageContents();
+        theCompositionPackage.createPackageContents();
+        theInstancerefsPackage_2.createPackageContents();
+        theSoftwarecomponentdocumentationPackage.createPackageContents();
+        theNvblockcomponentPackage.createPackageContents();
+        theApplicationattributesPackage.createPackageContents();
+        theSwcimplementationPackage.createPackageContents();
+        thePortinterfacePackage.createPackageContents();
+        theInstancerefsPackage_3.createPackageContents();
+        theEcucdescriptionPackage.createPackageContents();
+        theBswbehaviorPackage.createPackageContents();
+        theBswoverviewPackage.createPackageContents();
+        theInstancerefsPackage_4.createPackageContents();
+        theBswimplementationPackage.createPackageContents();
+        theBswinterfacesPackage.createPackageContents();
+        theSystemPackage.createPackageContents();
+        theSwmappingPackage.createPackageContents();
+        theInstancerefsPackage_5.createPackageContents();
+        theCancommunicationPackage.createPackageContents();
+        theCantopologyPackage.createPackageContents();
+        theTtcantopologyPackage.createPackageContents();
+        theTtcancommunicationPackage.createPackageContents();
+        theEthernetcommunicationPackage.createPackageContents();
+        theEthernettopologyPackage.createPackageContents();
+        theFlexraycommunicationPackage.createPackageContents();
+        theFlexraytopologyPackage.createPackageContents();
+        theLincommunicationPackage.createPackageContents();
+        theLintopologyPackage.createPackageContents();
+        theFibex4multiplatformPackage.createPackageContents();
+        theFibexcorePackage.createPackageContents();
+        theCorecommunicationPackage.createPackageContents();
+        theTimingPackage_1.createPackageContents();
+        theCoretopologyPackage.createPackageContents();
+        theDatamappingPackage.createPackageContents();
+        theTransportprotocolsPackage.createPackageContents();
+        theSignalpathsPackage.createPackageContents();
+        theEcuresourcemappingPackage.createPackageContents();
+        thePncmappingPackage.createPackageContents();
+        theNetworkmanagementPackage.createPackageContents();
+        theEndtoendprotectionPackage_1.createPackageContents();
+        theGenericblueprintPackage.createPackageContents();
+        thePortinterfaceblueprintPackage.createPackageContents();
+        thePortprotoypeblueprintPackage.createPackageContents();
+        theBlueprintmappingPackage.createPackageContents();
+        theKeywordPackage.createPackageContents();
+        theAbstractblueprintstructurePackage.createPackageContents();
+        theAutosartoplevelstructurePackage.createPackageContents();
+        theEcucparameterdefPackage.initializePackageContents();
+        theEcuresourcePackage.initializePackageContents();
+        theHwelementcategoryPackage.initializePackageContents();
+        theFormulalanguagePackage.initializePackageContents();
+        theAbstractstructurePackage.initializePackageContents();
+        theVarianthandlingPackage.initializePackageContents();
+        theDocumentationonm1Package.initializePackageContents();
+        theIdentifiablePackage.initializePackageContents();
+        theChaptersPackage.initializePackageContents();
+        theMsrqueryPackage.initializePackageContents();
+        theAnnotationPackage.initializePackageContents();
+        theInlineattributeenumsPackage.initializePackageContents();
+        theInlinetextelementsPackage.initializePackageContents();
+        theSinglelanguagedataPackage.initializePackageContents();
+        theInlinetextmodelPackage.initializePackageContents();
+        theLanguagedatamodelPackage.initializePackageContents();
+        theMultilanguagedataPackage.initializePackageContents();
+        theBlockelementsPackage.initializePackageContents();
+        thePaginationandviewPackage.initializePackageContents();
+        theOasisexchangetablePackage.initializePackageContents();
+        theFormulaPackage.initializePackageContents();
+        theFigurePackage.initializePackageContents();
+        theRequirementstracingPackage.initializePackageContents();
+        theSynopsisPackage.initializePackageContents();
+        theGerneralparametersPackage.initializePackageContents();
+        theListelementsPackage.initializePackageContents();
+        theNotePackage.initializePackageContents();
+        thePrimitivetypesPackage.initializePackageContents();
+        theAnyinstancerefPackage.initializePackageContents();
+        theArpackagePackage.initializePackageContents();
+        theElementcollectionPackage.initializePackageContents();
+        theGeneralannotationPackage.initializePackageContents();
+        theAdmindataPackage.initializePackageContents();
+        theSpecialdataPackage.initializePackageContents();
+        theMultidimensionaltimePackage.initializePackageContents();
+        theEngineeringobjectPackage.initializePackageContents();
+        theArobjectPackage.initializePackageContents();
+        theFilterPackage.initializePackageContents();
+        theFlatmapPackage.initializePackageContents();
+        theDatadefpropertiesPackage.initializePackageContents();
+        theDatadictionaryproxiesPackage.initializePackageContents();
+        theMeasurementcalibrationsupportPackage.initializePackageContents();
+        theImplementationdatatypesPackage.initializePackageContents();
+        theInternalbehaviorPackage.initializePackageContents();
+        theModedeclarationPackage.initializePackageContents();
+        theAxisPackage.initializePackageContents();
+        theCalibrationvaluePackage.initializePackageContents();
+        theCalibrationparameterPackage.initializePackageContents();
+        theBasetypesPackage.initializePackageContents();
+        theGlobalconstraintsPackage.initializePackageContents();
+        theAuxillaryobjectsPackage.initializePackageContents();
+        theConstantsPackage.initializePackageContents();
+        theTriggerdeclarationPackage.initializePackageContents();
+        theImplementationPackage.initializePackageContents();
+        theSwcbswmappingPackage.initializePackageContents();
+        theServiceneedsPackage.initializePackageContents();
+        theResourceconsumptionPackage.initializePackageContents();
+        theMemorysectionusagePackage.initializePackageContents();
+        theStackusagePackage.initializePackageContents();
+        theHeapusagePackage.initializePackageContents();
+        theExecutiontimePackage.initializePackageContents();
+        theServiceprocesstaskPackage.initializePackageContents();
+        theSwclassPackage.initializePackageContents();
+        theTimingPackage.initializePackageContents();
+        theTimingconstraintPackage.initializePackageContents();
+        theAgeconstraintPackage.initializePackageContents();
+        theExecutiontimeconstraintPackage.initializePackageContents();
+        theEventtriggeringconstraintPackage.initializePackageContents();
+        theLatencytimingconstraintPackage.initializePackageContents();
+        theOffsetconstraintPackage.initializePackageContents();
+        theSynchronizationtimingconstraintPackage.initializePackageContents();
+        theExecutionorderconstraintPackage.initializePackageContents();
+        theTimingdescriptionPackage.initializePackageContents();
+        theTdeventoccurrenceexpressionPackage.initializePackageContents();
+        theInstancerefsusagePackage.initializePackageContents();
+        theInstancerefsPackage.initializePackageContents();
+        theTdeventswcinternalbehaviorPackage.initializePackageContents();
+        theTdeventcomPackage.initializePackageContents();
+        theTdeventbswPackage.initializePackageContents();
+        theTdeventbswinternalbehaviorPackage.initializePackageContents();
+        theTdeventcomplexPackage.initializePackageContents();
+        theTdeventvfbPackage.initializePackageContents();
+        theSystemconstantPackage.initializePackageContents();
+        theEndtoendprotectionPackage.initializePackageContents();
+        theInterpolationroutinemappingsetPackage.initializePackageContents();
+        theCalibrationparametervaluesPackage.initializePackageContents();
+        theDatatypesPackage.initializePackageContents();
+        theRecordlayoutPackage.initializePackageContents();
+        theUnitsPackage.initializePackageContents();
+        theLocalconstraintsPackage.initializePackageContents();
+        theComputationmethodPackage.initializePackageContents();
+        theDataprototypesPackage.initializePackageContents();
+        theSwcinternalbehaviorPackage.initializePackageContents();
+        theServicemappingPackage.initializePackageContents();
+        theDataelementsPackage.initializePackageContents();
+        theInstancerefsusagePackage_1.initializePackageContents();
+        thePerinstancememoryPackage.initializePackageContents();
+        theInstantiationdatadefpropsPackage.initializePackageContents();
+        thePortapioptionsPackage.initializePackageContents();
+        theRteeventsPackage.initializePackageContents();
+        theTriggerPackage.initializePackageContents();
+        theModedeclarationgroupPackage.initializePackageContents();
+        theServercallPackage.initializePackageContents();
+        theVarianthandlingPackage_1.initializePackageContents();
+        theIncludeddatatypesPackage.initializePackageContents();
+        theRunnableentityPackage.initializePackageContents();
+        theComponentsPackage.initializePackageContents();
+        theInstancerefsPackage_1.initializePackageContents();
+        theCommunicationPackage.initializePackageContents();
+        theCompositionPackage.initializePackageContents();
+        theInstancerefsPackage_2.initializePackageContents();
+        theSoftwarecomponentdocumentationPackage.initializePackageContents();
+        theNvblockcomponentPackage.initializePackageContents();
+        theApplicationattributesPackage.initializePackageContents();
+        theSwcimplementationPackage.initializePackageContents();
+        thePortinterfacePackage.initializePackageContents();
+        theInstancerefsPackage_3.initializePackageContents();
+        theEcucdescriptionPackage.initializePackageContents();
+        theBswbehaviorPackage.initializePackageContents();
+        theBswoverviewPackage.initializePackageContents();
+        theInstancerefsPackage_4.initializePackageContents();
+        theBswimplementationPackage.initializePackageContents();
+        theBswinterfacesPackage.initializePackageContents();
+        theSystemPackage.initializePackageContents();
+        theSwmappingPackage.initializePackageContents();
+        theInstancerefsPackage_5.initializePackageContents();
+        theCancommunicationPackage.initializePackageContents();
+        theCantopologyPackage.initializePackageContents();
+        theTtcantopologyPackage.initializePackageContents();
+        theTtcancommunicationPackage.initializePackageContents();
+        theEthernetcommunicationPackage.initializePackageContents();
+        theEthernettopologyPackage.initializePackageContents();
+        theFlexraycommunicationPackage.initializePackageContents();
+        theFlexraytopologyPackage.initializePackageContents();
+        theLincommunicationPackage.initializePackageContents();
+        theLintopologyPackage.initializePackageContents();
+        theFibex4multiplatformPackage.initializePackageContents();
+        theFibexcorePackage.initializePackageContents();
+        theCorecommunicationPackage.initializePackageContents();
+        theTimingPackage_1.initializePackageContents();
+        theCoretopologyPackage.initializePackageContents();
+        theDatamappingPackage.initializePackageContents();
+        theTransportprotocolsPackage.initializePackageContents();
+        theSignalpathsPackage.initializePackageContents();
+        theEcuresourcemappingPackage.initializePackageContents();
+        thePncmappingPackage.initializePackageContents();
+        theNetworkmanagementPackage.initializePackageContents();
+        theEndtoendprotectionPackage_1.initializePackageContents();
+        theGenericblueprintPackage.initializePackageContents();
+        thePortinterfaceblueprintPackage.initializePackageContents();
+        thePortprotoypeblueprintPackage.initializePackageContents();
+        theBlueprintmappingPackage.initializePackageContents();
+        theKeywordPackage.initializePackageContents();
+        theAbstractblueprintstructurePackage.initializePackageContents();
+        theAutosartoplevelstructurePackage.initializePackageContents();
+        theEcucparameterdefPackage.freeze();
+        EPackage.Registry.INSTANCE.put((Object)"http://autosar.org/schema/r4.0/autosar40/ecucpd", (Object)theEcucparameterdefPackage);
+        return theEcucparameterdefPackage;
+    }
+
+    public EClass getEcucAbstractStringParamDef() {
+        return this.ecucAbstractStringParamDefEClass;
+    }
+
+    public EClass getEcucParameterDef() {
+        return this.ecucParameterDefEClass;
+    }
+
+    public EReference getEcucParameterDef_EcucParamConfContainerDef() {
+        return (EReference)this.ecucParameterDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucParameterDef_Derivation() {
+        return (EReference)this.ecucParameterDefEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EAttribute getEcucParameterDef_SymbolicNameValue() {
+        return (EAttribute)this.ecucParameterDefEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EAttribute getEcucParameterDef_WithAuto() {
+        return (EAttribute)this.ecucParameterDefEClass.getEStructuralFeatures().get(3);
+    }
+
+    public EClass getEcucCommonAttributes() {
+        return this.ecucCommonAttributesEClass;
+    }
+
+    public EReference getEcucCommonAttributes_ConfigurationClassAffection() {
+        return (EReference)this.ecucCommonAttributesEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucCommonAttributes_ImplementationConfigClass() {
+        return (EReference)this.ecucCommonAttributesEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EAttribute getEcucCommonAttributes_Origin() {
+        return (EAttribute)this.ecucCommonAttributesEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EAttribute getEcucCommonAttributes_RequiresIndex() {
+        return (EAttribute)this.ecucCommonAttributesEClass.getEStructuralFeatures().get(3);
+    }
+
+    public EClass getEcucDefinitionElement() {
+        return this.ecucDefinitionElementEClass;
+    }
+
+    public EReference getEcucDefinitionElement_EcucCond() {
+        return (EReference)this.ecucDefinitionElementEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucDefinitionElement_LowerMultiplicity() {
+        return (EReference)this.ecucDefinitionElementEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EReference getEcucDefinitionElement_UpperMultiplicity() {
+        return (EReference)this.ecucDefinitionElementEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EReference getEcucDefinitionElement_UpperMultiplicityInfinite() {
+        return (EReference)this.ecucDefinitionElementEClass.getEStructuralFeatures().get(3);
+    }
+
+    public EClass getEcucConditionSpecification() {
+        return this.ecucConditionSpecificationEClass;
+    }
+
+    public EReference getEcucConditionSpecification_ConditionFormula() {
+        return (EReference)this.ecucConditionSpecificationEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucConditionSpecification_EcucQueries() {
+        return (EReference)this.ecucConditionSpecificationEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EReference getEcucConditionSpecification_InformalFormula() {
+        return (EReference)this.ecucConditionSpecificationEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EClass getEcucQuery() {
+        return this.ecucQueryEClass;
+    }
+
+    public EReference getEcucQuery_EcucQueryExpression() {
+        return (EReference)this.ecucQueryEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucQueryExpression() {
+        return this.ecucQueryExpressionEClass;
+    }
+
+    public EAttribute getEcucQueryExpression_Mixed() {
+        return (EAttribute)this.ecucQueryExpressionEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucQueryExpression_EcucQuery() {
+        return (EReference)this.ecucQueryExpressionEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EReference getEcucQueryExpression_ConfigElementDefGlobals() {
+        return (EReference)this.ecucQueryExpressionEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EReference getEcucQueryExpression_ConfigElementDefLocals() {
+        return (EReference)this.ecucQueryExpressionEClass.getEStructuralFeatures().get(3);
+    }
+
+    public EClass getEcucConditionFormula() {
+        return this.ecucConditionFormulaEClass;
+    }
+
+    public EReference getEcucConditionFormula_EcucConditionSpecification() {
+        return (EReference)this.ecucConditionFormulaEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucConditionFormula_EcucQueries() {
+        return (EReference)this.ecucConditionFormulaEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EReference getEcucConditionFormula_EcucQueryStrings() {
+        return (EReference)this.ecucConditionFormulaEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EClass getEcucImplementationConfigurationClass() {
+        return this.ecucImplementationConfigurationClassEClass;
+    }
+
+    public EReference getEcucImplementationConfigurationClass_EcucCommonAttributes() {
+        return (EReference)this.ecucImplementationConfigurationClassEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EAttribute getEcucImplementationConfigurationClass_ConfigClass() {
+        return (EAttribute)this.ecucImplementationConfigurationClassEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EAttribute getEcucImplementationConfigurationClass_ConfigVariant() {
+        return (EAttribute)this.ecucImplementationConfigurationClassEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EClass getEcucConfigurationClassAffection() {
+        return this.ecucConfigurationClassAffectionEClass;
+    }
+
+    public EReference getEcucConfigurationClassAffection_EcucCommonAttributes() {
+        return (EReference)this.ecucConfigurationClassAffectionEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucConfigurationClassAffection_Affecteds() {
+        return (EReference)this.ecucConfigurationClassAffectionEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EAttribute getEcucConfigurationClassAffection_AffectionKind() {
+        return (EAttribute)this.ecucConfigurationClassAffectionEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EClass getEcucDerivationSpecification() {
+        return this.ecucDerivationSpecificationEClass;
+    }
+
+    public EReference getEcucDerivationSpecification_EcucParameterDef() {
+        return (EReference)this.ecucDerivationSpecificationEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucDerivationSpecification_CalculationFormula() {
+        return (EReference)this.ecucDerivationSpecificationEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EReference getEcucDerivationSpecification_EcucQueries() {
+        return (EReference)this.ecucDerivationSpecificationEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EReference getEcucDerivationSpecification_InformalFormula() {
+        return (EReference)this.ecucDerivationSpecificationEClass.getEStructuralFeatures().get(3);
+    }
+
+    public EClass getEcucParameterDerivationFormula() {
+        return this.ecucParameterDerivationFormulaEClass;
+    }
+
+    public EReference getEcucParameterDerivationFormula_EcucDerivationSpecification() {
+        return (EReference)this.ecucParameterDerivationFormulaEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucParameterDerivationFormula_EcucQueries() {
+        return (EReference)this.ecucParameterDerivationFormulaEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EReference getEcucParameterDerivationFormula_EcucQueryStrings() {
+        return (EReference)this.ecucParameterDerivationFormulaEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EClass getEcucAddInfoParamDef() {
+        return this.ecucAddInfoParamDefEClass;
+    }
+
+    public EClass getEcucBooleanParamDef() {
+        return this.ecucBooleanParamDefEClass;
+    }
+
+    public EReference getEcucBooleanParamDef_DefaultValue() {
+        return (EReference)this.ecucBooleanParamDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucChoiceContainerDef() {
+        return this.ecucChoiceContainerDefEClass;
+    }
+
+    public EReference getEcucChoiceContainerDef_Choices() {
+        return (EReference)this.ecucChoiceContainerDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucContainerDef() {
+        return this.ecucContainerDefEClass;
+    }
+
+    public EAttribute getEcucContainerDef_PostBuildChangeable() {
+        return (EAttribute)this.ecucContainerDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucParamConfContainerDef() {
+        return this.ecucParamConfContainerDefEClass;
+    }
+
+    public EReference getEcucParamConfContainerDef_EcucChoiceContainerDef() {
+        return (EReference)this.ecucParamConfContainerDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EAttribute getEcucParamConfContainerDef_MultipleConfigurationContainer() {
+        return (EAttribute)this.ecucParamConfContainerDefEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EReference getEcucParamConfContainerDef_Parameters() {
+        return (EReference)this.ecucParamConfContainerDefEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EReference getEcucParamConfContainerDef_References() {
+        return (EReference)this.ecucParamConfContainerDefEClass.getEStructuralFeatures().get(3);
+    }
+
+    public EReference getEcucParamConfContainerDef_SubContainers() {
+        return (EReference)this.ecucParamConfContainerDefEClass.getEStructuralFeatures().get(4);
+    }
+
+    public EClass getEcucChoiceReferenceDef() {
+        return this.ecucChoiceReferenceDefEClass;
+    }
+
+    public EReference getEcucChoiceReferenceDef_Destinations() {
+        return (EReference)this.ecucChoiceReferenceDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucDefinitionCollection() {
+        return this.ecucDefinitionCollectionEClass;
+    }
+
+    public EReference getEcucDefinitionCollection_Modules() {
+        return (EReference)this.ecucDefinitionCollectionEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucModuleDef() {
+        return this.ecucModuleDefEClass;
+    }
+
+    public EAttribute getEcucModuleDef_ApiServicePrefix() {
+        return (EAttribute)this.ecucModuleDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucModuleDef_RefinedModuleDef() {
+        return (EReference)this.ecucModuleDefEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EAttribute getEcucModuleDef_SupportedConfigVariants() {
+        return (EAttribute)this.ecucModuleDefEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EReference getEcucModuleDef_Containers() {
+        return (EReference)this.ecucModuleDefEClass.getEStructuralFeatures().get(3);
+    }
+
+    public EClass getEcucEnumerationLiteralDef() {
+        return this.ecucEnumerationLiteralDefEClass;
+    }
+
+    public EReference getEcucEnumerationLiteralDef_EcucEnumerationParamDef() {
+        return (EReference)this.ecucEnumerationLiteralDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucEnumerationLiteralDef_EcucCond() {
+        return (EReference)this.ecucEnumerationLiteralDefEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EAttribute getEcucEnumerationLiteralDef_Origin() {
+        return (EAttribute)this.ecucEnumerationLiteralDefEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EClass getEcucEnumerationParamDef() {
+        return this.ecucEnumerationParamDefEClass;
+    }
+
+    public EAttribute getEcucEnumerationParamDef_DefaultValue() {
+        return (EAttribute)this.ecucEnumerationParamDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucEnumerationParamDef_Literals() {
+        return (EReference)this.ecucEnumerationParamDefEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EClass getEcucFloatParamDef() {
+        return this.ecucFloatParamDefEClass;
+    }
+
+    public EReference getEcucFloatParamDef_DefaultValue() {
+        return (EReference)this.ecucFloatParamDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucFloatParamDef_Max() {
+        return (EReference)this.ecucFloatParamDefEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EReference getEcucFloatParamDef_Min() {
+        return (EReference)this.ecucFloatParamDefEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EClass getEcucForeignReferenceDef() {
+        return this.ecucForeignReferenceDefEClass;
+    }
+
+    public EAttribute getEcucForeignReferenceDef_DestinationType() {
+        return (EAttribute)this.ecucForeignReferenceDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucFunctionNameDef() {
+        return this.ecucFunctionNameDefEClass;
+    }
+
+    public EReference getEcucFunctionNameDef_EcucFunctionNameDefVariants() {
+        return (EReference)this.ecucFunctionNameDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucFunctionNameDefConditional() {
+        return this.ecucFunctionNameDefConditionalEClass;
+    }
+
+    public EReference getEcucFunctionNameDefConditional_EcucFunctionNameDef() {
+        return (EReference)this.ecucFunctionNameDefConditionalEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucFunctionNameDefConditional_VariationPoint() {
+        return (EReference)this.ecucFunctionNameDefConditionalEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EClass getEcucFunctionNameDefContent() {
+        return this.ecucFunctionNameDefContentEClass;
+    }
+
+    public EClass getEcucAbstractStringParamDefContent() {
+        return this.ecucAbstractStringParamDefContentEClass;
+    }
+
+    public EAttribute getEcucAbstractStringParamDefContent_DefaultValue() {
+        return (EAttribute)this.ecucAbstractStringParamDefContentEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EAttribute getEcucAbstractStringParamDefContent_MaxLength() {
+        return (EAttribute)this.ecucAbstractStringParamDefContentEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EAttribute getEcucAbstractStringParamDefContent_MinLength() {
+        return (EAttribute)this.ecucAbstractStringParamDefContentEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EAttribute getEcucAbstractStringParamDefContent_RegularExpression() {
+        return (EAttribute)this.ecucAbstractStringParamDefContentEClass.getEStructuralFeatures().get(3);
+    }
+
+    public EClass getEcucInstanceReferenceDef() {
+        return this.ecucInstanceReferenceDefEClass;
+    }
+
+    public EAttribute getEcucInstanceReferenceDef_DestinationContext() {
+        return (EAttribute)this.ecucInstanceReferenceDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EAttribute getEcucInstanceReferenceDef_DestinationType() {
+        return (EAttribute)this.ecucInstanceReferenceDefEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EClass getEcucIntegerParamDef() {
+        return this.ecucIntegerParamDefEClass;
+    }
+
+    public EReference getEcucIntegerParamDef_DefaultValue() {
+        return (EReference)this.ecucIntegerParamDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucIntegerParamDef_Max() {
+        return (EReference)this.ecucIntegerParamDefEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EReference getEcucIntegerParamDef_Min() {
+        return (EReference)this.ecucIntegerParamDefEClass.getEStructuralFeatures().get(2);
+    }
+
+    public EClass getEcucLinkerSymbolDef() {
+        return this.ecucLinkerSymbolDefEClass;
+    }
+
+    public EReference getEcucLinkerSymbolDef_EcucLinkerSymbolDefVariants() {
+        return (EReference)this.ecucLinkerSymbolDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucLinkerSymbolDefConditional() {
+        return this.ecucLinkerSymbolDefConditionalEClass;
+    }
+
+    public EReference getEcucLinkerSymbolDefConditional_EcucLinkerSymbolDef() {
+        return (EReference)this.ecucLinkerSymbolDefConditionalEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucLinkerSymbolDefConditional_VariationPoint() {
+        return (EReference)this.ecucLinkerSymbolDefConditionalEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EClass getEcucLinkerSymbolDefContent() {
+        return this.ecucLinkerSymbolDefContentEClass;
+    }
+
+    public EClass getEcucMultilineStringParamDef() {
+        return this.ecucMultilineStringParamDefEClass;
+    }
+
+    public EReference getEcucMultilineStringParamDef_EcucMultilineStringParamDefVariants() {
+        return (EReference)this.ecucMultilineStringParamDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucMultilineStringParamDefConditional() {
+        return this.ecucMultilineStringParamDefConditionalEClass;
+    }
+
+    public EReference getEcucMultilineStringParamDefConditional_EcucMultilineStringParamDef() {
+        return (EReference)this.ecucMultilineStringParamDefConditionalEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucMultilineStringParamDefConditional_VariationPoint() {
+        return (EReference)this.ecucMultilineStringParamDefConditionalEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EClass getEcucMultilineStringParamDefContent() {
+        return this.ecucMultilineStringParamDefContentEClass;
+    }
+
+    public EClass getEcucReferenceDef() {
+        return this.ecucReferenceDefEClass;
+    }
+
+    public EReference getEcucReferenceDef_Destination() {
+        return (EReference)this.ecucReferenceDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucStringParamDef() {
+        return this.ecucStringParamDefEClass;
+    }
+
+    public EReference getEcucStringParamDef_EcucStringParamDefVariants() {
+        return (EReference)this.ecucStringParamDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucStringParamDefConditional() {
+        return this.ecucStringParamDefConditionalEClass;
+    }
+
+    public EReference getEcucStringParamDefConditional_EcucStringParamDef() {
+        return (EReference)this.ecucStringParamDefConditionalEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EReference getEcucStringParamDefConditional_VariationPoint() {
+        return (EReference)this.ecucStringParamDefConditionalEClass.getEStructuralFeatures().get(1);
+    }
+
+    public EClass getEcucStringParamDefContent() {
+        return this.ecucStringParamDefContentEClass;
+    }
+
+    public EClass getEcucSymbolicNameReferenceDef() {
+        return this.ecucSymbolicNameReferenceDefEClass;
+    }
+
+    public EReference getEcucSymbolicNameReferenceDef_Destination() {
+        return (EReference)this.ecucSymbolicNameReferenceDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EClass getEcucAbstractReferenceDef() {
+        return this.ecucAbstractReferenceDefEClass;
+    }
+
+    public EReference getEcucAbstractReferenceDef_EcucParamConfContainerDef() {
+        return (EReference)this.ecucAbstractReferenceDefEClass.getEStructuralFeatures().get(0);
+    }
+
+    public EEnum getEcucConfigurationClassEnum() {
+        return this.ecucConfigurationClassEnumEEnum;
+    }
+
+    public EEnum getEcucConfigurationVariantEnum() {
+        return this.ecucConfigurationVariantEnumEEnum;
+    }
+
+    public EEnum getEcucAffectionEnum() {
+        return this.ecucAffectionEnumEEnum;
+    }
+
+    public EcucparameterdefFactory getEcucparameterdefFactory() {
+        return (EcucparameterdefFactory)this.getEFactoryInstance();
+    }
+
+    public void createPackageContents() {
+        if (this.isCreated) {
+            return;
+        }
+        this.isCreated = true;
+        this.ecucAbstractStringParamDefEClass = this.createEClass(0);
+        this.ecucParameterDefEClass = this.createEClass(1);
+        this.createEReference(this.ecucParameterDefEClass, 26);
+        this.createEReference(this.ecucParameterDefEClass, 27);
+        this.createEAttribute(this.ecucParameterDefEClass, 28);
+        this.createEAttribute(this.ecucParameterDefEClass, 29);
+        this.ecucCommonAttributesEClass = this.createEClass(2);
+        this.createEReference(this.ecucCommonAttributesEClass, 22);
+        this.createEReference(this.ecucCommonAttributesEClass, 23);
+        this.createEAttribute(this.ecucCommonAttributesEClass, 24);
+        this.createEAttribute(this.ecucCommonAttributesEClass, 25);
+        this.ecucDefinitionElementEClass = this.createEClass(3);
+        this.createEReference(this.ecucDefinitionElementEClass, 18);
+        this.createEReference(this.ecucDefinitionElementEClass, 19);
+        this.createEReference(this.ecucDefinitionElementEClass, 20);
+        this.createEReference(this.ecucDefinitionElementEClass, 21);
+        this.ecucConditionSpecificationEClass = this.createEClass(4);
+        this.createEReference(this.ecucConditionSpecificationEClass, 4);
+        this.createEReference(this.ecucConditionSpecificationEClass, 5);
+        this.createEReference(this.ecucConditionSpecificationEClass, 6);
+        this.ecucQueryEClass = this.createEClass(5);
+        this.createEReference(this.ecucQueryEClass, 18);
+        this.ecucQueryExpressionEClass = this.createEClass(6);
+        this.createEAttribute(this.ecucQueryExpressionEClass, 4);
+        this.createEReference(this.ecucQueryExpressionEClass, 5);
+        this.createEReference(this.ecucQueryExpressionEClass, 6);
+        this.createEReference(this.ecucQueryExpressionEClass, 7);
+        this.ecucConditionFormulaEClass = this.createEClass(7);
+        this.createEReference(this.ecucConditionFormulaEClass, 5);
+        this.createEReference(this.ecucConditionFormulaEClass, 6);
+        this.createEReference(this.ecucConditionFormulaEClass, 7);
+        this.ecucImplementationConfigurationClassEClass = this.createEClass(8);
+        this.createEReference(this.ecucImplementationConfigurationClassEClass, 4);
+        this.createEAttribute(this.ecucImplementationConfigurationClassEClass, 5);
+        this.createEAttribute(this.ecucImplementationConfigurationClassEClass, 6);
+        this.ecucConfigurationClassAffectionEClass = this.createEClass(9);
+        this.createEReference(this.ecucConfigurationClassAffectionEClass, 4);
+        this.createEReference(this.ecucConfigurationClassAffectionEClass, 5);
+        this.createEAttribute(this.ecucConfigurationClassAffectionEClass, 6);
+        this.ecucDerivationSpecificationEClass = this.createEClass(10);
+        this.createEReference(this.ecucDerivationSpecificationEClass, 4);
+        this.createEReference(this.ecucDerivationSpecificationEClass, 5);
+        this.createEReference(this.ecucDerivationSpecificationEClass, 6);
+        this.createEReference(this.ecucDerivationSpecificationEClass, 7);
+        this.ecucParameterDerivationFormulaEClass = this.createEClass(11);
+        this.createEReference(this.ecucParameterDerivationFormulaEClass, 5);
+        this.createEReference(this.ecucParameterDerivationFormulaEClass, 6);
+        this.createEReference(this.ecucParameterDerivationFormulaEClass, 7);
+        this.ecucAddInfoParamDefEClass = this.createEClass(12);
+        this.ecucBooleanParamDefEClass = this.createEClass(13);
+        this.createEReference(this.ecucBooleanParamDefEClass, 30);
+        this.ecucChoiceContainerDefEClass = this.createEClass(14);
+        this.createEReference(this.ecucChoiceContainerDefEClass, 23);
+        this.ecucContainerDefEClass = this.createEClass(15);
+        this.createEAttribute(this.ecucContainerDefEClass, 22);
+        this.ecucParamConfContainerDefEClass = this.createEClass(16);
+        this.createEReference(this.ecucParamConfContainerDefEClass, 23);
+        this.createEAttribute(this.ecucParamConfContainerDefEClass, 24);
+        this.createEReference(this.ecucParamConfContainerDefEClass, 25);
+        this.createEReference(this.ecucParamConfContainerDefEClass, 26);
+        this.createEReference(this.ecucParamConfContainerDefEClass, 27);
+        this.ecucChoiceReferenceDefEClass = this.createEClass(17);
+        this.createEReference(this.ecucChoiceReferenceDefEClass, 27);
+        this.ecucDefinitionCollectionEClass = this.createEClass(18);
+        this.createEReference(this.ecucDefinitionCollectionEClass, 22);
+        this.ecucModuleDefEClass = this.createEClass(19);
+        this.createEAttribute(this.ecucModuleDefEClass, 26);
+        this.createEReference(this.ecucModuleDefEClass, 27);
+        this.createEAttribute(this.ecucModuleDefEClass, 28);
+        this.createEReference(this.ecucModuleDefEClass, 29);
+        this.ecucEnumerationLiteralDefEClass = this.createEClass(20);
+        this.createEReference(this.ecucEnumerationLiteralDefEClass, 18);
+        this.createEReference(this.ecucEnumerationLiteralDefEClass, 19);
+        this.createEAttribute(this.ecucEnumerationLiteralDefEClass, 20);
+        this.ecucEnumerationParamDefEClass = this.createEClass(21);
+        this.createEAttribute(this.ecucEnumerationParamDefEClass, 30);
+        this.createEReference(this.ecucEnumerationParamDefEClass, 31);
+        this.ecucFloatParamDefEClass = this.createEClass(22);
+        this.createEReference(this.ecucFloatParamDefEClass, 30);
+        this.createEReference(this.ecucFloatParamDefEClass, 31);
+        this.createEReference(this.ecucFloatParamDefEClass, 32);
+        this.ecucForeignReferenceDefEClass = this.createEClass(23);
+        this.createEAttribute(this.ecucForeignReferenceDefEClass, 27);
+        this.ecucFunctionNameDefEClass = this.createEClass(24);
+        this.createEReference(this.ecucFunctionNameDefEClass, 30);
+        this.ecucFunctionNameDefConditionalEClass = this.createEClass(25);
+        this.createEReference(this.ecucFunctionNameDefConditionalEClass, 8);
+        this.createEReference(this.ecucFunctionNameDefConditionalEClass, 9);
+        this.ecucFunctionNameDefContentEClass = this.createEClass(26);
+        this.ecucAbstractStringParamDefContentEClass = this.createEClass(27);
+        this.createEAttribute(this.ecucAbstractStringParamDefContentEClass, 4);
+        this.createEAttribute(this.ecucAbstractStringParamDefContentEClass, 5);
+        this.createEAttribute(this.ecucAbstractStringParamDefContentEClass, 6);
+        this.createEAttribute(this.ecucAbstractStringParamDefContentEClass, 7);
+        this.ecucInstanceReferenceDefEClass = this.createEClass(28);
+        this.createEAttribute(this.ecucInstanceReferenceDefEClass, 27);
+        this.createEAttribute(this.ecucInstanceReferenceDefEClass, 28);
+        this.ecucIntegerParamDefEClass = this.createEClass(29);
+        this.createEReference(this.ecucIntegerParamDefEClass, 30);
+        this.createEReference(this.ecucIntegerParamDefEClass, 31);
+        this.createEReference(this.ecucIntegerParamDefEClass, 32);
+        this.ecucLinkerSymbolDefEClass = this.createEClass(30);
+        this.createEReference(this.ecucLinkerSymbolDefEClass, 30);
+        this.ecucLinkerSymbolDefConditionalEClass = this.createEClass(31);
+        this.createEReference(this.ecucLinkerSymbolDefConditionalEClass, 8);
+        this.createEReference(this.ecucLinkerSymbolDefConditionalEClass, 9);
+        this.ecucLinkerSymbolDefContentEClass = this.createEClass(32);
+        this.ecucMultilineStringParamDefEClass = this.createEClass(33);
+        this.createEReference(this.ecucMultilineStringParamDefEClass, 30);
+        this.ecucMultilineStringParamDefConditionalEClass = this.createEClass(34);
+        this.createEReference(this.ecucMultilineStringParamDefConditionalEClass, 8);
+        this.createEReference(this.ecucMultilineStringParamDefConditionalEClass, 9);
+        this.ecucMultilineStringParamDefContentEClass = this.createEClass(35);
+        this.ecucReferenceDefEClass = this.createEClass(36);
+        this.createEReference(this.ecucReferenceDefEClass, 27);
+        this.ecucStringParamDefEClass = this.createEClass(37);
+        this.createEReference(this.ecucStringParamDefEClass, 30);
+        this.ecucStringParamDefConditionalEClass = this.createEClass(38);
+        this.createEReference(this.ecucStringParamDefConditionalEClass, 8);
+        this.createEReference(this.ecucStringParamDefConditionalEClass, 9);
+        this.ecucStringParamDefContentEClass = this.createEClass(39);
+        this.ecucSymbolicNameReferenceDefEClass = this.createEClass(40);
+        this.createEReference(this.ecucSymbolicNameReferenceDefEClass, 27);
+        this.ecucAbstractReferenceDefEClass = this.createEClass(41);
+        this.createEReference(this.ecucAbstractReferenceDefEClass, 26);
+        this.ecucConfigurationClassEnumEEnum = this.createEEnum(42);
+        this.ecucConfigurationVariantEnumEEnum = this.createEEnum(43);
+        this.ecucAffectionEnumEEnum = this.createEEnum(44);
+    }
+
+    public void initializePackageContents() {
+        if (this.isInitialized) {
+            return;
+        }
+        this.isInitialized = true;
+        this.setName("ecucparameterdef");
+        this.setNsPrefix("");
+        this.setNsURI("http://autosar.org/schema/r4.0/autosar40/ecucpd");
+        GecucparameterdefPackage theGecucparameterdefPackage = (GecucparameterdefPackage)EPackage.Registry.INSTANCE.getEPackage("http://artop.org/gautosar/pd");
+        PrimitivetypesPackage thePrimitivetypesPackage = (PrimitivetypesPackage)EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/pt");
+        IdentifiablePackage theIdentifiablePackage = (IdentifiablePackage)EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/i");
+        autosar40.genericstructure.varianthandling.VarianthandlingPackage theVarianthandlingPackage = (autosar40.genericstructure.varianthandling.VarianthandlingPackage)EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/vh");
+        ArobjectPackage theArobjectPackage = (ArobjectPackage)EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/ao");
+        FormulaPackage theFormulaPackage = (FormulaPackage)EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/d/be/formula");
+        FormulalanguagePackage theFormulalanguagePackage = (FormulalanguagePackage)EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/fl");
+        ArpackagePackage theArpackagePackage = (ArpackagePackage)EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/gs/gtc/arp");
+        AbstractblueprintstructurePackage theAbstractblueprintstructurePackage = (AbstractblueprintstructurePackage)EPackage.Registry.INSTANCE.getEPackage("http://autosar.org/schema/r4.0/autosar40/standardization/abs");
+        this.ecucAbstractStringParamDefEClass.getESuperTypes().add((Object)this.getEcucParameterDef());
+        this.ecucAbstractStringParamDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGAbstractStringParamDef());
+        this.ecucParameterDefEClass.getESuperTypes().add((Object)this.getEcucCommonAttributes());
+        this.ecucParameterDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGConfigParameter());
+        this.ecucCommonAttributesEClass.getESuperTypes().add((Object)this.getEcucDefinitionElement());
+        this.ecucCommonAttributesEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGCommonConfigurationAttributes());
+        this.ecucDefinitionElementEClass.getESuperTypes().add((Object)theIdentifiablePackage.getIdentifiable());
+        this.ecucDefinitionElementEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGParamConfMultiplicity());
+        this.ecucConditionSpecificationEClass.getESuperTypes().add((Object)theArobjectPackage.getARObject());
+        this.ecucQueryEClass.getESuperTypes().add((Object)theIdentifiablePackage.getIdentifiable());
+        this.ecucQueryExpressionEClass.getESuperTypes().add((Object)theArobjectPackage.getARObject());
+        this.ecucConditionFormulaEClass.getESuperTypes().add((Object)theFormulalanguagePackage.getFormulaExpression());
+        this.ecucImplementationConfigurationClassEClass.getESuperTypes().add((Object)theArobjectPackage.getARObject());
+        this.ecucConfigurationClassAffectionEClass.getESuperTypes().add((Object)theArobjectPackage.getARObject());
+        this.ecucDerivationSpecificationEClass.getESuperTypes().add((Object)theArobjectPackage.getARObject());
+        this.ecucParameterDerivationFormulaEClass.getESuperTypes().add((Object)theFormulalanguagePackage.getFormulaExpression());
+        this.ecucAddInfoParamDefEClass.getESuperTypes().add((Object)this.getEcucParameterDef());
+        this.ecucBooleanParamDefEClass.getESuperTypes().add((Object)this.getEcucParameterDef());
+        this.ecucBooleanParamDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGBooleanParamDef());
+        this.ecucChoiceContainerDefEClass.getESuperTypes().add((Object)this.getEcucContainerDef());
+        this.ecucChoiceContainerDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGChoiceContainerDef());
+        this.ecucContainerDefEClass.getESuperTypes().add((Object)this.getEcucDefinitionElement());
+        this.ecucContainerDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGContainerDef());
+        this.ecucParamConfContainerDefEClass.getESuperTypes().add((Object)this.getEcucContainerDef());
+        this.ecucParamConfContainerDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGParamConfContainerDef());
+        this.ecucChoiceReferenceDefEClass.getESuperTypes().add((Object)this.getEcucAbstractReferenceDef());
+        this.ecucChoiceReferenceDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGChoiceReferenceDef());
+        this.ecucDefinitionCollectionEClass.getESuperTypes().add((Object)theArpackagePackage.getARElement());
+        this.ecucDefinitionCollectionEClass.getESuperTypes().add((Object)theAbstractblueprintstructurePackage.getAtpBlueprint());
+        this.ecucDefinitionCollectionEClass.getESuperTypes().add((Object)theAbstractblueprintstructurePackage.getAtpBlueprintable());
+        this.ecucModuleDefEClass.getESuperTypes().add((Object)theArpackagePackage.getARElement());
+        this.ecucModuleDefEClass.getESuperTypes().add((Object)theAbstractblueprintstructurePackage.getAtpBlueprint());
+        this.ecucModuleDefEClass.getESuperTypes().add((Object)theAbstractblueprintstructurePackage.getAtpBlueprintable());
+        this.ecucModuleDefEClass.getESuperTypes().add((Object)this.getEcucDefinitionElement());
+        this.ecucModuleDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGModuleDef());
+        this.ecucEnumerationLiteralDefEClass.getESuperTypes().add((Object)theIdentifiablePackage.getIdentifiable());
+        this.ecucEnumerationLiteralDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGEnumerationLiteralDef());
+        this.ecucEnumerationParamDefEClass.getESuperTypes().add((Object)this.getEcucParameterDef());
+        this.ecucEnumerationParamDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGEnumerationParamDef());
+        this.ecucFloatParamDefEClass.getESuperTypes().add((Object)this.getEcucParameterDef());
+        this.ecucFloatParamDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGFloatParamDef());
+        this.ecucForeignReferenceDefEClass.getESuperTypes().add((Object)this.getEcucAbstractReferenceDef());
+        this.ecucForeignReferenceDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGForeignReferenceDef());
+        this.ecucFunctionNameDefEClass.getESuperTypes().add((Object)this.getEcucAbstractStringParamDef());
+        this.ecucFunctionNameDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGFunctionNameDef());
+        this.ecucFunctionNameDefConditionalEClass.getESuperTypes().add((Object)this.getEcucFunctionNameDefContent());
+        this.ecucFunctionNameDefContentEClass.getESuperTypes().add((Object)this.getEcucAbstractStringParamDefContent());
+        this.ecucAbstractStringParamDefContentEClass.getESuperTypes().add((Object)theArobjectPackage.getARObject());
+        this.ecucInstanceReferenceDefEClass.getESuperTypes().add((Object)this.getEcucAbstractReferenceDef());
+        this.ecucInstanceReferenceDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGInstanceReferenceDef());
+        this.ecucIntegerParamDefEClass.getESuperTypes().add((Object)this.getEcucParameterDef());
+        this.ecucIntegerParamDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGIntegerParamDef());
+        this.ecucLinkerSymbolDefEClass.getESuperTypes().add((Object)this.getEcucAbstractStringParamDef());
+        this.ecucLinkerSymbolDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGLinkerSymbolDef());
+        this.ecucLinkerSymbolDefConditionalEClass.getESuperTypes().add((Object)this.getEcucLinkerSymbolDefContent());
+        this.ecucLinkerSymbolDefContentEClass.getESuperTypes().add((Object)this.getEcucAbstractStringParamDefContent());
+        this.ecucMultilineStringParamDefEClass.getESuperTypes().add((Object)this.getEcucAbstractStringParamDef());
+        this.ecucMultilineStringParamDefConditionalEClass.getESuperTypes().add((Object)this.getEcucMultilineStringParamDefContent());
+        this.ecucMultilineStringParamDefContentEClass.getESuperTypes().add((Object)this.getEcucAbstractStringParamDefContent());
+        this.ecucReferenceDefEClass.getESuperTypes().add((Object)this.getEcucAbstractReferenceDef());
+        this.ecucReferenceDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGReferenceDef());
+        this.ecucStringParamDefEClass.getESuperTypes().add((Object)this.getEcucAbstractStringParamDef());
+        this.ecucStringParamDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGStringParamDef());
+        this.ecucStringParamDefConditionalEClass.getESuperTypes().add((Object)this.getEcucStringParamDefContent());
+        this.ecucStringParamDefContentEClass.getESuperTypes().add((Object)this.getEcucAbstractStringParamDefContent());
+        this.ecucSymbolicNameReferenceDefEClass.getESuperTypes().add((Object)this.getEcucAbstractReferenceDef());
+        this.ecucSymbolicNameReferenceDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGSymbolicNameReferenceDef());
+        this.ecucAbstractReferenceDefEClass.getESuperTypes().add((Object)this.getEcucCommonAttributes());
+        this.ecucAbstractReferenceDefEClass.getESuperTypes().add((Object)theGecucparameterdefPackage.getGConfigReference());
+        this.initEClass(this.ecucAbstractStringParamDefEClass, EcucAbstractStringParamDef.class, "EcucAbstractStringParamDef", true, false, true);
+        this.initEClass(this.ecucParameterDefEClass, EcucParameterDef.class, "EcucParameterDef", true, false, true);
+        this.initEReference(this.getEcucParameterDef_EcucParamConfContainerDef(), (EClassifier)this.getEcucParamConfContainerDef(), this.getEcucParamConfContainerDef_Parameters(), "ecucParamConfContainerDef", null, 0, 1, EcucParameterDef.class, true, false, true, false, false, false, true, false, true);
+        this.initEReference(this.getEcucParameterDef_Derivation(), (EClassifier)this.getEcucDerivationSpecification(), this.getEcucDerivationSpecification_EcucParameterDef(), "derivation", null, 0, 1, EcucParameterDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEAttribute(this.getEcucParameterDef_SymbolicNameValue(), (EClassifier)thePrimitivetypesPackage.getBoolean(), "symbolicNameValue", "false", 0, 1, EcucParameterDef.class, false, false, true, true, false, true, false, true);
+        this.initEAttribute(this.getEcucParameterDef_WithAuto(), (EClassifier)thePrimitivetypesPackage.getBoolean(), "withAuto", "false", 0, 1, EcucParameterDef.class, false, false, true, true, false, true, false, true);
+        this.initEClass(this.ecucCommonAttributesEClass, EcucCommonAttributes.class, "EcucCommonAttributes", true, false, true);
+        this.initEReference(this.getEcucCommonAttributes_ConfigurationClassAffection(), (EClassifier)this.getEcucConfigurationClassAffection(), this.getEcucConfigurationClassAffection_EcucCommonAttributes(), "configurationClassAffection", null, 0, 1, EcucCommonAttributes.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucCommonAttributes_ImplementationConfigClass(), (EClassifier)this.getEcucImplementationConfigurationClass(), this.getEcucImplementationConfigurationClass_EcucCommonAttributes(), "implementationConfigClass", null, 0, -1, EcucCommonAttributes.class, false, false, true, true, false, false, true, false, true);
+        this.initEAttribute(this.getEcucCommonAttributes_Origin(), (EClassifier)thePrimitivetypesPackage.getString(), "origin", "", 0, 1, EcucCommonAttributes.class, false, false, true, true, false, true, false, true);
+        this.initEAttribute(this.getEcucCommonAttributes_RequiresIndex(), (EClassifier)thePrimitivetypesPackage.getBoolean(), "requiresIndex", "false", 0, 1, EcucCommonAttributes.class, false, false, true, true, false, true, false, true);
+        this.initEClass(this.ecucDefinitionElementEClass, EcucDefinitionElement.class, "EcucDefinitionElement", true, false, true);
+        this.initEReference(this.getEcucDefinitionElement_EcucCond(), (EClassifier)this.getEcucConditionSpecification(), null, "ecucCond", null, 0, 1, EcucDefinitionElement.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucDefinitionElement_LowerMultiplicity(), (EClassifier)theVarianthandlingPackage.getPositiveIntegerValueVariationPoint(), null, "lowerMultiplicity", null, 0, 1, EcucDefinitionElement.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucDefinitionElement_UpperMultiplicity(), (EClassifier)theVarianthandlingPackage.getPositiveIntegerValueVariationPoint(), null, "upperMultiplicity", null, 0, 1, EcucDefinitionElement.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucDefinitionElement_UpperMultiplicityInfinite(), (EClassifier)theVarianthandlingPackage.getBooleanValueVariationPoint(), null, "upperMultiplicityInfinite", null, 0, 1, EcucDefinitionElement.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucConditionSpecificationEClass, EcucConditionSpecification.class, "EcucConditionSpecification", false, false, true);
+        this.initEReference(this.getEcucConditionSpecification_ConditionFormula(), (EClassifier)this.getEcucConditionFormula(), this.getEcucConditionFormula_EcucConditionSpecification(), "conditionFormula", null, 0, 1, EcucConditionSpecification.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucConditionSpecification_EcucQueries(), (EClassifier)this.getEcucQuery(), null, "ecucQueries", null, 0, -1, EcucConditionSpecification.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucConditionSpecification_InformalFormula(), (EClassifier)theFormulaPackage.getMlFormula(), null, "informalFormula", null, 0, 1, EcucConditionSpecification.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucQueryEClass, EcucQuery.class, "EcucQuery", false, false, true);
+        this.initEReference(this.getEcucQuery_EcucQueryExpression(), (EClassifier)this.getEcucQueryExpression(), this.getEcucQueryExpression_EcucQuery(), "ecucQueryExpression", null, 0, 1, EcucQuery.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucQueryExpressionEClass, EcucQueryExpression.class, "EcucQueryExpression", false, false, true);
+        this.initEAttribute(this.getEcucQueryExpression_Mixed(), (EClassifier)this.ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, EcucQueryExpression.class, false, false, true, true, false, true, false, true);
+        this.initEReference(this.getEcucQueryExpression_EcucQuery(), (EClassifier)this.getEcucQuery(), this.getEcucQuery_EcucQueryExpression(), "ecucQuery", null, 0, 1, EcucQueryExpression.class, true, true, true, false, false, false, false, true, true);
+        this.initEReference(this.getEcucQueryExpression_ConfigElementDefGlobals(), (EClassifier)this.getEcucDefinitionElement(), null, "configElementDefGlobals", null, 0, -1, EcucQueryExpression.class, true, true, true, false, true, false, false, true, true);
+        this.initEReference(this.getEcucQueryExpression_ConfigElementDefLocals(), (EClassifier)this.getEcucDefinitionElement(), null, "configElementDefLocals", null, 0, -1, EcucQueryExpression.class, true, true, true, false, true, false, false, true, true);
+        this.addEOperation(this.ecucQueryExpressionEClass, (EClassifier)this.ecorePackage.getEString(), "getMixedText", 0, 1, true, true);
+        EOperation op = this.addEOperation(this.ecucQueryExpressionEClass, null, "setMixedText", 0, 1, true, true);
+        this.addEParameter(op, (EClassifier)this.ecorePackage.getEString(), "text", 0, 1, true, true);
+        this.initEClass(this.ecucConditionFormulaEClass, EcucConditionFormula.class, "EcucConditionFormula", false, false, true);
+        this.initEReference(this.getEcucConditionFormula_EcucConditionSpecification(), (EClassifier)this.getEcucConditionSpecification(), this.getEcucConditionSpecification_ConditionFormula(), "ecucConditionSpecification", null, 0, 1, EcucConditionFormula.class, true, true, true, false, false, false, false, true, true);
+        this.initEReference(this.getEcucConditionFormula_EcucQueries(), (EClassifier)this.getEcucQuery(), null, "ecucQueries", null, 0, -1, EcucConditionFormula.class, true, true, true, false, true, false, false, true, true);
+        this.initEReference(this.getEcucConditionFormula_EcucQueryStrings(), (EClassifier)this.getEcucQuery(), null, "ecucQueryStrings", null, 0, -1, EcucConditionFormula.class, true, true, true, false, true, false, false, true, true);
+        this.initEClass(this.ecucImplementationConfigurationClassEClass, EcucImplementationConfigurationClass.class, "EcucImplementationConfigurationClass", false, false, true);
+        this.initEReference(this.getEcucImplementationConfigurationClass_EcucCommonAttributes(), (EClassifier)this.getEcucCommonAttributes(), this.getEcucCommonAttributes_ImplementationConfigClass(), "ecucCommonAttributes", null, 0, 1, EcucImplementationConfigurationClass.class, true, false, true, false, false, false, true, false, true);
+        this.initEAttribute(this.getEcucImplementationConfigurationClass_ConfigClass(), (EClassifier)this.getEcucConfigurationClassEnum(), "configClass", "PUBLISHED-INFORMATION", 0, 1, EcucImplementationConfigurationClass.class, false, false, true, true, false, true, false, true);
+        this.initEAttribute(this.getEcucImplementationConfigurationClass_ConfigVariant(), (EClassifier)this.getEcucConfigurationVariantEnum(), "configVariant", "PRECONFIGURED-CONFIGURATION", 0, 1, EcucImplementationConfigurationClass.class, false, false, true, true, false, true, false, true);
+        this.initEClass(this.ecucConfigurationClassAffectionEClass, EcucConfigurationClassAffection.class, "EcucConfigurationClassAffection", false, false, true);
+        this.initEReference(this.getEcucConfigurationClassAffection_EcucCommonAttributes(), (EClassifier)this.getEcucCommonAttributes(), this.getEcucCommonAttributes_ConfigurationClassAffection(), "ecucCommonAttributes", null, 0, 1, EcucConfigurationClassAffection.class, true, false, true, false, false, false, true, false, true);
+        this.initEReference(this.getEcucConfigurationClassAffection_Affecteds(), (EClassifier)this.getEcucCommonAttributes(), null, "affecteds", null, 0, -1, EcucConfigurationClassAffection.class, false, false, true, false, true, false, true, false, true);
+        this.initEAttribute(this.getEcucConfigurationClassAffection_AffectionKind(), (EClassifier)this.getEcucAffectionEnum(), "affectionKind", "NO-AFFECT", 0, 1, EcucConfigurationClassAffection.class, false, false, true, true, false, true, false, true);
+        this.initEClass(this.ecucDerivationSpecificationEClass, EcucDerivationSpecification.class, "EcucDerivationSpecification", false, false, true);
+        this.initEReference(this.getEcucDerivationSpecification_EcucParameterDef(), (EClassifier)this.getEcucParameterDef(), this.getEcucParameterDef_Derivation(), "ecucParameterDef", null, 0, 1, EcucDerivationSpecification.class, true, false, true, false, false, false, true, false, true);
+        this.initEReference(this.getEcucDerivationSpecification_CalculationFormula(), (EClassifier)this.getEcucParameterDerivationFormula(), this.getEcucParameterDerivationFormula_EcucDerivationSpecification(), "calculationFormula", null, 0, 1, EcucDerivationSpecification.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucDerivationSpecification_EcucQueries(), (EClassifier)this.getEcucQuery(), null, "ecucQueries", null, 0, -1, EcucDerivationSpecification.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucDerivationSpecification_InformalFormula(), (EClassifier)theFormulaPackage.getMlFormula(), null, "informalFormula", null, 0, 1, EcucDerivationSpecification.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucParameterDerivationFormulaEClass, EcucParameterDerivationFormula.class, "EcucParameterDerivationFormula", false, false, true);
+        this.initEReference(this.getEcucParameterDerivationFormula_EcucDerivationSpecification(), (EClassifier)this.getEcucDerivationSpecification(), this.getEcucDerivationSpecification_CalculationFormula(), "ecucDerivationSpecification", null, 0, 1, EcucParameterDerivationFormula.class, true, true, true, false, false, false, false, true, true);
+        this.initEReference(this.getEcucParameterDerivationFormula_EcucQueries(), (EClassifier)this.getEcucQuery(), null, "ecucQueries", null, 0, -1, EcucParameterDerivationFormula.class, true, true, true, false, true, false, false, true, true);
+        this.initEReference(this.getEcucParameterDerivationFormula_EcucQueryStrings(), (EClassifier)this.getEcucQuery(), null, "ecucQueryStrings", null, 0, -1, EcucParameterDerivationFormula.class, true, true, true, false, true, false, false, true, true);
+        this.initEClass(this.ecucAddInfoParamDefEClass, EcucAddInfoParamDef.class, "EcucAddInfoParamDef", false, false, true);
+        this.initEClass(this.ecucBooleanParamDefEClass, EcucBooleanParamDef.class, "EcucBooleanParamDef", false, false, true);
+        this.initEReference(this.getEcucBooleanParamDef_DefaultValue(), (EClassifier)theVarianthandlingPackage.getBooleanValueVariationPoint(), null, "defaultValue", null, 0, 1, EcucBooleanParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucChoiceContainerDefEClass, EcucChoiceContainerDef.class, "EcucChoiceContainerDef", false, false, true);
+        this.initEReference(this.getEcucChoiceContainerDef_Choices(), (EClassifier)this.getEcucParamConfContainerDef(), this.getEcucParamConfContainerDef_EcucChoiceContainerDef(), "choices", null, 0, -1, EcucChoiceContainerDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucContainerDefEClass, EcucContainerDef.class, "EcucContainerDef", true, false, true);
+        this.initEAttribute(this.getEcucContainerDef_PostBuildChangeable(), (EClassifier)thePrimitivetypesPackage.getBoolean(), "postBuildChangeable", "false", 0, 1, EcucContainerDef.class, false, false, true, true, false, true, false, true);
+        this.initEClass(this.ecucParamConfContainerDefEClass, EcucParamConfContainerDef.class, "EcucParamConfContainerDef", false, false, true);
+        this.initEReference(this.getEcucParamConfContainerDef_EcucChoiceContainerDef(), (EClassifier)this.getEcucChoiceContainerDef(), this.getEcucChoiceContainerDef_Choices(), "ecucChoiceContainerDef", null, 0, 1, EcucParamConfContainerDef.class, true, false, true, false, false, false, true, false, true);
+        this.initEAttribute(this.getEcucParamConfContainerDef_MultipleConfigurationContainer(), (EClassifier)thePrimitivetypesPackage.getBoolean(), "multipleConfigurationContainer", "false", 0, 1, EcucParamConfContainerDef.class, false, false, true, true, false, true, false, true);
+        this.initEReference(this.getEcucParamConfContainerDef_Parameters(), (EClassifier)this.getEcucParameterDef(), this.getEcucParameterDef_EcucParamConfContainerDef(), "parameters", null, 0, -1, EcucParamConfContainerDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucParamConfContainerDef_References(), (EClassifier)this.getEcucAbstractReferenceDef(), this.getEcucAbstractReferenceDef_EcucParamConfContainerDef(), "references", null, 0, -1, EcucParamConfContainerDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucParamConfContainerDef_SubContainers(), (EClassifier)this.getEcucContainerDef(), null, "subContainers", null, 0, -1, EcucParamConfContainerDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucChoiceReferenceDefEClass, EcucChoiceReferenceDef.class, "EcucChoiceReferenceDef", false, false, true);
+        this.initEReference(this.getEcucChoiceReferenceDef_Destinations(), (EClassifier)this.getEcucParamConfContainerDef(), null, "destinations", null, 0, -1, EcucChoiceReferenceDef.class, false, false, true, false, true, false, true, false, true);
+        this.initEClass(this.ecucDefinitionCollectionEClass, EcucDefinitionCollection.class, "EcucDefinitionCollection", false, false, true);
+        this.initEReference(this.getEcucDefinitionCollection_Modules(), (EClassifier)this.getEcucModuleDef(), null, "modules", null, 0, -1, EcucDefinitionCollection.class, false, false, true, false, true, false, true, false, true);
+        this.initEClass(this.ecucModuleDefEClass, EcucModuleDef.class, "EcucModuleDef", false, false, true);
+        this.initEAttribute(this.getEcucModuleDef_ApiServicePrefix(), (EClassifier)thePrimitivetypesPackage.getCIdentifier(), "apiServicePrefix", "", 0, 1, EcucModuleDef.class, false, false, true, true, false, true, false, true);
+        this.initEReference(this.getEcucModuleDef_RefinedModuleDef(), (EClassifier)this.getEcucModuleDef(), null, "refinedModuleDef", null, 0, 1, EcucModuleDef.class, false, false, true, false, true, false, true, false, true);
+        this.initEAttribute(this.getEcucModuleDef_SupportedConfigVariants(), (EClassifier)this.getEcucConfigurationVariantEnum(), "supportedConfigVariants", "PRECONFIGURED-CONFIGURATION", 0, -1, EcucModuleDef.class, false, false, true, true, false, true, false, true);
+        this.initEReference(this.getEcucModuleDef_Containers(), (EClassifier)this.getEcucContainerDef(), null, "containers", null, 0, -1, EcucModuleDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucEnumerationLiteralDefEClass, EcucEnumerationLiteralDef.class, "EcucEnumerationLiteralDef", false, false, true);
+        this.initEReference(this.getEcucEnumerationLiteralDef_EcucEnumerationParamDef(), (EClassifier)this.getEcucEnumerationParamDef(), this.getEcucEnumerationParamDef_Literals(), "ecucEnumerationParamDef", null, 0, 1, EcucEnumerationLiteralDef.class, true, false, true, false, false, false, true, false, true);
+        this.initEReference(this.getEcucEnumerationLiteralDef_EcucCond(), (EClassifier)this.getEcucConditionSpecification(), null, "ecucCond", null, 0, 1, EcucEnumerationLiteralDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEAttribute(this.getEcucEnumerationLiteralDef_Origin(), (EClassifier)thePrimitivetypesPackage.getString(), "origin", "", 0, 1, EcucEnumerationLiteralDef.class, false, false, true, true, false, true, false, true);
+        this.initEClass(this.ecucEnumerationParamDefEClass, EcucEnumerationParamDef.class, "EcucEnumerationParamDef", false, false, true);
+        this.initEAttribute(this.getEcucEnumerationParamDef_DefaultValue(), (EClassifier)thePrimitivetypesPackage.getIdentifier(), "defaultValue", "", 0, 1, EcucEnumerationParamDef.class, false, false, true, true, false, true, false, true);
+        this.initEReference(this.getEcucEnumerationParamDef_Literals(), (EClassifier)this.getEcucEnumerationLiteralDef(), this.getEcucEnumerationLiteralDef_EcucEnumerationParamDef(), "literals", null, 0, -1, EcucEnumerationParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucFloatParamDefEClass, EcucFloatParamDef.class, "EcucFloatParamDef", false, false, true);
+        this.initEReference(this.getEcucFloatParamDef_DefaultValue(), (EClassifier)theVarianthandlingPackage.getFloatValueVariationPoint(), null, "defaultValue", null, 0, 1, EcucFloatParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucFloatParamDef_Max(), (EClassifier)theVarianthandlingPackage.getFloatValueVariationPoint(), null, "max", null, 0, 1, EcucFloatParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucFloatParamDef_Min(), (EClassifier)theVarianthandlingPackage.getFloatValueVariationPoint(), null, "min", null, 0, 1, EcucFloatParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucForeignReferenceDefEClass, EcucForeignReferenceDef.class, "EcucForeignReferenceDef", false, false, true);
+        this.initEAttribute(this.getEcucForeignReferenceDef_DestinationType(), (EClassifier)thePrimitivetypesPackage.getString(), "destinationType", "", 0, 1, EcucForeignReferenceDef.class, false, false, true, true, false, true, false, true);
+        this.initEClass(this.ecucFunctionNameDefEClass, EcucFunctionNameDef.class, "EcucFunctionNameDef", false, false, true);
+        this.initEReference(this.getEcucFunctionNameDef_EcucFunctionNameDefVariants(), (EClassifier)this.getEcucFunctionNameDefConditional(), this.getEcucFunctionNameDefConditional_EcucFunctionNameDef(), "EcucFunctionNameDefVariants", null, 0, -1, EcucFunctionNameDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucFunctionNameDefConditionalEClass, EcucFunctionNameDefConditional.class, "EcucFunctionNameDefConditional", false, false, true);
+        this.initEReference(this.getEcucFunctionNameDefConditional_EcucFunctionNameDef(), (EClassifier)this.getEcucFunctionNameDef(), this.getEcucFunctionNameDef_EcucFunctionNameDefVariants(), "ecucFunctionNameDef", null, 0, 1, EcucFunctionNameDefConditional.class, true, false, true, false, false, false, true, false, true);
+        this.initEReference(this.getEcucFunctionNameDefConditional_VariationPoint(), (EClassifier)theVarianthandlingPackage.getVariationPoint(), null, "variationPoint", null, 0, 1, EcucFunctionNameDefConditional.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucFunctionNameDefContentEClass, EcucFunctionNameDefContent.class, "EcucFunctionNameDefContent", true, false, true);
+        this.initEClass(this.ecucAbstractStringParamDefContentEClass, EcucAbstractStringParamDefContent.class, "EcucAbstractStringParamDefContent", true, false, true);
+        this.initEAttribute(this.getEcucAbstractStringParamDefContent_DefaultValue(), (EClassifier)thePrimitivetypesPackage.getVerbatimString(), "defaultValue", "", 0, 1, EcucAbstractStringParamDefContent.class, false, false, true, true, false, true, false, true);
+        this.initEAttribute(this.getEcucAbstractStringParamDefContent_MaxLength(), (EClassifier)thePrimitivetypesPackage.getPositiveInteger(), "maxLength", "0", 0, 1, EcucAbstractStringParamDefContent.class, false, false, true, true, false, true, false, true);
+        this.initEAttribute(this.getEcucAbstractStringParamDefContent_MinLength(), (EClassifier)thePrimitivetypesPackage.getPositiveInteger(), "minLength", "0", 0, 1, EcucAbstractStringParamDefContent.class, false, false, true, true, false, true, false, true);
+        this.initEAttribute(this.getEcucAbstractStringParamDefContent_RegularExpression(), (EClassifier)thePrimitivetypesPackage.getRegularExpression(), "regularExpression", "", 0, 1, EcucAbstractStringParamDefContent.class, false, false, true, true, false, true, false, true);
+        this.addEOperation(this.ecucAbstractStringParamDefContentEClass, (EClassifier)thePrimitivetypesPackage.getPositiveIntegerDatatype(), "getMaxLengthData", 0, 1, true, true);
+        op = this.addEOperation(this.ecucAbstractStringParamDefContentEClass, null, "setMaxLengthData", 0, 1, true, true);
+        this.addEParameter(op, (EClassifier)thePrimitivetypesPackage.getPositiveIntegerDatatype(), "newMaxLength", 0, 1, true, true);
+        this.addEOperation(this.ecucAbstractStringParamDefContentEClass, (EClassifier)thePrimitivetypesPackage.getPositiveIntegerDatatype(), "getMinLengthData", 0, 1, true, true);
+        op = this.addEOperation(this.ecucAbstractStringParamDefContentEClass, null, "setMinLengthData", 0, 1, true, true);
+        this.addEParameter(op, (EClassifier)thePrimitivetypesPackage.getPositiveIntegerDatatype(), "newMinLength", 0, 1, true, true);
+        this.initEClass(this.ecucInstanceReferenceDefEClass, EcucInstanceReferenceDef.class, "EcucInstanceReferenceDef", false, false, true);
+        this.initEAttribute(this.getEcucInstanceReferenceDef_DestinationContext(), (EClassifier)thePrimitivetypesPackage.getString(), "destinationContext", "", 0, 1, EcucInstanceReferenceDef.class, false, false, true, true, false, true, false, true);
+        this.initEAttribute(this.getEcucInstanceReferenceDef_DestinationType(), (EClassifier)thePrimitivetypesPackage.getString(), "destinationType", "", 0, 1, EcucInstanceReferenceDef.class, false, false, true, true, false, true, false, true);
+        this.initEClass(this.ecucIntegerParamDefEClass, EcucIntegerParamDef.class, "EcucIntegerParamDef", false, false, true);
+        this.initEReference(this.getEcucIntegerParamDef_DefaultValue(), (EClassifier)theVarianthandlingPackage.getUnlimitedIntegerValueVariationPoint(), null, "defaultValue", null, 0, 1, EcucIntegerParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucIntegerParamDef_Max(), (EClassifier)theVarianthandlingPackage.getUnlimitedIntegerValueVariationPoint(), null, "max", null, 0, 1, EcucIntegerParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEReference(this.getEcucIntegerParamDef_Min(), (EClassifier)theVarianthandlingPackage.getUnlimitedIntegerValueVariationPoint(), null, "min", null, 0, 1, EcucIntegerParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucLinkerSymbolDefEClass, EcucLinkerSymbolDef.class, "EcucLinkerSymbolDef", false, false, true);
+        this.initEReference(this.getEcucLinkerSymbolDef_EcucLinkerSymbolDefVariants(), (EClassifier)this.getEcucLinkerSymbolDefConditional(), this.getEcucLinkerSymbolDefConditional_EcucLinkerSymbolDef(), "EcucLinkerSymbolDefVariants", null, 0, -1, EcucLinkerSymbolDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucLinkerSymbolDefConditionalEClass, EcucLinkerSymbolDefConditional.class, "EcucLinkerSymbolDefConditional", false, false, true);
+        this.initEReference(this.getEcucLinkerSymbolDefConditional_EcucLinkerSymbolDef(), (EClassifier)this.getEcucLinkerSymbolDef(), this.getEcucLinkerSymbolDef_EcucLinkerSymbolDefVariants(), "ecucLinkerSymbolDef", null, 0, 1, EcucLinkerSymbolDefConditional.class, true, false, true, false, false, false, true, false, true);
+        this.initEReference(this.getEcucLinkerSymbolDefConditional_VariationPoint(), (EClassifier)theVarianthandlingPackage.getVariationPoint(), null, "variationPoint", null, 0, 1, EcucLinkerSymbolDefConditional.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucLinkerSymbolDefContentEClass, EcucLinkerSymbolDefContent.class, "EcucLinkerSymbolDefContent", true, false, true);
+        this.initEClass(this.ecucMultilineStringParamDefEClass, EcucMultilineStringParamDef.class, "EcucMultilineStringParamDef", false, false, true);
+        this.initEReference(this.getEcucMultilineStringParamDef_EcucMultilineStringParamDefVariants(), (EClassifier)this.getEcucMultilineStringParamDefConditional(), this.getEcucMultilineStringParamDefConditional_EcucMultilineStringParamDef(), "EcucMultilineStringParamDefVariants", null, 0, -1, EcucMultilineStringParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucMultilineStringParamDefConditionalEClass, EcucMultilineStringParamDefConditional.class, "EcucMultilineStringParamDefConditional", false, false, true);
+        this.initEReference(this.getEcucMultilineStringParamDefConditional_EcucMultilineStringParamDef(), (EClassifier)this.getEcucMultilineStringParamDef(), this.getEcucMultilineStringParamDef_EcucMultilineStringParamDefVariants(), "ecucMultilineStringParamDef", null, 0, 1, EcucMultilineStringParamDefConditional.class, true, false, true, false, false, false, true, false, true);
+        this.initEReference(this.getEcucMultilineStringParamDefConditional_VariationPoint(), (EClassifier)theVarianthandlingPackage.getVariationPoint(), null, "variationPoint", null, 0, 1, EcucMultilineStringParamDefConditional.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucMultilineStringParamDefContentEClass, EcucMultilineStringParamDefContent.class, "EcucMultilineStringParamDefContent", true, false, true);
+        this.initEClass(this.ecucReferenceDefEClass, EcucReferenceDef.class, "EcucReferenceDef", false, false, true);
+        this.initEReference(this.getEcucReferenceDef_Destination(), (EClassifier)this.getEcucParamConfContainerDef(), null, "destination", null, 0, 1, EcucReferenceDef.class, false, false, true, false, true, false, true, false, true);
+        this.initEClass(this.ecucStringParamDefEClass, EcucStringParamDef.class, "EcucStringParamDef", false, false, true);
+        this.initEReference(this.getEcucStringParamDef_EcucStringParamDefVariants(), (EClassifier)this.getEcucStringParamDefConditional(), this.getEcucStringParamDefConditional_EcucStringParamDef(), "EcucStringParamDefVariants", null, 0, -1, EcucStringParamDef.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucStringParamDefConditionalEClass, EcucStringParamDefConditional.class, "EcucStringParamDefConditional", false, false, true);
+        this.initEReference(this.getEcucStringParamDefConditional_EcucStringParamDef(), (EClassifier)this.getEcucStringParamDef(), this.getEcucStringParamDef_EcucStringParamDefVariants(), "ecucStringParamDef", null, 0, 1, EcucStringParamDefConditional.class, true, false, true, false, false, false, true, false, true);
+        this.initEReference(this.getEcucStringParamDefConditional_VariationPoint(), (EClassifier)theVarianthandlingPackage.getVariationPoint(), null, "variationPoint", null, 0, 1, EcucStringParamDefConditional.class, false, false, true, true, false, false, true, false, true);
+        this.initEClass(this.ecucStringParamDefContentEClass, EcucStringParamDefContent.class, "EcucStringParamDefContent", true, false, true);
+        this.initEClass(this.ecucSymbolicNameReferenceDefEClass, EcucSymbolicNameReferenceDef.class, "EcucSymbolicNameReferenceDef", false, false, true);
+        this.initEReference(this.getEcucSymbolicNameReferenceDef_Destination(), (EClassifier)this.getEcucParamConfContainerDef(), null, "destination", null, 0, 1, EcucSymbolicNameReferenceDef.class, false, false, true, false, true, false, true, false, true);
+        this.initEClass(this.ecucAbstractReferenceDefEClass, EcucAbstractReferenceDef.class, "EcucAbstractReferenceDef", true, false, true);
+        this.initEReference(this.getEcucAbstractReferenceDef_EcucParamConfContainerDef(), (EClassifier)this.getEcucParamConfContainerDef(), this.getEcucParamConfContainerDef_References(), "ecucParamConfContainerDef", null, 0, 1, EcucAbstractReferenceDef.class, true, false, true, false, false, false, true, false, true);
+        this.initEEnum(this.ecucConfigurationClassEnumEEnum, EcucConfigurationClassEnum.class, "EcucConfigurationClassEnum");
+        this.addEEnumLiteral(this.ecucConfigurationClassEnumEEnum, EcucConfigurationClassEnum.PUBLISHED_INFORMATION);
+        this.addEEnumLiteral(this.ecucConfigurationClassEnumEEnum, EcucConfigurationClassEnum.PRE_COMPILE);
+        this.addEEnumLiteral(this.ecucConfigurationClassEnumEEnum, EcucConfigurationClassEnum.LINK);
+        this.addEEnumLiteral(this.ecucConfigurationClassEnumEEnum, EcucConfigurationClassEnum.POST_BUILD);
+        this.initEEnum(this.ecucConfigurationVariantEnumEEnum, EcucConfigurationVariantEnum.class, "EcucConfigurationVariantEnum");
+        this.addEEnumLiteral(this.ecucConfigurationVariantEnumEEnum, EcucConfigurationVariantEnum.PRECONFIGURED_CONFIGURATION);
+        this.addEEnumLiteral(this.ecucConfigurationVariantEnumEEnum, EcucConfigurationVariantEnum.RECOMMENDED_CONFIGURATION);
+        this.addEEnumLiteral(this.ecucConfigurationVariantEnumEEnum, EcucConfigurationVariantEnum.VARIANT_PRE_COMPILE);
+        this.addEEnumLiteral(this.ecucConfigurationVariantEnumEEnum, EcucConfigurationVariantEnum.VARIANT_LINK_TIME);
+        this.addEEnumLiteral(this.ecucConfigurationVariantEnumEEnum, EcucConfigurationVariantEnum.VARIANT_POST_BUILD);
+        this.addEEnumLiteral(this.ecucConfigurationVariantEnumEEnum, EcucConfigurationVariantEnum.VARIANT_POST_BUILD_LOADABLE);
+        this.addEEnumLiteral(this.ecucConfigurationVariantEnumEEnum, EcucConfigurationVariantEnum.VARIANT_POST_BUILD_SELECTABLE);
+        this.initEEnum(this.ecucAffectionEnumEEnum, EcucAffectionEnum.class, "EcucAffectionEnum");
+        this.addEEnumLiteral(this.ecucAffectionEnumEEnum, EcucAffectionEnum.NO_AFFECT);
+        this.addEEnumLiteral(this.ecucAffectionEnumEEnum, EcucAffectionEnum.PC_AFFECTS_LT);
+        this.addEEnumLiteral(this.ecucAffectionEnumEEnum, EcucAffectionEnum.PC_AFFECTS_PB);
+        this.addEEnumLiteral(this.ecucAffectionEnumEEnum, EcucAffectionEnum.PC_AFFECTS_LT_AND_PB);
+        this.addEEnumLiteral(this.ecucAffectionEnumEEnum, EcucAffectionEnum.LT_AFFECTS_PB);
+        this.createResource("http://autosar.org/schema/r4.0/autosar40/ecucpd");
+        this.createMetaDataAnnotations();
+        this.createTaggedValuesAnnotations();
+        this.createExtendedMetaDataAnnotations();
+        this.createGenModelAnnotations();
+        this.createStereotypeAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucParameterDefAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucCommonAttributesAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucDefinitionElementAnnotations();
+        this.createTaggedValuesOfGeneralization_IdentifiableAnnotations();
+        this.createTaggedValuesOfGeneralization_ARObjectAnnotations();
+        this.createTaggedValuesOfGeneralization_FormulaExpressionAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucContainerDefAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucAbstractReferenceDefAnnotations();
+        this.createTaggedValuesOfGeneralization_AtpBlueprintableAnnotations();
+        this.createTaggedValuesOfGeneralization_AtpBlueprintAnnotations();
+        this.createTaggedValuesOfGeneralization_ARElementAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucAbstractStringParamDefAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucFunctionNameDefContentAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucAbstractStringParamDefContentAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucLinkerSymbolDefContentAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucMultilineStringParamDefContentAnnotations();
+        this.createTaggedValuesOfGeneralization_EcucStringParamDefContentAnnotations();
+    }
+
+    protected void createMetaDataAnnotations() {
+        String source = "MetaData";
+        this.addAnnotation((ENamedElement)this, source, new String[]{"Name", "ECUCParameterDefTemplate", "Modified", "Tue Jun 26 07:50:34 CEST 2007", "Created", "Wed Apr 20 18:29:23 CEST 2005", "GUID", "0B204D95-DABD-4519-809F-B1FF35EA44E9", "Id", "-200181204"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefEClass, source, new String[]{"Name", "EcucAbstractStringParamDef", "Modified", "Thu May 28 14:13:34 CEST 2009", "Created", "Tue Apr 28 15:15:56 CEST 2009", "GUID", "7BBABE72-6788-43e9-B971-6ECDF22D7E44", "Id", "1240924556"});
+        this.addAnnotation((ENamedElement)this.ecucParameterDefEClass, source, new String[]{"Name", "EcucParameterDef", "Modified", "Tue Mar 31 11:32:14 CEST 2009", "Created", "Thu Apr 07 10:15:42 CEST 2005", "GUID", "85F8ECDA-408A-4d05-90AA-25102F16E21C", "Id", "-1077318403"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_SymbolicNameValue(), source, new String[]{"Name", "symbolicNameValue", "GUID", "DEBAAD99-3850-4fb4-8C11-2F15AB0CC9B0", "Id", "1784230155"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_WithAuto(), source, new String[]{"Name", "withAuto", "GUID", "FAB6FB8F-C390-4929-B2DD-CC31707291D6", "Id", "-476792936"});
+        this.addAnnotation((ENamedElement)this.ecucCommonAttributesEClass, source, new String[]{"Name", "EcucCommonAttributes", "Modified", "Tue Mar 31 11:36:18 CEST 2009", "Created", "Thu Feb 16 13:24:12 CET 2006", "GUID", "DA17A62A-E6DB-4a62-872A-D72F739DA6FC", "Id", "1665731864"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_Origin(), source, new String[]{"Name", "origin", "GUID", "DAAD699E-359F-410f-BCBD-6B8540F5C289", "Id", "528318704"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_RequiresIndex(), source, new String[]{"Name", "requiresIndex", "GUID", "D6F7542C-73EE-4004-A5BD-32E1E8AE1B68", "Id", "1089872155"});
+        this.addAnnotation((ENamedElement)this.ecucDefinitionElementEClass, source, new String[]{"Name", "EcucDefinitionElement", "Modified", "Tue Mar 31 11:17:22 CEST 2009", "Created", "Wed Apr 20 11:35:09 CEST 2005", "GUID", "8419A7C8-F18F-4cba-AE4F-CAF7A24F6B7D", "Id", "1547115141"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_LowerMultiplicity(), source, new String[]{"Name", "lowerMultiplicity", "GUID", "DBDBBE9C-2EE9-4480-98B8-CDD2D0BE99EE", "Id", "2143496034"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicity(), source, new String[]{"Name", "upperMultiplicity", "GUID", "CDB51E98-D45A-4f8a-94F9-7C74152265D2", "Id", "959445051"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicityInfinite(), source, new String[]{"Name", "upperMultiplicityInfinite", "GUID", "5ED6D076-D640-4854-A25E-FFB0321B1E53", "Id", "1228980093"});
+        this.addAnnotation((ENamedElement)this.ecucConditionSpecificationEClass, source, new String[]{"Name", "EcucConditionSpecification", "Modified", "Mon Jun 28 16:54:44 CEST 2010", "Created", "Mon Jun 28 16:32:01 CEST 2010", "GUID", "C69EC62F-C5AD-457c-BF2A-A1B9B62EB79E", "Id", "1643223844"});
+        this.addAnnotation((ENamedElement)this.ecucQueryEClass, source, new String[]{"Name", "EcucQuery", "Modified", "Tue Jul 19 09:31:07 CEST 2011", "Created", "Fri Jun 25 09:24:21 CEST 2010", "GUID", "2A340669-907F-4642-B4AB-47F5B130101E", "Id", "1277450661"});
+        this.addAnnotation((ENamedElement)this.ecucQueryExpressionEClass, source, new String[]{"Name", "EcucQueryExpression", "Modified", "Mon Jun 28 16:25:53 CEST 2010", "Created", "Thu Aug 28 11:28:53 CEST 2008", "GUID", "B48D18A5-49E0-4223-AD84-4E72AE8253CD", "Id", "-1531067328"});
+        this.addAnnotation((ENamedElement)this.ecucConditionFormulaEClass, source, new String[]{"Name", "EcucConditionFormula", "Modified", "Mon Jun 28 16:44:15 CEST 2010", "Created", "Mon Mar 30 17:27:50 CEST 2009", "GUID", "188DBCCB-B09F-4048-9D5F-1F72FCA89945", "Id", "919472042"});
+        this.addAnnotation((ENamedElement)this.ecucImplementationConfigurationClassEClass, source, new String[]{"Name", "EcucImplementationConfigurationClass", "Modified", "Tue Mar 31 11:35:36 CEST 2009", "Created", "Tue Aug 28 08:08:32 CEST 2007", "GUID", "605BB0E2-421F-4770-BEE6-EAEEEB44F238", "Id", "-264131626"});
+        this.addAnnotation((ENamedElement)this.getEcucImplementationConfigurationClass_ConfigClass(), source, new String[]{"Name", "configClass", "GUID", "4C152ECC-4E5C-4e52-B1FC-0EF58EA17650", "Id", "-762222437"});
+        this.addAnnotation((ENamedElement)this.getEcucImplementationConfigurationClass_ConfigVariant(), source, new String[]{"Name", "configVariant", "GUID", "35F0F05E-1898-4b13-ADE9-14C7B76578A1", "Id", "-354290366"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum, source, new String[]{"Name", "EcucConfigurationClassEnum", "Modified", "Tue Mar 31 11:33:59 CEST 2009", "Created", "Thu Nov 03 18:22:43 CET 2005", "GUID", "EA3930DA-1E1D-42c9-9D6F-E9A336B83EC2", "Id", "1480526182"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(0), source, new String[]{"Name", "PublishedInformation", "GUID", "954B0EB1-B666-497f-A93B-19715E8FB4E8", "Id", "1151400203"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(1), source, new String[]{"Name", "PreCompile", "GUID", "9A5E0D80-FB5F-46d8-BEA8-C7D18066CA9D", "Id", "640542212"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(2), source, new String[]{"Name", "Link", "GUID", "6DDE780F-74AA-496f-8421-DE24EB90BA33", "Id", "1605961397"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(3), source, new String[]{"Name", "PostBuild", "GUID", "9CA66FEC-E4FA-4482-B96C-0A5311DEC500", "Id", "479377687"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum, source, new String[]{"Name", "EcucConfigurationVariantEnum", "Modified", "Tue Mar 31 11:34:38 CEST 2009", "Created", "Tue Aug 28 07:41:48 CEST 2007", "GUID", "49B39956-9C11-4617-B875-3D2818293A3D", "Id", "1188279708"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(0), source, new String[]{"Name", "PreconfiguredConfiguration", "GUID", "C9F11471-F09D-48f2-93A4-251B01D743F1", "Id", "1799211603"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(1), source, new String[]{"Name", "RecommendedConfiguration", "GUID", "E3F09AF2-3BB5-459b-BE41-3BEA0B8AFC41", "Id", "-1822219624"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(2), source, new String[]{"Name", "VariantPreCompile", "GUID", "CB5968F4-30DD-42b3-80C3-96E2E7EDB2E4", "Id", "-1968536278"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(3), source, new String[]{"Name", "VariantLinkTime", "GUID", "2F6C63A5-324B-48fe-89D8-A89DBCD64D0F", "Id", "-1944247197"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(4), source, new String[]{"Name", "VariantPostBuild", "GUID", "444AE85F-BAD8-4153-8EEA-A6FA51374251", "Id", "965760872"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(5), source, new String[]{"Name", "VariantPostBuildLoadable", "GUID", "D0132271-E53A-49c8-B5CC-7E3430F1AFA3", "Id", "-1929764950"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(6), source, new String[]{"Name", "VariantPostBuildSelectable", "GUID", "0D4122FB-4CCF-44b1-A311-86C972F11960", "Id", "-1201264403"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassAffectionEClass, source, new String[]{"Name", "EcucConfigurationClassAffection", "Modified", "Tue Mar 31 11:36:49 CEST 2009", "Created", "Tue Aug 08 12:15:30 CEST 2006", "GUID", "F7CEE5F2-6E88-4aef-9269-4C7DE5E139A3", "Id", "1155032130"});
+        this.addAnnotation((ENamedElement)this.getEcucConfigurationClassAffection_AffectionKind(), source, new String[]{"Name", "affectionKind", "GUID", "A00A8A33-0143-40c5-8636-A06302183912", "Id", "1248619630"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum, source, new String[]{"Name", "EcucAffectionEnum", "Modified", "Tue Mar 31 11:37:29 CEST 2009", "Created", "Thu Nov 03 18:22:43 CET 2005", "GUID", "E896D8A5-A0CC-4fef-8893-218C44AC1C30", "Id", "-961350307"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(0), source, new String[]{"Name", "NOAffect", "GUID", "E2D01225-26A9-4356-8448-31B9E09A99DD", "Id", "298387983"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(1), source, new String[]{"Name", "PCAffectsLT", "GUID", "61789B01-D5A1-466c-AB89-B287A3DFF6F5", "Id", "-64573606"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(2), source, new String[]{"Name", "PCAffectsPB", "GUID", "20511870-7DB0-472d-BEFA-13CEB1D6EB60", "Id", "-1462260013"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(3), source, new String[]{"Name", "PCAffectsLTAndPB", "GUID", "2ACE6968-C552-4e89-AA9D-DC41D8D0A326", "Id", "200694022"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(4), source, new String[]{"Name", "LTAffectsPB", "GUID", "05728455-4533-4e6a-BE27-03E0EC84BC59", "Id", "1253788952"});
+        this.addAnnotation((ENamedElement)this.ecucDerivationSpecificationEClass, source, new String[]{"Name", "EcucDerivationSpecification", "Modified", "Tue Mar 31 12:01:22 CEST 2009", "Created", "Wed Oct 15 09:43:40 CEST 2008", "GUID", "46BEB37F-4BC4-40f6-9474-43F8F33B660C", "Id", "32211878"});
+        this.addAnnotation((ENamedElement)this.ecucParameterDerivationFormulaEClass, source, new String[]{"Name", "EcucParameterDerivationFormula", "Modified", "Tue Mar 31 12:00:52 CEST 2009", "Created", "Tue Aug 26 16:11:38 CEST 2008", "GUID", "F886D5C8-9B1C-4b28-B885-01FD2B80BABB", "Id", "-1526509756"});
+        this.addAnnotation((ENamedElement)this.ecucAddInfoParamDefEClass, source, new String[]{"Name", "EcucAddInfoParamDef", "Modified", "Tue Mar 31 11:26:51 CEST 2009", "Created", "Thu Aug 28 10:38:06 CEST 2008", "GUID", "277A8DB7-A216-4bc4-B4AC-3C9D48639030", "Id", "472792314"});
+        this.addAnnotation((ENamedElement)this.ecucBooleanParamDefEClass, source, new String[]{"Name", "EcucBooleanParamDef", "Modified", "Tue Mar 31 11:27:18 CEST 2009", "Created", "Thu Apr 07 13:14:34 CEST 2005", "GUID", "B4BAD506-8155-447b-9447-AF3D0A598DC5", "Id", "-1603036622"});
+        this.addAnnotation((ENamedElement)this.getEcucBooleanParamDef_DefaultValue(), source, new String[]{"Name", "defaultValue", "GUID", "315BC6A3-3A8E-4f78-9946-8A962A659AD2", "Id", "593168075"});
+        this.addAnnotation((ENamedElement)this.ecucChoiceContainerDefEClass, source, new String[]{"Name", "EcucChoiceContainerDef", "Modified", "Fri Sep 04 14:38:19 CEST 2009", "Created", "Mon May 23 09:17:35 CEST 2005", "GUID", "FEC9099E-46A5-4a21-A006-353E091C805B", "Id", "1116832655"});
+        this.addAnnotation((ENamedElement)this.ecucContainerDefEClass, source, new String[]{"Name", "EcucContainerDef", "Modified", "Tue Mar 31 11:44:11 CEST 2009", "Created", "Thu Apr 07 10:13:20 CEST 2005", "GUID", "461B0CA6-942A-4c36-84DE-D6F335B7876B", "Id", "-1740936555"});
+        this.addAnnotation((ENamedElement)this.getEcucContainerDef_PostBuildChangeable(), source, new String[]{"Name", "postBuildChangeable", "GUID", "453EA0CA-995C-4008-835D-70940EEB86E6", "Id", "-359657314"});
+        this.addAnnotation((ENamedElement)this.ecucParamConfContainerDefEClass, source, new String[]{"Name", "EcucParamConfContainerDef", "Modified", "Tue Mar 31 11:33:27 CEST 2009", "Created", "Wed Apr 20 11:50:02 CEST 2005", "GUID", "83FBCE41-1C08-4054-9DA1-9D3235667B17", "Id", "2093869368"});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_MultipleConfigurationContainer(), source, new String[]{"Name", "multipleConfigurationContainer", "GUID", "21FA503A-9078-4685-8675-86F7D257F393", "Id", "1157198465"});
+        this.addAnnotation((ENamedElement)this.ecucChoiceReferenceDefEClass, source, new String[]{"Name", "EcucChoiceReferenceDef", "Modified", "Tue Mar 31 11:48:58 CEST 2009", "Created", "Wed May 18 22:09:34 CEST 2005", "GUID", "350F4D81-D603-421b-BA18-54400D117BAB", "Id", "1116446974"});
+        this.addAnnotation((ENamedElement)this.ecucDefinitionCollectionEClass, source, new String[]{"Name", "EcucDefinitionCollection", "Modified", "Tue Mar 31 11:42:50 CEST 2009", "Created", "Wed Aug 03 09:44:13 CEST 2005", "GUID", "8310DA41-DCAF-4f2a-88C9-0107FA3117EA", "Id", "-2106301497"});
+        this.addAnnotation((ENamedElement)this.ecucModuleDefEClass, source, new String[]{"Name", "EcucModuleDef", "Modified", "Tue Mar 31 11:43:20 CEST 2009", "Created", "Fri Nov 04 08:35:40 CET 2005", "GUID", "A267C9B9-8CB9-4e89-AD8A-6A01C7F82B82", "Id", "1131089740"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_ApiServicePrefix(), source, new String[]{"Name", "apiServicePrefix", "GUID", "5E46F095-36F7-4d00-B635-8C34BB1CD839", "Id", "1312887318"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_SupportedConfigVariants(), source, new String[]{"Name", "supportedConfigVariant", "GUID", "6E51668C-8F7B-4e36-8C09-52A03718A4E6", "Id", "1188394005"});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationLiteralDefEClass, source, new String[]{"Name", "EcucEnumerationLiteralDef", "Modified", "Tue Mar 31 11:29:35 CEST 2009", "Created", "Thu Apr 07 10:17:56 CEST 2005", "GUID", "1BA8F3AD-6A8F-4880-92C1-B86E13A9C54C", "Id", "1591570291"});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationLiteralDef_Origin(), source, new String[]{"Name", "origin", "GUID", "23C85324-7452-47f9-B42C-671ADB9CB9BB", "Id", "-555116589"});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationParamDefEClass, source, new String[]{"Name", "EcucEnumerationParamDef", "Modified", "Tue Mar 31 11:28:54 CEST 2009", "Created", "Thu Apr 07 10:16:49 CEST 2005", "GUID", "AB9EC0A5-D391-49ce-A972-6CA069E6BA8A", "Id", "-655990434"});
+        this.addAnnotation((ENamedElement)this.ecucFloatParamDefEClass, source, new String[]{"Name", "EcucFloatParamDef", "Modified", "Tue Mar 31 11:28:07 CEST 2009", "Created", "Thu Apr 07 13:13:06 CEST 2005", "GUID", "9D679D6B-F304-4b84-A9A7-BA84C0C1119D", "Id", "722539695"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_DefaultValue(), source, new String[]{"Name", "defaultValue", "GUID", "0031BFBD-77BF-43cb-9B83-B4FDC2F664C3", "Id", "-470245230"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Max(), source, new String[]{"Name", "max", "GUID", "A6768834-F829-4ed8-AAD8-31CE46AE351B", "Id", "-546314635"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Min(), source, new String[]{"Name", "min", "GUID", "48B525E6-E5EE-4d52-B4CD-717482C2E89F", "Id", "-346694460"});
+        this.addAnnotation((ENamedElement)this.ecucForeignReferenceDefEClass, source, new String[]{"Name", "EcucForeignReferenceDef", "Modified", "Tue Mar 31 12:20:09 CEST 2009", "Created", "Mon Dec 05 13:52:19 CET 2005", "GUID", "E07D81DE-6669-41fc-8487-0656AB259A0E", "Id", "1133787139"});
+        this.addAnnotation((ENamedElement)this.getEcucForeignReferenceDef_DestinationType(), source, new String[]{"Name", "destinationType", "GUID", "85CF7FE9-6BBE-4de4-9300-21F75F4743FF", "Id", "-181499415"});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefEClass, source, new String[]{"Name", "EcucFunctionNameDef", "Modified", "Tue Mar 31 11:31:23 CEST 2009", "Created", "Thu Apr 21 11:13:21 CEST 2005", "GUID", "D9803415-1E50-4ecd-8E8A-7C3D7F3B6563", "Id", "1366922272"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_DefaultValue(), source, new String[]{"Name", "defaultValue", "GUID", "319BD451-ADE7-40d9-A78F-8C023BBC122E", "Id", "739408887"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_MaxLength(), source, new String[]{"Name", "maxLength", "GUID", "2FADAAD5-2730-4c56-BD7E-62EF307CED63", "Id", "-1415489171"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_MinLength(), source, new String[]{"Name", "minLength", "GUID", "E7797721-D52A-4f60-AB94-ECE543A76FC8", "Id", "104672924"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_RegularExpression(), source, new String[]{"Name", "regularExpression", "GUID", "3D2A899E-7E18-40e2-82E7-8569F392B368", "Id", "-983583636"});
+        this.addAnnotation((ENamedElement)this.ecucInstanceReferenceDefEClass, source, new String[]{"Name", "EcucInstanceReferenceDef", "Modified", "Tue Mar 31 11:49:48 CEST 2009", "Created", "Tue Apr 19 17:29:14 CEST 2005", "GUID", "DA1FBB63-1D61-4523-ACD2-4481A461AF86", "Id", "-86338640"});
+        this.addAnnotation((ENamedElement)this.getEcucInstanceReferenceDef_DestinationContext(), source, new String[]{"Name", "destinationContext", "GUID", "8E24E8D3-4C70-4d1d-8FED-3E118C5492DD", "Id", "1151408706"});
+        this.addAnnotation((ENamedElement)this.getEcucInstanceReferenceDef_DestinationType(), source, new String[]{"Name", "destinationType", "GUID", "CCE54462-5E2F-4b05-AF67-B4ECF2B4AE2C", "Id", "-182708751"});
+        this.addAnnotation((ENamedElement)this.ecucIntegerParamDefEClass, source, new String[]{"Name", "EcucIntegerParamDef", "Modified", "Tue Mar 31 11:28:19 CEST 2009", "Created", "Thu Apr 07 10:16:37 CEST 2005", "GUID", "FBD47315-78A2-4644-B9DC-984451127CAF", "Id", "1312007264"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_DefaultValue(), source, new String[]{"Name", "defaultValue", "GUID", "58ADCD1E-98B2-421e-9842-C759B8235C72", "Id", "1147203439"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Max(), source, new String[]{"Name", "max", "GUID", "6A4C6A14-E82B-42d5-BA32-8770DA8D9BFB", "Id", "1317183886"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Min(), source, new String[]{"Name", "min", "GUID", "F595D501-F8EA-4694-9E67-CD59A1F37B01", "Id", "1556227297"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefEClass, source, new String[]{"Name", "EcucLinkerSymbolDef", "Modified", "Tue Mar 31 11:30:46 CEST 2009", "Created", "Thu Apr 21 11:13:21 CEST 2005", "GUID", "95BC451D-7F02-42cb-9FD3-3B07356F7AEF", "Id", "-781583231"});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefEClass, source, new String[]{"Name", "EcucMultilineStringParamDef", "Modified", "Tue Mar 31 11:31:08 CEST 2009", "Created", "Fri Sep 19 08:49:02 CEST 2008", "GUID", "E344F5EF-78D3-44e3-9937-14361FAA51C7", "Id", "1221806942"});
+        this.addAnnotation((ENamedElement)this.ecucReferenceDefEClass, source, new String[]{"Name", "EcucReferenceDef", "Modified", "Tue Mar 31 12:28:05 CEST 2009", "Created", "Fri Apr 08 10:24:17 CEST 2005", "GUID", "A9E98718-94D1-4d76-8895-1D5FF0B5663F", "Id", "-1547773332"});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefEClass, source, new String[]{"Name", "EcucStringParamDef", "Modified", "Tue Mar 31 11:30:22 CEST 2009", "Created", "Thu Apr 07 13:15:06 CEST 2005", "GUID", "CB52C17C-6E64-4bf6-9735-0F026A8FAB54", "Id", "-605020157"});
+        this.addAnnotation((ENamedElement)this.ecucSymbolicNameReferenceDefEClass, source, new String[]{"Name", "EcucSymbolicNameReferenceDef", "Modified", "Tue Mar 31 11:59:47 CEST 2009", "Created", "Tue Dec 13 15:49:08 CET 2005", "GUID", "7C5A05B7-B05A-452b-9E86-BEBC1843ED34", "Id", "1134485348"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractReferenceDefEClass, source, new String[]{"Name", "EcucAbstractReferenceDef", "Modified", "Tue Mar 31 12:28:57 CEST 2009", "Created", "Sun Jun 05 11:13:39 CEST 2005", "GUID", "9BD20B72-E764-487f-8794-1FD0249EB7B8", "Id", "1117962819"});
+    }
+
+    /*
+     * Opcode count of 13313 triggered aggressive code reduction.  Override with --aggressivesizethreshold.
+     */
+    protected void createTaggedValuesAnnotations() {
+        String source = "TaggedValues";
+        this.addAnnotation((ENamedElement)this, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-PARAMETER-DEF-TEMPLATE", "xml.namePlural", "ECUC-PARAMETER-DEF-TEMPLATES"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefEClass, source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucAbstractStringParamDef\"", "mmt.qualifiedName", "EcucAbstractStringParamDef", "Vh.latestBindingTime", "CodeGenerationTime", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-ABSTRACT-STRING-PARAM-DEF", "xml.namePlural", "ECUC-ABSTRACT-STRING-PARAM-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.ecucParameterDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucParameterDef\"", "mmt.qualifiedName", "EcucParameterDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-PARAMETER-DEF", "xml.namePlural", "ECUC-PARAMETER-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false", "artop.abstract", "true"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_Derivation(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"derivation.EcucParameterDef\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "derivation.EcucParameterDef", "pureMM.maxOccurs", "1", "xml.name", "DERIVATION", "xml.namePlural", "DERIVATIONS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_SymbolicNameValue(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucParameterDef.symbolicNameValue\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucParameterDef.symbolicNameValue", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "SYMBOLIC-NAME-VALUE", "xml.namePlural", "SYMBOLIC-NAME-VALUES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_WithAuto(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucParameterDef.withAuto\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucParameterDef.withAuto", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "WITH-AUTO", "xml.namePlural", "WITH-AUTOS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucCommonAttributesEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucCommonAttributes\"", "mmt.qualifiedName", "EcucCommonAttributes", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-COMMON-ATTRIBUTES", "xml.namePlural", "ECUC-COMMON-ATTRIBUTESS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false", "artop.abstract", "true"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_ConfigurationClassAffection(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"configurationClassAffection.EcucCommonAttributes\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "configurationClassAffection.EcucCommonAttributes", "pureMM.maxOccurs", "1", "xml.name", "CONFIGURATION-CLASS-AFFECTION", "xml.namePlural", "CONFIGURATION-CLASS-AFFECTIONS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_ImplementationConfigClass(), source, new String[]{"mmt.qualifiedName", "implementationConfigClass.EcucCommonAttributes", "xml.tags", "xml.namePlural=\"IMPLEMENTATION-CONFIG-CLASSES\";mmt.qualifiedName=\"implementationConfigClass.EcucCommonAttributes\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "xml.namePlural", "IMPLEMENTATION-CONFIG-CLASSES", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "-1", "xml.name", "IMPLEMENTATION-CONFIG-CLASS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_Origin(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucCommonAttributes.origin\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucCommonAttributes.origin", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "ORIGIN", "xml.namePlural", "ORIGINS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_RequiresIndex(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucCommonAttributes.requiresIndex\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucCommonAttributes.requiresIndex", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "REQUIRES-INDEX", "xml.namePlural", "REQUIRES-INDEXS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "3", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucDefinitionElementEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucDefinitionElement\"", "mmt.qualifiedName", "EcucDefinitionElement", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-DEFINITION-ELEMENT", "xml.namePlural", "ECUC-DEFINITION-ELEMENTS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_EcucCond(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucDefinitionElement.ecucCond\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucDefinitionElement.ecucCond", "pureMM.maxOccurs", "1", "xml.name", "ECUC-COND", "xml.namePlural", "ECUC-CONDS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_LowerMultiplicity(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucDefinitionElement.lowerMultiplicity\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucDefinitionElement.lowerMultiplicity", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "LOWER-MULTIPLICITY", "xml.namePlural", "LOWER-MULTIPLICITYS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicity(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucDefinitionElement.upperMultiplicity\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucDefinitionElement.upperMultiplicity", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "UPPER-MULTIPLICITY", "xml.namePlural", "UPPER-MULTIPLICITYS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicityInfinite(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucDefinitionElement.upperMultiplicityInfinite\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucDefinitionElement.upperMultiplicityInfinite", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "UPPER-MULTIPLICITY-INFINITE", "xml.namePlural", "UPPER-MULTIPLICITY-INFINITES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "3", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucConditionSpecificationEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConditionSpecification\"", "mmt.qualifiedName", "EcucConditionSpecification", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-CONDITION-SPECIFICATION", "xml.namePlural", "ECUC-CONDITION-SPECIFICATIONS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionSpecification_ConditionFormula(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"conditionFormula.EcucConditionSpecification\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "conditionFormula.EcucConditionSpecification", "pureMM.maxOccurs", "1", "xml.name", "CONDITION-FORMULA", "xml.namePlural", "CONDITION-FORMULAS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionSpecification_EcucQueries(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"ecucQuery.EcucConditionSpecification\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "ecucQuery.EcucConditionSpecification", "pureMM.maxOccurs", "-1", "xml.name", "ECUC-QUERY", "xml.namePlural", "ECUC-QUERYS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionSpecification_InformalFormula(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"informalFormula.EcucConditionSpecification\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "informalFormula.EcucConditionSpecification", "pureMM.maxOccurs", "1", "xml.name", "INFORMAL-FORMULA", "xml.namePlural", "INFORMAL-FORMULAS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucQueryEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucQuery\"", "mmt.qualifiedName", "EcucQuery", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-QUERY", "xml.namePlural", "ECUC-QUERYS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucQuery_EcucQueryExpression(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucQuery.ecucQueryExpression\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "1", "mmt.qualifiedName", "EcucQuery.ecucQueryExpression", "pureMM.maxOccurs", "1", "xml.name", "ECUC-QUERY-EXPRESSION", "xml.namePlural", "ECUC-QUERY-EXPRESSIONS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucQueryExpressionEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucQueryExpression\"", "mmt.qualifiedName", "EcucQueryExpression", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-QUERY-EXPRESSION", "xml.namePlural", "ECUC-QUERY-EXPRESSIONS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "false", "xml.text", "true"});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_ConfigElementDefGlobals(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucQueryExpression.configElementDefGlobal\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucQueryExpression.configElementDefGlobal", "pureMM.maxOccurs", "1", "xml.name", "CONFIG-ELEMENT-DEF-GLOBAL-REF", "xml.namePlural", "CONFIG-ELEMENT-DEF-GLOBAL-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_ConfigElementDefLocals(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucQueryExpression.configElementDefLocal\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucQueryExpression.configElementDefLocal", "pureMM.maxOccurs", "1", "xml.name", "CONFIG-ELEMENT-DEF-LOCAL-REF", "xml.namePlural", "CONFIG-ELEMENT-DEF-LOCAL-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucConditionFormulaEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConditionFormula\"", "mmt.qualifiedName", "EcucConditionFormula", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-CONDITION-FORMULA", "xml.namePlural", "ECUC-CONDITION-FORMULAS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "false", "xml.text", "true"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionFormula_EcucQueries(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConditionFormula.ecucQuery\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "1", "mmt.qualifiedName", "EcucConditionFormula.ecucQuery", "pureMM.maxOccurs", "1", "xml.name", "ECUC-QUERY-REF", "xml.namePlural", "ECUC-QUERY-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionFormula_EcucQueryStrings(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConditionFormula.ecucQueryString\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "1", "mmt.qualifiedName", "EcucConditionFormula.ecucQueryString", "pureMM.maxOccurs", "1", "xml.name", "ECUC-QUERY-STRING-REF", "xml.namePlural", "ECUC-QUERY-STRING-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucImplementationConfigurationClassEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucImplementationConfigurationClass\"", "mmt.qualifiedName", "EcucImplementationConfigurationClass", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-IMPLEMENTATION-CONFIGURATION-CLASS", "xml.namePlural", "ECUC-IMPLEMENTATION-CONFIGURATION-CLASSS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucImplementationConfigurationClass_ConfigClass(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucImplementationConfigurationClass.configClass\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucImplementationConfigurationClass.configClass", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "CONFIG-CLASS", "xml.namePlural", "CONFIG-CLASSS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucImplementationConfigurationClass_ConfigVariant(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucImplementationConfigurationClass.configVariant\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucImplementationConfigurationClass.configVariant", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "CONFIG-VARIANT", "xml.namePlural", "CONFIG-VARIANTS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationClassEnum\"", "mmt-intern.basetypes", "AUTOSAR Root::M2::AUTOSAR Templates::GenericStructure::GeneralTemplateClasses::ArObject::ARObject", "mmt.qualifiedName", "EcucConfigurationClassEnum", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-CONFIGURATION-CLASS-ENUM", "xml.namePlural", "ECUC-CONFIGURATION-CLASS-ENUMS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(0), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationClassEnum.PublishedInformation\"", "mmt.qualifiedName", "EcucConfigurationClassEnum.PublishedInformation", "xml.name", "PUBLISHED-INFORMATION", "xml.namePlural", "PUBLISHED-INFORMATIONS"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(1), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationClassEnum.PreCompile\"", "mmt.qualifiedName", "EcucConfigurationClassEnum.PreCompile", "xml.name", "PRE-COMPILE", "xml.namePlural", "PRE-COMPILES"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(2), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationClassEnum.Link\"", "mmt.qualifiedName", "EcucConfigurationClassEnum.Link", "xml.name", "LINK", "xml.namePlural", "LINKS"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(3), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationClassEnum.PostBuild\"", "mmt.qualifiedName", "EcucConfigurationClassEnum.PostBuild", "xml.name", "POST-BUILD", "xml.namePlural", "POST-BUILDS"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationVariantEnum\"", "mmt-intern.basetypes", "AUTOSAR Root::M2::AUTOSAR Templates::GenericStructure::GeneralTemplateClasses::ArObject::ARObject", "mmt.qualifiedName", "EcucConfigurationVariantEnum", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-CONFIGURATION-VARIANT-ENUM", "xml.namePlural", "ECUC-CONFIGURATION-VARIANT-ENUMS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(0), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationVariantEnum.PreconfiguredConfiguration\"", "mmt.qualifiedName", "EcucConfigurationVariantEnum.PreconfiguredConfiguration", "xml.name", "PRECONFIGURED-CONFIGURATION", "xml.namePlural", "PRECONFIGURED-CONFIGURATIONS"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(1), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationVariantEnum.RecommendedConfiguration\"", "mmt.qualifiedName", "EcucConfigurationVariantEnum.RecommendedConfiguration", "xml.name", "RECOMMENDED-CONFIGURATION", "xml.namePlural", "RECOMMENDED-CONFIGURATIONS"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(2), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationVariantEnum.VariantPreCompile\"", "mmt.qualifiedName", "EcucConfigurationVariantEnum.VariantPreCompile", "xml.name", "VARIANT-PRE-COMPILE", "xml.namePlural", "VARIANT-PRE-COMPILES"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(3), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationVariantEnum.VariantLinkTime\"", "mmt.qualifiedName", "EcucConfigurationVariantEnum.VariantLinkTime", "xml.name", "VARIANT-LINK-TIME", "xml.namePlural", "VARIANT-LINK-TIMES"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(4), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationVariantEnum.VariantPostBuild\"", "mmt.qualifiedName", "EcucConfigurationVariantEnum.VariantPostBuild", "xml.name", "VARIANT-POST-BUILD", "xml.namePlural", "VARIANT-POST-BUILDS"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(5), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationVariantEnum.VariantPostBuildLoadable\"", "mmt.qualifiedName", "EcucConfigurationVariantEnum.VariantPostBuildLoadable", "xml.name", "VARIANT-POST-BUILD-LOADABLE", "xml.namePlural", "VARIANT-POST-BUILD-LOADABLES"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(6), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationVariantEnum.VariantPostBuildSelectable\"", "mmt.qualifiedName", "EcucConfigurationVariantEnum.VariantPostBuildSelectable", "xml.name", "VARIANT-POST-BUILD-SELECTABLE", "xml.namePlural", "VARIANT-POST-BUILD-SELECTABLES"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassAffectionEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationClassAffection\"", "mmt.qualifiedName", "EcucConfigurationClassAffection", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-CONFIGURATION-CLASS-AFFECTION", "xml.namePlural", "ECUC-CONFIGURATION-CLASS-AFFECTIONS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucConfigurationClassAffection_Affecteds(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucConfigurationClassAffection.affected\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucConfigurationClassAffection.affected", "pureMM.maxOccurs", "-1", "xml.name", "AFFECTED-REF", "xml.namePlural", "AFFECTED-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "true", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucConfigurationClassAffection_AffectionKind(), source, new String[]{"xml.tags", "atp.Status=\"obsolete\";mmt.qualifiedName=\"EcucConfigurationClassAffection.affectionKind\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "atp.Status", "obsolete", "mmt.qualifiedName", "EcucConfigurationClassAffection.affectionKind", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "AFFECTION-KIND", "xml.namePlural", "AFFECTION-KINDS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAffectionEnum\"", "mmt-intern.basetypes", "AUTOSAR Root::M2::AUTOSAR Templates::GenericStructure::GeneralTemplateClasses::ArObject::ARObject", "mmt.qualifiedName", "EcucAffectionEnum", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-AFFECTION-ENUM", "xml.namePlural", "ECUC-AFFECTION-ENUMS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(0), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAffectionEnum.NOAffect\"", "mmt.qualifiedName", "EcucAffectionEnum.NOAffect", "xml.name", "NO-AFFECT", "xml.namePlural", "NO-AFFECTS"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(1), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAffectionEnum.PCAffectsLT\"", "mmt.qualifiedName", "EcucAffectionEnum.PCAffectsLT", "xml.name", "PC-AFFECTS-LT", "xml.namePlural", "PC-AFFECTS-LTS"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(2), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAffectionEnum.PCAffectsPB\"", "mmt.qualifiedName", "EcucAffectionEnum.PCAffectsPB", "xml.name", "PC-AFFECTS-PB", "xml.namePlural", "PC-AFFECTS-PBS"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(3), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAffectionEnum.PCAffectsLTAndPB\"", "mmt.qualifiedName", "EcucAffectionEnum.PCAffectsLTAndPB", "xml.name", "PC-AFFECTS-LT-AND-PB", "xml.namePlural", "PC-AFFECTS-LT-AND-PBS"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(4), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAffectionEnum.LTAffectsPB\"", "mmt.qualifiedName", "EcucAffectionEnum.LTAffectsPB", "xml.name", "LT-AFFECTS-PB", "xml.namePlural", "LT-AFFECTS-PBS"});
+        this.addAnnotation((ENamedElement)this.ecucDerivationSpecificationEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucDerivationSpecification\"", "mmt.qualifiedName", "EcucDerivationSpecification", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-DERIVATION-SPECIFICATION", "xml.namePlural", "ECUC-DERIVATION-SPECIFICATIONS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucDerivationSpecification_CalculationFormula(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucDerivationSpecification.calculationFormula\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucDerivationSpecification.calculationFormula", "pureMM.maxOccurs", "1", "xml.name", "CALCULATION-FORMULA", "xml.namePlural", "CALCULATION-FORMULAS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucDerivationSpecification_EcucQueries(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"ecucQuery.EcucDerivationSpecification\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "ecucQuery.EcucDerivationSpecification", "pureMM.maxOccurs", "-1", "xml.name", "ECUC-QUERY", "xml.namePlural", "ECUC-QUERYS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucDerivationSpecification_InformalFormula(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucDerivationSpecification.informalFormula\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucDerivationSpecification.informalFormula", "pureMM.maxOccurs", "1", "xml.name", "INFORMAL-FORMULA", "xml.namePlural", "INFORMAL-FORMULAS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucParameterDerivationFormulaEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucParameterDerivationFormula\"", "mmt.qualifiedName", "EcucParameterDerivationFormula", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-PARAMETER-DERIVATION-FORMULA", "xml.namePlural", "ECUC-PARAMETER-DERIVATION-FORMULAS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "false", "xml.text", "true"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDerivationFormula_EcucQueries(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucParameterDerivationFormula.ecucQuery\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucParameterDerivationFormula.ecucQuery", "pureMM.maxOccurs", "1", "xml.name", "ECUC-QUERY-REF", "xml.namePlural", "ECUC-QUERY-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDerivationFormula_EcucQueryStrings(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucParameterDerivationFormula.ecucQueryString\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucParameterDerivationFormula.ecucQueryString", "pureMM.maxOccurs", "1", "xml.name", "ECUC-QUERY-STRING-REF", "xml.namePlural", "ECUC-QUERY-STRING-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucAddInfoParamDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAddInfoParamDef\"", "mmt.qualifiedName", "EcucAddInfoParamDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-ADD-INFO-PARAM-DEF", "xml.namePlural", "ECUC-ADD-INFO-PARAM-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.ecucBooleanParamDefEClass, source, new String[]{"xml.tags", "xml.sequenceOffset=\"0\";mmt.qualifiedName=\"EcucBooleanParamDef\"", "xml.sequenceOffset", "0", "mmt.qualifiedName", "EcucBooleanParamDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-BOOLEAN-PARAM-DEF", "xml.namePlural", "ECUC-BOOLEAN-PARAM-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucBooleanParamDef_DefaultValue(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucBooleanParamDef.defaultValue\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucBooleanParamDef.defaultValue", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "DEFAULT-VALUE", "xml.namePlural", "DEFAULT-VALUES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucChoiceContainerDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucChoiceContainerDef\"", "mmt.qualifiedName", "EcucChoiceContainerDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-CHOICE-CONTAINER-DEF", "xml.namePlural", "ECUC-CHOICE-CONTAINER-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucChoiceContainerDef_Choices(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"choice.EcucChoiceContainerDef\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "choice.EcucChoiceContainerDef", "pureMM.maxOccurs", "-1", "xml.name", "CHOICE", "xml.namePlural", "CHOICES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucContainerDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucContainerDef\"", "mmt.qualifiedName", "EcucContainerDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-CONTAINER-DEF", "xml.namePlural", "ECUC-CONTAINER-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false", "artop.abstract", "true"});
+        this.addAnnotation((ENamedElement)this.getEcucContainerDef_PostBuildChangeable(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucContainerDef.postBuildChangeable\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucContainerDef.postBuildChangeable", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "POST-BUILD-CHANGEABLE", "xml.namePlural", "POST-BUILD-CHANGEABLES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucParamConfContainerDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucParamConfContainerDef\"", "mmt.qualifiedName", "EcucParamConfContainerDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-PARAM-CONF-CONTAINER-DEF", "xml.namePlural", "ECUC-PARAM-CONF-CONTAINER-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_MultipleConfigurationContainer(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucParamConfContainerDef.multipleConfigurationContainer\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucParamConfContainerDef.multipleConfigurationContainer", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "MULTIPLE-CONFIGURATION-CONTAINER", "xml.namePlural", "MULTIPLE-CONFIGURATION-CONTAINERS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_Parameters(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"parameter.EcucParamConfContainerDef\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "parameter.EcucParamConfContainerDef", "pureMM.maxOccurs", "-1", "xml.name", "PARAMETER", "xml.namePlural", "PARAMETERS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_References(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"reference.EcucParamConfContainerDef\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "reference.EcucParamConfContainerDef", "pureMM.maxOccurs", "-1", "xml.name", "REFERENCE", "xml.namePlural", "REFERENCES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_SubContainers(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"subContainer.EcucParamConfContainerDef\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "subContainer.EcucParamConfContainerDef", "pureMM.maxOccurs", "-1", "xml.name", "SUB-CONTAINER", "xml.namePlural", "SUB-CONTAINERS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "3", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucChoiceReferenceDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucChoiceReferenceDef\"", "mmt.qualifiedName", "EcucChoiceReferenceDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-CHOICE-REFERENCE-DEF", "xml.namePlural", "ECUC-CHOICE-REFERENCE-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucChoiceReferenceDef_Destinations(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucChoiceReferenceDef.destination\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucChoiceReferenceDef.destination", "pureMM.maxOccurs", "-1", "xml.name", "DESTINATION-REF", "xml.namePlural", "DESTINATION-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "true", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucDefinitionCollectionEClass, source, new String[]{"atp.recommendedPackage", "EcucDefinitionCollections", "xml.tags", "atp.recommendedPackage=\"EcucDefinitionCollections\";mmt.qualifiedName=\"EcucDefinitionCollection\"", "mmt.qualifiedName", "EcucDefinitionCollection", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-DEFINITION-COLLECTION", "xml.namePlural", "ECUC-DEFINITION-COLLECTIONS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionCollection_Modules(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucDefinitionCollection.module\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "1", "mmt.qualifiedName", "EcucDefinitionCollection.module", "pureMM.maxOccurs", "-1", "xml.name", "MODULE-REF", "xml.namePlural", "MODULE-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "true", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucModuleDefEClass, source, new String[]{"atp.recommendedPackage", "EcucModuleDefs", "xml.tags", "atp.recommendedPackage=\"EcucModuleDefs\";mmt.qualifiedName=\"EcucModuleDef\"", "mmt.qualifiedName", "EcucModuleDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-MODULE-DEF", "xml.namePlural", "ECUC-MODULE-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_ApiServicePrefix(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucModuleDef.apiServicePrefix\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucModuleDef.apiServicePrefix", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "API-SERVICE-PREFIX", "xml.namePlural", "API-SERVICE-PREFIXS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_RefinedModuleDef(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucModuleDef.refinedModuleDef\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucModuleDef.refinedModuleDef", "pureMM.maxOccurs", "1", "xml.name", "REFINED-MODULE-DEF-REF", "xml.namePlural", "REFINED-MODULE-DEF-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_SupportedConfigVariants(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucModuleDef.supportedConfigVariant\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "mmt.qualifiedName", "EcucModuleDef.supportedConfigVariant", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "-1", "xml.name", "SUPPORTED-CONFIG-VARIANT", "xml.namePlural", "SUPPORTED-CONFIG-VARIANTS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_Containers(), source, new String[]{"xml.sequenceOffset", "3", "mmt.qualifiedName", "container.EcucModuleDef", "xml.tags", "xml.sequenceOffset=\"11\";mmt.qualifiedName=\"container.EcucModuleDef\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "-1", "xml.name", "CONTAINER", "xml.namePlural", "CONTAINERS", "internal-xml-sequenceOffset", "11", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationLiteralDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucEnumerationLiteralDef\"", "mmt.qualifiedName", "EcucEnumerationLiteralDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-ENUMERATION-LITERAL-DEF", "xml.namePlural", "ECUC-ENUMERATION-LITERAL-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationLiteralDef_EcucCond(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucEnumerationLiteralDef.ecucCond\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "EcucEnumerationLiteralDef.ecucCond", "pureMM.maxOccurs", "1", "xml.name", "ECUC-COND", "xml.namePlural", "ECUC-CONDS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationLiteralDef_Origin(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucEnumerationLiteralDef.origin\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucEnumerationLiteralDef.origin", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "ORIGIN", "xml.namePlural", "ORIGINS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationParamDefEClass, source, new String[]{"xml.tags", "xml.sequenceOffset=\"0\";mmt.qualifiedName=\"EcucEnumerationParamDef\"", "xml.sequenceOffset", "0", "mmt.qualifiedName", "EcucEnumerationParamDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-ENUMERATION-PARAM-DEF", "xml.namePlural", "ECUC-ENUMERATION-PARAM-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationParamDef_DefaultValue(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"defaultValue.EcucEnumerationParamDef\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "defaultValue.EcucEnumerationParamDef", "pureMM.maxOccurs", "1", "xml.name", "DEFAULT-VALUE", "xml.namePlural", "DEFAULT-VALUES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationParamDef_Literals(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"literal.EcucEnumerationParamDef\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "0", "mmt.qualifiedName", "literal.EcucEnumerationParamDef", "pureMM.maxOccurs", "-1", "xml.name", "LITERAL", "xml.namePlural", "LITERALS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucFloatParamDefEClass, source, new String[]{"xml.tags", "xml.sequenceOffset=\"0\";mmt.qualifiedName=\"EcucFloatParamDef\"", "xml.sequenceOffset", "0", "mmt.qualifiedName", "EcucFloatParamDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-FLOAT-PARAM-DEF", "xml.namePlural", "ECUC-FLOAT-PARAM-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_DefaultValue(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucFloatParamDef.defaultValue\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucFloatParamDef.defaultValue", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "DEFAULT-VALUE", "xml.namePlural", "DEFAULT-VALUES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Max(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucFloatParamDef.max\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucFloatParamDef.max", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "MAX", "xml.namePlural", "MAXS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Min(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucFloatParamDef.min\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucFloatParamDef.min", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "MIN", "xml.namePlural", "MINS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucForeignReferenceDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucForeignReferenceDef\"", "mmt.qualifiedName", "EcucForeignReferenceDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-FOREIGN-REFERENCE-DEF", "xml.namePlural", "ECUC-FOREIGN-REFERENCE-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucForeignReferenceDef_DestinationType(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucForeignReferenceDef.destinationType\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucForeignReferenceDef.destinationType", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "DESTINATION-TYPE", "xml.namePlural", "DESTINATION-TYPES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucFunctionNameDef\"", "mmt.qualifiedName", "EcucFunctionNameDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-FUNCTION-NAME-DEF", "xml.namePlural", "ECUC-FUNCTION-NAME-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucFunctionNameDef_EcucFunctionNameDefVariants(), source, new String[]{"xml.tags", "pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "-1", "xml.name", "ECUC-FUNCTION-NAME-DEF-VARIANT", "xml.namePlural", "ECUC-FUNCTION-NAME-DEF-VARIANTS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefConditionalEClass, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-FUNCTION-NAME-DEF-CONDITIONAL", "xml.namePlural", "ECUC-FUNCTION-NAME-DEF-CONDITIONALS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucFunctionNameDefConditional_VariationPoint(), source, new String[]{"xml.tags", "xml.sequenceOffset=\"10000\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "xml.sequenceOffset", "0", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "VARIATION-POINT", "xml.namePlural", "VARIATION-POINTS", "internal-xml-sequenceOffset", "10000", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefContentEClass, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-FUNCTION-NAME-DEF-CONTENT", "xml.namePlural", "ECUC-FUNCTION-NAME-DEF-CONTENTS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefContentEClass, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-ABSTRACT-STRING-PARAM-DEF-CONTENT", "xml.namePlural", "ECUC-ABSTRACT-STRING-PARAM-DEF-CONTENTS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_DefaultValue(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAbstractStringParamDef.defaultValue\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucAbstractStringParamDef.defaultValue", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "DEFAULT-VALUE", "xml.namePlural", "DEFAULT-VALUES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_MaxLength(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAbstractStringParamDef.maxLength\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucAbstractStringParamDef.maxLength", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "MAX-LENGTH", "xml.namePlural", "MAX-LENGTHS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false", "artop.numericalGetter", "getMaxLengthData", "artop.numericalSetter", "setMaxLengthData"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_MinLength(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAbstractStringParamDef.minLength\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucAbstractStringParamDef.minLength", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "MIN-LENGTH", "xml.namePlural", "MIN-LENGTHS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false", "artop.numericalGetter", "getMinLengthData", "artop.numericalSetter", "setMinLengthData"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_RegularExpression(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAbstractStringParamDef.regularExpression\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucAbstractStringParamDef.regularExpression", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "REGULAR-EXPRESSION", "xml.namePlural", "REGULAR-EXPRESSIONS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "3", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucInstanceReferenceDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucInstanceReferenceDef\"", "mmt.qualifiedName", "EcucInstanceReferenceDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-INSTANCE-REFERENCE-DEF", "xml.namePlural", "ECUC-INSTANCE-REFERENCE-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucInstanceReferenceDef_DestinationContext(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucInstanceReferenceDef.destinationContext\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucInstanceReferenceDef.destinationContext", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "DESTINATION-CONTEXT", "xml.namePlural", "DESTINATION-CONTEXTS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucInstanceReferenceDef_DestinationType(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucInstanceReferenceDef.destinationType\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucInstanceReferenceDef.destinationType", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "1", "xml.name", "DESTINATION-TYPE", "xml.namePlural", "DESTINATION-TYPES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucIntegerParamDefEClass, source, new String[]{"xml.tags", "xml.sequenceOffset=\"0\";mmt.qualifiedName=\"EcucIntegerParamDef\"", "xml.sequenceOffset", "0", "mmt.qualifiedName", "EcucIntegerParamDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-INTEGER-PARAM-DEF", "xml.namePlural", "ECUC-INTEGER-PARAM-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_DefaultValue(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucIntegerParamDef.defaultValue\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucIntegerParamDef.defaultValue", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "DEFAULT-VALUE", "xml.namePlural", "DEFAULT-VALUES", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Max(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucIntegerParamDef.max\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucIntegerParamDef.max", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "MAX", "xml.namePlural", "MAXS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "1", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Min(), source, new String[]{"xml.tags", "Vh.latestBindingTime=\"CodeGenerationTime\";mmt.qualifiedName=\"EcucIntegerParamDef.min\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "mmt.qualifiedName", "EcucIntegerParamDef.min", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "Vh.latestBindingTime", "CodeGenerationTime", "xml.name", "MIN", "xml.namePlural", "MINS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "2", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucLinkerSymbolDef\"", "mmt.qualifiedName", "EcucLinkerSymbolDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-LINKER-SYMBOL-DEF", "xml.namePlural", "ECUC-LINKER-SYMBOL-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucLinkerSymbolDef_EcucLinkerSymbolDefVariants(), source, new String[]{"xml.tags", "pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "-1", "xml.name", "ECUC-LINKER-SYMBOL-DEF-VARIANT", "xml.namePlural", "ECUC-LINKER-SYMBOL-DEF-VARIANTS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefConditionalEClass, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-LINKER-SYMBOL-DEF-CONDITIONAL", "xml.namePlural", "ECUC-LINKER-SYMBOL-DEF-CONDITIONALS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucLinkerSymbolDefConditional_VariationPoint(), source, new String[]{"xml.tags", "xml.sequenceOffset=\"10000\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "xml.sequenceOffset", "0", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "VARIATION-POINT", "xml.namePlural", "VARIATION-POINTS", "internal-xml-sequenceOffset", "10000", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefContentEClass, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-LINKER-SYMBOL-DEF-CONTENT", "xml.namePlural", "ECUC-LINKER-SYMBOL-DEF-CONTENTS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucMultilineStringParamDef\"", "mmt.qualifiedName", "EcucMultilineStringParamDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-MULTILINE-STRING-PARAM-DEF", "xml.namePlural", "ECUC-MULTILINE-STRING-PARAM-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucMultilineStringParamDef_EcucMultilineStringParamDefVariants(), source, new String[]{"xml.tags", "pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "-1", "xml.name", "ECUC-MULTILINE-STRING-PARAM-DEF-VARIANT", "xml.namePlural", "ECUC-MULTILINE-STRING-PARAM-DEF-VARIANTS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefConditionalEClass, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-MULTILINE-STRING-PARAM-DEF-CONDITIONAL", "xml.namePlural", "ECUC-MULTILINE-STRING-PARAM-DEF-CONDITIONALS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucMultilineStringParamDefConditional_VariationPoint(), source, new String[]{"xml.tags", "xml.sequenceOffset=\"10000\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "xml.sequenceOffset", "0", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "VARIATION-POINT", "xml.namePlural", "VARIATION-POINTS", "internal-xml-sequenceOffset", "10000", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefContentEClass, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-MULTILINE-STRING-PARAM-DEF-CONTENT", "xml.namePlural", "ECUC-MULTILINE-STRING-PARAM-DEF-CONTENTS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.ecucReferenceDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucReferenceDef\"", "mmt.qualifiedName", "EcucReferenceDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-REFERENCE-DEF", "xml.namePlural", "ECUC-REFERENCE-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucReferenceDef_Destination(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucReferenceDef.destination\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "1", "mmt.qualifiedName", "EcucReferenceDef.destination", "pureMM.maxOccurs", "1", "xml.name", "DESTINATION-REF", "xml.namePlural", "DESTINATION-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefEClass, source, new String[]{"xml.tags", "xml.sequenceOffset=\"0\";mmt.qualifiedName=\"EcucStringParamDef\"", "xml.sequenceOffset", "0", "mmt.qualifiedName", "EcucStringParamDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-STRING-PARAM-DEF", "xml.namePlural", "ECUC-STRING-PARAM-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucStringParamDef_EcucStringParamDefVariants(), source, new String[]{"xml.tags", "pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"-1\"", "pureMM.minOccurs", "1", "pureMM.maxOccurs", "-1", "xml.name", "ECUC-STRING-PARAM-DEF-VARIANT", "xml.namePlural", "ECUC-STRING-PARAM-DEF-VARIANTS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "false", "xml.roleWrapperElement", "true", "xml.typeElement", "true", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefConditionalEClass, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-STRING-PARAM-DEF-CONDITIONAL", "xml.namePlural", "ECUC-STRING-PARAM-DEF-CONDITIONALS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucStringParamDefConditional_VariationPoint(), source, new String[]{"xml.tags", "xml.sequenceOffset=\"10000\";pureMM.minOccurs=\"0\";pureMM.maxOccurs=\"1\"", "xml.sequenceOffset", "0", "pureMM.minOccurs", "0", "pureMM.maxOccurs", "1", "xml.name", "VARIATION-POINT", "xml.namePlural", "VARIATION-POINTS", "internal-xml-sequenceOffset", "10000", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefContentEClass, source, new String[]{"xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-STRING-PARAM-DEF-CONTENT", "xml.namePlural", "ECUC-STRING-PARAM-DEF-CONTENTS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.ecucSymbolicNameReferenceDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucSymbolicNameReferenceDef\"", "mmt.qualifiedName", "EcucSymbolicNameReferenceDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-SYMBOLIC-NAME-REFERENCE-DEF", "xml.namePlural", "ECUC-SYMBOLIC-NAME-REFERENCE-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false"});
+        this.addAnnotation((ENamedElement)this.getEcucSymbolicNameReferenceDef_Destination(), source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucSymbolicNameReferenceDef.destination\";pureMM.minOccurs=\"1\";pureMM.maxOccurs=\"1\"", "pureMM.minOccurs", "1", "mmt.qualifiedName", "EcucSymbolicNameReferenceDef.destination", "pureMM.maxOccurs", "1", "xml.name", "DESTINATION-REF", "xml.namePlural", "DESTINATION-REFS", "internal-xml-sequenceOffset", "null", "xml.sequenceOffset", "0", "xml.enforceMaxMultiplicity", "true", "xml.enforceMinMultiplicity", "false", "xml.attribute", "false", "xml.roleElement", "true", "xml.roleWrapperElement", "false", "xml.typeElement", "false", "xml.typeWrapperElement", "false"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractReferenceDefEClass, source, new String[]{"xml.tags", "mmt.qualifiedName=\"EcucAbstractReferenceDef\"", "mmt.qualifiedName", "EcucAbstractReferenceDef", "xml.nsPrefix", "AR", "xml.nsUri", "http://autosar.org/schema/r4.0", "xml.name", "ECUC-ABSTRACT-REFERENCE-DEF", "xml.namePlural", "ECUC-ABSTRACT-REFERENCE-DEFS", "xml.globalElement", "false", "xml.extensionPoint", "false", "xml.ordered", "true", "xml.text", "false", "artop.abstract", "true"});
+    }
+
+    protected void createExtendedMetaDataAnnotations() {
+        String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+        this.addAnnotation((ENamedElement)this, source, new String[]{"qualified", "false"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefEClass, source, new String[]{"name", "ECUC-ABSTRACT-STRING-PARAM-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucParameterDefEClass, source, new String[]{"name", "ECUC-PARAMETER-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_Derivation(), source, new String[]{"name", "DERIVATION", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_SymbolicNameValue(), source, new String[]{"name", "SYMBOLIC-NAME-VALUE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_WithAuto(), source, new String[]{"name", "WITH-AUTO", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucCommonAttributesEClass, source, new String[]{"name", "ECUC-COMMON-ATTRIBUTES", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_ConfigurationClassAffection(), source, new String[]{"name", "CONFIGURATION-CLASS-AFFECTION", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_ImplementationConfigClass(), source, new String[]{"name", "IMPLEMENTATION-CONFIG-CLASSES", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_Origin(), source, new String[]{"name", "ORIGIN", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_RequiresIndex(), source, new String[]{"name", "REQUIRES-INDEX", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucDefinitionElementEClass, source, new String[]{"name", "ECUC-DEFINITION-ELEMENT", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_EcucCond(), source, new String[]{"name", "ECUC-COND", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_LowerMultiplicity(), source, new String[]{"name", "LOWER-MULTIPLICITY", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicity(), source, new String[]{"name", "UPPER-MULTIPLICITY", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicityInfinite(), source, new String[]{"name", "UPPER-MULTIPLICITY-INFINITE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucConditionSpecificationEClass, source, new String[]{"name", "ECUC-CONDITION-SPECIFICATION", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionSpecification_ConditionFormula(), source, new String[]{"name", "CONDITION-FORMULA", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionSpecification_EcucQueries(), source, new String[]{"name", "ECUC-QUERYS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionSpecification_InformalFormula(), source, new String[]{"name", "INFORMAL-FORMULA", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucQueryEClass, source, new String[]{"name", "ECUC-QUERY", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucQuery_EcucQueryExpression(), source, new String[]{"name", "ECUC-QUERY-EXPRESSION", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucQueryExpressionEClass, source, new String[]{"name", "ECUC-QUERY-EXPRESSION", "kind", "mixed", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_Mixed(), source, new String[]{"name", ":mixed", "kind", "elementWildcard"});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_EcucQuery(), source, new String[]{"group", "#:mixed"});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_ConfigElementDefGlobals(), source, new String[]{"name", "CONFIG-ELEMENT-DEF-GLOBAL-REF", "kind", "element", "namespace", "http://autosar.org/schema/r4.0", "group", "#:mixed"});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_ConfigElementDefLocals(), source, new String[]{"name", "CONFIG-ELEMENT-DEF-LOCAL-REF", "kind", "element", "namespace", "http://autosar.org/schema/r4.0", "group", "#:mixed"});
+        this.addAnnotation((ENamedElement)this.ecucConditionFormulaEClass, source, new String[]{"name", "ECUC-CONDITION-FORMULA", "kind", "mixed", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionFormula_EcucConditionSpecification(), source, new String[]{"group", "#:mixed"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionFormula_EcucQueries(), source, new String[]{"name", "ECUC-QUERY-REF", "kind", "element", "namespace", "http://autosar.org/schema/r4.0", "group", "#:mixed"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionFormula_EcucQueryStrings(), source, new String[]{"name", "ECUC-QUERY-STRING-REF", "kind", "element", "namespace", "http://autosar.org/schema/r4.0", "group", "#:mixed"});
+        this.addAnnotation((ENamedElement)this.ecucImplementationConfigurationClassEClass, source, new String[]{"name", "ECUC-IMPLEMENTATION-CONFIGURATION-CLASS", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucImplementationConfigurationClass_ConfigClass(), source, new String[]{"name", "CONFIG-CLASS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucImplementationConfigurationClass_ConfigVariant(), source, new String[]{"name", "CONFIG-VARIANT", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassAffectionEClass, source, new String[]{"name", "ECUC-CONFIGURATION-CLASS-AFFECTION", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucConfigurationClassAffection_Affecteds(), source, new String[]{"name", "AFFECTED-REFS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucConfigurationClassAffection_AffectionKind(), source, new String[]{"name", "AFFECTION-KIND", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucDerivationSpecificationEClass, source, new String[]{"name", "ECUC-DERIVATION-SPECIFICATION", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucDerivationSpecification_CalculationFormula(), source, new String[]{"name", "CALCULATION-FORMULA", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucDerivationSpecification_EcucQueries(), source, new String[]{"name", "ECUC-QUERYS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucDerivationSpecification_InformalFormula(), source, new String[]{"name", "INFORMAL-FORMULA", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucParameterDerivationFormulaEClass, source, new String[]{"name", "ECUC-PARAMETER-DERIVATION-FORMULA", "kind", "mixed", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDerivationFormula_EcucDerivationSpecification(), source, new String[]{"group", "#:mixed"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDerivationFormula_EcucQueries(), source, new String[]{"name", "ECUC-QUERY-REF", "kind", "element", "namespace", "http://autosar.org/schema/r4.0", "group", "#:mixed"});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDerivationFormula_EcucQueryStrings(), source, new String[]{"name", "ECUC-QUERY-STRING-REF", "kind", "element", "namespace", "http://autosar.org/schema/r4.0", "group", "#:mixed"});
+        this.addAnnotation((ENamedElement)this.ecucAddInfoParamDefEClass, source, new String[]{"name", "ECUC-ADD-INFO-PARAM-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucBooleanParamDefEClass, source, new String[]{"name", "ECUC-BOOLEAN-PARAM-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucBooleanParamDef_DefaultValue(), source, new String[]{"name", "DEFAULT-VALUE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucChoiceContainerDefEClass, source, new String[]{"name", "ECUC-CHOICE-CONTAINER-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucChoiceContainerDef_Choices(), source, new String[]{"name", "CHOICES", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucContainerDefEClass, source, new String[]{"name", "ECUC-CONTAINER-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucContainerDef_PostBuildChangeable(), source, new String[]{"name", "POST-BUILD-CHANGEABLE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucParamConfContainerDefEClass, source, new String[]{"name", "ECUC-PARAM-CONF-CONTAINER-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_MultipleConfigurationContainer(), source, new String[]{"name", "MULTIPLE-CONFIGURATION-CONTAINER", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_Parameters(), source, new String[]{"name", "PARAMETERS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_References(), source, new String[]{"name", "REFERENCES", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_SubContainers(), source, new String[]{"name", "SUB-CONTAINERS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucChoiceReferenceDefEClass, source, new String[]{"name", "ECUC-CHOICE-REFERENCE-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucChoiceReferenceDef_Destinations(), source, new String[]{"name", "DESTINATION-REFS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucDefinitionCollectionEClass, source, new String[]{"name", "ECUC-DEFINITION-COLLECTION", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionCollection_Modules(), source, new String[]{"name", "MODULE-REFS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucModuleDefEClass, source, new String[]{"name", "ECUC-MODULE-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_ApiServicePrefix(), source, new String[]{"name", "API-SERVICE-PREFIX", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_RefinedModuleDef(), source, new String[]{"name", "REFINED-MODULE-DEF-REF", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_SupportedConfigVariants(), source, new String[]{"name", "SUPPORTED-CONFIG-VARIANT", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_Containers(), source, new String[]{"name", "CONTAINERS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationLiteralDefEClass, source, new String[]{"name", "ECUC-ENUMERATION-LITERAL-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationLiteralDef_EcucCond(), source, new String[]{"name", "ECUC-COND", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationLiteralDef_Origin(), source, new String[]{"name", "ORIGIN", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationParamDefEClass, source, new String[]{"name", "ECUC-ENUMERATION-PARAM-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationParamDef_DefaultValue(), source, new String[]{"name", "DEFAULT-VALUE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationParamDef_Literals(), source, new String[]{"name", "LITERALS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucFloatParamDefEClass, source, new String[]{"name", "ECUC-FLOAT-PARAM-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_DefaultValue(), source, new String[]{"name", "DEFAULT-VALUE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Max(), source, new String[]{"name", "MAX", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Min(), source, new String[]{"name", "MIN", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucForeignReferenceDefEClass, source, new String[]{"name", "ECUC-FOREIGN-REFERENCE-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucForeignReferenceDef_DestinationType(), source, new String[]{"name", "DESTINATION-TYPE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefEClass, source, new String[]{"name", "ECUC-FUNCTION-NAME-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucFunctionNameDef_EcucFunctionNameDefVariants(), source, new String[]{"name", "ECUC-FUNCTION-NAME-DEF-VARIANTS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefConditionalEClass, source, new String[]{"name", "ECUC-FUNCTION-NAME-DEF-CONDITIONAL", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucFunctionNameDefConditional_VariationPoint(), source, new String[]{"name", "VARIATION-POINT", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefContentEClass, source, new String[]{"name", "ECUC-FUNCTION-NAME-DEF-CONTENT", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefContentEClass, source, new String[]{"name", "ECUC-ABSTRACT-STRING-PARAM-DEF-CONTENT", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_DefaultValue(), source, new String[]{"name", "DEFAULT-VALUE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_MaxLength(), source, new String[]{"name", "MAX-LENGTH", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_MinLength(), source, new String[]{"name", "MIN-LENGTH", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_RegularExpression(), source, new String[]{"name", "REGULAR-EXPRESSION", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucInstanceReferenceDefEClass, source, new String[]{"name", "ECUC-INSTANCE-REFERENCE-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucInstanceReferenceDef_DestinationContext(), source, new String[]{"name", "DESTINATION-CONTEXT", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucInstanceReferenceDef_DestinationType(), source, new String[]{"name", "DESTINATION-TYPE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucIntegerParamDefEClass, source, new String[]{"name", "ECUC-INTEGER-PARAM-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_DefaultValue(), source, new String[]{"name", "DEFAULT-VALUE", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Max(), source, new String[]{"name", "MAX", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Min(), source, new String[]{"name", "MIN", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefEClass, source, new String[]{"name", "ECUC-LINKER-SYMBOL-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucLinkerSymbolDef_EcucLinkerSymbolDefVariants(), source, new String[]{"name", "ECUC-LINKER-SYMBOL-DEF-VARIANTS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefConditionalEClass, source, new String[]{"name", "ECUC-LINKER-SYMBOL-DEF-CONDITIONAL", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucLinkerSymbolDefConditional_VariationPoint(), source, new String[]{"name", "VARIATION-POINT", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefContentEClass, source, new String[]{"name", "ECUC-LINKER-SYMBOL-DEF-CONTENT", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefEClass, source, new String[]{"name", "ECUC-MULTILINE-STRING-PARAM-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucMultilineStringParamDef_EcucMultilineStringParamDefVariants(), source, new String[]{"name", "ECUC-MULTILINE-STRING-PARAM-DEF-VARIANTS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefConditionalEClass, source, new String[]{"name", "ECUC-MULTILINE-STRING-PARAM-DEF-CONDITIONAL", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucMultilineStringParamDefConditional_VariationPoint(), source, new String[]{"name", "VARIATION-POINT", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefContentEClass, source, new String[]{"name", "ECUC-MULTILINE-STRING-PARAM-DEF-CONTENT", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucReferenceDefEClass, source, new String[]{"name", "ECUC-REFERENCE-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucReferenceDef_Destination(), source, new String[]{"name", "DESTINATION-REF", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefEClass, source, new String[]{"name", "ECUC-STRING-PARAM-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucStringParamDef_EcucStringParamDefVariants(), source, new String[]{"name", "ECUC-STRING-PARAM-DEF-VARIANTS", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefConditionalEClass, source, new String[]{"name", "ECUC-STRING-PARAM-DEF-CONDITIONAL", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucStringParamDefConditional_VariationPoint(), source, new String[]{"name", "VARIATION-POINT", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefContentEClass, source, new String[]{"name", "ECUC-STRING-PARAM-DEF-CONTENT", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucSymbolicNameReferenceDefEClass, source, new String[]{"name", "ECUC-SYMBOLIC-NAME-REFERENCE-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.getEcucSymbolicNameReferenceDef_Destination(), source, new String[]{"name", "DESTINATION-REF", "kind", "element", "namespace", "http://autosar.org/schema/r4.0"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractReferenceDefEClass, source, new String[]{"name", "ECUC-ABSTRACT-REFERENCE-DEF", "kind", "elementOnly", "namespace", "http://autosar.org/schema/r4.0"});
+    }
+
+    protected void createGenModelAnnotations() {
+        String source = "http://www.eclipse.org/emf/2002/GenModel";
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefEClass, source, new String[]{"documentation", "Abstract class that is used to collect the common properties for StringParamDefs, LinkerSymbolDef, FunctionNameDef and MultilineStringParamDefs. \r\n\r\natpVariation: ECUC0082, ECUC0083"});
+        this.addAnnotation((ENamedElement)this.ecucParameterDefEClass, source, new String[]{"documentation", "Abstract class used to define the similarities of all ECU Configuration Parameter types defined as subclasses."});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_Derivation(), source, new String[]{"documentation", "A derivation of a Configuration Parameter value can be specified by an informal Calculation Formula or by a formal language that can be used to specify the computational rules."});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_SymbolicNameValue(), source, new String[]{"documentation", "Specifies that this parameter's value is used, together with the aggregating container, to derive a symbolic name definition. See chapter \"Representation of Symbolic Names\" in Ecuc specification for more details."});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDef_WithAuto(), source, new String[]{"documentation", "Specifies whether it shall be allowed on the value side to specify this parameter value as \"AUTO\".\r\n\r\nIf withAuto is \"true\" it shall be possible to set the \"isAutoValue\" attribute of the respective parameter to \"true\". This means that the actual value will not be considered during ECU Configuration but will be (re-)calculated by the code generator and stored in the value attribute afterwards. These implicit updated values might require a re-generation of other modules which reference these values.\r\n\r\nIf withAuto is \"false\" it shall not be possible to set the \"isAutoValue\" attribute of the respective parameter to \"true\".\r\n\r\nIf withAuto is not present the default is \"false\"."});
+        this.addAnnotation((ENamedElement)this.ecucCommonAttributesEClass, source, new String[]{"documentation", "Attributes used by Configuration Parameters as well as References."});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_ConfigurationClassAffection(), source, new String[]{"documentation", "Specifes whether changes on this parameter have some affection on other parameters."});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_ImplementationConfigClass(), source, new String[]{"documentation", "Specifies in which ConfigurationClass this parameter or reference is available for which ConfigurationVariant. \r\nThis aggregation is optional if the surrounding EcucModuleDef has the category STANDARDIZED_MODULE_DEFINITION. If the category attribute of the EcucModuleDef is set to VENDOR_SPECIFIC_MODULE_DEFINITION then this aggregation is mandatory."});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_Origin(), source, new String[]{"documentation", "String specifying if this configuration parameter is an AUTOSAR standardized configuration parameter or if the parameter is hardware- or vendor-specific."});
+        this.addAnnotation((ENamedElement)this.getEcucCommonAttributes_RequiresIndex(), source, new String[]{"documentation", "Used to define whether the value element for this definition shall be provided with an index."});
+        this.addAnnotation((ENamedElement)this.ecucDefinitionElementEClass, source, new String[]{"documentation", "Common class used to express the commonalities of configuration parameters, references and containers.\r\nIf not stated otherwise the default multiplicity is exactly one mandatory occurrence of the specified element."});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_EcucCond(), source, new String[]{"documentation", "If it evaluates to true the Ecu Parameter definition shall be processed as specified. Otherwise the parameter definition shall be ignored."});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_LowerMultiplicity(), source, new String[]{"documentation", "The lower multiplicity of the specified element.\r\n0: optional\r\n1: at least one occurence\r\nn: at least n occurrences\r\n\r\natpVariation: [ECUC00082]"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicity(), source, new String[]{"documentation", "The upper multiplicity of the specified element.\r\n0: no occurrence (used for VSMD)\r\n1: at most one occurrence\r\nm: at most m occurrences\r\n\r\nIf upperMultiplicity is set than upperMultiplicityInfinite shall not be used. \r\n\r\natpVariation: [ECUC00082]"});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicityInfinite(), source, new String[]{"documentation", "To express an infinite number of occurrences of this element this attribute has to be set to true. \r\n\r\nIf upperMultiplicityInfinite is set than upperMultiplicity shall not be used. "});
+        this.addAnnotation((ENamedElement)this.ecucConditionSpecificationEClass, source, new String[]{"documentation", "Allows to define existence dependencies based on the value of  parameter values.\r\n\r\n"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionSpecification_ConditionFormula(), source, new String[]{"documentation", "Definition of the formula used to define existence dependencies. "});
+        this.addAnnotation((ENamedElement)this.getEcucConditionSpecification_EcucQueries(), source, new String[]{"documentation", "Query to the ECU Configuration Description. "});
+        this.addAnnotation((ENamedElement)this.getEcucConditionSpecification_InformalFormula(), source, new String[]{"documentation", "Informal description of the condition used to to define existence dependencies."});
+        this.addAnnotation((ENamedElement)this.ecucQueryEClass, source, new String[]{"documentation", "Defines a query to the ECUC Description.\r\n"});
+        this.addAnnotation((ENamedElement)this.getEcucQuery_EcucQueryExpression(), source, new String[]{"documentation", "This is the EcucQuery used in the calculation formula or the condition formula. "});
+        this.addAnnotation((ENamedElement)this.ecucQueryExpressionEClass, source, new String[]{"documentation", "Defines a query expression to the ECUC Description and output the result as an numerical value. Due to the \"mixedString\" nature of the formula there can be several EcuQueryExpressions used.\r\n"});
+        this.addAnnotation((ENamedElement)this.ecucQueryExpressionEClass.getEOperations().get(0), source, new String[]{"body", "return <%org.eclipse.sphinx.emf.util.EObjectUtil%>.getMixedText(getMixed());"});
+        this.addAnnotation((ENamedElement)this.ecucQueryExpressionEClass.getEOperations().get(1), source, new String[]{"body", "<%org.eclipse.sphinx.emf.util.EObjectUtil%>.setMixedText(getMixed(), text);"});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_ConfigElementDefGlobals(), source, new String[]{"documentation", "The EcucQueryExpression points to an EcucDefinitionElement that is used to find an element in the EcucDescription. In order to find the right element in the EcucDescription a search is necessary. If the complete EcucDescription needs to be searched this global reference shall be used. Due to the \"mixedString\" nature of the EcucQueryExpression several references to EcucDefintionElements can be used in one EcucQueryExpression. "});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_ConfigElementDefLocals(), source, new String[]{"documentation", "The EcucQueryExpression points to an EcucDefinitionElement that is used to find an element in the EcucDescription. In order to find the right element in the EcucDescription a search is necessary. If the search is executed inside of the same module that contains the EcucQuery this local reference shall be used. Due to the \"mixedString\" nature of the EcucQueryExpression several references to EcucDefintionElements can be used in one EcucQueryExpression. "});
+        this.addAnnotation((ENamedElement)this.ecucConditionFormulaEClass, source, new String[]{"documentation", "This formula must yield a boolean expression depending on ecuc queries. Note that the EcucConditionFormula is a mixed string. Therfore the properties have the uppermultiplicity 1.\r\n"});
+        this.addAnnotation((ENamedElement)this.getEcucConditionFormula_EcucQueries(), source, new String[]{"documentation", "The EcucQuery serves as a argument for the formula. "});
+        this.addAnnotation((ENamedElement)this.getEcucConditionFormula_EcucQueryStrings(), source, new String[]{"documentation", "This indicates that the referenced query shall return a string."});
+        this.addAnnotation((ENamedElement)this.ecucImplementationConfigurationClassEClass, source, new String[]{"documentation", "Specifies which ConfigurationClass this parameter has in the individual ConfigurationVariants."});
+        this.addAnnotation((ENamedElement)this.getEcucImplementationConfigurationClass_ConfigClass(), source, new String[]{"documentation", "Specifies the ConfigurationClass for the given ConfigurationVariant."});
+        this.addAnnotation((ENamedElement)this.getEcucImplementationConfigurationClass_ConfigVariant(), source, new String[]{"documentation", "Specifies the ConfigurationVariant the ConfigurationClass is specified for."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum, source, new String[]{"documentation", "Possible configuration classes for the AUTOSAR configuration parameters."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(0), source, new String[]{"documentation", "PublishedInformation is used to specify the fact that certain \r\ninformation is fixed even before the pre-compile stage."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(1), source, new String[]{"documentation", "PreCompile Time: after compilation a configuration parameter can not be changed any more."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(2), source, new String[]{"documentation", "Link Time: parts of configuration are delivered from another object code file"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum.getELiterals().get(3), source, new String[]{"documentation", "PostBuildTime: the configuration parameter has to be stored at a known memory location."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum, source, new String[]{"documentation", "Specifies the possible Configuration Variants used for AUTOSAR BSW Modules."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(0), source, new String[]{"documentation", "Preconfigured (i.e. fixed) configuration which cannot be changed. "});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(1), source, new String[]{"documentation", "Recommended configuration for a module."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(2), source, new String[]{"documentation", "Specifies that the BSW Module implementation uses only PreCompileTime configuration parameters."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(3), source, new String[]{"documentation", "Specifies that the BSW Module implementation may use PreCompileTime and LinkTime configuration parameters."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(4), source, new String[]{"documentation", "Specifies that the BSW Module implementation may use PreCompileTime, LinkTime and PostBuild configuration parameters."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(5), source, new String[]{"documentation", "Specifies that the BSW Module implementation may use PreCompileTime, LinkTime and PostBuild loadable configuration parameters (supported in the VSMD)."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum.getELiterals().get(6), source, new String[]{"documentation", "Specifies that the BSW Module implementation may use PreCompileTime, LinkTime and PostBuild selectable configuration parameters (supported in the VSMD)."});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassAffectionEClass, source, new String[]{"documentation", "Specifies in the \"VendorSpecificModuleDefinition\" whether changes on this parameter do affect other parameters in a later configuration step."});
+        this.addAnnotation((ENamedElement)this.getEcucConfigurationClassAffection_Affecteds(), source, new String[]{"documentation", "Optional reference to parameters or references which are affected by the ConfigurationClassAffection."});
+        this.addAnnotation((ENamedElement)this.getEcucConfigurationClassAffection_AffectionKind(), source, new String[]{"documentation", "Specifies which affect do changes in this parameter have on other parameters.  This attribute is deprecated and will be removed in future versions. "});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum, source, new String[]{"documentation", "Possible affections used by the EcucConfigurationClassAffection."});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(0), source, new String[]{"documentation", "no affect on any other parameter."});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(1), source, new String[]{"documentation", "A pre-compile time parameter affecting one or several link time parameter(s)."});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(2), source, new String[]{"documentation", "A pre-compile time parameter affecting one or several post build time parameter(s)."});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(3), source, new String[]{"documentation", "A pre-compile time parameter affecting one or several link time and post-build time parameter(s))."});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum.getELiterals().get(4), source, new String[]{"documentation", "A link time parameter affecting one or several post-build time parameter(s)."});
+        this.addAnnotation((ENamedElement)this.ecucDerivationSpecificationEClass, source, new String[]{"documentation", "Allows to define configuration items that are calculated based on the value of\r\n- other parameter values\r\n- elements (attributes/classes) defined in other AUTOSAR templates such as System template and SW component template"});
+        this.addAnnotation((ENamedElement)this.getEcucDerivationSpecification_CalculationFormula(), source, new String[]{"documentation", "Definition of the formula used to calculate the value of the configuration element."});
+        this.addAnnotation((ENamedElement)this.getEcucDerivationSpecification_EcucQueries(), source, new String[]{"documentation", "Query to the ECU Configuration Description. "});
+        this.addAnnotation((ENamedElement)this.getEcucDerivationSpecification_InformalFormula(), source, new String[]{"documentation", "Informal description of the derivation used to calculate the value of the configuration element."});
+        this.addAnnotation((ENamedElement)this.ecucParameterDerivationFormulaEClass, source, new String[]{"documentation", "This formula is intended to specify how an ecu parameter can be derived from other information in the Autosar Templates. "});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDerivationFormula_EcucQueries(), source, new String[]{"documentation", "This is one particular EcucQuery used in the calculation formula."});
+        this.addAnnotation((ENamedElement)this.getEcucParameterDerivationFormula_EcucQueryStrings(), source, new String[]{"documentation", "This indicates that the referenced query shall return a string."});
+        this.addAnnotation((ENamedElement)this.ecucAddInfoParamDefEClass, source, new String[]{"documentation", "Configuration Parameter Definition for the specification of formated text in the ECU Configuration Parameter Description."});
+        this.addAnnotation((ENamedElement)this.ecucBooleanParamDefEClass, source, new String[]{"documentation", "Configuration parameter type for Boolean. Allowed values are true and false."});
+        this.addAnnotation((ENamedElement)this.getEcucBooleanParamDef_DefaultValue(), source, new String[]{"documentation", "Default value of the boolean configuration parameter.\r\n\r\natpVariation: [ECUC00083]"});
+        this.addAnnotation((ENamedElement)this.ecucChoiceContainerDefEClass, source, new String[]{"documentation", "Used to define configuration containers that provide a choice between several EcucParamConfContainerDef. But in the actual ECU Configuration Values only one instance from the choice list will be present."});
+        this.addAnnotation((ENamedElement)this.getEcucChoiceContainerDef_Choices(), source, new String[]{"documentation", "The choices available in a EcucChoiceContainerDef."});
+        this.addAnnotation((ENamedElement)this.ecucContainerDefEClass, source, new String[]{"documentation", "Base class used to gather common attributes of configuration container definitions."});
+        this.addAnnotation((ENamedElement)this.getEcucContainerDef_PostBuildChangeable(), source, new String[]{"documentation", "Specifies if the number of instances of this container may be changed post-build time. This parameter may only be set to true if all of the following conditions hold:\r\n- the container's upperMultiplicity &gt; lowerMultiplicity\r\n- all parameters within the container and subContainers are post-build time changeable.\r\nIf any of the aggregated parameters is either pre-compile time or link time this attribute is ignored and may be omitted.\r\n\r\nThis attribute is optional if the surrounding EcucModuleDef has the category STANDARDIZED_MODULE_DEFINITION. If the category attribute of the EcucModuleDef is set to VENDOR_SPECIFIC_MODULE_DEFINITION then this attribute is mandatory.\r\n"});
+        this.addAnnotation((ENamedElement)this.ecucParamConfContainerDefEClass, source, new String[]{"documentation", "Used to define configuration containers that can hierarchically contain other containers and/or parameter definitions."});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_MultipleConfigurationContainer(), source, new String[]{"documentation", "Specifies whether this container is used to define multiple configuration sets. Only one container in the whole EcucModuleDef shall have this enabled."});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_Parameters(), source, new String[]{"documentation", "The parameters defined within the EcucParamConfContainerDef."});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_References(), source, new String[]{"documentation", "The references defined within the EcucParamConfContainerDef."});
+        this.addAnnotation((ENamedElement)this.getEcucParamConfContainerDef_SubContainers(), source, new String[]{"documentation", "The containers defined within the EcucParamConfContainerDef."});
+        this.addAnnotation((ENamedElement)this.ecucChoiceReferenceDefEClass, source, new String[]{"documentation", "Specify alternative references where in the ECU Configuration description only one of the specified references will actually be used."});
+        this.addAnnotation((ENamedElement)this.getEcucChoiceReferenceDef_Destinations(), source, new String[]{"documentation", "All the possible parameter containers for the reference are specified."});
+        this.addAnnotation((ENamedElement)this.ecucDefinitionCollectionEClass, source, new String[]{"documentation", "This represents the anchor point of an ECU Configuration Parameter Definition within the AUTOSAR templates structure."});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionCollection_Modules(), source, new String[]{"documentation", "References to  the module definitions of individual software modules."});
+        this.addAnnotation((ENamedElement)this.ecucModuleDefEClass, source, new String[]{"documentation", "Used as the top-level element for configuration definition for Software Modules, including BSW and RTE as well as ECU Infrastructure."});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_ApiServicePrefix(), source, new String[]{"documentation", "For CDD modules this attribute holds the module abbreviation.\r\n\r\nThe shortName of the module definition of a complex device driver is always \"CDD\". Therefore for CDD modules the module shortName shall be described with this apiServicePrefix attribute."});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_RefinedModuleDef(), source, new String[]{"documentation", "Optional reference from the Vendor Specific Module Definition to the Standardized Module Definition it refines. \r\nIn case this EcucModuleDef has the category STANDARDIZED_MODULE_DEFINITION \r\nthis reference shall not be provided. In case this EcucModuleDef has the category VENDOR_SPECIFIC_MODULE_DEFINITION this reference is mandatory."});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_SupportedConfigVariants(), source, new String[]{"documentation", "Specifies which ConfigurationVariants are supported by this software module. \r\nThis attribute is optional if the EcucModuleDef has the category STANDARDIZED_MODULE_DEFINITION. If the category attribute of the EcucModuleDef is set to VENDOR_SPECIFIC_MODULE_DEFINITION then this attribute is mandatory.\r\n"});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_Containers(), source, new String[]{"documentation", "Aggregates the top-level container definitions of this specific module definition."});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationLiteralDefEClass, source, new String[]{"documentation", "Configuration parameter type for enumeration literals definition."});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationLiteralDef_EcucCond(), source, new String[]{"documentation", "If it evaluates to true the literal definition shall be processed as specified. Otherwise the literal definition shall be ignored."});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationLiteralDef_Origin(), source, new String[]{"documentation", "String specifying if this literal is an AUTOSAR standardized literal or if the literal is vendor-specific."});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationParamDefEClass, source, new String[]{"documentation", "Configuration parameter type for Enumeration."});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationParamDef_DefaultValue(), source, new String[]{"documentation", "Default value of the enumeration configuration parameter. This string needs to be one of the literals specified for this enumeration."});
+        this.addAnnotation((ENamedElement)this.getEcucEnumerationParamDef_Literals(), source, new String[]{"documentation", "Aggregation on the literals used to define this enumeration parameter. \r\nThis aggregation is optional if the surrounding EcucModuleDef has the category STANDARDIZED_MODULE_DEFINITION. If the category attribute of the EcucModuleDef is set to VENDOR_SPECIFIC_MODULE_DEFINITION then this aggregation is mandatory."});
+        this.addAnnotation((ENamedElement)this.ecucFloatParamDefEClass, source, new String[]{"documentation", "Configuration parameter type for Float."});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_DefaultValue(), source, new String[]{"documentation", "Default value of the float configuration parameter.\r\n\r\natpVariation: [ECUC00083]"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Max(), source, new String[]{"documentation", "Max value allowed for the parameter defined.\r\n\r\natpVariation: [ECUC00084]"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Min(), source, new String[]{"documentation", "Min value allowed for the parameter defined.\r\n\r\natpVariation: [ECUC00084]"});
+        this.addAnnotation((ENamedElement)this.ecucForeignReferenceDefEClass, source, new String[]{"documentation", "Specify a reference to an XML description of an entity described in another AUTOSAR template."});
+        this.addAnnotation((ENamedElement)this.getEcucForeignReferenceDef_DestinationType(), source, new String[]{"documentation", "The type in the AUTOSAR Metamodel to which instance this reference is allowed to point to. "});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefEClass, source, new String[]{"documentation", "Configuration parameter type for Function Names like those used to specify callback functions."});
+        this.addAnnotation((ENamedElement)this.getEcucFunctionNameDef_EcucFunctionNameDefVariants(), source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefConditionalEClass, source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.getEcucFunctionNameDefConditional_VariationPoint(), source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefContentEClass, source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefContentEClass, source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefContentEClass.getEOperations().get(0), source, new String[]{"body", "return (<%org.artop.aal.common.datatypes.PositiveIntegerDatatype%>)maxLength.clone();"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefContentEClass.getEOperations().get(1), source, new String[]{"body", "maxLength.setRadix(newMaxLength.getRadix());\nmaxLength.setNoOfDigits(newMaxLength.getNoOfDigits());\nsetMaxLength(newMaxLength.getValue());\n"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefContentEClass.getEOperations().get(2), source, new String[]{"body", "return (<%org.artop.aal.common.datatypes.PositiveIntegerDatatype%>)minLength.clone();"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefContentEClass.getEOperations().get(3), source, new String[]{"body", "minLength.setRadix(newMinLength.getRadix());\nminLength.setNoOfDigits(newMinLength.getNoOfDigits());\nsetMinLength(newMinLength.getValue());\n"});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_DefaultValue(), source, new String[]{"documentation", "Default value of the string configuration parameter."});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_MaxLength(), source, new String[]{"documentation", "Max length allowed for this string."});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_MinLength(), source, new String[]{"documentation", "Min length allowed for this string."});
+        this.addAnnotation((ENamedElement)this.getEcucAbstractStringParamDefContent_RegularExpression(), source, new String[]{"documentation", "This represents the regular expression which shall be used to validate the \r\nstring parameter value."});
+        this.addAnnotation((ENamedElement)this.ecucInstanceReferenceDefEClass, source, new String[]{"documentation", "Specify a reference to an XML description of an entity desribed in another AUTOSAR template using the INSTANCE REFERENCE semantics."});
+        this.addAnnotation((ENamedElement)this.getEcucInstanceReferenceDef_DestinationContext(), source, new String[]{"documentation", "The context in the AUTOSAR Metamodel to which' this reference is allowed to point to."});
+        this.addAnnotation((ENamedElement)this.getEcucInstanceReferenceDef_DestinationType(), source, new String[]{"documentation", "The type in the AUTOSAR Metamodel to which' instance this reference is allowed to point to. "});
+        this.addAnnotation((ENamedElement)this.ecucIntegerParamDefEClass, source, new String[]{"documentation", "Configuration parameter type for Integer."});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_DefaultValue(), source, new String[]{"documentation", "Default value of the integer configuration parameter.\r\n\r\natpVariation: [ECUC00083]"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Max(), source, new String[]{"documentation", "Max value allowed for the parameter defined.\r\n\r\natpVariation: [ECUC00084]"});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Min(), source, new String[]{"documentation", "Min value allowed for the parameter defined.\r\n\r\natpVariation: [ECUC00084]"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefEClass, source, new String[]{"documentation", "Configuration parameter type for Linker Symbol Names like those used to specify memory locations of variables and constants."});
+        this.addAnnotation((ENamedElement)this.getEcucLinkerSymbolDef_EcucLinkerSymbolDefVariants(), source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefConditionalEClass, source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.getEcucLinkerSymbolDefConditional_VariationPoint(), source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefContentEClass, source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefEClass, source, new String[]{"documentation", "Configuration parameter type for multiline Strings (including \"carriage return\")."});
+        this.addAnnotation((ENamedElement)this.getEcucMultilineStringParamDef_EcucMultilineStringParamDefVariants(), source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefConditionalEClass, source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.getEcucMultilineStringParamDefConditional_VariationPoint(), source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefContentEClass, source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucReferenceDefEClass, source, new String[]{"documentation", "Specify references within the ECU Configuration Description between parameter containers."});
+        this.addAnnotation((ENamedElement)this.getEcucReferenceDef_Destination(), source, new String[]{"documentation", "Exactly one reference to a parameter container is allowed as destination."});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefEClass, source, new String[]{"documentation", "Configuration parameter type for String."});
+        this.addAnnotation((ENamedElement)this.getEcucStringParamDef_EcucStringParamDefVariants(), source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefConditionalEClass, source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.getEcucStringParamDefConditional_VariationPoint(), source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefContentEClass, source, new String[]{"documentation", "This element was generated/modified due to an atpVariation stereotype."});
+        this.addAnnotation((ENamedElement)this.ecucSymbolicNameReferenceDefEClass, source, new String[]{"documentation", "This specialization of a EcucContainerReferenceDef specifies that the implementation of the reference is done using a symbolic name defined by the referenced Container's shortName."});
+        this.addAnnotation((ENamedElement)this.getEcucSymbolicNameReferenceDef_Destination(), source, new String[]{"documentation", "Exactly one reference to a parameter container is allowed as destination."});
+        this.addAnnotation((ENamedElement)this.ecucAbstractReferenceDefEClass, source, new String[]{"documentation", "Common class to gather the attributes for the definition of references."});
+    }
+
+    protected void createStereotypeAnnotations() {
+        String source = "Stereotype";
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefEClass, source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_LowerMultiplicity(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicity(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucDefinitionElement_UpperMultiplicityInfinite(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.ecucQueryExpressionEClass, source, new String[]{"Stereotype", "atpMixedString"});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_ConfigElementDefGlobals(), source, new String[]{"Stereotype", "atpUriDef"});
+        this.addAnnotation((ENamedElement)this.getEcucQueryExpression_ConfigElementDefLocals(), source, new String[]{"Stereotype", "atpUriDef"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassEnumEEnum, source, new String[]{"Stereotype", "enumeration"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationVariantEnumEEnum, source, new String[]{"Stereotype", "enumeration"});
+        this.addAnnotation((ENamedElement)this.ecucAffectionEnumEEnum, source, new String[]{"Stereotype", "enumeration"});
+        this.addAnnotation((ENamedElement)this.ecucParameterDerivationFormulaEClass, source, new String[]{"Stereotype", "atpMixedString"});
+        this.addAnnotation((ENamedElement)this.getEcucBooleanParamDef_DefaultValue(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucModuleDef_RefinedModuleDef(), source, new String[]{"Stereotype", "atpUriDef"});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_DefaultValue(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Max(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucFloatParamDef_Min(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_DefaultValue(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Max(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucIntegerParamDef_Min(), source, new String[]{"Stereotype", ""});
+        this.addAnnotation((ENamedElement)this.getEcucReferenceDef_Destination(), source, new String[]{"Stereotype", "atpUriDef"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucParameterDefAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucParameterDef";
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucAbstractStringParamDef->EcucParameterDef", "GUID", "15B49CE7-2B69-43e9-AD91-7D743F3D58A0", "Id", "-228067309", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucAddInfoParamDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucAddInfoParamDef->EcucParameterDef", "GUID", "088A355A-C97F-45e3-8BE5-A35CDBE62435", "Id", "816845752", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucBooleanParamDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucBooleanParamDef->EcucParameterDef", "GUID", "706AA564-8A04-487a-8B00-621D5C56B875", "Id", "-678419893", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationParamDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucEnumerationParamDef->EcucParameterDef", "GUID", "A9C40D52-DB44-46d3-A6B3-1292DF9C0BF4", "Id", "-1903166955", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucFloatParamDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucFloatParamDef->EcucParameterDef", "GUID", "49F90E1B-B9A9-4c12-A1C7-AED4D86B3FDA", "Id", "-809119102", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucIntegerParamDefEClass, source, new String[]{"xml.sequenceOffset", "0", "Name", "", "mmt.qualifiedName", "EcucIntegerParamDef->EcucParameterDef", "GUID", "EEA318B8-4B77-43df-A8A3-912CEEE958CD", "Id", "1759429760"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucCommonAttributesAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucCommonAttributes";
+        this.addAnnotation((ENamedElement)this.ecucParameterDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucParameterDef->EcucCommonAttributes", "GUID", "45E80E41-A29C-4524-9AA3-4A4C2588FD80", "Id", "411638485", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractReferenceDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucAbstractReferenceDef->EcucCommonAttributes", "GUID", "922778B2-DFE6-4278-9F8E-C581FD665E34", "Id", "-898296462", "xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucDefinitionElementAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucDefinitionElement";
+        this.addAnnotation((ENamedElement)this.ecucCommonAttributesEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucCommonAttributes->EcucDefinitionElement", "GUID", "5E57B09C-81C1-4cec-B23B-47846701E210", "Id", "1077886638", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucContainerDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucContainerDef->EcucDefinitionElement", "GUID", "E17250D3-DC19-46bf-B453-337D428F577A", "Id", "867404417", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucModuleDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucModuleDef->EcucDefinitionElement", "GUID", "9D7286C4-F6C7-406f-9DD4-62D8F84176DC", "Id", "1785605144", "xml.sequenceOffset", "3"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_IdentifiableAnnotations() {
+        String source = "TaggedValuesOfGeneralization_Identifiable";
+        this.addAnnotation((ENamedElement)this.ecucDefinitionElementEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucDefinitionElement->Identifiable", "GUID", "AB88D1D1-DFF7-4d79-AE49-C6C4F5201111", "Id", "1836157705", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucQueryEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucQuery->Identifiable", "GUID", "F2DFBBAE-EF27-4a7a-8C11-A681B39EFD2A", "Id", "-241709989", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucEnumerationLiteralDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucEnumerationLiteralDef->Identifiable", "GUID", "16AF0E74-5350-49e0-BAB8-D06664FBBF4A", "Id", "2108326933", "xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_ARObjectAnnotations() {
+        String source = "TaggedValuesOfGeneralization_ARObject";
+        this.addAnnotation((ENamedElement)this.ecucConditionSpecificationEClass, source, new String[]{"xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucQueryExpressionEClass, source, new String[]{"xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucImplementationConfigurationClassEClass, source, new String[]{"xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucConfigurationClassAffectionEClass, source, new String[]{"xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucDerivationSpecificationEClass, source, new String[]{"xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucAbstractStringParamDefContentEClass, source, new String[]{"xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_FormulaExpressionAnnotations() {
+        String source = "TaggedValuesOfGeneralization_FormulaExpression";
+        this.addAnnotation((ENamedElement)this.ecucConditionFormulaEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucConditionFormula->FormulaExpression", "GUID", "8928914A-8FE7-47fa-B459-87A88779CDE4", "Id", "-992005687", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucParameterDerivationFormulaEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucParameterDerivationFormula->FormulaExpression", "GUID", "FE345204-0126-4f7b-AE62-87BF1110E02C", "Id", "932322192", "xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucContainerDefAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucContainerDef";
+        this.addAnnotation((ENamedElement)this.ecucChoiceContainerDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucChoiceContainerDef->EcucContainerDef", "GUID", "41515AF6-A353-416d-A36D-18C0BDCBA107", "Id", "52785237", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucParamConfContainerDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucParamConfContainerDef->EcucContainerDef", "GUID", "6550EB33-9F6E-4cbd-A043-C0A339753135", "Id", "-1809248627", "xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucAbstractReferenceDefAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucAbstractReferenceDef";
+        this.addAnnotation((ENamedElement)this.ecucChoiceReferenceDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucChoiceReferenceDef->EcucAbstractReferenceDef", "GUID", "0BF85BCA-91DD-49b9-8600-04986841C253", "Id", "1570034772", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucForeignReferenceDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucForeignReferenceDef->EcucAbstractReferenceDef", "GUID", "8EC5B3C3-4C73-4ee0-8D1A-054028824377", "Id", "-1772776458", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucInstanceReferenceDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucInstanceReferenceDef->EcucAbstractReferenceDef", "GUID", "91E2422F-6537-48f1-9F17-59AC79A18FFB", "Id", "-1701333889", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucReferenceDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucReferenceDef->EcucAbstractReferenceDef", "GUID", "85713DD1-5952-4203-B42D-E54B983E2E78", "Id", "-1695757627", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucSymbolicNameReferenceDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucSymbolicNameReferenceDef->EcucAbstractReferenceDef", "GUID", "637CD39B-4BF4-4301-9867-653F3711A820", "Id", "205513778", "xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_AtpBlueprintableAnnotations() {
+        String source = "TaggedValuesOfGeneralization_AtpBlueprintable";
+        this.addAnnotation((ENamedElement)this.ecucDefinitionCollectionEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucDefinitionCollection->AtpBlueprintable", "GUID", "41F4B088-069D-4417-BA23-C48EE1155AEC", "Id", "1568873893", "xml.sequenceOffset", "2"});
+        this.addAnnotation((ENamedElement)this.ecucModuleDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucModuleDef->AtpBlueprintable", "GUID", "BD28EA04-403F-45a9-8D90-16F23DE4D74A", "Id", "1238539424", "xml.sequenceOffset", "2"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_AtpBlueprintAnnotations() {
+        String source = "TaggedValuesOfGeneralization_AtpBlueprint";
+        this.addAnnotation((ENamedElement)this.ecucDefinitionCollectionEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucDefinitionCollection->AtpBlueprint", "GUID", "5CE8BF97-6E17-4766-90C8-03C8665FF8DB", "Id", "-1249370444", "xml.sequenceOffset", "1"});
+        this.addAnnotation((ENamedElement)this.ecucModuleDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucModuleDef->AtpBlueprint", "GUID", "F8C52E36-8B4B-4d70-AF87-637B041C1D7C", "Id", "443824507", "xml.sequenceOffset", "1"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_ARElementAnnotations() {
+        String source = "TaggedValuesOfGeneralization_ARElement";
+        this.addAnnotation((ENamedElement)this.ecucDefinitionCollectionEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucDefinitionCollection->ARElement", "GUID", "55AE6A5A-DC47-483e-8D78-AAB6B94E5BE1", "Id", "-682382525", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucModuleDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucModuleDef->ARElement", "GUID", "CEF10269-0A4D-4783-B570-1469EA565327", "Id", "1143050676", "xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucAbstractStringParamDefAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucAbstractStringParamDef";
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucFunctionNameDef->EcucAbstractStringParamDef", "GUID", "A1E7AFDB-EC26-46af-9801-9330EF54BCF0", "Id", "1254111609", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucLinkerSymbolDef->EcucAbstractStringParamDef", "GUID", "F609D753-2752-4080-8231-A4C76095939C", "Id", "-2098216360", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucMultilineStringParamDef->EcucAbstractStringParamDef", "GUID", "3BBF057C-1B54-466c-86CB-A36CB16CAB02", "Id", "350912787", "xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefEClass, source, new String[]{"Name", "", "mmt.qualifiedName", "EcucStringParamDef->EcucAbstractStringParamDef", "GUID", "DA41914D-96B2-4100-9416-9A86D707A570", "Id", "-354389350", "xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucFunctionNameDefContentAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucFunctionNameDefContent";
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefConditionalEClass, source, new String[]{"xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucAbstractStringParamDefContentAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucAbstractStringParamDefContent";
+        this.addAnnotation((ENamedElement)this.ecucFunctionNameDefContentEClass, source, new String[]{"xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefContentEClass, source, new String[]{"xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefContentEClass, source, new String[]{"xml.sequenceOffset", "0"});
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefContentEClass, source, new String[]{"xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucLinkerSymbolDefContentAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucLinkerSymbolDefContent";
+        this.addAnnotation((ENamedElement)this.ecucLinkerSymbolDefConditionalEClass, source, new String[]{"xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucMultilineStringParamDefContentAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucMultilineStringParamDefContent";
+        this.addAnnotation((ENamedElement)this.ecucMultilineStringParamDefConditionalEClass, source, new String[]{"xml.sequenceOffset", "0"});
+    }
+
+    protected void createTaggedValuesOfGeneralization_EcucStringParamDefContentAnnotations() {
+        String source = "TaggedValuesOfGeneralization_EcucStringParamDefContent";
+        this.addAnnotation((ENamedElement)this.ecucStringParamDefConditionalEClass, source, new String[]{"xml.sequenceOffset", "0"});
+    }
+}
+

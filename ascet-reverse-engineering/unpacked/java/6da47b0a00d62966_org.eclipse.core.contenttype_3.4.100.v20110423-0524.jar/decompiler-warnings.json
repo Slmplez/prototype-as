@@ -1,0 +1,17 @@
+[
+  {
+    "file": "org/eclipse/core/internal/content/ContentType.java",
+    "line": 153,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/content/ContentType.java",
+    "line": 537,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/content/ContentType.java",
+    "line": 568,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

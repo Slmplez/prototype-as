@@ -1,0 +1,33 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  org.eclipse.core.resources.IResource
+ */
+package org.eclipse.jdt.core.search;
+
+import org.eclipse.core.resources.IResource;
+import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.search.ReferenceMatch;
+import org.eclipse.jdt.core.search.SearchParticipant;
+
+public class FieldReferenceMatch
+extends ReferenceMatch {
+    private boolean isReadAccess;
+    private boolean isWriteAccess;
+
+    public FieldReferenceMatch(IJavaElement enclosingElement, int accuracy, int offset, int length, boolean isReadAccess, boolean isWriteAccess, boolean insideDocComment, SearchParticipant participant, IResource resource) {
+        super(enclosingElement, accuracy, offset, length, insideDocComment, participant, resource);
+        this.isReadAccess = isReadAccess;
+        this.isWriteAccess = isWriteAccess;
+    }
+
+    public final boolean isReadAccess() {
+        return this.isReadAccess;
+    }
+
+    public final boolean isWriteAccess() {
+        return this.isWriteAccess;
+    }
+}
+

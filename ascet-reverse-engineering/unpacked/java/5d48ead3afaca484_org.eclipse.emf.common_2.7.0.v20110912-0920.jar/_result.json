@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.common_2.7.0.v20110912-0920.jar",
+  "sha256": "5d48ead3afaca4849d1e47df9575a96a832b22226601cb02d5822968f5578248",
+  "kind": "java",
+  "output": "unpacked/java/5d48ead3afaca484_org.eclipse.emf.common_2.7.0.v20110912-0920.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 56,
+  "input_classes": 125,
+  "warning_lines": 3,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.common_2.7.0.v20110912-0920.jar"
+  ],
+  "top_level_classes_checked": 56,
+  "missing_top_level_java_files": 0
+}

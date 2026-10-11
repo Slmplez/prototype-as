@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.debug_3.7.1.v20110802_r371/jdimodel.jar",
+  "sha256": "2eafd2dc827547b3fc3ea92042ef4c2287ce143a92b9beecf4210aade04acd37",
+  "kind": "java",
+  "output": "unpacked/java/2eafd2dc827547b3_jdimodel.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 348,
+  "input_classes": 415,
+  "warning_lines": 77,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.debug_3.7.1.v20110802_r371/jdimodel.jar"
+  ],
+  "top_level_classes_checked": 348,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/cebra/Etas.AscetNET.dll",
+  "sha256": "2c75ef3e9bbcd831f2dfa359a66691aad68aba981d592987eff4b37bd0fb1984",
+  "kind": "managed",
+  "output": "unpacked/dotnet/2c75ef3e9bbcd831_Etas.AscetNET.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 536,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/cebra/Etas.AscetNET.dll"
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/ProvisioningAgent.java",
+    "line": 54,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/ProvisioningAgent.java",
+    "line": 154,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/ProvisioningAgent.java",
+    "line": 173,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/ProvisioningEventBus.java",
+    "line": 42,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/ProvisioningEventBus.java",
+    "line": 59,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/ProvisioningEventBus.java",
+    "line": 76,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/ProvisioningEventBus.java",
+    "line": 106,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/ProvisioningEventBus.java",
+    "line": 154,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/helpers/CollectionUtils.java",
+    "line": 198,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/helpers/TarInputStream.java",
+    "line": 42,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/core/helpers/TarInputStream.java",
+    "line": 107,
+    "text": "* Unable to fully structure code"
+  }
+]

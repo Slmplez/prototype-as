@@ -1,0 +1,18 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.compare.core_3.5.200.I20110208-0800.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.compare.internal.core.TextLineLCS
+----------------------------
+
+compactAndShiftLCS(org.eclipse.compare.internal.core.TextLineLCS$TextLine[] int org.eclipse.compare.internal.core.TextLineLCS$TextLine[] )
+  Unable to fully structure code
+
+
+org.eclipse.compare.rangedifferencer.RangeComparatorLCS
+----------------------------
+
+getDifferences(org.eclipse.core.runtime.SubMonitor org.eclipse.compare.rangedifferencer.AbstractRangeDifferenceFactory )
+  Unable to fully structure code
+compactAndShiftLCS(int[] int org.eclipse.compare.rangedifferencer.IRangeComparator )
+  Unable to fully structure code

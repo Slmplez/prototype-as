@@ -1,0 +1,32 @@
+[
+  {
+    "file": "org/osgi/service/event/TopicPermissionCollection.java",
+    "line": 32,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/service/event/TopicPermissionCollection.java",
+    "line": 63,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/service/useradmin/UserAdminPermissionCollection.java",
+    "line": 19,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/service/useradmin/UserAdminPermissionCollection.java",
+    "line": 49,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/service/wireadmin/WirePermissionCollection.java",
+    "line": 19,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/service/wireadmin/WirePermissionCollection.java",
+    "line": 49,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

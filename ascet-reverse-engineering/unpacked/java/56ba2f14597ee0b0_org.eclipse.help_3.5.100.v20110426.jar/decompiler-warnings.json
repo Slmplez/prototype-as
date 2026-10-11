@@ -1,0 +1,17 @@
+[
+  {
+    "file": "org/eclipse/help/internal/HelpPlugin.java",
+    "line": 84,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/help/internal/util/ResourceLocator.java",
+    "line": 62,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/help/internal/util/ResourceLocator.java",
+    "line": 86,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

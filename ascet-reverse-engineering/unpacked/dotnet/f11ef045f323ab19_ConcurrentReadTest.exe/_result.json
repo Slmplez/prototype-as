@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/cebra/ConcurrentReadTest.exe",
+  "sha256": "f11ef045f323ab195265c72a90a5046ae9ab95b503c1bb8331256529a6351651",
+  "kind": "managed",
+  "output": "unpacked/dotnet/f11ef045f323ab19_ConcurrentReadTest.exe",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 2,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/cebra/ConcurrentReadTest.exe"
+  ]
+}

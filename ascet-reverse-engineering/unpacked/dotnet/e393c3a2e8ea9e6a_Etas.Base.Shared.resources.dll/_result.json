@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/zh-cn/Etas.Base.Shared.resources.dll",
+  "sha256": "e393c3a2e8ea9e6ae7158f1f89d79b3f9af1107c0fd93ae8ffe8dfae84b049a9",
+  "kind": "managed",
+  "output": "unpacked/dotnet/e393c3a2e8ea9e6a_Etas.Base.Shared.resources.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 1,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/zh-cn/Etas.Base.Shared.resources.dll"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.jobs_3.5.100.v20110404.jar",
+  "sha256": "2447002411f1135266024cf7c4fc717cea690697eaf8af2b06a6241506125785",
+  "kind": "java",
+  "output": "unpacked/java/2447002411f11352_org.eclipse.core.jobs_3.5.100.v20110404.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 33,
+  "input_classes": 48,
+  "warning_lines": 56,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.jobs_3.5.100.v20110404.jar"
+  ],
+  "top_level_classes_checked": 33,
+  "missing_top_level_java_files": 0
+}

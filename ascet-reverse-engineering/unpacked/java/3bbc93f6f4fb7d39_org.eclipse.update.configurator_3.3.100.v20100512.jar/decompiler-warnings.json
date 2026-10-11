@@ -1,0 +1,12 @@
+[
+  {
+    "file": "org/eclipse/update/internal/configurator/ConfigurationActivator.java",
+    "line": 470,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/update/internal/configurator/ConfigurationActivator.java",
+    "line": 499,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

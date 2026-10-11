@@ -1,0 +1,31 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.core.internal.registry.ExtensionRegistry
+----------------------------
+
+addContribution(java.io.InputStream org.eclipse.core.runtime.IContributor boolean java.lang.String java.util.ResourceBundle java.lang.Object )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+org.eclipse.core.internal.registry.ReadWriteMonitor
+----------------------------
+
+enterRead()
+  Unable to fully structure code
+
+
+org.eclipse.core.internal.registry.TableReader
+----------------------------
+
+loadTables(long )
+  Loose catch block
+loadContributions()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+loadContributors()
+  Loose catch block
+loadNamespaces()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+loadOrphans()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once

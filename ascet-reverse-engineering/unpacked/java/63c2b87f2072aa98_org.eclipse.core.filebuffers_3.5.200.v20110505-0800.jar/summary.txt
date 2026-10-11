@@ -1,0 +1,28 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.core.filebuffers_3.5.200.v20110505-0800.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.core.internal.filebuffers.FileStoreTextFileBuffer
+----------------------------
+
+getContentType()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK], 13[CATCHBLOCK]], but top level block is 4[TRYBLOCK]
+computeEncoding()
+  Loose catch block
+
+
+org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer
+----------------------------
+
+computeEncoding()
+  Loose catch block
+
+
+org.eclipse.core.internal.filebuffers.TextFileBufferManager
+----------------------------
+
+isTextFileLocation(org.eclipse.core.filesystem.IFileStore boolean )
+  Unable to fully structure code
+getTextFileBuffer(org.eclipse.jface.text.IDocument )
+  Unable to fully structure code
+  Could not resolve type clashes

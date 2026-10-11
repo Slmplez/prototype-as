@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.0.0.v20110511/ant_tasks/pdepublishing-ant.jar",
+  "sha256": "c73e8f0b339fa038e3372dfa586c0477733cca0c1b49d8fd5aadf062b132b348",
+  "kind": "java",
+  "output": "unpacked/java/c73e8f0b339fa038_pdepublishing-ant.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 5,
+  "input_classes": 8,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.0.0.v20110511/ant_tasks/pdepublishing-ant.jar"
+  ],
+  "top_level_classes_checked": 5,
+  "missing_top_level_java_files": 0
+}

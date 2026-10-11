@@ -1,0 +1,16 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package org.eclipse.sphinx.platform.preferences;
+
+/*
+ * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+ */
+public interface IEclipsePreference<T> {
+    public String getQualifier();
+
+    public String getKey();
+
+    public String getDefaultValueAsString();
+}
+

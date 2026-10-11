@@ -1,0 +1,15 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package org.eclipse.debug.core.model;
+
+import org.eclipse.debug.core.DebugException;
+
+public interface ITerminate {
+    public boolean canTerminate();
+
+    public boolean isTerminated();
+
+    public void terminate() throws DebugException;
+}
+

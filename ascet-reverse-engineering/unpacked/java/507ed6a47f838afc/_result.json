@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/archives/20b981d9ee46c49d_org.eclipse.jdt.launching_3.6.1.v20110803_r371.jar/lib/launchingsupport.jar",
+  "sha256": "507ed6a47f838afcf0706d39df8f556cdc62852641d5b59de56e80cdf52675f8",
+  "kind": "java",
+  "output": "unpacked/java/507ed6a47f838afc",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 3,
+  "input_classes": 3,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/archives/20b981d9ee46c49d_org.eclipse.jdt.launching_3.6.1.v20110803_r371.jar/lib/launchingsupport.jar"
+  ],
+  "top_level_classes_checked": 3,
+  "missing_top_level_java_files": 0
+}

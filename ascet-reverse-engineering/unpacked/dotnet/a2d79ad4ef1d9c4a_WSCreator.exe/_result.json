@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/Tools/WorkspaceCreator/WSCreator.exe",
+  "sha256": "a2d79ad4ef1d9c4a21916faf532bdb0b1b430421f6c7a2778ae8a2cb4439a6ae",
+  "kind": "managed",
+  "output": "unpacked/dotnet/a2d79ad4ef1d9c4a_WSCreator.exe",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 19,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/WorkspaceCreator/WSCreator.exe"
+  ]
+}

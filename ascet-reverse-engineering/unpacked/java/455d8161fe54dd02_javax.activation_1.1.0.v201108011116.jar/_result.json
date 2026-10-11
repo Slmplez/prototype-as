@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/javax.activation_1.1.0.v201108011116.jar",
+  "sha256": "455d8161fe54dd02ace6a75b2fd56e5852ba1dc8aa5c3d3f684b2c8f2f4ce9f6",
+  "kind": "java",
+  "output": "unpacked/java/455d8161fe54dd02_javax.activation_1.1.0.v201108011116.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 25,
+  "input_classes": 29,
+  "warning_lines": 9,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/javax.activation_1.1.0.v201108011116.jar"
+  ],
+  "top_level_classes_checked": 25,
+  "missing_top_level_java_files": 0
+}

@@ -1,9 +1,10 @@
-# ASCET 多实例与后台 Agent 连接器
+# ASCET 工具与反编译资料
 
-本分支保存 2026-10-02 的代码资料包快照，用于让人工工作和 Agent 任务使用不同的 ASCET 进程。
+本分支保存 ASCET 多实例连接器、代码/BDE 搜索工具，以及已有安装内容的反编译与 Smalltalk 静态重建源码。多实例资料包保留 2026-10-02 的原快照；新增源码材料独立存放。
 
 ## 文档入口
 
+- [完整反编译与静态重建源码](ascet-reverse-engineering/README.zh-CN.md)
 - [代码与 BDE 搜索工具](ascet-multi-instance/tools/code-search/README.md)
 - [搜索工具任务拆分](ascet-multi-instance/tools/code-search/TASK_BREAKDOWN.zh-CN.md)
 - [完整资料包说明](ascet-multi-instance/README.md)

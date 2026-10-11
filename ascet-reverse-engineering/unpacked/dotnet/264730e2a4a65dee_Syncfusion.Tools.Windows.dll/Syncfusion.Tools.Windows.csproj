@@ -1,0 +1,307 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Syncfusion.Tools.Windows</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Browse.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Calculator.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Check.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Currency.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Down.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Left.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Leftend.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Redo.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Right.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Rightend.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Undo.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Up.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.RibbonControlAdv.Resources.HelpButton.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.SuperToolTip.ToolTip.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.CloseButton.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.DropDownFull.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.DropDownPartial.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.FirstTab.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.LastTab.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.NextPage.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.NextTab.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.PreviousPage.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.PreviousTab.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.Background.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.BottomArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.BottomInnerArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.LeftArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.LeftInnerArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.RightArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.RightInnerArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.TabInner.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.TopArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.TopInnerArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.AutoComplete.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.BarControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ButtonEdit.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CalculatorControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CheckBoxAdv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ChildFrameBarManager.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ColorPickerUIAdv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ComboBoxAdv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ComboBoxAutoComplete.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ComboListBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.commandbarcontroller.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ContextMenuStripEx.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CurrencyEdit.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CurrencyTextBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.DateTimePickerExt.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.docking.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.dockingpanel.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.DomainUpDownExt.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.FontComboBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.FontListBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.Gallery.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.GradientLabel.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MainFrameBarManager.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MaskedEditBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MiniToolBar.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MonthCalendarExt.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MultiColumnTreeView.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.NumericUpDownExt.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.OfficeButton.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.OfficeDropDownButton.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.OfficeSplitButton.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.PopupMenu.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.PopupMenusManager.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ProgressBarEx.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RadioButtonAdv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RibbonControlAdv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RibbonTabControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SplashControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SplashPanel.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SplitContainerAdv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.StatusBarAdv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.StatusBarAdvPanel.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.StatusStripEx.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SuperAccelerator.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabbedGroup.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabbedMDIManager.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabControlExt.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripEx.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripPanelItem.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripSplitButtonEx.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolTip.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TrackBarEx.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TreeViewAdv.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.WizardControl.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPTaskBar.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPTaskBarBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPTaskPane.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPToolBar.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.RibbonControlAdv.Resources.ToolStripCheckBox.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CheckBoxItem.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabSplitterContainer.TabSplitterButtons.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.Controls.TabSplitterContainer.TabSplitterDefaultImage.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.Background.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomArrowHighlight.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomInnerArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomInnerArrowHighlight.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftInnerArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftInnerArrowHighlight.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightInnerArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightInnerArrowHighlight.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TabInner.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TabInnerHighlight.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopInnerArrow.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopInnerArrowHighlight.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftArrowHighlight.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightArrowHighlight.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopArrowHighlight.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.Slider.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.NavigationView.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripComboBoxEx.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabSplitterContainer.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RibbonPanelMergeContainer.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RadioButtonItem.bmp" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.active.gif" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.active_tab.gif" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.inactive.gif" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.inactive_tab.gif" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.TabbedMDI.Cursors.Drop.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.TabbedMDI.Cursors.NoDrop.CUR" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.CopyCursor.cur" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.DragCursor.cur" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.EditSizingCursor.cur" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.NoDropCursor.cur" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.bmps.closemc.ico" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.bmps.minimizemc.ico" />
+    <None Remove="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.bmps.restoremc.ico" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Browse.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Browse.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Calculator.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Calculator.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Check.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Check.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Currency.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Currency.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Down.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Down.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Left.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Left.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Leftend.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Leftend.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Redo.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Redo.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Right.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Right.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Rightend.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Rightend.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Undo.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Undo.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Up.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.ButtonEdit.resources.Up.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.RibbonControlAdv.Resources.HelpButton.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.RibbonControlAdv.Resources.HelpButton.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.SuperToolTip.ToolTip.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.SuperToolTip.ToolTip.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.CloseButton.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.CloseButton.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.DropDownFull.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.DropDownFull.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.DropDownPartial.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.DropDownPartial.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.FirstTab.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.FirstTab.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.LastTab.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.LastTab.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.NextPage.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.NextPage.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.NextTab.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.NextTab.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.PreviousPage.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.PreviousPage.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.PreviousTab.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabControlAdv.Images.PreviousTab.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.Background.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.Background.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.BottomArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.BottomArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.BottomInnerArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.BottomInnerArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.LeftArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.LeftArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.LeftInnerArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.LeftInnerArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.RightArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.RightArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.RightInnerArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.RightInnerArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.TabInner.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.TabInner.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.TopArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.TopArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.TopInnerArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2005DragProvider.TopInnerArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.AutoComplete.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.AutoComplete.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.BarControl.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.BarControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ButtonEdit.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ButtonEdit.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CalculatorControl.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CalculatorControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CheckBoxAdv.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CheckBoxAdv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ChildFrameBarManager.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ChildFrameBarManager.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ColorPickerUIAdv.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ColorPickerUIAdv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ComboBoxAdv.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ComboBoxAdv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ComboBoxAutoComplete.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ComboBoxAutoComplete.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ComboListBox.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ComboListBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.commandbarcontroller.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.commandbarcontroller.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ContextMenuStripEx.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ContextMenuStripEx.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CurrencyEdit.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CurrencyEdit.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CurrencyTextBox.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CurrencyTextBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.DateTimePickerExt.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.DateTimePickerExt.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.docking.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.docking.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.dockingpanel.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.dockingpanel.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.DomainUpDownExt.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.DomainUpDownExt.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.FontComboBox.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.FontComboBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.FontListBox.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.FontListBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.Gallery.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.Gallery.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.GradientLabel.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.GradientLabel.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MainFrameBarManager.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MainFrameBarManager.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MaskedEditBox.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MaskedEditBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MiniToolBar.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MiniToolBar.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MonthCalendarExt.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MonthCalendarExt.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MultiColumnTreeView.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.MultiColumnTreeView.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.NumericUpDownExt.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.NumericUpDownExt.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.OfficeButton.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.OfficeButton.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.OfficeDropDownButton.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.OfficeDropDownButton.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.OfficeSplitButton.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.OfficeSplitButton.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.PopupMenu.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.PopupMenu.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.PopupMenusManager.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.PopupMenusManager.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ProgressBarEx.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ProgressBarEx.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RadioButtonAdv.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RadioButtonAdv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RibbonControlAdv.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RibbonControlAdv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RibbonTabControl.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RibbonTabControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SplashControl.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SplashControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SplashPanel.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SplashPanel.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SplitContainerAdv.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SplitContainerAdv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.StatusBarAdv.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.StatusBarAdv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.StatusBarAdvPanel.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.StatusBarAdvPanel.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.StatusStripEx.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.StatusStripEx.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SuperAccelerator.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.SuperAccelerator.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabbedGroup.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabbedGroup.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabbedMDIManager.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabbedMDIManager.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabControlExt.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabControlExt.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripEx.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripEx.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripPanelItem.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripPanelItem.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripSplitButtonEx.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripSplitButtonEx.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolTip.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolTip.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TrackBarEx.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TrackBarEx.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TreeViewAdv.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TreeViewAdv.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.WizardControl.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.WizardControl.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPTaskBar.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPTaskBar.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPTaskBarBox.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPTaskBarBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPTaskPane.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPTaskPane.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPToolBar.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.XPToolBar.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.RibbonControlAdv.Resources.ToolStripCheckBox.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.RibbonControlAdv.Resources.ToolStripCheckBox.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CheckBoxItem.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.CheckBoxItem.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabSplitterContainer.TabSplitterButtons.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabSplitterContainer.TabSplitterButtons.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.Controls.TabSplitterContainer.TabSplitterDefaultImage.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.Controls.TabSplitterContainer.TabSplitterDefaultImage.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.Background.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.Background.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomArrowHighlight.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomArrowHighlight.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomInnerArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomInnerArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomInnerArrowHighlight.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.BottomInnerArrowHighlight.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftInnerArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftInnerArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftInnerArrowHighlight.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftInnerArrowHighlight.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightInnerArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightInnerArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightInnerArrowHighlight.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightInnerArrowHighlight.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TabInner.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TabInner.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TabInnerHighlight.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TabInnerHighlight.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopInnerArrow.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopInnerArrow.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopInnerArrowHighlight.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopInnerArrowHighlight.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftArrowHighlight.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.LeftArrowHighlight.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightArrowHighlight.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.RightArrowHighlight.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopArrowHighlight.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.VS2008DragProvider.TopArrowHighlight.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.Slider.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.Slider.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.NavigationView.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.NavigationView.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripComboBoxEx.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.ToolStripComboBoxEx.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabSplitterContainer.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.TabSplitterContainer.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RibbonPanelMergeContainer.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RibbonPanelMergeContainer.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RadioButtonItem.bmp" LogicalName="Syncfusion.Windows.Forms.Tools.ToolboxIcons.RadioButtonItem.bmp" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.active.gif" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.active.gif" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.active_tab.gif" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.active_tab.gif" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.inactive.gif" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.inactive.gif" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.inactive_tab.gif" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.DockingWindows.Images.WhidbeyDragProvider.inactive_tab.gif" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.TabbedMDI.Cursors.Drop.CUR" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.TabbedMDI.Cursors.Drop.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.TabbedMDI.Cursors.NoDrop.CUR" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.TabbedMDI.Cursors.NoDrop.CUR" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.CopyCursor.cur" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.CopyCursor.cur" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.DragCursor.cur" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.DragCursor.cur" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.EditSizingCursor.cur" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.EditSizingCursor.cur" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.NoDropCursor.cur" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.Cursors.NoDropCursor.cur" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.bmps.closemc.ico" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.bmps.closemc.ico" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.bmps.minimizemc.ico" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.bmps.minimizemc.ico" />
+    <EmbeddedResource Include="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.bmps.restoremc.ico" LogicalName="Syncfusion.Windows.Forms.Tools.FrameworkComponents.XPMenus.bmps.restoremc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Syncfusion.Shared.Base">
+      <HintPath>..\..\installation\bin\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="Syncfusion.Grid.Windows">
+      <HintPath>..\..\installation\bin\Syncfusion.Grid.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="EnvDTE" />
+    <Reference Include="Syncfusion.Core">
+      <HintPath>..\..\installation\bin\Syncfusion.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Base">
+      <HintPath>..\..\installation\bin\Syncfusion.Grid.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Windows">
+      <HintPath>..\..\installation\bin\Syncfusion.Shared.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Base">
+      <HintPath>..\..\installation\bin\Syncfusion.Tools.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+</Project>

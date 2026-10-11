@@ -1,0 +1,67 @@
+[
+  {
+    "file": "org/eclipse/sphinx/emf/metamodel/AbstractMetaModelDescriptor.java",
+    "line": 186,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/metamodel/AbstractMetaModelDescriptor.java",
+    "line": 210,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/metamodel/MetaModelDescriptorRegistry.java",
+    "line": 385,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/metamodel/MetaModelDescriptorRegistry.java",
+    "line": 425,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/metamodel/MetaModelDescriptorRegistry.java",
+    "line": 620,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/metamodel/MetaModelDescriptorRegistry.java",
+    "line": 672,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/metamodel/MetaModelDescriptorRegistry.java",
+    "line": 732,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/metamodel/MetaModelDescriptorRegistry.java",
+    "line": 944,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/metamodel/MetaModelDescriptorRegistry.java",
+    "line": 960,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/model/ModelDescriptorRegistry.java",
+    "line": 252,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/model/ModelDescriptorRegistry.java",
+    "line": 291,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/model/ModelDescriptorRegistry.java",
+    "line": 311,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/sphinx/emf/domain/factory/EditingDomainFactoryListenerRegistry.java",
+    "line": 118,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

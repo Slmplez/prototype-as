@@ -1,0 +1,72 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.jdt.debug_3.7.1.v20110802_r371\jdimodel.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.jdi.internal.VerboseWriter
+----------------------------
+
+gotoPosition(int )
+  Unable to fully structure code
+
+
+org.eclipse.jdi.internal.connect.PacketSendManager
+----------------------------
+
+sendAvailablePackets()
+  Unable to fully structure code
+
+
+org.eclipse.jdi.internal.connect.SocketLaunchingConnectorImpl
+----------------------------
+
+findFreePort()
+  Loose catch block
+
+
+org.eclipse.jdi.internal.spy.TcpipSpy
+----------------------------
+
+run()
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.debug.core.hcr.CompilationUnitDelta
+----------------------------
+
+readString(java.io.InputStream )
+  Loose catch block
+
+
+org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager
+----------------------------
+
+getAffectedFrame(org.eclipse.jdt.internal.debug.core.model.JDIThread java.util.List )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.debug.core.model.JDIThread
+----------------------------
+
+runEvaluation(org.eclipse.jdt.debug.core.IEvaluationRunnable org.eclipse.core.runtime.IProgressMonitor int boolean )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.debug.eval.ast.engine.BinaryBasedSourceGenerator
+----------------------------
+
+buildMethodDeclaration(com.sun.jdi.Method )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.debug.eval.ast.engine.SignatureExt
+----------------------------
+
+getTypeSuperClassInterfaces(char[] )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.debug.eval.ast.instructions.RuntimeSignature
+----------------------------
+
+copyType(char[] int char[] int boolean )
+  Unable to fully structure code

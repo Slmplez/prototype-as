@@ -1,0 +1,8579 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  org.eclipse.emf.ecore.EObject
+ *  org.eclipse.emf.ecore.EPackage
+ */
+package autosar21.util;
+
+import autosar21.bswmodule.BswModuleDescription;
+import autosar21.bswmodule.BswmodulePackage;
+import autosar21.bswmodule.util.BswmoduleSwitch;
+import autosar21.ecucdescription.BooleanValue;
+import autosar21.ecucdescription.ConfigReferenceValue;
+import autosar21.ecucdescription.Container;
+import autosar21.ecucdescription.EcuConfiguration;
+import autosar21.ecucdescription.EcucElement;
+import autosar21.ecucdescription.EcucdescriptionPackage;
+import autosar21.ecucdescription.EnumerationValue;
+import autosar21.ecucdescription.FloatValue;
+import autosar21.ecucdescription.FunctionNameValue;
+import autosar21.ecucdescription.InstanceReferenceValue;
+import autosar21.ecucdescription.IntegerValue;
+import autosar21.ecucdescription.LinkerSymbolValue;
+import autosar21.ecucdescription.ModuleConfiguration;
+import autosar21.ecucdescription.ParameterValue;
+import autosar21.ecucdescription.ReferenceValue;
+import autosar21.ecucdescription.StringValue;
+import autosar21.ecucdescription.instanceref.InstanceReferenceValueValue;
+import autosar21.ecucdescription.util.EcucdescriptionSwitch;
+import autosar21.ecucparameterdef.BooleanParamDef;
+import autosar21.ecucparameterdef.ChoiceContainerDef;
+import autosar21.ecucparameterdef.ChoiceReferenceDef;
+import autosar21.ecucparameterdef.CommonConfigurationAttributes;
+import autosar21.ecucparameterdef.ConfigParameter;
+import autosar21.ecucparameterdef.ConfigReference;
+import autosar21.ecucparameterdef.ConfigurationClassAffection;
+import autosar21.ecucparameterdef.ContainerDef;
+import autosar21.ecucparameterdef.DerivedBooleanParamDef;
+import autosar21.ecucparameterdef.DerivedEnumerationParamDef;
+import autosar21.ecucparameterdef.DerivedFloatParamDef;
+import autosar21.ecucparameterdef.DerivedIntegerParamDef;
+import autosar21.ecucparameterdef.DerivedParamType;
+import autosar21.ecucparameterdef.DerivedStringParamDef;
+import autosar21.ecucparameterdef.EcuParameterDefinition;
+import autosar21.ecucparameterdef.EcucparameterdefPackage;
+import autosar21.ecucparameterdef.EnumerationLiteralDef;
+import autosar21.ecucparameterdef.EnumerationParamDef;
+import autosar21.ecucparameterdef.FloatParamDef;
+import autosar21.ecucparameterdef.ForeignReferenceDef;
+import autosar21.ecucparameterdef.FunctionNameDef;
+import autosar21.ecucparameterdef.InstanceReferenceDef;
+import autosar21.ecucparameterdef.IntegerParamDef;
+import autosar21.ecucparameterdef.LinkerSymbolDef;
+import autosar21.ecucparameterdef.ModuleDef;
+import autosar21.ecucparameterdef.ParamConfContainerDef;
+import autosar21.ecucparameterdef.ParamConfMultiplicity;
+import autosar21.ecucparameterdef.ReferenceDef;
+import autosar21.ecucparameterdef.StringParamDef;
+import autosar21.ecucparameterdef.SymbolicNameReferenceDef;
+import autosar21.ecucparameterdef.util.EcucparameterdefSwitch;
+import autosar21.ecuresource.AssemblyHWConnection;
+import autosar21.ecuresource.DelegationHWConnection;
+import autosar21.ecuresource.ECU;
+import autosar21.ecuresource.EcuresourcePackage;
+import autosar21.ecuresource.HWConnection;
+import autosar21.ecuresource.HWContainer;
+import autosar21.ecuresource.HWElement;
+import autosar21.ecuresource.HWElementContainer;
+import autosar21.ecuresource.HWPin;
+import autosar21.ecuresource.HWPort;
+import autosar21.ecuresource.PinHWConnection;
+import autosar21.ecuresource.SignalTransformation;
+import autosar21.ecuresource.basicelements.BasicelementsPackage;
+import autosar21.ecuresource.basicelements.BootTime;
+import autosar21.ecuresource.basicelements.ElectricalRange;
+import autosar21.ecuresource.basicelements.ErrorDetectionCorrection;
+import autosar21.ecuresource.basicelements.FrequencyRange;
+import autosar21.ecuresource.basicelements.MemoryAccess;
+import autosar21.ecuresource.basicelements.SupportsSafety;
+import autosar21.ecuresource.basicelements.SupportsSecurity;
+import autosar21.ecuresource.basicelements.Temperature;
+import autosar21.ecuresource.basicelements.TimeRange;
+import autosar21.ecuresource.basicelements.util.BasicelementsSwitch;
+import autosar21.ecuresource.ecuelectronics.BusTermination;
+import autosar21.ecuresource.ecuelectronics.Clock;
+import autosar21.ecuresource.ecuelectronics.CommunicationTransceiver;
+import autosar21.ecuresource.ecuelectronics.DiscreteECUElectronics;
+import autosar21.ecuresource.ecuelectronics.ECUElectronics;
+import autosar21.ecuresource.ecuelectronics.EcuelectronicsPackage;
+import autosar21.ecuresource.ecuelectronics.Oscillator;
+import autosar21.ecuresource.ecuelectronics.PowerDriverHWElement;
+import autosar21.ecuresource.ecuelectronics.PowerDriverHWPort;
+import autosar21.ecuresource.ecuelectronics.PowerDriverNotification;
+import autosar21.ecuresource.ecuelectronics.PowerDriverProtection;
+import autosar21.ecuresource.ecuelectronics.PowerSupplyCurrentNotification;
+import autosar21.ecuresource.ecuelectronics.PowerSupplyHWElement;
+import autosar21.ecuresource.ecuelectronics.PowerSupplyHWPort;
+import autosar21.ecuresource.ecuelectronics.PowerSupplyVoltageNotification;
+import autosar21.ecuresource.ecuelectronics.util.EcuelectronicsSwitch;
+import autosar21.ecuresource.memory.MemoryMappedAssemblyHWConnection;
+import autosar21.ecuresource.memory.MemoryMappedDelegationHWConnection;
+import autosar21.ecuresource.memory.MemoryMappedHWPort;
+import autosar21.ecuresource.memory.MemoryPackage;
+import autosar21.ecuresource.memory.ProvidedMemorySegment;
+import autosar21.ecuresource.memory.ProvidedNVMemorySegment;
+import autosar21.ecuresource.memory.util.MemorySwitch;
+import autosar21.ecuresource.peripherals.ADC;
+import autosar21.ecuresource.peripherals.AnalogueIO;
+import autosar21.ecuresource.peripherals.Buffer;
+import autosar21.ecuresource.peripherals.CCU;
+import autosar21.ecuresource.peripherals.CommunicationFilter;
+import autosar21.ecuresource.peripherals.CommunicationHWPort;
+import autosar21.ecuresource.peripherals.CommunicationPeripheral;
+import autosar21.ecuresource.peripherals.CommunicationPhysicalMedium;
+import autosar21.ecuresource.peripherals.CommunicationProtocol;
+import autosar21.ecuresource.peripherals.CommunicationSpeed;
+import autosar21.ecuresource.peripherals.CommunicationSpeedFixed;
+import autosar21.ecuresource.peripherals.CommunicationSpeedList;
+import autosar21.ecuresource.peripherals.CommunicationSpeedRange;
+import autosar21.ecuresource.peripherals.DAC;
+import autosar21.ecuresource.peripherals.DigitalIO;
+import autosar21.ecuresource.peripherals.ECUCommunicationPort;
+import autosar21.ecuresource.peripherals.GeneralPurposeTimer;
+import autosar21.ecuresource.peripherals.PWD;
+import autosar21.ecuresource.peripherals.PWM;
+import autosar21.ecuresource.peripherals.Peripheral;
+import autosar21.ecuresource.peripherals.PeripheralHWPort;
+import autosar21.ecuresource.peripherals.PeripheralsPackage;
+import autosar21.ecuresource.peripherals.PulseWidthPeripheral;
+import autosar21.ecuresource.peripherals.Timer;
+import autosar21.ecuresource.peripherals.WatchDog;
+import autosar21.ecuresource.peripherals.util.PeripheralsSwitch;
+import autosar21.ecuresource.processingunit.InterruptConsumeHWPort;
+import autosar21.ecuresource.processingunit.InterruptHWPort;
+import autosar21.ecuresource.processingunit.InterruptProduceHWPort;
+import autosar21.ecuresource.processingunit.MPU;
+import autosar21.ecuresource.processingunit.ProcessingUnit;
+import autosar21.ecuresource.processingunit.ProcessingunitPackage;
+import autosar21.ecuresource.processingunit.Register;
+import autosar21.ecuresource.processingunit.SupportedDataType;
+import autosar21.ecuresource.processingunit.util.ProcessingunitSwitch;
+import autosar21.ecuresource.sensoractuator.ActuatorHW;
+import autosar21.ecuresource.sensoractuator.DisplayHW;
+import autosar21.ecuresource.sensoractuator.SensorActuatorHW;
+import autosar21.ecuresource.sensoractuator.SensorHW;
+import autosar21.ecuresource.sensoractuator.SensoractuatorPackage;
+import autosar21.ecuresource.sensoractuator.util.SensoractuatorSwitch;
+import autosar21.ecuresource.util.EcuresourceSwitch;
+import autosar21.genericstructure.commonpatterns.admindata.AdminData;
+import autosar21.genericstructure.commonpatterns.admindata.AdmindataPackage;
+import autosar21.genericstructure.commonpatterns.admindata.CompanyRevisionInfo;
+import autosar21.genericstructure.commonpatterns.admindata.CompanySpecificInfo;
+import autosar21.genericstructure.commonpatterns.admindata.DocRevision;
+import autosar21.genericstructure.commonpatterns.admindata.Modification;
+import autosar21.genericstructure.commonpatterns.admindata.util.AdmindataSwitch;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.InlinetextmodelPackage;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.MixedContent1;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.MixedContent10;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.MixedContent2;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.MixedContent3;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.MixedContent4;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.MixedContent5;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.Br;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.EType;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.Ft;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.Ie;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.InlinesPackage;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.Std;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.Tt;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.Url;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.Xdoc;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.Xfile;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.Xref;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.XrefTarget;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.inlines.util.InlinesSwitch;
+import autosar21.genericstructure.commonpatterns.inlinetextmodel.util.InlinetextmodelSwitch;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.L1;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.L10;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.L2;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.L3;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.L4;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.L5;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.LanguagedatamodelPackage;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.MlDataModel1;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.MlDataModel10;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.MlDataModel2;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.MlDataModel3;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.MlDataModel4;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.MlDataModel5;
+import autosar21.genericstructure.commonpatterns.languagedatamodel.util.LanguagedatamodelSwitch;
+import autosar21.genericstructure.commonpatterns.multilanguagedata.MlData1;
+import autosar21.genericstructure.commonpatterns.multilanguagedata.MlData10;
+import autosar21.genericstructure.commonpatterns.multilanguagedata.MlData2;
+import autosar21.genericstructure.commonpatterns.multilanguagedata.MlData3;
+import autosar21.genericstructure.commonpatterns.multilanguagedata.MlData3p;
+import autosar21.genericstructure.commonpatterns.multilanguagedata.MlData4;
+import autosar21.genericstructure.commonpatterns.multilanguagedata.MlData5;
+import autosar21.genericstructure.commonpatterns.multilanguagedata.MultilanguagedataPackage;
+import autosar21.genericstructure.commonpatterns.multilanguagedata.util.MultilanguagedataSwitch;
+import autosar21.genericstructure.commonpatterns.primitivetypes.BooleanContainer;
+import autosar21.genericstructure.commonpatterns.primitivetypes.FloatContainer;
+import autosar21.genericstructure.commonpatterns.primitivetypes.IntegerContainer;
+import autosar21.genericstructure.commonpatterns.primitivetypes.PrimitivetypesPackage;
+import autosar21.genericstructure.commonpatterns.primitivetypes.StringContainer;
+import autosar21.genericstructure.commonpatterns.primitivetypes.util.PrimitivetypesSwitch;
+import autosar21.genericstructure.commonpatterns.singlelanguagedata.SinglelanguagedataPackage;
+import autosar21.genericstructure.commonpatterns.singlelanguagedata.SlData1;
+import autosar21.genericstructure.commonpatterns.singlelanguagedata.SlData10;
+import autosar21.genericstructure.commonpatterns.singlelanguagedata.SlData2;
+import autosar21.genericstructure.commonpatterns.singlelanguagedata.SlData3;
+import autosar21.genericstructure.commonpatterns.singlelanguagedata.SlData3p;
+import autosar21.genericstructure.commonpatterns.singlelanguagedata.SlData4;
+import autosar21.genericstructure.commonpatterns.singlelanguagedata.SlData5;
+import autosar21.genericstructure.commonpatterns.singlelanguagedata.util.SinglelanguagedataSwitch;
+import autosar21.genericstructure.commonpatterns.specialdata.Caption;
+import autosar21.genericstructure.commonpatterns.specialdata.Sd;
+import autosar21.genericstructure.commonpatterns.specialdata.Sdg;
+import autosar21.genericstructure.commonpatterns.specialdata.SdgContents;
+import autosar21.genericstructure.commonpatterns.specialdata.Sdgs;
+import autosar21.genericstructure.commonpatterns.specialdata.SpecialdataPackage;
+import autosar21.genericstructure.commonpatterns.specialdata.util.SpecialdataSwitch;
+import autosar21.genericstructure.infrastructure.ARObject;
+import autosar21.genericstructure.infrastructure.InfrastructurePackage;
+import autosar21.genericstructure.infrastructure.NonSplitableElement;
+import autosar21.genericstructure.infrastructure.PackageableElement;
+import autosar21.genericstructure.infrastructure.SplitableElement;
+import autosar21.genericstructure.infrastructure.autosar.ARPackage;
+import autosar21.genericstructure.infrastructure.autosar.AUTOSAR;
+import autosar21.genericstructure.infrastructure.autosar.AutosarPackage;
+import autosar21.genericstructure.infrastructure.autosar.util.AutosarSwitch;
+import autosar21.genericstructure.infrastructure.identifiable.ARElement;
+import autosar21.genericstructure.infrastructure.identifiable.Identifiable;
+import autosar21.genericstructure.infrastructure.identifiable.IdentifiablePackage;
+import autosar21.genericstructure.infrastructure.identifiable.util.IdentifiableSwitch;
+import autosar21.genericstructure.infrastructure.util.InfrastructureSwitch;
+import autosar21.swcomponent.applicationattributes.ApplicationattributesPackage;
+import autosar21.swcomponent.applicationattributes.CalibrationPortAnnotation;
+import autosar21.swcomponent.applicationattributes.ComMUserNeeds;
+import autosar21.swcomponent.applicationattributes.ExtAnnotation;
+import autosar21.swcomponent.applicationattributes.FailureMonitoring;
+import autosar21.swcomponent.applicationattributes.IoHwAbstractionServerAnnotation;
+import autosar21.swcomponent.applicationattributes.NVRAMBlockNeeds;
+import autosar21.swcomponent.applicationattributes.PortAnnotation;
+import autosar21.swcomponent.applicationattributes.ReceiverAnnotation;
+import autosar21.swcomponent.applicationattributes.ReportFeature;
+import autosar21.swcomponent.applicationattributes.SenderAnnotation;
+import autosar21.swcomponent.applicationattributes.SenderReceiverAnnotation;
+import autosar21.swcomponent.applicationattributes.ServiceNeeds;
+import autosar21.swcomponent.applicationattributes.SupervisedEntityNeeds;
+import autosar21.swcomponent.applicationattributes.WakeUp;
+import autosar21.swcomponent.applicationattributes.instanceref.FailureMonitoringMonitorsFailure;
+import autosar21.swcomponent.applicationattributes.instanceref.SenderReceiverAnnotationDataElement;
+import autosar21.swcomponent.applicationattributes.instanceref.util.InstancerefSwitch;
+import autosar21.swcomponent.applicationattributes.util.ApplicationattributesSwitch;
+import autosar21.swcomponent.communication.ClientComSpec;
+import autosar21.swcomponent.communication.ClientServerConnectorComSpec;
+import autosar21.swcomponent.communication.CommunicationPackage;
+import autosar21.swcomponent.communication.ConnectorComSpec;
+import autosar21.swcomponent.communication.ModeSwitchComSpec;
+import autosar21.swcomponent.communication.ModeSwitchedAckRequest;
+import autosar21.swcomponent.communication.PPortComSpec;
+import autosar21.swcomponent.communication.QueuedReceiverComSpec;
+import autosar21.swcomponent.communication.QueuedSenderComSpec;
+import autosar21.swcomponent.communication.RPortComSpec;
+import autosar21.swcomponent.communication.ReceiverComSpec;
+import autosar21.swcomponent.communication.SenderComSpec;
+import autosar21.swcomponent.communication.SenderReceiverConnectorComSpec;
+import autosar21.swcomponent.communication.ServerComSpec;
+import autosar21.swcomponent.communication.TransmissionAcknowledgementRequest;
+import autosar21.swcomponent.communication.UnqueuedReceiverComSpec;
+import autosar21.swcomponent.communication.UnqueuedSenderComSpec;
+import autosar21.swcomponent.communication.filter.Always;
+import autosar21.swcomponent.communication.filter.DataFilter;
+import autosar21.swcomponent.communication.filter.FilterPackage;
+import autosar21.swcomponent.communication.filter.MaskedNewDiffersMaskedOld;
+import autosar21.swcomponent.communication.filter.MaskedNewDiffersX;
+import autosar21.swcomponent.communication.filter.MaskedNewEqualsMaskedOld;
+import autosar21.swcomponent.communication.filter.MaskedNewEqualsX;
+import autosar21.swcomponent.communication.filter.Never;
+import autosar21.swcomponent.communication.filter.NewIsDifferent;
+import autosar21.swcomponent.communication.filter.NewIsEqual;
+import autosar21.swcomponent.communication.filter.NewIsGreater;
+import autosar21.swcomponent.communication.filter.NewIsGreaterOrEqual;
+import autosar21.swcomponent.communication.filter.NewIsLess;
+import autosar21.swcomponent.communication.filter.NewIsLessOrEqual;
+import autosar21.swcomponent.communication.filter.NewIsOutside;
+import autosar21.swcomponent.communication.filter.NewIsWithin;
+import autosar21.swcomponent.communication.filter.OneEveryN;
+import autosar21.swcomponent.communication.filter.util.FilterSwitch;
+import autosar21.swcomponent.communication.instanceref.ClientComSpecOperation;
+import autosar21.swcomponent.communication.instanceref.ClientServerConnectorComSpecOperation;
+import autosar21.swcomponent.communication.instanceref.ModeSwitchComSpecModeDeclarationGroupPrototype;
+import autosar21.swcomponent.communication.instanceref.ReceiverComSpecDataElement;
+import autosar21.swcomponent.communication.instanceref.SenderComSpecDataElement;
+import autosar21.swcomponent.communication.instanceref.SenderReceiverConnectorComSpecDataElement;
+import autosar21.swcomponent.communication.instanceref.ServerComSpecOperation;
+import autosar21.swcomponent.communication.util.CommunicationSwitch;
+import autosar21.swcomponent.components.AtomicSoftwareComponentType;
+import autosar21.swcomponent.components.CalprmComponentType;
+import autosar21.swcomponent.components.ComponentType;
+import autosar21.swcomponent.components.ComponentsPackage;
+import autosar21.swcomponent.components.PPortPrototype;
+import autosar21.swcomponent.components.PortPrototype;
+import autosar21.swcomponent.components.RPortPrototype;
+import autosar21.swcomponent.components.SensorActuatorSoftwareComponentType;
+import autosar21.swcomponent.components.ServiceComponentType;
+import autosar21.swcomponent.components.util.ComponentsSwitch;
+import autosar21.swcomponent.composition.AssemblyConnectorPrototype;
+import autosar21.swcomponent.composition.ComponentPrototype;
+import autosar21.swcomponent.composition.CompositionPackage;
+import autosar21.swcomponent.composition.CompositionType;
+import autosar21.swcomponent.composition.ConnectorPrototype;
+import autosar21.swcomponent.composition.DelegationConnectorPrototype;
+import autosar21.swcomponent.composition.ServiceConnectorPrototype;
+import autosar21.swcomponent.composition.instanceref.AssemblyConnectorPrototypeProvider;
+import autosar21.swcomponent.composition.instanceref.AssemblyConnectorPrototypeRequester;
+import autosar21.swcomponent.composition.instanceref.DelegationConnectorPrototypeInnerPort;
+import autosar21.swcomponent.composition.instanceref.InstancerefPackage;
+import autosar21.swcomponent.composition.instanceref.ServiceConnectorPrototypeApplicationPort;
+import autosar21.swcomponent.composition.instanceref.ServiceConnectorPrototypeServicePort;
+import autosar21.swcomponent.composition.util.CompositionSwitch;
+import autosar21.swcomponent.datatype.computationmethod.Compu;
+import autosar21.swcomponent.datatype.computationmethod.CompuConst;
+import autosar21.swcomponent.datatype.computationmethod.CompuConstContent;
+import autosar21.swcomponent.datatype.computationmethod.CompuConstFormulaContent;
+import autosar21.swcomponent.datatype.computationmethod.CompuConstNumericContent;
+import autosar21.swcomponent.datatype.computationmethod.CompuConstTextContent;
+import autosar21.swcomponent.datatype.computationmethod.CompuContent;
+import autosar21.swcomponent.datatype.computationmethod.CompuDefaultValue;
+import autosar21.swcomponent.datatype.computationmethod.CompuGenericMath;
+import autosar21.swcomponent.datatype.computationmethod.CompuMethod;
+import autosar21.swcomponent.datatype.computationmethod.CompuNominatorDenominator;
+import autosar21.swcomponent.datatype.computationmethod.CompuProgCode;
+import autosar21.swcomponent.datatype.computationmethod.CompuRationalCoeffs;
+import autosar21.swcomponent.datatype.computationmethod.CompuScale;
+import autosar21.swcomponent.datatype.computationmethod.CompuScaleConstantContents;
+import autosar21.swcomponent.datatype.computationmethod.CompuScaleContents;
+import autosar21.swcomponent.datatype.computationmethod.CompuScaleGenericMath;
+import autosar21.swcomponent.datatype.computationmethod.CompuScaleRationalFormula;
+import autosar21.swcomponent.datatype.computationmethod.CompuScales;
+import autosar21.swcomponent.datatype.computationmethod.ComputationmethodPackage;
+import autosar21.swcomponent.datatype.computationmethod.ProgCode;
+import autosar21.swcomponent.datatype.computationmethod.util.ComputationmethodSwitch;
+import autosar21.swcomponent.datatype.constants.ArraySpecification;
+import autosar21.swcomponent.datatype.constants.BooleanLiteral;
+import autosar21.swcomponent.datatype.constants.CharLiteral;
+import autosar21.swcomponent.datatype.constants.ConstantReference;
+import autosar21.swcomponent.datatype.constants.ConstantSpecification;
+import autosar21.swcomponent.datatype.constants.ConstantsPackage;
+import autosar21.swcomponent.datatype.constants.IntegerLiteral;
+import autosar21.swcomponent.datatype.constants.OpaqueLiteral;
+import autosar21.swcomponent.datatype.constants.PrimitiveSpecification;
+import autosar21.swcomponent.datatype.constants.RealLiteral;
+import autosar21.swcomponent.datatype.constants.RecordSpecification;
+import autosar21.swcomponent.datatype.constants.StringLiteral;
+import autosar21.swcomponent.datatype.constants.ValueSpecification;
+import autosar21.swcomponent.datatype.constants.util.ConstantsSwitch;
+import autosar21.swcomponent.datatype.datatypes.ARLimit;
+import autosar21.swcomponent.datatype.datatypes.ArrayElement;
+import autosar21.swcomponent.datatype.datatypes.ArrayType;
+import autosar21.swcomponent.datatype.datatypes.BooleanType;
+import autosar21.swcomponent.datatype.datatypes.CharType;
+import autosar21.swcomponent.datatype.datatypes.CompositeType;
+import autosar21.swcomponent.datatype.datatypes.DataPrototype;
+import autosar21.swcomponent.datatype.datatypes.Datatype;
+import autosar21.swcomponent.datatype.datatypes.DatatypesPackage;
+import autosar21.swcomponent.datatype.datatypes.IntegerType;
+import autosar21.swcomponent.datatype.datatypes.OpaqueType;
+import autosar21.swcomponent.datatype.datatypes.PrimitiveType;
+import autosar21.swcomponent.datatype.datatypes.Range;
+import autosar21.swcomponent.datatype.datatypes.RealType;
+import autosar21.swcomponent.datatype.datatypes.RecordElement;
+import autosar21.swcomponent.datatype.datatypes.RecordType;
+import autosar21.swcomponent.datatype.datatypes.StringType;
+import autosar21.swcomponent.datatype.datatypes.util.DatatypesSwitch;
+import autosar21.swcomponent.datatype.localconstraints.Interstring;
+import autosar21.swcomponent.datatype.localconstraints.Limit;
+import autosar21.swcomponent.datatype.localconstraints.LocalconstraintsPackage;
+import autosar21.swcomponent.datatype.localconstraints.util.LocalconstraintsSwitch;
+import autosar21.swcomponent.datatype.units.DisplayName;
+import autosar21.swcomponent.datatype.units.PhysicalDimension;
+import autosar21.swcomponent.datatype.units.Unit;
+import autosar21.swcomponent.datatype.units.UnitGroup;
+import autosar21.swcomponent.datatype.units.UnitSpec;
+import autosar21.swcomponent.datatype.units.UnitsPackage;
+import autosar21.swcomponent.datatype.units.util.UnitsSwitch;
+import autosar21.swcomponent.datatype.valuemodel.V;
+import autosar21.swcomponent.datatype.valuemodel.ValueByFormula;
+import autosar21.swcomponent.datatype.valuemodel.ValuemodelPackage;
+import autosar21.swcomponent.datatype.valuemodel.Vf;
+import autosar21.swcomponent.datatype.valuemodel.Vt;
+import autosar21.swcomponent.datatype.valuemodel.util.ValuemodelSwitch;
+import autosar21.swcomponent.implementation.Code;
+import autosar21.swcomponent.implementation.Compiler;
+import autosar21.swcomponent.implementation.Dependency;
+import autosar21.swcomponent.implementation.DependencyOnFile;
+import autosar21.swcomponent.implementation.DependencyOnLibrary;
+import autosar21.swcomponent.implementation.Implementation;
+import autosar21.swcomponent.implementation.ImplementationPackage;
+import autosar21.swcomponent.implementation.util.ImplementationSwitch;
+import autosar21.swcomponent.internalbehavior.InternalBehavior;
+import autosar21.swcomponent.internalbehavior.InternalbehaviorPackage;
+import autosar21.swcomponent.internalbehavior.RunnableEntity;
+import autosar21.swcomponent.internalbehavior.dataelements.DataReadAccess;
+import autosar21.swcomponent.internalbehavior.dataelements.DataReceivePoint;
+import autosar21.swcomponent.internalbehavior.dataelements.DataSendPoint;
+import autosar21.swcomponent.internalbehavior.dataelements.DataWriteAccess;
+import autosar21.swcomponent.internalbehavior.dataelements.DataelementsPackage;
+import autosar21.swcomponent.internalbehavior.dataelements.instanceref.DataReadAccessDataElement;
+import autosar21.swcomponent.internalbehavior.dataelements.instanceref.DataReceivePointDataElement;
+import autosar21.swcomponent.internalbehavior.dataelements.instanceref.DataSendPointDataElement;
+import autosar21.swcomponent.internalbehavior.dataelements.instanceref.DataWriteAccessDataElement;
+import autosar21.swcomponent.internalbehavior.dataelements.util.DataelementsSwitch;
+import autosar21.swcomponent.internalbehavior.exclusivearea.ExclusiveArea;
+import autosar21.swcomponent.internalbehavior.exclusivearea.ExclusiveareaPackage;
+import autosar21.swcomponent.internalbehavior.exclusivearea.RunnableEntityCanEnterExclusiveArea;
+import autosar21.swcomponent.internalbehavior.exclusivearea.RunnableEntityRunsInExclusiveArea;
+import autosar21.swcomponent.internalbehavior.exclusivearea.util.ExclusiveareaSwitch;
+import autosar21.swcomponent.internalbehavior.interrunnablecommunication.InterRunnableVariable;
+import autosar21.swcomponent.internalbehavior.interrunnablecommunication.InterrunnablecommunicationPackage;
+import autosar21.swcomponent.internalbehavior.interrunnablecommunication.util.InterrunnablecommunicationSwitch;
+import autosar21.swcomponent.internalbehavior.modedeclarationgroup.ModeSwitchPoint;
+import autosar21.swcomponent.internalbehavior.modedeclarationgroup.ModedeclarationgroupPackage;
+import autosar21.swcomponent.internalbehavior.modedeclarationgroup.instanceref.ModeSwitchPointModeGroup;
+import autosar21.swcomponent.internalbehavior.modedeclarationgroup.util.ModedeclarationgroupSwitch;
+import autosar21.swcomponent.internalbehavior.nvrammapping.NVRAMMapping;
+import autosar21.swcomponent.internalbehavior.nvrammapping.NvrammappingPackage;
+import autosar21.swcomponent.internalbehavior.nvrammapping.util.NvrammappingSwitch;
+import autosar21.swcomponent.internalbehavior.perinstancememory.PerInstanceMemory;
+import autosar21.swcomponent.internalbehavior.perinstancememory.PerinstancememoryPackage;
+import autosar21.swcomponent.internalbehavior.perinstancememory.util.PerinstancememorySwitch;
+import autosar21.swcomponent.internalbehavior.portapioptions.PortAPIOption;
+import autosar21.swcomponent.internalbehavior.portapioptions.PortapioptionsPackage;
+import autosar21.swcomponent.internalbehavior.portapioptions.util.PortapioptionsSwitch;
+import autosar21.swcomponent.internalbehavior.rteevents.AsynchronousServerCallReturnsEvent;
+import autosar21.swcomponent.internalbehavior.rteevents.DataReceiveErrorEvent;
+import autosar21.swcomponent.internalbehavior.rteevents.DataReceivedEvent;
+import autosar21.swcomponent.internalbehavior.rteevents.DataSendCompletedEvent;
+import autosar21.swcomponent.internalbehavior.rteevents.ModeSwitchEvent;
+import autosar21.swcomponent.internalbehavior.rteevents.ModeSwitchedAckEvent;
+import autosar21.swcomponent.internalbehavior.rteevents.OperationInvokedEvent;
+import autosar21.swcomponent.internalbehavior.rteevents.RTEEvent;
+import autosar21.swcomponent.internalbehavior.rteevents.RteeventsPackage;
+import autosar21.swcomponent.internalbehavior.rteevents.TimingEvent;
+import autosar21.swcomponent.internalbehavior.rteevents.WaitPoint;
+import autosar21.swcomponent.internalbehavior.rteevents.instanceref.DataReceiveErrorEventData;
+import autosar21.swcomponent.internalbehavior.rteevents.instanceref.DataReceivedEventData;
+import autosar21.swcomponent.internalbehavior.rteevents.instanceref.ModeSwitchEventMode;
+import autosar21.swcomponent.internalbehavior.rteevents.instanceref.OperationInvokedEventOperation;
+import autosar21.swcomponent.internalbehavior.rteevents.util.RteeventsSwitch;
+import autosar21.swcomponent.internalbehavior.servercall.AsynchronousServerCallPoint;
+import autosar21.swcomponent.internalbehavior.servercall.ServerCallPoint;
+import autosar21.swcomponent.internalbehavior.servercall.ServercallPackage;
+import autosar21.swcomponent.internalbehavior.servercall.SynchronousServerCallPoint;
+import autosar21.swcomponent.internalbehavior.servercall.instanceref.ServerCallPointOperation;
+import autosar21.swcomponent.internalbehavior.servercall.util.ServercallSwitch;
+import autosar21.swcomponent.internalbehavior.util.InternalbehaviorSwitch;
+import autosar21.swcomponent.measurementandcalibration.auxillaryobjects.AuxillaryobjectsPackage;
+import autosar21.swcomponent.measurementandcalibration.auxillaryobjects.SwAddrMethod;
+import autosar21.swcomponent.measurementandcalibration.auxillaryobjects.SwCodeSyntax;
+import autosar21.swcomponent.measurementandcalibration.auxillaryobjects.SwRecordLayout;
+import autosar21.swcomponent.measurementandcalibration.auxillaryobjects.SwRecordLayoutGroup;
+import autosar21.swcomponent.measurementandcalibration.auxillaryobjects.SwRecordLayoutGroupContent;
+import autosar21.swcomponent.measurementandcalibration.auxillaryobjects.SwRecordLayoutV;
+import autosar21.swcomponent.measurementandcalibration.auxillaryobjects.SwRelatedConstrs;
+import autosar21.swcomponent.measurementandcalibration.auxillaryobjects.util.AuxillaryobjectsSwitch;
+import autosar21.swcomponent.measurementandcalibration.axis.AxisPackage;
+import autosar21.swcomponent.measurementandcalibration.axis.SwAxisGeneric;
+import autosar21.swcomponent.measurementandcalibration.axis.SwAxisGrouped;
+import autosar21.swcomponent.measurementandcalibration.axis.SwAxisIndividual;
+import autosar21.swcomponent.measurementandcalibration.axis.SwAxisType;
+import autosar21.swcomponent.measurementandcalibration.axis.SwGenericAxisParam;
+import autosar21.swcomponent.measurementandcalibration.axis.SwGenericAxisParamType;
+import autosar21.swcomponent.measurementandcalibration.axis.util.AxisSwitch;
+import autosar21.swcomponent.measurementandcalibration.basetypes.BaseType;
+import autosar21.swcomponent.measurementandcalibration.basetypes.BaseTypeAbsSize;
+import autosar21.swcomponent.measurementandcalibration.basetypes.BaseTypeDefinition;
+import autosar21.swcomponent.measurementandcalibration.basetypes.BaseTypeDirectDefinition;
+import autosar21.swcomponent.measurementandcalibration.basetypes.BaseTypeIndirectDefinition;
+import autosar21.swcomponent.measurementandcalibration.basetypes.BaseTypeMaxSize;
+import autosar21.swcomponent.measurementandcalibration.basetypes.BaseTypeSizeDefintion;
+import autosar21.swcomponent.measurementandcalibration.basetypes.BasetypesPackage;
+import autosar21.swcomponent.measurementandcalibration.basetypes.SwBaseType;
+import autosar21.swcomponent.measurementandcalibration.basetypes.util.BasetypesSwitch;
+import autosar21.swcomponent.measurementandcalibration.byteorder.ByteOrder;
+import autosar21.swcomponent.measurementandcalibration.byteorder.ByteorderPackage;
+import autosar21.swcomponent.measurementandcalibration.byteorder.util.ByteorderSwitch;
+import autosar21.swcomponent.measurementandcalibration.calibrationparameter.CalibrationparameterPackage;
+import autosar21.swcomponent.measurementandcalibration.calibrationparameter.SwCalprm;
+import autosar21.swcomponent.measurementandcalibration.calibrationparameter.SwCalprmAxis;
+import autosar21.swcomponent.measurementandcalibration.calibrationparameter.SwCalprmAxisAxis;
+import autosar21.swcomponent.measurementandcalibration.calibrationparameter.SwCalprmAxisCommonAxis;
+import autosar21.swcomponent.measurementandcalibration.calibrationparameter.SwCalprmAxisIndividualAxis;
+import autosar21.swcomponent.measurementandcalibration.calibrationparameter.SwCalprmAxisSet;
+import autosar21.swcomponent.measurementandcalibration.calibrationparameter.SwCalprmValueAxisLabels;
+import autosar21.swcomponent.measurementandcalibration.calibrationparameter.util.CalibrationparameterSwitch;
+import autosar21.swcomponent.measurementandcalibration.characteristic.ArCalprmRef;
+import autosar21.swcomponent.measurementandcalibration.characteristic.CalprmAccess;
+import autosar21.swcomponent.measurementandcalibration.characteristic.CalprmElementPrototype;
+import autosar21.swcomponent.measurementandcalibration.characteristic.CalprmInterface;
+import autosar21.swcomponent.measurementandcalibration.characteristic.CharacteristicPackage;
+import autosar21.swcomponent.measurementandcalibration.characteristic.instanceref.ArCalprmRefCalprmElementPrototype;
+import autosar21.swcomponent.measurementandcalibration.characteristic.instanceref.CalprmAccessCalprmElementPrototype;
+import autosar21.swcomponent.measurementandcalibration.characteristic.util.CharacteristicSwitch;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.DatadefpropertiesPackage;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwArraysize;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwBitRepresentation;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwComparisonVariables;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwDataDefProps;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwDataDependency;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwDataDependencyArgs;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwGenericAxisParamValue;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwPointer;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwSemaphore;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwTextProps;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.SwVariableRef;
+import autosar21.swcomponent.measurementandcalibration.datadefproperties.util.DatadefpropertiesSwitch;
+import autosar21.swcomponent.measurementandcalibration.datadictionaryproxies.DatadictionaryproxiesPackage;
+import autosar21.swcomponent.measurementandcalibration.datadictionaryproxies.SwCalprmRefProxy;
+import autosar21.swcomponent.measurementandcalibration.datadictionaryproxies.SwVariableRefMsr;
+import autosar21.swcomponent.measurementandcalibration.datadictionaryproxies.SwVariableRefProxy;
+import autosar21.swcomponent.measurementandcalibration.datadictionaryproxies.swCalprmRef;
+import autosar21.swcomponent.measurementandcalibration.datadictionaryproxies.util.DatadictionaryproxiesSwitch;
+import autosar21.swcomponent.measurementandcalibration.globalconstraints.DataConstr;
+import autosar21.swcomponent.measurementandcalibration.globalconstraints.DataConstrRule;
+import autosar21.swcomponent.measurementandcalibration.globalconstraints.GlobalconstraintsPackage;
+import autosar21.swcomponent.measurementandcalibration.globalconstraints.InternalConstrs;
+import autosar21.swcomponent.measurementandcalibration.globalconstraints.PhysConstrs;
+import autosar21.swcomponent.measurementandcalibration.globalconstraints.ScaleConstr;
+import autosar21.swcomponent.measurementandcalibration.globalconstraints.ScaleConstrs;
+import autosar21.swcomponent.measurementandcalibration.globalconstraints.SwConstrObjects;
+import autosar21.swcomponent.measurementandcalibration.globalconstraints.util.GlobalconstraintsSwitch;
+import autosar21.swcomponent.measurementandcalibration.measurementproperty.DataPrototypeRef;
+import autosar21.swcomponent.measurementandcalibration.measurementproperty.Measurable;
+import autosar21.swcomponent.measurementandcalibration.measurementproperty.MeasurementpropertyPackage;
+import autosar21.swcomponent.measurementandcalibration.measurementproperty.PerInstanceMemoryVariable;
+import autosar21.swcomponent.measurementandcalibration.measurementproperty.RecordElementRef;
+import autosar21.swcomponent.measurementandcalibration.measurementproperty.instanceref.DataPrototypeRefDataPrototype;
+import autosar21.swcomponent.measurementandcalibration.measurementproperty.instanceref.RecordElementRefRecordElement;
+import autosar21.swcomponent.measurementandcalibration.measurementproperty.util.MeasurementpropertySwitch;
+import autosar21.swcomponent.measurementandcalibration.variable.SwVariable;
+import autosar21.swcomponent.measurementandcalibration.variable.VariablePackage;
+import autosar21.swcomponent.measurementandcalibration.variable.util.VariableSwitch;
+import autosar21.swcomponent.modedeclaration.ModeDeclaration;
+import autosar21.swcomponent.modedeclaration.ModeDeclarationGroup;
+import autosar21.swcomponent.modedeclaration.ModeDisablingDependency;
+import autosar21.swcomponent.modedeclaration.ModedeclarationPackage;
+import autosar21.swcomponent.modedeclaration.instanceref.ModeDisablingDependencyDependentOnMode;
+import autosar21.swcomponent.modedeclaration.util.ModedeclarationSwitch;
+import autosar21.swcomponent.portinterface.ArgumentPrototype;
+import autosar21.swcomponent.portinterface.ClientServerInterface;
+import autosar21.swcomponent.portinterface.DataElementPrototype;
+import autosar21.swcomponent.portinterface.ModeDeclarationGroupPrototype;
+import autosar21.swcomponent.portinterface.OperationPrototype;
+import autosar21.swcomponent.portinterface.PortInterface;
+import autosar21.swcomponent.portinterface.PortinterfacePackage;
+import autosar21.swcomponent.portinterface.SenderReceiverInterface;
+import autosar21.swcomponent.portinterface.util.PortinterfaceSwitch;
+import autosar21.swcomponent.resources.ResourceConsumption;
+import autosar21.swcomponent.resources.ResourcesPackage;
+import autosar21.swcomponent.resources.executiontime.ECUPrototype;
+import autosar21.swcomponent.resources.executiontime.ExecutionTime;
+import autosar21.swcomponent.resources.executiontime.ExecutiontimePackage;
+import autosar21.swcomponent.resources.executiontime.HardwareConfiguration;
+import autosar21.swcomponent.resources.executiontime.MeasuredExecutionTime;
+import autosar21.swcomponent.resources.executiontime.MemorySectionLocation;
+import autosar21.swcomponent.resources.executiontime.RoughEstimateOfExecutionTime;
+import autosar21.swcomponent.resources.executiontime.SimulatedExecutionTime;
+import autosar21.swcomponent.resources.executiontime.SoftwareContext;
+import autosar21.swcomponent.resources.executiontime.WorstCaseExecutionTime;
+import autosar21.swcomponent.resources.executiontime.util.ExecutiontimeSwitch;
+import autosar21.swcomponent.resources.heapusage.HeapUsage;
+import autosar21.swcomponent.resources.heapusage.HeapusagePackage;
+import autosar21.swcomponent.resources.heapusage.MeasuredHeapUsage;
+import autosar21.swcomponent.resources.heapusage.RoughEstimateHeapUsage;
+import autosar21.swcomponent.resources.heapusage.WorstCaseHeapUsage;
+import autosar21.swcomponent.resources.heapusage.util.HeapusageSwitch;
+import autosar21.swcomponent.resources.objectfilesection.ObjectFileSection;
+import autosar21.swcomponent.resources.objectfilesection.ObjectfilesectionPackage;
+import autosar21.swcomponent.resources.objectfilesection.util.ObjectfilesectionSwitch;
+import autosar21.swcomponent.resources.perinstancememorysize.PerInstanceMemorySize;
+import autosar21.swcomponent.resources.perinstancememorysize.PerinstancememorysizePackage;
+import autosar21.swcomponent.resources.perinstancememorysize.util.PerinstancememorysizeSwitch;
+import autosar21.swcomponent.resources.stackusage.MeasuredStackUsage;
+import autosar21.swcomponent.resources.stackusage.RoughEstimateStackUsage;
+import autosar21.swcomponent.resources.stackusage.StackUsage;
+import autosar21.swcomponent.resources.stackusage.StackusagePackage;
+import autosar21.swcomponent.resources.stackusage.WorstCaseStackUsage;
+import autosar21.swcomponent.resources.stackusage.util.StackusageSwitch;
+import autosar21.swcomponent.resources.util.ResourcesSwitch;
+import autosar21.swcomponent.services.EcuSwComposition;
+import autosar21.swcomponent.services.ServiceComponentPrototype;
+import autosar21.swcomponent.services.ServicesPackage;
+import autosar21.swcomponent.services.util.ServicesSwitch;
+import autosar21.swcomponent.vfberrors.ApplicationError;
+import autosar21.swcomponent.vfberrors.DevelopmentError;
+import autosar21.swcomponent.vfberrors.VfberrorsPackage;
+import autosar21.swcomponent.vfberrors.util.VfberrorsSwitch;
+import autosar21.system.CommunicationMatrixInstance;
+import autosar21.system.GatewayInstance;
+import autosar21.system.SoftwareComposition;
+import autosar21.system.System;
+import autosar21.system.SystemCommunication;
+import autosar21.system.SystemMapping;
+import autosar21.system.SystemPackage;
+import autosar21.system.SystemTopologyInstance;
+import autosar21.system.communication.AbsolutelyScheduledTiming;
+import autosar21.system.communication.ActiveCondition;
+import autosar21.system.communication.CanFrame;
+import autosar21.system.communication.CommunicationMatrixType;
+import autosar21.system.communication.CyclicTiming;
+import autosar21.system.communication.EventControlledTiming;
+import autosar21.system.communication.EventTriggeredFrameSlot;
+import autosar21.system.communication.FlexrayFrame;
+import autosar21.system.communication.Frame;
+import autosar21.system.communication.FreeTextCondition;
+import autosar21.system.communication.GatewayEntry;
+import autosar21.system.communication.GatewayType;
+import autosar21.system.communication.LinFrame;
+import autosar21.system.communication.LinSchedulingTable;
+import autosar21.system.communication.LinSchedulingTableEntry;
+import autosar21.system.communication.PDUGatewayEntry;
+import autosar21.system.communication.PDUPrototype;
+import autosar21.system.communication.RelativelyScheduledTiming;
+import autosar21.system.communication.RequestControlledTiming;
+import autosar21.system.communication.SendCondition;
+import autosar21.system.communication.SignalGatewayEntry;
+import autosar21.system.communication.SignalTrigger;
+import autosar21.system.communication.SporadicFrameSlot;
+import autosar21.system.communication.StartCondition;
+import autosar21.system.communication.StopCondition;
+import autosar21.system.communication.SystemStateTrigger;
+import autosar21.system.communication.Timing;
+import autosar21.system.communication.UnconditionalFrameSlot;
+import autosar21.system.communication.instanceref.CommunicationMatrixTypeCommunicationCluster;
+import autosar21.system.communication.instanceref.FrameReceiver;
+import autosar21.system.communication.instanceref.FrameTransmitter;
+import autosar21.system.communication.instanceref.FrameUsedPhysicalChannel;
+import autosar21.system.communication.instanceref.GatewayTypeGatewayLocation;
+import autosar21.system.communication.instanceref.PDUGatewayEntryDestinationPDU;
+import autosar21.system.communication.instanceref.PDUGatewayEntrySourcePDU;
+import autosar21.system.communication.instanceref.SignalGatewayEntryDestinationClusterSignal;
+import autosar21.system.communication.instanceref.SignalGatewayEntrySourceClusterSignal;
+import autosar21.system.communicationprotocol.CommProtocolElement;
+import autosar21.system.communicationprotocol.CommProtocolFrameRole;
+import autosar21.system.communicationprotocol.CommProtocolInstance;
+import autosar21.system.communicationprotocol.CommProtocolSignalGroupRole;
+import autosar21.system.communicationprotocol.CommProtocolSignalRole;
+import autosar21.system.communicationprotocol.CommProtocolType;
+import autosar21.system.communicationprotocol.CommunicationprotocolPackage;
+import autosar21.system.communicationprotocol.instanceref.CommProtocolFrameRoleFrameInstance;
+import autosar21.system.communicationprotocol.instanceref.CommProtocolFrameRoleProtocolElement;
+import autosar21.system.communicationprotocol.instanceref.CommProtocolSignalGroupRoleProtocolElement;
+import autosar21.system.communicationprotocol.instanceref.CommProtocolSignalRoleProtocolElement;
+import autosar21.system.communicationprotocol.util.CommunicationprotocolSwitch;
+import autosar21.system.datamapping.ApplicationErrorMapping;
+import autosar21.system.datamapping.ClientIdMapping;
+import autosar21.system.datamapping.ClientServerArrayElementMapping;
+import autosar21.system.datamapping.ClientServerArrayTypeMapping;
+import autosar21.system.datamapping.ClientServerCompositeTypeMapping;
+import autosar21.system.datamapping.ClientServerPrimitiveTypeMapping;
+import autosar21.system.datamapping.ClientServerRecordElementMapping;
+import autosar21.system.datamapping.ClientServerRecordTypeMapping;
+import autosar21.system.datamapping.ClientServerToSignalGroupMapping;
+import autosar21.system.datamapping.DataMapping;
+import autosar21.system.datamapping.DatamappingPackage;
+import autosar21.system.datamapping.EmptySignalMapping;
+import autosar21.system.datamapping.SenderRecArrayElementMapping;
+import autosar21.system.datamapping.SenderRecArrayTypeMapping;
+import autosar21.system.datamapping.SenderRecCompositeTypeMapping;
+import autosar21.system.datamapping.SenderRecRecordElementMapping;
+import autosar21.system.datamapping.SenderRecRecordTypeMapping;
+import autosar21.system.datamapping.SenderReceiverToSignalGroupMapping;
+import autosar21.system.datamapping.SenderReceiverToSignalMapping;
+import autosar21.system.datamapping.SequenceCounterMapping;
+import autosar21.system.datamapping.instanceref.ClientServerArrayElementMappingArrayElement;
+import autosar21.system.datamapping.instanceref.ClientServerPrimitiveTypeMappingArgument;
+import autosar21.system.datamapping.instanceref.ClientServerRecordElementMappingRecordElement;
+import autosar21.system.datamapping.instanceref.ClientServerToSignalGroupMappingMappedOperation;
+import autosar21.system.datamapping.instanceref.IndexedArrayElement;
+import autosar21.system.datamapping.instanceref.IndexedDataPrototype;
+import autosar21.system.datamapping.instanceref.SenderRecArrayElementMappingArrayElement;
+import autosar21.system.datamapping.instanceref.SenderRecRecordElementMappingRecordElement;
+import autosar21.system.datamapping.instanceref.SenderReceiverToSignalGroupMappingDataElement;
+import autosar21.system.datamapping.instanceref.SenderReceiverToSignalMappingDataElement;
+import autosar21.system.datamapping.util.DatamappingSwitch;
+import autosar21.system.pdustructure.Multiplexer;
+import autosar21.system.pdustructure.PDUType;
+import autosar21.system.pdustructure.PdustructurePackage;
+import autosar21.system.pdustructure.SignalPosition;
+import autosar21.system.pdustructure.SubPDU;
+import autosar21.system.pdustructure.util.PdustructureSwitch;
+import autosar21.system.signalpaths.CommonSignalPath;
+import autosar21.system.signalpaths.ForbiddenSignalPath;
+import autosar21.system.signalpaths.PermissibleSignalPath;
+import autosar21.system.signalpaths.SeparateSignalPath;
+import autosar21.system.signalpaths.SignalPathConstraint;
+import autosar21.system.signalpaths.SignalpathsPackage;
+import autosar21.system.signalpaths.SwcToSwcOperationArguments;
+import autosar21.system.signalpaths.SwcToSwcSignal;
+import autosar21.system.signalpaths.instanceref.ForbiddenSignalPathEcuCommunicationPort;
+import autosar21.system.signalpaths.instanceref.PermissibleSignalPathEcuCommunicationPort;
+import autosar21.system.signalpaths.instanceref.SwcToSwcOperationArgumentsOperation;
+import autosar21.system.signalpaths.instanceref.SwcToSwcSignalDataElement;
+import autosar21.system.signalpaths.util.SignalpathsSwitch;
+import autosar21.system.swmapping.AggregatedStackUsage;
+import autosar21.system.swmapping.BSWResourceEstimation;
+import autosar21.system.swmapping.ComponentCluster;
+import autosar21.system.swmapping.ComponentSeparation;
+import autosar21.system.swmapping.EcuResourceEstimation;
+import autosar21.system.swmapping.FreeTextMappingConstraint;
+import autosar21.system.swmapping.MappingConstraint;
+import autosar21.system.swmapping.RTERessourceEstimation;
+import autosar21.system.swmapping.ResourceEstimationDetails;
+import autosar21.system.swmapping.SwCompToEcuMapping;
+import autosar21.system.swmapping.SwCompToImplMapping;
+import autosar21.system.swmapping.SwmappingPackage;
+import autosar21.system.swmapping.instanceref.ComponentClusterClusteredComponent;
+import autosar21.system.swmapping.instanceref.ComponentSeparationSeparatedComponent;
+import autosar21.system.swmapping.instanceref.EcuResourceEstimationEcuInstance;
+import autosar21.system.swmapping.instanceref.SwCompToEcuMappingComponent;
+import autosar21.system.swmapping.instanceref.SwCompToEcuMappingEcuInstance;
+import autosar21.system.swmapping.instanceref.SwCompToImplMappingComponent;
+import autosar21.system.swmapping.util.SwmappingSwitch;
+import autosar21.system.systemsignal.ClusterSignal;
+import autosar21.system.systemsignal.ClusterSignalReceiver;
+import autosar21.system.systemsignal.ClusterSignalTransmitter;
+import autosar21.system.systemsignal.SystemSignal;
+import autosar21.system.systemsignal.SystemSignalGroup;
+import autosar21.system.systemsignal.SystemsignalPackage;
+import autosar21.system.systemsignal.instanceref.ClusterSignalReceiverCommunicationPort;
+import autosar21.system.systemsignal.instanceref.ClusterSignalTransmitterCommunicationPort;
+import autosar21.system.systemsignal.util.SystemsignalSwitch;
+import autosar21.system.topology.CANBus;
+import autosar21.system.topology.CANCommunicationPortInstance;
+import autosar21.system.topology.CommunicationCluster;
+import autosar21.system.topology.Connector;
+import autosar21.system.topology.ECUCommunicationPortInstance;
+import autosar21.system.topology.ECUInstance;
+import autosar21.system.topology.FlexrayCluster;
+import autosar21.system.topology.FlexrayCommunicationPortInstance;
+import autosar21.system.topology.Hub;
+import autosar21.system.topology.LINCommunicationPortInstance;
+import autosar21.system.topology.LINSubBus;
+import autosar21.system.topology.PhysicalChannel;
+import autosar21.system.topology.PhysicalMediumSegment;
+import autosar21.system.topology.SystemTopologyType;
+import autosar21.system.topology.TopologyElement;
+import autosar21.system.topology.TopologyPackage;
+import autosar21.system.topology.UnspecifiedConnection;
+import autosar21.system.topology.util.TopologySwitch;
+import autosar21.system.util.SystemSwitch;
+import java.util.HashMap;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+/*
+ * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+ */
+public class Autosar21Switch<T> {
+    private PkgMap pkgMap = new PkgMap();
+
+    public T doSwitch(EObject o) {
+        Switch swtch = (Switch)this.pkgMap.get(o.eClass().getEPackage());
+        return swtch == null ? null : (T)swtch.doSwitch(o);
+    }
+
+    public T caseBswModuleDescription(BswModuleDescription aBswModuleDescription) {
+        return null;
+    }
+
+    public T caseBooleanValue(BooleanValue aBooleanValue) {
+        return null;
+    }
+
+    public T caseConfigReferenceValue(ConfigReferenceValue aConfigReferenceValue) {
+        return null;
+    }
+
+    public T caseContainer(Container aContainer) {
+        return null;
+    }
+
+    public T caseEcuConfiguration(EcuConfiguration anEcuConfiguration) {
+        return null;
+    }
+
+    public T caseEcucElement(EcucElement anEcucElement) {
+        return null;
+    }
+
+    public T caseEnumerationValue(EnumerationValue anEnumerationValue) {
+        return null;
+    }
+
+    public T caseFloatValue(FloatValue aFloatValue) {
+        return null;
+    }
+
+    public T caseFunctionNameValue(FunctionNameValue aFunctionNameValue) {
+        return null;
+    }
+
+    public T caseInstanceReferenceValue(InstanceReferenceValue anInstanceReferenceValue) {
+        return null;
+    }
+
+    public T caseIntegerValue(IntegerValue anIntegerValue) {
+        return null;
+    }
+
+    public T caseLinkerSymbolValue(LinkerSymbolValue aLinkerSymbolValue) {
+        return null;
+    }
+
+    public T caseModuleConfiguration(ModuleConfiguration aModuleConfiguration) {
+        return null;
+    }
+
+    public T caseParameterValue(ParameterValue aParameterValue) {
+        return null;
+    }
+
+    public T caseReferenceValue(ReferenceValue aReferenceValue) {
+        return null;
+    }
+
+    public T caseStringValue(StringValue aStringValue) {
+        return null;
+    }
+
+    public T caseInstanceReferenceValueValue(InstanceReferenceValueValue anInstanceReferenceValueValue) {
+        return null;
+    }
+
+    public T caseBooleanParamDef(BooleanParamDef aBooleanParamDef) {
+        return null;
+    }
+
+    public T caseChoiceContainerDef(ChoiceContainerDef aChoiceContainerDef) {
+        return null;
+    }
+
+    public T caseChoiceReferenceDef(ChoiceReferenceDef aChoiceReferenceDef) {
+        return null;
+    }
+
+    public T caseCommonConfigurationAttributes(CommonConfigurationAttributes aCommonConfigurationAttributes) {
+        return null;
+    }
+
+    public T caseConfigParameter(ConfigParameter aConfigParameter) {
+        return null;
+    }
+
+    public T caseConfigReference(ConfigReference aConfigReference) {
+        return null;
+    }
+
+    public T caseConfigurationClassAffection(ConfigurationClassAffection aConfigurationClassAffection) {
+        return null;
+    }
+
+    public T caseContainerDef(ContainerDef aContainerDef) {
+        return null;
+    }
+
+    public T caseDerivedBooleanParamDef(DerivedBooleanParamDef aDerivedBooleanParamDef) {
+        return null;
+    }
+
+    public T caseDerivedEnumerationParamDef(DerivedEnumerationParamDef aDerivedEnumerationParamDef) {
+        return null;
+    }
+
+    public T caseDerivedFloatParamDef(DerivedFloatParamDef aDerivedFloatParamDef) {
+        return null;
+    }
+
+    public T caseDerivedIntegerParamDef(DerivedIntegerParamDef aDerivedIntegerParamDef) {
+        return null;
+    }
+
+    public T caseDerivedParamType(DerivedParamType aDerivedParamType) {
+        return null;
+    }
+
+    public T caseDerivedStringParamDef(DerivedStringParamDef aDerivedStringParamDef) {
+        return null;
+    }
+
+    public T caseEcuParameterDefinition(EcuParameterDefinition anEcuParameterDefinition) {
+        return null;
+    }
+
+    public T caseEnumerationLiteralDef(EnumerationLiteralDef anEnumerationLiteralDef) {
+        return null;
+    }
+
+    public T caseEnumerationParamDef(EnumerationParamDef anEnumerationParamDef) {
+        return null;
+    }
+
+    public T caseFloatParamDef(FloatParamDef aFloatParamDef) {
+        return null;
+    }
+
+    public T caseForeignReferenceDef(ForeignReferenceDef aForeignReferenceDef) {
+        return null;
+    }
+
+    public T caseFunctionNameDef(FunctionNameDef aFunctionNameDef) {
+        return null;
+    }
+
+    public T caseInstanceReferenceDef(InstanceReferenceDef anInstanceReferenceDef) {
+        return null;
+    }
+
+    public T caseIntegerParamDef(IntegerParamDef anIntegerParamDef) {
+        return null;
+    }
+
+    public T caseLinkerSymbolDef(LinkerSymbolDef aLinkerSymbolDef) {
+        return null;
+    }
+
+    public T caseModuleDef(ModuleDef aModuleDef) {
+        return null;
+    }
+
+    public T caseParamConfContainerDef(ParamConfContainerDef aParamConfContainerDef) {
+        return null;
+    }
+
+    public T caseParamConfMultiplicity(ParamConfMultiplicity aParamConfMultiplicity) {
+        return null;
+    }
+
+    public T caseReferenceDef(ReferenceDef aReferenceDef) {
+        return null;
+    }
+
+    public T caseStringParamDef(StringParamDef aStringParamDef) {
+        return null;
+    }
+
+    public T caseSymbolicNameReferenceDef(SymbolicNameReferenceDef aSymbolicNameReferenceDef) {
+        return null;
+    }
+
+    public T caseAssemblyHWConnection(AssemblyHWConnection anAssemblyHWConnection) {
+        return null;
+    }
+
+    public T caseDelegationHWConnection(DelegationHWConnection aDelegationHWConnection) {
+        return null;
+    }
+
+    public T caseECU(ECU anECU) {
+        return null;
+    }
+
+    public T caseHWConnection(HWConnection aHWConnection) {
+        return null;
+    }
+
+    public T caseHWContainer(HWContainer aHWContainer) {
+        return null;
+    }
+
+    public T caseHWElement(HWElement aHWElement) {
+        return null;
+    }
+
+    public T caseHWElementContainer(HWElementContainer aHWElementContainer) {
+        return null;
+    }
+
+    public T caseHWPin(HWPin aHWPin) {
+        return null;
+    }
+
+    public T caseHWPort(HWPort aHWPort) {
+        return null;
+    }
+
+    public T casePinHWConnection(PinHWConnection aPinHWConnection) {
+        return null;
+    }
+
+    public T caseSignalTransformation(SignalTransformation aSignalTransformation) {
+        return null;
+    }
+
+    public T caseBootTime(BootTime aBootTime) {
+        return null;
+    }
+
+    public T caseElectricalRange(ElectricalRange anElectricalRange) {
+        return null;
+    }
+
+    public T caseErrorDetectionCorrection(ErrorDetectionCorrection anErrorDetectionCorrection) {
+        return null;
+    }
+
+    public T caseFrequencyRange(FrequencyRange aFrequencyRange) {
+        return null;
+    }
+
+    public T caseMemoryAccess(MemoryAccess aMemoryAccess) {
+        return null;
+    }
+
+    public T caseSupportsSafety(SupportsSafety aSupportsSafety) {
+        return null;
+    }
+
+    public T caseSupportsSecurity(SupportsSecurity aSupportsSecurity) {
+        return null;
+    }
+
+    public T caseTemperature(Temperature aTemperature) {
+        return null;
+    }
+
+    public T caseTimeRange(TimeRange aTimeRange) {
+        return null;
+    }
+
+    public T caseBusTermination(BusTermination aBusTermination) {
+        return null;
+    }
+
+    public T caseClock(Clock aClock) {
+        return null;
+    }
+
+    public T caseCommunicationTransceiver(CommunicationTransceiver aCommunicationTransceiver) {
+        return null;
+    }
+
+    public T caseDiscreteECUElectronics(DiscreteECUElectronics aDiscreteECUElectronics) {
+        return null;
+    }
+
+    public T caseECUElectronics(ECUElectronics anECUElectronics) {
+        return null;
+    }
+
+    public T caseOscillator(Oscillator anOscillator) {
+        return null;
+    }
+
+    public T casePowerDriverHWElement(PowerDriverHWElement aPowerDriverHWElement) {
+        return null;
+    }
+
+    public T casePowerDriverHWPort(PowerDriverHWPort aPowerDriverHWPort) {
+        return null;
+    }
+
+    public T casePowerDriverNotification(PowerDriverNotification aPowerDriverNotification) {
+        return null;
+    }
+
+    public T casePowerDriverProtection(PowerDriverProtection aPowerDriverProtection) {
+        return null;
+    }
+
+    public T casePowerSupplyCurrentNotification(PowerSupplyCurrentNotification aPowerSupplyCurrentNotification) {
+        return null;
+    }
+
+    public T casePowerSupplyHWElement(PowerSupplyHWElement aPowerSupplyHWElement) {
+        return null;
+    }
+
+    public T casePowerSupplyHWPort(PowerSupplyHWPort aPowerSupplyHWPort) {
+        return null;
+    }
+
+    public T casePowerSupplyVoltageNotification(PowerSupplyVoltageNotification aPowerSupplyVoltageNotification) {
+        return null;
+    }
+
+    public T caseMemoryMappedAssemblyHWConnection(MemoryMappedAssemblyHWConnection aMemoryMappedAssemblyHWConnection) {
+        return null;
+    }
+
+    public T caseMemoryMappedDelegationHWConnection(MemoryMappedDelegationHWConnection aMemoryMappedDelegationHWConnection) {
+        return null;
+    }
+
+    public T caseMemoryMappedHWPort(MemoryMappedHWPort aMemoryMappedHWPort) {
+        return null;
+    }
+
+    public T caseProvidedMemorySegment(ProvidedMemorySegment aProvidedMemorySegment) {
+        return null;
+    }
+
+    public T caseProvidedNVMemorySegment(ProvidedNVMemorySegment aProvidedNVMemorySegment) {
+        return null;
+    }
+
+    public T caseADC(ADC anADC) {
+        return null;
+    }
+
+    public T caseAnalogueIO(AnalogueIO anAnalogueIO) {
+        return null;
+    }
+
+    public T caseBuffer(Buffer aBuffer) {
+        return null;
+    }
+
+    public T caseCCU(CCU aCCU) {
+        return null;
+    }
+
+    public T caseCommunicationFilter(CommunicationFilter aCommunicationFilter) {
+        return null;
+    }
+
+    public T caseCommunicationHWPort(CommunicationHWPort aCommunicationHWPort) {
+        return null;
+    }
+
+    public T caseCommunicationPeripheral(CommunicationPeripheral aCommunicationPeripheral) {
+        return null;
+    }
+
+    public T caseCommunicationPhysicalMedium(CommunicationPhysicalMedium aCommunicationPhysicalMedium) {
+        return null;
+    }
+
+    public T caseCommunicationProtocol(CommunicationProtocol aCommunicationProtocol) {
+        return null;
+    }
+
+    public T caseCommunicationSpeed(CommunicationSpeed aCommunicationSpeed) {
+        return null;
+    }
+
+    public T caseCommunicationSpeedFixed(CommunicationSpeedFixed aCommunicationSpeedFixed) {
+        return null;
+    }
+
+    public T caseCommunicationSpeedList(CommunicationSpeedList aCommunicationSpeedList) {
+        return null;
+    }
+
+    public T caseCommunicationSpeedRange(CommunicationSpeedRange aCommunicationSpeedRange) {
+        return null;
+    }
+
+    public T caseDAC(DAC aDAC) {
+        return null;
+    }
+
+    public T caseDigitalIO(DigitalIO aDigitalIO) {
+        return null;
+    }
+
+    public T caseECUCommunicationPort(ECUCommunicationPort anECUCommunicationPort) {
+        return null;
+    }
+
+    public T caseGeneralPurposeTimer(GeneralPurposeTimer aGeneralPurposeTimer) {
+        return null;
+    }
+
+    public T casePWD(PWD aPWD) {
+        return null;
+    }
+
+    public T casePWM(PWM aPWM) {
+        return null;
+    }
+
+    public T casePeripheral(Peripheral aPeripheral) {
+        return null;
+    }
+
+    public T casePeripheralHWPort(PeripheralHWPort aPeripheralHWPort) {
+        return null;
+    }
+
+    public T casePulseWidthPeripheral(PulseWidthPeripheral aPulseWidthPeripheral) {
+        return null;
+    }
+
+    public T caseTimer(Timer aTimer) {
+        return null;
+    }
+
+    public T caseWatchDog(WatchDog aWatchDog) {
+        return null;
+    }
+
+    public T caseInterruptConsumeHWPort(InterruptConsumeHWPort anInterruptConsumeHWPort) {
+        return null;
+    }
+
+    public T caseInterruptHWPort(InterruptHWPort anInterruptHWPort) {
+        return null;
+    }
+
+    public T caseInterruptProduceHWPort(InterruptProduceHWPort anInterruptProduceHWPort) {
+        return null;
+    }
+
+    public T caseMPU(MPU aMPU) {
+        return null;
+    }
+
+    public T caseProcessingUnit(ProcessingUnit aProcessingUnit) {
+        return null;
+    }
+
+    public T caseRegister(Register aRegister) {
+        return null;
+    }
+
+    public T caseSupportedDataType(SupportedDataType aSupportedDataType) {
+        return null;
+    }
+
+    public T caseActuatorHW(ActuatorHW anActuatorHW) {
+        return null;
+    }
+
+    public T caseDisplayHW(DisplayHW aDisplayHW) {
+        return null;
+    }
+
+    public T caseSensorActuatorHW(SensorActuatorHW aSensorActuatorHW) {
+        return null;
+    }
+
+    public T caseSensorHW(SensorHW aSensorHW) {
+        return null;
+    }
+
+    public T caseAdminData(AdminData anAdminData) {
+        return null;
+    }
+
+    public T caseCompanyRevisionInfo(CompanyRevisionInfo aCompanyRevisionInfo) {
+        return null;
+    }
+
+    public T caseCompanySpecificInfo(CompanySpecificInfo aCompanySpecificInfo) {
+        return null;
+    }
+
+    public T caseDocRevision(DocRevision aDocRevision) {
+        return null;
+    }
+
+    public T caseModification(Modification aModification) {
+        return null;
+    }
+
+    public T caseMixedContent1(MixedContent1 aMixedContent1) {
+        return null;
+    }
+
+    public T caseMixedContent10(MixedContent10 aMixedContent10) {
+        return null;
+    }
+
+    public T caseMixedContent2(MixedContent2 aMixedContent2) {
+        return null;
+    }
+
+    public T caseMixedContent3(MixedContent3 aMixedContent3) {
+        return null;
+    }
+
+    public T caseMixedContent4(MixedContent4 aMixedContent4) {
+        return null;
+    }
+
+    public T caseMixedContent5(MixedContent5 aMixedContent5) {
+        return null;
+    }
+
+    public T caseBr(Br aBr) {
+        return null;
+    }
+
+    public T caseEType(EType anEType) {
+        return null;
+    }
+
+    public T caseFt(Ft aFt) {
+        return null;
+    }
+
+    public T caseIe(Ie anIe) {
+        return null;
+    }
+
+    public T caseStd(Std aStd) {
+        return null;
+    }
+
+    public T caseTt(Tt aTt) {
+        return null;
+    }
+
+    public T caseUrl(Url anUrl) {
+        return null;
+    }
+
+    public T caseXdoc(Xdoc aXdoc) {
+        return null;
+    }
+
+    public T caseXfile(Xfile aXfile) {
+        return null;
+    }
+
+    public T caseXref(Xref aXref) {
+        return null;
+    }
+
+    public T caseXrefTarget(XrefTarget aXrefTarget) {
+        return null;
+    }
+
+    public T caseL1(L1 aL1) {
+        return null;
+    }
+
+    public T caseL10(L10 aL10) {
+        return null;
+    }
+
+    public T caseL2(L2 aL2) {
+        return null;
+    }
+
+    public T caseL3(L3 aL3) {
+        return null;
+    }
+
+    public T caseL4(L4 aL4) {
+        return null;
+    }
+
+    public T caseL5(L5 aL5) {
+        return null;
+    }
+
+    public T caseMlDataModel1(MlDataModel1 aMlDataModel1) {
+        return null;
+    }
+
+    public T caseMlDataModel10(MlDataModel10 aMlDataModel10) {
+        return null;
+    }
+
+    public T caseMlDataModel2(MlDataModel2 aMlDataModel2) {
+        return null;
+    }
+
+    public T caseMlDataModel3(MlDataModel3 aMlDataModel3) {
+        return null;
+    }
+
+    public T caseMlDataModel4(MlDataModel4 aMlDataModel4) {
+        return null;
+    }
+
+    public T caseMlDataModel5(MlDataModel5 aMlDataModel5) {
+        return null;
+    }
+
+    public T caseMlData1(MlData1 aMlData1) {
+        return null;
+    }
+
+    public T caseMlData10(MlData10 aMlData10) {
+        return null;
+    }
+
+    public T caseMlData2(MlData2 aMlData2) {
+        return null;
+    }
+
+    public T caseMlData3(MlData3 aMlData3) {
+        return null;
+    }
+
+    public T caseMlData3p(MlData3p aMlData3p) {
+        return null;
+    }
+
+    public T caseMlData4(MlData4 aMlData4) {
+        return null;
+    }
+
+    public T caseMlData5(MlData5 aMlData5) {
+        return null;
+    }
+
+    public T caseBooleanContainer(BooleanContainer aBooleanContainer) {
+        return null;
+    }
+
+    public T caseFloatContainer(FloatContainer aFloatContainer) {
+        return null;
+    }
+
+    public T caseIntegerContainer(IntegerContainer anIntegerContainer) {
+        return null;
+    }
+
+    public T caseStringContainer(StringContainer aStringContainer) {
+        return null;
+    }
+
+    public T caseSlData1(SlData1 aSlData1) {
+        return null;
+    }
+
+    public T caseSlData10(SlData10 aSlData10) {
+        return null;
+    }
+
+    public T caseSlData2(SlData2 aSlData2) {
+        return null;
+    }
+
+    public T caseSlData3(SlData3 aSlData3) {
+        return null;
+    }
+
+    public T caseSlData3p(SlData3p aSlData3p) {
+        return null;
+    }
+
+    public T caseSlData4(SlData4 aSlData4) {
+        return null;
+    }
+
+    public T caseSlData5(SlData5 aSlData5) {
+        return null;
+    }
+
+    public T caseCaption(Caption aCaption) {
+        return null;
+    }
+
+    public T caseSd(Sd aSd) {
+        return null;
+    }
+
+    public T caseSdg(Sdg aSdg) {
+        return null;
+    }
+
+    public T caseSdgContents(SdgContents aSdgContents) {
+        return null;
+    }
+
+    public T caseSdgs(Sdgs aSdgs) {
+        return null;
+    }
+
+    public T caseARObject(ARObject anARObject) {
+        return null;
+    }
+
+    public T caseNonSplitableElement(NonSplitableElement aNonSplitableElement) {
+        return null;
+    }
+
+    public T casePackageableElement(PackageableElement aPackageableElement) {
+        return null;
+    }
+
+    public T caseSplitableElement(SplitableElement aSplitableElement) {
+        return null;
+    }
+
+    public T caseARPackage(ARPackage anARPackage) {
+        return null;
+    }
+
+    public T caseAUTOSAR(AUTOSAR anAUTOSAR) {
+        return null;
+    }
+
+    public T caseARElement(ARElement anARElement) {
+        return null;
+    }
+
+    public T caseIdentifiable(Identifiable anIdentifiable) {
+        return null;
+    }
+
+    public T caseCalibrationPortAnnotation(CalibrationPortAnnotation aCalibrationPortAnnotation) {
+        return null;
+    }
+
+    public T caseComMUserNeeds(ComMUserNeeds aComMUserNeeds) {
+        return null;
+    }
+
+    public T caseExtAnnotation(ExtAnnotation anExtAnnotation) {
+        return null;
+    }
+
+    public T caseFailureMonitoring(FailureMonitoring aFailureMonitoring) {
+        return null;
+    }
+
+    public T caseIoHwAbstractionServerAnnotation(IoHwAbstractionServerAnnotation anIoHwAbstractionServerAnnotation) {
+        return null;
+    }
+
+    public T caseNVRAMBlockNeeds(NVRAMBlockNeeds aNVRAMBlockNeeds) {
+        return null;
+    }
+
+    public T casePortAnnotation(PortAnnotation aPortAnnotation) {
+        return null;
+    }
+
+    public T caseReceiverAnnotation(ReceiverAnnotation aReceiverAnnotation) {
+        return null;
+    }
+
+    public T caseReportFeature(ReportFeature aReportFeature) {
+        return null;
+    }
+
+    public T caseSenderAnnotation(SenderAnnotation aSenderAnnotation) {
+        return null;
+    }
+
+    public T caseSenderReceiverAnnotation(SenderReceiverAnnotation aSenderReceiverAnnotation) {
+        return null;
+    }
+
+    public T caseServiceNeeds(ServiceNeeds aServiceNeeds) {
+        return null;
+    }
+
+    public T caseSupervisedEntityNeeds(SupervisedEntityNeeds aSupervisedEntityNeeds) {
+        return null;
+    }
+
+    public T caseWakeUp(WakeUp aWakeUp) {
+        return null;
+    }
+
+    public T caseFailureMonitoringMonitorsFailure(FailureMonitoringMonitorsFailure aFailureMonitoringMonitorsFailure) {
+        return null;
+    }
+
+    public T caseSenderReceiverAnnotationDataElement(SenderReceiverAnnotationDataElement aSenderReceiverAnnotationDataElement) {
+        return null;
+    }
+
+    public T caseClientComSpec(ClientComSpec aClientComSpec) {
+        return null;
+    }
+
+    public T caseClientServerConnectorComSpec(ClientServerConnectorComSpec aClientServerConnectorComSpec) {
+        return null;
+    }
+
+    public T caseConnectorComSpec(ConnectorComSpec aConnectorComSpec) {
+        return null;
+    }
+
+    public T caseModeSwitchComSpec(ModeSwitchComSpec aModeSwitchComSpec) {
+        return null;
+    }
+
+    public T caseModeSwitchedAckRequest(ModeSwitchedAckRequest aModeSwitchedAckRequest) {
+        return null;
+    }
+
+    public T casePPortComSpec(PPortComSpec aPPortComSpec) {
+        return null;
+    }
+
+    public T caseQueuedReceiverComSpec(QueuedReceiverComSpec aQueuedReceiverComSpec) {
+        return null;
+    }
+
+    public T caseQueuedSenderComSpec(QueuedSenderComSpec aQueuedSenderComSpec) {
+        return null;
+    }
+
+    public T caseRPortComSpec(RPortComSpec aRPortComSpec) {
+        return null;
+    }
+
+    public T caseReceiverComSpec(ReceiverComSpec aReceiverComSpec) {
+        return null;
+    }
+
+    public T caseSenderComSpec(SenderComSpec aSenderComSpec) {
+        return null;
+    }
+
+    public T caseSenderReceiverConnectorComSpec(SenderReceiverConnectorComSpec aSenderReceiverConnectorComSpec) {
+        return null;
+    }
+
+    public T caseServerComSpec(ServerComSpec aServerComSpec) {
+        return null;
+    }
+
+    public T caseTransmissionAcknowledgementRequest(TransmissionAcknowledgementRequest aTransmissionAcknowledgementRequest) {
+        return null;
+    }
+
+    public T caseUnqueuedReceiverComSpec(UnqueuedReceiverComSpec anUnqueuedReceiverComSpec) {
+        return null;
+    }
+
+    public T caseUnqueuedSenderComSpec(UnqueuedSenderComSpec anUnqueuedSenderComSpec) {
+        return null;
+    }
+
+    public T caseAlways(Always anAlways) {
+        return null;
+    }
+
+    public T caseDataFilter(DataFilter aDataFilter) {
+        return null;
+    }
+
+    public T caseMaskedNewDiffersMaskedOld(MaskedNewDiffersMaskedOld aMaskedNewDiffersMaskedOld) {
+        return null;
+    }
+
+    public T caseMaskedNewDiffersX(MaskedNewDiffersX aMaskedNewDiffersX) {
+        return null;
+    }
+
+    public T caseMaskedNewEqualsMaskedOld(MaskedNewEqualsMaskedOld aMaskedNewEqualsMaskedOld) {
+        return null;
+    }
+
+    public T caseMaskedNewEqualsX(MaskedNewEqualsX aMaskedNewEqualsX) {
+        return null;
+    }
+
+    public T caseNever(Never aNever) {
+        return null;
+    }
+
+    public T caseNewIsDifferent(NewIsDifferent aNewIsDifferent) {
+        return null;
+    }
+
+    public T caseNewIsEqual(NewIsEqual aNewIsEqual) {
+        return null;
+    }
+
+    public T caseNewIsGreater(NewIsGreater aNewIsGreater) {
+        return null;
+    }
+
+    public T caseNewIsGreaterOrEqual(NewIsGreaterOrEqual aNewIsGreaterOrEqual) {
+        return null;
+    }
+
+    public T caseNewIsLess(NewIsLess aNewIsLess) {
+        return null;
+    }
+
+    public T caseNewIsLessOrEqual(NewIsLessOrEqual aNewIsLessOrEqual) {
+        return null;
+    }
+
+    public T caseNewIsOutside(NewIsOutside aNewIsOutside) {
+        return null;
+    }
+
+    public T caseNewIsWithin(NewIsWithin aNewIsWithin) {
+        return null;
+    }
+
+    public T caseOneEveryN(OneEveryN anOneEveryN) {
+        return null;
+    }
+
+    public T caseClientComSpecOperation(ClientComSpecOperation aClientComSpecOperation) {
+        return null;
+    }
+
+    public T caseClientServerConnectorComSpecOperation(ClientServerConnectorComSpecOperation aClientServerConnectorComSpecOperation) {
+        return null;
+    }
+
+    public T caseModeSwitchComSpecModeDeclarationGroupPrototype(ModeSwitchComSpecModeDeclarationGroupPrototype aModeSwitchComSpecModeDeclarationGroupPrototype) {
+        return null;
+    }
+
+    public T caseReceiverComSpecDataElement(ReceiverComSpecDataElement aReceiverComSpecDataElement) {
+        return null;
+    }
+
+    public T caseSenderComSpecDataElement(SenderComSpecDataElement aSenderComSpecDataElement) {
+        return null;
+    }
+
+    public T caseSenderReceiverConnectorComSpecDataElement(SenderReceiverConnectorComSpecDataElement aSenderReceiverConnectorComSpecDataElement) {
+        return null;
+    }
+
+    public T caseServerComSpecOperation(ServerComSpecOperation aServerComSpecOperation) {
+        return null;
+    }
+
+    public T caseAtomicSoftwareComponentType(AtomicSoftwareComponentType anAtomicSoftwareComponentType) {
+        return null;
+    }
+
+    public T caseCalprmComponentType(CalprmComponentType aCalprmComponentType) {
+        return null;
+    }
+
+    public T caseComponentType(ComponentType aComponentType) {
+        return null;
+    }
+
+    public T casePPortPrototype(PPortPrototype aPPortPrototype) {
+        return null;
+    }
+
+    public T casePortPrototype(PortPrototype aPortPrototype) {
+        return null;
+    }
+
+    public T caseRPortPrototype(RPortPrototype aRPortPrototype) {
+        return null;
+    }
+
+    public T caseSensorActuatorSoftwareComponentType(SensorActuatorSoftwareComponentType aSensorActuatorSoftwareComponentType) {
+        return null;
+    }
+
+    public T caseServiceComponentType(ServiceComponentType aServiceComponentType) {
+        return null;
+    }
+
+    public T caseAssemblyConnectorPrototype(AssemblyConnectorPrototype anAssemblyConnectorPrototype) {
+        return null;
+    }
+
+    public T caseComponentPrototype(ComponentPrototype aComponentPrototype) {
+        return null;
+    }
+
+    public T caseCompositionType(CompositionType aCompositionType) {
+        return null;
+    }
+
+    public T caseConnectorPrototype(ConnectorPrototype aConnectorPrototype) {
+        return null;
+    }
+
+    public T caseDelegationConnectorPrototype(DelegationConnectorPrototype aDelegationConnectorPrototype) {
+        return null;
+    }
+
+    public T caseServiceConnectorPrototype(ServiceConnectorPrototype aServiceConnectorPrototype) {
+        return null;
+    }
+
+    public T caseAssemblyConnectorPrototypeProvider(AssemblyConnectorPrototypeProvider anAssemblyConnectorPrototypeProvider) {
+        return null;
+    }
+
+    public T caseAssemblyConnectorPrototypeRequester(AssemblyConnectorPrototypeRequester anAssemblyConnectorPrototypeRequester) {
+        return null;
+    }
+
+    public T caseDelegationConnectorPrototypeInnerPort(DelegationConnectorPrototypeInnerPort aDelegationConnectorPrototypeInnerPort) {
+        return null;
+    }
+
+    public T caseServiceConnectorPrototypeApplicationPort(ServiceConnectorPrototypeApplicationPort aServiceConnectorPrototypeApplicationPort) {
+        return null;
+    }
+
+    public T caseServiceConnectorPrototypeServicePort(ServiceConnectorPrototypeServicePort aServiceConnectorPrototypeServicePort) {
+        return null;
+    }
+
+    public T caseCompu(Compu aCompu) {
+        return null;
+    }
+
+    public T caseCompuConst(CompuConst aCompuConst) {
+        return null;
+    }
+
+    public T caseCompuConstContent(CompuConstContent aCompuConstContent) {
+        return null;
+    }
+
+    public T caseCompuConstFormulaContent(CompuConstFormulaContent aCompuConstFormulaContent) {
+        return null;
+    }
+
+    public T caseCompuConstNumericContent(CompuConstNumericContent aCompuConstNumericContent) {
+        return null;
+    }
+
+    public T caseCompuConstTextContent(CompuConstTextContent aCompuConstTextContent) {
+        return null;
+    }
+
+    public T caseCompuContent(CompuContent aCompuContent) {
+        return null;
+    }
+
+    public T caseCompuDefaultValue(CompuDefaultValue aCompuDefaultValue) {
+        return null;
+    }
+
+    public T caseCompuGenericMath(CompuGenericMath aCompuGenericMath) {
+        return null;
+    }
+
+    public T caseCompuMethod(CompuMethod aCompuMethod) {
+        return null;
+    }
+
+    public T caseCompuNominatorDenominator(CompuNominatorDenominator aCompuNominatorDenominator) {
+        return null;
+    }
+
+    public T caseCompuProgCode(CompuProgCode aCompuProgCode) {
+        return null;
+    }
+
+    public T caseCompuRationalCoeffs(CompuRationalCoeffs aCompuRationalCoeffs) {
+        return null;
+    }
+
+    public T caseCompuScale(CompuScale aCompuScale) {
+        return null;
+    }
+
+    public T caseCompuScaleConstantContents(CompuScaleConstantContents aCompuScaleConstantContents) {
+        return null;
+    }
+
+    public T caseCompuScaleContents(CompuScaleContents aCompuScaleContents) {
+        return null;
+    }
+
+    public T caseCompuScaleGenericMath(CompuScaleGenericMath aCompuScaleGenericMath) {
+        return null;
+    }
+
+    public T caseCompuScaleRationalFormula(CompuScaleRationalFormula aCompuScaleRationalFormula) {
+        return null;
+    }
+
+    public T caseCompuScales(CompuScales aCompuScales) {
+        return null;
+    }
+
+    public T caseProgCode(ProgCode aProgCode) {
+        return null;
+    }
+
+    public T caseArraySpecification(ArraySpecification anArraySpecification) {
+        return null;
+    }
+
+    public T caseBooleanLiteral(BooleanLiteral aBooleanLiteral) {
+        return null;
+    }
+
+    public T caseCharLiteral(CharLiteral aCharLiteral) {
+        return null;
+    }
+
+    public T caseConstantReference(ConstantReference aConstantReference) {
+        return null;
+    }
+
+    public T caseConstantSpecification(ConstantSpecification aConstantSpecification) {
+        return null;
+    }
+
+    public T caseIntegerLiteral(IntegerLiteral anIntegerLiteral) {
+        return null;
+    }
+
+    public T caseOpaqueLiteral(OpaqueLiteral anOpaqueLiteral) {
+        return null;
+    }
+
+    public T casePrimitiveSpecification(PrimitiveSpecification aPrimitiveSpecification) {
+        return null;
+    }
+
+    public T caseRealLiteral(RealLiteral aRealLiteral) {
+        return null;
+    }
+
+    public T caseRecordSpecification(RecordSpecification aRecordSpecification) {
+        return null;
+    }
+
+    public T caseStringLiteral(StringLiteral aStringLiteral) {
+        return null;
+    }
+
+    public T caseValueSpecification(ValueSpecification aValueSpecification) {
+        return null;
+    }
+
+    public T caseARLimit(ARLimit anARLimit) {
+        return null;
+    }
+
+    public T caseArrayElement(ArrayElement anArrayElement) {
+        return null;
+    }
+
+    public T caseArrayType(ArrayType anArrayType) {
+        return null;
+    }
+
+    public T caseBooleanType(BooleanType aBooleanType) {
+        return null;
+    }
+
+    public T caseCharType(CharType aCharType) {
+        return null;
+    }
+
+    public T caseCompositeType(CompositeType aCompositeType) {
+        return null;
+    }
+
+    public T caseDataPrototype(DataPrototype aDataPrototype) {
+        return null;
+    }
+
+    public T caseDatatype(Datatype aDatatype) {
+        return null;
+    }
+
+    public T caseIntegerType(IntegerType anIntegerType) {
+        return null;
+    }
+
+    public T caseOpaqueType(OpaqueType anOpaqueType) {
+        return null;
+    }
+
+    public T casePrimitiveType(PrimitiveType aPrimitiveType) {
+        return null;
+    }
+
+    public T caseRange(Range aRange) {
+        return null;
+    }
+
+    public T caseRealType(RealType aRealType) {
+        return null;
+    }
+
+    public T caseRecordElement(RecordElement aRecordElement) {
+        return null;
+    }
+
+    public T caseRecordType(RecordType aRecordType) {
+        return null;
+    }
+
+    public T caseStringType(StringType aStringType) {
+        return null;
+    }
+
+    public T caseInterstring(Interstring anInterstring) {
+        return null;
+    }
+
+    public T caseLimit(Limit aLimit) {
+        return null;
+    }
+
+    public T caseDisplayName(DisplayName aDisplayName) {
+        return null;
+    }
+
+    public T casePhysicalDimension(PhysicalDimension aPhysicalDimension) {
+        return null;
+    }
+
+    public T caseUnit(Unit anUnit) {
+        return null;
+    }
+
+    public T caseUnitGroup(UnitGroup anUnitGroup) {
+        return null;
+    }
+
+    public T caseUnitSpec(UnitSpec anUnitSpec) {
+        return null;
+    }
+
+    public T caseV(V aV) {
+        return null;
+    }
+
+    public T caseValueByFormula(ValueByFormula aValueByFormula) {
+        return null;
+    }
+
+    public T caseVf(Vf aVf) {
+        return null;
+    }
+
+    public T caseVt(Vt aVt) {
+        return null;
+    }
+
+    public T caseCode(Code aCode) {
+        return null;
+    }
+
+    public T caseCompiler(Compiler aCompiler) {
+        return null;
+    }
+
+    public T caseDependency(Dependency aDependency) {
+        return null;
+    }
+
+    public T caseDependencyOnFile(DependencyOnFile aDependencyOnFile) {
+        return null;
+    }
+
+    public T caseDependencyOnLibrary(DependencyOnLibrary aDependencyOnLibrary) {
+        return null;
+    }
+
+    public T caseImplementation(Implementation anImplementation) {
+        return null;
+    }
+
+    public T caseInternalBehavior(InternalBehavior anInternalBehavior) {
+        return null;
+    }
+
+    public T caseRunnableEntity(RunnableEntity aRunnableEntity) {
+        return null;
+    }
+
+    public T caseDataReadAccess(DataReadAccess aDataReadAccess) {
+        return null;
+    }
+
+    public T caseDataReceivePoint(DataReceivePoint aDataReceivePoint) {
+        return null;
+    }
+
+    public T caseDataSendPoint(DataSendPoint aDataSendPoint) {
+        return null;
+    }
+
+    public T caseDataWriteAccess(DataWriteAccess aDataWriteAccess) {
+        return null;
+    }
+
+    public T caseDataReadAccessDataElement(DataReadAccessDataElement aDataReadAccessDataElement) {
+        return null;
+    }
+
+    public T caseDataReceivePointDataElement(DataReceivePointDataElement aDataReceivePointDataElement) {
+        return null;
+    }
+
+    public T caseDataSendPointDataElement(DataSendPointDataElement aDataSendPointDataElement) {
+        return null;
+    }
+
+    public T caseDataWriteAccessDataElement(DataWriteAccessDataElement aDataWriteAccessDataElement) {
+        return null;
+    }
+
+    public T caseExclusiveArea(ExclusiveArea anExclusiveArea) {
+        return null;
+    }
+
+    public T caseRunnableEntityCanEnterExclusiveArea(RunnableEntityCanEnterExclusiveArea aRunnableEntityCanEnterExclusiveArea) {
+        return null;
+    }
+
+    public T caseRunnableEntityRunsInExclusiveArea(RunnableEntityRunsInExclusiveArea aRunnableEntityRunsInExclusiveArea) {
+        return null;
+    }
+
+    public T caseInterRunnableVariable(InterRunnableVariable anInterRunnableVariable) {
+        return null;
+    }
+
+    public T caseModeSwitchPoint(ModeSwitchPoint aModeSwitchPoint) {
+        return null;
+    }
+
+    public T caseModeSwitchPointModeGroup(ModeSwitchPointModeGroup aModeSwitchPointModeGroup) {
+        return null;
+    }
+
+    public T caseNVRAMMapping(NVRAMMapping aNVRAMMapping) {
+        return null;
+    }
+
+    public T casePerInstanceMemory(PerInstanceMemory aPerInstanceMemory) {
+        return null;
+    }
+
+    public T casePortAPIOption(PortAPIOption aPortAPIOption) {
+        return null;
+    }
+
+    public T caseAsynchronousServerCallReturnsEvent(AsynchronousServerCallReturnsEvent anAsynchronousServerCallReturnsEvent) {
+        return null;
+    }
+
+    public T caseDataReceiveErrorEvent(DataReceiveErrorEvent aDataReceiveErrorEvent) {
+        return null;
+    }
+
+    public T caseDataReceivedEvent(DataReceivedEvent aDataReceivedEvent) {
+        return null;
+    }
+
+    public T caseDataSendCompletedEvent(DataSendCompletedEvent aDataSendCompletedEvent) {
+        return null;
+    }
+
+    public T caseModeSwitchEvent(ModeSwitchEvent aModeSwitchEvent) {
+        return null;
+    }
+
+    public T caseModeSwitchedAckEvent(ModeSwitchedAckEvent aModeSwitchedAckEvent) {
+        return null;
+    }
+
+    public T caseOperationInvokedEvent(OperationInvokedEvent anOperationInvokedEvent) {
+        return null;
+    }
+
+    public T caseRTEEvent(RTEEvent aRTEEvent) {
+        return null;
+    }
+
+    public T caseTimingEvent(TimingEvent aTimingEvent) {
+        return null;
+    }
+
+    public T caseWaitPoint(WaitPoint aWaitPoint) {
+        return null;
+    }
+
+    public T caseDataReceiveErrorEventData(DataReceiveErrorEventData aDataReceiveErrorEventData) {
+        return null;
+    }
+
+    public T caseDataReceivedEventData(DataReceivedEventData aDataReceivedEventData) {
+        return null;
+    }
+
+    public T caseModeSwitchEventMode(ModeSwitchEventMode aModeSwitchEventMode) {
+        return null;
+    }
+
+    public T caseOperationInvokedEventOperation(OperationInvokedEventOperation anOperationInvokedEventOperation) {
+        return null;
+    }
+
+    public T caseAsynchronousServerCallPoint(AsynchronousServerCallPoint anAsynchronousServerCallPoint) {
+        return null;
+    }
+
+    public T caseServerCallPoint(ServerCallPoint aServerCallPoint) {
+        return null;
+    }
+
+    public T caseSynchronousServerCallPoint(SynchronousServerCallPoint aSynchronousServerCallPoint) {
+        return null;
+    }
+
+    public T caseServerCallPointOperation(ServerCallPointOperation aServerCallPointOperation) {
+        return null;
+    }
+
+    public T caseSwAddrMethod(SwAddrMethod aSwAddrMethod) {
+        return null;
+    }
+
+    public T caseSwCodeSyntax(SwCodeSyntax aSwCodeSyntax) {
+        return null;
+    }
+
+    public T caseSwRecordLayout(SwRecordLayout aSwRecordLayout) {
+        return null;
+    }
+
+    public T caseSwRecordLayoutGroup(SwRecordLayoutGroup aSwRecordLayoutGroup) {
+        return null;
+    }
+
+    public T caseSwRecordLayoutGroupContent(SwRecordLayoutGroupContent aSwRecordLayoutGroupContent) {
+        return null;
+    }
+
+    public T caseSwRecordLayoutV(SwRecordLayoutV aSwRecordLayoutV) {
+        return null;
+    }
+
+    public T caseSwRelatedConstrs(SwRelatedConstrs aSwRelatedConstrs) {
+        return null;
+    }
+
+    public T caseSwAxisGeneric(SwAxisGeneric aSwAxisGeneric) {
+        return null;
+    }
+
+    public T caseSwAxisGrouped(SwAxisGrouped aSwAxisGrouped) {
+        return null;
+    }
+
+    public T caseSwAxisIndividual(SwAxisIndividual aSwAxisIndividual) {
+        return null;
+    }
+
+    public T caseSwAxisType(SwAxisType aSwAxisType) {
+        return null;
+    }
+
+    public T caseSwGenericAxisParam(SwGenericAxisParam aSwGenericAxisParam) {
+        return null;
+    }
+
+    public T caseSwGenericAxisParamType(SwGenericAxisParamType aSwGenericAxisParamType) {
+        return null;
+    }
+
+    public T caseBaseType(BaseType aBaseType) {
+        return null;
+    }
+
+    public T caseBaseTypeAbsSize(BaseTypeAbsSize aBaseTypeAbsSize) {
+        return null;
+    }
+
+    public T caseBaseTypeDefinition(BaseTypeDefinition aBaseTypeDefinition) {
+        return null;
+    }
+
+    public T caseBaseTypeDirectDefinition(BaseTypeDirectDefinition aBaseTypeDirectDefinition) {
+        return null;
+    }
+
+    public T caseBaseTypeIndirectDefinition(BaseTypeIndirectDefinition aBaseTypeIndirectDefinition) {
+        return null;
+    }
+
+    public T caseBaseTypeMaxSize(BaseTypeMaxSize aBaseTypeMaxSize) {
+        return null;
+    }
+
+    public T caseBaseTypeSizeDefintion(BaseTypeSizeDefintion aBaseTypeSizeDefintion) {
+        return null;
+    }
+
+    public T caseSwBaseType(SwBaseType aSwBaseType) {
+        return null;
+    }
+
+    public T caseByteOrder(ByteOrder aByteOrder) {
+        return null;
+    }
+
+    public T caseSwCalprm(SwCalprm aSwCalprm) {
+        return null;
+    }
+
+    public T caseSwCalprmAxis(SwCalprmAxis aSwCalprmAxis) {
+        return null;
+    }
+
+    public T caseSwCalprmAxisAxis(SwCalprmAxisAxis aSwCalprmAxisAxis) {
+        return null;
+    }
+
+    public T caseSwCalprmAxisCommonAxis(SwCalprmAxisCommonAxis aSwCalprmAxisCommonAxis) {
+        return null;
+    }
+
+    public T caseSwCalprmAxisIndividualAxis(SwCalprmAxisIndividualAxis aSwCalprmAxisIndividualAxis) {
+        return null;
+    }
+
+    public T caseSwCalprmAxisSet(SwCalprmAxisSet aSwCalprmAxisSet) {
+        return null;
+    }
+
+    public T caseSwCalprmValueAxisLabels(SwCalprmValueAxisLabels aSwCalprmValueAxisLabels) {
+        return null;
+    }
+
+    public T caseArCalprmRef(ArCalprmRef anArCalprmRef) {
+        return null;
+    }
+
+    public T caseCalprmAccess(CalprmAccess aCalprmAccess) {
+        return null;
+    }
+
+    public T caseCalprmElementPrototype(CalprmElementPrototype aCalprmElementPrototype) {
+        return null;
+    }
+
+    public T caseCalprmInterface(CalprmInterface aCalprmInterface) {
+        return null;
+    }
+
+    public T caseArCalprmRefCalprmElementPrototype(ArCalprmRefCalprmElementPrototype anArCalprmRefCalprmElementPrototype) {
+        return null;
+    }
+
+    public T caseCalprmAccessCalprmElementPrototype(CalprmAccessCalprmElementPrototype aCalprmAccessCalprmElementPrototype) {
+        return null;
+    }
+
+    public T caseSwArraysize(SwArraysize aSwArraysize) {
+        return null;
+    }
+
+    public T caseSwBitRepresentation(SwBitRepresentation aSwBitRepresentation) {
+        return null;
+    }
+
+    public T caseSwComparisonVariables(SwComparisonVariables aSwComparisonVariables) {
+        return null;
+    }
+
+    public T caseSwDataDefProps(SwDataDefProps aSwDataDefProps) {
+        return null;
+    }
+
+    public T caseSwDataDependency(SwDataDependency aSwDataDependency) {
+        return null;
+    }
+
+    public T caseSwDataDependencyArgs(SwDataDependencyArgs aSwDataDependencyArgs) {
+        return null;
+    }
+
+    public T caseSwGenericAxisParamValue(SwGenericAxisParamValue aSwGenericAxisParamValue) {
+        return null;
+    }
+
+    public T caseSwPointer(SwPointer aSwPointer) {
+        return null;
+    }
+
+    public T caseSwSemaphore(SwSemaphore aSwSemaphore) {
+        return null;
+    }
+
+    public T caseSwTextProps(SwTextProps aSwTextProps) {
+        return null;
+    }
+
+    public T caseSwVariableRef(SwVariableRef aSwVariableRef) {
+        return null;
+    }
+
+    public T caseSwCalprmRefProxy(SwCalprmRefProxy aSwCalprmRefProxy) {
+        return null;
+    }
+
+    public T caseSwVariableRefMsr(SwVariableRefMsr aSwVariableRefMsr) {
+        return null;
+    }
+
+    public T caseSwVariableRefProxy(SwVariableRefProxy aSwVariableRefProxy) {
+        return null;
+    }
+
+    public T caseswCalprmRef(swCalprmRef aSwCalprmRef) {
+        return null;
+    }
+
+    public T caseDataConstr(DataConstr aDataConstr) {
+        return null;
+    }
+
+    public T caseDataConstrRule(DataConstrRule aDataConstrRule) {
+        return null;
+    }
+
+    public T caseInternalConstrs(InternalConstrs anInternalConstrs) {
+        return null;
+    }
+
+    public T casePhysConstrs(PhysConstrs aPhysConstrs) {
+        return null;
+    }
+
+    public T caseScaleConstr(ScaleConstr aScaleConstr) {
+        return null;
+    }
+
+    public T caseScaleConstrs(ScaleConstrs aScaleConstrs) {
+        return null;
+    }
+
+    public T caseSwConstrObjects(SwConstrObjects aSwConstrObjects) {
+        return null;
+    }
+
+    public T caseDataPrototypeRef(DataPrototypeRef aDataPrototypeRef) {
+        return null;
+    }
+
+    public T caseMeasurable(Measurable aMeasurable) {
+        return null;
+    }
+
+    public T casePerInstanceMemoryVariable(PerInstanceMemoryVariable aPerInstanceMemoryVariable) {
+        return null;
+    }
+
+    public T caseRecordElementRef(RecordElementRef aRecordElementRef) {
+        return null;
+    }
+
+    public T caseDataPrototypeRefDataPrototype(DataPrototypeRefDataPrototype aDataPrototypeRefDataPrototype) {
+        return null;
+    }
+
+    public T caseRecordElementRefRecordElement(RecordElementRefRecordElement aRecordElementRefRecordElement) {
+        return null;
+    }
+
+    public T caseSwVariable(SwVariable aSwVariable) {
+        return null;
+    }
+
+    public T caseModeDeclaration(ModeDeclaration aModeDeclaration) {
+        return null;
+    }
+
+    public T caseModeDeclarationGroup(ModeDeclarationGroup aModeDeclarationGroup) {
+        return null;
+    }
+
+    public T caseModeDisablingDependency(ModeDisablingDependency aModeDisablingDependency) {
+        return null;
+    }
+
+    public T caseModeDisablingDependencyDependentOnMode(ModeDisablingDependencyDependentOnMode aModeDisablingDependencyDependentOnMode) {
+        return null;
+    }
+
+    public T caseArgumentPrototype(ArgumentPrototype anArgumentPrototype) {
+        return null;
+    }
+
+    public T caseClientServerInterface(ClientServerInterface aClientServerInterface) {
+        return null;
+    }
+
+    public T caseDataElementPrototype(DataElementPrototype aDataElementPrototype) {
+        return null;
+    }
+
+    public T caseModeDeclarationGroupPrototype(ModeDeclarationGroupPrototype aModeDeclarationGroupPrototype) {
+        return null;
+    }
+
+    public T caseOperationPrototype(OperationPrototype anOperationPrototype) {
+        return null;
+    }
+
+    public T casePortInterface(PortInterface aPortInterface) {
+        return null;
+    }
+
+    public T caseSenderReceiverInterface(SenderReceiverInterface aSenderReceiverInterface) {
+        return null;
+    }
+
+    public T caseResourceConsumption(ResourceConsumption aResourceConsumption) {
+        return null;
+    }
+
+    public T caseECUPrototype(ECUPrototype anECUPrototype) {
+        return null;
+    }
+
+    public T caseExecutionTime(ExecutionTime anExecutionTime) {
+        return null;
+    }
+
+    public T caseHardwareConfiguration(HardwareConfiguration aHardwareConfiguration) {
+        return null;
+    }
+
+    public T caseMeasuredExecutionTime(MeasuredExecutionTime aMeasuredExecutionTime) {
+        return null;
+    }
+
+    public T caseMemorySectionLocation(MemorySectionLocation aMemorySectionLocation) {
+        return null;
+    }
+
+    public T caseRoughEstimateOfExecutionTime(RoughEstimateOfExecutionTime aRoughEstimateOfExecutionTime) {
+        return null;
+    }
+
+    public T caseSimulatedExecutionTime(SimulatedExecutionTime aSimulatedExecutionTime) {
+        return null;
+    }
+
+    public T caseSoftwareContext(SoftwareContext aSoftwareContext) {
+        return null;
+    }
+
+    public T caseWorstCaseExecutionTime(WorstCaseExecutionTime aWorstCaseExecutionTime) {
+        return null;
+    }
+
+    public T caseHeapUsage(HeapUsage aHeapUsage) {
+        return null;
+    }
+
+    public T caseMeasuredHeapUsage(MeasuredHeapUsage aMeasuredHeapUsage) {
+        return null;
+    }
+
+    public T caseRoughEstimateHeapUsage(RoughEstimateHeapUsage aRoughEstimateHeapUsage) {
+        return null;
+    }
+
+    public T caseWorstCaseHeapUsage(WorstCaseHeapUsage aWorstCaseHeapUsage) {
+        return null;
+    }
+
+    public T caseObjectFileSection(ObjectFileSection anObjectFileSection) {
+        return null;
+    }
+
+    public T casePerInstanceMemorySize(PerInstanceMemorySize aPerInstanceMemorySize) {
+        return null;
+    }
+
+    public T caseMeasuredStackUsage(MeasuredStackUsage aMeasuredStackUsage) {
+        return null;
+    }
+
+    public T caseRoughEstimateStackUsage(RoughEstimateStackUsage aRoughEstimateStackUsage) {
+        return null;
+    }
+
+    public T caseStackUsage(StackUsage aStackUsage) {
+        return null;
+    }
+
+    public T caseWorstCaseStackUsage(WorstCaseStackUsage aWorstCaseStackUsage) {
+        return null;
+    }
+
+    public T caseEcuSwComposition(EcuSwComposition anEcuSwComposition) {
+        return null;
+    }
+
+    public T caseServiceComponentPrototype(ServiceComponentPrototype aServiceComponentPrototype) {
+        return null;
+    }
+
+    public T caseApplicationError(ApplicationError anApplicationError) {
+        return null;
+    }
+
+    public T caseDevelopmentError(DevelopmentError aDevelopmentError) {
+        return null;
+    }
+
+    public T caseCommunicationMatrixInstance(CommunicationMatrixInstance aCommunicationMatrixInstance) {
+        return null;
+    }
+
+    public T caseGatewayInstance(GatewayInstance aGatewayInstance) {
+        return null;
+    }
+
+    public T caseSoftwareComposition(SoftwareComposition aSoftwareComposition) {
+        return null;
+    }
+
+    public T caseSystem(System aSystem) {
+        return null;
+    }
+
+    public T caseSystemCommunication(SystemCommunication aSystemCommunication) {
+        return null;
+    }
+
+    public T caseSystemMapping(SystemMapping aSystemMapping) {
+        return null;
+    }
+
+    public T caseSystemTopologyInstance(SystemTopologyInstance aSystemTopologyInstance) {
+        return null;
+    }
+
+    public T caseAbsolutelyScheduledTiming(AbsolutelyScheduledTiming anAbsolutelyScheduledTiming) {
+        return null;
+    }
+
+    public T caseActiveCondition(ActiveCondition anActiveCondition) {
+        return null;
+    }
+
+    public T caseCanFrame(CanFrame aCanFrame) {
+        return null;
+    }
+
+    public T caseCommunicationMatrixType(CommunicationMatrixType aCommunicationMatrixType) {
+        return null;
+    }
+
+    public T caseCyclicTiming(CyclicTiming aCyclicTiming) {
+        return null;
+    }
+
+    public T caseEventControlledTiming(EventControlledTiming anEventControlledTiming) {
+        return null;
+    }
+
+    public T caseEventTriggeredFrameSlot(EventTriggeredFrameSlot anEventTriggeredFrameSlot) {
+        return null;
+    }
+
+    public T caseFlexrayFrame(FlexrayFrame aFlexrayFrame) {
+        return null;
+    }
+
+    public T caseFrame(Frame aFrame) {
+        return null;
+    }
+
+    public T caseFreeTextCondition(FreeTextCondition aFreeTextCondition) {
+        return null;
+    }
+
+    public T caseGatewayEntry(GatewayEntry aGatewayEntry) {
+        return null;
+    }
+
+    public T caseGatewayType(GatewayType aGatewayType) {
+        return null;
+    }
+
+    public T caseLinFrame(LinFrame aLinFrame) {
+        return null;
+    }
+
+    public T caseLinSchedulingTable(LinSchedulingTable aLinSchedulingTable) {
+        return null;
+    }
+
+    public T caseLinSchedulingTableEntry(LinSchedulingTableEntry aLinSchedulingTableEntry) {
+        return null;
+    }
+
+    public T casePDUGatewayEntry(PDUGatewayEntry aPDUGatewayEntry) {
+        return null;
+    }
+
+    public T casePDUPrototype(PDUPrototype aPDUPrototype) {
+        return null;
+    }
+
+    public T caseRelativelyScheduledTiming(RelativelyScheduledTiming aRelativelyScheduledTiming) {
+        return null;
+    }
+
+    public T caseRequestControlledTiming(RequestControlledTiming aRequestControlledTiming) {
+        return null;
+    }
+
+    public T caseSendCondition(SendCondition aSendCondition) {
+        return null;
+    }
+
+    public T caseSignalGatewayEntry(SignalGatewayEntry aSignalGatewayEntry) {
+        return null;
+    }
+
+    public T caseSignalTrigger(SignalTrigger aSignalTrigger) {
+        return null;
+    }
+
+    public T caseSporadicFrameSlot(SporadicFrameSlot aSporadicFrameSlot) {
+        return null;
+    }
+
+    public T caseStartCondition(StartCondition aStartCondition) {
+        return null;
+    }
+
+    public T caseStopCondition(StopCondition aStopCondition) {
+        return null;
+    }
+
+    public T caseSystemStateTrigger(SystemStateTrigger aSystemStateTrigger) {
+        return null;
+    }
+
+    public T caseTiming(Timing aTiming) {
+        return null;
+    }
+
+    public T caseUnconditionalFrameSlot(UnconditionalFrameSlot anUnconditionalFrameSlot) {
+        return null;
+    }
+
+    public T caseCommunicationMatrixTypeCommunicationCluster(CommunicationMatrixTypeCommunicationCluster aCommunicationMatrixTypeCommunicationCluster) {
+        return null;
+    }
+
+    public T caseFrameReceiver(FrameReceiver aFrameReceiver) {
+        return null;
+    }
+
+    public T caseFrameTransmitter(FrameTransmitter aFrameTransmitter) {
+        return null;
+    }
+
+    public T caseFrameUsedPhysicalChannel(FrameUsedPhysicalChannel aFrameUsedPhysicalChannel) {
+        return null;
+    }
+
+    public T caseGatewayTypeGatewayLocation(GatewayTypeGatewayLocation aGatewayTypeGatewayLocation) {
+        return null;
+    }
+
+    public T casePDUGatewayEntryDestinationPDU(PDUGatewayEntryDestinationPDU aPDUGatewayEntryDestinationPDU) {
+        return null;
+    }
+
+    public T casePDUGatewayEntrySourcePDU(PDUGatewayEntrySourcePDU aPDUGatewayEntrySourcePDU) {
+        return null;
+    }
+
+    public T caseSignalGatewayEntryDestinationClusterSignal(SignalGatewayEntryDestinationClusterSignal aSignalGatewayEntryDestinationClusterSignal) {
+        return null;
+    }
+
+    public T caseSignalGatewayEntrySourceClusterSignal(SignalGatewayEntrySourceClusterSignal aSignalGatewayEntrySourceClusterSignal) {
+        return null;
+    }
+
+    public T caseCommProtocolElement(CommProtocolElement aCommProtocolElement) {
+        return null;
+    }
+
+    public T caseCommProtocolFrameRole(CommProtocolFrameRole aCommProtocolFrameRole) {
+        return null;
+    }
+
+    public T caseCommProtocolInstance(CommProtocolInstance aCommProtocolInstance) {
+        return null;
+    }
+
+    public T caseCommProtocolSignalGroupRole(CommProtocolSignalGroupRole aCommProtocolSignalGroupRole) {
+        return null;
+    }
+
+    public T caseCommProtocolSignalRole(CommProtocolSignalRole aCommProtocolSignalRole) {
+        return null;
+    }
+
+    public T caseCommProtocolType(CommProtocolType aCommProtocolType) {
+        return null;
+    }
+
+    public T caseCommProtocolFrameRoleFrameInstance(CommProtocolFrameRoleFrameInstance aCommProtocolFrameRoleFrameInstance) {
+        return null;
+    }
+
+    public T caseCommProtocolFrameRoleProtocolElement(CommProtocolFrameRoleProtocolElement aCommProtocolFrameRoleProtocolElement) {
+        return null;
+    }
+
+    public T caseCommProtocolSignalGroupRoleProtocolElement(CommProtocolSignalGroupRoleProtocolElement aCommProtocolSignalGroupRoleProtocolElement) {
+        return null;
+    }
+
+    public T caseCommProtocolSignalRoleProtocolElement(CommProtocolSignalRoleProtocolElement aCommProtocolSignalRoleProtocolElement) {
+        return null;
+    }
+
+    public T caseApplicationErrorMapping(ApplicationErrorMapping anApplicationErrorMapping) {
+        return null;
+    }
+
+    public T caseClientIdMapping(ClientIdMapping aClientIdMapping) {
+        return null;
+    }
+
+    public T caseClientServerArrayElementMapping(ClientServerArrayElementMapping aClientServerArrayElementMapping) {
+        return null;
+    }
+
+    public T caseClientServerArrayTypeMapping(ClientServerArrayTypeMapping aClientServerArrayTypeMapping) {
+        return null;
+    }
+
+    public T caseClientServerCompositeTypeMapping(ClientServerCompositeTypeMapping aClientServerCompositeTypeMapping) {
+        return null;
+    }
+
+    public T caseClientServerPrimitiveTypeMapping(ClientServerPrimitiveTypeMapping aClientServerPrimitiveTypeMapping) {
+        return null;
+    }
+
+    public T caseClientServerRecordElementMapping(ClientServerRecordElementMapping aClientServerRecordElementMapping) {
+        return null;
+    }
+
+    public T caseClientServerRecordTypeMapping(ClientServerRecordTypeMapping aClientServerRecordTypeMapping) {
+        return null;
+    }
+
+    public T caseClientServerToSignalGroupMapping(ClientServerToSignalGroupMapping aClientServerToSignalGroupMapping) {
+        return null;
+    }
+
+    public T caseDataMapping(DataMapping aDataMapping) {
+        return null;
+    }
+
+    public T caseEmptySignalMapping(EmptySignalMapping anEmptySignalMapping) {
+        return null;
+    }
+
+    public T caseSenderRecArrayElementMapping(SenderRecArrayElementMapping aSenderRecArrayElementMapping) {
+        return null;
+    }
+
+    public T caseSenderRecArrayTypeMapping(SenderRecArrayTypeMapping aSenderRecArrayTypeMapping) {
+        return null;
+    }
+
+    public T caseSenderRecCompositeTypeMapping(SenderRecCompositeTypeMapping aSenderRecCompositeTypeMapping) {
+        return null;
+    }
+
+    public T caseSenderRecRecordElementMapping(SenderRecRecordElementMapping aSenderRecRecordElementMapping) {
+        return null;
+    }
+
+    public T caseSenderRecRecordTypeMapping(SenderRecRecordTypeMapping aSenderRecRecordTypeMapping) {
+        return null;
+    }
+
+    public T caseSenderReceiverToSignalGroupMapping(SenderReceiverToSignalGroupMapping aSenderReceiverToSignalGroupMapping) {
+        return null;
+    }
+
+    public T caseSenderReceiverToSignalMapping(SenderReceiverToSignalMapping aSenderReceiverToSignalMapping) {
+        return null;
+    }
+
+    public T caseSequenceCounterMapping(SequenceCounterMapping aSequenceCounterMapping) {
+        return null;
+    }
+
+    public T caseClientServerArrayElementMappingArrayElement(ClientServerArrayElementMappingArrayElement aClientServerArrayElementMappingArrayElement) {
+        return null;
+    }
+
+    public T caseClientServerPrimitiveTypeMappingArgument(ClientServerPrimitiveTypeMappingArgument aClientServerPrimitiveTypeMappingArgument) {
+        return null;
+    }
+
+    public T caseClientServerRecordElementMappingRecordElement(ClientServerRecordElementMappingRecordElement aClientServerRecordElementMappingRecordElement) {
+        return null;
+    }
+
+    public T caseClientServerToSignalGroupMappingMappedOperation(ClientServerToSignalGroupMappingMappedOperation aClientServerToSignalGroupMappingMappedOperation) {
+        return null;
+    }
+
+    public T caseIndexedArrayElement(IndexedArrayElement anIndexedArrayElement) {
+        return null;
+    }
+
+    public T caseIndexedDataPrototype(IndexedDataPrototype anIndexedDataPrototype) {
+        return null;
+    }
+
+    public T caseSenderRecArrayElementMappingArrayElement(SenderRecArrayElementMappingArrayElement aSenderRecArrayElementMappingArrayElement) {
+        return null;
+    }
+
+    public T caseSenderRecRecordElementMappingRecordElement(SenderRecRecordElementMappingRecordElement aSenderRecRecordElementMappingRecordElement) {
+        return null;
+    }
+
+    public T caseSenderReceiverToSignalGroupMappingDataElement(SenderReceiverToSignalGroupMappingDataElement aSenderReceiverToSignalGroupMappingDataElement) {
+        return null;
+    }
+
+    public T caseSenderReceiverToSignalMappingDataElement(SenderReceiverToSignalMappingDataElement aSenderReceiverToSignalMappingDataElement) {
+        return null;
+    }
+
+    public T caseMultiplexer(Multiplexer aMultiplexer) {
+        return null;
+    }
+
+    public T casePDUType(PDUType aPDUType) {
+        return null;
+    }
+
+    public T caseSignalPosition(SignalPosition aSignalPosition) {
+        return null;
+    }
+
+    public T caseSubPDU(SubPDU aSubPDU) {
+        return null;
+    }
+
+    public T caseCommonSignalPath(CommonSignalPath aCommonSignalPath) {
+        return null;
+    }
+
+    public T caseForbiddenSignalPath(ForbiddenSignalPath aForbiddenSignalPath) {
+        return null;
+    }
+
+    public T casePermissibleSignalPath(PermissibleSignalPath aPermissibleSignalPath) {
+        return null;
+    }
+
+    public T caseSeparateSignalPath(SeparateSignalPath aSeparateSignalPath) {
+        return null;
+    }
+
+    public T caseSignalPathConstraint(SignalPathConstraint aSignalPathConstraint) {
+        return null;
+    }
+
+    public T caseSwcToSwcOperationArguments(SwcToSwcOperationArguments aSwcToSwcOperationArguments) {
+        return null;
+    }
+
+    public T caseSwcToSwcSignal(SwcToSwcSignal aSwcToSwcSignal) {
+        return null;
+    }
+
+    public T caseForbiddenSignalPathEcuCommunicationPort(ForbiddenSignalPathEcuCommunicationPort aForbiddenSignalPathEcuCommunicationPort) {
+        return null;
+    }
+
+    public T casePermissibleSignalPathEcuCommunicationPort(PermissibleSignalPathEcuCommunicationPort aPermissibleSignalPathEcuCommunicationPort) {
+        return null;
+    }
+
+    public T caseSwcToSwcOperationArgumentsOperation(SwcToSwcOperationArgumentsOperation aSwcToSwcOperationArgumentsOperation) {
+        return null;
+    }
+
+    public T caseSwcToSwcSignalDataElement(SwcToSwcSignalDataElement aSwcToSwcSignalDataElement) {
+        return null;
+    }
+
+    public T caseAggregatedStackUsage(AggregatedStackUsage anAggregatedStackUsage) {
+        return null;
+    }
+
+    public T caseBSWResourceEstimation(BSWResourceEstimation aBSWResourceEstimation) {
+        return null;
+    }
+
+    public T caseComponentCluster(ComponentCluster aComponentCluster) {
+        return null;
+    }
+
+    public T caseComponentSeparation(ComponentSeparation aComponentSeparation) {
+        return null;
+    }
+
+    public T caseEcuResourceEstimation(EcuResourceEstimation anEcuResourceEstimation) {
+        return null;
+    }
+
+    public T caseFreeTextMappingConstraint(FreeTextMappingConstraint aFreeTextMappingConstraint) {
+        return null;
+    }
+
+    public T caseMappingConstraint(MappingConstraint aMappingConstraint) {
+        return null;
+    }
+
+    public T caseRTERessourceEstimation(RTERessourceEstimation aRTERessourceEstimation) {
+        return null;
+    }
+
+    public T caseResourceEstimationDetails(ResourceEstimationDetails aResourceEstimationDetails) {
+        return null;
+    }
+
+    public T caseSwCompToEcuMapping(SwCompToEcuMapping aSwCompToEcuMapping) {
+        return null;
+    }
+
+    public T caseSwCompToImplMapping(SwCompToImplMapping aSwCompToImplMapping) {
+        return null;
+    }
+
+    public T caseComponentClusterClusteredComponent(ComponentClusterClusteredComponent aComponentClusterClusteredComponent) {
+        return null;
+    }
+
+    public T caseComponentSeparationSeparatedComponent(ComponentSeparationSeparatedComponent aComponentSeparationSeparatedComponent) {
+        return null;
+    }
+
+    public T caseEcuResourceEstimationEcuInstance(EcuResourceEstimationEcuInstance anEcuResourceEstimationEcuInstance) {
+        return null;
+    }
+
+    public T caseSwCompToEcuMappingComponent(SwCompToEcuMappingComponent aSwCompToEcuMappingComponent) {
+        return null;
+    }
+
+    public T caseSwCompToEcuMappingEcuInstance(SwCompToEcuMappingEcuInstance aSwCompToEcuMappingEcuInstance) {
+        return null;
+    }
+
+    public T caseSwCompToImplMappingComponent(SwCompToImplMappingComponent aSwCompToImplMappingComponent) {
+        return null;
+    }
+
+    public T caseClusterSignal(ClusterSignal aClusterSignal) {
+        return null;
+    }
+
+    public T caseClusterSignalReceiver(ClusterSignalReceiver aClusterSignalReceiver) {
+        return null;
+    }
+
+    public T caseClusterSignalTransmitter(ClusterSignalTransmitter aClusterSignalTransmitter) {
+        return null;
+    }
+
+    public T caseSystemSignal(SystemSignal aSystemSignal) {
+        return null;
+    }
+
+    public T caseSystemSignalGroup(SystemSignalGroup aSystemSignalGroup) {
+        return null;
+    }
+
+    public T caseClusterSignalReceiverCommunicationPort(ClusterSignalReceiverCommunicationPort aClusterSignalReceiverCommunicationPort) {
+        return null;
+    }
+
+    public T caseClusterSignalTransmitterCommunicationPort(ClusterSignalTransmitterCommunicationPort aClusterSignalTransmitterCommunicationPort) {
+        return null;
+    }
+
+    public T caseCANBus(CANBus aCANBus) {
+        return null;
+    }
+
+    public T caseCANCommunicationPortInstance(CANCommunicationPortInstance aCANCommunicationPortInstance) {
+        return null;
+    }
+
+    public T caseCommunicationCluster(CommunicationCluster aCommunicationCluster) {
+        return null;
+    }
+
+    public T caseConnector(Connector aConnector) {
+        return null;
+    }
+
+    public T caseECUCommunicationPortInstance(ECUCommunicationPortInstance anECUCommunicationPortInstance) {
+        return null;
+    }
+
+    public T caseECUInstance(ECUInstance anECUInstance) {
+        return null;
+    }
+
+    public T caseFlexrayCluster(FlexrayCluster aFlexrayCluster) {
+        return null;
+    }
+
+    public T caseFlexrayCommunicationPortInstance(FlexrayCommunicationPortInstance aFlexrayCommunicationPortInstance) {
+        return null;
+    }
+
+    public T caseHub(Hub aHub) {
+        return null;
+    }
+
+    public T caseLINCommunicationPortInstance(LINCommunicationPortInstance aLINCommunicationPortInstance) {
+        return null;
+    }
+
+    public T caseLINSubBus(LINSubBus aLINSubBus) {
+        return null;
+    }
+
+    public T casePhysicalChannel(PhysicalChannel aPhysicalChannel) {
+        return null;
+    }
+
+    public T casePhysicalMediumSegment(PhysicalMediumSegment aPhysicalMediumSegment) {
+        return null;
+    }
+
+    public T caseSystemTopologyType(SystemTopologyType aSystemTopologyType) {
+        return null;
+    }
+
+    public T caseTopologyElement(TopologyElement aTopologyElement) {
+        return null;
+    }
+
+    public T caseUnspecifiedConnection(UnspecifiedConnection anUnspecifiedConnection) {
+        return null;
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class PkgMap
+    extends HashMap<EPackage, Switch<T>> {
+        private static final long serialVersionUID = 1L;
+
+        public PkgMap() {
+            this.put(BswmodulePackage.eINSTANCE, new Switch1());
+            this.put(EcucdescriptionPackage.eINSTANCE, new Switch2());
+            this.put(autosar21.ecucdescription.instanceref.InstancerefPackage.eINSTANCE, new Switch3());
+            this.put(EcucparameterdefPackage.eINSTANCE, new Switch4());
+            this.put(EcuresourcePackage.eINSTANCE, new Switch5());
+            this.put(BasicelementsPackage.eINSTANCE, new Switch6());
+            this.put(EcuelectronicsPackage.eINSTANCE, new Switch7());
+            this.put(MemoryPackage.eINSTANCE, new Switch8());
+            this.put(PeripheralsPackage.eINSTANCE, new Switch9());
+            this.put(ProcessingunitPackage.eINSTANCE, new Switch10());
+            this.put(SensoractuatorPackage.eINSTANCE, new Switch11());
+            this.put(AdmindataPackage.eINSTANCE, new Switch12());
+            this.put(InlinetextmodelPackage.eINSTANCE, new Switch13());
+            this.put(InlinesPackage.eINSTANCE, new Switch14());
+            this.put(LanguagedatamodelPackage.eINSTANCE, new Switch15());
+            this.put(MultilanguagedataPackage.eINSTANCE, new Switch16());
+            this.put(PrimitivetypesPackage.eINSTANCE, new Switch17());
+            this.put(SinglelanguagedataPackage.eINSTANCE, new Switch18());
+            this.put(SpecialdataPackage.eINSTANCE, new Switch19());
+            this.put(InfrastructurePackage.eINSTANCE, new Switch20());
+            this.put(AutosarPackage.eINSTANCE, new Switch21());
+            this.put(IdentifiablePackage.eINSTANCE, new Switch22());
+            this.put(ApplicationattributesPackage.eINSTANCE, new Switch23());
+            this.put(autosar21.swcomponent.applicationattributes.instanceref.InstancerefPackage.eINSTANCE, new Switch24());
+            this.put(CommunicationPackage.eINSTANCE, new Switch25());
+            this.put(FilterPackage.eINSTANCE, new Switch26());
+            this.put(autosar21.swcomponent.communication.instanceref.InstancerefPackage.eINSTANCE, new Switch27());
+            this.put(ComponentsPackage.eINSTANCE, new Switch28());
+            this.put(CompositionPackage.eINSTANCE, new Switch29());
+            this.put(InstancerefPackage.eINSTANCE, new Switch30());
+            this.put(ComputationmethodPackage.eINSTANCE, new Switch31());
+            this.put(ConstantsPackage.eINSTANCE, new Switch32());
+            this.put(DatatypesPackage.eINSTANCE, new Switch33());
+            this.put(LocalconstraintsPackage.eINSTANCE, new Switch34());
+            this.put(UnitsPackage.eINSTANCE, new Switch35());
+            this.put(ValuemodelPackage.eINSTANCE, new Switch36());
+            this.put(ImplementationPackage.eINSTANCE, new Switch37());
+            this.put(InternalbehaviorPackage.eINSTANCE, new Switch38());
+            this.put(DataelementsPackage.eINSTANCE, new Switch39());
+            this.put(autosar21.swcomponent.internalbehavior.dataelements.instanceref.InstancerefPackage.eINSTANCE, new Switch40());
+            this.put(ExclusiveareaPackage.eINSTANCE, new Switch41());
+            this.put(InterrunnablecommunicationPackage.eINSTANCE, new Switch42());
+            this.put(ModedeclarationgroupPackage.eINSTANCE, new Switch43());
+            this.put(autosar21.swcomponent.internalbehavior.modedeclarationgroup.instanceref.InstancerefPackage.eINSTANCE, new Switch44());
+            this.put(NvrammappingPackage.eINSTANCE, new Switch45());
+            this.put(PerinstancememoryPackage.eINSTANCE, new Switch46());
+            this.put(PortapioptionsPackage.eINSTANCE, new Switch47());
+            this.put(RteeventsPackage.eINSTANCE, new Switch48());
+            this.put(autosar21.swcomponent.internalbehavior.rteevents.instanceref.InstancerefPackage.eINSTANCE, new Switch49());
+            this.put(ServercallPackage.eINSTANCE, new Switch50());
+            this.put(autosar21.swcomponent.internalbehavior.servercall.instanceref.InstancerefPackage.eINSTANCE, new Switch51());
+            this.put(AuxillaryobjectsPackage.eINSTANCE, new Switch52());
+            this.put(AxisPackage.eINSTANCE, new Switch53());
+            this.put(BasetypesPackage.eINSTANCE, new Switch54());
+            this.put(ByteorderPackage.eINSTANCE, new Switch55());
+            this.put(CalibrationparameterPackage.eINSTANCE, new Switch56());
+            this.put(CharacteristicPackage.eINSTANCE, new Switch57());
+            this.put(autosar21.swcomponent.measurementandcalibration.characteristic.instanceref.InstancerefPackage.eINSTANCE, new Switch58());
+            this.put(DatadefpropertiesPackage.eINSTANCE, new Switch59());
+            this.put(DatadictionaryproxiesPackage.eINSTANCE, new Switch60());
+            this.put(GlobalconstraintsPackage.eINSTANCE, new Switch61());
+            this.put(MeasurementpropertyPackage.eINSTANCE, new Switch62());
+            this.put(autosar21.swcomponent.measurementandcalibration.measurementproperty.instanceref.InstancerefPackage.eINSTANCE, new Switch63());
+            this.put(VariablePackage.eINSTANCE, new Switch64());
+            this.put(ModedeclarationPackage.eINSTANCE, new Switch65());
+            this.put(autosar21.swcomponent.modedeclaration.instanceref.InstancerefPackage.eINSTANCE, new Switch66());
+            this.put(PortinterfacePackage.eINSTANCE, new Switch67());
+            this.put(ResourcesPackage.eINSTANCE, new Switch68());
+            this.put(ExecutiontimePackage.eINSTANCE, new Switch69());
+            this.put(HeapusagePackage.eINSTANCE, new Switch70());
+            this.put(ObjectfilesectionPackage.eINSTANCE, new Switch71());
+            this.put(PerinstancememorysizePackage.eINSTANCE, new Switch72());
+            this.put(StackusagePackage.eINSTANCE, new Switch73());
+            this.put(ServicesPackage.eINSTANCE, new Switch74());
+            this.put(VfberrorsPackage.eINSTANCE, new Switch75());
+            this.put(SystemPackage.eINSTANCE, new Switch76());
+            this.put(autosar21.system.communication.CommunicationPackage.eINSTANCE, new Switch77());
+            this.put(autosar21.system.communication.instanceref.InstancerefPackage.eINSTANCE, new Switch78());
+            this.put(CommunicationprotocolPackage.eINSTANCE, new Switch79());
+            this.put(autosar21.system.communicationprotocol.instanceref.InstancerefPackage.eINSTANCE, new Switch80());
+            this.put(DatamappingPackage.eINSTANCE, new Switch81());
+            this.put(autosar21.system.datamapping.instanceref.InstancerefPackage.eINSTANCE, new Switch82());
+            this.put(PdustructurePackage.eINSTANCE, new Switch83());
+            this.put(SignalpathsPackage.eINSTANCE, new Switch84());
+            this.put(autosar21.system.signalpaths.instanceref.InstancerefPackage.eINSTANCE, new Switch85());
+            this.put(SwmappingPackage.eINSTANCE, new Switch86());
+            this.put(autosar21.system.swmapping.instanceref.InstancerefPackage.eINSTANCE, new Switch87());
+            this.put(SystemsignalPackage.eINSTANCE, new Switch88());
+            this.put(autosar21.system.systemsignal.instanceref.InstancerefPackage.eINSTANCE, new Switch89());
+            this.put(TopologyPackage.eINSTANCE, new Switch90());
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private static interface Switch<T> {
+        public T doSwitch(EObject var1);
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch1
+    extends BswmoduleSwitch<T>
+    implements Switch<T> {
+        private Switch1() {
+        }
+
+        @Override
+        public T caseBswModuleDescription(BswModuleDescription o) {
+            return Autosar21Switch.this.caseBswModuleDescription(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch10
+    extends ProcessingunitSwitch<T>
+    implements Switch<T> {
+        private Switch10() {
+        }
+
+        @Override
+        public T caseHWElement(HWElement o) {
+            return Autosar21Switch.this.caseHWElement(o);
+        }
+
+        @Override
+        public T caseHWPort(HWPort o) {
+            return Autosar21Switch.this.caseHWPort(o);
+        }
+
+        @Override
+        public T caseInterruptConsumeHWPort(InterruptConsumeHWPort o) {
+            return Autosar21Switch.this.caseInterruptConsumeHWPort(o);
+        }
+
+        @Override
+        public T caseInterruptHWPort(InterruptHWPort o) {
+            return Autosar21Switch.this.caseInterruptHWPort(o);
+        }
+
+        @Override
+        public T caseInterruptProduceHWPort(InterruptProduceHWPort o) {
+            return Autosar21Switch.this.caseInterruptProduceHWPort(o);
+        }
+
+        @Override
+        public T caseMPU(MPU o) {
+            return Autosar21Switch.this.caseMPU(o);
+        }
+
+        @Override
+        public T caseProcessingUnit(ProcessingUnit o) {
+            return Autosar21Switch.this.caseProcessingUnit(o);
+        }
+
+        @Override
+        public T caseRegister(Register o) {
+            return Autosar21Switch.this.caseRegister(o);
+        }
+
+        @Override
+        public T caseSupportedDataType(SupportedDataType o) {
+            return Autosar21Switch.this.caseSupportedDataType(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch11
+    extends SensoractuatorSwitch<T>
+    implements Switch<T> {
+        private Switch11() {
+        }
+
+        @Override
+        public T caseHWElement(HWElement o) {
+            return Autosar21Switch.this.caseHWElement(o);
+        }
+
+        @Override
+        public T caseActuatorHW(ActuatorHW o) {
+            return Autosar21Switch.this.caseActuatorHW(o);
+        }
+
+        @Override
+        public T caseDisplayHW(DisplayHW o) {
+            return Autosar21Switch.this.caseDisplayHW(o);
+        }
+
+        @Override
+        public T caseSensorActuatorHW(SensorActuatorHW o) {
+            return Autosar21Switch.this.caseSensorActuatorHW(o);
+        }
+
+        @Override
+        public T caseSensorHW(SensorHW o) {
+            return Autosar21Switch.this.caseSensorHW(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch12
+    extends AdmindataSwitch<T>
+    implements Switch<T> {
+        private Switch12() {
+        }
+
+        @Override
+        public T caseAdminData(AdminData o) {
+            return Autosar21Switch.this.caseAdminData(o);
+        }
+
+        @Override
+        public T caseCompanyRevisionInfo(CompanyRevisionInfo o) {
+            return Autosar21Switch.this.caseCompanyRevisionInfo(o);
+        }
+
+        @Override
+        public T caseCompanySpecificInfo(CompanySpecificInfo o) {
+            return Autosar21Switch.this.caseCompanySpecificInfo(o);
+        }
+
+        @Override
+        public T caseDocRevision(DocRevision o) {
+            return Autosar21Switch.this.caseDocRevision(o);
+        }
+
+        @Override
+        public T caseModification(Modification o) {
+            return Autosar21Switch.this.caseModification(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch13
+    extends InlinetextmodelSwitch<T>
+    implements Switch<T> {
+        private Switch13() {
+        }
+
+        @Override
+        public T caseMixedContent1(MixedContent1 o) {
+            return Autosar21Switch.this.caseMixedContent1(o);
+        }
+
+        @Override
+        public T caseMixedContent10(MixedContent10 o) {
+            return Autosar21Switch.this.caseMixedContent10(o);
+        }
+
+        @Override
+        public T caseMixedContent2(MixedContent2 o) {
+            return Autosar21Switch.this.caseMixedContent2(o);
+        }
+
+        @Override
+        public T caseMixedContent3(MixedContent3 o) {
+            return Autosar21Switch.this.caseMixedContent3(o);
+        }
+
+        @Override
+        public T caseMixedContent4(MixedContent4 o) {
+            return Autosar21Switch.this.caseMixedContent4(o);
+        }
+
+        @Override
+        public T caseMixedContent5(MixedContent5 o) {
+            return Autosar21Switch.this.caseMixedContent5(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch14
+    extends InlinesSwitch<T>
+    implements Switch<T> {
+        private Switch14() {
+        }
+
+        @Override
+        public T caseBr(Br o) {
+            return Autosar21Switch.this.caseBr(o);
+        }
+
+        @Override
+        public T caseEType(EType o) {
+            return Autosar21Switch.this.caseEType(o);
+        }
+
+        @Override
+        public T caseFt(Ft o) {
+            return Autosar21Switch.this.caseFt(o);
+        }
+
+        @Override
+        public T caseIe(Ie o) {
+            return Autosar21Switch.this.caseIe(o);
+        }
+
+        @Override
+        public T caseStd(Std o) {
+            return Autosar21Switch.this.caseStd(o);
+        }
+
+        @Override
+        public T caseTt(Tt o) {
+            return Autosar21Switch.this.caseTt(o);
+        }
+
+        @Override
+        public T caseUrl(Url o) {
+            return Autosar21Switch.this.caseUrl(o);
+        }
+
+        @Override
+        public T caseXdoc(Xdoc o) {
+            return Autosar21Switch.this.caseXdoc(o);
+        }
+
+        @Override
+        public T caseXfile(Xfile o) {
+            return Autosar21Switch.this.caseXfile(o);
+        }
+
+        @Override
+        public T caseXref(Xref o) {
+            return Autosar21Switch.this.caseXref(o);
+        }
+
+        @Override
+        public T caseXrefTarget(XrefTarget o) {
+            return Autosar21Switch.this.caseXrefTarget(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch15
+    extends LanguagedatamodelSwitch<T>
+    implements Switch<T> {
+        private Switch15() {
+        }
+
+        @Override
+        public T caseMixedContent1(MixedContent1 o) {
+            return Autosar21Switch.this.caseMixedContent1(o);
+        }
+
+        @Override
+        public T caseMixedContent10(MixedContent10 o) {
+            return Autosar21Switch.this.caseMixedContent10(o);
+        }
+
+        @Override
+        public T caseMixedContent2(MixedContent2 o) {
+            return Autosar21Switch.this.caseMixedContent2(o);
+        }
+
+        @Override
+        public T caseMixedContent3(MixedContent3 o) {
+            return Autosar21Switch.this.caseMixedContent3(o);
+        }
+
+        @Override
+        public T caseMixedContent4(MixedContent4 o) {
+            return Autosar21Switch.this.caseMixedContent4(o);
+        }
+
+        @Override
+        public T caseMixedContent5(MixedContent5 o) {
+            return Autosar21Switch.this.caseMixedContent5(o);
+        }
+
+        @Override
+        public T caseL1(L1 o) {
+            return Autosar21Switch.this.caseL1(o);
+        }
+
+        @Override
+        public T caseL10(L10 o) {
+            return Autosar21Switch.this.caseL10(o);
+        }
+
+        @Override
+        public T caseL2(L2 o) {
+            return Autosar21Switch.this.caseL2(o);
+        }
+
+        @Override
+        public T caseL3(L3 o) {
+            return Autosar21Switch.this.caseL3(o);
+        }
+
+        @Override
+        public T caseL4(L4 o) {
+            return Autosar21Switch.this.caseL4(o);
+        }
+
+        @Override
+        public T caseL5(L5 o) {
+            return Autosar21Switch.this.caseL5(o);
+        }
+
+        @Override
+        public T caseMlDataModel1(MlDataModel1 o) {
+            return Autosar21Switch.this.caseMlDataModel1(o);
+        }
+
+        @Override
+        public T caseMlDataModel10(MlDataModel10 o) {
+            return Autosar21Switch.this.caseMlDataModel10(o);
+        }
+
+        @Override
+        public T caseMlDataModel2(MlDataModel2 o) {
+            return Autosar21Switch.this.caseMlDataModel2(o);
+        }
+
+        @Override
+        public T caseMlDataModel3(MlDataModel3 o) {
+            return Autosar21Switch.this.caseMlDataModel3(o);
+        }
+
+        @Override
+        public T caseMlDataModel4(MlDataModel4 o) {
+            return Autosar21Switch.this.caseMlDataModel4(o);
+        }
+
+        @Override
+        public T caseMlDataModel5(MlDataModel5 o) {
+            return Autosar21Switch.this.caseMlDataModel5(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch16
+    extends MultilanguagedataSwitch<T>
+    implements Switch<T> {
+        private Switch16() {
+        }
+
+        @Override
+        public T caseMlDataModel1(MlDataModel1 o) {
+            return Autosar21Switch.this.caseMlDataModel1(o);
+        }
+
+        @Override
+        public T caseMlDataModel10(MlDataModel10 o) {
+            return Autosar21Switch.this.caseMlDataModel10(o);
+        }
+
+        @Override
+        public T caseMlDataModel2(MlDataModel2 o) {
+            return Autosar21Switch.this.caseMlDataModel2(o);
+        }
+
+        @Override
+        public T caseMlDataModel3(MlDataModel3 o) {
+            return Autosar21Switch.this.caseMlDataModel3(o);
+        }
+
+        @Override
+        public T caseMlDataModel4(MlDataModel4 o) {
+            return Autosar21Switch.this.caseMlDataModel4(o);
+        }
+
+        @Override
+        public T caseMlDataModel5(MlDataModel5 o) {
+            return Autosar21Switch.this.caseMlDataModel5(o);
+        }
+
+        @Override
+        public T caseMlData1(MlData1 o) {
+            return Autosar21Switch.this.caseMlData1(o);
+        }
+
+        @Override
+        public T caseMlData10(MlData10 o) {
+            return Autosar21Switch.this.caseMlData10(o);
+        }
+
+        @Override
+        public T caseMlData2(MlData2 o) {
+            return Autosar21Switch.this.caseMlData2(o);
+        }
+
+        @Override
+        public T caseMlData3(MlData3 o) {
+            return Autosar21Switch.this.caseMlData3(o);
+        }
+
+        @Override
+        public T caseMlData3p(MlData3p o) {
+            return Autosar21Switch.this.caseMlData3p(o);
+        }
+
+        @Override
+        public T caseMlData4(MlData4 o) {
+            return Autosar21Switch.this.caseMlData4(o);
+        }
+
+        @Override
+        public T caseMlData5(MlData5 o) {
+            return Autosar21Switch.this.caseMlData5(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch17
+    extends PrimitivetypesSwitch<T>
+    implements Switch<T> {
+        private Switch17() {
+        }
+
+        @Override
+        public T caseBooleanContainer(BooleanContainer o) {
+            return Autosar21Switch.this.caseBooleanContainer(o);
+        }
+
+        @Override
+        public T caseFloatContainer(FloatContainer o) {
+            return Autosar21Switch.this.caseFloatContainer(o);
+        }
+
+        @Override
+        public T caseIntegerContainer(IntegerContainer o) {
+            return Autosar21Switch.this.caseIntegerContainer(o);
+        }
+
+        @Override
+        public T caseStringContainer(StringContainer o) {
+            return Autosar21Switch.this.caseStringContainer(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch18
+    extends SinglelanguagedataSwitch<T>
+    implements Switch<T> {
+        private Switch18() {
+        }
+
+        @Override
+        public T caseMixedContent1(MixedContent1 o) {
+            return Autosar21Switch.this.caseMixedContent1(o);
+        }
+
+        @Override
+        public T caseMixedContent10(MixedContent10 o) {
+            return Autosar21Switch.this.caseMixedContent10(o);
+        }
+
+        @Override
+        public T caseMixedContent2(MixedContent2 o) {
+            return Autosar21Switch.this.caseMixedContent2(o);
+        }
+
+        @Override
+        public T caseMixedContent3(MixedContent3 o) {
+            return Autosar21Switch.this.caseMixedContent3(o);
+        }
+
+        @Override
+        public T caseMixedContent4(MixedContent4 o) {
+            return Autosar21Switch.this.caseMixedContent4(o);
+        }
+
+        @Override
+        public T caseMixedContent5(MixedContent5 o) {
+            return Autosar21Switch.this.caseMixedContent5(o);
+        }
+
+        @Override
+        public T caseSlData1(SlData1 o) {
+            return Autosar21Switch.this.caseSlData1(o);
+        }
+
+        @Override
+        public T caseSlData10(SlData10 o) {
+            return Autosar21Switch.this.caseSlData10(o);
+        }
+
+        @Override
+        public T caseSlData2(SlData2 o) {
+            return Autosar21Switch.this.caseSlData2(o);
+        }
+
+        @Override
+        public T caseSlData3(SlData3 o) {
+            return Autosar21Switch.this.caseSlData3(o);
+        }
+
+        @Override
+        public T caseSlData3p(SlData3p o) {
+            return Autosar21Switch.this.caseSlData3p(o);
+        }
+
+        @Override
+        public T caseSlData4(SlData4 o) {
+            return Autosar21Switch.this.caseSlData4(o);
+        }
+
+        @Override
+        public T caseSlData5(SlData5 o) {
+            return Autosar21Switch.this.caseSlData5(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch19
+    extends SpecialdataSwitch<T>
+    implements Switch<T> {
+        private Switch19() {
+        }
+
+        @Override
+        public T caseCaption(Caption o) {
+            return Autosar21Switch.this.caseCaption(o);
+        }
+
+        @Override
+        public T caseSd(Sd o) {
+            return Autosar21Switch.this.caseSd(o);
+        }
+
+        @Override
+        public T caseSdg(Sdg o) {
+            return Autosar21Switch.this.caseSdg(o);
+        }
+
+        @Override
+        public T caseSdgContents(SdgContents o) {
+            return Autosar21Switch.this.caseSdgContents(o);
+        }
+
+        @Override
+        public T caseSdgs(Sdgs o) {
+            return Autosar21Switch.this.caseSdgs(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch2
+    extends EcucdescriptionSwitch<T>
+    implements Switch<T> {
+        private Switch2() {
+        }
+
+        @Override
+        public T caseBooleanValue(BooleanValue o) {
+            return Autosar21Switch.this.caseBooleanValue(o);
+        }
+
+        @Override
+        public T caseConfigReferenceValue(ConfigReferenceValue o) {
+            return Autosar21Switch.this.caseConfigReferenceValue(o);
+        }
+
+        @Override
+        public T caseContainer(Container o) {
+            return Autosar21Switch.this.caseContainer(o);
+        }
+
+        @Override
+        public T caseEcuConfiguration(EcuConfiguration o) {
+            return Autosar21Switch.this.caseEcuConfiguration(o);
+        }
+
+        @Override
+        public T caseEcucElement(EcucElement o) {
+            return Autosar21Switch.this.caseEcucElement(o);
+        }
+
+        @Override
+        public T caseEnumerationValue(EnumerationValue o) {
+            return Autosar21Switch.this.caseEnumerationValue(o);
+        }
+
+        @Override
+        public T caseFloatValue(FloatValue o) {
+            return Autosar21Switch.this.caseFloatValue(o);
+        }
+
+        @Override
+        public T caseFunctionNameValue(FunctionNameValue o) {
+            return Autosar21Switch.this.caseFunctionNameValue(o);
+        }
+
+        @Override
+        public T caseInstanceReferenceValue(InstanceReferenceValue o) {
+            return Autosar21Switch.this.caseInstanceReferenceValue(o);
+        }
+
+        @Override
+        public T caseIntegerValue(IntegerValue o) {
+            return Autosar21Switch.this.caseIntegerValue(o);
+        }
+
+        @Override
+        public T caseLinkerSymbolValue(LinkerSymbolValue o) {
+            return Autosar21Switch.this.caseLinkerSymbolValue(o);
+        }
+
+        @Override
+        public T caseModuleConfiguration(ModuleConfiguration o) {
+            return Autosar21Switch.this.caseModuleConfiguration(o);
+        }
+
+        @Override
+        public T caseParameterValue(ParameterValue o) {
+            return Autosar21Switch.this.caseParameterValue(o);
+        }
+
+        @Override
+        public T caseReferenceValue(ReferenceValue o) {
+            return Autosar21Switch.this.caseReferenceValue(o);
+        }
+
+        @Override
+        public T caseStringValue(StringValue o) {
+            return Autosar21Switch.this.caseStringValue(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseSplitableElement(SplitableElement o) {
+            return Autosar21Switch.this.caseSplitableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch20
+    extends InfrastructureSwitch<T>
+    implements Switch<T> {
+        private Switch20() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseSplitableElement(SplitableElement o) {
+            return Autosar21Switch.this.caseSplitableElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch21
+    extends AutosarSwitch<T>
+    implements Switch<T> {
+        private Switch21() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseARPackage(ARPackage o) {
+            return Autosar21Switch.this.caseARPackage(o);
+        }
+
+        @Override
+        public T caseAUTOSAR(AUTOSAR o) {
+            return Autosar21Switch.this.caseAUTOSAR(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch22
+    extends IdentifiableSwitch<T>
+    implements Switch<T> {
+        private Switch22() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch23
+    extends ApplicationattributesSwitch<T>
+    implements Switch<T> {
+        private Switch23() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseCalibrationPortAnnotation(CalibrationPortAnnotation o) {
+            return Autosar21Switch.this.caseCalibrationPortAnnotation(o);
+        }
+
+        @Override
+        public T caseComMUserNeeds(ComMUserNeeds o) {
+            return Autosar21Switch.this.caseComMUserNeeds(o);
+        }
+
+        @Override
+        public T caseExtAnnotation(ExtAnnotation o) {
+            return Autosar21Switch.this.caseExtAnnotation(o);
+        }
+
+        @Override
+        public T caseFailureMonitoring(FailureMonitoring o) {
+            return Autosar21Switch.this.caseFailureMonitoring(o);
+        }
+
+        @Override
+        public T caseIoHwAbstractionServerAnnotation(IoHwAbstractionServerAnnotation o) {
+            return Autosar21Switch.this.caseIoHwAbstractionServerAnnotation(o);
+        }
+
+        @Override
+        public T caseNVRAMBlockNeeds(NVRAMBlockNeeds o) {
+            return Autosar21Switch.this.caseNVRAMBlockNeeds(o);
+        }
+
+        @Override
+        public T casePortAnnotation(PortAnnotation o) {
+            return Autosar21Switch.this.casePortAnnotation(o);
+        }
+
+        @Override
+        public T caseReceiverAnnotation(ReceiverAnnotation o) {
+            return Autosar21Switch.this.caseReceiverAnnotation(o);
+        }
+
+        @Override
+        public T caseReportFeature(ReportFeature o) {
+            return Autosar21Switch.this.caseReportFeature(o);
+        }
+
+        @Override
+        public T caseSenderAnnotation(SenderAnnotation o) {
+            return Autosar21Switch.this.caseSenderAnnotation(o);
+        }
+
+        @Override
+        public T caseSenderReceiverAnnotation(SenderReceiverAnnotation o) {
+            return Autosar21Switch.this.caseSenderReceiverAnnotation(o);
+        }
+
+        @Override
+        public T caseServiceNeeds(ServiceNeeds o) {
+            return Autosar21Switch.this.caseServiceNeeds(o);
+        }
+
+        @Override
+        public T caseSupervisedEntityNeeds(SupervisedEntityNeeds o) {
+            return Autosar21Switch.this.caseSupervisedEntityNeeds(o);
+        }
+
+        @Override
+        public T caseWakeUp(WakeUp o) {
+            return Autosar21Switch.this.caseWakeUp(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch24
+    extends InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch24() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseFailureMonitoringMonitorsFailure(FailureMonitoringMonitorsFailure o) {
+            return Autosar21Switch.this.caseFailureMonitoringMonitorsFailure(o);
+        }
+
+        @Override
+        public T caseSenderReceiverAnnotationDataElement(SenderReceiverAnnotationDataElement o) {
+            return Autosar21Switch.this.caseSenderReceiverAnnotationDataElement(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch25
+    extends CommunicationSwitch<T>
+    implements Switch<T> {
+        private Switch25() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseClientComSpec(ClientComSpec o) {
+            return Autosar21Switch.this.caseClientComSpec(o);
+        }
+
+        @Override
+        public T caseClientServerConnectorComSpec(ClientServerConnectorComSpec o) {
+            return Autosar21Switch.this.caseClientServerConnectorComSpec(o);
+        }
+
+        @Override
+        public T caseConnectorComSpec(ConnectorComSpec o) {
+            return Autosar21Switch.this.caseConnectorComSpec(o);
+        }
+
+        @Override
+        public T caseModeSwitchComSpec(ModeSwitchComSpec o) {
+            return Autosar21Switch.this.caseModeSwitchComSpec(o);
+        }
+
+        @Override
+        public T caseModeSwitchedAckRequest(ModeSwitchedAckRequest o) {
+            return Autosar21Switch.this.caseModeSwitchedAckRequest(o);
+        }
+
+        @Override
+        public T casePPortComSpec(PPortComSpec o) {
+            return Autosar21Switch.this.casePPortComSpec(o);
+        }
+
+        @Override
+        public T caseQueuedReceiverComSpec(QueuedReceiverComSpec o) {
+            return Autosar21Switch.this.caseQueuedReceiverComSpec(o);
+        }
+
+        @Override
+        public T caseQueuedSenderComSpec(QueuedSenderComSpec o) {
+            return Autosar21Switch.this.caseQueuedSenderComSpec(o);
+        }
+
+        @Override
+        public T caseRPortComSpec(RPortComSpec o) {
+            return Autosar21Switch.this.caseRPortComSpec(o);
+        }
+
+        @Override
+        public T caseReceiverComSpec(ReceiverComSpec o) {
+            return Autosar21Switch.this.caseReceiverComSpec(o);
+        }
+
+        @Override
+        public T caseSenderComSpec(SenderComSpec o) {
+            return Autosar21Switch.this.caseSenderComSpec(o);
+        }
+
+        @Override
+        public T caseSenderReceiverConnectorComSpec(SenderReceiverConnectorComSpec o) {
+            return Autosar21Switch.this.caseSenderReceiverConnectorComSpec(o);
+        }
+
+        @Override
+        public T caseServerComSpec(ServerComSpec o) {
+            return Autosar21Switch.this.caseServerComSpec(o);
+        }
+
+        @Override
+        public T caseTransmissionAcknowledgementRequest(TransmissionAcknowledgementRequest o) {
+            return Autosar21Switch.this.caseTransmissionAcknowledgementRequest(o);
+        }
+
+        @Override
+        public T caseUnqueuedReceiverComSpec(UnqueuedReceiverComSpec o) {
+            return Autosar21Switch.this.caseUnqueuedReceiverComSpec(o);
+        }
+
+        @Override
+        public T caseUnqueuedSenderComSpec(UnqueuedSenderComSpec o) {
+            return Autosar21Switch.this.caseUnqueuedSenderComSpec(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch26
+    extends FilterSwitch<T>
+    implements Switch<T> {
+        private Switch26() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseAlways(Always o) {
+            return Autosar21Switch.this.caseAlways(o);
+        }
+
+        @Override
+        public T caseDataFilter(DataFilter o) {
+            return Autosar21Switch.this.caseDataFilter(o);
+        }
+
+        @Override
+        public T caseMaskedNewDiffersMaskedOld(MaskedNewDiffersMaskedOld o) {
+            return Autosar21Switch.this.caseMaskedNewDiffersMaskedOld(o);
+        }
+
+        @Override
+        public T caseMaskedNewDiffersX(MaskedNewDiffersX o) {
+            return Autosar21Switch.this.caseMaskedNewDiffersX(o);
+        }
+
+        @Override
+        public T caseMaskedNewEqualsMaskedOld(MaskedNewEqualsMaskedOld o) {
+            return Autosar21Switch.this.caseMaskedNewEqualsMaskedOld(o);
+        }
+
+        @Override
+        public T caseMaskedNewEqualsX(MaskedNewEqualsX o) {
+            return Autosar21Switch.this.caseMaskedNewEqualsX(o);
+        }
+
+        @Override
+        public T caseNever(Never o) {
+            return Autosar21Switch.this.caseNever(o);
+        }
+
+        @Override
+        public T caseNewIsDifferent(NewIsDifferent o) {
+            return Autosar21Switch.this.caseNewIsDifferent(o);
+        }
+
+        @Override
+        public T caseNewIsEqual(NewIsEqual o) {
+            return Autosar21Switch.this.caseNewIsEqual(o);
+        }
+
+        @Override
+        public T caseNewIsGreater(NewIsGreater o) {
+            return Autosar21Switch.this.caseNewIsGreater(o);
+        }
+
+        @Override
+        public T caseNewIsGreaterOrEqual(NewIsGreaterOrEqual o) {
+            return Autosar21Switch.this.caseNewIsGreaterOrEqual(o);
+        }
+
+        @Override
+        public T caseNewIsLess(NewIsLess o) {
+            return Autosar21Switch.this.caseNewIsLess(o);
+        }
+
+        @Override
+        public T caseNewIsLessOrEqual(NewIsLessOrEqual o) {
+            return Autosar21Switch.this.caseNewIsLessOrEqual(o);
+        }
+
+        @Override
+        public T caseNewIsOutside(NewIsOutside o) {
+            return Autosar21Switch.this.caseNewIsOutside(o);
+        }
+
+        @Override
+        public T caseNewIsWithin(NewIsWithin o) {
+            return Autosar21Switch.this.caseNewIsWithin(o);
+        }
+
+        @Override
+        public T caseOneEveryN(OneEveryN o) {
+            return Autosar21Switch.this.caseOneEveryN(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch27
+    extends autosar21.swcomponent.communication.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch27() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseClientComSpecOperation(ClientComSpecOperation o) {
+            return Autosar21Switch.this.caseClientComSpecOperation(o);
+        }
+
+        @Override
+        public T caseClientServerConnectorComSpecOperation(ClientServerConnectorComSpecOperation o) {
+            return Autosar21Switch.this.caseClientServerConnectorComSpecOperation(o);
+        }
+
+        @Override
+        public T caseModeSwitchComSpecModeDeclarationGroupPrototype(ModeSwitchComSpecModeDeclarationGroupPrototype o) {
+            return Autosar21Switch.this.caseModeSwitchComSpecModeDeclarationGroupPrototype(o);
+        }
+
+        @Override
+        public T caseReceiverComSpecDataElement(ReceiverComSpecDataElement o) {
+            return Autosar21Switch.this.caseReceiverComSpecDataElement(o);
+        }
+
+        @Override
+        public T caseSenderComSpecDataElement(SenderComSpecDataElement o) {
+            return Autosar21Switch.this.caseSenderComSpecDataElement(o);
+        }
+
+        @Override
+        public T caseSenderReceiverConnectorComSpecDataElement(SenderReceiverConnectorComSpecDataElement o) {
+            return Autosar21Switch.this.caseSenderReceiverConnectorComSpecDataElement(o);
+        }
+
+        @Override
+        public T caseServerComSpecOperation(ServerComSpecOperation o) {
+            return Autosar21Switch.this.caseServerComSpecOperation(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch28
+    extends ComponentsSwitch<T>
+    implements Switch<T> {
+        private Switch28() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseAtomicSoftwareComponentType(AtomicSoftwareComponentType o) {
+            return Autosar21Switch.this.caseAtomicSoftwareComponentType(o);
+        }
+
+        @Override
+        public T caseCalprmComponentType(CalprmComponentType o) {
+            return Autosar21Switch.this.caseCalprmComponentType(o);
+        }
+
+        @Override
+        public T caseComponentType(ComponentType o) {
+            return Autosar21Switch.this.caseComponentType(o);
+        }
+
+        @Override
+        public T casePPortPrototype(PPortPrototype o) {
+            return Autosar21Switch.this.casePPortPrototype(o);
+        }
+
+        @Override
+        public T casePortPrototype(PortPrototype o) {
+            return Autosar21Switch.this.casePortPrototype(o);
+        }
+
+        @Override
+        public T caseRPortPrototype(RPortPrototype o) {
+            return Autosar21Switch.this.caseRPortPrototype(o);
+        }
+
+        @Override
+        public T caseSensorActuatorSoftwareComponentType(SensorActuatorSoftwareComponentType o) {
+            return Autosar21Switch.this.caseSensorActuatorSoftwareComponentType(o);
+        }
+
+        @Override
+        public T caseServiceComponentType(ServiceComponentType o) {
+            return Autosar21Switch.this.caseServiceComponentType(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch29
+    extends CompositionSwitch<T>
+    implements Switch<T> {
+        private Switch29() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseComponentType(ComponentType o) {
+            return Autosar21Switch.this.caseComponentType(o);
+        }
+
+        @Override
+        public T caseAssemblyConnectorPrototype(AssemblyConnectorPrototype o) {
+            return Autosar21Switch.this.caseAssemblyConnectorPrototype(o);
+        }
+
+        @Override
+        public T caseComponentPrototype(ComponentPrototype o) {
+            return Autosar21Switch.this.caseComponentPrototype(o);
+        }
+
+        @Override
+        public T caseCompositionType(CompositionType o) {
+            return Autosar21Switch.this.caseCompositionType(o);
+        }
+
+        @Override
+        public T caseConnectorPrototype(ConnectorPrototype o) {
+            return Autosar21Switch.this.caseConnectorPrototype(o);
+        }
+
+        @Override
+        public T caseDelegationConnectorPrototype(DelegationConnectorPrototype o) {
+            return Autosar21Switch.this.caseDelegationConnectorPrototype(o);
+        }
+
+        @Override
+        public T caseServiceConnectorPrototype(ServiceConnectorPrototype o) {
+            return Autosar21Switch.this.caseServiceConnectorPrototype(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch3
+    extends autosar21.ecucdescription.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch3() {
+        }
+
+        @Override
+        public T caseInstanceReferenceValueValue(InstanceReferenceValueValue o) {
+            return Autosar21Switch.this.caseInstanceReferenceValueValue(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch30
+    extends autosar21.swcomponent.composition.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch30() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseAssemblyConnectorPrototypeProvider(AssemblyConnectorPrototypeProvider o) {
+            return Autosar21Switch.this.caseAssemblyConnectorPrototypeProvider(o);
+        }
+
+        @Override
+        public T caseAssemblyConnectorPrototypeRequester(AssemblyConnectorPrototypeRequester o) {
+            return Autosar21Switch.this.caseAssemblyConnectorPrototypeRequester(o);
+        }
+
+        @Override
+        public T caseDelegationConnectorPrototypeInnerPort(DelegationConnectorPrototypeInnerPort o) {
+            return Autosar21Switch.this.caseDelegationConnectorPrototypeInnerPort(o);
+        }
+
+        @Override
+        public T caseServiceConnectorPrototypeApplicationPort(ServiceConnectorPrototypeApplicationPort o) {
+            return Autosar21Switch.this.caseServiceConnectorPrototypeApplicationPort(o);
+        }
+
+        @Override
+        public T caseServiceConnectorPrototypeServicePort(ServiceConnectorPrototypeServicePort o) {
+            return Autosar21Switch.this.caseServiceConnectorPrototypeServicePort(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch31
+    extends ComputationmethodSwitch<T>
+    implements Switch<T> {
+        private Switch31() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseCompu(Compu o) {
+            return Autosar21Switch.this.caseCompu(o);
+        }
+
+        @Override
+        public T caseCompuConst(CompuConst o) {
+            return Autosar21Switch.this.caseCompuConst(o);
+        }
+
+        @Override
+        public T caseCompuConstContent(CompuConstContent o) {
+            return Autosar21Switch.this.caseCompuConstContent(o);
+        }
+
+        @Override
+        public T caseCompuConstFormulaContent(CompuConstFormulaContent o) {
+            return Autosar21Switch.this.caseCompuConstFormulaContent(o);
+        }
+
+        @Override
+        public T caseCompuConstNumericContent(CompuConstNumericContent o) {
+            return Autosar21Switch.this.caseCompuConstNumericContent(o);
+        }
+
+        @Override
+        public T caseCompuConstTextContent(CompuConstTextContent o) {
+            return Autosar21Switch.this.caseCompuConstTextContent(o);
+        }
+
+        @Override
+        public T caseCompuContent(CompuContent o) {
+            return Autosar21Switch.this.caseCompuContent(o);
+        }
+
+        @Override
+        public T caseCompuDefaultValue(CompuDefaultValue o) {
+            return Autosar21Switch.this.caseCompuDefaultValue(o);
+        }
+
+        @Override
+        public T caseCompuGenericMath(CompuGenericMath o) {
+            return Autosar21Switch.this.caseCompuGenericMath(o);
+        }
+
+        @Override
+        public T caseCompuMethod(CompuMethod o) {
+            return Autosar21Switch.this.caseCompuMethod(o);
+        }
+
+        @Override
+        public T caseCompuNominatorDenominator(CompuNominatorDenominator o) {
+            return Autosar21Switch.this.caseCompuNominatorDenominator(o);
+        }
+
+        @Override
+        public T caseCompuProgCode(CompuProgCode o) {
+            return Autosar21Switch.this.caseCompuProgCode(o);
+        }
+
+        @Override
+        public T caseCompuRationalCoeffs(CompuRationalCoeffs o) {
+            return Autosar21Switch.this.caseCompuRationalCoeffs(o);
+        }
+
+        @Override
+        public T caseCompuScale(CompuScale o) {
+            return Autosar21Switch.this.caseCompuScale(o);
+        }
+
+        @Override
+        public T caseCompuScaleConstantContents(CompuScaleConstantContents o) {
+            return Autosar21Switch.this.caseCompuScaleConstantContents(o);
+        }
+
+        @Override
+        public T caseCompuScaleContents(CompuScaleContents o) {
+            return Autosar21Switch.this.caseCompuScaleContents(o);
+        }
+
+        @Override
+        public T caseCompuScaleGenericMath(CompuScaleGenericMath o) {
+            return Autosar21Switch.this.caseCompuScaleGenericMath(o);
+        }
+
+        @Override
+        public T caseCompuScaleRationalFormula(CompuScaleRationalFormula o) {
+            return Autosar21Switch.this.caseCompuScaleRationalFormula(o);
+        }
+
+        @Override
+        public T caseCompuScales(CompuScales o) {
+            return Autosar21Switch.this.caseCompuScales(o);
+        }
+
+        @Override
+        public T caseProgCode(ProgCode o) {
+            return Autosar21Switch.this.caseProgCode(o);
+        }
+
+        @Override
+        public T caseValueByFormula(ValueByFormula o) {
+            return Autosar21Switch.this.caseValueByFormula(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch32
+    extends ConstantsSwitch<T>
+    implements Switch<T> {
+        private Switch32() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseArraySpecification(ArraySpecification o) {
+            return Autosar21Switch.this.caseArraySpecification(o);
+        }
+
+        @Override
+        public T caseBooleanLiteral(BooleanLiteral o) {
+            return Autosar21Switch.this.caseBooleanLiteral(o);
+        }
+
+        @Override
+        public T caseCharLiteral(CharLiteral o) {
+            return Autosar21Switch.this.caseCharLiteral(o);
+        }
+
+        @Override
+        public T caseConstantReference(ConstantReference o) {
+            return Autosar21Switch.this.caseConstantReference(o);
+        }
+
+        @Override
+        public T caseConstantSpecification(ConstantSpecification o) {
+            return Autosar21Switch.this.caseConstantSpecification(o);
+        }
+
+        @Override
+        public T caseIntegerLiteral(IntegerLiteral o) {
+            return Autosar21Switch.this.caseIntegerLiteral(o);
+        }
+
+        @Override
+        public T caseOpaqueLiteral(OpaqueLiteral o) {
+            return Autosar21Switch.this.caseOpaqueLiteral(o);
+        }
+
+        @Override
+        public T casePrimitiveSpecification(PrimitiveSpecification o) {
+            return Autosar21Switch.this.casePrimitiveSpecification(o);
+        }
+
+        @Override
+        public T caseRealLiteral(RealLiteral o) {
+            return Autosar21Switch.this.caseRealLiteral(o);
+        }
+
+        @Override
+        public T caseRecordSpecification(RecordSpecification o) {
+            return Autosar21Switch.this.caseRecordSpecification(o);
+        }
+
+        @Override
+        public T caseStringLiteral(StringLiteral o) {
+            return Autosar21Switch.this.caseStringLiteral(o);
+        }
+
+        @Override
+        public T caseValueSpecification(ValueSpecification o) {
+            return Autosar21Switch.this.caseValueSpecification(o);
+        }
+
+        @Override
+        public T caseDataPrototype(DataPrototype o) {
+            return Autosar21Switch.this.caseDataPrototype(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch33
+    extends DatatypesSwitch<T>
+    implements Switch<T> {
+        private Switch33() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseARLimit(ARLimit o) {
+            return Autosar21Switch.this.caseARLimit(o);
+        }
+
+        @Override
+        public T caseArrayElement(ArrayElement o) {
+            return Autosar21Switch.this.caseArrayElement(o);
+        }
+
+        @Override
+        public T caseArrayType(ArrayType o) {
+            return Autosar21Switch.this.caseArrayType(o);
+        }
+
+        @Override
+        public T caseBooleanType(BooleanType o) {
+            return Autosar21Switch.this.caseBooleanType(o);
+        }
+
+        @Override
+        public T caseCharType(CharType o) {
+            return Autosar21Switch.this.caseCharType(o);
+        }
+
+        @Override
+        public T caseCompositeType(CompositeType o) {
+            return Autosar21Switch.this.caseCompositeType(o);
+        }
+
+        @Override
+        public T caseDataPrototype(DataPrototype o) {
+            return Autosar21Switch.this.caseDataPrototype(o);
+        }
+
+        @Override
+        public T caseDatatype(Datatype o) {
+            return Autosar21Switch.this.caseDatatype(o);
+        }
+
+        @Override
+        public T caseIntegerType(IntegerType o) {
+            return Autosar21Switch.this.caseIntegerType(o);
+        }
+
+        @Override
+        public T caseOpaqueType(OpaqueType o) {
+            return Autosar21Switch.this.caseOpaqueType(o);
+        }
+
+        @Override
+        public T casePrimitiveType(PrimitiveType o) {
+            return Autosar21Switch.this.casePrimitiveType(o);
+        }
+
+        @Override
+        public T caseRange(Range o) {
+            return Autosar21Switch.this.caseRange(o);
+        }
+
+        @Override
+        public T caseRealType(RealType o) {
+            return Autosar21Switch.this.caseRealType(o);
+        }
+
+        @Override
+        public T caseRecordElement(RecordElement o) {
+            return Autosar21Switch.this.caseRecordElement(o);
+        }
+
+        @Override
+        public T caseRecordType(RecordType o) {
+            return Autosar21Switch.this.caseRecordType(o);
+        }
+
+        @Override
+        public T caseStringType(StringType o) {
+            return Autosar21Switch.this.caseStringType(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch34
+    extends LocalconstraintsSwitch<T>
+    implements Switch<T> {
+        private Switch34() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseInterstring(Interstring o) {
+            return Autosar21Switch.this.caseInterstring(o);
+        }
+
+        @Override
+        public T caseLimit(Limit o) {
+            return Autosar21Switch.this.caseLimit(o);
+        }
+
+        @Override
+        public T caseValueByFormula(ValueByFormula o) {
+            return Autosar21Switch.this.caseValueByFormula(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch35
+    extends UnitsSwitch<T>
+    implements Switch<T> {
+        private Switch35() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseDisplayName(DisplayName o) {
+            return Autosar21Switch.this.caseDisplayName(o);
+        }
+
+        @Override
+        public T casePhysicalDimension(PhysicalDimension o) {
+            return Autosar21Switch.this.casePhysicalDimension(o);
+        }
+
+        @Override
+        public T caseUnit(Unit o) {
+            return Autosar21Switch.this.caseUnit(o);
+        }
+
+        @Override
+        public T caseUnitGroup(UnitGroup o) {
+            return Autosar21Switch.this.caseUnitGroup(o);
+        }
+
+        @Override
+        public T caseUnitSpec(UnitSpec o) {
+            return Autosar21Switch.this.caseUnitSpec(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch36
+    extends ValuemodelSwitch<T>
+    implements Switch<T> {
+        private Switch36() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseV(V o) {
+            return Autosar21Switch.this.caseV(o);
+        }
+
+        @Override
+        public T caseValueByFormula(ValueByFormula o) {
+            return Autosar21Switch.this.caseValueByFormula(o);
+        }
+
+        @Override
+        public T caseVf(Vf o) {
+            return Autosar21Switch.this.caseVf(o);
+        }
+
+        @Override
+        public T caseVt(Vt o) {
+            return Autosar21Switch.this.caseVt(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch37
+    extends ImplementationSwitch<T>
+    implements Switch<T> {
+        private Switch37() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseCode(Code o) {
+            return Autosar21Switch.this.caseCode(o);
+        }
+
+        @Override
+        public T caseCompiler(Compiler o) {
+            return Autosar21Switch.this.caseCompiler(o);
+        }
+
+        @Override
+        public T caseDependency(Dependency o) {
+            return Autosar21Switch.this.caseDependency(o);
+        }
+
+        @Override
+        public T caseDependencyOnFile(DependencyOnFile o) {
+            return Autosar21Switch.this.caseDependencyOnFile(o);
+        }
+
+        @Override
+        public T caseDependencyOnLibrary(DependencyOnLibrary o) {
+            return Autosar21Switch.this.caseDependencyOnLibrary(o);
+        }
+
+        @Override
+        public T caseImplementation(Implementation o) {
+            return Autosar21Switch.this.caseImplementation(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch38
+    extends InternalbehaviorSwitch<T>
+    implements Switch<T> {
+        private Switch38() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseInternalBehavior(InternalBehavior o) {
+            return Autosar21Switch.this.caseInternalBehavior(o);
+        }
+
+        @Override
+        public T caseRunnableEntity(RunnableEntity o) {
+            return Autosar21Switch.this.caseRunnableEntity(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch39
+    extends DataelementsSwitch<T>
+    implements Switch<T> {
+        private Switch39() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseDataReadAccess(DataReadAccess o) {
+            return Autosar21Switch.this.caseDataReadAccess(o);
+        }
+
+        @Override
+        public T caseDataReceivePoint(DataReceivePoint o) {
+            return Autosar21Switch.this.caseDataReceivePoint(o);
+        }
+
+        @Override
+        public T caseDataSendPoint(DataSendPoint o) {
+            return Autosar21Switch.this.caseDataSendPoint(o);
+        }
+
+        @Override
+        public T caseDataWriteAccess(DataWriteAccess o) {
+            return Autosar21Switch.this.caseDataWriteAccess(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch4
+    extends EcucparameterdefSwitch<T>
+    implements Switch<T> {
+        private Switch4() {
+        }
+
+        @Override
+        public T caseBooleanParamDef(BooleanParamDef o) {
+            return Autosar21Switch.this.caseBooleanParamDef(o);
+        }
+
+        @Override
+        public T caseChoiceContainerDef(ChoiceContainerDef o) {
+            return Autosar21Switch.this.caseChoiceContainerDef(o);
+        }
+
+        @Override
+        public T caseChoiceReferenceDef(ChoiceReferenceDef o) {
+            return Autosar21Switch.this.caseChoiceReferenceDef(o);
+        }
+
+        @Override
+        public T caseCommonConfigurationAttributes(CommonConfigurationAttributes o) {
+            return Autosar21Switch.this.caseCommonConfigurationAttributes(o);
+        }
+
+        @Override
+        public T caseConfigParameter(ConfigParameter o) {
+            return Autosar21Switch.this.caseConfigParameter(o);
+        }
+
+        @Override
+        public T caseConfigReference(ConfigReference o) {
+            return Autosar21Switch.this.caseConfigReference(o);
+        }
+
+        @Override
+        public T caseConfigurationClassAffection(ConfigurationClassAffection o) {
+            return Autosar21Switch.this.caseConfigurationClassAffection(o);
+        }
+
+        @Override
+        public T caseContainerDef(ContainerDef o) {
+            return Autosar21Switch.this.caseContainerDef(o);
+        }
+
+        @Override
+        public T caseDerivedBooleanParamDef(DerivedBooleanParamDef o) {
+            return Autosar21Switch.this.caseDerivedBooleanParamDef(o);
+        }
+
+        @Override
+        public T caseDerivedEnumerationParamDef(DerivedEnumerationParamDef o) {
+            return Autosar21Switch.this.caseDerivedEnumerationParamDef(o);
+        }
+
+        @Override
+        public T caseDerivedFloatParamDef(DerivedFloatParamDef o) {
+            return Autosar21Switch.this.caseDerivedFloatParamDef(o);
+        }
+
+        @Override
+        public T caseDerivedIntegerParamDef(DerivedIntegerParamDef o) {
+            return Autosar21Switch.this.caseDerivedIntegerParamDef(o);
+        }
+
+        @Override
+        public T caseDerivedParamType(DerivedParamType o) {
+            return Autosar21Switch.this.caseDerivedParamType(o);
+        }
+
+        @Override
+        public T caseDerivedStringParamDef(DerivedStringParamDef o) {
+            return Autosar21Switch.this.caseDerivedStringParamDef(o);
+        }
+
+        @Override
+        public T caseEcuParameterDefinition(EcuParameterDefinition o) {
+            return Autosar21Switch.this.caseEcuParameterDefinition(o);
+        }
+
+        @Override
+        public T caseEnumerationLiteralDef(EnumerationLiteralDef o) {
+            return Autosar21Switch.this.caseEnumerationLiteralDef(o);
+        }
+
+        @Override
+        public T caseEnumerationParamDef(EnumerationParamDef o) {
+            return Autosar21Switch.this.caseEnumerationParamDef(o);
+        }
+
+        @Override
+        public T caseFloatParamDef(FloatParamDef o) {
+            return Autosar21Switch.this.caseFloatParamDef(o);
+        }
+
+        @Override
+        public T caseForeignReferenceDef(ForeignReferenceDef o) {
+            return Autosar21Switch.this.caseForeignReferenceDef(o);
+        }
+
+        @Override
+        public T caseFunctionNameDef(FunctionNameDef o) {
+            return Autosar21Switch.this.caseFunctionNameDef(o);
+        }
+
+        @Override
+        public T caseInstanceReferenceDef(InstanceReferenceDef o) {
+            return Autosar21Switch.this.caseInstanceReferenceDef(o);
+        }
+
+        @Override
+        public T caseIntegerParamDef(IntegerParamDef o) {
+            return Autosar21Switch.this.caseIntegerParamDef(o);
+        }
+
+        @Override
+        public T caseLinkerSymbolDef(LinkerSymbolDef o) {
+            return Autosar21Switch.this.caseLinkerSymbolDef(o);
+        }
+
+        @Override
+        public T caseModuleDef(ModuleDef o) {
+            return Autosar21Switch.this.caseModuleDef(o);
+        }
+
+        @Override
+        public T caseParamConfContainerDef(ParamConfContainerDef o) {
+            return Autosar21Switch.this.caseParamConfContainerDef(o);
+        }
+
+        @Override
+        public T caseParamConfMultiplicity(ParamConfMultiplicity o) {
+            return Autosar21Switch.this.caseParamConfMultiplicity(o);
+        }
+
+        @Override
+        public T caseReferenceDef(ReferenceDef o) {
+            return Autosar21Switch.this.caseReferenceDef(o);
+        }
+
+        @Override
+        public T caseStringParamDef(StringParamDef o) {
+            return Autosar21Switch.this.caseStringParamDef(o);
+        }
+
+        @Override
+        public T caseSymbolicNameReferenceDef(SymbolicNameReferenceDef o) {
+            return Autosar21Switch.this.caseSymbolicNameReferenceDef(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch40
+    extends autosar21.swcomponent.internalbehavior.dataelements.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch40() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseDataReadAccessDataElement(DataReadAccessDataElement o) {
+            return Autosar21Switch.this.caseDataReadAccessDataElement(o);
+        }
+
+        @Override
+        public T caseDataReceivePointDataElement(DataReceivePointDataElement o) {
+            return Autosar21Switch.this.caseDataReceivePointDataElement(o);
+        }
+
+        @Override
+        public T caseDataSendPointDataElement(DataSendPointDataElement o) {
+            return Autosar21Switch.this.caseDataSendPointDataElement(o);
+        }
+
+        @Override
+        public T caseDataWriteAccessDataElement(DataWriteAccessDataElement o) {
+            return Autosar21Switch.this.caseDataWriteAccessDataElement(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch41
+    extends ExclusiveareaSwitch<T>
+    implements Switch<T> {
+        private Switch41() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseExclusiveArea(ExclusiveArea o) {
+            return Autosar21Switch.this.caseExclusiveArea(o);
+        }
+
+        @Override
+        public T caseRunnableEntityCanEnterExclusiveArea(RunnableEntityCanEnterExclusiveArea o) {
+            return Autosar21Switch.this.caseRunnableEntityCanEnterExclusiveArea(o);
+        }
+
+        @Override
+        public T caseRunnableEntityRunsInExclusiveArea(RunnableEntityRunsInExclusiveArea o) {
+            return Autosar21Switch.this.caseRunnableEntityRunsInExclusiveArea(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch42
+    extends InterrunnablecommunicationSwitch<T>
+    implements Switch<T> {
+        private Switch42() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseDataPrototype(DataPrototype o) {
+            return Autosar21Switch.this.caseDataPrototype(o);
+        }
+
+        @Override
+        public T caseInterRunnableVariable(InterRunnableVariable o) {
+            return Autosar21Switch.this.caseInterRunnableVariable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch43
+    extends ModedeclarationgroupSwitch<T>
+    implements Switch<T> {
+        private Switch43() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseModeSwitchPoint(ModeSwitchPoint o) {
+            return Autosar21Switch.this.caseModeSwitchPoint(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch44
+    extends autosar21.swcomponent.internalbehavior.modedeclarationgroup.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch44() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseModeSwitchPointModeGroup(ModeSwitchPointModeGroup o) {
+            return Autosar21Switch.this.caseModeSwitchPointModeGroup(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch45
+    extends NvrammappingSwitch<T>
+    implements Switch<T> {
+        private Switch45() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseNVRAMMapping(NVRAMMapping o) {
+            return Autosar21Switch.this.caseNVRAMMapping(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch46
+    extends PerinstancememorySwitch<T>
+    implements Switch<T> {
+        private Switch46() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T casePerInstanceMemory(PerInstanceMemory o) {
+            return Autosar21Switch.this.casePerInstanceMemory(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch47
+    extends PortapioptionsSwitch<T>
+    implements Switch<T> {
+        private Switch47() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T casePortAPIOption(PortAPIOption o) {
+            return Autosar21Switch.this.casePortAPIOption(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch48
+    extends RteeventsSwitch<T>
+    implements Switch<T> {
+        private Switch48() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseAsynchronousServerCallReturnsEvent(AsynchronousServerCallReturnsEvent o) {
+            return Autosar21Switch.this.caseAsynchronousServerCallReturnsEvent(o);
+        }
+
+        @Override
+        public T caseDataReceiveErrorEvent(DataReceiveErrorEvent o) {
+            return Autosar21Switch.this.caseDataReceiveErrorEvent(o);
+        }
+
+        @Override
+        public T caseDataReceivedEvent(DataReceivedEvent o) {
+            return Autosar21Switch.this.caseDataReceivedEvent(o);
+        }
+
+        @Override
+        public T caseDataSendCompletedEvent(DataSendCompletedEvent o) {
+            return Autosar21Switch.this.caseDataSendCompletedEvent(o);
+        }
+
+        @Override
+        public T caseModeSwitchEvent(ModeSwitchEvent o) {
+            return Autosar21Switch.this.caseModeSwitchEvent(o);
+        }
+
+        @Override
+        public T caseModeSwitchedAckEvent(ModeSwitchedAckEvent o) {
+            return Autosar21Switch.this.caseModeSwitchedAckEvent(o);
+        }
+
+        @Override
+        public T caseOperationInvokedEvent(OperationInvokedEvent o) {
+            return Autosar21Switch.this.caseOperationInvokedEvent(o);
+        }
+
+        @Override
+        public T caseRTEEvent(RTEEvent o) {
+            return Autosar21Switch.this.caseRTEEvent(o);
+        }
+
+        @Override
+        public T caseTimingEvent(TimingEvent o) {
+            return Autosar21Switch.this.caseTimingEvent(o);
+        }
+
+        @Override
+        public T caseWaitPoint(WaitPoint o) {
+            return Autosar21Switch.this.caseWaitPoint(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch49
+    extends autosar21.swcomponent.internalbehavior.rteevents.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch49() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseDataReceiveErrorEventData(DataReceiveErrorEventData o) {
+            return Autosar21Switch.this.caseDataReceiveErrorEventData(o);
+        }
+
+        @Override
+        public T caseDataReceivedEventData(DataReceivedEventData o) {
+            return Autosar21Switch.this.caseDataReceivedEventData(o);
+        }
+
+        @Override
+        public T caseModeSwitchEventMode(ModeSwitchEventMode o) {
+            return Autosar21Switch.this.caseModeSwitchEventMode(o);
+        }
+
+        @Override
+        public T caseOperationInvokedEventOperation(OperationInvokedEventOperation o) {
+            return Autosar21Switch.this.caseOperationInvokedEventOperation(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch5
+    extends EcuresourceSwitch<T>
+    implements Switch<T> {
+        private Switch5() {
+        }
+
+        @Override
+        public T caseAssemblyHWConnection(AssemblyHWConnection o) {
+            return Autosar21Switch.this.caseAssemblyHWConnection(o);
+        }
+
+        @Override
+        public T caseDelegationHWConnection(DelegationHWConnection o) {
+            return Autosar21Switch.this.caseDelegationHWConnection(o);
+        }
+
+        @Override
+        public T caseECU(ECU o) {
+            return Autosar21Switch.this.caseECU(o);
+        }
+
+        @Override
+        public T caseHWConnection(HWConnection o) {
+            return Autosar21Switch.this.caseHWConnection(o);
+        }
+
+        @Override
+        public T caseHWContainer(HWContainer o) {
+            return Autosar21Switch.this.caseHWContainer(o);
+        }
+
+        @Override
+        public T caseHWElement(HWElement o) {
+            return Autosar21Switch.this.caseHWElement(o);
+        }
+
+        @Override
+        public T caseHWElementContainer(HWElementContainer o) {
+            return Autosar21Switch.this.caseHWElementContainer(o);
+        }
+
+        @Override
+        public T caseHWPin(HWPin o) {
+            return Autosar21Switch.this.caseHWPin(o);
+        }
+
+        @Override
+        public T caseHWPort(HWPort o) {
+            return Autosar21Switch.this.caseHWPort(o);
+        }
+
+        @Override
+        public T casePinHWConnection(PinHWConnection o) {
+            return Autosar21Switch.this.casePinHWConnection(o);
+        }
+
+        @Override
+        public T caseSignalTransformation(SignalTransformation o) {
+            return Autosar21Switch.this.caseSignalTransformation(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch50
+    extends ServercallSwitch<T>
+    implements Switch<T> {
+        private Switch50() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseAsynchronousServerCallPoint(AsynchronousServerCallPoint o) {
+            return Autosar21Switch.this.caseAsynchronousServerCallPoint(o);
+        }
+
+        @Override
+        public T caseServerCallPoint(ServerCallPoint o) {
+            return Autosar21Switch.this.caseServerCallPoint(o);
+        }
+
+        @Override
+        public T caseSynchronousServerCallPoint(SynchronousServerCallPoint o) {
+            return Autosar21Switch.this.caseSynchronousServerCallPoint(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch51
+    extends autosar21.swcomponent.internalbehavior.servercall.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch51() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseServerCallPointOperation(ServerCallPointOperation o) {
+            return Autosar21Switch.this.caseServerCallPointOperation(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch52
+    extends AuxillaryobjectsSwitch<T>
+    implements Switch<T> {
+        private Switch52() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseSwAddrMethod(SwAddrMethod o) {
+            return Autosar21Switch.this.caseSwAddrMethod(o);
+        }
+
+        @Override
+        public T caseSwCodeSyntax(SwCodeSyntax o) {
+            return Autosar21Switch.this.caseSwCodeSyntax(o);
+        }
+
+        @Override
+        public T caseSwRecordLayout(SwRecordLayout o) {
+            return Autosar21Switch.this.caseSwRecordLayout(o);
+        }
+
+        @Override
+        public T caseSwRecordLayoutGroup(SwRecordLayoutGroup o) {
+            return Autosar21Switch.this.caseSwRecordLayoutGroup(o);
+        }
+
+        @Override
+        public T caseSwRecordLayoutGroupContent(SwRecordLayoutGroupContent o) {
+            return Autosar21Switch.this.caseSwRecordLayoutGroupContent(o);
+        }
+
+        @Override
+        public T caseSwRecordLayoutV(SwRecordLayoutV o) {
+            return Autosar21Switch.this.caseSwRecordLayoutV(o);
+        }
+
+        @Override
+        public T caseSwRelatedConstrs(SwRelatedConstrs o) {
+            return Autosar21Switch.this.caseSwRelatedConstrs(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch53
+    extends AxisSwitch<T>
+    implements Switch<T> {
+        private Switch53() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseSwAxisGeneric(SwAxisGeneric o) {
+            return Autosar21Switch.this.caseSwAxisGeneric(o);
+        }
+
+        @Override
+        public T caseSwAxisGrouped(SwAxisGrouped o) {
+            return Autosar21Switch.this.caseSwAxisGrouped(o);
+        }
+
+        @Override
+        public T caseSwAxisIndividual(SwAxisIndividual o) {
+            return Autosar21Switch.this.caseSwAxisIndividual(o);
+        }
+
+        @Override
+        public T caseSwAxisType(SwAxisType o) {
+            return Autosar21Switch.this.caseSwAxisType(o);
+        }
+
+        @Override
+        public T caseSwGenericAxisParam(SwGenericAxisParam o) {
+            return Autosar21Switch.this.caseSwGenericAxisParam(o);
+        }
+
+        @Override
+        public T caseSwGenericAxisParamType(SwGenericAxisParamType o) {
+            return Autosar21Switch.this.caseSwGenericAxisParamType(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch54
+    extends BasetypesSwitch<T>
+    implements Switch<T> {
+        private Switch54() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseBaseType(BaseType o) {
+            return Autosar21Switch.this.caseBaseType(o);
+        }
+
+        @Override
+        public T caseBaseTypeAbsSize(BaseTypeAbsSize o) {
+            return Autosar21Switch.this.caseBaseTypeAbsSize(o);
+        }
+
+        @Override
+        public T caseBaseTypeDefinition(BaseTypeDefinition o) {
+            return Autosar21Switch.this.caseBaseTypeDefinition(o);
+        }
+
+        @Override
+        public T caseBaseTypeDirectDefinition(BaseTypeDirectDefinition o) {
+            return Autosar21Switch.this.caseBaseTypeDirectDefinition(o);
+        }
+
+        @Override
+        public T caseBaseTypeIndirectDefinition(BaseTypeIndirectDefinition o) {
+            return Autosar21Switch.this.caseBaseTypeIndirectDefinition(o);
+        }
+
+        @Override
+        public T caseBaseTypeMaxSize(BaseTypeMaxSize o) {
+            return Autosar21Switch.this.caseBaseTypeMaxSize(o);
+        }
+
+        @Override
+        public T caseBaseTypeSizeDefintion(BaseTypeSizeDefintion o) {
+            return Autosar21Switch.this.caseBaseTypeSizeDefintion(o);
+        }
+
+        @Override
+        public T caseSwBaseType(SwBaseType o) {
+            return Autosar21Switch.this.caseSwBaseType(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch55
+    extends ByteorderSwitch<T>
+    implements Switch<T> {
+        private Switch55() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseByteOrder(ByteOrder o) {
+            return Autosar21Switch.this.caseByteOrder(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch56
+    extends CalibrationparameterSwitch<T>
+    implements Switch<T> {
+        private Switch56() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseSwCalprm(SwCalprm o) {
+            return Autosar21Switch.this.caseSwCalprm(o);
+        }
+
+        @Override
+        public T caseSwCalprmAxis(SwCalprmAxis o) {
+            return Autosar21Switch.this.caseSwCalprmAxis(o);
+        }
+
+        @Override
+        public T caseSwCalprmAxisAxis(SwCalprmAxisAxis o) {
+            return Autosar21Switch.this.caseSwCalprmAxisAxis(o);
+        }
+
+        @Override
+        public T caseSwCalprmAxisCommonAxis(SwCalprmAxisCommonAxis o) {
+            return Autosar21Switch.this.caseSwCalprmAxisCommonAxis(o);
+        }
+
+        @Override
+        public T caseSwCalprmAxisIndividualAxis(SwCalprmAxisIndividualAxis o) {
+            return Autosar21Switch.this.caseSwCalprmAxisIndividualAxis(o);
+        }
+
+        @Override
+        public T caseSwCalprmAxisSet(SwCalprmAxisSet o) {
+            return Autosar21Switch.this.caseSwCalprmAxisSet(o);
+        }
+
+        @Override
+        public T caseSwCalprmValueAxisLabels(SwCalprmValueAxisLabels o) {
+            return Autosar21Switch.this.caseSwCalprmValueAxisLabels(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch57
+    extends CharacteristicSwitch<T>
+    implements Switch<T> {
+        private Switch57() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseDataPrototype(DataPrototype o) {
+            return Autosar21Switch.this.caseDataPrototype(o);
+        }
+
+        @Override
+        public T caseArCalprmRef(ArCalprmRef o) {
+            return Autosar21Switch.this.caseArCalprmRef(o);
+        }
+
+        @Override
+        public T caseCalprmAccess(CalprmAccess o) {
+            return Autosar21Switch.this.caseCalprmAccess(o);
+        }
+
+        @Override
+        public T caseCalprmElementPrototype(CalprmElementPrototype o) {
+            return Autosar21Switch.this.caseCalprmElementPrototype(o);
+        }
+
+        @Override
+        public T caseCalprmInterface(CalprmInterface o) {
+            return Autosar21Switch.this.caseCalprmInterface(o);
+        }
+
+        @Override
+        public T caseSwCalprmRefProxy(SwCalprmRefProxy o) {
+            return Autosar21Switch.this.caseSwCalprmRefProxy(o);
+        }
+
+        @Override
+        public T casePortInterface(PortInterface o) {
+            return Autosar21Switch.this.casePortInterface(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch58
+    extends autosar21.swcomponent.measurementandcalibration.characteristic.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch58() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseArCalprmRefCalprmElementPrototype(ArCalprmRefCalprmElementPrototype o) {
+            return Autosar21Switch.this.caseArCalprmRefCalprmElementPrototype(o);
+        }
+
+        @Override
+        public T caseCalprmAccessCalprmElementPrototype(CalprmAccessCalprmElementPrototype o) {
+            return Autosar21Switch.this.caseCalprmAccessCalprmElementPrototype(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch59
+    extends DatadefpropertiesSwitch<T>
+    implements Switch<T> {
+        private Switch59() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseSwArraysize(SwArraysize o) {
+            return Autosar21Switch.this.caseSwArraysize(o);
+        }
+
+        @Override
+        public T caseSwBitRepresentation(SwBitRepresentation o) {
+            return Autosar21Switch.this.caseSwBitRepresentation(o);
+        }
+
+        @Override
+        public T caseSwComparisonVariables(SwComparisonVariables o) {
+            return Autosar21Switch.this.caseSwComparisonVariables(o);
+        }
+
+        @Override
+        public T caseSwDataDefProps(SwDataDefProps o) {
+            return Autosar21Switch.this.caseSwDataDefProps(o);
+        }
+
+        @Override
+        public T caseSwDataDependency(SwDataDependency o) {
+            return Autosar21Switch.this.caseSwDataDependency(o);
+        }
+
+        @Override
+        public T caseSwDataDependencyArgs(SwDataDependencyArgs o) {
+            return Autosar21Switch.this.caseSwDataDependencyArgs(o);
+        }
+
+        @Override
+        public T caseSwGenericAxisParamValue(SwGenericAxisParamValue o) {
+            return Autosar21Switch.this.caseSwGenericAxisParamValue(o);
+        }
+
+        @Override
+        public T caseSwPointer(SwPointer o) {
+            return Autosar21Switch.this.caseSwPointer(o);
+        }
+
+        @Override
+        public T caseSwSemaphore(SwSemaphore o) {
+            return Autosar21Switch.this.caseSwSemaphore(o);
+        }
+
+        @Override
+        public T caseSwTextProps(SwTextProps o) {
+            return Autosar21Switch.this.caseSwTextProps(o);
+        }
+
+        @Override
+        public T caseSwVariableRef(SwVariableRef o) {
+            return Autosar21Switch.this.caseSwVariableRef(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch6
+    extends BasicelementsSwitch<T>
+    implements Switch<T> {
+        private Switch6() {
+        }
+
+        @Override
+        public T caseBootTime(BootTime o) {
+            return Autosar21Switch.this.caseBootTime(o);
+        }
+
+        @Override
+        public T caseElectricalRange(ElectricalRange o) {
+            return Autosar21Switch.this.caseElectricalRange(o);
+        }
+
+        @Override
+        public T caseErrorDetectionCorrection(ErrorDetectionCorrection o) {
+            return Autosar21Switch.this.caseErrorDetectionCorrection(o);
+        }
+
+        @Override
+        public T caseFrequencyRange(FrequencyRange o) {
+            return Autosar21Switch.this.caseFrequencyRange(o);
+        }
+
+        @Override
+        public T caseMemoryAccess(MemoryAccess o) {
+            return Autosar21Switch.this.caseMemoryAccess(o);
+        }
+
+        @Override
+        public T caseSupportsSafety(SupportsSafety o) {
+            return Autosar21Switch.this.caseSupportsSafety(o);
+        }
+
+        @Override
+        public T caseSupportsSecurity(SupportsSecurity o) {
+            return Autosar21Switch.this.caseSupportsSecurity(o);
+        }
+
+        @Override
+        public T caseTemperature(Temperature o) {
+            return Autosar21Switch.this.caseTemperature(o);
+        }
+
+        @Override
+        public T caseTimeRange(TimeRange o) {
+            return Autosar21Switch.this.caseTimeRange(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch60
+    extends DatadictionaryproxiesSwitch<T>
+    implements Switch<T> {
+        private Switch60() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseSwCalprmRefProxy(SwCalprmRefProxy o) {
+            return Autosar21Switch.this.caseSwCalprmRefProxy(o);
+        }
+
+        @Override
+        public T caseSwVariableRefMsr(SwVariableRefMsr o) {
+            return Autosar21Switch.this.caseSwVariableRefMsr(o);
+        }
+
+        @Override
+        public T caseSwVariableRefProxy(SwVariableRefProxy o) {
+            return Autosar21Switch.this.caseSwVariableRefProxy(o);
+        }
+
+        @Override
+        public T caseswCalprmRef(swCalprmRef o) {
+            return Autosar21Switch.this.caseswCalprmRef(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch61
+    extends GlobalconstraintsSwitch<T>
+    implements Switch<T> {
+        private Switch61() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseDataConstr(DataConstr o) {
+            return Autosar21Switch.this.caseDataConstr(o);
+        }
+
+        @Override
+        public T caseDataConstrRule(DataConstrRule o) {
+            return Autosar21Switch.this.caseDataConstrRule(o);
+        }
+
+        @Override
+        public T caseInternalConstrs(InternalConstrs o) {
+            return Autosar21Switch.this.caseInternalConstrs(o);
+        }
+
+        @Override
+        public T casePhysConstrs(PhysConstrs o) {
+            return Autosar21Switch.this.casePhysConstrs(o);
+        }
+
+        @Override
+        public T caseScaleConstr(ScaleConstr o) {
+            return Autosar21Switch.this.caseScaleConstr(o);
+        }
+
+        @Override
+        public T caseScaleConstrs(ScaleConstrs o) {
+            return Autosar21Switch.this.caseScaleConstrs(o);
+        }
+
+        @Override
+        public T caseSwConstrObjects(SwConstrObjects o) {
+            return Autosar21Switch.this.caseSwConstrObjects(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch62
+    extends MeasurementpropertySwitch<T>
+    implements Switch<T> {
+        private Switch62() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseDataPrototype(DataPrototype o) {
+            return Autosar21Switch.this.caseDataPrototype(o);
+        }
+
+        @Override
+        public T caseSwVariableRefProxy(SwVariableRefProxy o) {
+            return Autosar21Switch.this.caseSwVariableRefProxy(o);
+        }
+
+        @Override
+        public T caseDataPrototypeRef(DataPrototypeRef o) {
+            return Autosar21Switch.this.caseDataPrototypeRef(o);
+        }
+
+        @Override
+        public T caseMeasurable(Measurable o) {
+            return Autosar21Switch.this.caseMeasurable(o);
+        }
+
+        @Override
+        public T casePerInstanceMemoryVariable(PerInstanceMemoryVariable o) {
+            return Autosar21Switch.this.casePerInstanceMemoryVariable(o);
+        }
+
+        @Override
+        public T caseRecordElementRef(RecordElementRef o) {
+            return Autosar21Switch.this.caseRecordElementRef(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch63
+    extends autosar21.swcomponent.measurementandcalibration.measurementproperty.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch63() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseDataPrototypeRefDataPrototype(DataPrototypeRefDataPrototype o) {
+            return Autosar21Switch.this.caseDataPrototypeRefDataPrototype(o);
+        }
+
+        @Override
+        public T caseRecordElementRefRecordElement(RecordElementRefRecordElement o) {
+            return Autosar21Switch.this.caseRecordElementRefRecordElement(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch64
+    extends VariableSwitch<T>
+    implements Switch<T> {
+        private Switch64() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseSwVariable(SwVariable o) {
+            return Autosar21Switch.this.caseSwVariable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch65
+    extends ModedeclarationSwitch<T>
+    implements Switch<T> {
+        private Switch65() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseModeDeclaration(ModeDeclaration o) {
+            return Autosar21Switch.this.caseModeDeclaration(o);
+        }
+
+        @Override
+        public T caseModeDeclarationGroup(ModeDeclarationGroup o) {
+            return Autosar21Switch.this.caseModeDeclarationGroup(o);
+        }
+
+        @Override
+        public T caseModeDisablingDependency(ModeDisablingDependency o) {
+            return Autosar21Switch.this.caseModeDisablingDependency(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch66
+    extends autosar21.swcomponent.modedeclaration.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch66() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseModeDisablingDependencyDependentOnMode(ModeDisablingDependencyDependentOnMode o) {
+            return Autosar21Switch.this.caseModeDisablingDependencyDependentOnMode(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch67
+    extends PortinterfaceSwitch<T>
+    implements Switch<T> {
+        private Switch67() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseDataPrototype(DataPrototype o) {
+            return Autosar21Switch.this.caseDataPrototype(o);
+        }
+
+        @Override
+        public T caseArgumentPrototype(ArgumentPrototype o) {
+            return Autosar21Switch.this.caseArgumentPrototype(o);
+        }
+
+        @Override
+        public T caseClientServerInterface(ClientServerInterface o) {
+            return Autosar21Switch.this.caseClientServerInterface(o);
+        }
+
+        @Override
+        public T caseDataElementPrototype(DataElementPrototype o) {
+            return Autosar21Switch.this.caseDataElementPrototype(o);
+        }
+
+        @Override
+        public T caseModeDeclarationGroupPrototype(ModeDeclarationGroupPrototype o) {
+            return Autosar21Switch.this.caseModeDeclarationGroupPrototype(o);
+        }
+
+        @Override
+        public T caseOperationPrototype(OperationPrototype o) {
+            return Autosar21Switch.this.caseOperationPrototype(o);
+        }
+
+        @Override
+        public T casePortInterface(PortInterface o) {
+            return Autosar21Switch.this.casePortInterface(o);
+        }
+
+        @Override
+        public T caseSenderReceiverInterface(SenderReceiverInterface o) {
+            return Autosar21Switch.this.caseSenderReceiverInterface(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch68
+    extends ResourcesSwitch<T>
+    implements Switch<T> {
+        private Switch68() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseResourceConsumption(ResourceConsumption o) {
+            return Autosar21Switch.this.caseResourceConsumption(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch69
+    extends ExecutiontimeSwitch<T>
+    implements Switch<T> {
+        private Switch69() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseECUPrototype(ECUPrototype o) {
+            return Autosar21Switch.this.caseECUPrototype(o);
+        }
+
+        @Override
+        public T caseExecutionTime(ExecutionTime o) {
+            return Autosar21Switch.this.caseExecutionTime(o);
+        }
+
+        @Override
+        public T caseHardwareConfiguration(HardwareConfiguration o) {
+            return Autosar21Switch.this.caseHardwareConfiguration(o);
+        }
+
+        @Override
+        public T caseMeasuredExecutionTime(MeasuredExecutionTime o) {
+            return Autosar21Switch.this.caseMeasuredExecutionTime(o);
+        }
+
+        @Override
+        public T caseMemorySectionLocation(MemorySectionLocation o) {
+            return Autosar21Switch.this.caseMemorySectionLocation(o);
+        }
+
+        @Override
+        public T caseRoughEstimateOfExecutionTime(RoughEstimateOfExecutionTime o) {
+            return Autosar21Switch.this.caseRoughEstimateOfExecutionTime(o);
+        }
+
+        @Override
+        public T caseSimulatedExecutionTime(SimulatedExecutionTime o) {
+            return Autosar21Switch.this.caseSimulatedExecutionTime(o);
+        }
+
+        @Override
+        public T caseSoftwareContext(SoftwareContext o) {
+            return Autosar21Switch.this.caseSoftwareContext(o);
+        }
+
+        @Override
+        public T caseWorstCaseExecutionTime(WorstCaseExecutionTime o) {
+            return Autosar21Switch.this.caseWorstCaseExecutionTime(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch7
+    extends EcuelectronicsSwitch<T>
+    implements Switch<T> {
+        private Switch7() {
+        }
+
+        @Override
+        public T caseHWElement(HWElement o) {
+            return Autosar21Switch.this.caseHWElement(o);
+        }
+
+        @Override
+        public T caseHWPort(HWPort o) {
+            return Autosar21Switch.this.caseHWPort(o);
+        }
+
+        @Override
+        public T caseBusTermination(BusTermination o) {
+            return Autosar21Switch.this.caseBusTermination(o);
+        }
+
+        @Override
+        public T caseClock(Clock o) {
+            return Autosar21Switch.this.caseClock(o);
+        }
+
+        @Override
+        public T caseCommunicationTransceiver(CommunicationTransceiver o) {
+            return Autosar21Switch.this.caseCommunicationTransceiver(o);
+        }
+
+        @Override
+        public T caseDiscreteECUElectronics(DiscreteECUElectronics o) {
+            return Autosar21Switch.this.caseDiscreteECUElectronics(o);
+        }
+
+        @Override
+        public T caseECUElectronics(ECUElectronics o) {
+            return Autosar21Switch.this.caseECUElectronics(o);
+        }
+
+        @Override
+        public T caseOscillator(Oscillator o) {
+            return Autosar21Switch.this.caseOscillator(o);
+        }
+
+        @Override
+        public T casePowerDriverHWElement(PowerDriverHWElement o) {
+            return Autosar21Switch.this.casePowerDriverHWElement(o);
+        }
+
+        @Override
+        public T casePowerDriverHWPort(PowerDriverHWPort o) {
+            return Autosar21Switch.this.casePowerDriverHWPort(o);
+        }
+
+        @Override
+        public T casePowerDriverNotification(PowerDriverNotification o) {
+            return Autosar21Switch.this.casePowerDriverNotification(o);
+        }
+
+        @Override
+        public T casePowerDriverProtection(PowerDriverProtection o) {
+            return Autosar21Switch.this.casePowerDriverProtection(o);
+        }
+
+        @Override
+        public T casePowerSupplyCurrentNotification(PowerSupplyCurrentNotification o) {
+            return Autosar21Switch.this.casePowerSupplyCurrentNotification(o);
+        }
+
+        @Override
+        public T casePowerSupplyHWElement(PowerSupplyHWElement o) {
+            return Autosar21Switch.this.casePowerSupplyHWElement(o);
+        }
+
+        @Override
+        public T casePowerSupplyHWPort(PowerSupplyHWPort o) {
+            return Autosar21Switch.this.casePowerSupplyHWPort(o);
+        }
+
+        @Override
+        public T casePowerSupplyVoltageNotification(PowerSupplyVoltageNotification o) {
+            return Autosar21Switch.this.casePowerSupplyVoltageNotification(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch70
+    extends HeapusageSwitch<T>
+    implements Switch<T> {
+        private Switch70() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseHeapUsage(HeapUsage o) {
+            return Autosar21Switch.this.caseHeapUsage(o);
+        }
+
+        @Override
+        public T caseMeasuredHeapUsage(MeasuredHeapUsage o) {
+            return Autosar21Switch.this.caseMeasuredHeapUsage(o);
+        }
+
+        @Override
+        public T caseRoughEstimateHeapUsage(RoughEstimateHeapUsage o) {
+            return Autosar21Switch.this.caseRoughEstimateHeapUsage(o);
+        }
+
+        @Override
+        public T caseWorstCaseHeapUsage(WorstCaseHeapUsage o) {
+            return Autosar21Switch.this.caseWorstCaseHeapUsage(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch71
+    extends ObjectfilesectionSwitch<T>
+    implements Switch<T> {
+        private Switch71() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseObjectFileSection(ObjectFileSection o) {
+            return Autosar21Switch.this.caseObjectFileSection(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch72
+    extends PerinstancememorysizeSwitch<T>
+    implements Switch<T> {
+        private Switch72() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T casePerInstanceMemorySize(PerInstanceMemorySize o) {
+            return Autosar21Switch.this.casePerInstanceMemorySize(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch73
+    extends StackusageSwitch<T>
+    implements Switch<T> {
+        private Switch73() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseMeasuredStackUsage(MeasuredStackUsage o) {
+            return Autosar21Switch.this.caseMeasuredStackUsage(o);
+        }
+
+        @Override
+        public T caseRoughEstimateStackUsage(RoughEstimateStackUsage o) {
+            return Autosar21Switch.this.caseRoughEstimateStackUsage(o);
+        }
+
+        @Override
+        public T caseStackUsage(StackUsage o) {
+            return Autosar21Switch.this.caseStackUsage(o);
+        }
+
+        @Override
+        public T caseWorstCaseStackUsage(WorstCaseStackUsage o) {
+            return Autosar21Switch.this.caseWorstCaseStackUsage(o);
+        }
+
+        @Override
+        public T caseAggregatedStackUsage(AggregatedStackUsage o) {
+            return Autosar21Switch.this.caseAggregatedStackUsage(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch74
+    extends ServicesSwitch<T>
+    implements Switch<T> {
+        private Switch74() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseEcuSwComposition(EcuSwComposition o) {
+            return Autosar21Switch.this.caseEcuSwComposition(o);
+        }
+
+        @Override
+        public T caseServiceComponentPrototype(ServiceComponentPrototype o) {
+            return Autosar21Switch.this.caseServiceComponentPrototype(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch75
+    extends VfberrorsSwitch<T>
+    implements Switch<T> {
+        private Switch75() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseApplicationError(ApplicationError o) {
+            return Autosar21Switch.this.caseApplicationError(o);
+        }
+
+        @Override
+        public T caseDevelopmentError(DevelopmentError o) {
+            return Autosar21Switch.this.caseDevelopmentError(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch76
+    extends SystemSwitch<T>
+    implements Switch<T> {
+        private Switch76() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseCommunicationMatrixInstance(CommunicationMatrixInstance o) {
+            return Autosar21Switch.this.caseCommunicationMatrixInstance(o);
+        }
+
+        @Override
+        public T caseGatewayInstance(GatewayInstance o) {
+            return Autosar21Switch.this.caseGatewayInstance(o);
+        }
+
+        @Override
+        public T caseSoftwareComposition(SoftwareComposition o) {
+            return Autosar21Switch.this.caseSoftwareComposition(o);
+        }
+
+        @Override
+        public T caseSystem(System o) {
+            return Autosar21Switch.this.caseSystem(o);
+        }
+
+        @Override
+        public T caseSystemCommunication(SystemCommunication o) {
+            return Autosar21Switch.this.caseSystemCommunication(o);
+        }
+
+        @Override
+        public T caseSystemMapping(SystemMapping o) {
+            return Autosar21Switch.this.caseSystemMapping(o);
+        }
+
+        @Override
+        public T caseSystemTopologyInstance(SystemTopologyInstance o) {
+            return Autosar21Switch.this.caseSystemTopologyInstance(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch77
+    extends autosar21.system.communication.util.CommunicationSwitch<T>
+    implements Switch<T> {
+        private Switch77() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseAbsolutelyScheduledTiming(AbsolutelyScheduledTiming o) {
+            return Autosar21Switch.this.caseAbsolutelyScheduledTiming(o);
+        }
+
+        @Override
+        public T caseActiveCondition(ActiveCondition o) {
+            return Autosar21Switch.this.caseActiveCondition(o);
+        }
+
+        @Override
+        public T caseCanFrame(CanFrame o) {
+            return Autosar21Switch.this.caseCanFrame(o);
+        }
+
+        @Override
+        public T caseCommunicationMatrixType(CommunicationMatrixType o) {
+            return Autosar21Switch.this.caseCommunicationMatrixType(o);
+        }
+
+        @Override
+        public T caseCyclicTiming(CyclicTiming o) {
+            return Autosar21Switch.this.caseCyclicTiming(o);
+        }
+
+        @Override
+        public T caseEventControlledTiming(EventControlledTiming o) {
+            return Autosar21Switch.this.caseEventControlledTiming(o);
+        }
+
+        @Override
+        public T caseEventTriggeredFrameSlot(EventTriggeredFrameSlot o) {
+            return Autosar21Switch.this.caseEventTriggeredFrameSlot(o);
+        }
+
+        @Override
+        public T caseFlexrayFrame(FlexrayFrame o) {
+            return Autosar21Switch.this.caseFlexrayFrame(o);
+        }
+
+        @Override
+        public T caseFrame(Frame o) {
+            return Autosar21Switch.this.caseFrame(o);
+        }
+
+        @Override
+        public T caseFreeTextCondition(FreeTextCondition o) {
+            return Autosar21Switch.this.caseFreeTextCondition(o);
+        }
+
+        @Override
+        public T caseGatewayEntry(GatewayEntry o) {
+            return Autosar21Switch.this.caseGatewayEntry(o);
+        }
+
+        @Override
+        public T caseGatewayType(GatewayType o) {
+            return Autosar21Switch.this.caseGatewayType(o);
+        }
+
+        @Override
+        public T caseLinFrame(LinFrame o) {
+            return Autosar21Switch.this.caseLinFrame(o);
+        }
+
+        @Override
+        public T caseLinSchedulingTable(LinSchedulingTable o) {
+            return Autosar21Switch.this.caseLinSchedulingTable(o);
+        }
+
+        @Override
+        public T caseLinSchedulingTableEntry(LinSchedulingTableEntry o) {
+            return Autosar21Switch.this.caseLinSchedulingTableEntry(o);
+        }
+
+        @Override
+        public T casePDUGatewayEntry(PDUGatewayEntry o) {
+            return Autosar21Switch.this.casePDUGatewayEntry(o);
+        }
+
+        @Override
+        public T casePDUPrototype(PDUPrototype o) {
+            return Autosar21Switch.this.casePDUPrototype(o);
+        }
+
+        @Override
+        public T caseRelativelyScheduledTiming(RelativelyScheduledTiming o) {
+            return Autosar21Switch.this.caseRelativelyScheduledTiming(o);
+        }
+
+        @Override
+        public T caseRequestControlledTiming(RequestControlledTiming o) {
+            return Autosar21Switch.this.caseRequestControlledTiming(o);
+        }
+
+        @Override
+        public T caseSendCondition(SendCondition o) {
+            return Autosar21Switch.this.caseSendCondition(o);
+        }
+
+        @Override
+        public T caseSignalGatewayEntry(SignalGatewayEntry o) {
+            return Autosar21Switch.this.caseSignalGatewayEntry(o);
+        }
+
+        @Override
+        public T caseSignalTrigger(SignalTrigger o) {
+            return Autosar21Switch.this.caseSignalTrigger(o);
+        }
+
+        @Override
+        public T caseSporadicFrameSlot(SporadicFrameSlot o) {
+            return Autosar21Switch.this.caseSporadicFrameSlot(o);
+        }
+
+        @Override
+        public T caseStartCondition(StartCondition o) {
+            return Autosar21Switch.this.caseStartCondition(o);
+        }
+
+        @Override
+        public T caseStopCondition(StopCondition o) {
+            return Autosar21Switch.this.caseStopCondition(o);
+        }
+
+        @Override
+        public T caseSystemStateTrigger(SystemStateTrigger o) {
+            return Autosar21Switch.this.caseSystemStateTrigger(o);
+        }
+
+        @Override
+        public T caseTiming(Timing o) {
+            return Autosar21Switch.this.caseTiming(o);
+        }
+
+        @Override
+        public T caseUnconditionalFrameSlot(UnconditionalFrameSlot o) {
+            return Autosar21Switch.this.caseUnconditionalFrameSlot(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch78
+    extends autosar21.system.communication.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch78() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseCommunicationMatrixTypeCommunicationCluster(CommunicationMatrixTypeCommunicationCluster o) {
+            return Autosar21Switch.this.caseCommunicationMatrixTypeCommunicationCluster(o);
+        }
+
+        @Override
+        public T caseFrameReceiver(FrameReceiver o) {
+            return Autosar21Switch.this.caseFrameReceiver(o);
+        }
+
+        @Override
+        public T caseFrameTransmitter(FrameTransmitter o) {
+            return Autosar21Switch.this.caseFrameTransmitter(o);
+        }
+
+        @Override
+        public T caseFrameUsedPhysicalChannel(FrameUsedPhysicalChannel o) {
+            return Autosar21Switch.this.caseFrameUsedPhysicalChannel(o);
+        }
+
+        @Override
+        public T caseGatewayTypeGatewayLocation(GatewayTypeGatewayLocation o) {
+            return Autosar21Switch.this.caseGatewayTypeGatewayLocation(o);
+        }
+
+        @Override
+        public T casePDUGatewayEntryDestinationPDU(PDUGatewayEntryDestinationPDU o) {
+            return Autosar21Switch.this.casePDUGatewayEntryDestinationPDU(o);
+        }
+
+        @Override
+        public T casePDUGatewayEntrySourcePDU(PDUGatewayEntrySourcePDU o) {
+            return Autosar21Switch.this.casePDUGatewayEntrySourcePDU(o);
+        }
+
+        @Override
+        public T caseSignalGatewayEntryDestinationClusterSignal(SignalGatewayEntryDestinationClusterSignal o) {
+            return Autosar21Switch.this.caseSignalGatewayEntryDestinationClusterSignal(o);
+        }
+
+        @Override
+        public T caseSignalGatewayEntrySourceClusterSignal(SignalGatewayEntrySourceClusterSignal o) {
+            return Autosar21Switch.this.caseSignalGatewayEntrySourceClusterSignal(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch79
+    extends CommunicationprotocolSwitch<T>
+    implements Switch<T> {
+        private Switch79() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseCommProtocolElement(CommProtocolElement o) {
+            return Autosar21Switch.this.caseCommProtocolElement(o);
+        }
+
+        @Override
+        public T caseCommProtocolFrameRole(CommProtocolFrameRole o) {
+            return Autosar21Switch.this.caseCommProtocolFrameRole(o);
+        }
+
+        @Override
+        public T caseCommProtocolInstance(CommProtocolInstance o) {
+            return Autosar21Switch.this.caseCommProtocolInstance(o);
+        }
+
+        @Override
+        public T caseCommProtocolSignalGroupRole(CommProtocolSignalGroupRole o) {
+            return Autosar21Switch.this.caseCommProtocolSignalGroupRole(o);
+        }
+
+        @Override
+        public T caseCommProtocolSignalRole(CommProtocolSignalRole o) {
+            return Autosar21Switch.this.caseCommProtocolSignalRole(o);
+        }
+
+        @Override
+        public T caseCommProtocolType(CommProtocolType o) {
+            return Autosar21Switch.this.caseCommProtocolType(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch8
+    extends MemorySwitch<T>
+    implements Switch<T> {
+        private Switch8() {
+        }
+
+        @Override
+        public T caseAssemblyHWConnection(AssemblyHWConnection o) {
+            return Autosar21Switch.this.caseAssemblyHWConnection(o);
+        }
+
+        @Override
+        public T caseDelegationHWConnection(DelegationHWConnection o) {
+            return Autosar21Switch.this.caseDelegationHWConnection(o);
+        }
+
+        @Override
+        public T caseHWConnection(HWConnection o) {
+            return Autosar21Switch.this.caseHWConnection(o);
+        }
+
+        @Override
+        public T caseHWElement(HWElement o) {
+            return Autosar21Switch.this.caseHWElement(o);
+        }
+
+        @Override
+        public T caseHWPort(HWPort o) {
+            return Autosar21Switch.this.caseHWPort(o);
+        }
+
+        @Override
+        public T caseMemoryMappedAssemblyHWConnection(MemoryMappedAssemblyHWConnection o) {
+            return Autosar21Switch.this.caseMemoryMappedAssemblyHWConnection(o);
+        }
+
+        @Override
+        public T caseMemoryMappedDelegationHWConnection(MemoryMappedDelegationHWConnection o) {
+            return Autosar21Switch.this.caseMemoryMappedDelegationHWConnection(o);
+        }
+
+        @Override
+        public T caseMemoryMappedHWPort(MemoryMappedHWPort o) {
+            return Autosar21Switch.this.caseMemoryMappedHWPort(o);
+        }
+
+        @Override
+        public T caseProvidedMemorySegment(ProvidedMemorySegment o) {
+            return Autosar21Switch.this.caseProvidedMemorySegment(o);
+        }
+
+        @Override
+        public T caseProvidedNVMemorySegment(ProvidedNVMemorySegment o) {
+            return Autosar21Switch.this.caseProvidedNVMemorySegment(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch80
+    extends autosar21.system.communicationprotocol.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch80() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseCommProtocolFrameRoleFrameInstance(CommProtocolFrameRoleFrameInstance o) {
+            return Autosar21Switch.this.caseCommProtocolFrameRoleFrameInstance(o);
+        }
+
+        @Override
+        public T caseCommProtocolFrameRoleProtocolElement(CommProtocolFrameRoleProtocolElement o) {
+            return Autosar21Switch.this.caseCommProtocolFrameRoleProtocolElement(o);
+        }
+
+        @Override
+        public T caseCommProtocolSignalGroupRoleProtocolElement(CommProtocolSignalGroupRoleProtocolElement o) {
+            return Autosar21Switch.this.caseCommProtocolSignalGroupRoleProtocolElement(o);
+        }
+
+        @Override
+        public T caseCommProtocolSignalRoleProtocolElement(CommProtocolSignalRoleProtocolElement o) {
+            return Autosar21Switch.this.caseCommProtocolSignalRoleProtocolElement(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch81
+    extends DatamappingSwitch<T>
+    implements Switch<T> {
+        private Switch81() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseApplicationErrorMapping(ApplicationErrorMapping o) {
+            return Autosar21Switch.this.caseApplicationErrorMapping(o);
+        }
+
+        @Override
+        public T caseClientIdMapping(ClientIdMapping o) {
+            return Autosar21Switch.this.caseClientIdMapping(o);
+        }
+
+        @Override
+        public T caseClientServerArrayElementMapping(ClientServerArrayElementMapping o) {
+            return Autosar21Switch.this.caseClientServerArrayElementMapping(o);
+        }
+
+        @Override
+        public T caseClientServerArrayTypeMapping(ClientServerArrayTypeMapping o) {
+            return Autosar21Switch.this.caseClientServerArrayTypeMapping(o);
+        }
+
+        @Override
+        public T caseClientServerCompositeTypeMapping(ClientServerCompositeTypeMapping o) {
+            return Autosar21Switch.this.caseClientServerCompositeTypeMapping(o);
+        }
+
+        @Override
+        public T caseClientServerPrimitiveTypeMapping(ClientServerPrimitiveTypeMapping o) {
+            return Autosar21Switch.this.caseClientServerPrimitiveTypeMapping(o);
+        }
+
+        @Override
+        public T caseClientServerRecordElementMapping(ClientServerRecordElementMapping o) {
+            return Autosar21Switch.this.caseClientServerRecordElementMapping(o);
+        }
+
+        @Override
+        public T caseClientServerRecordTypeMapping(ClientServerRecordTypeMapping o) {
+            return Autosar21Switch.this.caseClientServerRecordTypeMapping(o);
+        }
+
+        @Override
+        public T caseClientServerToSignalGroupMapping(ClientServerToSignalGroupMapping o) {
+            return Autosar21Switch.this.caseClientServerToSignalGroupMapping(o);
+        }
+
+        @Override
+        public T caseDataMapping(DataMapping o) {
+            return Autosar21Switch.this.caseDataMapping(o);
+        }
+
+        @Override
+        public T caseEmptySignalMapping(EmptySignalMapping o) {
+            return Autosar21Switch.this.caseEmptySignalMapping(o);
+        }
+
+        @Override
+        public T caseSenderRecArrayElementMapping(SenderRecArrayElementMapping o) {
+            return Autosar21Switch.this.caseSenderRecArrayElementMapping(o);
+        }
+
+        @Override
+        public T caseSenderRecArrayTypeMapping(SenderRecArrayTypeMapping o) {
+            return Autosar21Switch.this.caseSenderRecArrayTypeMapping(o);
+        }
+
+        @Override
+        public T caseSenderRecCompositeTypeMapping(SenderRecCompositeTypeMapping o) {
+            return Autosar21Switch.this.caseSenderRecCompositeTypeMapping(o);
+        }
+
+        @Override
+        public T caseSenderRecRecordElementMapping(SenderRecRecordElementMapping o) {
+            return Autosar21Switch.this.caseSenderRecRecordElementMapping(o);
+        }
+
+        @Override
+        public T caseSenderRecRecordTypeMapping(SenderRecRecordTypeMapping o) {
+            return Autosar21Switch.this.caseSenderRecRecordTypeMapping(o);
+        }
+
+        @Override
+        public T caseSenderReceiverToSignalGroupMapping(SenderReceiverToSignalGroupMapping o) {
+            return Autosar21Switch.this.caseSenderReceiverToSignalGroupMapping(o);
+        }
+
+        @Override
+        public T caseSenderReceiverToSignalMapping(SenderReceiverToSignalMapping o) {
+            return Autosar21Switch.this.caseSenderReceiverToSignalMapping(o);
+        }
+
+        @Override
+        public T caseSequenceCounterMapping(SequenceCounterMapping o) {
+            return Autosar21Switch.this.caseSequenceCounterMapping(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch82
+    extends autosar21.system.datamapping.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch82() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseClientServerArrayElementMappingArrayElement(ClientServerArrayElementMappingArrayElement o) {
+            return Autosar21Switch.this.caseClientServerArrayElementMappingArrayElement(o);
+        }
+
+        @Override
+        public T caseClientServerPrimitiveTypeMappingArgument(ClientServerPrimitiveTypeMappingArgument o) {
+            return Autosar21Switch.this.caseClientServerPrimitiveTypeMappingArgument(o);
+        }
+
+        @Override
+        public T caseClientServerRecordElementMappingRecordElement(ClientServerRecordElementMappingRecordElement o) {
+            return Autosar21Switch.this.caseClientServerRecordElementMappingRecordElement(o);
+        }
+
+        @Override
+        public T caseClientServerToSignalGroupMappingMappedOperation(ClientServerToSignalGroupMappingMappedOperation o) {
+            return Autosar21Switch.this.caseClientServerToSignalGroupMappingMappedOperation(o);
+        }
+
+        @Override
+        public T caseIndexedArrayElement(IndexedArrayElement o) {
+            return Autosar21Switch.this.caseIndexedArrayElement(o);
+        }
+
+        @Override
+        public T caseIndexedDataPrototype(IndexedDataPrototype o) {
+            return Autosar21Switch.this.caseIndexedDataPrototype(o);
+        }
+
+        @Override
+        public T caseSenderRecArrayElementMappingArrayElement(SenderRecArrayElementMappingArrayElement o) {
+            return Autosar21Switch.this.caseSenderRecArrayElementMappingArrayElement(o);
+        }
+
+        @Override
+        public T caseSenderRecRecordElementMappingRecordElement(SenderRecRecordElementMappingRecordElement o) {
+            return Autosar21Switch.this.caseSenderRecRecordElementMappingRecordElement(o);
+        }
+
+        @Override
+        public T caseSenderReceiverToSignalGroupMappingDataElement(SenderReceiverToSignalGroupMappingDataElement o) {
+            return Autosar21Switch.this.caseSenderReceiverToSignalGroupMappingDataElement(o);
+        }
+
+        @Override
+        public T caseSenderReceiverToSignalMappingDataElement(SenderReceiverToSignalMappingDataElement o) {
+            return Autosar21Switch.this.caseSenderReceiverToSignalMappingDataElement(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch83
+    extends PdustructureSwitch<T>
+    implements Switch<T> {
+        private Switch83() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseMultiplexer(Multiplexer o) {
+            return Autosar21Switch.this.caseMultiplexer(o);
+        }
+
+        @Override
+        public T casePDUType(PDUType o) {
+            return Autosar21Switch.this.casePDUType(o);
+        }
+
+        @Override
+        public T caseSignalPosition(SignalPosition o) {
+            return Autosar21Switch.this.caseSignalPosition(o);
+        }
+
+        @Override
+        public T caseSubPDU(SubPDU o) {
+            return Autosar21Switch.this.caseSubPDU(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch84
+    extends SignalpathsSwitch<T>
+    implements Switch<T> {
+        private Switch84() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseCommonSignalPath(CommonSignalPath o) {
+            return Autosar21Switch.this.caseCommonSignalPath(o);
+        }
+
+        @Override
+        public T caseForbiddenSignalPath(ForbiddenSignalPath o) {
+            return Autosar21Switch.this.caseForbiddenSignalPath(o);
+        }
+
+        @Override
+        public T casePermissibleSignalPath(PermissibleSignalPath o) {
+            return Autosar21Switch.this.casePermissibleSignalPath(o);
+        }
+
+        @Override
+        public T caseSeparateSignalPath(SeparateSignalPath o) {
+            return Autosar21Switch.this.caseSeparateSignalPath(o);
+        }
+
+        @Override
+        public T caseSignalPathConstraint(SignalPathConstraint o) {
+            return Autosar21Switch.this.caseSignalPathConstraint(o);
+        }
+
+        @Override
+        public T caseSwcToSwcOperationArguments(SwcToSwcOperationArguments o) {
+            return Autosar21Switch.this.caseSwcToSwcOperationArguments(o);
+        }
+
+        @Override
+        public T caseSwcToSwcSignal(SwcToSwcSignal o) {
+            return Autosar21Switch.this.caseSwcToSwcSignal(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch85
+    extends autosar21.system.signalpaths.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch85() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseForbiddenSignalPathEcuCommunicationPort(ForbiddenSignalPathEcuCommunicationPort o) {
+            return Autosar21Switch.this.caseForbiddenSignalPathEcuCommunicationPort(o);
+        }
+
+        @Override
+        public T casePermissibleSignalPathEcuCommunicationPort(PermissibleSignalPathEcuCommunicationPort o) {
+            return Autosar21Switch.this.casePermissibleSignalPathEcuCommunicationPort(o);
+        }
+
+        @Override
+        public T caseSwcToSwcOperationArgumentsOperation(SwcToSwcOperationArgumentsOperation o) {
+            return Autosar21Switch.this.caseSwcToSwcOperationArgumentsOperation(o);
+        }
+
+        @Override
+        public T caseSwcToSwcSignalDataElement(SwcToSwcSignalDataElement o) {
+            return Autosar21Switch.this.caseSwcToSwcSignalDataElement(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch86
+    extends SwmappingSwitch<T>
+    implements Switch<T> {
+        private Switch86() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseAggregatedStackUsage(AggregatedStackUsage o) {
+            return Autosar21Switch.this.caseAggregatedStackUsage(o);
+        }
+
+        @Override
+        public T caseBSWResourceEstimation(BSWResourceEstimation o) {
+            return Autosar21Switch.this.caseBSWResourceEstimation(o);
+        }
+
+        @Override
+        public T caseComponentCluster(ComponentCluster o) {
+            return Autosar21Switch.this.caseComponentCluster(o);
+        }
+
+        @Override
+        public T caseComponentSeparation(ComponentSeparation o) {
+            return Autosar21Switch.this.caseComponentSeparation(o);
+        }
+
+        @Override
+        public T caseEcuResourceEstimation(EcuResourceEstimation o) {
+            return Autosar21Switch.this.caseEcuResourceEstimation(o);
+        }
+
+        @Override
+        public T caseFreeTextMappingConstraint(FreeTextMappingConstraint o) {
+            return Autosar21Switch.this.caseFreeTextMappingConstraint(o);
+        }
+
+        @Override
+        public T caseMappingConstraint(MappingConstraint o) {
+            return Autosar21Switch.this.caseMappingConstraint(o);
+        }
+
+        @Override
+        public T caseRTERessourceEstimation(RTERessourceEstimation o) {
+            return Autosar21Switch.this.caseRTERessourceEstimation(o);
+        }
+
+        @Override
+        public T caseResourceEstimationDetails(ResourceEstimationDetails o) {
+            return Autosar21Switch.this.caseResourceEstimationDetails(o);
+        }
+
+        @Override
+        public T caseSwCompToEcuMapping(SwCompToEcuMapping o) {
+            return Autosar21Switch.this.caseSwCompToEcuMapping(o);
+        }
+
+        @Override
+        public T caseSwCompToImplMapping(SwCompToImplMapping o) {
+            return Autosar21Switch.this.caseSwCompToImplMapping(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch87
+    extends autosar21.system.swmapping.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch87() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseComponentClusterClusteredComponent(ComponentClusterClusteredComponent o) {
+            return Autosar21Switch.this.caseComponentClusterClusteredComponent(o);
+        }
+
+        @Override
+        public T caseComponentSeparationSeparatedComponent(ComponentSeparationSeparatedComponent o) {
+            return Autosar21Switch.this.caseComponentSeparationSeparatedComponent(o);
+        }
+
+        @Override
+        public T caseEcuResourceEstimationEcuInstance(EcuResourceEstimationEcuInstance o) {
+            return Autosar21Switch.this.caseEcuResourceEstimationEcuInstance(o);
+        }
+
+        @Override
+        public T caseSwCompToEcuMappingComponent(SwCompToEcuMappingComponent o) {
+            return Autosar21Switch.this.caseSwCompToEcuMappingComponent(o);
+        }
+
+        @Override
+        public T caseSwCompToEcuMappingEcuInstance(SwCompToEcuMappingEcuInstance o) {
+            return Autosar21Switch.this.caseSwCompToEcuMappingEcuInstance(o);
+        }
+
+        @Override
+        public T caseSwCompToImplMappingComponent(SwCompToImplMappingComponent o) {
+            return Autosar21Switch.this.caseSwCompToImplMappingComponent(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch88
+    extends SystemsignalSwitch<T>
+    implements Switch<T> {
+        private Switch88() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseClusterSignal(ClusterSignal o) {
+            return Autosar21Switch.this.caseClusterSignal(o);
+        }
+
+        @Override
+        public T caseClusterSignalReceiver(ClusterSignalReceiver o) {
+            return Autosar21Switch.this.caseClusterSignalReceiver(o);
+        }
+
+        @Override
+        public T caseClusterSignalTransmitter(ClusterSignalTransmitter o) {
+            return Autosar21Switch.this.caseClusterSignalTransmitter(o);
+        }
+
+        @Override
+        public T caseSystemSignal(SystemSignal o) {
+            return Autosar21Switch.this.caseSystemSignal(o);
+        }
+
+        @Override
+        public T caseSystemSignalGroup(SystemSignalGroup o) {
+            return Autosar21Switch.this.caseSystemSignalGroup(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch89
+    extends autosar21.system.systemsignal.instanceref.util.InstancerefSwitch<T>
+    implements Switch<T> {
+        private Switch89() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseClusterSignalReceiverCommunicationPort(ClusterSignalReceiverCommunicationPort o) {
+            return Autosar21Switch.this.caseClusterSignalReceiverCommunicationPort(o);
+        }
+
+        @Override
+        public T caseClusterSignalTransmitterCommunicationPort(ClusterSignalTransmitterCommunicationPort o) {
+            return Autosar21Switch.this.caseClusterSignalTransmitterCommunicationPort(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch9
+    extends PeripheralsSwitch<T>
+    implements Switch<T> {
+        private Switch9() {
+        }
+
+        @Override
+        public T caseHWElement(HWElement o) {
+            return Autosar21Switch.this.caseHWElement(o);
+        }
+
+        @Override
+        public T caseHWPort(HWPort o) {
+            return Autosar21Switch.this.caseHWPort(o);
+        }
+
+        @Override
+        public T caseADC(ADC o) {
+            return Autosar21Switch.this.caseADC(o);
+        }
+
+        @Override
+        public T caseAnalogueIO(AnalogueIO o) {
+            return Autosar21Switch.this.caseAnalogueIO(o);
+        }
+
+        @Override
+        public T caseBuffer(Buffer o) {
+            return Autosar21Switch.this.caseBuffer(o);
+        }
+
+        @Override
+        public T caseCCU(CCU o) {
+            return Autosar21Switch.this.caseCCU(o);
+        }
+
+        @Override
+        public T caseCommunicationFilter(CommunicationFilter o) {
+            return Autosar21Switch.this.caseCommunicationFilter(o);
+        }
+
+        @Override
+        public T caseCommunicationHWPort(CommunicationHWPort o) {
+            return Autosar21Switch.this.caseCommunicationHWPort(o);
+        }
+
+        @Override
+        public T caseCommunicationPeripheral(CommunicationPeripheral o) {
+            return Autosar21Switch.this.caseCommunicationPeripheral(o);
+        }
+
+        @Override
+        public T caseCommunicationPhysicalMedium(CommunicationPhysicalMedium o) {
+            return Autosar21Switch.this.caseCommunicationPhysicalMedium(o);
+        }
+
+        @Override
+        public T caseCommunicationProtocol(CommunicationProtocol o) {
+            return Autosar21Switch.this.caseCommunicationProtocol(o);
+        }
+
+        @Override
+        public T caseCommunicationSpeed(CommunicationSpeed o) {
+            return Autosar21Switch.this.caseCommunicationSpeed(o);
+        }
+
+        @Override
+        public T caseCommunicationSpeedFixed(CommunicationSpeedFixed o) {
+            return Autosar21Switch.this.caseCommunicationSpeedFixed(o);
+        }
+
+        @Override
+        public T caseCommunicationSpeedList(CommunicationSpeedList o) {
+            return Autosar21Switch.this.caseCommunicationSpeedList(o);
+        }
+
+        @Override
+        public T caseCommunicationSpeedRange(CommunicationSpeedRange o) {
+            return Autosar21Switch.this.caseCommunicationSpeedRange(o);
+        }
+
+        @Override
+        public T caseDAC(DAC o) {
+            return Autosar21Switch.this.caseDAC(o);
+        }
+
+        @Override
+        public T caseDigitalIO(DigitalIO o) {
+            return Autosar21Switch.this.caseDigitalIO(o);
+        }
+
+        @Override
+        public T caseECUCommunicationPort(ECUCommunicationPort o) {
+            return Autosar21Switch.this.caseECUCommunicationPort(o);
+        }
+
+        @Override
+        public T caseGeneralPurposeTimer(GeneralPurposeTimer o) {
+            return Autosar21Switch.this.caseGeneralPurposeTimer(o);
+        }
+
+        @Override
+        public T casePWD(PWD o) {
+            return Autosar21Switch.this.casePWD(o);
+        }
+
+        @Override
+        public T casePWM(PWM o) {
+            return Autosar21Switch.this.casePWM(o);
+        }
+
+        @Override
+        public T casePeripheral(Peripheral o) {
+            return Autosar21Switch.this.casePeripheral(o);
+        }
+
+        @Override
+        public T casePeripheralHWPort(PeripheralHWPort o) {
+            return Autosar21Switch.this.casePeripheralHWPort(o);
+        }
+
+        @Override
+        public T casePulseWidthPeripheral(PulseWidthPeripheral o) {
+            return Autosar21Switch.this.casePulseWidthPeripheral(o);
+        }
+
+        @Override
+        public T caseTimer(Timer o) {
+            return Autosar21Switch.this.caseTimer(o);
+        }
+
+        @Override
+        public T caseWatchDog(WatchDog o) {
+            return Autosar21Switch.this.caseWatchDog(o);
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+    }
+
+    /*
+     * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+     */
+    private class Switch90
+    extends TopologySwitch<T>
+    implements Switch<T> {
+        private Switch90() {
+        }
+
+        @Override
+        public T caseARObject(ARObject o) {
+            return Autosar21Switch.this.caseARObject(o);
+        }
+
+        @Override
+        public T caseNonSplitableElement(NonSplitableElement o) {
+            return Autosar21Switch.this.caseNonSplitableElement(o);
+        }
+
+        @Override
+        public T casePackageableElement(PackageableElement o) {
+            return Autosar21Switch.this.casePackageableElement(o);
+        }
+
+        @Override
+        public T caseARElement(ARElement o) {
+            return Autosar21Switch.this.caseARElement(o);
+        }
+
+        @Override
+        public T caseIdentifiable(Identifiable o) {
+            return Autosar21Switch.this.caseIdentifiable(o);
+        }
+
+        @Override
+        public T caseCANBus(CANBus o) {
+            return Autosar21Switch.this.caseCANBus(o);
+        }
+
+        @Override
+        public T caseCANCommunicationPortInstance(CANCommunicationPortInstance o) {
+            return Autosar21Switch.this.caseCANCommunicationPortInstance(o);
+        }
+
+        @Override
+        public T caseCommunicationCluster(CommunicationCluster o) {
+            return Autosar21Switch.this.caseCommunicationCluster(o);
+        }
+
+        @Override
+        public T caseConnector(Connector o) {
+            return Autosar21Switch.this.caseConnector(o);
+        }
+
+        @Override
+        public T caseECUCommunicationPortInstance(ECUCommunicationPortInstance o) {
+            return Autosar21Switch.this.caseECUCommunicationPortInstance(o);
+        }
+
+        @Override
+        public T caseECUInstance(ECUInstance o) {
+            return Autosar21Switch.this.caseECUInstance(o);
+        }
+
+        @Override
+        public T caseFlexrayCluster(FlexrayCluster o) {
+            return Autosar21Switch.this.caseFlexrayCluster(o);
+        }
+
+        @Override
+        public T caseFlexrayCommunicationPortInstance(FlexrayCommunicationPortInstance o) {
+            return Autosar21Switch.this.caseFlexrayCommunicationPortInstance(o);
+        }
+
+        @Override
+        public T caseHub(Hub o) {
+            return Autosar21Switch.this.caseHub(o);
+        }
+
+        @Override
+        public T caseLINCommunicationPortInstance(LINCommunicationPortInstance o) {
+            return Autosar21Switch.this.caseLINCommunicationPortInstance(o);
+        }
+
+        @Override
+        public T caseLINSubBus(LINSubBus o) {
+            return Autosar21Switch.this.caseLINSubBus(o);
+        }
+
+        @Override
+        public T casePhysicalChannel(PhysicalChannel o) {
+            return Autosar21Switch.this.casePhysicalChannel(o);
+        }
+
+        @Override
+        public T casePhysicalMediumSegment(PhysicalMediumSegment o) {
+            return Autosar21Switch.this.casePhysicalMediumSegment(o);
+        }
+
+        @Override
+        public T caseSystemTopologyType(SystemTopologyType o) {
+            return Autosar21Switch.this.caseSystemTopologyType(o);
+        }
+
+        @Override
+        public T caseTopologyElement(TopologyElement o) {
+            return Autosar21Switch.this.caseTopologyElement(o);
+        }
+
+        @Override
+        public T caseUnspecifiedConnection(UnspecifiedConnection o) {
+            return Autosar21Switch.this.caseUnspecifiedConnection(o);
+        }
+    }
+}
+

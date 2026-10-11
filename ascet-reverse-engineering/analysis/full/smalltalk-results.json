@@ -1,0 +1,422 @@
+[
+  {
+    "source": "unpacked/installation/ascet.icx",
+    "sha256": "97d47d6d3e99979fa6f7120e7244ada6d57a3dbfbefcf31407dfb665a87b7a93",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/97d47d6d3e99979f_ascet.icx",
+    "status": "strings_only",
+    "strings": 10286,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/ascet.icx"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/abtdah.ic",
+    "sha256": "1c263ea10c0f686eaf1fc32e3b264787907aab53b3669b277803c339508bfbf3",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/1c263ea10c0f686e_abtdah.ic",
+    "status": "strings_only",
+    "strings": 1214,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/abtdah.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/abtdau.ic",
+    "sha256": "9a924339e21939a2559c93e88223cc088e9aa7691047d2a40f815f6c3017135d",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/9a924339e21939a2_abtdau.ic",
+    "status": "strings_only",
+    "strings": 1334,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/abtdau.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/abtdbf.ic",
+    "sha256": "b7652864b1e63e104519aae849d87be61481b2f6a3a6c8fce3c152cffaa0f6d5",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/b7652864b1e63e10_abtdbf.ic",
+    "status": "strings_only",
+    "strings": 686,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/abtdbf.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/abtdbh.ic",
+    "sha256": "e597e0031e967e79808f54d494b30a606fb440f6990e7eb3f9ecf3cfdd5cccdb",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/e597e0031e967e79_abtdbh.ic",
+    "status": "strings_only",
+    "strings": 1544,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/abtdbh.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/abtdol.ic",
+    "sha256": "9faf3712b196bf7735721c8d775b741503cd4ea84c22acdcf5360ccc6eff58bc",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/9faf3712b196bf77_abtdol.ic",
+    "status": "strings_only",
+    "strings": 103,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/abtdol.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/abtxmlp.ic",
+    "sha256": "5ad617854c0656c5c7f3daa03351a3ad546705d636717d64c1af742ea7b14ef6",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/5ad617854c0656c5_abtxmlp.ic",
+    "status": "strings_only",
+    "strings": 1793,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/abtxmlp.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/ASDBase.ic",
+    "sha256": "b4dff51f53463f2053ad7163f6afaf7a9a24dfdfd0d538eceec22432fadb5237",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/b4dff51f53463f20_ASDBase.ic",
+    "status": "strings_only",
+    "strings": 249670,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/ASDBase.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/ASDConvUtil_base.ic",
+    "sha256": "4c7a99b59e4b01b3ba525badc361c0e169cf38fe1a7bfebc33b11937fbc30e77",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/4c7a99b59e4b01b3_ASDConvUtil_base.ic",
+    "status": "strings_only",
+    "strings": 1095,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/ASDConvUtil_base.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/ASDDocumentor.ic",
+    "sha256": "b6569691b14f5db4c977ebc44e784eca57905698b3910db7d3d04181e06b23ef",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/b6569691b14f5db4_ASDDocumentor.ic",
+    "status": "strings_only",
+    "strings": 5250,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/ASDDocumentor.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/ASDGenUtil_base.ic",
+    "sha256": "783da48d3efa14d9cf5b1c1e2cf1bf9bb780a48168e5af0758eede3e4135bd12",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/783da48d3efa14d9_ASDGenUtil_base.ic",
+    "status": "strings_only",
+    "strings": 2082,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/ASDGenUtil_base.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/ASDStartup.ic",
+    "sha256": "a258d1415f08c11e44e4632484a38c77050499ff2184ea19e17f84ac9e3bf645",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/a258d1415f08c11e_ASDStartup.ic",
+    "status": "strings_only",
+    "strings": 41,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/ASDStartup.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/async.ic",
+    "sha256": "f1573ea9e496df30e23d6d2b097a8974efb945cf669767efb29e14a71130e003",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/f1573ea9e496df30_async.ic",
+    "status": "strings_only",
+    "strings": 546,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/async.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/cfsnls.ic",
+    "sha256": "4d8fd777633ab3e83c6e795293dda626376a68b8f1f24d7659835ec11a1f1b2f",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/4d8fd777633ab3e8_cfsnls.ic",
+    "status": "strings_only",
+    "strings": 3339,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/cfsnls.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/dbgrun.ic",
+    "sha256": "695a1afa68cd2ad5a8bf81cc687ef414825c3fbb86a380b1c5ecb69750ea374a",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/695a1afa68cd2ad5_dbgrun.ic",
+    "status": "strings_only",
+    "strings": 705,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/dbgrun.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/dde.ic",
+    "sha256": "2ce5ec5aafa1eff183324bb794ddf05601330910ea01872668220d7e46c1d89e",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/2ce5ec5aafa1eff1_dde.ic",
+    "status": "strings_only",
+    "strings": 637,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/dde.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/drgdrp.ic",
+    "sha256": "aa900be9a3106297fd21507bacad072e0b9e8947d8349d6d6c1de5673ba0f782",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/aa900be9a3106297_drgdrp.ic",
+    "status": "strings_only",
+    "strings": 478,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/drgdrp.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/EHOOKS.ic",
+    "sha256": "1e6e2bdd8cd4d807011dd89b711ded818b1eff83faf6f095973b417c09a7feb6",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/1e6e2bdd8cd4d807_EHOOKS.ic",
+    "status": "strings_only",
+    "strings": 1614,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/EHOOKS.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/eprun.ic",
+    "sha256": "e827d43c6103e3a9675ec574883491ebec0a9657c192e4bdec4afd521109b263",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/e827d43c6103e3a9_eprun.ic",
+    "status": "strings_only",
+    "strings": 53,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/eprun.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/eshell.ic",
+    "sha256": "8a55b88e6672e10b4757c3dcc7484e730c4bfec0a33ba78505349f2640222b58",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/8a55b88e6672e10b_eshell.ic",
+    "status": "strings_only",
+    "strings": 372,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/eshell.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/ETargetCommon.ic",
+    "sha256": "c06157cdb093db94e44a5fcf5b7ae9f51b46df0fff65ec13c0cb683557554ef0",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/c06157cdb093db94_ETargetCommon.ic",
+    "status": "strings_only",
+    "strings": 1562,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/ETargetCommon.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/extwid.ic",
+    "sha256": "afcaaab72b914b2b9cc78a329c931eaaf1d66cc8ed20e1fb9e87e749fc6a613b",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/afcaaab72b914b2b_extwid.ic",
+    "status": "strings_only",
+    "strings": 7487,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/extwid.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/HwAccessETarget.ic",
+    "sha256": "944a4946ba18de84aec966adaee1285a1a9c1cc50927eeabc97b01de3c0d1aca",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/944a4946ba18de84_HwAccessETarget.ic",
+    "status": "strings_only",
+    "strings": 1284,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/HwAccessETarget.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/kernel.ic",
+    "sha256": "e3fb8f1575f2790d7e1cf907e2b4f45a27578d4ce7871b2fd0cf17a3ec5d6996",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/e3fb8f1575f2790d_kernel.ic",
+    "status": "strings_only",
+    "strings": 6001,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/kernel.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/lib.ic",
+    "sha256": "7fa374a63e1ded818cb99d2dfea8edaec2d30b24c666a904a104c1e65c128e6c",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/7fa374a63e1ded81_lib.ic",
+    "status": "strings_only",
+    "strings": 7850,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/lib.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/ole.ic",
+    "sha256": "0c29e26dad88456f020c3ec57a151abd2e2205e006b082358feda6c4c3ca8787",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/0c29e26dad88456f_ole.ic",
+    "status": "strings_only",
+    "strings": 1138,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/ole.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/oleb.ic",
+    "sha256": "b1101fa32730c05c76d30588b95964236428f3a21e8d4685da21679df0d425dc",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/b1101fa32730c05c_oleb.ic",
+    "status": "strings_only",
+    "strings": 716,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/oleb.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/parse.ic",
+    "sha256": "4420900c5989871bcc97d67bf926e05fd421e1c4187d2c5ffb74d6c5d27e7c21",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/4420900c5989871b_parse.ic",
+    "status": "strings_only",
+    "strings": 1928,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/parse.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/psupp.ic",
+    "sha256": "b61c435a59c753d9b354f6f156a30c3c2ec431aef173bdbccfca83ad326f3d89",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/b61c435a59c753d9_psupp.ic",
+    "status": "strings_only",
+    "strings": 27231,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/psupp.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/sci.ic",
+    "sha256": "0243eb68aaf75355f77ceca165e93c40d4b7fe5e99cdd95e5b369caa29623d7f",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/0243eb68aaf75355_sci.ic",
+    "status": "strings_only",
+    "strings": 1637,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/sci.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/winsys.ic",
+    "sha256": "0d2dc3ef016ae0d7dd223c5cdadf248a504b85956a88112d37c5eea5655cc695",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/0d2dc3ef016ae0d7_winsys.ic",
+    "status": "strings_only",
+    "strings": 12827,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/winsys.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/icsrun/xxx_dyn.ic",
+    "sha256": "897feb92a283fe910f6bcde526b202893186349aa5e9f007396acf7cda33a6dd",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/897feb92a283fe91_xxx_dyn.ic",
+    "status": "strings_only",
+    "strings": 7979,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/icsrun/xxx_dyn.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/toolbox/ETargetCommonToolbox.ic",
+    "sha256": "f685638db5456e1b816999de76e0f2c5252aca49f12bb99689bdf73605118f0e",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/f685638db5456e1b_ETargetCommonToolbox.ic",
+    "status": "strings_only",
+    "strings": 35,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/toolbox/ETargetCommonToolbox.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/toolbox/ETargetPrototyping.ic",
+    "sha256": "7c75802c24b2189d85844dd68aa1a3b6afd743079d16229d7c09fbd48247f207",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/7c75802c24b2189d_ETargetPrototyping.ic",
+    "status": "strings_only",
+    "strings": 83,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/toolbox/ETargetPrototyping.ic"
+    ]
+  },
+  {
+    "source": "unpacked/installation/toolbox/xxx.ic",
+    "sha256": "2d756568871dcbc6322bac48ba3cb892706250e997f84a72ef13ea955d3e9159",
+    "kind": "smalltalk",
+    "output": "unpacked/smalltalk/2d756568871dcbc6_xxx.ic",
+    "status": "strings_only",
+    "strings": 2147,
+    "limitation": "No Smalltalk object graph or bytecode decompiler has been applied.",
+    "aliases": [
+      "unpacked/installation/toolbox/xxx.ic"
+    ]
+  }
+]

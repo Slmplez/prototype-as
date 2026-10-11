@@ -1,0 +1,8 @@
+"Statically reconstructed from ASCET image; generated names; not original source. Runtime equivalence not tested."
+
+"ASDBase.ic method 0x20000570; bytecode file offset 0x8ffcfc"
+!AbtWinPMRunWidgetsSubApp class methodsFor: 'recovered'!
+_PRAGMA_AbtCwConstants
+    ^self
+! !
+

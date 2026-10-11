@@ -1,0 +1,25 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.text_3.5.101.r371_v20110810-0800.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.jface.text.AbstractDocument
+----------------------------
+
+executePostNotificationChanges()
+  Unable to fully structure code
+
+
+org.eclipse.jface.text.link.LinkedModeManager
+----------------------------
+
+left(org.eclipse.jface.text.link.LinkedModeModel int )
+  Unable to fully structure code
+nestEnvironment(org.eclipse.jface.text.link.LinkedModeModel boolean )
+  Loose catch block
+
+
+org.eclipse.jface.text.projection.ProjectionDocumentManager
+----------------------------
+
+fireDocumentEvent(boolean org.eclipse.jface.text.DocumentEvent )
+  Unable to fully structure code

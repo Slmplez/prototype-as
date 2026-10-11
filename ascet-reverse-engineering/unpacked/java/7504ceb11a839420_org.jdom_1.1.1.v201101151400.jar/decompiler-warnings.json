@@ -1,0 +1,7 @@
+[
+  {
+    "file": "org/jdom/Namespace.java",
+    "line": 20,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

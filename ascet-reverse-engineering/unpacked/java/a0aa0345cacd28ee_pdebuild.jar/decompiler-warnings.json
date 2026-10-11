@@ -1,0 +1,12 @@
+[
+  {
+    "file": "org/eclipse/pde/internal/build/FetchScriptGenerator.java",
+    "line": 137,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/pde/internal/build/site/PDEState.java",
+    "line": 343,
+    "text": "* Unable to fully structure code"
+  }
+]

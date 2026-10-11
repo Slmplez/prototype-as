@@ -1,0 +1,17 @@
+[
+  {
+    "file": "org/eclipse/emf/common/command/BasicCommandStack.java",
+    "line": 86,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/emf/common/command/StrictCompoundCommand.java",
+    "line": 106,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/emf/common/util/URI.java",
+    "line": 1264,
+    "text": "* Unable to fully structure code"
+  }
+]

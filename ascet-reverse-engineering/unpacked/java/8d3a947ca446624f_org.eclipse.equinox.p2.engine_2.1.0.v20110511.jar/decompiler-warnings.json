@@ -1,0 +1,57 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/PhaseSet.java",
+    "line": 44,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/PhaseSet.java",
+    "line": 48,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/PhaseSet.java",
+    "line": 66,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/Profile.java",
+    "line": 192,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/ProfileLock.java",
+    "line": 66,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/ProfileLock.java",
+    "line": 82,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/ProfileLock.java",
+    "line": 140,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/ProfileLock.java",
+    "line": 162,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/ProfilePreferences.java",
+    "line": 98,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/ProfilePreferences.java",
+    "line": 217,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/engine/SimpleProfileRegistry.java",
+    "line": 489,
+    "text": "* Unable to fully structure code"
+  }
+]

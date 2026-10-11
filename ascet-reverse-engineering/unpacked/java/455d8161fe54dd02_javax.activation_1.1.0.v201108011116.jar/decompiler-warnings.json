@@ -1,0 +1,47 @@
+[
+  {
+    "file": "javax/activation/DataHandler.java",
+    "line": 36,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "javax/activation/DataHandler.java",
+    "line": 48,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "javax/activation/DataHandler.java",
+    "line": 60,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "javax/activation/DataHandler.java",
+    "line": 88,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "javax/activation/DataHandler.java",
+    "line": 190,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "javax/activation/DataHandler.java",
+    "line": 263,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "javax/activation/MailcapCommandMap.java",
+    "line": 37,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "javax/activation/MailcapCommandMap.java",
+    "line": 118,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "javax/activation/MimetypesFileTypeMap.java",
+    "line": 27,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

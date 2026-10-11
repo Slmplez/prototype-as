@@ -1,0 +1,30 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package org.eclipse.jdt.core.util;
+
+public interface IConstantPoolConstant {
+    public static final int CONSTANT_Class = 7;
+    public static final int CONSTANT_Fieldref = 9;
+    public static final int CONSTANT_Methodref = 10;
+    public static final int CONSTANT_InterfaceMethodref = 11;
+    public static final int CONSTANT_String = 8;
+    public static final int CONSTANT_Integer = 3;
+    public static final int CONSTANT_Float = 4;
+    public static final int CONSTANT_Long = 5;
+    public static final int CONSTANT_Double = 6;
+    public static final int CONSTANT_NameAndType = 12;
+    public static final int CONSTANT_Utf8 = 1;
+    public static final int CONSTANT_Methodref_SIZE = 5;
+    public static final int CONSTANT_Class_SIZE = 3;
+    public static final int CONSTANT_Double_SIZE = 9;
+    public static final int CONSTANT_Fieldref_SIZE = 5;
+    public static final int CONSTANT_Float_SIZE = 5;
+    public static final int CONSTANT_Integer_SIZE = 5;
+    public static final int CONSTANT_InterfaceMethodref_SIZE = 5;
+    public static final int CONSTANT_Long_SIZE = 9;
+    public static final int CONSTANT_String_SIZE = 3;
+    public static final int CONSTANT_Utf8_SIZE = 3;
+    public static final int CONSTANT_NameAndType_SIZE = 5;
+}
+

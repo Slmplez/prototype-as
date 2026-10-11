@@ -1,0 +1,3495 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  org.eclipse.emf.ecore.EClass
+ *  org.eclipse.emf.ecore.EFactory
+ *  org.eclipse.emf.ecore.EObject
+ *  org.eclipse.emf.ecore.EPackage
+ *  org.eclipse.emf.ecore.impl.EFactoryImpl
+ */
+package autosar3x.util;
+
+import autosar3x.bswmodule.bswbehavior.BswBehavior;
+import autosar3x.bswmodule.bswbehavior.BswCyclicEvent;
+import autosar3x.bswmodule.bswbehavior.BswInterruptEntity;
+import autosar3x.bswmodule.bswbehavior.BswModuleEntity;
+import autosar3x.bswmodule.bswbehavior.BswSchedulableEntity;
+import autosar3x.bswmodule.bswbehavior.BswSporadicEvent;
+import autosar3x.bswmodule.bswbehavior.BswbehaviorFactory;
+import autosar3x.bswmodule.bswimplementation.BswImplementation;
+import autosar3x.bswmodule.bswimplementation.BswimplementationFactory;
+import autosar3x.bswmodule.bswinterfaces.BswModuleDependency;
+import autosar3x.bswmodule.bswinterfaces.BswModuleEntry;
+import autosar3x.bswmodule.bswinterfaces.BswinterfacesFactory;
+import autosar3x.bswmodule.bswoverview.BswModuleDescription;
+import autosar3x.bswmodule.bswoverview.BswoverviewFactory;
+import autosar3x.commonstructure.auxillaryobjects.AuxillaryobjectsFactory;
+import autosar3x.commonstructure.auxillaryobjects.SwAddrMethod;
+import autosar3x.commonstructure.auxillaryobjects.SwCodeSyntax;
+import autosar3x.commonstructure.auxillaryobjects.SwRecordLayout;
+import autosar3x.commonstructure.auxillaryobjects.SwRecordLayoutGroup;
+import autosar3x.commonstructure.auxillaryobjects.SwRecordLayoutGroupContent;
+import autosar3x.commonstructure.auxillaryobjects.SwRecordLayoutV;
+import autosar3x.commonstructure.auxillaryobjects.SwRelatedConstrs;
+import autosar3x.commonstructure.axis.AxisFactory;
+import autosar3x.commonstructure.axis.SwAxisGeneric;
+import autosar3x.commonstructure.axis.SwAxisGrouped;
+import autosar3x.commonstructure.axis.SwAxisIndividual;
+import autosar3x.commonstructure.axis.SwAxisType;
+import autosar3x.commonstructure.axis.SwGenericAxisParam;
+import autosar3x.commonstructure.axis.SwGenericAxisParamType;
+import autosar3x.commonstructure.basetypes.BaseTypeAbsSize;
+import autosar3x.commonstructure.basetypes.BaseTypeDirectDefinition;
+import autosar3x.commonstructure.basetypes.BaseTypeIndirectDefinition;
+import autosar3x.commonstructure.basetypes.BaseTypeMaxSize;
+import autosar3x.commonstructure.basetypes.BasetypesFactory;
+import autosar3x.commonstructure.basetypes.SwBaseType;
+import autosar3x.commonstructure.byteorder.ByteOrder;
+import autosar3x.commonstructure.byteorder.ByteorderFactory;
+import autosar3x.commonstructure.calibrationparameter.CalibrationparameterFactory;
+import autosar3x.commonstructure.calibrationparameter.SwCalprmAxis;
+import autosar3x.commonstructure.calibrationparameter.SwCalprmAxisCommonAxis;
+import autosar3x.commonstructure.calibrationparameter.SwCalprmAxisIndividualAxis;
+import autosar3x.commonstructure.calibrationparameter.SwCalprmAxisSet;
+import autosar3x.commonstructure.calibrationparameter.SwCalprmValueAxisLabels;
+import autosar3x.commonstructure.datadefproperties.DatadefpropertiesFactory;
+import autosar3x.commonstructure.datadefproperties.SwArraysize;
+import autosar3x.commonstructure.datadefproperties.SwBitRepresentation;
+import autosar3x.commonstructure.datadefproperties.SwComparisonVariables;
+import autosar3x.commonstructure.datadefproperties.SwDataDefProps;
+import autosar3x.commonstructure.datadefproperties.SwDataDependency;
+import autosar3x.commonstructure.datadefproperties.SwDataDependencyArgs;
+import autosar3x.commonstructure.datadefproperties.SwGenericAxisParamValue;
+import autosar3x.commonstructure.datadefproperties.SwPointer;
+import autosar3x.commonstructure.datadefproperties.SwSemaphore;
+import autosar3x.commonstructure.datadefproperties.SwTextProps;
+import autosar3x.commonstructure.datadefproperties.SwVariableRef;
+import autosar3x.commonstructure.datadictionaryproxies.DatadictionaryproxiesFactory;
+import autosar3x.commonstructure.datadictionaryproxies.SwCalprmRefProxy;
+import autosar3x.commonstructure.filter.Always;
+import autosar3x.commonstructure.filter.FilterFactory;
+import autosar3x.commonstructure.filter.MaskedNewDiffersMaskedOld;
+import autosar3x.commonstructure.filter.MaskedNewDiffersX;
+import autosar3x.commonstructure.filter.MaskedNewEqualsX;
+import autosar3x.commonstructure.filter.Never;
+import autosar3x.commonstructure.filter.NewIsOutside;
+import autosar3x.commonstructure.filter.NewIsWithin;
+import autosar3x.commonstructure.filter.OneEveryN;
+import autosar3x.commonstructure.globalconstraints.DataConstr;
+import autosar3x.commonstructure.globalconstraints.DataConstrRule;
+import autosar3x.commonstructure.globalconstraints.GlobalconstraintsFactory;
+import autosar3x.commonstructure.globalconstraints.InternalConstrs;
+import autosar3x.commonstructure.globalconstraints.PhysConstrs;
+import autosar3x.commonstructure.globalconstraints.ScaleConstr;
+import autosar3x.commonstructure.globalconstraints.ScaleConstrs;
+import autosar3x.commonstructure.globalconstraints.SwConstrObjects;
+import autosar3x.commonstructure.implementation.Code;
+import autosar3x.commonstructure.implementation.Compiler;
+import autosar3x.commonstructure.implementation.DependencyOnFile;
+import autosar3x.commonstructure.implementation.DependencyOnLibrary;
+import autosar3x.commonstructure.implementation.Implementation;
+import autosar3x.commonstructure.implementation.ImplementationFactory;
+import autosar3x.commonstructure.implementation.Linker;
+import autosar3x.commonstructure.implementation.XfileSo;
+import autosar3x.commonstructure.internalbehavior.ExclusiveArea;
+import autosar3x.commonstructure.internalbehavior.InternalbehaviorFactory;
+import autosar3x.commonstructure.resourceconsumption.HardwareConfiguration;
+import autosar3x.commonstructure.resourceconsumption.ResourceConsumption;
+import autosar3x.commonstructure.resourceconsumption.ResourceconsumptionFactory;
+import autosar3x.commonstructure.resourceconsumption.SoftwareContext;
+import autosar3x.commonstructure.resourceconsumption.executiontime.ECUPrototype;
+import autosar3x.commonstructure.resourceconsumption.executiontime.ExecutionTime;
+import autosar3x.commonstructure.resourceconsumption.executiontime.ExecutiontimeFactory;
+import autosar3x.commonstructure.resourceconsumption.executiontime.MeasuredExecutionTime;
+import autosar3x.commonstructure.resourceconsumption.executiontime.MemorySectionLocation;
+import autosar3x.commonstructure.resourceconsumption.executiontime.RoughEstimateOfExecutionTime;
+import autosar3x.commonstructure.resourceconsumption.executiontime.SimulatedExecutionTime;
+import autosar3x.commonstructure.resourceconsumption.executiontime.WorstCaseExecutionTime;
+import autosar3x.commonstructure.resourceconsumption.heapusage.HeapusageFactory;
+import autosar3x.commonstructure.resourceconsumption.heapusage.MeasuredHeapUsage;
+import autosar3x.commonstructure.resourceconsumption.heapusage.RoughEstimateHeapUsage;
+import autosar3x.commonstructure.resourceconsumption.heapusage.WorstCaseHeapUsage;
+import autosar3x.commonstructure.resourceconsumption.memorysectionusage.MemorySection;
+import autosar3x.commonstructure.resourceconsumption.memorysectionusage.MemorysectionusageFactory;
+import autosar3x.commonstructure.resourceconsumption.stackusage.MeasuredStackUsage;
+import autosar3x.commonstructure.resourceconsumption.stackusage.RoughEstimateStackUsage;
+import autosar3x.commonstructure.resourceconsumption.stackusage.StackusageFactory;
+import autosar3x.commonstructure.resourceconsumption.stackusage.WorstCaseStackUsage;
+import autosar3x.commonstructure.serviceneeds.ComMgrUserNeeds;
+import autosar3x.commonstructure.serviceneeds.DiagnosticCommunicationNeeds;
+import autosar3x.commonstructure.serviceneeds.DiagnosticEventNeeds;
+import autosar3x.commonstructure.serviceneeds.EcuStateMgrUserNeeds;
+import autosar3x.commonstructure.serviceneeds.FunctionInhibitionNeeds;
+import autosar3x.commonstructure.serviceneeds.NvBlockNeeds;
+import autosar3x.commonstructure.serviceneeds.ObdControlServiceNeeds;
+import autosar3x.commonstructure.serviceneeds.ObdInfoServiceNeeds;
+import autosar3x.commonstructure.serviceneeds.ObdMonitorServiceNeeds;
+import autosar3x.commonstructure.serviceneeds.ObdPidServiceNeeds;
+import autosar3x.commonstructure.serviceneeds.ObdRatioServiceNeeds;
+import autosar3x.commonstructure.serviceneeds.ServiceNeeds;
+import autosar3x.commonstructure.serviceneeds.ServiceneedsFactory;
+import autosar3x.commonstructure.serviceneeds.SupervisedEntityNeeds;
+import autosar3x.commonstructure.serviceprocesstask.ServiceprocesstaskFactory;
+import autosar3x.commonstructure.serviceprocesstask.SwService;
+import autosar3x.commonstructure.serviceprocesstask.SwServiceAccessedElementSet;
+import autosar3x.commonstructure.serviceprocesstask.SwServiceArg;
+import autosar3x.commonstructure.serviceprocesstask.SwServiceImpl;
+import autosar3x.commonstructure.serviceprocesstask.SwServiceProps;
+import autosar3x.commonstructure.swclass.SwCalprmImpl;
+import autosar3x.commonstructure.swclass.SwCalprmPrototype;
+import autosar3x.commonstructure.swclass.SwClassAttr;
+import autosar3x.commonstructure.swclass.SwClassAttrImpl;
+import autosar3x.commonstructure.swclass.SwClassAttrInstanceImpl;
+import autosar3x.commonstructure.swclass.SwClassImpl;
+import autosar3x.commonstructure.swclass.SwClassInstance;
+import autosar3x.commonstructure.swclass.SwClassPrototype;
+import autosar3x.commonstructure.swclass.SwServicePrototype;
+import autosar3x.commonstructure.swclass.SwVariableImpl;
+import autosar3x.commonstructure.swclass.SwVariablePrototype;
+import autosar3x.commonstructure.swclass.SwclassFactory;
+import autosar3x.ecucdescription.BooleanValue;
+import autosar3x.ecucdescription.Container;
+import autosar3x.ecucdescription.EcuConfiguration;
+import autosar3x.ecucdescription.EcucdescriptionFactory;
+import autosar3x.ecucdescription.EnumerationValue;
+import autosar3x.ecucdescription.FloatValue;
+import autosar3x.ecucdescription.FunctionNameValue;
+import autosar3x.ecucdescription.InstanceReferenceValue;
+import autosar3x.ecucdescription.IntegerValue;
+import autosar3x.ecucdescription.LinkerSymbolValue;
+import autosar3x.ecucdescription.ModuleConfiguration;
+import autosar3x.ecucdescription.ReferenceValue;
+import autosar3x.ecucdescription.StringValue;
+import autosar3x.ecucdescription.instanceref.InstanceReferenceValueValue;
+import autosar3x.ecucparameterdef.BooleanParamDef;
+import autosar3x.ecucparameterdef.ChoiceContainerDef;
+import autosar3x.ecucparameterdef.ChoiceReferenceParamDef;
+import autosar3x.ecucparameterdef.ConfigurationClassAffection;
+import autosar3x.ecucparameterdef.DerivedBooleanParamDef;
+import autosar3x.ecucparameterdef.DerivedEnumerationParamDef;
+import autosar3x.ecucparameterdef.DerivedFloatParamDef;
+import autosar3x.ecucparameterdef.DerivedIntegerParamDef;
+import autosar3x.ecucparameterdef.DerivedStringParamDef;
+import autosar3x.ecucparameterdef.EcuParameterDefinition;
+import autosar3x.ecucparameterdef.EcucparameterdefFactory;
+import autosar3x.ecucparameterdef.EnumerationLiteralDef;
+import autosar3x.ecucparameterdef.EnumerationParamDef;
+import autosar3x.ecucparameterdef.FloatParamDef;
+import autosar3x.ecucparameterdef.ForeignReferenceParamDef;
+import autosar3x.ecucparameterdef.FunctionNameDef;
+import autosar3x.ecucparameterdef.ImplementationConfigClass;
+import autosar3x.ecucparameterdef.InstanceReferenceParamDef;
+import autosar3x.ecucparameterdef.IntegerParamDef;
+import autosar3x.ecucparameterdef.LinkerSymbolDef;
+import autosar3x.ecucparameterdef.ModuleDef;
+import autosar3x.ecucparameterdef.ParamConfContainerDef;
+import autosar3x.ecucparameterdef.ReferenceParamDef;
+import autosar3x.ecucparameterdef.StringParamDef;
+import autosar3x.ecucparameterdef.SymbolicNameReferenceParamDef;
+import autosar3x.ecuresource.AssemblyHWConnection;
+import autosar3x.ecuresource.DelegationHWConnection;
+import autosar3x.ecuresource.ECU;
+import autosar3x.ecuresource.EcuresourceFactory;
+import autosar3x.ecuresource.HWContainer;
+import autosar3x.ecuresource.HWPin;
+import autosar3x.ecuresource.HWPort;
+import autosar3x.ecuresource.PinHWConnection;
+import autosar3x.ecuresource.SignalTransformation;
+import autosar3x.ecuresource.basicelements.BasicelementsFactory;
+import autosar3x.ecuresource.basicelements.BootTime;
+import autosar3x.ecuresource.basicelements.ElectricalRange;
+import autosar3x.ecuresource.basicelements.ErrorDetectionCorrection;
+import autosar3x.ecuresource.basicelements.FrequencyRange;
+import autosar3x.ecuresource.basicelements.SupportsSafety;
+import autosar3x.ecuresource.basicelements.SupportsSecurity;
+import autosar3x.ecuresource.basicelements.Temperature;
+import autosar3x.ecuresource.basicelements.TimeRange;
+import autosar3x.ecuresource.ecuelectronics.BusTermination;
+import autosar3x.ecuresource.ecuelectronics.Clock;
+import autosar3x.ecuresource.ecuelectronics.CommunicationTransceiver;
+import autosar3x.ecuresource.ecuelectronics.DiscreteECUElectronics;
+import autosar3x.ecuresource.ecuelectronics.EcuelectronicsFactory;
+import autosar3x.ecuresource.ecuelectronics.Oscillator;
+import autosar3x.ecuresource.ecuelectronics.PowerDriverHWElement;
+import autosar3x.ecuresource.ecuelectronics.PowerDriverHWPort;
+import autosar3x.ecuresource.ecuelectronics.PowerDriverNotification;
+import autosar3x.ecuresource.ecuelectronics.PowerDriverProtection;
+import autosar3x.ecuresource.ecuelectronics.PowerSupplyCurrentNotification;
+import autosar3x.ecuresource.ecuelectronics.PowerSupplyHWElement;
+import autosar3x.ecuresource.ecuelectronics.PowerSupplyHWPort;
+import autosar3x.ecuresource.ecuelectronics.PowerSupplyVoltageNotification;
+import autosar3x.ecuresource.memory.MemoryAccess;
+import autosar3x.ecuresource.memory.MemoryFactory;
+import autosar3x.ecuresource.memory.MemoryMappedAssemblyHWConnection;
+import autosar3x.ecuresource.memory.MemoryMappedDelegationHWConnection;
+import autosar3x.ecuresource.memory.MemoryMappedHWPort;
+import autosar3x.ecuresource.memory.ProvidedMemorySegment;
+import autosar3x.ecuresource.memory.ProvidedNVMemorySegment;
+import autosar3x.ecuresource.peripherals.ADC;
+import autosar3x.ecuresource.peripherals.Buffer;
+import autosar3x.ecuresource.peripherals.CCU;
+import autosar3x.ecuresource.peripherals.CommunicationFilter;
+import autosar3x.ecuresource.peripherals.CommunicationHWPort;
+import autosar3x.ecuresource.peripherals.CommunicationPeripheral;
+import autosar3x.ecuresource.peripherals.CommunicationPhysicalMedium;
+import autosar3x.ecuresource.peripherals.CommunicationProtocol;
+import autosar3x.ecuresource.peripherals.CommunicationSpeedFixed;
+import autosar3x.ecuresource.peripherals.CommunicationSpeedList;
+import autosar3x.ecuresource.peripherals.CommunicationSpeedRange;
+import autosar3x.ecuresource.peripherals.DAC;
+import autosar3x.ecuresource.peripherals.DigitalIO;
+import autosar3x.ecuresource.peripherals.ECUCommunicationPort;
+import autosar3x.ecuresource.peripherals.PWD;
+import autosar3x.ecuresource.peripherals.PWM;
+import autosar3x.ecuresource.peripherals.Peripheral;
+import autosar3x.ecuresource.peripherals.PeripheralHWPort;
+import autosar3x.ecuresource.peripherals.PeripheralsFactory;
+import autosar3x.ecuresource.peripherals.Timer;
+import autosar3x.ecuresource.peripherals.WatchDog;
+import autosar3x.ecuresource.processingunit.InterruptConsumeHWPort;
+import autosar3x.ecuresource.processingunit.InterruptProduceHWPort;
+import autosar3x.ecuresource.processingunit.MPU;
+import autosar3x.ecuresource.processingunit.ProcessingUnit;
+import autosar3x.ecuresource.processingunit.ProcessingunitFactory;
+import autosar3x.ecuresource.processingunit.Register;
+import autosar3x.ecuresource.processingunit.SupportedDataType;
+import autosar3x.ecuresource.sensoractuator.ActuatorHW;
+import autosar3x.ecuresource.sensoractuator.DisplayHW;
+import autosar3x.ecuresource.sensoractuator.SensorHW;
+import autosar3x.ecuresource.sensoractuator.SensoractuatorFactory;
+import autosar3x.genericstructure.commonpatterns.admindata.AdminData;
+import autosar3x.genericstructure.commonpatterns.admindata.AdmindataFactory;
+import autosar3x.genericstructure.commonpatterns.admindata.CompanyRevisionInfo;
+import autosar3x.genericstructure.commonpatterns.admindata.CompanySpecificInfo;
+import autosar3x.genericstructure.commonpatterns.admindata.DocRevision;
+import autosar3x.genericstructure.commonpatterns.admindata.Modification;
+import autosar3x.genericstructure.commonpatterns.annotation.Annotation;
+import autosar3x.genericstructure.commonpatterns.annotation.AnnotationFactory;
+import autosar3x.genericstructure.commonpatterns.annotation.Remark;
+import autosar3x.genericstructure.commonpatterns.documentationblock.DocumentationBlock;
+import autosar3x.genericstructure.commonpatterns.documentationblock.DocumentationblockFactory;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.Br;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.EType;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.Ft;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.Ie;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.InlinesFactory;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.Std;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.Tt;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.Url;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.Xdoc;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.Xfile;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.Xref;
+import autosar3x.genericstructure.commonpatterns.inlinetextmodel.inlines.XrefTarget;
+import autosar3x.genericstructure.commonpatterns.languagedatamodel.L1;
+import autosar3x.genericstructure.commonpatterns.languagedatamodel.L10;
+import autosar3x.genericstructure.commonpatterns.languagedatamodel.L2;
+import autosar3x.genericstructure.commonpatterns.languagedatamodel.L3;
+import autosar3x.genericstructure.commonpatterns.languagedatamodel.L4;
+import autosar3x.genericstructure.commonpatterns.languagedatamodel.L5;
+import autosar3x.genericstructure.commonpatterns.languagedatamodel.LanguagedatamodelFactory;
+import autosar3x.genericstructure.commonpatterns.languagedatamodel.MlGraphic;
+import autosar3x.genericstructure.commonpatterns.multilanguagedata.MlData1;
+import autosar3x.genericstructure.commonpatterns.multilanguagedata.MlData10;
+import autosar3x.genericstructure.commonpatterns.multilanguagedata.MlData2;
+import autosar3x.genericstructure.commonpatterns.multilanguagedata.MlData3;
+import autosar3x.genericstructure.commonpatterns.multilanguagedata.MlData3p;
+import autosar3x.genericstructure.commonpatterns.multilanguagedata.MlData4;
+import autosar3x.genericstructure.commonpatterns.multilanguagedata.MlData5;
+import autosar3x.genericstructure.commonpatterns.multilanguagedata.MultilanguagedataFactory;
+import autosar3x.genericstructure.commonpatterns.primitivetypes.BooleanContainer;
+import autosar3x.genericstructure.commonpatterns.primitivetypes.FloatContainer;
+import autosar3x.genericstructure.commonpatterns.primitivetypes.IntegerContainer;
+import autosar3x.genericstructure.commonpatterns.primitivetypes.PrimitivetypesFactory;
+import autosar3x.genericstructure.commonpatterns.primitivetypes.StringContainer;
+import autosar3x.genericstructure.commonpatterns.singlelanguagedata.SinglelanguagedataFactory;
+import autosar3x.genericstructure.commonpatterns.singlelanguagedata.SlData1;
+import autosar3x.genericstructure.commonpatterns.singlelanguagedata.SlData10;
+import autosar3x.genericstructure.commonpatterns.singlelanguagedata.SlData2;
+import autosar3x.genericstructure.commonpatterns.singlelanguagedata.SlData3;
+import autosar3x.genericstructure.commonpatterns.singlelanguagedata.SlData3p;
+import autosar3x.genericstructure.commonpatterns.singlelanguagedata.SlData4;
+import autosar3x.genericstructure.commonpatterns.singlelanguagedata.SlData5;
+import autosar3x.genericstructure.commonpatterns.specialdata.Sd;
+import autosar3x.genericstructure.commonpatterns.specialdata.Sdg;
+import autosar3x.genericstructure.commonpatterns.specialdata.SdgCaption;
+import autosar3x.genericstructure.commonpatterns.specialdata.SdgContents;
+import autosar3x.genericstructure.commonpatterns.specialdata.Sdx;
+import autosar3x.genericstructure.commonpatterns.specialdata.SpecialdataFactory;
+import autosar3x.genericstructure.infrastructure.autosar.ARPackage;
+import autosar3x.genericstructure.infrastructure.autosar.AUTOSAR;
+import autosar3x.genericstructure.infrastructure.autosar.AutosarFactory;
+import autosar3x.swcomponent.applicationattributes.ApplicationattributesFactory;
+import autosar3x.swcomponent.applicationattributes.CalibrationPortAnnotation;
+import autosar3x.swcomponent.applicationattributes.DelegatedPortAnnotation;
+import autosar3x.swcomponent.applicationattributes.IoHwAbstractionServerAnnotation;
+import autosar3x.swcomponent.applicationattributes.ReceiverAnnotation;
+import autosar3x.swcomponent.applicationattributes.ReportFeature;
+import autosar3x.swcomponent.applicationattributes.SenderAnnotation;
+import autosar3x.swcomponent.applicationattributes.WakeUp;
+import autosar3x.swcomponent.communication.ClientComSpec;
+import autosar3x.swcomponent.communication.CommunicationFactory;
+import autosar3x.swcomponent.communication.ModeSwitchComSpec;
+import autosar3x.swcomponent.communication.ModeSwitchedAckRequest;
+import autosar3x.swcomponent.communication.ParameterProvideComSpec;
+import autosar3x.swcomponent.communication.ParameterRequireComSpec;
+import autosar3x.swcomponent.communication.QueuedReceiverComSpec;
+import autosar3x.swcomponent.communication.QueuedSenderComSpec;
+import autosar3x.swcomponent.communication.ServerComSpec;
+import autosar3x.swcomponent.communication.TransmissionAcknowledgementRequest;
+import autosar3x.swcomponent.communication.UnqueuedReceiverComSpec;
+import autosar3x.swcomponent.communication.UnqueuedSenderComSpec;
+import autosar3x.swcomponent.components.ApplicationSoftwareComponentType;
+import autosar3x.swcomponent.components.CalprmComponentType;
+import autosar3x.swcomponent.components.ComplexDeviceDriverComponentType;
+import autosar3x.swcomponent.components.ComponentsFactory;
+import autosar3x.swcomponent.components.EcuAbstractionComponentType;
+import autosar3x.swcomponent.components.PPortPrototype;
+import autosar3x.swcomponent.components.PortGroup;
+import autosar3x.swcomponent.components.RPortPrototype;
+import autosar3x.swcomponent.components.SensorActuatorSoftwareComponentType;
+import autosar3x.swcomponent.components.ServiceComponentType;
+import autosar3x.swcomponent.components.instanceref.PortGroupInnerGroup;
+import autosar3x.swcomponent.composition.AssemblyConnectorPrototype;
+import autosar3x.swcomponent.composition.ComponentPrototype;
+import autosar3x.swcomponent.composition.CompositionFactory;
+import autosar3x.swcomponent.composition.CompositionType;
+import autosar3x.swcomponent.composition.DelegationConnectorPrototype;
+import autosar3x.swcomponent.composition.ServiceConnectorPrototype;
+import autosar3x.swcomponent.composition.instanceref.AssemblyConnectorPrototypeProvider;
+import autosar3x.swcomponent.composition.instanceref.AssemblyConnectorPrototypeRequester;
+import autosar3x.swcomponent.composition.instanceref.DelegationConnectorPrototypeInnerPort;
+import autosar3x.swcomponent.composition.instanceref.ServiceConnectorPrototypeApplicationPort;
+import autosar3x.swcomponent.composition.instanceref.ServiceConnectorPrototypeServicePort;
+import autosar3x.swcomponent.datatype.computationmethod.Compu;
+import autosar3x.swcomponent.datatype.computationmethod.CompuConst;
+import autosar3x.swcomponent.datatype.computationmethod.CompuConstFormulaContent;
+import autosar3x.swcomponent.datatype.computationmethod.CompuConstNumericContent;
+import autosar3x.swcomponent.datatype.computationmethod.CompuConstTextContent;
+import autosar3x.swcomponent.datatype.computationmethod.CompuGenericMath;
+import autosar3x.swcomponent.datatype.computationmethod.CompuMethod;
+import autosar3x.swcomponent.datatype.computationmethod.CompuNominatorDenominator;
+import autosar3x.swcomponent.datatype.computationmethod.CompuProgCode;
+import autosar3x.swcomponent.datatype.computationmethod.CompuRationalCoeffs;
+import autosar3x.swcomponent.datatype.computationmethod.CompuScale;
+import autosar3x.swcomponent.datatype.computationmethod.CompuScaleConstantContents;
+import autosar3x.swcomponent.datatype.computationmethod.CompuScaleGenericMath;
+import autosar3x.swcomponent.datatype.computationmethod.CompuScaleRationalFormula;
+import autosar3x.swcomponent.datatype.computationmethod.CompuScales;
+import autosar3x.swcomponent.datatype.computationmethod.ComputationmethodFactory;
+import autosar3x.swcomponent.datatype.computationmethod.ProgCode;
+import autosar3x.swcomponent.datatype.constants.ArraySpecification;
+import autosar3x.swcomponent.datatype.constants.BooleanLiteral;
+import autosar3x.swcomponent.datatype.constants.CharLiteral;
+import autosar3x.swcomponent.datatype.constants.ConstantReference;
+import autosar3x.swcomponent.datatype.constants.ConstantSpecification;
+import autosar3x.swcomponent.datatype.constants.ConstantsFactory;
+import autosar3x.swcomponent.datatype.constants.IntegerLiteral;
+import autosar3x.swcomponent.datatype.constants.OpaqueLiteral;
+import autosar3x.swcomponent.datatype.constants.RealLiteral;
+import autosar3x.swcomponent.datatype.constants.RecordSpecification;
+import autosar3x.swcomponent.datatype.constants.StringLiteral;
+import autosar3x.swcomponent.datatype.datatypes.ARLimit;
+import autosar3x.swcomponent.datatype.datatypes.ArrayElement;
+import autosar3x.swcomponent.datatype.datatypes.ArrayType;
+import autosar3x.swcomponent.datatype.datatypes.BooleanType;
+import autosar3x.swcomponent.datatype.datatypes.CharType;
+import autosar3x.swcomponent.datatype.datatypes.DatatypesFactory;
+import autosar3x.swcomponent.datatype.datatypes.IntegerType;
+import autosar3x.swcomponent.datatype.datatypes.OpaqueType;
+import autosar3x.swcomponent.datatype.datatypes.RealType;
+import autosar3x.swcomponent.datatype.datatypes.RecordElement;
+import autosar3x.swcomponent.datatype.datatypes.RecordType;
+import autosar3x.swcomponent.datatype.datatypes.StringType;
+import autosar3x.swcomponent.datatype.localconstraints.Limit;
+import autosar3x.swcomponent.datatype.localconstraints.LocalconstraintsFactory;
+import autosar3x.swcomponent.datatype.units.DisplayName;
+import autosar3x.swcomponent.datatype.units.PhysicalDimension;
+import autosar3x.swcomponent.datatype.units.Unit;
+import autosar3x.swcomponent.datatype.units.UnitGroup;
+import autosar3x.swcomponent.datatype.units.UnitSpec;
+import autosar3x.swcomponent.datatype.units.UnitsFactory;
+import autosar3x.swcomponent.datatype.valuemodel.V;
+import autosar3x.swcomponent.datatype.valuemodel.ValuemodelFactory;
+import autosar3x.swcomponent.datatype.valuemodel.Vf;
+import autosar3x.swcomponent.datatype.valuemodel.Vt;
+import autosar3x.swcomponent.endtoendprotection.EndToEndDescription;
+import autosar3x.swcomponent.endtoendprotection.EndToEndProtection;
+import autosar3x.swcomponent.endtoendprotection.EndToEndProtectionDataElementPrototype;
+import autosar3x.swcomponent.endtoendprotection.EndToEndProtectionDataElementPrototype_dataElement;
+import autosar3x.swcomponent.endtoendprotection.EndToEndProtectionSet;
+import autosar3x.swcomponent.measurementandcalibration.characteristic.ArCalprmRef;
+import autosar3x.swcomponent.measurementandcalibration.characteristic.CalprmAccess;
+import autosar3x.swcomponent.measurementandcalibration.characteristic.CalprmElementPrototype;
+import autosar3x.swcomponent.measurementandcalibration.characteristic.CalprmInterface;
+import autosar3x.swcomponent.measurementandcalibration.characteristic.CharacteristicFactory;
+import autosar3x.swcomponent.measurementandcalibration.characteristic.instanceref.ArCalprmRefCalprmElementPrototype;
+import autosar3x.swcomponent.measurementandcalibration.characteristic.instanceref.CalprmAccessCalprmElementPrototype;
+import autosar3x.swcomponent.measurementandcalibration.measurementproperty.DataPrototypeRef;
+import autosar3x.swcomponent.measurementandcalibration.measurementproperty.MeasurementpropertyFactory;
+import autosar3x.swcomponent.measurementandcalibration.measurementproperty.RecordElementRef;
+import autosar3x.swcomponent.measurementandcalibration.measurementproperty.instanceref.DataPrototypeRefDataPrototype;
+import autosar3x.swcomponent.measurementandcalibration.measurementproperty.instanceref.RecordElementRefRecordElement;
+import autosar3x.swcomponent.modedeclaration.ModeDeclaration;
+import autosar3x.swcomponent.modedeclaration.ModeDeclarationGroup;
+import autosar3x.swcomponent.modedeclaration.ModeDisablingDependency;
+import autosar3x.swcomponent.modedeclaration.ModedeclarationFactory;
+import autosar3x.swcomponent.modedeclaration.instanceref.ModeDisablingDependencyDependentOnMode;
+import autosar3x.swcomponent.portinterface.ApplicationError;
+import autosar3x.swcomponent.portinterface.ArgumentPrototype;
+import autosar3x.swcomponent.portinterface.ClientServerInterface;
+import autosar3x.swcomponent.portinterface.DataElementPrototype;
+import autosar3x.swcomponent.portinterface.ModeDeclarationGroupPrototype;
+import autosar3x.swcomponent.portinterface.OperationPrototype;
+import autosar3x.swcomponent.portinterface.PortinterfaceFactory;
+import autosar3x.swcomponent.portinterface.SenderReceiverInterface;
+import autosar3x.swcomponent.services.EcuSwComposition;
+import autosar3x.swcomponent.services.ServiceComponentPrototype;
+import autosar3x.swcomponent.services.ServicesFactory;
+import autosar3x.swcomponent.swcimplementation.PerInstanceMemorySize;
+import autosar3x.swcomponent.swcimplementation.SwcImplementation;
+import autosar3x.swcomponent.swcimplementation.SwcimplementationFactory;
+import autosar3x.swcomponent.swcinternalbehavior.InternalBehavior;
+import autosar3x.swcomponent.swcinternalbehavior.RunnableEntity;
+import autosar3x.swcomponent.swcinternalbehavior.SwcinternalbehaviorFactory;
+import autosar3x.swcomponent.swcinternalbehavior.componentlocalcalprm.ComponentlocalcalprmFactory;
+import autosar3x.swcomponent.swcinternalbehavior.componentlocalcalprm.LocalParameterInitValueAssignment;
+import autosar3x.swcomponent.swcinternalbehavior.dataelements.DataReadAccess;
+import autosar3x.swcomponent.swcinternalbehavior.dataelements.DataReceivePoint;
+import autosar3x.swcomponent.swcinternalbehavior.dataelements.DataSendPoint;
+import autosar3x.swcomponent.swcinternalbehavior.dataelements.DataWriteAccess;
+import autosar3x.swcomponent.swcinternalbehavior.dataelements.DataelementsFactory;
+import autosar3x.swcomponent.swcinternalbehavior.dataelements.instanceref.DataReadAccessDataElement;
+import autosar3x.swcomponent.swcinternalbehavior.dataelements.instanceref.DataReceivePointDataElement;
+import autosar3x.swcomponent.swcinternalbehavior.dataelements.instanceref.DataSendPointDataElement;
+import autosar3x.swcomponent.swcinternalbehavior.dataelements.instanceref.DataWriteAccessDataElement;
+import autosar3x.swcomponent.swcinternalbehavior.interrunnablecommunication.InterRunnableVariable;
+import autosar3x.swcomponent.swcinternalbehavior.interrunnablecommunication.InterrunnablecommunicationFactory;
+import autosar3x.swcomponent.swcinternalbehavior.modedeclarationgroup.ModeSwitchPoint;
+import autosar3x.swcomponent.swcinternalbehavior.modedeclarationgroup.ModedeclarationgroupFactory;
+import autosar3x.swcomponent.swcinternalbehavior.modedeclarationgroup.instanceref.ModeSwitchPointModeGroup;
+import autosar3x.swcomponent.swcinternalbehavior.perinstancememory.PerInstanceMemory;
+import autosar3x.swcomponent.swcinternalbehavior.perinstancememory.PerinstancememoryFactory;
+import autosar3x.swcomponent.swcinternalbehavior.portapioptions.PortAPIOption;
+import autosar3x.swcomponent.swcinternalbehavior.portapioptions.PortapioptionsFactory;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.AsynchronousServerCallReturnsEvent;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.DataReceiveErrorEvent;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.DataReceivedEvent;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.DataSendCompletedEvent;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.ModeSwitchEvent;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.ModeSwitchedAckEvent;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.OperationInvokedEvent;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.RteeventsFactory;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.TimingEvent;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.WaitPoint;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.instanceref.DataReceiveErrorEventData;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.instanceref.DataReceivedEventData;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.instanceref.ModeSwitchEventMode;
+import autosar3x.swcomponent.swcinternalbehavior.rteevents.instanceref.OperationInvokedEventOperation;
+import autosar3x.swcomponent.swcinternalbehavior.servercall.AsynchronousServerCallPoint;
+import autosar3x.swcomponent.swcinternalbehavior.servercall.ServercallFactory;
+import autosar3x.swcomponent.swcinternalbehavior.servercall.SynchronousServerCallPoint;
+import autosar3x.swcomponent.swcinternalbehavior.servercall.instanceref.InstancerefFactory;
+import autosar3x.swcomponent.swcinternalbehavior.servercall.instanceref.ServerCallPointOperation;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.RoleBasedPPortAssignment;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.RoleBasedRPortAssignment;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.ServicemappingFactory;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcComMgrUserNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcDiagnosticCommunicationNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcDiagnosticEventNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcEcuStateMgrUserNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcFunctionInhibitionNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcNvBlockNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcObdControlServiceNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcObdInfoServiceNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcObdMonitorServiceNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcObdPidServiceNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcObdRatioServiceNeeds;
+import autosar3x.swcomponent.swcinternalbehavior.servicemapping.SwcSupervisedEntityNeeds;
+import autosar3x.system.SoftwareComposition;
+import autosar3x.system.System;
+import autosar3x.system.SystemFactory;
+import autosar3x.system.SystemMapping;
+import autosar3x.system.datamapping.ApplicationErrorMapping;
+import autosar3x.system.datamapping.ClientIdMapping;
+import autosar3x.system.datamapping.ClientServerArrayElementMapping;
+import autosar3x.system.datamapping.ClientServerArrayTypeMapping;
+import autosar3x.system.datamapping.ClientServerPrimitiveTypeMapping;
+import autosar3x.system.datamapping.ClientServerRecordElementMapping;
+import autosar3x.system.datamapping.ClientServerRecordTypeMapping;
+import autosar3x.system.datamapping.ClientServerToSignalGroupMapping;
+import autosar3x.system.datamapping.DatamappingFactory;
+import autosar3x.system.datamapping.EmptySignalMapping;
+import autosar3x.system.datamapping.IndexedArrayElement;
+import autosar3x.system.datamapping.SenderRecArrayElementMapping;
+import autosar3x.system.datamapping.SenderRecArrayTypeMapping;
+import autosar3x.system.datamapping.SenderRecRecordElementMapping;
+import autosar3x.system.datamapping.SenderRecRecordTypeMapping;
+import autosar3x.system.datamapping.SenderReceiverToSignalGroupMapping;
+import autosar3x.system.datamapping.SenderReceiverToSignalMapping;
+import autosar3x.system.datamapping.SequenceCounterMapping;
+import autosar3x.system.datamapping.instanceref.ClientServerToSignalGroupMappingMappedOperation;
+import autosar3x.system.datamapping.instanceref.SenderReceiverToSignalGroupMappingDataElement;
+import autosar3x.system.datamapping.instanceref.SenderReceiverToSignalMappingDataElement;
+import autosar3x.system.ecuresourcemapping.CommunicationControllerMapping;
+import autosar3x.system.ecuresourcemapping.ECUMapping;
+import autosar3x.system.ecuresourcemapping.EcuresourcemappingFactory;
+import autosar3x.system.ecuresourcemapping.HWPortMapping;
+import autosar3x.system.endtoendprotection.EndToEndProtectionISignalIPdu;
+import autosar3x.system.endtoendprotection.EndtoendprotectionFactory;
+import autosar3x.system.fibex.fibex4can.cancommunication.CanFrameTriggering;
+import autosar3x.system.fibex.fibex4can.cancommunication.CancommunicationFactory;
+import autosar3x.system.fibex.fibex4can.cancommunication.RxIdentifierRange;
+import autosar3x.system.fibex.fibex4can.cantopology.CanCluster;
+import autosar3x.system.fibex.fibex4can.cantopology.CanCommunicationConnector;
+import autosar3x.system.fibex.fibex4can.cantopology.CanCommunicationController;
+import autosar3x.system.fibex.fibex4can.cantopology.CanControllerConfiguration;
+import autosar3x.system.fibex.fibex4can.cantopology.CanControllerConfigurationRequirements;
+import autosar3x.system.fibex.fibex4can.cantopology.CantopologyFactory;
+import autosar3x.system.fibex.fibex4flexray.CycleCounter;
+import autosar3x.system.fibex.fibex4flexray.CycleRepetition;
+import autosar3x.system.fibex.fibex4flexray.Fibex4flexrayFactory;
+import autosar3x.system.fibex.fibex4flexray.flexraycommunication.AbsolutelyScheduledTiming;
+import autosar3x.system.fibex.fibex4flexray.flexraycommunication.FlexrayFrameTriggering;
+import autosar3x.system.fibex.fibex4flexray.flexraycommunication.FlexraycommunicationFactory;
+import autosar3x.system.fibex.fibex4flexray.flexraytopology.FlexRayCommunicationConnector;
+import autosar3x.system.fibex.fibex4flexray.flexraytopology.FlexrayCluster;
+import autosar3x.system.fibex.fibex4flexray.flexraytopology.FlexrayCommunicationController;
+import autosar3x.system.fibex.fibex4flexray.flexraytopology.FlexrayFifoConfiguration;
+import autosar3x.system.fibex.fibex4flexray.flexraytopology.FlexrayFifoRange;
+import autosar3x.system.fibex.fibex4flexray.flexraytopology.FlexrayPhysicalChannel;
+import autosar3x.system.fibex.fibex4flexray.flexraytopology.FlexraytopologyFactory;
+import autosar3x.system.fibex.fibex4lin.lincommunication.AssignFrameIdTiming;
+import autosar3x.system.fibex.fibex4lin.lincommunication.AssignNadTiming;
+import autosar3x.system.fibex.fibex4lin.lincommunication.DataTiming;
+import autosar3x.system.fibex.fibex4lin.lincommunication.FreeFormat;
+import autosar3x.system.fibex.fibex4lin.lincommunication.LinErrorResponse;
+import autosar3x.system.fibex.fibex4lin.lincommunication.LinFrameTriggering;
+import autosar3x.system.fibex.fibex4lin.lincommunication.LinScheduleTable;
+import autosar3x.system.fibex.fibex4lin.lincommunication.LincommunicationFactory;
+import autosar3x.system.fibex.fibex4lin.lincommunication.RelativelyScheduledTiming;
+import autosar3x.system.fibex.fibex4lin.lincommunication.SubstitutionFrame;
+import autosar3x.system.fibex.fibex4lin.lincommunication.UnassignFrameIdTiming;
+import autosar3x.system.fibex.fibex4lin.lintopology.LinCluster;
+import autosar3x.system.fibex.fibex4lin.lintopology.LinMaster;
+import autosar3x.system.fibex.fibex4lin.lintopology.LinSlave;
+import autosar3x.system.fibex.fibex4lin.lintopology.LintopologyFactory;
+import autosar3x.system.fibex.fibex4multiplatform.DefaultValueElement;
+import autosar3x.system.fibex.fibex4multiplatform.Fibex4multiplatformFactory;
+import autosar3x.system.fibex.fibex4multiplatform.FrameMapping;
+import autosar3x.system.fibex.fibex4multiplatform.Gateway;
+import autosar3x.system.fibex.fibex4multiplatform.IPduMapping;
+import autosar3x.system.fibex.fibex4multiplatform.PduMappingDefaultValue;
+import autosar3x.system.fibex.fibex4multiplatform.SignalMapping;
+import autosar3x.system.fibex.fibex4multiplatform.SourceIPduRef;
+import autosar3x.system.fibex.fibex4multiplatform.TargetIPduRef;
+import autosar3x.system.fibex.fibexcore.corecommunication.CorecommunicationFactory;
+import autosar3x.system.fibex.fibexcore.corecommunication.DcmIPdu;
+import autosar3x.system.fibex.fibexcore.corecommunication.DynamicPart;
+import autosar3x.system.fibex.fibexcore.corecommunication.DynamicPartAlternative;
+import autosar3x.system.fibex.fibexcore.corecommunication.Frame;
+import autosar3x.system.fibex.fibexcore.corecommunication.FramePort;
+import autosar3x.system.fibex.fibexcore.corecommunication.IPduGroup;
+import autosar3x.system.fibex.fibexcore.corecommunication.IPduPort;
+import autosar3x.system.fibex.fibexcore.corecommunication.IPduTiming;
+import autosar3x.system.fibex.fibexcore.corecommunication.IPduTriggering;
+import autosar3x.system.fibex.fibexcore.corecommunication.ISignal;
+import autosar3x.system.fibex.fibexcore.corecommunication.ISignalToIPduMapping;
+import autosar3x.system.fibex.fibexcore.corecommunication.ISignalTriggering;
+import autosar3x.system.fibex.fibexcore.corecommunication.MultiplexedIPdu;
+import autosar3x.system.fibex.fibexcore.corecommunication.NPdu;
+import autosar3x.system.fibex.fibexcore.corecommunication.NmPdu;
+import autosar3x.system.fibex.fibexcore.corecommunication.PduToFrameMapping;
+import autosar3x.system.fibex.fibexcore.corecommunication.PdurIPduGroup;
+import autosar3x.system.fibex.fibexcore.corecommunication.SegmentPosition;
+import autosar3x.system.fibex.fibexcore.corecommunication.SignalIPdu;
+import autosar3x.system.fibex.fibexcore.corecommunication.SignalPort;
+import autosar3x.system.fibex.fibexcore.corecommunication.StaticPart;
+import autosar3x.system.fibex.fibexcore.corecommunication.SystemSignal;
+import autosar3x.system.fibex.fibexcore.corecommunication.SystemSignalGroup;
+import autosar3x.system.fibex.fibexcore.corecommunication.UserDefinedIPdu;
+import autosar3x.system.fibex.fibexcore.corecommunication.UserDefinedPdu;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.AbsoluteTolerance;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.CyclicTiming;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.EventControlledTiming;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.RelativeTolerance;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.RequestControlledTiming;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.TimeRangeType;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.TimingFactory;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.TransmissionModeCondition;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.TransmissionModeDeclaration;
+import autosar3x.system.fibex.fibexcore.corecommunication.timing.TransmissionModeFalseTiming;
+import autosar3x.system.fibex.fibexcore.coretopology.CommunicationCluster;
+import autosar3x.system.fibex.fibexcore.coretopology.CommunicationConnector;
+import autosar3x.system.fibex.fibexcore.coretopology.CommunicationController;
+import autosar3x.system.fibex.fibexcore.coretopology.CoretopologyFactory;
+import autosar3x.system.fibex.fibexcore.coretopology.EcuInstance;
+import autosar3x.system.fibex.fibexcore.coretopology.PhysicalChannel;
+import autosar3x.system.signalpaths.CommonSignalPath;
+import autosar3x.system.signalpaths.ForbiddenSignalPath;
+import autosar3x.system.signalpaths.PermissibleSignalPath;
+import autosar3x.system.signalpaths.SeparateSignalPath;
+import autosar3x.system.signalpaths.SignalpathsFactory;
+import autosar3x.system.signalpaths.SwcToSwcOperationArguments;
+import autosar3x.system.signalpaths.SwcToSwcSignal;
+import autosar3x.system.signalpaths.instanceref.SwcToSwcOperationArgumentsOperation;
+import autosar3x.system.signalpaths.instanceref.SwcToSwcSignalDataElement;
+import autosar3x.system.swmapping.ComponentClustering;
+import autosar3x.system.swmapping.ComponentSeparation;
+import autosar3x.system.swmapping.EcuResourceEstimation;
+import autosar3x.system.swmapping.PncMapping;
+import autosar3x.system.swmapping.SwcToEcuMapping;
+import autosar3x.system.swmapping.SwcToEcuMappingConstraint;
+import autosar3x.system.swmapping.SwcToImplMapping;
+import autosar3x.system.swmapping.SwmappingFactory;
+import autosar3x.system.swmapping.instanceref.ComponentClusteringClusteredComponent;
+import autosar3x.system.swmapping.instanceref.ComponentSeparationSeparatedComponent;
+import autosar3x.system.swmapping.instanceref.PncMappingVfc;
+import autosar3x.system.swmapping.instanceref.SwCompToEcuMappingComponent;
+import autosar3x.system.swmapping.instanceref.SwCompToImplMappingComponent;
+import autosar3x.system.swmapping.instanceref.SwcToEcuMappingConstraintComponent;
+import autosar3x.system.transportprotocols.CanTpConnectionChannel;
+import autosar3x.system.transportprotocols.CanTpNode;
+import autosar3x.system.transportprotocols.FlexRayTpConnection;
+import autosar3x.system.transportprotocols.FlexrayIsoTpConnection;
+import autosar3x.system.transportprotocols.FlexrayIsoTpConnectionControl;
+import autosar3x.system.transportprotocols.FlexrayIsoTpEcu;
+import autosar3x.system.transportprotocols.FlexrayIsoTpNode;
+import autosar3x.system.transportprotocols.FlexrayIsoTpPduPool;
+import autosar3x.system.transportprotocols.FlexrayTpChannel;
+import autosar3x.system.transportprotocols.FlexrayTpNode;
+import autosar3x.system.transportprotocols.LinTpChannel;
+import autosar3x.system.transportprotocols.LinTpNode;
+import autosar3x.system.transportprotocols.TpAddress;
+import autosar3x.system.transportprotocols.TransportprotocolsFactory;
+import autosar3x.util.Autosar3xPackage;
+import java.util.UUID;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+public class Autosar3xFactory
+extends EFactoryImpl
+implements EFactory {
+    public static final Autosar3xFactory eINSTANCE = new Autosar3xFactory();
+
+    public EPackage getEPackage() {
+        if (this.ePackage == null) {
+            this.ePackage = Autosar3xPackage.eINSTANCE;
+        }
+        return this.ePackage;
+    }
+
+    public EObject create(EClass eClass) {
+        EObject result = null;
+        if (eClass.eContainer() instanceof EPackage) {
+            result = ((EPackage)eClass.eContainer()).getEFactoryInstance().create(eClass);
+        }
+        return result;
+    }
+
+    public AssemblyHWConnection createAssemblyHWConnection() {
+        AssemblyHWConnection assemblyHWConnection = EcuresourceFactory.eINSTANCE.createAssemblyHWConnection();
+        assemblyHWConnection.setUuid(UUID.randomUUID().toString());
+        return assemblyHWConnection;
+    }
+
+    public PinHWConnection createPinHWConnection() {
+        return EcuresourceFactory.eINSTANCE.createPinHWConnection();
+    }
+
+    public HWPin createHWPin() {
+        HWPin hWPin = EcuresourceFactory.eINSTANCE.createHWPin();
+        hWPin.setUuid(UUID.randomUUID().toString());
+        return hWPin;
+    }
+
+    public HWPort createHWPort() {
+        HWPort hWPort = EcuresourceFactory.eINSTANCE.createHWPort();
+        hWPort.setUuid(UUID.randomUUID().toString());
+        return hWPort;
+    }
+
+    public DelegationHWConnection createDelegationHWConnection() {
+        DelegationHWConnection delegationHWConnection = EcuresourceFactory.eINSTANCE.createDelegationHWConnection();
+        delegationHWConnection.setUuid(UUID.randomUUID().toString());
+        return delegationHWConnection;
+    }
+
+    public ECU createECU() {
+        ECU eCU = EcuresourceFactory.eINSTANCE.createECU();
+        eCU.setUuid(UUID.randomUUID().toString());
+        return eCU;
+    }
+
+    public HWContainer createHWContainer() {
+        HWContainer hWContainer = EcuresourceFactory.eINSTANCE.createHWContainer();
+        hWContainer.setUuid(UUID.randomUUID().toString());
+        return hWContainer;
+    }
+
+    public SignalTransformation createSignalTransformation() {
+        return EcuresourceFactory.eINSTANCE.createSignalTransformation();
+    }
+
+    public Buffer createBuffer() {
+        return PeripheralsFactory.eINSTANCE.createBuffer();
+    }
+
+    public CCU createCCU() {
+        CCU cCU = PeripheralsFactory.eINSTANCE.createCCU();
+        cCU.setUuid(UUID.randomUUID().toString());
+        return cCU;
+    }
+
+    public Peripheral createPeripheral() {
+        Peripheral peripheral = PeripheralsFactory.eINSTANCE.createPeripheral();
+        peripheral.setUuid(UUID.randomUUID().toString());
+        return peripheral;
+    }
+
+    public CommunicationFilter createCommunicationFilter() {
+        return PeripheralsFactory.eINSTANCE.createCommunicationFilter();
+    }
+
+    public CommunicationHWPort createCommunicationHWPort() {
+        CommunicationHWPort communicationHWPort = PeripheralsFactory.eINSTANCE.createCommunicationHWPort();
+        communicationHWPort.setUuid(UUID.randomUUID().toString());
+        return communicationHWPort;
+    }
+
+    public PeripheralHWPort createPeripheralHWPort() {
+        PeripheralHWPort peripheralHWPort = PeripheralsFactory.eINSTANCE.createPeripheralHWPort();
+        peripheralHWPort.setUuid(UUID.randomUUID().toString());
+        return peripheralHWPort;
+    }
+
+    public CommunicationPhysicalMedium createCommunicationPhysicalMedium() {
+        return PeripheralsFactory.eINSTANCE.createCommunicationPhysicalMedium();
+    }
+
+    public CommunicationPeripheral createCommunicationPeripheral() {
+        CommunicationPeripheral communicationPeripheral = PeripheralsFactory.eINSTANCE.createCommunicationPeripheral();
+        communicationPeripheral.setUuid(UUID.randomUUID().toString());
+        return communicationPeripheral;
+    }
+
+    public CommunicationProtocol createCommunicationProtocol() {
+        CommunicationProtocol communicationProtocol = PeripheralsFactory.eINSTANCE.createCommunicationProtocol();
+        communicationProtocol.setUuid(UUID.randomUUID().toString());
+        return communicationProtocol;
+    }
+
+    public CommunicationSpeedFixed createCommunicationSpeedFixed() {
+        return PeripheralsFactory.eINSTANCE.createCommunicationSpeedFixed();
+    }
+
+    public CommunicationSpeedList createCommunicationSpeedList() {
+        return PeripheralsFactory.eINSTANCE.createCommunicationSpeedList();
+    }
+
+    public CommunicationSpeedRange createCommunicationSpeedRange() {
+        return PeripheralsFactory.eINSTANCE.createCommunicationSpeedRange();
+    }
+
+    public ECUCommunicationPort createECUCommunicationPort() {
+        ECUCommunicationPort eCUCommunicationPort = PeripheralsFactory.eINSTANCE.createECUCommunicationPort();
+        eCUCommunicationPort.setUuid(UUID.randomUUID().toString());
+        return eCUCommunicationPort;
+    }
+
+    public Timer createTimer() {
+        Timer timer = PeripheralsFactory.eINSTANCE.createTimer();
+        timer.setUuid(UUID.randomUUID().toString());
+        return timer;
+    }
+
+    public WatchDog createWatchDog() {
+        WatchDog watchDog = PeripheralsFactory.eINSTANCE.createWatchDog();
+        watchDog.setUuid(UUID.randomUUID().toString());
+        return watchDog;
+    }
+
+    public ADC createADC() {
+        ADC aDC = PeripheralsFactory.eINSTANCE.createADC();
+        aDC.setUuid(UUID.randomUUID().toString());
+        return aDC;
+    }
+
+    public DAC createDAC() {
+        DAC dAC = PeripheralsFactory.eINSTANCE.createDAC();
+        dAC.setUuid(UUID.randomUUID().toString());
+        return dAC;
+    }
+
+    public DigitalIO createDigitalIO() {
+        DigitalIO digitalIO = PeripheralsFactory.eINSTANCE.createDigitalIO();
+        digitalIO.setUuid(UUID.randomUUID().toString());
+        return digitalIO;
+    }
+
+    public PWD createPWD() {
+        PWD pWD = PeripheralsFactory.eINSTANCE.createPWD();
+        pWD.setUuid(UUID.randomUUID().toString());
+        return pWD;
+    }
+
+    public PWM createPWM() {
+        PWM pWM = PeripheralsFactory.eINSTANCE.createPWM();
+        pWM.setUuid(UUID.randomUUID().toString());
+        return pWM;
+    }
+
+    public BusTermination createBusTermination() {
+        return EcuelectronicsFactory.eINSTANCE.createBusTermination();
+    }
+
+    public Clock createClock() {
+        Clock clock = EcuelectronicsFactory.eINSTANCE.createClock();
+        clock.setUuid(UUID.randomUUID().toString());
+        return clock;
+    }
+
+    public CommunicationTransceiver createCommunicationTransceiver() {
+        CommunicationTransceiver communicationTransceiver = EcuelectronicsFactory.eINSTANCE.createCommunicationTransceiver();
+        communicationTransceiver.setUuid(UUID.randomUUID().toString());
+        return communicationTransceiver;
+    }
+
+    public DiscreteECUElectronics createDiscreteECUElectronics() {
+        DiscreteECUElectronics discreteECUElectronics = EcuelectronicsFactory.eINSTANCE.createDiscreteECUElectronics();
+        discreteECUElectronics.setUuid(UUID.randomUUID().toString());
+        return discreteECUElectronics;
+    }
+
+    public PowerDriverHWElement createPowerDriverHWElement() {
+        PowerDriverHWElement powerDriverHWElement = EcuelectronicsFactory.eINSTANCE.createPowerDriverHWElement();
+        powerDriverHWElement.setUuid(UUID.randomUUID().toString());
+        return powerDriverHWElement;
+    }
+
+    public PowerDriverNotification createPowerDriverNotification() {
+        return EcuelectronicsFactory.eINSTANCE.createPowerDriverNotification();
+    }
+
+    public PowerDriverProtection createPowerDriverProtection() {
+        return EcuelectronicsFactory.eINSTANCE.createPowerDriverProtection();
+    }
+
+    public PowerDriverHWPort createPowerDriverHWPort() {
+        PowerDriverHWPort powerDriverHWPort = EcuelectronicsFactory.eINSTANCE.createPowerDriverHWPort();
+        powerDriverHWPort.setUuid(UUID.randomUUID().toString());
+        return powerDriverHWPort;
+    }
+
+    public PowerSupplyCurrentNotification createPowerSupplyCurrentNotification() {
+        return EcuelectronicsFactory.eINSTANCE.createPowerSupplyCurrentNotification();
+    }
+
+    public PowerSupplyHWElement createPowerSupplyHWElement() {
+        PowerSupplyHWElement powerSupplyHWElement = EcuelectronicsFactory.eINSTANCE.createPowerSupplyHWElement();
+        powerSupplyHWElement.setUuid(UUID.randomUUID().toString());
+        return powerSupplyHWElement;
+    }
+
+    public PowerSupplyVoltageNotification createPowerSupplyVoltageNotification() {
+        return EcuelectronicsFactory.eINSTANCE.createPowerSupplyVoltageNotification();
+    }
+
+    public PowerSupplyHWPort createPowerSupplyHWPort() {
+        PowerSupplyHWPort powerSupplyHWPort = EcuelectronicsFactory.eINSTANCE.createPowerSupplyHWPort();
+        powerSupplyHWPort.setUuid(UUID.randomUUID().toString());
+        return powerSupplyHWPort;
+    }
+
+    public Oscillator createOscillator() {
+        Oscillator oscillator = EcuelectronicsFactory.eINSTANCE.createOscillator();
+        oscillator.setUuid(UUID.randomUUID().toString());
+        return oscillator;
+    }
+
+    public InterruptConsumeHWPort createInterruptConsumeHWPort() {
+        InterruptConsumeHWPort interruptConsumeHWPort = ProcessingunitFactory.eINSTANCE.createInterruptConsumeHWPort();
+        interruptConsumeHWPort.setUuid(UUID.randomUUID().toString());
+        return interruptConsumeHWPort;
+    }
+
+    public InterruptProduceHWPort createInterruptProduceHWPort() {
+        InterruptProduceHWPort interruptProduceHWPort = ProcessingunitFactory.eINSTANCE.createInterruptProduceHWPort();
+        interruptProduceHWPort.setUuid(UUID.randomUUID().toString());
+        return interruptProduceHWPort;
+    }
+
+    public MPU createMPU() {
+        return ProcessingunitFactory.eINSTANCE.createMPU();
+    }
+
+    public ProcessingUnit createProcessingUnit() {
+        ProcessingUnit processingUnit = ProcessingunitFactory.eINSTANCE.createProcessingUnit();
+        processingUnit.setUuid(UUID.randomUUID().toString());
+        return processingUnit;
+    }
+
+    public Register createRegister() {
+        return ProcessingunitFactory.eINSTANCE.createRegister();
+    }
+
+    public SupportedDataType createSupportedDataType() {
+        SupportedDataType supportedDataType = ProcessingunitFactory.eINSTANCE.createSupportedDataType();
+        supportedDataType.setUuid(UUID.randomUUID().toString());
+        return supportedDataType;
+    }
+
+    public MemoryAccess createMemoryAccess() {
+        return MemoryFactory.eINSTANCE.createMemoryAccess();
+    }
+
+    public MemoryMappedAssemblyHWConnection createMemoryMappedAssemblyHWConnection() {
+        MemoryMappedAssemblyHWConnection memoryMappedAssemblyHWConnection = MemoryFactory.eINSTANCE.createMemoryMappedAssemblyHWConnection();
+        memoryMappedAssemblyHWConnection.setUuid(UUID.randomUUID().toString());
+        return memoryMappedAssemblyHWConnection;
+    }
+
+    public MemoryMappedDelegationHWConnection createMemoryMappedDelegationHWConnection() {
+        MemoryMappedDelegationHWConnection memoryMappedDelegationHWConnection = MemoryFactory.eINSTANCE.createMemoryMappedDelegationHWConnection();
+        memoryMappedDelegationHWConnection.setUuid(UUID.randomUUID().toString());
+        return memoryMappedDelegationHWConnection;
+    }
+
+    public ProvidedMemorySegment createProvidedMemorySegment() {
+        ProvidedMemorySegment providedMemorySegment = MemoryFactory.eINSTANCE.createProvidedMemorySegment();
+        providedMemorySegment.setUuid(UUID.randomUUID().toString());
+        return providedMemorySegment;
+    }
+
+    public ProvidedNVMemorySegment createProvidedNVMemorySegment() {
+        ProvidedNVMemorySegment providedNVMemorySegment = MemoryFactory.eINSTANCE.createProvidedNVMemorySegment();
+        providedNVMemorySegment.setUuid(UUID.randomUUID().toString());
+        return providedNVMemorySegment;
+    }
+
+    public MemoryMappedHWPort createMemoryMappedHWPort() {
+        MemoryMappedHWPort memoryMappedHWPort = MemoryFactory.eINSTANCE.createMemoryMappedHWPort();
+        memoryMappedHWPort.setUuid(UUID.randomUUID().toString());
+        return memoryMappedHWPort;
+    }
+
+    public BootTime createBootTime() {
+        return BasicelementsFactory.eINSTANCE.createBootTime();
+    }
+
+    public ElectricalRange createElectricalRange() {
+        return BasicelementsFactory.eINSTANCE.createElectricalRange();
+    }
+
+    public ErrorDetectionCorrection createErrorDetectionCorrection() {
+        return BasicelementsFactory.eINSTANCE.createErrorDetectionCorrection();
+    }
+
+    public FrequencyRange createFrequencyRange() {
+        return BasicelementsFactory.eINSTANCE.createFrequencyRange();
+    }
+
+    public SupportsSafety createSupportsSafety() {
+        return BasicelementsFactory.eINSTANCE.createSupportsSafety();
+    }
+
+    public SupportsSecurity createSupportsSecurity() {
+        return BasicelementsFactory.eINSTANCE.createSupportsSecurity();
+    }
+
+    public Temperature createTemperature() {
+        return BasicelementsFactory.eINSTANCE.createTemperature();
+    }
+
+    public TimeRange createTimeRange() {
+        return BasicelementsFactory.eINSTANCE.createTimeRange();
+    }
+
+    public ActuatorHW createActuatorHW() {
+        ActuatorHW actuatorHW = SensoractuatorFactory.eINSTANCE.createActuatorHW();
+        actuatorHW.setUuid(UUID.randomUUID().toString());
+        return actuatorHW;
+    }
+
+    public DisplayHW createDisplayHW() {
+        DisplayHW displayHW = SensoractuatorFactory.eINSTANCE.createDisplayHW();
+        displayHW.setUuid(UUID.randomUUID().toString());
+        return displayHW;
+    }
+
+    public SensorHW createSensorHW() {
+        SensorHW sensorHW = SensoractuatorFactory.eINSTANCE.createSensorHW();
+        sensorHW.setUuid(UUID.randomUUID().toString());
+        return sensorHW;
+    }
+
+    public ARPackage createARPackage() {
+        ARPackage aRPackage = AutosarFactory.eINSTANCE.createARPackage();
+        aRPackage.setUuid(UUID.randomUUID().toString());
+        return aRPackage;
+    }
+
+    public AUTOSAR createAUTOSAR() {
+        return AutosarFactory.eINSTANCE.createAUTOSAR();
+    }
+
+    public Br createBr() {
+        return InlinesFactory.eINSTANCE.createBr();
+    }
+
+    public EType createEType() {
+        return InlinesFactory.eINSTANCE.createEType();
+    }
+
+    public Ft createFt() {
+        return InlinesFactory.eINSTANCE.createFt();
+    }
+
+    public Tt createTt() {
+        return InlinesFactory.eINSTANCE.createTt();
+    }
+
+    public Ie createIe() {
+        return InlinesFactory.eINSTANCE.createIe();
+    }
+
+    public Std createStd() {
+        Std std = InlinesFactory.eINSTANCE.createStd();
+        std.setUuid(UUID.randomUUID().toString());
+        return std;
+    }
+
+    public XrefTarget createXrefTarget() {
+        XrefTarget xrefTarget = InlinesFactory.eINSTANCE.createXrefTarget();
+        xrefTarget.setUuid(UUID.randomUUID().toString());
+        return xrefTarget;
+    }
+
+    public Xref createXref() {
+        return InlinesFactory.eINSTANCE.createXref();
+    }
+
+    public Url createUrl() {
+        return InlinesFactory.eINSTANCE.createUrl();
+    }
+
+    public Xfile createXfile() {
+        return InlinesFactory.eINSTANCE.createXfile();
+    }
+
+    public Xdoc createXdoc() {
+        Xdoc xdoc = InlinesFactory.eINSTANCE.createXdoc();
+        xdoc.setUuid(UUID.randomUUID().toString());
+        return xdoc;
+    }
+
+    public MlData1 createMlData1() {
+        return MultilanguagedataFactory.eINSTANCE.createMlData1();
+    }
+
+    public MlData10 createMlData10() {
+        return MultilanguagedataFactory.eINSTANCE.createMlData10();
+    }
+
+    public MlData3 createMlData3() {
+        return MultilanguagedataFactory.eINSTANCE.createMlData3();
+    }
+
+    public MlData3p createMlData3p() {
+        return MultilanguagedataFactory.eINSTANCE.createMlData3p();
+    }
+
+    public MlData4 createMlData4() {
+        return MultilanguagedataFactory.eINSTANCE.createMlData4();
+    }
+
+    public MlData5 createMlData5() {
+        return MultilanguagedataFactory.eINSTANCE.createMlData5();
+    }
+
+    public MlData2 createMlData2() {
+        return MultilanguagedataFactory.eINSTANCE.createMlData2();
+    }
+
+    public L1 createL1() {
+        return LanguagedatamodelFactory.eINSTANCE.createL1();
+    }
+
+    public L10 createL10() {
+        return LanguagedatamodelFactory.eINSTANCE.createL10();
+    }
+
+    public L2 createL2() {
+        return LanguagedatamodelFactory.eINSTANCE.createL2();
+    }
+
+    public L3 createL3() {
+        return LanguagedatamodelFactory.eINSTANCE.createL3();
+    }
+
+    public L4 createL4() {
+        return LanguagedatamodelFactory.eINSTANCE.createL4();
+    }
+
+    public L5 createL5() {
+        return LanguagedatamodelFactory.eINSTANCE.createL5();
+    }
+
+    public MlGraphic createMlGraphic() {
+        return LanguagedatamodelFactory.eINSTANCE.createMlGraphic();
+    }
+
+    public SlData1 createSlData1() {
+        return SinglelanguagedataFactory.eINSTANCE.createSlData1();
+    }
+
+    public SlData10 createSlData10() {
+        return SinglelanguagedataFactory.eINSTANCE.createSlData10();
+    }
+
+    public SlData2 createSlData2() {
+        return SinglelanguagedataFactory.eINSTANCE.createSlData2();
+    }
+
+    public SlData3 createSlData3() {
+        return SinglelanguagedataFactory.eINSTANCE.createSlData3();
+    }
+
+    public SlData3p createSlData3p() {
+        return SinglelanguagedataFactory.eINSTANCE.createSlData3p();
+    }
+
+    public SlData5 createSlData5() {
+        return SinglelanguagedataFactory.eINSTANCE.createSlData5();
+    }
+
+    public SlData4 createSlData4() {
+        return SinglelanguagedataFactory.eINSTANCE.createSlData4();
+    }
+
+    public CompanyRevisionInfo createCompanyRevisionInfo() {
+        return AdmindataFactory.eINSTANCE.createCompanyRevisionInfo();
+    }
+
+    public CompanySpecificInfo createCompanySpecificInfo() {
+        return AdmindataFactory.eINSTANCE.createCompanySpecificInfo();
+    }
+
+    public DocRevision createDocRevision() {
+        return AdmindataFactory.eINSTANCE.createDocRevision();
+    }
+
+    public Modification createModification() {
+        return AdmindataFactory.eINSTANCE.createModification();
+    }
+
+    public AdminData createAdminData() {
+        return AdmindataFactory.eINSTANCE.createAdminData();
+    }
+
+    public Sd createSd() {
+        return SpecialdataFactory.eINSTANCE.createSd();
+    }
+
+    public SdgCaption createSdgCaption() {
+        SdgCaption sdgCaption = SpecialdataFactory.eINSTANCE.createSdgCaption();
+        sdgCaption.setUuid(UUID.randomUUID().toString());
+        return sdgCaption;
+    }
+
+    public SdgContents createSdgContents() {
+        return SpecialdataFactory.eINSTANCE.createSdgContents();
+    }
+
+    public Sdx createSdx() {
+        return SpecialdataFactory.eINSTANCE.createSdx();
+    }
+
+    public Sdg createSdg() {
+        return SpecialdataFactory.eINSTANCE.createSdg();
+    }
+
+    public DocumentationBlock createDocumentationBlock() {
+        return DocumentationblockFactory.eINSTANCE.createDocumentationBlock();
+    }
+
+    public Remark createRemark() {
+        return AnnotationFactory.eINSTANCE.createRemark();
+    }
+
+    public Annotation createAnnotation() {
+        return AnnotationFactory.eINSTANCE.createAnnotation();
+    }
+
+    public StringContainer createStringContainer() {
+        return PrimitivetypesFactory.eINSTANCE.createStringContainer();
+    }
+
+    public FloatContainer createFloatContainer() {
+        return PrimitivetypesFactory.eINSTANCE.createFloatContainer();
+    }
+
+    public IntegerContainer createIntegerContainer() {
+        return PrimitivetypesFactory.eINSTANCE.createIntegerContainer();
+    }
+
+    public BooleanContainer createBooleanContainer() {
+        return PrimitivetypesFactory.eINSTANCE.createBooleanContainer();
+    }
+
+    public Always createAlways() {
+        return FilterFactory.eINSTANCE.createAlways();
+    }
+
+    public MaskedNewDiffersMaskedOld createMaskedNewDiffersMaskedOld() {
+        return FilterFactory.eINSTANCE.createMaskedNewDiffersMaskedOld();
+    }
+
+    public MaskedNewDiffersX createMaskedNewDiffersX() {
+        return FilterFactory.eINSTANCE.createMaskedNewDiffersX();
+    }
+
+    public MaskedNewEqualsX createMaskedNewEqualsX() {
+        return FilterFactory.eINSTANCE.createMaskedNewEqualsX();
+    }
+
+    public Never createNever() {
+        return FilterFactory.eINSTANCE.createNever();
+    }
+
+    public NewIsOutside createNewIsOutside() {
+        return FilterFactory.eINSTANCE.createNewIsOutside();
+    }
+
+    public NewIsWithin createNewIsWithin() {
+        return FilterFactory.eINSTANCE.createNewIsWithin();
+    }
+
+    public OneEveryN createOneEveryN() {
+        return FilterFactory.eINSTANCE.createOneEveryN();
+    }
+
+    public ExclusiveArea createExclusiveArea() {
+        ExclusiveArea exclusiveArea = InternalbehaviorFactory.eINSTANCE.createExclusiveArea();
+        exclusiveArea.setUuid(UUID.randomUUID().toString());
+        return exclusiveArea;
+    }
+
+    public ComMgrUserNeeds createComMgrUserNeeds() {
+        ComMgrUserNeeds comMgrUserNeeds = ServiceneedsFactory.eINSTANCE.createComMgrUserNeeds();
+        comMgrUserNeeds.setUuid(UUID.randomUUID().toString());
+        return comMgrUserNeeds;
+    }
+
+    public ServiceNeeds createServiceNeeds() {
+        ServiceNeeds serviceNeeds = ServiceneedsFactory.eINSTANCE.createServiceNeeds();
+        serviceNeeds.setUuid(UUID.randomUUID().toString());
+        return serviceNeeds;
+    }
+
+    public DiagnosticCommunicationNeeds createDiagnosticCommunicationNeeds() {
+        DiagnosticCommunicationNeeds diagnosticCommunicationNeeds = ServiceneedsFactory.eINSTANCE.createDiagnosticCommunicationNeeds();
+        diagnosticCommunicationNeeds.setUuid(UUID.randomUUID().toString());
+        return diagnosticCommunicationNeeds;
+    }
+
+    public DiagnosticEventNeeds createDiagnosticEventNeeds() {
+        DiagnosticEventNeeds diagnosticEventNeeds = ServiceneedsFactory.eINSTANCE.createDiagnosticEventNeeds();
+        diagnosticEventNeeds.setUuid(UUID.randomUUID().toString());
+        return diagnosticEventNeeds;
+    }
+
+    public EcuStateMgrUserNeeds createEcuStateMgrUserNeeds() {
+        EcuStateMgrUserNeeds ecuStateMgrUserNeeds = ServiceneedsFactory.eINSTANCE.createEcuStateMgrUserNeeds();
+        ecuStateMgrUserNeeds.setUuid(UUID.randomUUID().toString());
+        return ecuStateMgrUserNeeds;
+    }
+
+    public FunctionInhibitionNeeds createFunctionInhibitionNeeds() {
+        FunctionInhibitionNeeds functionInhibitionNeeds = ServiceneedsFactory.eINSTANCE.createFunctionInhibitionNeeds();
+        functionInhibitionNeeds.setUuid(UUID.randomUUID().toString());
+        return functionInhibitionNeeds;
+    }
+
+    public NvBlockNeeds createNvBlockNeeds() {
+        NvBlockNeeds nvBlockNeeds = ServiceneedsFactory.eINSTANCE.createNvBlockNeeds();
+        nvBlockNeeds.setUuid(UUID.randomUUID().toString());
+        return nvBlockNeeds;
+    }
+
+    public ObdControlServiceNeeds createObdControlServiceNeeds() {
+        ObdControlServiceNeeds obdControlServiceNeeds = ServiceneedsFactory.eINSTANCE.createObdControlServiceNeeds();
+        obdControlServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return obdControlServiceNeeds;
+    }
+
+    public ObdInfoServiceNeeds createObdInfoServiceNeeds() {
+        ObdInfoServiceNeeds obdInfoServiceNeeds = ServiceneedsFactory.eINSTANCE.createObdInfoServiceNeeds();
+        obdInfoServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return obdInfoServiceNeeds;
+    }
+
+    public ObdMonitorServiceNeeds createObdMonitorServiceNeeds() {
+        ObdMonitorServiceNeeds obdMonitorServiceNeeds = ServiceneedsFactory.eINSTANCE.createObdMonitorServiceNeeds();
+        obdMonitorServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return obdMonitorServiceNeeds;
+    }
+
+    public ObdPidServiceNeeds createObdPidServiceNeeds() {
+        ObdPidServiceNeeds obdPidServiceNeeds = ServiceneedsFactory.eINSTANCE.createObdPidServiceNeeds();
+        obdPidServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return obdPidServiceNeeds;
+    }
+
+    public ObdRatioServiceNeeds createObdRatioServiceNeeds() {
+        ObdRatioServiceNeeds obdRatioServiceNeeds = ServiceneedsFactory.eINSTANCE.createObdRatioServiceNeeds();
+        obdRatioServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return obdRatioServiceNeeds;
+    }
+
+    public SupervisedEntityNeeds createSupervisedEntityNeeds() {
+        SupervisedEntityNeeds supervisedEntityNeeds = ServiceneedsFactory.eINSTANCE.createSupervisedEntityNeeds();
+        supervisedEntityNeeds.setUuid(UUID.randomUUID().toString());
+        return supervisedEntityNeeds;
+    }
+
+    public Code createCode() {
+        Code code = ImplementationFactory.eINSTANCE.createCode();
+        code.setUuid(UUID.randomUUID().toString());
+        return code;
+    }
+
+    public XfileSo createXfileSo() {
+        XfileSo xfileSo = ImplementationFactory.eINSTANCE.createXfileSo();
+        xfileSo.setUuid(UUID.randomUUID().toString());
+        return xfileSo;
+    }
+
+    public Compiler createCompiler() {
+        Compiler compiler = ImplementationFactory.eINSTANCE.createCompiler();
+        compiler.setUuid(UUID.randomUUID().toString());
+        return compiler;
+    }
+
+    public DependencyOnFile createDependencyOnFile() {
+        DependencyOnFile dependencyOnFile = ImplementationFactory.eINSTANCE.createDependencyOnFile();
+        dependencyOnFile.setUuid(UUID.randomUUID().toString());
+        return dependencyOnFile;
+    }
+
+    public DependencyOnLibrary createDependencyOnLibrary() {
+        DependencyOnLibrary dependencyOnLibrary = ImplementationFactory.eINSTANCE.createDependencyOnLibrary();
+        dependencyOnLibrary.setUuid(UUID.randomUUID().toString());
+        return dependencyOnLibrary;
+    }
+
+    public Implementation createImplementation() {
+        Implementation implementation = ImplementationFactory.eINSTANCE.createImplementation();
+        implementation.setUuid(UUID.randomUUID().toString());
+        return implementation;
+    }
+
+    public Linker createLinker() {
+        Linker linker = ImplementationFactory.eINSTANCE.createLinker();
+        linker.setUuid(UUID.randomUUID().toString());
+        return linker;
+    }
+
+    public HardwareConfiguration createHardwareConfiguration() {
+        return ResourceconsumptionFactory.eINSTANCE.createHardwareConfiguration();
+    }
+
+    public SoftwareContext createSoftwareContext() {
+        return ResourceconsumptionFactory.eINSTANCE.createSoftwareContext();
+    }
+
+    public ResourceConsumption createResourceConsumption() {
+        ResourceConsumption resourceConsumption = ResourceconsumptionFactory.eINSTANCE.createResourceConsumption();
+        resourceConsumption.setUuid(UUID.randomUUID().toString());
+        return resourceConsumption;
+    }
+
+    public MemorySection createMemorySection() {
+        MemorySection memorySection = MemorysectionusageFactory.eINSTANCE.createMemorySection();
+        memorySection.setUuid(UUID.randomUUID().toString());
+        return memorySection;
+    }
+
+    public MeasuredStackUsage createMeasuredStackUsage() {
+        MeasuredStackUsage measuredStackUsage = StackusageFactory.eINSTANCE.createMeasuredStackUsage();
+        measuredStackUsage.setUuid(UUID.randomUUID().toString());
+        return measuredStackUsage;
+    }
+
+    public RoughEstimateStackUsage createRoughEstimateStackUsage() {
+        RoughEstimateStackUsage roughEstimateStackUsage = StackusageFactory.eINSTANCE.createRoughEstimateStackUsage();
+        roughEstimateStackUsage.setUuid(UUID.randomUUID().toString());
+        return roughEstimateStackUsage;
+    }
+
+    public WorstCaseStackUsage createWorstCaseStackUsage() {
+        WorstCaseStackUsage worstCaseStackUsage = StackusageFactory.eINSTANCE.createWorstCaseStackUsage();
+        worstCaseStackUsage.setUuid(UUID.randomUUID().toString());
+        return worstCaseStackUsage;
+    }
+
+    public MeasuredHeapUsage createMeasuredHeapUsage() {
+        MeasuredHeapUsage measuredHeapUsage = HeapusageFactory.eINSTANCE.createMeasuredHeapUsage();
+        measuredHeapUsage.setUuid(UUID.randomUUID().toString());
+        return measuredHeapUsage;
+    }
+
+    public RoughEstimateHeapUsage createRoughEstimateHeapUsage() {
+        RoughEstimateHeapUsage roughEstimateHeapUsage = HeapusageFactory.eINSTANCE.createRoughEstimateHeapUsage();
+        roughEstimateHeapUsage.setUuid(UUID.randomUUID().toString());
+        return roughEstimateHeapUsage;
+    }
+
+    public WorstCaseHeapUsage createWorstCaseHeapUsage() {
+        WorstCaseHeapUsage worstCaseHeapUsage = HeapusageFactory.eINSTANCE.createWorstCaseHeapUsage();
+        worstCaseHeapUsage.setUuid(UUID.randomUUID().toString());
+        return worstCaseHeapUsage;
+    }
+
+    public ECUPrototype createECUPrototype() {
+        return ExecutiontimeFactory.eINSTANCE.createECUPrototype();
+    }
+
+    public ExecutionTime createExecutionTime() {
+        ExecutionTime executionTime = ExecutiontimeFactory.eINSTANCE.createExecutionTime();
+        executionTime.setUuid(UUID.randomUUID().toString());
+        return executionTime;
+    }
+
+    public MemorySectionLocation createMemorySectionLocation() {
+        return ExecutiontimeFactory.eINSTANCE.createMemorySectionLocation();
+    }
+
+    public MeasuredExecutionTime createMeasuredExecutionTime() {
+        MeasuredExecutionTime measuredExecutionTime = ExecutiontimeFactory.eINSTANCE.createMeasuredExecutionTime();
+        measuredExecutionTime.setUuid(UUID.randomUUID().toString());
+        return measuredExecutionTime;
+    }
+
+    public RoughEstimateOfExecutionTime createRoughEstimateOfExecutionTime() {
+        RoughEstimateOfExecutionTime roughEstimateOfExecutionTime = ExecutiontimeFactory.eINSTANCE.createRoughEstimateOfExecutionTime();
+        roughEstimateOfExecutionTime.setUuid(UUID.randomUUID().toString());
+        return roughEstimateOfExecutionTime;
+    }
+
+    public SimulatedExecutionTime createSimulatedExecutionTime() {
+        SimulatedExecutionTime simulatedExecutionTime = ExecutiontimeFactory.eINSTANCE.createSimulatedExecutionTime();
+        simulatedExecutionTime.setUuid(UUID.randomUUID().toString());
+        return simulatedExecutionTime;
+    }
+
+    public WorstCaseExecutionTime createWorstCaseExecutionTime() {
+        WorstCaseExecutionTime worstCaseExecutionTime = ExecutiontimeFactory.eINSTANCE.createWorstCaseExecutionTime();
+        worstCaseExecutionTime.setUuid(UUID.randomUUID().toString());
+        return worstCaseExecutionTime;
+    }
+
+    public SwCodeSyntax createSwCodeSyntax() {
+        SwCodeSyntax swCodeSyntax = AuxillaryobjectsFactory.eINSTANCE.createSwCodeSyntax();
+        swCodeSyntax.setUuid(UUID.randomUUID().toString());
+        return swCodeSyntax;
+    }
+
+    public SwRecordLayout createSwRecordLayout() {
+        SwRecordLayout swRecordLayout = AuxillaryobjectsFactory.eINSTANCE.createSwRecordLayout();
+        swRecordLayout.setUuid(UUID.randomUUID().toString());
+        return swRecordLayout;
+    }
+
+    public SwRecordLayoutGroup createSwRecordLayoutGroup() {
+        return AuxillaryobjectsFactory.eINSTANCE.createSwRecordLayoutGroup();
+    }
+
+    public SwRelatedConstrs createSwRelatedConstrs() {
+        return AuxillaryobjectsFactory.eINSTANCE.createSwRelatedConstrs();
+    }
+
+    public SwRecordLayoutGroupContent createSwRecordLayoutGroupContent() {
+        return AuxillaryobjectsFactory.eINSTANCE.createSwRecordLayoutGroupContent();
+    }
+
+    public SwRecordLayoutV createSwRecordLayoutV() {
+        return AuxillaryobjectsFactory.eINSTANCE.createSwRecordLayoutV();
+    }
+
+    public SwAddrMethod createSwAddrMethod() {
+        SwAddrMethod swAddrMethod = AuxillaryobjectsFactory.eINSTANCE.createSwAddrMethod();
+        swAddrMethod.setUuid(UUID.randomUUID().toString());
+        return swAddrMethod;
+    }
+
+    public SwAxisGeneric createSwAxisGeneric() {
+        return AxisFactory.eINSTANCE.createSwAxisGeneric();
+    }
+
+    public SwAxisGrouped createSwAxisGrouped() {
+        return AxisFactory.eINSTANCE.createSwAxisGrouped();
+    }
+
+    public SwAxisIndividual createSwAxisIndividual() {
+        return AxisFactory.eINSTANCE.createSwAxisIndividual();
+    }
+
+    public SwGenericAxisParam createSwGenericAxisParam() {
+        return AxisFactory.eINSTANCE.createSwGenericAxisParam();
+    }
+
+    public SwAxisType createSwAxisType() {
+        SwAxisType swAxisType = AxisFactory.eINSTANCE.createSwAxisType();
+        swAxisType.setUuid(UUID.randomUUID().toString());
+        return swAxisType;
+    }
+
+    public SwGenericAxisParamType createSwGenericAxisParamType() {
+        SwGenericAxisParamType swGenericAxisParamType = AxisFactory.eINSTANCE.createSwGenericAxisParamType();
+        swGenericAxisParamType.setUuid(UUID.randomUUID().toString());
+        return swGenericAxisParamType;
+    }
+
+    public SwCalprmRefProxy createSwCalprmRefProxy() {
+        return DatadictionaryproxiesFactory.eINSTANCE.createSwCalprmRefProxy();
+    }
+
+    public SwCalprmAxis createSwCalprmAxis() {
+        return CalibrationparameterFactory.eINSTANCE.createSwCalprmAxis();
+    }
+
+    public SwCalprmAxisSet createSwCalprmAxisSet() {
+        return CalibrationparameterFactory.eINSTANCE.createSwCalprmAxisSet();
+    }
+
+    public SwCalprmValueAxisLabels createSwCalprmValueAxisLabels() {
+        return CalibrationparameterFactory.eINSTANCE.createSwCalprmValueAxisLabels();
+    }
+
+    public SwCalprmAxisCommonAxis createSwCalprmAxisCommonAxis() {
+        return CalibrationparameterFactory.eINSTANCE.createSwCalprmAxisCommonAxis();
+    }
+
+    public SwCalprmAxisIndividualAxis createSwCalprmAxisIndividualAxis() {
+        return CalibrationparameterFactory.eINSTANCE.createSwCalprmAxisIndividualAxis();
+    }
+
+    public SwDataDefProps createSwDataDefProps() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwDataDefProps();
+    }
+
+    public SwArraysize createSwArraysize() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwArraysize();
+    }
+
+    public SwDataDependency createSwDataDependency() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwDataDependency();
+    }
+
+    public SwDataDependencyArgs createSwDataDependencyArgs() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwDataDependencyArgs();
+    }
+
+    public SwVariableRef createSwVariableRef() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwVariableRef();
+    }
+
+    public SwBitRepresentation createSwBitRepresentation() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwBitRepresentation();
+    }
+
+    public SwTextProps createSwTextProps() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwTextProps();
+    }
+
+    public SwComparisonVariables createSwComparisonVariables() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwComparisonVariables();
+    }
+
+    public SwSemaphore createSwSemaphore() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwSemaphore();
+    }
+
+    public SwPointer createSwPointer() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwPointer();
+    }
+
+    public SwGenericAxisParamValue createSwGenericAxisParamValue() {
+        return DatadefpropertiesFactory.eINSTANCE.createSwGenericAxisParamValue();
+    }
+
+    public SwCalprmImpl createSwCalprmImpl() {
+        return SwclassFactory.eINSTANCE.createSwCalprmImpl();
+    }
+
+    public SwCalprmPrototype createSwCalprmPrototype() {
+        SwCalprmPrototype swCalprmPrototype = SwclassFactory.eINSTANCE.createSwCalprmPrototype();
+        swCalprmPrototype.setUuid(UUID.randomUUID().toString());
+        return swCalprmPrototype;
+    }
+
+    public SwClassAttr createSwClassAttr() {
+        return SwclassFactory.eINSTANCE.createSwClassAttr();
+    }
+
+    public SwVariablePrototype createSwVariablePrototype() {
+        SwVariablePrototype swVariablePrototype = SwclassFactory.eINSTANCE.createSwVariablePrototype();
+        swVariablePrototype.setUuid(UUID.randomUUID().toString());
+        return swVariablePrototype;
+    }
+
+    public SwClassPrototype createSwClassPrototype() {
+        SwClassPrototype swClassPrototype = SwclassFactory.eINSTANCE.createSwClassPrototype();
+        swClassPrototype.setUuid(UUID.randomUUID().toString());
+        return swClassPrototype;
+    }
+
+    public SwServicePrototype createSwServicePrototype() {
+        SwServicePrototype swServicePrototype = SwclassFactory.eINSTANCE.createSwServicePrototype();
+        swServicePrototype.setUuid(UUID.randomUUID().toString());
+        return swServicePrototype;
+    }
+
+    public SwClassAttrImpl createSwClassAttrImpl() {
+        SwClassAttrImpl swClassAttrImpl = SwclassFactory.eINSTANCE.createSwClassAttrImpl();
+        swClassAttrImpl.setUuid(UUID.randomUUID().toString());
+        return swClassAttrImpl;
+    }
+
+    public SwClassImpl createSwClassImpl() {
+        return SwclassFactory.eINSTANCE.createSwClassImpl();
+    }
+
+    public SwVariableImpl createSwVariableImpl() {
+        return SwclassFactory.eINSTANCE.createSwVariableImpl();
+    }
+
+    public SwClassAttrInstanceImpl createSwClassAttrInstanceImpl() {
+        return SwclassFactory.eINSTANCE.createSwClassAttrInstanceImpl();
+    }
+
+    public SwClassInstance createSwClassInstance() {
+        SwClassInstance swClassInstance = SwclassFactory.eINSTANCE.createSwClassInstance();
+        swClassInstance.setUuid(UUID.randomUUID().toString());
+        return swClassInstance;
+    }
+
+    public SwService createSwService() {
+        SwService swService = ServiceprocesstaskFactory.eINSTANCE.createSwService();
+        swService.setUuid(UUID.randomUUID().toString());
+        return swService;
+    }
+
+    public SwServiceArg createSwServiceArg() {
+        SwServiceArg swServiceArg = ServiceprocesstaskFactory.eINSTANCE.createSwServiceArg();
+        swServiceArg.setUuid(UUID.randomUUID().toString());
+        return swServiceArg;
+    }
+
+    public SwServiceProps createSwServiceProps() {
+        return ServiceprocesstaskFactory.eINSTANCE.createSwServiceProps();
+    }
+
+    public SwServiceAccessedElementSet createSwServiceAccessedElementSet() {
+        return ServiceprocesstaskFactory.eINSTANCE.createSwServiceAccessedElementSet();
+    }
+
+    public SwServiceImpl createSwServiceImpl() {
+        return ServiceprocesstaskFactory.eINSTANCE.createSwServiceImpl();
+    }
+
+    public DataConstr createDataConstr() {
+        DataConstr dataConstr = GlobalconstraintsFactory.eINSTANCE.createDataConstr();
+        dataConstr.setUuid(UUID.randomUUID().toString());
+        return dataConstr;
+    }
+
+    public SwConstrObjects createSwConstrObjects() {
+        return GlobalconstraintsFactory.eINSTANCE.createSwConstrObjects();
+    }
+
+    public DataConstrRule createDataConstrRule() {
+        return GlobalconstraintsFactory.eINSTANCE.createDataConstrRule();
+    }
+
+    public PhysConstrs createPhysConstrs() {
+        return GlobalconstraintsFactory.eINSTANCE.createPhysConstrs();
+    }
+
+    public ScaleConstr createScaleConstr() {
+        return GlobalconstraintsFactory.eINSTANCE.createScaleConstr();
+    }
+
+    public InternalConstrs createInternalConstrs() {
+        return GlobalconstraintsFactory.eINSTANCE.createInternalConstrs();
+    }
+
+    public ScaleConstrs createScaleConstrs() {
+        return GlobalconstraintsFactory.eINSTANCE.createScaleConstrs();
+    }
+
+    public BaseTypeAbsSize createBaseTypeAbsSize() {
+        return BasetypesFactory.eINSTANCE.createBaseTypeAbsSize();
+    }
+
+    public BaseTypeDirectDefinition createBaseTypeDirectDefinition() {
+        return BasetypesFactory.eINSTANCE.createBaseTypeDirectDefinition();
+    }
+
+    public BaseTypeIndirectDefinition createBaseTypeIndirectDefinition() {
+        return BasetypesFactory.eINSTANCE.createBaseTypeIndirectDefinition();
+    }
+
+    public BaseTypeMaxSize createBaseTypeMaxSize() {
+        return BasetypesFactory.eINSTANCE.createBaseTypeMaxSize();
+    }
+
+    public SwBaseType createSwBaseType() {
+        SwBaseType swBaseType = BasetypesFactory.eINSTANCE.createSwBaseType();
+        swBaseType.setUuid(UUID.randomUUID().toString());
+        return swBaseType;
+    }
+
+    public ByteOrder createByteOrder() {
+        return ByteorderFactory.eINSTANCE.createByteOrder();
+    }
+
+    public EndToEndDescription createEndToEndDescription() {
+        return autosar3x.swcomponent.endtoendprotection.EndtoendprotectionFactory.eINSTANCE.createEndToEndDescription();
+    }
+
+    public EndToEndProtection createEndToEndProtection() {
+        EndToEndProtection endToEndProtection = autosar3x.swcomponent.endtoendprotection.EndtoendprotectionFactory.eINSTANCE.createEndToEndProtection();
+        endToEndProtection.setUuid(UUID.randomUUID().toString());
+        return endToEndProtection;
+    }
+
+    public EndToEndProtectionDataElementPrototype createEndToEndProtectionDataElementPrototype() {
+        return autosar3x.swcomponent.endtoendprotection.EndtoendprotectionFactory.eINSTANCE.createEndToEndProtectionDataElementPrototype();
+    }
+
+    public EndToEndProtectionDataElementPrototype_dataElement createEndToEndProtectionDataElementPrototype_dataElement() {
+        return autosar3x.swcomponent.endtoendprotection.EndtoendprotectionFactory.eINSTANCE.createEndToEndProtectionDataElementPrototype_dataElement();
+    }
+
+    public EndToEndProtectionSet createEndToEndProtectionSet() {
+        EndToEndProtectionSet endToEndProtectionSet = autosar3x.swcomponent.endtoendprotection.EndtoendprotectionFactory.eINSTANCE.createEndToEndProtectionSet();
+        endToEndProtectionSet.setUuid(UUID.randomUUID().toString());
+        return endToEndProtectionSet;
+    }
+
+    public ServiceConnectorPrototype createServiceConnectorPrototype() {
+        ServiceConnectorPrototype serviceConnectorPrototype = CompositionFactory.eINSTANCE.createServiceConnectorPrototype();
+        serviceConnectorPrototype.setUuid(UUID.randomUUID().toString());
+        return serviceConnectorPrototype;
+    }
+
+    public CompositionType createCompositionType() {
+        CompositionType compositionType = CompositionFactory.eINSTANCE.createCompositionType();
+        compositionType.setUuid(UUID.randomUUID().toString());
+        return compositionType;
+    }
+
+    public AssemblyConnectorPrototype createAssemblyConnectorPrototype() {
+        AssemblyConnectorPrototype assemblyConnectorPrototype = CompositionFactory.eINSTANCE.createAssemblyConnectorPrototype();
+        assemblyConnectorPrototype.setUuid(UUID.randomUUID().toString());
+        return assemblyConnectorPrototype;
+    }
+
+    public DelegationConnectorPrototype createDelegationConnectorPrototype() {
+        DelegationConnectorPrototype delegationConnectorPrototype = CompositionFactory.eINSTANCE.createDelegationConnectorPrototype();
+        delegationConnectorPrototype.setUuid(UUID.randomUUID().toString());
+        return delegationConnectorPrototype;
+    }
+
+    public ComponentPrototype createComponentPrototype() {
+        ComponentPrototype componentPrototype = CompositionFactory.eINSTANCE.createComponentPrototype();
+        componentPrototype.setUuid(UUID.randomUUID().toString());
+        return componentPrototype;
+    }
+
+    public AssemblyConnectorPrototypeProvider createAssemblyConnectorPrototypeProvider() {
+        return autosar3x.swcomponent.composition.instanceref.InstancerefFactory.eINSTANCE.createAssemblyConnectorPrototypeProvider();
+    }
+
+    public AssemblyConnectorPrototypeRequester createAssemblyConnectorPrototypeRequester() {
+        return autosar3x.swcomponent.composition.instanceref.InstancerefFactory.eINSTANCE.createAssemblyConnectorPrototypeRequester();
+    }
+
+    public DelegationConnectorPrototypeInnerPort createDelegationConnectorPrototypeInnerPort() {
+        return autosar3x.swcomponent.composition.instanceref.InstancerefFactory.eINSTANCE.createDelegationConnectorPrototypeInnerPort();
+    }
+
+    public ServiceConnectorPrototypeApplicationPort createServiceConnectorPrototypeApplicationPort() {
+        return autosar3x.swcomponent.composition.instanceref.InstancerefFactory.eINSTANCE.createServiceConnectorPrototypeApplicationPort();
+    }
+
+    public ServiceConnectorPrototypeServicePort createServiceConnectorPrototypeServicePort() {
+        return autosar3x.swcomponent.composition.instanceref.InstancerefFactory.eINSTANCE.createServiceConnectorPrototypeServicePort();
+    }
+
+    public ApplicationSoftwareComponentType createApplicationSoftwareComponentType() {
+        ApplicationSoftwareComponentType applicationSoftwareComponentType = ComponentsFactory.eINSTANCE.createApplicationSoftwareComponentType();
+        applicationSoftwareComponentType.setUuid(UUID.randomUUID().toString());
+        return applicationSoftwareComponentType;
+    }
+
+    public RPortPrototype createRPortPrototype() {
+        RPortPrototype rPortPrototype = ComponentsFactory.eINSTANCE.createRPortPrototype();
+        rPortPrototype.setUuid(UUID.randomUUID().toString());
+        return rPortPrototype;
+    }
+
+    public ServiceComponentType createServiceComponentType() {
+        ServiceComponentType serviceComponentType = ComponentsFactory.eINSTANCE.createServiceComponentType();
+        serviceComponentType.setUuid(UUID.randomUUID().toString());
+        return serviceComponentType;
+    }
+
+    public PortGroup createPortGroup() {
+        PortGroup portGroup = ComponentsFactory.eINSTANCE.createPortGroup();
+        portGroup.setUuid(UUID.randomUUID().toString());
+        return portGroup;
+    }
+
+    public CalprmComponentType createCalprmComponentType() {
+        CalprmComponentType calprmComponentType = ComponentsFactory.eINSTANCE.createCalprmComponentType();
+        calprmComponentType.setUuid(UUID.randomUUID().toString());
+        return calprmComponentType;
+    }
+
+    public ComplexDeviceDriverComponentType createComplexDeviceDriverComponentType() {
+        ComplexDeviceDriverComponentType complexDeviceDriverComponentType = ComponentsFactory.eINSTANCE.createComplexDeviceDriverComponentType();
+        complexDeviceDriverComponentType.setUuid(UUID.randomUUID().toString());
+        return complexDeviceDriverComponentType;
+    }
+
+    public EcuAbstractionComponentType createEcuAbstractionComponentType() {
+        EcuAbstractionComponentType ecuAbstractionComponentType = ComponentsFactory.eINSTANCE.createEcuAbstractionComponentType();
+        ecuAbstractionComponentType.setUuid(UUID.randomUUID().toString());
+        return ecuAbstractionComponentType;
+    }
+
+    public SensorActuatorSoftwareComponentType createSensorActuatorSoftwareComponentType() {
+        SensorActuatorSoftwareComponentType sensorActuatorSoftwareComponentType = ComponentsFactory.eINSTANCE.createSensorActuatorSoftwareComponentType();
+        sensorActuatorSoftwareComponentType.setUuid(UUID.randomUUID().toString());
+        return sensorActuatorSoftwareComponentType;
+    }
+
+    public PPortPrototype createPPortPrototype() {
+        PPortPrototype pPortPrototype = ComponentsFactory.eINSTANCE.createPPortPrototype();
+        pPortPrototype.setUuid(UUID.randomUUID().toString());
+        return pPortPrototype;
+    }
+
+    public PortGroupInnerGroup createPortGroupInnerGroup() {
+        return autosar3x.swcomponent.components.instanceref.InstancerefFactory.eINSTANCE.createPortGroupInnerGroup();
+    }
+
+    public CalibrationPortAnnotation createCalibrationPortAnnotation() {
+        return ApplicationattributesFactory.eINSTANCE.createCalibrationPortAnnotation();
+    }
+
+    public IoHwAbstractionServerAnnotation createIoHwAbstractionServerAnnotation() {
+        return ApplicationattributesFactory.eINSTANCE.createIoHwAbstractionServerAnnotation();
+    }
+
+    public ReportFeature createReportFeature() {
+        return ApplicationattributesFactory.eINSTANCE.createReportFeature();
+    }
+
+    public WakeUp createWakeUp() {
+        return ApplicationattributesFactory.eINSTANCE.createWakeUp();
+    }
+
+    public ReceiverAnnotation createReceiverAnnotation() {
+        return ApplicationattributesFactory.eINSTANCE.createReceiverAnnotation();
+    }
+
+    public SenderAnnotation createSenderAnnotation() {
+        return ApplicationattributesFactory.eINSTANCE.createSenderAnnotation();
+    }
+
+    public DelegatedPortAnnotation createDelegatedPortAnnotation() {
+        return ApplicationattributesFactory.eINSTANCE.createDelegatedPortAnnotation();
+    }
+
+    public DataPrototypeRef createDataPrototypeRef() {
+        return MeasurementpropertyFactory.eINSTANCE.createDataPrototypeRef();
+    }
+
+    public RecordElementRef createRecordElementRef() {
+        return MeasurementpropertyFactory.eINSTANCE.createRecordElementRef();
+    }
+
+    public RecordElementRefRecordElement createRecordElementRefRecordElement() {
+        return autosar3x.swcomponent.measurementandcalibration.measurementproperty.instanceref.InstancerefFactory.eINSTANCE.createRecordElementRefRecordElement();
+    }
+
+    public DataPrototypeRefDataPrototype createDataPrototypeRefDataPrototype() {
+        return autosar3x.swcomponent.measurementandcalibration.measurementproperty.instanceref.InstancerefFactory.eINSTANCE.createDataPrototypeRefDataPrototype();
+    }
+
+    public CalprmAccess createCalprmAccess() {
+        CalprmAccess calprmAccess = CharacteristicFactory.eINSTANCE.createCalprmAccess();
+        calprmAccess.setUuid(UUID.randomUUID().toString());
+        return calprmAccess;
+    }
+
+    public ArCalprmRef createArCalprmRef() {
+        return CharacteristicFactory.eINSTANCE.createArCalprmRef();
+    }
+
+    public CalprmInterface createCalprmInterface() {
+        CalprmInterface calprmInterface = CharacteristicFactory.eINSTANCE.createCalprmInterface();
+        calprmInterface.setUuid(UUID.randomUUID().toString());
+        return calprmInterface;
+    }
+
+    public CalprmElementPrototype createCalprmElementPrototype() {
+        CalprmElementPrototype calprmElementPrototype = CharacteristicFactory.eINSTANCE.createCalprmElementPrototype();
+        calprmElementPrototype.setUuid(UUID.randomUUID().toString());
+        return calprmElementPrototype;
+    }
+
+    public ArCalprmRefCalprmElementPrototype createArCalprmRefCalprmElementPrototype() {
+        return autosar3x.swcomponent.measurementandcalibration.characteristic.instanceref.InstancerefFactory.eINSTANCE.createArCalprmRefCalprmElementPrototype();
+    }
+
+    public CalprmAccessCalprmElementPrototype createCalprmAccessCalprmElementPrototype() {
+        return autosar3x.swcomponent.measurementandcalibration.characteristic.instanceref.InstancerefFactory.eINSTANCE.createCalprmAccessCalprmElementPrototype();
+    }
+
+    public ApplicationError createApplicationError() {
+        ApplicationError applicationError = PortinterfaceFactory.eINSTANCE.createApplicationError();
+        applicationError.setUuid(UUID.randomUUID().toString());
+        return applicationError;
+    }
+
+    public ModeDeclarationGroupPrototype createModeDeclarationGroupPrototype() {
+        ModeDeclarationGroupPrototype modeDeclarationGroupPrototype = PortinterfaceFactory.eINSTANCE.createModeDeclarationGroupPrototype();
+        modeDeclarationGroupPrototype.setUuid(UUID.randomUUID().toString());
+        return modeDeclarationGroupPrototype;
+    }
+
+    public OperationPrototype createOperationPrototype() {
+        OperationPrototype operationPrototype = PortinterfaceFactory.eINSTANCE.createOperationPrototype();
+        operationPrototype.setUuid(UUID.randomUUID().toString());
+        return operationPrototype;
+    }
+
+    public ArgumentPrototype createArgumentPrototype() {
+        ArgumentPrototype argumentPrototype = PortinterfaceFactory.eINSTANCE.createArgumentPrototype();
+        argumentPrototype.setUuid(UUID.randomUUID().toString());
+        return argumentPrototype;
+    }
+
+    public ClientServerInterface createClientServerInterface() {
+        ClientServerInterface clientServerInterface = PortinterfaceFactory.eINSTANCE.createClientServerInterface();
+        clientServerInterface.setUuid(UUID.randomUUID().toString());
+        return clientServerInterface;
+    }
+
+    public SenderReceiverInterface createSenderReceiverInterface() {
+        SenderReceiverInterface senderReceiverInterface = PortinterfaceFactory.eINSTANCE.createSenderReceiverInterface();
+        senderReceiverInterface.setUuid(UUID.randomUUID().toString());
+        return senderReceiverInterface;
+    }
+
+    public DataElementPrototype createDataElementPrototype() {
+        DataElementPrototype dataElementPrototype = PortinterfaceFactory.eINSTANCE.createDataElementPrototype();
+        dataElementPrototype.setUuid(UUID.randomUUID().toString());
+        return dataElementPrototype;
+    }
+
+    public ModeDeclaration createModeDeclaration() {
+        ModeDeclaration modeDeclaration = ModedeclarationFactory.eINSTANCE.createModeDeclaration();
+        modeDeclaration.setUuid(UUID.randomUUID().toString());
+        return modeDeclaration;
+    }
+
+    public ModeDisablingDependency createModeDisablingDependency() {
+        return ModedeclarationFactory.eINSTANCE.createModeDisablingDependency();
+    }
+
+    public ModeDeclarationGroup createModeDeclarationGroup() {
+        ModeDeclarationGroup modeDeclarationGroup = ModedeclarationFactory.eINSTANCE.createModeDeclarationGroup();
+        modeDeclarationGroup.setUuid(UUID.randomUUID().toString());
+        return modeDeclarationGroup;
+    }
+
+    public ModeDisablingDependencyDependentOnMode createModeDisablingDependencyDependentOnMode() {
+        return autosar3x.swcomponent.modedeclaration.instanceref.InstancerefFactory.eINSTANCE.createModeDisablingDependencyDependentOnMode();
+    }
+
+    public ModeSwitchComSpec createModeSwitchComSpec() {
+        return CommunicationFactory.eINSTANCE.createModeSwitchComSpec();
+    }
+
+    public ModeSwitchedAckRequest createModeSwitchedAckRequest() {
+        return CommunicationFactory.eINSTANCE.createModeSwitchedAckRequest();
+    }
+
+    public ParameterProvideComSpec createParameterProvideComSpec() {
+        return CommunicationFactory.eINSTANCE.createParameterProvideComSpec();
+    }
+
+    public ParameterRequireComSpec createParameterRequireComSpec() {
+        return CommunicationFactory.eINSTANCE.createParameterRequireComSpec();
+    }
+
+    public TransmissionAcknowledgementRequest createTransmissionAcknowledgementRequest() {
+        return CommunicationFactory.eINSTANCE.createTransmissionAcknowledgementRequest();
+    }
+
+    public UnqueuedSenderComSpec createUnqueuedSenderComSpec() {
+        return CommunicationFactory.eINSTANCE.createUnqueuedSenderComSpec();
+    }
+
+    public QueuedSenderComSpec createQueuedSenderComSpec() {
+        return CommunicationFactory.eINSTANCE.createQueuedSenderComSpec();
+    }
+
+    public ServerComSpec createServerComSpec() {
+        return CommunicationFactory.eINSTANCE.createServerComSpec();
+    }
+
+    public UnqueuedReceiverComSpec createUnqueuedReceiverComSpec() {
+        return CommunicationFactory.eINSTANCE.createUnqueuedReceiverComSpec();
+    }
+
+    public QueuedReceiverComSpec createQueuedReceiverComSpec() {
+        return CommunicationFactory.eINSTANCE.createQueuedReceiverComSpec();
+    }
+
+    public ClientComSpec createClientComSpec() {
+        return CommunicationFactory.eINSTANCE.createClientComSpec();
+    }
+
+    public InternalBehavior createInternalBehavior() {
+        InternalBehavior internalBehavior = SwcinternalbehaviorFactory.eINSTANCE.createInternalBehavior();
+        internalBehavior.setUuid(UUID.randomUUID().toString());
+        return internalBehavior;
+    }
+
+    public RunnableEntity createRunnableEntity() {
+        RunnableEntity runnableEntity = SwcinternalbehaviorFactory.eINSTANCE.createRunnableEntity();
+        runnableEntity.setUuid(UUID.randomUUID().toString());
+        return runnableEntity;
+    }
+
+    public ModeSwitchedAckEvent createModeSwitchedAckEvent() {
+        ModeSwitchedAckEvent modeSwitchedAckEvent = RteeventsFactory.eINSTANCE.createModeSwitchedAckEvent();
+        modeSwitchedAckEvent.setUuid(UUID.randomUUID().toString());
+        return modeSwitchedAckEvent;
+    }
+
+    public AsynchronousServerCallReturnsEvent createAsynchronousServerCallReturnsEvent() {
+        AsynchronousServerCallReturnsEvent asynchronousServerCallReturnsEvent = RteeventsFactory.eINSTANCE.createAsynchronousServerCallReturnsEvent();
+        asynchronousServerCallReturnsEvent.setUuid(UUID.randomUUID().toString());
+        return asynchronousServerCallReturnsEvent;
+    }
+
+    public DataSendCompletedEvent createDataSendCompletedEvent() {
+        DataSendCompletedEvent dataSendCompletedEvent = RteeventsFactory.eINSTANCE.createDataSendCompletedEvent();
+        dataSendCompletedEvent.setUuid(UUID.randomUUID().toString());
+        return dataSendCompletedEvent;
+    }
+
+    public DataReceivedEvent createDataReceivedEvent() {
+        DataReceivedEvent dataReceivedEvent = RteeventsFactory.eINSTANCE.createDataReceivedEvent();
+        dataReceivedEvent.setUuid(UUID.randomUUID().toString());
+        return dataReceivedEvent;
+    }
+
+    public DataReceiveErrorEvent createDataReceiveErrorEvent() {
+        DataReceiveErrorEvent dataReceiveErrorEvent = RteeventsFactory.eINSTANCE.createDataReceiveErrorEvent();
+        dataReceiveErrorEvent.setUuid(UUID.randomUUID().toString());
+        return dataReceiveErrorEvent;
+    }
+
+    public TimingEvent createTimingEvent() {
+        TimingEvent timingEvent = RteeventsFactory.eINSTANCE.createTimingEvent();
+        timingEvent.setUuid(UUID.randomUUID().toString());
+        return timingEvent;
+    }
+
+    public OperationInvokedEvent createOperationInvokedEvent() {
+        OperationInvokedEvent operationInvokedEvent = RteeventsFactory.eINSTANCE.createOperationInvokedEvent();
+        operationInvokedEvent.setUuid(UUID.randomUUID().toString());
+        return operationInvokedEvent;
+    }
+
+    public ModeSwitchEvent createModeSwitchEvent() {
+        ModeSwitchEvent modeSwitchEvent = RteeventsFactory.eINSTANCE.createModeSwitchEvent();
+        modeSwitchEvent.setUuid(UUID.randomUUID().toString());
+        return modeSwitchEvent;
+    }
+
+    public WaitPoint createWaitPoint() {
+        WaitPoint waitPoint = RteeventsFactory.eINSTANCE.createWaitPoint();
+        waitPoint.setUuid(UUID.randomUUID().toString());
+        return waitPoint;
+    }
+
+    public DataReceiveErrorEventData createDataReceiveErrorEventData() {
+        return autosar3x.swcomponent.swcinternalbehavior.rteevents.instanceref.InstancerefFactory.eINSTANCE.createDataReceiveErrorEventData();
+    }
+
+    public ModeSwitchEventMode createModeSwitchEventMode() {
+        return autosar3x.swcomponent.swcinternalbehavior.rteevents.instanceref.InstancerefFactory.eINSTANCE.createModeSwitchEventMode();
+    }
+
+    public OperationInvokedEventOperation createOperationInvokedEventOperation() {
+        return autosar3x.swcomponent.swcinternalbehavior.rteevents.instanceref.InstancerefFactory.eINSTANCE.createOperationInvokedEventOperation();
+    }
+
+    public DataReceivedEventData createDataReceivedEventData() {
+        return autosar3x.swcomponent.swcinternalbehavior.rteevents.instanceref.InstancerefFactory.eINSTANCE.createDataReceivedEventData();
+    }
+
+    public ModeSwitchPoint createModeSwitchPoint() {
+        ModeSwitchPoint modeSwitchPoint = ModedeclarationgroupFactory.eINSTANCE.createModeSwitchPoint();
+        modeSwitchPoint.setUuid(UUID.randomUUID().toString());
+        return modeSwitchPoint;
+    }
+
+    public ModeSwitchPointModeGroup createModeSwitchPointModeGroup() {
+        return autosar3x.swcomponent.swcinternalbehavior.modedeclarationgroup.instanceref.InstancerefFactory.eINSTANCE.createModeSwitchPointModeGroup();
+    }
+
+    public SynchronousServerCallPoint createSynchronousServerCallPoint() {
+        SynchronousServerCallPoint synchronousServerCallPoint = ServercallFactory.eINSTANCE.createSynchronousServerCallPoint();
+        synchronousServerCallPoint.setUuid(UUID.randomUUID().toString());
+        return synchronousServerCallPoint;
+    }
+
+    public AsynchronousServerCallPoint createAsynchronousServerCallPoint() {
+        AsynchronousServerCallPoint asynchronousServerCallPoint = ServercallFactory.eINSTANCE.createAsynchronousServerCallPoint();
+        asynchronousServerCallPoint.setUuid(UUID.randomUUID().toString());
+        return asynchronousServerCallPoint;
+    }
+
+    public ServerCallPointOperation createServerCallPointOperation() {
+        return InstancerefFactory.eINSTANCE.createServerCallPointOperation();
+    }
+
+    public DataReceivePoint createDataReceivePoint() {
+        DataReceivePoint dataReceivePoint = DataelementsFactory.eINSTANCE.createDataReceivePoint();
+        dataReceivePoint.setUuid(UUID.randomUUID().toString());
+        return dataReceivePoint;
+    }
+
+    public DataReadAccess createDataReadAccess() {
+        DataReadAccess dataReadAccess = DataelementsFactory.eINSTANCE.createDataReadAccess();
+        dataReadAccess.setUuid(UUID.randomUUID().toString());
+        return dataReadAccess;
+    }
+
+    public DataWriteAccess createDataWriteAccess() {
+        DataWriteAccess dataWriteAccess = DataelementsFactory.eINSTANCE.createDataWriteAccess();
+        dataWriteAccess.setUuid(UUID.randomUUID().toString());
+        return dataWriteAccess;
+    }
+
+    public DataSendPoint createDataSendPoint() {
+        DataSendPoint dataSendPoint = DataelementsFactory.eINSTANCE.createDataSendPoint();
+        dataSendPoint.setUuid(UUID.randomUUID().toString());
+        return dataSendPoint;
+    }
+
+    public DataReadAccessDataElement createDataReadAccessDataElement() {
+        return autosar3x.swcomponent.swcinternalbehavior.dataelements.instanceref.InstancerefFactory.eINSTANCE.createDataReadAccessDataElement();
+    }
+
+    public DataSendPointDataElement createDataSendPointDataElement() {
+        return autosar3x.swcomponent.swcinternalbehavior.dataelements.instanceref.InstancerefFactory.eINSTANCE.createDataSendPointDataElement();
+    }
+
+    public DataWriteAccessDataElement createDataWriteAccessDataElement() {
+        return autosar3x.swcomponent.swcinternalbehavior.dataelements.instanceref.InstancerefFactory.eINSTANCE.createDataWriteAccessDataElement();
+    }
+
+    public DataReceivePointDataElement createDataReceivePointDataElement() {
+        return autosar3x.swcomponent.swcinternalbehavior.dataelements.instanceref.InstancerefFactory.eINSTANCE.createDataReceivePointDataElement();
+    }
+
+    public InterRunnableVariable createInterRunnableVariable() {
+        InterRunnableVariable interRunnableVariable = InterrunnablecommunicationFactory.eINSTANCE.createInterRunnableVariable();
+        interRunnableVariable.setUuid(UUID.randomUUID().toString());
+        return interRunnableVariable;
+    }
+
+    public PerInstanceMemory createPerInstanceMemory() {
+        PerInstanceMemory perInstanceMemory = PerinstancememoryFactory.eINSTANCE.createPerInstanceMemory();
+        perInstanceMemory.setUuid(UUID.randomUUID().toString());
+        return perInstanceMemory;
+    }
+
+    public PortAPIOption createPortAPIOption() {
+        return PortapioptionsFactory.eINSTANCE.createPortAPIOption();
+    }
+
+    public RoleBasedPPortAssignment createRoleBasedPPortAssignment() {
+        return ServicemappingFactory.eINSTANCE.createRoleBasedPPortAssignment();
+    }
+
+    public RoleBasedRPortAssignment createRoleBasedRPortAssignment() {
+        return ServicemappingFactory.eINSTANCE.createRoleBasedRPortAssignment();
+    }
+
+    public SwcComMgrUserNeeds createSwcComMgrUserNeeds() {
+        SwcComMgrUserNeeds swcComMgrUserNeeds = ServicemappingFactory.eINSTANCE.createSwcComMgrUserNeeds();
+        swcComMgrUserNeeds.setUuid(UUID.randomUUID().toString());
+        return swcComMgrUserNeeds;
+    }
+
+    public SwcDiagnosticCommunicationNeeds createSwcDiagnosticCommunicationNeeds() {
+        SwcDiagnosticCommunicationNeeds swcDiagnosticCommunicationNeeds = ServicemappingFactory.eINSTANCE.createSwcDiagnosticCommunicationNeeds();
+        swcDiagnosticCommunicationNeeds.setUuid(UUID.randomUUID().toString());
+        return swcDiagnosticCommunicationNeeds;
+    }
+
+    public SwcDiagnosticEventNeeds createSwcDiagnosticEventNeeds() {
+        SwcDiagnosticEventNeeds swcDiagnosticEventNeeds = ServicemappingFactory.eINSTANCE.createSwcDiagnosticEventNeeds();
+        swcDiagnosticEventNeeds.setUuid(UUID.randomUUID().toString());
+        return swcDiagnosticEventNeeds;
+    }
+
+    public SwcEcuStateMgrUserNeeds createSwcEcuStateMgrUserNeeds() {
+        SwcEcuStateMgrUserNeeds swcEcuStateMgrUserNeeds = ServicemappingFactory.eINSTANCE.createSwcEcuStateMgrUserNeeds();
+        swcEcuStateMgrUserNeeds.setUuid(UUID.randomUUID().toString());
+        return swcEcuStateMgrUserNeeds;
+    }
+
+    public SwcFunctionInhibitionNeeds createSwcFunctionInhibitionNeeds() {
+        SwcFunctionInhibitionNeeds swcFunctionInhibitionNeeds = ServicemappingFactory.eINSTANCE.createSwcFunctionInhibitionNeeds();
+        swcFunctionInhibitionNeeds.setUuid(UUID.randomUUID().toString());
+        return swcFunctionInhibitionNeeds;
+    }
+
+    public SwcNvBlockNeeds createSwcNvBlockNeeds() {
+        SwcNvBlockNeeds swcNvBlockNeeds = ServicemappingFactory.eINSTANCE.createSwcNvBlockNeeds();
+        swcNvBlockNeeds.setUuid(UUID.randomUUID().toString());
+        return swcNvBlockNeeds;
+    }
+
+    public SwcObdControlServiceNeeds createSwcObdControlServiceNeeds() {
+        SwcObdControlServiceNeeds swcObdControlServiceNeeds = ServicemappingFactory.eINSTANCE.createSwcObdControlServiceNeeds();
+        swcObdControlServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return swcObdControlServiceNeeds;
+    }
+
+    public SwcObdInfoServiceNeeds createSwcObdInfoServiceNeeds() {
+        SwcObdInfoServiceNeeds swcObdInfoServiceNeeds = ServicemappingFactory.eINSTANCE.createSwcObdInfoServiceNeeds();
+        swcObdInfoServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return swcObdInfoServiceNeeds;
+    }
+
+    public SwcObdMonitorServiceNeeds createSwcObdMonitorServiceNeeds() {
+        SwcObdMonitorServiceNeeds swcObdMonitorServiceNeeds = ServicemappingFactory.eINSTANCE.createSwcObdMonitorServiceNeeds();
+        swcObdMonitorServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return swcObdMonitorServiceNeeds;
+    }
+
+    public SwcObdPidServiceNeeds createSwcObdPidServiceNeeds() {
+        SwcObdPidServiceNeeds swcObdPidServiceNeeds = ServicemappingFactory.eINSTANCE.createSwcObdPidServiceNeeds();
+        swcObdPidServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return swcObdPidServiceNeeds;
+    }
+
+    public SwcObdRatioServiceNeeds createSwcObdRatioServiceNeeds() {
+        SwcObdRatioServiceNeeds swcObdRatioServiceNeeds = ServicemappingFactory.eINSTANCE.createSwcObdRatioServiceNeeds();
+        swcObdRatioServiceNeeds.setUuid(UUID.randomUUID().toString());
+        return swcObdRatioServiceNeeds;
+    }
+
+    public SwcSupervisedEntityNeeds createSwcSupervisedEntityNeeds() {
+        SwcSupervisedEntityNeeds swcSupervisedEntityNeeds = ServicemappingFactory.eINSTANCE.createSwcSupervisedEntityNeeds();
+        swcSupervisedEntityNeeds.setUuid(UUID.randomUUID().toString());
+        return swcSupervisedEntityNeeds;
+    }
+
+    public LocalParameterInitValueAssignment createLocalParameterInitValueAssignment() {
+        return ComponentlocalcalprmFactory.eINSTANCE.createLocalParameterInitValueAssignment();
+    }
+
+    public ServiceComponentPrototype createServiceComponentPrototype() {
+        ServiceComponentPrototype serviceComponentPrototype = ServicesFactory.eINSTANCE.createServiceComponentPrototype();
+        serviceComponentPrototype.setUuid(UUID.randomUUID().toString());
+        return serviceComponentPrototype;
+    }
+
+    public EcuSwComposition createEcuSwComposition() {
+        EcuSwComposition ecuSwComposition = ServicesFactory.eINSTANCE.createEcuSwComposition();
+        ecuSwComposition.setUuid(UUID.randomUUID().toString());
+        return ecuSwComposition;
+    }
+
+    public PerInstanceMemorySize createPerInstanceMemorySize() {
+        return SwcimplementationFactory.eINSTANCE.createPerInstanceMemorySize();
+    }
+
+    public SwcImplementation createSwcImplementation() {
+        SwcImplementation swcImplementation = SwcimplementationFactory.eINSTANCE.createSwcImplementation();
+        swcImplementation.setUuid(UUID.randomUUID().toString());
+        return swcImplementation;
+    }
+
+    public ArraySpecification createArraySpecification() {
+        ArraySpecification arraySpecification = ConstantsFactory.eINSTANCE.createArraySpecification();
+        arraySpecification.setUuid(UUID.randomUUID().toString());
+        return arraySpecification;
+    }
+
+    public BooleanLiteral createBooleanLiteral() {
+        BooleanLiteral booleanLiteral = ConstantsFactory.eINSTANCE.createBooleanLiteral();
+        booleanLiteral.setUuid(UUID.randomUUID().toString());
+        return booleanLiteral;
+    }
+
+    public CharLiteral createCharLiteral() {
+        CharLiteral charLiteral = ConstantsFactory.eINSTANCE.createCharLiteral();
+        charLiteral.setUuid(UUID.randomUUID().toString());
+        return charLiteral;
+    }
+
+    public ConstantReference createConstantReference() {
+        ConstantReference constantReference = ConstantsFactory.eINSTANCE.createConstantReference();
+        constantReference.setUuid(UUID.randomUUID().toString());
+        return constantReference;
+    }
+
+    public ConstantSpecification createConstantSpecification() {
+        ConstantSpecification constantSpecification = ConstantsFactory.eINSTANCE.createConstantSpecification();
+        constantSpecification.setUuid(UUID.randomUUID().toString());
+        return constantSpecification;
+    }
+
+    public IntegerLiteral createIntegerLiteral() {
+        IntegerLiteral integerLiteral = ConstantsFactory.eINSTANCE.createIntegerLiteral();
+        integerLiteral.setUuid(UUID.randomUUID().toString());
+        return integerLiteral;
+    }
+
+    public OpaqueLiteral createOpaqueLiteral() {
+        OpaqueLiteral opaqueLiteral = ConstantsFactory.eINSTANCE.createOpaqueLiteral();
+        opaqueLiteral.setUuid(UUID.randomUUID().toString());
+        return opaqueLiteral;
+    }
+
+    public RealLiteral createRealLiteral() {
+        RealLiteral realLiteral = ConstantsFactory.eINSTANCE.createRealLiteral();
+        realLiteral.setUuid(UUID.randomUUID().toString());
+        return realLiteral;
+    }
+
+    public RecordSpecification createRecordSpecification() {
+        RecordSpecification recordSpecification = ConstantsFactory.eINSTANCE.createRecordSpecification();
+        recordSpecification.setUuid(UUID.randomUUID().toString());
+        return recordSpecification;
+    }
+
+    public StringLiteral createStringLiteral() {
+        StringLiteral stringLiteral = ConstantsFactory.eINSTANCE.createStringLiteral();
+        stringLiteral.setUuid(UUID.randomUUID().toString());
+        return stringLiteral;
+    }
+
+    public ARLimit createARLimit() {
+        return DatatypesFactory.eINSTANCE.createARLimit();
+    }
+
+    public ArrayElement createArrayElement() {
+        ArrayElement arrayElement = DatatypesFactory.eINSTANCE.createArrayElement();
+        arrayElement.setUuid(UUID.randomUUID().toString());
+        return arrayElement;
+    }
+
+    public BooleanType createBooleanType() {
+        BooleanType booleanType = DatatypesFactory.eINSTANCE.createBooleanType();
+        booleanType.setUuid(UUID.randomUUID().toString());
+        return booleanType;
+    }
+
+    public OpaqueType createOpaqueType() {
+        OpaqueType opaqueType = DatatypesFactory.eINSTANCE.createOpaqueType();
+        opaqueType.setUuid(UUID.randomUUID().toString());
+        return opaqueType;
+    }
+
+    public RecordElement createRecordElement() {
+        RecordElement recordElement = DatatypesFactory.eINSTANCE.createRecordElement();
+        recordElement.setUuid(UUID.randomUUID().toString());
+        return recordElement;
+    }
+
+    public StringType createStringType() {
+        StringType stringType = DatatypesFactory.eINSTANCE.createStringType();
+        stringType.setUuid(UUID.randomUUID().toString());
+        return stringType;
+    }
+
+    public IntegerType createIntegerType() {
+        IntegerType integerType = DatatypesFactory.eINSTANCE.createIntegerType();
+        integerType.setUuid(UUID.randomUUID().toString());
+        return integerType;
+    }
+
+    public RealType createRealType() {
+        RealType realType = DatatypesFactory.eINSTANCE.createRealType();
+        realType.setUuid(UUID.randomUUID().toString());
+        return realType;
+    }
+
+    public CharType createCharType() {
+        CharType charType = DatatypesFactory.eINSTANCE.createCharType();
+        charType.setUuid(UUID.randomUUID().toString());
+        return charType;
+    }
+
+    public ArrayType createArrayType() {
+        ArrayType arrayType = DatatypesFactory.eINSTANCE.createArrayType();
+        arrayType.setUuid(UUID.randomUUID().toString());
+        return arrayType;
+    }
+
+    public RecordType createRecordType() {
+        RecordType recordType = DatatypesFactory.eINSTANCE.createRecordType();
+        recordType.setUuid(UUID.randomUUID().toString());
+        return recordType;
+    }
+
+    public Limit createLimit() {
+        return LocalconstraintsFactory.eINSTANCE.createLimit();
+    }
+
+    public DisplayName createDisplayName() {
+        return UnitsFactory.eINSTANCE.createDisplayName();
+    }
+
+    public PhysicalDimension createPhysicalDimension() {
+        PhysicalDimension physicalDimension = UnitsFactory.eINSTANCE.createPhysicalDimension();
+        physicalDimension.setUuid(UUID.randomUUID().toString());
+        return physicalDimension;
+    }
+
+    public UnitGroup createUnitGroup() {
+        UnitGroup unitGroup = UnitsFactory.eINSTANCE.createUnitGroup();
+        unitGroup.setUuid(UUID.randomUUID().toString());
+        return unitGroup;
+    }
+
+    public UnitSpec createUnitSpec() {
+        return UnitsFactory.eINSTANCE.createUnitSpec();
+    }
+
+    public Unit createUnit() {
+        Unit unit = UnitsFactory.eINSTANCE.createUnit();
+        unit.setUuid(UUID.randomUUID().toString());
+        return unit;
+    }
+
+    public Compu createCompu() {
+        return ComputationmethodFactory.eINSTANCE.createCompu();
+    }
+
+    public CompuConst createCompuConst() {
+        return ComputationmethodFactory.eINSTANCE.createCompuConst();
+    }
+
+    public CompuConstFormulaContent createCompuConstFormulaContent() {
+        return ComputationmethodFactory.eINSTANCE.createCompuConstFormulaContent();
+    }
+
+    public CompuConstNumericContent createCompuConstNumericContent() {
+        return ComputationmethodFactory.eINSTANCE.createCompuConstNumericContent();
+    }
+
+    public CompuConstTextContent createCompuConstTextContent() {
+        return ComputationmethodFactory.eINSTANCE.createCompuConstTextContent();
+    }
+
+    public CompuMethod createCompuMethod() {
+        CompuMethod compuMethod = ComputationmethodFactory.eINSTANCE.createCompuMethod();
+        compuMethod.setUuid(UUID.randomUUID().toString());
+        return compuMethod;
+    }
+
+    public CompuNominatorDenominator createCompuNominatorDenominator() {
+        return ComputationmethodFactory.eINSTANCE.createCompuNominatorDenominator();
+    }
+
+    public CompuProgCode createCompuProgCode() {
+        return ComputationmethodFactory.eINSTANCE.createCompuProgCode();
+    }
+
+    public ProgCode createProgCode() {
+        return ComputationmethodFactory.eINSTANCE.createProgCode();
+    }
+
+    public CompuRationalCoeffs createCompuRationalCoeffs() {
+        return ComputationmethodFactory.eINSTANCE.createCompuRationalCoeffs();
+    }
+
+    public CompuScale createCompuScale() {
+        return ComputationmethodFactory.eINSTANCE.createCompuScale();
+    }
+
+    public CompuScaleConstantContents createCompuScaleConstantContents() {
+        return ComputationmethodFactory.eINSTANCE.createCompuScaleConstantContents();
+    }
+
+    public CompuScaleGenericMath createCompuScaleGenericMath() {
+        return ComputationmethodFactory.eINSTANCE.createCompuScaleGenericMath();
+    }
+
+    public CompuScaleRationalFormula createCompuScaleRationalFormula() {
+        return ComputationmethodFactory.eINSTANCE.createCompuScaleRationalFormula();
+    }
+
+    public CompuScales createCompuScales() {
+        return ComputationmethodFactory.eINSTANCE.createCompuScales();
+    }
+
+    public CompuGenericMath createCompuGenericMath() {
+        return ComputationmethodFactory.eINSTANCE.createCompuGenericMath();
+    }
+
+    public Vt createVt() {
+        return ValuemodelFactory.eINSTANCE.createVt();
+    }
+
+    public V createV() {
+        return ValuemodelFactory.eINSTANCE.createV();
+    }
+
+    public Vf createVf() {
+        return ValuemodelFactory.eINSTANCE.createVf();
+    }
+
+    public BooleanValue createBooleanValue() {
+        return EcucdescriptionFactory.eINSTANCE.createBooleanValue();
+    }
+
+    public Container createContainer() {
+        Container container = EcucdescriptionFactory.eINSTANCE.createContainer();
+        container.setUuid(UUID.randomUUID().toString());
+        return container;
+    }
+
+    public EcuConfiguration createEcuConfiguration() {
+        EcuConfiguration ecuConfiguration = EcucdescriptionFactory.eINSTANCE.createEcuConfiguration();
+        ecuConfiguration.setUuid(UUID.randomUUID().toString());
+        return ecuConfiguration;
+    }
+
+    public EnumerationValue createEnumerationValue() {
+        return EcucdescriptionFactory.eINSTANCE.createEnumerationValue();
+    }
+
+    public FloatValue createFloatValue() {
+        return EcucdescriptionFactory.eINSTANCE.createFloatValue();
+    }
+
+    public FunctionNameValue createFunctionNameValue() {
+        return EcucdescriptionFactory.eINSTANCE.createFunctionNameValue();
+    }
+
+    public LinkerSymbolValue createLinkerSymbolValue() {
+        return EcucdescriptionFactory.eINSTANCE.createLinkerSymbolValue();
+    }
+
+    public StringValue createStringValue() {
+        return EcucdescriptionFactory.eINSTANCE.createStringValue();
+    }
+
+    public InstanceReferenceValue createInstanceReferenceValue() {
+        return EcucdescriptionFactory.eINSTANCE.createInstanceReferenceValue();
+    }
+
+    public IntegerValue createIntegerValue() {
+        return EcucdescriptionFactory.eINSTANCE.createIntegerValue();
+    }
+
+    public ReferenceValue createReferenceValue() {
+        return EcucdescriptionFactory.eINSTANCE.createReferenceValue();
+    }
+
+    public ModuleConfiguration createModuleConfiguration() {
+        ModuleConfiguration moduleConfiguration = EcucdescriptionFactory.eINSTANCE.createModuleConfiguration();
+        moduleConfiguration.setUuid(UUID.randomUUID().toString());
+        return moduleConfiguration;
+    }
+
+    public InstanceReferenceValueValue createInstanceReferenceValueValue() {
+        return autosar3x.ecucdescription.instanceref.InstancerefFactory.eINSTANCE.createInstanceReferenceValueValue();
+    }
+
+    public BooleanParamDef createBooleanParamDef() {
+        BooleanParamDef booleanParamDef = EcucparameterdefFactory.eINSTANCE.createBooleanParamDef();
+        booleanParamDef.setUuid(UUID.randomUUID().toString());
+        return booleanParamDef;
+    }
+
+    public ChoiceContainerDef createChoiceContainerDef() {
+        ChoiceContainerDef choiceContainerDef = EcucparameterdefFactory.eINSTANCE.createChoiceContainerDef();
+        choiceContainerDef.setUuid(UUID.randomUUID().toString());
+        return choiceContainerDef;
+    }
+
+    public ParamConfContainerDef createParamConfContainerDef() {
+        ParamConfContainerDef paramConfContainerDef = EcucparameterdefFactory.eINSTANCE.createParamConfContainerDef();
+        paramConfContainerDef.setUuid(UUID.randomUUID().toString());
+        return paramConfContainerDef;
+    }
+
+    public ConfigurationClassAffection createConfigurationClassAffection() {
+        return EcucparameterdefFactory.eINSTANCE.createConfigurationClassAffection();
+    }
+
+    public ImplementationConfigClass createImplementationConfigClass() {
+        return EcucparameterdefFactory.eINSTANCE.createImplementationConfigClass();
+    }
+
+    public ChoiceReferenceParamDef createChoiceReferenceParamDef() {
+        ChoiceReferenceParamDef choiceReferenceParamDef = EcucparameterdefFactory.eINSTANCE.createChoiceReferenceParamDef();
+        choiceReferenceParamDef.setUuid(UUID.randomUUID().toString());
+        return choiceReferenceParamDef;
+    }
+
+    public DerivedBooleanParamDef createDerivedBooleanParamDef() {
+        DerivedBooleanParamDef derivedBooleanParamDef = EcucparameterdefFactory.eINSTANCE.createDerivedBooleanParamDef();
+        derivedBooleanParamDef.setUuid(UUID.randomUUID().toString());
+        return derivedBooleanParamDef;
+    }
+
+    public DerivedEnumerationParamDef createDerivedEnumerationParamDef() {
+        DerivedEnumerationParamDef derivedEnumerationParamDef = EcucparameterdefFactory.eINSTANCE.createDerivedEnumerationParamDef();
+        derivedEnumerationParamDef.setUuid(UUID.randomUUID().toString());
+        return derivedEnumerationParamDef;
+    }
+
+    public EnumerationParamDef createEnumerationParamDef() {
+        EnumerationParamDef enumerationParamDef = EcucparameterdefFactory.eINSTANCE.createEnumerationParamDef();
+        enumerationParamDef.setUuid(UUID.randomUUID().toString());
+        return enumerationParamDef;
+    }
+
+    public EnumerationLiteralDef createEnumerationLiteralDef() {
+        EnumerationLiteralDef enumerationLiteralDef = EcucparameterdefFactory.eINSTANCE.createEnumerationLiteralDef();
+        enumerationLiteralDef.setUuid(UUID.randomUUID().toString());
+        return enumerationLiteralDef;
+    }
+
+    public DerivedFloatParamDef createDerivedFloatParamDef() {
+        DerivedFloatParamDef derivedFloatParamDef = EcucparameterdefFactory.eINSTANCE.createDerivedFloatParamDef();
+        derivedFloatParamDef.setUuid(UUID.randomUUID().toString());
+        return derivedFloatParamDef;
+    }
+
+    public FloatParamDef createFloatParamDef() {
+        FloatParamDef floatParamDef = EcucparameterdefFactory.eINSTANCE.createFloatParamDef();
+        floatParamDef.setUuid(UUID.randomUUID().toString());
+        return floatParamDef;
+    }
+
+    public DerivedIntegerParamDef createDerivedIntegerParamDef() {
+        DerivedIntegerParamDef derivedIntegerParamDef = EcucparameterdefFactory.eINSTANCE.createDerivedIntegerParamDef();
+        derivedIntegerParamDef.setUuid(UUID.randomUUID().toString());
+        return derivedIntegerParamDef;
+    }
+
+    public IntegerParamDef createIntegerParamDef() {
+        IntegerParamDef integerParamDef = EcucparameterdefFactory.eINSTANCE.createIntegerParamDef();
+        integerParamDef.setUuid(UUID.randomUUID().toString());
+        return integerParamDef;
+    }
+
+    public DerivedStringParamDef createDerivedStringParamDef() {
+        DerivedStringParamDef derivedStringParamDef = EcucparameterdefFactory.eINSTANCE.createDerivedStringParamDef();
+        derivedStringParamDef.setUuid(UUID.randomUUID().toString());
+        return derivedStringParamDef;
+    }
+
+    public StringParamDef createStringParamDef() {
+        StringParamDef stringParamDef = EcucparameterdefFactory.eINSTANCE.createStringParamDef();
+        stringParamDef.setUuid(UUID.randomUUID().toString());
+        return stringParamDef;
+    }
+
+    public EcuParameterDefinition createEcuParameterDefinition() {
+        EcuParameterDefinition ecuParameterDefinition = EcucparameterdefFactory.eINSTANCE.createEcuParameterDefinition();
+        ecuParameterDefinition.setUuid(UUID.randomUUID().toString());
+        return ecuParameterDefinition;
+    }
+
+    public ModuleDef createModuleDef() {
+        ModuleDef moduleDef = EcucparameterdefFactory.eINSTANCE.createModuleDef();
+        moduleDef.setUuid(UUID.randomUUID().toString());
+        return moduleDef;
+    }
+
+    public ForeignReferenceParamDef createForeignReferenceParamDef() {
+        ForeignReferenceParamDef foreignReferenceParamDef = EcucparameterdefFactory.eINSTANCE.createForeignReferenceParamDef();
+        foreignReferenceParamDef.setUuid(UUID.randomUUID().toString());
+        return foreignReferenceParamDef;
+    }
+
+    public FunctionNameDef createFunctionNameDef() {
+        FunctionNameDef functionNameDef = EcucparameterdefFactory.eINSTANCE.createFunctionNameDef();
+        functionNameDef.setUuid(UUID.randomUUID().toString());
+        return functionNameDef;
+    }
+
+    public LinkerSymbolDef createLinkerSymbolDef() {
+        LinkerSymbolDef linkerSymbolDef = EcucparameterdefFactory.eINSTANCE.createLinkerSymbolDef();
+        linkerSymbolDef.setUuid(UUID.randomUUID().toString());
+        return linkerSymbolDef;
+    }
+
+    public InstanceReferenceParamDef createInstanceReferenceParamDef() {
+        InstanceReferenceParamDef instanceReferenceParamDef = EcucparameterdefFactory.eINSTANCE.createInstanceReferenceParamDef();
+        instanceReferenceParamDef.setUuid(UUID.randomUUID().toString());
+        return instanceReferenceParamDef;
+    }
+
+    public ReferenceParamDef createReferenceParamDef() {
+        ReferenceParamDef referenceParamDef = EcucparameterdefFactory.eINSTANCE.createReferenceParamDef();
+        referenceParamDef.setUuid(UUID.randomUUID().toString());
+        return referenceParamDef;
+    }
+
+    public SymbolicNameReferenceParamDef createSymbolicNameReferenceParamDef() {
+        SymbolicNameReferenceParamDef symbolicNameReferenceParamDef = EcucparameterdefFactory.eINSTANCE.createSymbolicNameReferenceParamDef();
+        symbolicNameReferenceParamDef.setUuid(UUID.randomUUID().toString());
+        return symbolicNameReferenceParamDef;
+    }
+
+    public BswImplementation createBswImplementation() {
+        BswImplementation bswImplementation = BswimplementationFactory.eINSTANCE.createBswImplementation();
+        bswImplementation.setUuid(UUID.randomUUID().toString());
+        return bswImplementation;
+    }
+
+    public BswModuleDescription createBswModuleDescription() {
+        BswModuleDescription bswModuleDescription = BswoverviewFactory.eINSTANCE.createBswModuleDescription();
+        bswModuleDescription.setUuid(UUID.randomUUID().toString());
+        return bswModuleDescription;
+    }
+
+    public BswModuleDependency createBswModuleDependency() {
+        BswModuleDependency bswModuleDependency = BswinterfacesFactory.eINSTANCE.createBswModuleDependency();
+        bswModuleDependency.setUuid(UUID.randomUUID().toString());
+        return bswModuleDependency;
+    }
+
+    public BswModuleEntry createBswModuleEntry() {
+        BswModuleEntry bswModuleEntry = BswinterfacesFactory.eINSTANCE.createBswModuleEntry();
+        bswModuleEntry.setUuid(UUID.randomUUID().toString());
+        return bswModuleEntry;
+    }
+
+    public BswBehavior createBswBehavior() {
+        BswBehavior bswBehavior = BswbehaviorFactory.eINSTANCE.createBswBehavior();
+        bswBehavior.setUuid(UUID.randomUUID().toString());
+        return bswBehavior;
+    }
+
+    public BswSchedulableEntity createBswSchedulableEntity() {
+        BswSchedulableEntity bswSchedulableEntity = BswbehaviorFactory.eINSTANCE.createBswSchedulableEntity();
+        bswSchedulableEntity.setUuid(UUID.randomUUID().toString());
+        return bswSchedulableEntity;
+    }
+
+    public BswCyclicEvent createBswCyclicEvent() {
+        BswCyclicEvent bswCyclicEvent = BswbehaviorFactory.eINSTANCE.createBswCyclicEvent();
+        bswCyclicEvent.setUuid(UUID.randomUUID().toString());
+        return bswCyclicEvent;
+    }
+
+    public BswInterruptEntity createBswInterruptEntity() {
+        BswInterruptEntity bswInterruptEntity = BswbehaviorFactory.eINSTANCE.createBswInterruptEntity();
+        bswInterruptEntity.setUuid(UUID.randomUUID().toString());
+        return bswInterruptEntity;
+    }
+
+    public BswSporadicEvent createBswSporadicEvent() {
+        BswSporadicEvent bswSporadicEvent = BswbehaviorFactory.eINSTANCE.createBswSporadicEvent();
+        bswSporadicEvent.setUuid(UUID.randomUUID().toString());
+        return bswSporadicEvent;
+    }
+
+    public BswModuleEntity createBswModuleEntity() {
+        BswModuleEntity bswModuleEntity = BswbehaviorFactory.eINSTANCE.createBswModuleEntity();
+        bswModuleEntity.setUuid(UUID.randomUUID().toString());
+        return bswModuleEntity;
+    }
+
+    public SoftwareComposition createSoftwareComposition() {
+        SoftwareComposition softwareComposition = SystemFactory.eINSTANCE.createSoftwareComposition();
+        softwareComposition.setUuid(UUID.randomUUID().toString());
+        return softwareComposition;
+    }
+
+    public SystemMapping createSystemMapping() {
+        SystemMapping systemMapping = SystemFactory.eINSTANCE.createSystemMapping();
+        systemMapping.setUuid(UUID.randomUUID().toString());
+        return systemMapping;
+    }
+
+    public System createSystem() {
+        System system = SystemFactory.eINSTANCE.createSystem();
+        system.setUuid(UUID.randomUUID().toString());
+        return system;
+    }
+
+    public ComponentClustering createComponentClustering() {
+        return SwmappingFactory.eINSTANCE.createComponentClustering();
+    }
+
+    public ComponentSeparation createComponentSeparation() {
+        return SwmappingFactory.eINSTANCE.createComponentSeparation();
+    }
+
+    public EcuResourceEstimation createEcuResourceEstimation() {
+        return SwmappingFactory.eINSTANCE.createEcuResourceEstimation();
+    }
+
+    public SwcToEcuMapping createSwcToEcuMapping() {
+        SwcToEcuMapping swcToEcuMapping = SwmappingFactory.eINSTANCE.createSwcToEcuMapping();
+        swcToEcuMapping.setUuid(UUID.randomUUID().toString());
+        return swcToEcuMapping;
+    }
+
+    public PncMapping createPncMapping() {
+        PncMapping pncMapping = SwmappingFactory.eINSTANCE.createPncMapping();
+        pncMapping.setUuid(UUID.randomUUID().toString());
+        return pncMapping;
+    }
+
+    public SwcToEcuMappingConstraint createSwcToEcuMappingConstraint() {
+        return SwmappingFactory.eINSTANCE.createSwcToEcuMappingConstraint();
+    }
+
+    public SwcToImplMapping createSwcToImplMapping() {
+        SwcToImplMapping swcToImplMapping = SwmappingFactory.eINSTANCE.createSwcToImplMapping();
+        swcToImplMapping.setUuid(UUID.randomUUID().toString());
+        return swcToImplMapping;
+    }
+
+    public ComponentSeparationSeparatedComponent createComponentSeparationSeparatedComponent() {
+        return autosar3x.system.swmapping.instanceref.InstancerefFactory.eINSTANCE.createComponentSeparationSeparatedComponent();
+    }
+
+    public PncMappingVfc createPncMappingVfc() {
+        return autosar3x.system.swmapping.instanceref.InstancerefFactory.eINSTANCE.createPncMappingVfc();
+    }
+
+    public SwCompToEcuMappingComponent createSwCompToEcuMappingComponent() {
+        return autosar3x.system.swmapping.instanceref.InstancerefFactory.eINSTANCE.createSwCompToEcuMappingComponent();
+    }
+
+    public SwCompToImplMappingComponent createSwCompToImplMappingComponent() {
+        return autosar3x.system.swmapping.instanceref.InstancerefFactory.eINSTANCE.createSwCompToImplMappingComponent();
+    }
+
+    public SwcToEcuMappingConstraintComponent createSwcToEcuMappingConstraintComponent() {
+        return autosar3x.system.swmapping.instanceref.InstancerefFactory.eINSTANCE.createSwcToEcuMappingConstraintComponent();
+    }
+
+    public ComponentClusteringClusteredComponent createComponentClusteringClusteredComponent() {
+        return autosar3x.system.swmapping.instanceref.InstancerefFactory.eINSTANCE.createComponentClusteringClusteredComponent();
+    }
+
+    public CanFrameTriggering createCanFrameTriggering() {
+        CanFrameTriggering canFrameTriggering = CancommunicationFactory.eINSTANCE.createCanFrameTriggering();
+        canFrameTriggering.setUuid(UUID.randomUUID().toString());
+        return canFrameTriggering;
+    }
+
+    public RxIdentifierRange createRxIdentifierRange() {
+        return CancommunicationFactory.eINSTANCE.createRxIdentifierRange();
+    }
+
+    public CanCluster createCanCluster() {
+        CanCluster canCluster = CantopologyFactory.eINSTANCE.createCanCluster();
+        canCluster.setUuid(UUID.randomUUID().toString());
+        return canCluster;
+    }
+
+    public CanCommunicationConnector createCanCommunicationConnector() {
+        CanCommunicationConnector canCommunicationConnector = CantopologyFactory.eINSTANCE.createCanCommunicationConnector();
+        canCommunicationConnector.setUuid(UUID.randomUUID().toString());
+        return canCommunicationConnector;
+    }
+
+    public CanCommunicationController createCanCommunicationController() {
+        CanCommunicationController canCommunicationController = CantopologyFactory.eINSTANCE.createCanCommunicationController();
+        canCommunicationController.setUuid(UUID.randomUUID().toString());
+        return canCommunicationController;
+    }
+
+    public CanControllerConfiguration createCanControllerConfiguration() {
+        return CantopologyFactory.eINSTANCE.createCanControllerConfiguration();
+    }
+
+    public CanControllerConfigurationRequirements createCanControllerConfigurationRequirements() {
+        return CantopologyFactory.eINSTANCE.createCanControllerConfigurationRequirements();
+    }
+
+    public CycleCounter createCycleCounter() {
+        return Fibex4flexrayFactory.eINSTANCE.createCycleCounter();
+    }
+
+    public CycleRepetition createCycleRepetition() {
+        return Fibex4flexrayFactory.eINSTANCE.createCycleRepetition();
+    }
+
+    public AbsolutelyScheduledTiming createAbsolutelyScheduledTiming() {
+        return FlexraycommunicationFactory.eINSTANCE.createAbsolutelyScheduledTiming();
+    }
+
+    public FlexrayFrameTriggering createFlexrayFrameTriggering() {
+        FlexrayFrameTriggering flexrayFrameTriggering = FlexraycommunicationFactory.eINSTANCE.createFlexrayFrameTriggering();
+        flexrayFrameTriggering.setUuid(UUID.randomUUID().toString());
+        return flexrayFrameTriggering;
+    }
+
+    public FlexrayCluster createFlexrayCluster() {
+        FlexrayCluster flexrayCluster = FlexraytopologyFactory.eINSTANCE.createFlexrayCluster();
+        flexrayCluster.setUuid(UUID.randomUUID().toString());
+        return flexrayCluster;
+    }
+
+    public FlexRayCommunicationConnector createFlexRayCommunicationConnector() {
+        FlexRayCommunicationConnector flexRayCommunicationConnector = FlexraytopologyFactory.eINSTANCE.createFlexRayCommunicationConnector();
+        flexRayCommunicationConnector.setUuid(UUID.randomUUID().toString());
+        return flexRayCommunicationConnector;
+    }
+
+    public FlexrayCommunicationController createFlexrayCommunicationController() {
+        FlexrayCommunicationController flexrayCommunicationController = FlexraytopologyFactory.eINSTANCE.createFlexrayCommunicationController();
+        flexrayCommunicationController.setUuid(UUID.randomUUID().toString());
+        return flexrayCommunicationController;
+    }
+
+    public FlexrayFifoConfiguration createFlexrayFifoConfiguration() {
+        return FlexraytopologyFactory.eINSTANCE.createFlexrayFifoConfiguration();
+    }
+
+    public FlexrayPhysicalChannel createFlexrayPhysicalChannel() {
+        FlexrayPhysicalChannel flexrayPhysicalChannel = FlexraytopologyFactory.eINSTANCE.createFlexrayPhysicalChannel();
+        flexrayPhysicalChannel.setUuid(UUID.randomUUID().toString());
+        return flexrayPhysicalChannel;
+    }
+
+    public FlexrayFifoRange createFlexrayFifoRange() {
+        return FlexraytopologyFactory.eINSTANCE.createFlexrayFifoRange();
+    }
+
+    public AssignFrameIdTiming createAssignFrameIdTiming() {
+        return LincommunicationFactory.eINSTANCE.createAssignFrameIdTiming();
+    }
+
+    public RelativelyScheduledTiming createRelativelyScheduledTiming() {
+        return LincommunicationFactory.eINSTANCE.createRelativelyScheduledTiming();
+    }
+
+    public LinScheduleTable createLinScheduleTable() {
+        LinScheduleTable linScheduleTable = LincommunicationFactory.eINSTANCE.createLinScheduleTable();
+        linScheduleTable.setUuid(UUID.randomUUID().toString());
+        return linScheduleTable;
+    }
+
+    public LinErrorResponse createLinErrorResponse() {
+        return LincommunicationFactory.eINSTANCE.createLinErrorResponse();
+    }
+
+    public LinFrameTriggering createLinFrameTriggering() {
+        LinFrameTriggering linFrameTriggering = LincommunicationFactory.eINSTANCE.createLinFrameTriggering();
+        linFrameTriggering.setUuid(UUID.randomUUID().toString());
+        return linFrameTriggering;
+    }
+
+    public AssignNadTiming createAssignNadTiming() {
+        return LincommunicationFactory.eINSTANCE.createAssignNadTiming();
+    }
+
+    public DataTiming createDataTiming() {
+        return LincommunicationFactory.eINSTANCE.createDataTiming();
+    }
+
+    public FreeFormat createFreeFormat() {
+        return LincommunicationFactory.eINSTANCE.createFreeFormat();
+    }
+
+    public SubstitutionFrame createSubstitutionFrame() {
+        SubstitutionFrame substitutionFrame = LincommunicationFactory.eINSTANCE.createSubstitutionFrame();
+        substitutionFrame.setUuid(UUID.randomUUID().toString());
+        return substitutionFrame;
+    }
+
+    public UnassignFrameIdTiming createUnassignFrameIdTiming() {
+        return LincommunicationFactory.eINSTANCE.createUnassignFrameIdTiming();
+    }
+
+    public LinCluster createLinCluster() {
+        LinCluster linCluster = LintopologyFactory.eINSTANCE.createLinCluster();
+        linCluster.setUuid(UUID.randomUUID().toString());
+        return linCluster;
+    }
+
+    public LinMaster createLinMaster() {
+        LinMaster linMaster = LintopologyFactory.eINSTANCE.createLinMaster();
+        linMaster.setUuid(UUID.randomUUID().toString());
+        return linMaster;
+    }
+
+    public LinSlave createLinSlave() {
+        LinSlave linSlave = LintopologyFactory.eINSTANCE.createLinSlave();
+        linSlave.setUuid(UUID.randomUUID().toString());
+        return linSlave;
+    }
+
+    public DefaultValueElement createDefaultValueElement() {
+        return Fibex4multiplatformFactory.eINSTANCE.createDefaultValueElement();
+    }
+
+    public FrameMapping createFrameMapping() {
+        return Fibex4multiplatformFactory.eINSTANCE.createFrameMapping();
+    }
+
+    public Gateway createGateway() {
+        Gateway gateway = Fibex4multiplatformFactory.eINSTANCE.createGateway();
+        gateway.setUuid(UUID.randomUUID().toString());
+        return gateway;
+    }
+
+    public SignalMapping createSignalMapping() {
+        return Fibex4multiplatformFactory.eINSTANCE.createSignalMapping();
+    }
+
+    public IPduMapping createIPduMapping() {
+        return Fibex4multiplatformFactory.eINSTANCE.createIPduMapping();
+    }
+
+    public SourceIPduRef createSourceIPduRef() {
+        return Fibex4multiplatformFactory.eINSTANCE.createSourceIPduRef();
+    }
+
+    public PduMappingDefaultValue createPduMappingDefaultValue() {
+        return Fibex4multiplatformFactory.eINSTANCE.createPduMappingDefaultValue();
+    }
+
+    public TargetIPduRef createTargetIPduRef() {
+        return Fibex4multiplatformFactory.eINSTANCE.createTargetIPduRef();
+    }
+
+    public DcmIPdu createDcmIPdu() {
+        DcmIPdu dcmIPdu = CorecommunicationFactory.eINSTANCE.createDcmIPdu();
+        dcmIPdu.setUuid(UUID.randomUUID().toString());
+        return dcmIPdu;
+    }
+
+    public DynamicPart createDynamicPart() {
+        return CorecommunicationFactory.eINSTANCE.createDynamicPart();
+    }
+
+    public SegmentPosition createSegmentPosition() {
+        return CorecommunicationFactory.eINSTANCE.createSegmentPosition();
+    }
+
+    public DynamicPartAlternative createDynamicPartAlternative() {
+        return CorecommunicationFactory.eINSTANCE.createDynamicPartAlternative();
+    }
+
+    public SignalIPdu createSignalIPdu() {
+        SignalIPdu signalIPdu = CorecommunicationFactory.eINSTANCE.createSignalIPdu();
+        signalIPdu.setUuid(UUID.randomUUID().toString());
+        return signalIPdu;
+    }
+
+    public ISignalToIPduMapping createISignalToIPduMapping() {
+        ISignalToIPduMapping iSignalToIPduMapping = CorecommunicationFactory.eINSTANCE.createISignalToIPduMapping();
+        iSignalToIPduMapping.setUuid(UUID.randomUUID().toString());
+        return iSignalToIPduMapping;
+    }
+
+    public ISignal createISignal() {
+        ISignal iSignal = CorecommunicationFactory.eINSTANCE.createISignal();
+        iSignal.setUuid(UUID.randomUUID().toString());
+        return iSignal;
+    }
+
+    public IPduTiming createIPduTiming() {
+        return CorecommunicationFactory.eINSTANCE.createIPduTiming();
+    }
+
+    public Frame createFrame() {
+        Frame frame = CorecommunicationFactory.eINSTANCE.createFrame();
+        frame.setUuid(UUID.randomUUID().toString());
+        return frame;
+    }
+
+    public PduToFrameMapping createPduToFrameMapping() {
+        PduToFrameMapping pduToFrameMapping = CorecommunicationFactory.eINSTANCE.createPduToFrameMapping();
+        pduToFrameMapping.setUuid(UUID.randomUUID().toString());
+        return pduToFrameMapping;
+    }
+
+    public FramePort createFramePort() {
+        FramePort framePort = CorecommunicationFactory.eINSTANCE.createFramePort();
+        framePort.setUuid(UUID.randomUUID().toString());
+        return framePort;
+    }
+
+    public IPduGroup createIPduGroup() {
+        IPduGroup iPduGroup = CorecommunicationFactory.eINSTANCE.createIPduGroup();
+        iPduGroup.setUuid(UUID.randomUUID().toString());
+        return iPduGroup;
+    }
+
+    public IPduPort createIPduPort() {
+        IPduPort iPduPort = CorecommunicationFactory.eINSTANCE.createIPduPort();
+        iPduPort.setUuid(UUID.randomUUID().toString());
+        return iPduPort;
+    }
+
+    public IPduTriggering createIPduTriggering() {
+        IPduTriggering iPduTriggering = CorecommunicationFactory.eINSTANCE.createIPduTriggering();
+        iPduTriggering.setUuid(UUID.randomUUID().toString());
+        return iPduTriggering;
+    }
+
+    public ISignalTriggering createISignalTriggering() {
+        ISignalTriggering iSignalTriggering = CorecommunicationFactory.eINSTANCE.createISignalTriggering();
+        iSignalTriggering.setUuid(UUID.randomUUID().toString());
+        return iSignalTriggering;
+    }
+
+    public SignalPort createSignalPort() {
+        SignalPort signalPort = CorecommunicationFactory.eINSTANCE.createSignalPort();
+        signalPort.setUuid(UUID.randomUUID().toString());
+        return signalPort;
+    }
+
+    public MultiplexedIPdu createMultiplexedIPdu() {
+        MultiplexedIPdu multiplexedIPdu = CorecommunicationFactory.eINSTANCE.createMultiplexedIPdu();
+        multiplexedIPdu.setUuid(UUID.randomUUID().toString());
+        return multiplexedIPdu;
+    }
+
+    public StaticPart createStaticPart() {
+        return CorecommunicationFactory.eINSTANCE.createStaticPart();
+    }
+
+    public NmPdu createNmPdu() {
+        NmPdu nmPdu = CorecommunicationFactory.eINSTANCE.createNmPdu();
+        nmPdu.setUuid(UUID.randomUUID().toString());
+        return nmPdu;
+    }
+
+    public NPdu createNPdu() {
+        NPdu nPdu = CorecommunicationFactory.eINSTANCE.createNPdu();
+        nPdu.setUuid(UUID.randomUUID().toString());
+        return nPdu;
+    }
+
+    public PdurIPduGroup createPdurIPduGroup() {
+        PdurIPduGroup pdurIPduGroup = CorecommunicationFactory.eINSTANCE.createPdurIPduGroup();
+        pdurIPduGroup.setUuid(UUID.randomUUID().toString());
+        return pdurIPduGroup;
+    }
+
+    public SystemSignal createSystemSignal() {
+        SystemSignal systemSignal = CorecommunicationFactory.eINSTANCE.createSystemSignal();
+        systemSignal.setUuid(UUID.randomUUID().toString());
+        return systemSignal;
+    }
+
+    public SystemSignalGroup createSystemSignalGroup() {
+        SystemSignalGroup systemSignalGroup = CorecommunicationFactory.eINSTANCE.createSystemSignalGroup();
+        systemSignalGroup.setUuid(UUID.randomUUID().toString());
+        return systemSignalGroup;
+    }
+
+    public UserDefinedIPdu createUserDefinedIPdu() {
+        UserDefinedIPdu userDefinedIPdu = CorecommunicationFactory.eINSTANCE.createUserDefinedIPdu();
+        userDefinedIPdu.setUuid(UUID.randomUUID().toString());
+        return userDefinedIPdu;
+    }
+
+    public UserDefinedPdu createUserDefinedPdu() {
+        UserDefinedPdu userDefinedPdu = CorecommunicationFactory.eINSTANCE.createUserDefinedPdu();
+        userDefinedPdu.setUuid(UUID.randomUUID().toString());
+        return userDefinedPdu;
+    }
+
+    public AbsoluteTolerance createAbsoluteTolerance() {
+        return TimingFactory.eINSTANCE.createAbsoluteTolerance();
+    }
+
+    public CyclicTiming createCyclicTiming() {
+        return TimingFactory.eINSTANCE.createCyclicTiming();
+    }
+
+    public TimeRangeType createTimeRangeType() {
+        return TimingFactory.eINSTANCE.createTimeRangeType();
+    }
+
+    public EventControlledTiming createEventControlledTiming() {
+        return TimingFactory.eINSTANCE.createEventControlledTiming();
+    }
+
+    public RelativeTolerance createRelativeTolerance() {
+        return TimingFactory.eINSTANCE.createRelativeTolerance();
+    }
+
+    public TransmissionModeCondition createTransmissionModeCondition() {
+        return TimingFactory.eINSTANCE.createTransmissionModeCondition();
+    }
+
+    public TransmissionModeDeclaration createTransmissionModeDeclaration() {
+        return TimingFactory.eINSTANCE.createTransmissionModeDeclaration();
+    }
+
+    public TransmissionModeFalseTiming createTransmissionModeFalseTiming() {
+        return TimingFactory.eINSTANCE.createTransmissionModeFalseTiming();
+    }
+
+    public RequestControlledTiming createRequestControlledTiming() {
+        return TimingFactory.eINSTANCE.createRequestControlledTiming();
+    }
+
+    public CommunicationCluster createCommunicationCluster() {
+        CommunicationCluster communicationCluster = CoretopologyFactory.eINSTANCE.createCommunicationCluster();
+        communicationCluster.setUuid(UUID.randomUUID().toString());
+        return communicationCluster;
+    }
+
+    public PhysicalChannel createPhysicalChannel() {
+        PhysicalChannel physicalChannel = CoretopologyFactory.eINSTANCE.createPhysicalChannel();
+        physicalChannel.setUuid(UUID.randomUUID().toString());
+        return physicalChannel;
+    }
+
+    public CommunicationConnector createCommunicationConnector() {
+        CommunicationConnector communicationConnector = CoretopologyFactory.eINSTANCE.createCommunicationConnector();
+        communicationConnector.setUuid(UUID.randomUUID().toString());
+        return communicationConnector;
+    }
+
+    public CommunicationController createCommunicationController() {
+        CommunicationController communicationController = CoretopologyFactory.eINSTANCE.createCommunicationController();
+        communicationController.setUuid(UUID.randomUUID().toString());
+        return communicationController;
+    }
+
+    public EcuInstance createEcuInstance() {
+        EcuInstance ecuInstance = CoretopologyFactory.eINSTANCE.createEcuInstance();
+        ecuInstance.setUuid(UUID.randomUUID().toString());
+        return ecuInstance;
+    }
+
+    public CanTpConnectionChannel createCanTpConnectionChannel() {
+        return TransportprotocolsFactory.eINSTANCE.createCanTpConnectionChannel();
+    }
+
+    public CanTpNode createCanTpNode() {
+        CanTpNode canTpNode = TransportprotocolsFactory.eINSTANCE.createCanTpNode();
+        canTpNode.setUuid(UUID.randomUUID().toString());
+        return canTpNode;
+    }
+
+    public TpAddress createTpAddress() {
+        TpAddress tpAddress = TransportprotocolsFactory.eINSTANCE.createTpAddress();
+        tpAddress.setUuid(UUID.randomUUID().toString());
+        return tpAddress;
+    }
+
+    public FlexrayIsoTpConnection createFlexrayIsoTpConnection() {
+        return TransportprotocolsFactory.eINSTANCE.createFlexrayIsoTpConnection();
+    }
+
+    public FlexrayIsoTpPduPool createFlexrayIsoTpPduPool() {
+        FlexrayIsoTpPduPool flexrayIsoTpPduPool = TransportprotocolsFactory.eINSTANCE.createFlexrayIsoTpPduPool();
+        flexrayIsoTpPduPool.setUuid(UUID.randomUUID().toString());
+        return flexrayIsoTpPduPool;
+    }
+
+    public FlexrayIsoTpNode createFlexrayIsoTpNode() {
+        FlexrayIsoTpNode flexrayIsoTpNode = TransportprotocolsFactory.eINSTANCE.createFlexrayIsoTpNode();
+        flexrayIsoTpNode.setUuid(UUID.randomUUID().toString());
+        return flexrayIsoTpNode;
+    }
+
+    public FlexrayIsoTpConnectionControl createFlexrayIsoTpConnectionControl() {
+        FlexrayIsoTpConnectionControl flexrayIsoTpConnectionControl = TransportprotocolsFactory.eINSTANCE.createFlexrayIsoTpConnectionControl();
+        flexrayIsoTpConnectionControl.setUuid(UUID.randomUUID().toString());
+        return flexrayIsoTpConnectionControl;
+    }
+
+    public FlexrayIsoTpEcu createFlexrayIsoTpEcu() {
+        return TransportprotocolsFactory.eINSTANCE.createFlexrayIsoTpEcu();
+    }
+
+    public FlexrayTpChannel createFlexrayTpChannel() {
+        return TransportprotocolsFactory.eINSTANCE.createFlexrayTpChannel();
+    }
+
+    public FlexRayTpConnection createFlexRayTpConnection() {
+        return TransportprotocolsFactory.eINSTANCE.createFlexRayTpConnection();
+    }
+
+    public FlexrayTpNode createFlexrayTpNode() {
+        FlexrayTpNode flexrayTpNode = TransportprotocolsFactory.eINSTANCE.createFlexrayTpNode();
+        flexrayTpNode.setUuid(UUID.randomUUID().toString());
+        return flexrayTpNode;
+    }
+
+    public LinTpChannel createLinTpChannel() {
+        return TransportprotocolsFactory.eINSTANCE.createLinTpChannel();
+    }
+
+    public LinTpNode createLinTpNode() {
+        LinTpNode linTpNode = TransportprotocolsFactory.eINSTANCE.createLinTpNode();
+        linTpNode.setUuid(UUID.randomUUID().toString());
+        return linTpNode;
+    }
+
+    public CommunicationControllerMapping createCommunicationControllerMapping() {
+        return EcuresourcemappingFactory.eINSTANCE.createCommunicationControllerMapping();
+    }
+
+    public HWPortMapping createHWPortMapping() {
+        return EcuresourcemappingFactory.eINSTANCE.createHWPortMapping();
+    }
+
+    public ECUMapping createECUMapping() {
+        ECUMapping eCUMapping = EcuresourcemappingFactory.eINSTANCE.createECUMapping();
+        eCUMapping.setUuid(UUID.randomUUID().toString());
+        return eCUMapping;
+    }
+
+    public ApplicationErrorMapping createApplicationErrorMapping() {
+        return DatamappingFactory.eINSTANCE.createApplicationErrorMapping();
+    }
+
+    public ClientIdMapping createClientIdMapping() {
+        return DatamappingFactory.eINSTANCE.createClientIdMapping();
+    }
+
+    public ClientServerArrayElementMapping createClientServerArrayElementMapping() {
+        return DatamappingFactory.eINSTANCE.createClientServerArrayElementMapping();
+    }
+
+    public IndexedArrayElement createIndexedArrayElement() {
+        return DatamappingFactory.eINSTANCE.createIndexedArrayElement();
+    }
+
+    public ClientServerArrayTypeMapping createClientServerArrayTypeMapping() {
+        return DatamappingFactory.eINSTANCE.createClientServerArrayTypeMapping();
+    }
+
+    public ClientServerPrimitiveTypeMapping createClientServerPrimitiveTypeMapping() {
+        return DatamappingFactory.eINSTANCE.createClientServerPrimitiveTypeMapping();
+    }
+
+    public ClientServerRecordElementMapping createClientServerRecordElementMapping() {
+        return DatamappingFactory.eINSTANCE.createClientServerRecordElementMapping();
+    }
+
+    public ClientServerRecordTypeMapping createClientServerRecordTypeMapping() {
+        return DatamappingFactory.eINSTANCE.createClientServerRecordTypeMapping();
+    }
+
+    public ClientServerToSignalGroupMapping createClientServerToSignalGroupMapping() {
+        return DatamappingFactory.eINSTANCE.createClientServerToSignalGroupMapping();
+    }
+
+    public SequenceCounterMapping createSequenceCounterMapping() {
+        return DatamappingFactory.eINSTANCE.createSequenceCounterMapping();
+    }
+
+    public EmptySignalMapping createEmptySignalMapping() {
+        return DatamappingFactory.eINSTANCE.createEmptySignalMapping();
+    }
+
+    public SenderRecArrayElementMapping createSenderRecArrayElementMapping() {
+        return DatamappingFactory.eINSTANCE.createSenderRecArrayElementMapping();
+    }
+
+    public SenderRecArrayTypeMapping createSenderRecArrayTypeMapping() {
+        return DatamappingFactory.eINSTANCE.createSenderRecArrayTypeMapping();
+    }
+
+    public SenderReceiverToSignalGroupMapping createSenderReceiverToSignalGroupMapping() {
+        return DatamappingFactory.eINSTANCE.createSenderReceiverToSignalGroupMapping();
+    }
+
+    public SenderReceiverToSignalMapping createSenderReceiverToSignalMapping() {
+        return DatamappingFactory.eINSTANCE.createSenderReceiverToSignalMapping();
+    }
+
+    public SenderRecRecordElementMapping createSenderRecRecordElementMapping() {
+        return DatamappingFactory.eINSTANCE.createSenderRecRecordElementMapping();
+    }
+
+    public SenderRecRecordTypeMapping createSenderRecRecordTypeMapping() {
+        return DatamappingFactory.eINSTANCE.createSenderRecRecordTypeMapping();
+    }
+
+    public SenderReceiverToSignalGroupMappingDataElement createSenderReceiverToSignalGroupMappingDataElement() {
+        return autosar3x.system.datamapping.instanceref.InstancerefFactory.eINSTANCE.createSenderReceiverToSignalGroupMappingDataElement();
+    }
+
+    public SenderReceiverToSignalMappingDataElement createSenderReceiverToSignalMappingDataElement() {
+        return autosar3x.system.datamapping.instanceref.InstancerefFactory.eINSTANCE.createSenderReceiverToSignalMappingDataElement();
+    }
+
+    public ClientServerToSignalGroupMappingMappedOperation createClientServerToSignalGroupMappingMappedOperation() {
+        return autosar3x.system.datamapping.instanceref.InstancerefFactory.eINSTANCE.createClientServerToSignalGroupMappingMappedOperation();
+    }
+
+    public CommonSignalPath createCommonSignalPath() {
+        return SignalpathsFactory.eINSTANCE.createCommonSignalPath();
+    }
+
+    public SwcToSwcSignal createSwcToSwcSignal() {
+        return SignalpathsFactory.eINSTANCE.createSwcToSwcSignal();
+    }
+
+    public SwcToSwcOperationArguments createSwcToSwcOperationArguments() {
+        return SignalpathsFactory.eINSTANCE.createSwcToSwcOperationArguments();
+    }
+
+    public ForbiddenSignalPath createForbiddenSignalPath() {
+        return SignalpathsFactory.eINSTANCE.createForbiddenSignalPath();
+    }
+
+    public PermissibleSignalPath createPermissibleSignalPath() {
+        return SignalpathsFactory.eINSTANCE.createPermissibleSignalPath();
+    }
+
+    public SeparateSignalPath createSeparateSignalPath() {
+        return SignalpathsFactory.eINSTANCE.createSeparateSignalPath();
+    }
+
+    public SwcToSwcOperationArgumentsOperation createSwcToSwcOperationArgumentsOperation() {
+        return autosar3x.system.signalpaths.instanceref.InstancerefFactory.eINSTANCE.createSwcToSwcOperationArgumentsOperation();
+    }
+
+    public SwcToSwcSignalDataElement createSwcToSwcSignalDataElement() {
+        return autosar3x.system.signalpaths.instanceref.InstancerefFactory.eINSTANCE.createSwcToSwcSignalDataElement();
+    }
+
+    public EndToEndProtectionISignalIPdu createEndToEndProtectionISignalIPdu() {
+        return EndtoendprotectionFactory.eINSTANCE.createEndToEndProtectionISignalIPdu();
+    }
+}
+

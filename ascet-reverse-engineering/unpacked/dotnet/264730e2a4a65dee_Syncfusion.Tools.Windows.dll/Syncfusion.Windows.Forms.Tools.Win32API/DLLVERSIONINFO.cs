@@ -1,0 +1,14 @@
+namespace Syncfusion.Windows.Forms.Tools.Win32API;
+
+public struct DLLVERSIONINFO
+{
+	public int cbSize;
+
+	public int dwMajorVersion;
+
+	public int dwMinorVersion;
+
+	public int dwBuildNumber;
+
+	public int dwPlatformID;
+}

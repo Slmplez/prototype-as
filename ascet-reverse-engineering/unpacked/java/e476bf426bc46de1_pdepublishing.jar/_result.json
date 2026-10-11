@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.0.0.v20110511/pdepublishing.jar",
+  "sha256": "e476bf426bc46de1363f01bc018ec725b54f09772df7e79b7751c7270c3947ff",
+  "kind": "java",
+  "output": "unpacked/java/e476bf426bc46de1_pdepublishing.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 46,
+  "input_classes": 73,
+  "warning_lines": 5,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.0.0.v20110511/pdepublishing.jar"
+  ],
+  "top_level_classes_checked": 46,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a.ui_1.1.0.201412021129.jar",
+  "sha256": "5bcca482d06308c19648fbca0b092c333de59c0a790f0d2e20bc6e594dae8d16",
+  "kind": "java",
+  "output": "unpacked/java/5bcca482d06308c1_com.etas.ascet.importer.a2a.ui_1.1.0.201412021129.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 20,
+  "input_classes": 29,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a.ui_1.1.0.201412021129.jar"
+  ],
+  "top_level_classes_checked": 20,
+  "missing_top_level_java_files": 0
+}

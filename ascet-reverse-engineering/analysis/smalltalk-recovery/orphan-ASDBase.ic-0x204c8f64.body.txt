@@ -1,0 +1,253 @@
+# Unbound compact method: ASDBase.ic 0x204c8f64
+# Class and selector unknown; this is a reconstructed body, not a file-out method.
+# Image file offset: 0xdc5810; lowering: control_flow
+
+    | recoveredStack0 recoveredStack1 recoveredStack2 recoveredStack3 recoveredStack4 recoveredStack5 recoveredPC recoveredStep |
+    recoveredStack0 := self.
+    recoveredPC := 4.
+    [true] whileTrue: [
+        recoveredStep := recoveredPC.
+        recoveredStep = 4 ifTrue: [
+            recoveredStack1 := Dictionary.
+            recoveredPC := 6.
+        ].
+        recoveredStep = 6 ifTrue: [
+            recoveredStack2 := 20.
+            recoveredPC := 8.
+        ].
+        recoveredStep = 8 ifTrue: [
+            recoveredStack1 := (recoveredStack1) new: (recoveredStack2).
+            recoveredPC := 9.
+        ].
+        recoveredStep = 9 ifTrue: [
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 10.
+        ].
+        recoveredStep = 10 ifTrue: [
+            recoveredStack3 := ASDDisplayStrings.
+            recoveredPC := 12.
+        ].
+        recoveredStep = 12 ifTrue: [
+            recoveredStack3 := (recoveredStack3) inputString.
+            recoveredPC := 13.
+        ].
+        recoveredStep = 13 ifTrue: [
+            recoveredStack4 := [:block280b3bb4Arg1 | 
+    | block280b3bb4Value0 block280b3bb4Value1 |
+    block280b3bb4Value0 := block280b3bb4Arg1.
+    block280b3bb4Value1 := (block280b3bb4Value0) isInput.
+    block280b3bb4Value1
+].
+            recoveredPC := 15.
+        ].
+        recoveredStep = 15 ifTrue: [
+            recoveredPC := 22.
+        ].
+        recoveredStep = 22 ifTrue: [
+            (recoveredStack2) at: (recoveredStack3) put: (recoveredStack4).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 25.
+        ].
+        recoveredStep = 25 ifTrue: [
+            recoveredStack3 := ASDDisplayStrings.
+            recoveredPC := 27.
+        ].
+        recoveredStep = 27 ifTrue: [
+            recoveredStack3 := (recoveredStack3) outputString.
+            recoveredPC := 29.
+        ].
+        recoveredStep = 29 ifTrue: [
+            recoveredStack4 := [:block280133d4Arg1 | 
+    | block280133d4Value0 block280133d4Value1 |
+    block280133d4Value0 := block280133d4Arg1.
+    block280133d4Value1 := (block280133d4Value0) isOutput.
+    block280133d4Value1
+].
+            recoveredPC := 31.
+        ].
+        recoveredStep = 31 ifTrue: [
+            recoveredPC := 38.
+        ].
+        recoveredStep = 38 ifTrue: [
+            (recoveredStack2) at: (recoveredStack3) put: (recoveredStack4).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 41.
+        ].
+        recoveredStep = 41 ifTrue: [
+            recoveredStack3 := ASDDisplayStrings.
+            recoveredPC := 43.
+        ].
+        recoveredStep = 43 ifTrue: [
+            recoveredStack3 := (recoveredStack3) variableString.
+            recoveredPC := 45.
+        ].
+        recoveredStep = 45 ifTrue: [
+            recoveredStack4 := [:block2802bbccArg1 | 
+    | block2802bbccValue0 block2802bbccValue1 |
+    block2802bbccValue0 := block2802bbccArg1.
+    block2802bbccValue1 := (block2802bbccValue0) isVariable.
+    block2802bbccValue1
+].
+            recoveredPC := 47.
+        ].
+        recoveredStep = 47 ifTrue: [
+            recoveredPC := 54.
+        ].
+        recoveredStep = 54 ifTrue: [
+            (recoveredStack2) at: (recoveredStack3) put: (recoveredStack4).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 57.
+        ].
+        recoveredStep = 57 ifTrue: [
+            recoveredStack3 := ASDDisplayStrings.
+            recoveredPC := 59.
+        ].
+        recoveredStep = 59 ifTrue: [
+            recoveredStack3 := (recoveredStack3) messageString.
+            recoveredPC := 61.
+        ].
+        recoveredStep = 61 ifTrue: [
+            recoveredStack4 := [:block28045790Arg1 | 
+    | block28045790Value0 block28045790Value1 |
+    block28045790Value0 := block28045790Arg1.
+    block28045790Value1 := (block28045790Value0) isMessage.
+    block28045790Value1
+].
+            recoveredPC := 63.
+        ].
+        recoveredStep = 63 ifTrue: [
+            recoveredPC := 70.
+        ].
+        recoveredStep = 70 ifTrue: [
+            (recoveredStack2) at: (recoveredStack3) put: (recoveredStack4).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 73.
+        ].
+        recoveredStep = 73 ifTrue: [
+            recoveredStack3 := ASDDisplayStrings.
+            recoveredPC := 75.
+        ].
+        recoveredStep = 75 ifTrue: [
+            recoveredStack3 := (recoveredStack3) parameterString.
+            recoveredPC := 77.
+        ].
+        recoveredStep = 77 ifTrue: [
+            recoveredStack4 := [:block2805e808Arg1 | 
+    | block2805e808Value0 block2805e808Value1 |
+    block2805e808Value0 := block2805e808Arg1.
+    block2805e808Value1 := (block2805e808Value0) isParameter.
+    block2805e808Value1
+].
+            recoveredPC := 79.
+        ].
+        recoveredStep = 79 ifTrue: [
+            recoveredPC := 86.
+        ].
+        recoveredStep = 86 ifTrue: [
+            (recoveredStack2) at: (recoveredStack3) put: (recoveredStack4).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 89.
+        ].
+        recoveredStep = 89 ifTrue: [
+            recoveredStack3 := ASDDisplayStrings.
+            recoveredPC := 91.
+        ].
+        recoveredStep = 91 ifTrue: [
+            recoveredStack3 := (recoveredStack3) constantString.
+            recoveredPC := 93.
+        ].
+        recoveredStep = 93 ifTrue: [
+            recoveredStack4 := [:block28077e2cArg1 | 
+    | block28077e2cValue0 block28077e2cValue1 |
+    block28077e2cValue0 := block28077e2cArg1.
+    block28077e2cValue1 := (block28077e2cValue0) isConstant.
+    block28077e2cValue1
+].
+            recoveredPC := 95.
+        ].
+        recoveredStep = 95 ifTrue: [
+            recoveredPC := 102.
+        ].
+        recoveredStep = 102 ifTrue: [
+            (recoveredStack2) at: (recoveredStack3) put: (recoveredStack4).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 105.
+        ].
+        recoveredStep = 105 ifTrue: [
+            recoveredStack3 := ASDDisplayStrings.
+            recoveredPC := 107.
+        ].
+        recoveredStep = 107 ifTrue: [
+            recoveredStack3 := (recoveredStack3) systemConstantString.
+            recoveredPC := 109.
+        ].
+        recoveredStep = 109 ifTrue: [
+            recoveredStack4 := [:block280911acArg1 | 
+    | block280911acValue0 block280911acValue1 |
+    block280911acValue0 := block280911acArg1.
+    block280911acValue1 := (block280911acValue0) isSystemConstant.
+    block280911acValue1
+].
+            recoveredPC := 111.
+        ].
+        recoveredStep = 111 ifTrue: [
+            recoveredPC := 118.
+        ].
+        recoveredStep = 118 ifTrue: [
+            (recoveredStack2) at: (recoveredStack3) put: (recoveredStack4).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 121.
+        ].
+        recoveredStep = 121 ifTrue: [
+            recoveredStack3 := ASDDisplayStrings.
+            recoveredPC := 123.
+        ].
+        recoveredStep = 123 ifTrue: [
+            recoveredStack3 := (recoveredStack3) implementationCastString.
+            recoveredPC := 125.
+        ].
+        recoveredStep = 125 ifTrue: [
+            recoveredStack4 := [:block280aa458Arg1 | 
+    | block280aa458Value0 block280aa458Value1 |
+    block280aa458Value0 := block280aa458Arg1.
+    block280aa458Value1 := (block280aa458Value0) isImplementationCast.
+    block280aa458Value1
+].
+            recoveredPC := 127.
+        ].
+        recoveredStep = 127 ifTrue: [
+            recoveredPC := 134.
+        ].
+        recoveredStep = 134 ifTrue: [
+            (recoveredStack2) at: (recoveredStack3) put: (recoveredStack4).
+            recoveredStack2 := recoveredStack1.
+            recoveredPC := 137.
+        ].
+        recoveredStep = 137 ifTrue: [
+            recoveredStack3 := ASDDisplayStrings.
+            recoveredPC := 139.
+        ].
+        recoveredStep = 139 ifTrue: [
+            recoveredStack3 := (recoveredStack3) interrunnableVariableString.
+            recoveredPC := 141.
+        ].
+        recoveredStep = 141 ifTrue: [
+            recoveredStack4 := [:block28009d40Arg1 | 
+    | block28009d40Value0 block28009d40Value1 |
+    block28009d40Value0 := block28009d40Arg1.
+    block28009d40Value1 := (block28009d40Value0) isInterrunnable.
+    block28009d40Value1
+].
+            recoveredPC := 143.
+        ].
+        recoveredStep = 143 ifTrue: [
+            recoveredPC := 150.
+        ].
+        recoveredStep = 150 ifTrue: [
+            (recoveredStack2) at: (recoveredStack3) put: (recoveredStack4).
+            recoveredPC := 152.
+        ].
+        recoveredStep = 152 ifTrue: [
+            ^recoveredStack1
+        ].
+    ]

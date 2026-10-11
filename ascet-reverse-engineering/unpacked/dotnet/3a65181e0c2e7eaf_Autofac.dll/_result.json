@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/Autofac.dll",
+  "sha256": "3a65181e0c2e7eaf2c87504e6005fb34311e630b5d7a3130992bf4e981be3a86",
+  "kind": "managed",
+  "output": "unpacked/dotnet/3a65181e0c2e7eaf_Autofac.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 177,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/Autofac.dll"
+  ]
+}

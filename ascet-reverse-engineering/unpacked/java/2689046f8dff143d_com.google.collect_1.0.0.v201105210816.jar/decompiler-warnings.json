@@ -1,0 +1,577 @@
+[
+  {
+    "file": "com/google/common/base/Suppliers.java",
+    "line": 121,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 121,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 359,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 923,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 955,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 985,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 1072,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 1113,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 1158,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 1202,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/CustomConcurrentHashMap.java",
+    "line": 1241,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/MapMaker.java",
+    "line": 439,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/MapMaker.java",
+    "line": 485,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/MapMaker.java",
+    "line": 565,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/MapMaker.java",
+    "line": 589,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 125,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 137,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 151,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 211,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 222,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 233,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 244,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 255,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 269,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 280,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 291,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 353,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 367,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 378,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 410,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 421,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 432,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 443,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 454,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 465,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 481,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 492,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 503,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 514,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 525,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 536,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 565,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 576,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 587,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 598,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 609,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 630,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 641,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 652,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 664,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 678,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 707,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 718,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 729,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 761,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 772,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 783,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 794,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 808,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 819,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 830,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 844,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 855,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 866,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 877,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 888,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 902,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 916,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 950,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 961,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 972,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 983,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 994,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1005,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1016,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1027,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1038,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1049,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1060,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1071,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1082,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1093,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1107,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1121,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1135,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1149,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1163,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1177,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1208,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1219,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1230,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1241,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1252,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1263,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1277,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1291,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1305,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1332,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1342,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1383,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1397,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1427,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1438,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1449,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1460,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1492,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1503,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1514,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1525,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1536,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1547,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1576,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1587,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1598,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "com/google/common/collect/Synchronized.java",
+    "line": 1609,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

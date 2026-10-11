@@ -1,0 +1,72 @@
+[
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/EnvDte.cs",
+    "line": 21,
+    "text": "//IL_000c: Unknown result type (might be due to invalid IL or missing references)"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/EnvDte.cs",
+    "line": 22,
+    "text": "//IL_0012: Expected O, but got Unknown"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 200,
+    "text": "//IL_004d: Unknown result type (might be due to invalid IL or missing references)"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 201,
+    "text": "//IL_0057: Expected O, but got Unknown"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 202,
+    "text": "//IL_0063: Unknown result type (might be due to invalid IL or missing references)"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 203,
+    "text": "//IL_006d: Expected O, but got Unknown"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 204,
+    "text": "//IL_0079: Unknown result type (might be due to invalid IL or missing references)"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 205,
+    "text": "//IL_0083: Expected O, but got Unknown"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 222,
+    "text": "//IL_000c: Unknown result type (might be due to invalid IL or missing references)"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 223,
+    "text": "//IL_0016: Expected O, but got Unknown"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 224,
+    "text": "//IL_0022: Unknown result type (might be due to invalid IL or missing references)"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 225,
+    "text": "//IL_002c: Expected O, but got Unknown"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 226,
+    "text": "//IL_0038: Unknown result type (might be due to invalid IL or missing references)"
+  },
+  {
+    "file": "Syncfusion.Windows.Forms.Tools.Design/ToolStripPanelItemDesigner.cs",
+    "line": 227,
+    "text": "//IL_0042: Expected O, but got Unknown"
+  }
+]

@@ -1,0 +1,267 @@
+[
+  {
+    "file": "org/eclipse/core/internal/dtree/DataTreeLookup.java",
+    "line": 34,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/dtree/DataTreeLookup.java",
+    "line": 52,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/events/AutoBuildJob.java",
+    "line": 201,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/localstore/FileSystemResourceManager.java",
+    "line": 209,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "org/eclipse/core/internal/propertytester/StringMatcher.java",
+    "line": 41,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/refresh/MonitorManager.java",
+    "line": 133,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/refresh/MonitorManager.java",
+    "line": 174,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/refresh/MonitorManager.java",
+    "line": 228,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/refresh/MonitorManager.java",
+    "line": 248,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/refresh/MonitorManager.java",
+    "line": 299,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/refresh/MonitorManager.java",
+    "line": 318,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/refresh/PollingMonitor.java",
+    "line": 109,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetDeltaJob.java",
+    "line": 56,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetDeltaJob.java",
+    "line": 136,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetDeltaJob.java",
+    "line": 146,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetDeltaJob.java",
+    "line": 150,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetDeltaJob.java",
+    "line": 168,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetManager.java",
+    "line": 132,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetManager.java",
+    "line": 322,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetManager.java",
+    "line": 337,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetManager.java",
+    "line": 347,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetManager.java",
+    "line": 351,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetManager.java",
+    "line": 371,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/CharsetManager.java",
+    "line": 375,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/ContentDescriptionManager.java",
+    "line": 195,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/ContentDescriptionManager.java",
+    "line": 458,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/PathVariableManager.java",
+    "line": 193,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/ProjectContentTypes.java",
+    "line": 119,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/ProjectPathVariableManager.java",
+    "line": 303,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/ProjectPreferences.java",
+    "line": 259,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/ProjectPreferences.java",
+    "line": 417,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/ResourceException.java",
+    "line": 36,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/ResourceException.java",
+    "line": 56,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/SaveManager.java",
+    "line": 244,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/SaveManager.java",
+    "line": 256,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/SaveManager.java",
+    "line": 327,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/SaveManager.java",
+    "line": 381,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/SaveManager.java",
+    "line": 415,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/SaveManager.java",
+    "line": 515,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/SaveManager.java",
+    "line": 1018,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/SaveManager.java",
+    "line": 1022,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/SaveManager.java",
+    "line": 1040,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/WorkspaceRoot.java",
+    "line": 162,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/WorkspaceTreeReader_1.java",
+    "line": 142,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/WorkspaceTreeReader_1.java",
+    "line": 147,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/WorkspaceTreeReader_1.java",
+    "line": 165,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/utils/FileUtil.java",
+    "line": 177,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/watson/ElementTreeIterator.java",
+    "line": 27,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/refresh/win32/Win32Monitor.java",
+    "line": 103,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/refresh/win32/Win32Monitor.java",
+    "line": 125,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/refresh/win32/Win32Monitor.java",
+    "line": 147,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/refresh/win32/Win32Monitor.java",
+    "line": 177,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/resources/refresh/win32/Win32Monitor.java",
+    "line": 245,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

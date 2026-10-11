@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore.change_2.7.1.v20110829-1916.jar",
+  "sha256": "5a7adda5a6359fbe9e916c5f9f25de5db93a9137e2172a6e294ad14238ba916f",
+  "kind": "java",
+  "output": "unpacked/java/5a7adda5a6359fbe_org.eclipse.emf.ecore.change_2.7.1.v20110829-1916.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 22,
+  "input_classes": 31,
+  "warning_lines": 1,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore.change_2.7.1.v20110829-1916.jar"
+  ],
+  "top_level_classes_checked": 22,
+  "missing_top_level_java_files": 0
+}

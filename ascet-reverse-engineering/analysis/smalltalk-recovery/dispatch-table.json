@@ -1,0 +1,1282 @@
+[
+  {
+    "opcode": 0,
+    "handler": "0x42f064",
+    "assembly": "opcode-handlers/00.asm"
+  },
+  {
+    "opcode": 1,
+    "handler": "0x42ef48",
+    "assembly": "opcode-handlers/01.asm"
+  },
+  {
+    "opcode": 2,
+    "handler": "0x42ef04",
+    "assembly": "opcode-handlers/02.asm"
+  },
+  {
+    "opcode": 3,
+    "handler": "0x42eec0",
+    "assembly": "opcode-handlers/03.asm"
+  },
+  {
+    "opcode": 4,
+    "handler": "0x42ee50",
+    "assembly": "opcode-handlers/04.asm"
+  },
+  {
+    "opcode": 5,
+    "handler": "0x42ee0c",
+    "assembly": "opcode-handlers/05.asm"
+  },
+  {
+    "opcode": 6,
+    "handler": "0x42ed9c",
+    "assembly": "opcode-handlers/06.asm"
+  },
+  {
+    "opcode": 7,
+    "handler": "0x42eff4",
+    "assembly": "opcode-handlers/07.asm"
+  },
+  {
+    "opcode": 8,
+    "handler": "0x42ede0",
+    "assembly": "opcode-handlers/08.asm"
+  },
+  {
+    "opcode": 9,
+    "handler": "0x42f0b4",
+    "assembly": "opcode-handlers/09.asm"
+  },
+  {
+    "opcode": 10,
+    "handler": "0x42ece0",
+    "assembly": "opcode-handlers/0a.asm"
+  },
+  {
+    "opcode": 11,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/0b.asm"
+  },
+  {
+    "opcode": 12,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/0c.asm"
+  },
+  {
+    "opcode": 13,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/0d.asm"
+  },
+  {
+    "opcode": 14,
+    "handler": "0x428ce8",
+    "assembly": "opcode-handlers/0e.asm"
+  },
+  {
+    "opcode": 15,
+    "handler": "0x428cf8",
+    "assembly": "opcode-handlers/0f.asm"
+  },
+  {
+    "opcode": 16,
+    "handler": "0x427db8",
+    "assembly": "opcode-handlers/10.asm"
+  },
+  {
+    "opcode": 17,
+    "handler": "0x427dd5",
+    "assembly": "opcode-handlers/11.asm"
+  },
+  {
+    "opcode": 18,
+    "handler": "0x427dd4",
+    "assembly": "opcode-handlers/12.asm"
+  },
+  {
+    "opcode": 19,
+    "handler": "0x425100",
+    "assembly": "opcode-handlers/13.asm"
+  },
+  {
+    "opcode": 20,
+    "handler": "0x4251b8",
+    "assembly": "opcode-handlers/14.asm"
+  },
+  {
+    "opcode": 21,
+    "handler": "0x425274",
+    "assembly": "opcode-handlers/15.asm"
+  },
+  {
+    "opcode": 22,
+    "handler": "0x4266e4",
+    "assembly": "opcode-handlers/16.asm"
+  },
+  {
+    "opcode": 23,
+    "handler": "0x4267a4",
+    "assembly": "opcode-handlers/17.asm"
+  },
+  {
+    "opcode": 24,
+    "handler": "0x426868",
+    "assembly": "opcode-handlers/18.asm"
+  },
+  {
+    "opcode": 25,
+    "handler": "0x430500",
+    "assembly": "opcode-handlers/19.asm"
+  },
+  {
+    "opcode": 26,
+    "handler": "0x430515",
+    "assembly": "opcode-handlers/1a.asm"
+  },
+  {
+    "opcode": 27,
+    "handler": "0x430514",
+    "assembly": "opcode-handlers/1b.asm"
+  },
+  {
+    "opcode": 28,
+    "handler": "0x43056c",
+    "assembly": "opcode-handlers/1c.asm"
+  },
+  {
+    "opcode": 29,
+    "handler": "0x4305e1",
+    "assembly": "opcode-handlers/1d.asm"
+  },
+  {
+    "opcode": 30,
+    "handler": "0x4305e0",
+    "assembly": "opcode-handlers/1e.asm"
+  },
+  {
+    "opcode": 31,
+    "handler": "0x425590",
+    "assembly": "opcode-handlers/1f.asm"
+  },
+  {
+    "opcode": 32,
+    "handler": "0x4255a9",
+    "assembly": "opcode-handlers/20.asm"
+  },
+  {
+    "opcode": 33,
+    "handler": "0x4255a8",
+    "assembly": "opcode-handlers/21.asm"
+  },
+  {
+    "opcode": 34,
+    "handler": "0x426c28",
+    "assembly": "opcode-handlers/22.asm"
+  },
+  {
+    "opcode": 35,
+    "handler": "0x426c41",
+    "assembly": "opcode-handlers/23.asm"
+  },
+  {
+    "opcode": 36,
+    "handler": "0x426c40",
+    "assembly": "opcode-handlers/24.asm"
+  },
+  {
+    "opcode": 37,
+    "handler": "0x4292e8",
+    "assembly": "opcode-handlers/25.asm"
+  },
+  {
+    "opcode": 38,
+    "handler": "0x4292fd",
+    "assembly": "opcode-handlers/26.asm"
+  },
+  {
+    "opcode": 39,
+    "handler": "0x4292fc",
+    "assembly": "opcode-handlers/27.asm"
+  },
+  {
+    "opcode": 40,
+    "handler": "0x430658",
+    "assembly": "opcode-handlers/28.asm"
+  },
+  {
+    "opcode": 41,
+    "handler": "0x43066d",
+    "assembly": "opcode-handlers/29.asm"
+  },
+  {
+    "opcode": 42,
+    "handler": "0x43066c",
+    "assembly": "opcode-handlers/2a.asm"
+  },
+  {
+    "opcode": 43,
+    "handler": "0x4306c4",
+    "assembly": "opcode-handlers/2b.asm"
+  },
+  {
+    "opcode": 44,
+    "handler": "0x4306e9",
+    "assembly": "opcode-handlers/2c.asm"
+  },
+  {
+    "opcode": 45,
+    "handler": "0x4306e8",
+    "assembly": "opcode-handlers/2d.asm"
+  },
+  {
+    "opcode": 46,
+    "handler": "0x427e64",
+    "assembly": "opcode-handlers/2e.asm"
+  },
+  {
+    "opcode": 47,
+    "handler": "0x427edc",
+    "assembly": "opcode-handlers/2f.asm"
+  },
+  {
+    "opcode": 48,
+    "handler": "0x427f5c",
+    "assembly": "opcode-handlers/30.asm"
+  },
+  {
+    "opcode": 49,
+    "handler": "0x42818c",
+    "assembly": "opcode-handlers/31.asm"
+  },
+  {
+    "opcode": 50,
+    "handler": "0x428204",
+    "assembly": "opcode-handlers/32.asm"
+  },
+  {
+    "opcode": 51,
+    "handler": "0x428284",
+    "assembly": "opcode-handlers/33.asm"
+  },
+  {
+    "opcode": 52,
+    "handler": "0x425e7c",
+    "assembly": "opcode-handlers/34.asm"
+  },
+  {
+    "opcode": 53,
+    "handler": "0x425ed5",
+    "assembly": "opcode-handlers/35.asm"
+  },
+  {
+    "opcode": 54,
+    "handler": "0x425ed4",
+    "assembly": "opcode-handlers/36.asm"
+  },
+  {
+    "opcode": 55,
+    "handler": "0x425f2c",
+    "assembly": "opcode-handlers/37.asm"
+  },
+  {
+    "opcode": 56,
+    "handler": "0x425f99",
+    "assembly": "opcode-handlers/38.asm"
+  },
+  {
+    "opcode": 57,
+    "handler": "0x425f98",
+    "assembly": "opcode-handlers/39.asm"
+  },
+  {
+    "opcode": 58,
+    "handler": "0x426004",
+    "assembly": "opcode-handlers/3a.asm"
+  },
+  {
+    "opcode": 59,
+    "handler": "0x42606d",
+    "assembly": "opcode-handlers/3b.asm"
+  },
+  {
+    "opcode": 60,
+    "handler": "0x42606c",
+    "assembly": "opcode-handlers/3c.asm"
+  },
+  {
+    "opcode": 61,
+    "handler": "0x429020",
+    "assembly": "opcode-handlers/3d.asm"
+  },
+  {
+    "opcode": 62,
+    "handler": "0x429338",
+    "assembly": "opcode-handlers/3e.asm"
+  },
+  {
+    "opcode": 63,
+    "handler": "0x429348",
+    "assembly": "opcode-handlers/3f.asm"
+  },
+  {
+    "opcode": 64,
+    "handler": "0x429358",
+    "assembly": "opcode-handlers/40.asm"
+  },
+  {
+    "opcode": 65,
+    "handler": "0x429314",
+    "assembly": "opcode-handlers/41.asm"
+  },
+  {
+    "opcode": 66,
+    "handler": "0x429325",
+    "assembly": "opcode-handlers/42.asm"
+  },
+  {
+    "opcode": 67,
+    "handler": "0x429324",
+    "assembly": "opcode-handlers/43.asm"
+  },
+  {
+    "opcode": 68,
+    "handler": "0x42a628",
+    "assembly": "opcode-handlers/44.asm"
+  },
+  {
+    "opcode": 69,
+    "handler": "0x42a634",
+    "assembly": "opcode-handlers/45.asm"
+  },
+  {
+    "opcode": 70,
+    "handler": "0x42a7f0",
+    "assembly": "opcode-handlers/46.asm"
+  },
+  {
+    "opcode": 71,
+    "handler": "0x42ef74",
+    "assembly": "opcode-handlers/47.asm"
+  },
+  {
+    "opcode": 72,
+    "handler": "0x42ef98",
+    "assembly": "opcode-handlers/48.asm"
+  },
+  {
+    "opcode": 73,
+    "handler": "0x42f090",
+    "assembly": "opcode-handlers/49.asm"
+  },
+  {
+    "opcode": 74,
+    "handler": "0x428d08",
+    "assembly": "opcode-handlers/4a.asm"
+  },
+  {
+    "opcode": 75,
+    "handler": "0x428e95",
+    "assembly": "opcode-handlers/4b.asm"
+  },
+  {
+    "opcode": 76,
+    "handler": "0x428e94",
+    "assembly": "opcode-handlers/4c.asm"
+  },
+  {
+    "opcode": 77,
+    "handler": "0x42bed8",
+    "assembly": "opcode-handlers/4d.asm"
+  },
+  {
+    "opcode": 78,
+    "handler": "0x42bf95",
+    "assembly": "opcode-handlers/4e.asm"
+  },
+  {
+    "opcode": 79,
+    "handler": "0x42bf94",
+    "assembly": "opcode-handlers/4f.asm"
+  },
+  {
+    "opcode": 80,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/50.asm"
+  },
+  {
+    "opcode": 81,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/51.asm"
+  },
+  {
+    "opcode": 82,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/52.asm"
+  },
+  {
+    "opcode": 83,
+    "handler": "0x42eb4c",
+    "assembly": "opcode-handlers/53.asm"
+  },
+  {
+    "opcode": 84,
+    "handler": "0x42ebc9",
+    "assembly": "opcode-handlers/54.asm"
+  },
+  {
+    "opcode": 85,
+    "handler": "0x42ebc8",
+    "assembly": "opcode-handlers/55.asm"
+  },
+  {
+    "opcode": 86,
+    "handler": "0x42bad0",
+    "assembly": "opcode-handlers/56.asm"
+  },
+  {
+    "opcode": 87,
+    "handler": "0x42bb8d",
+    "assembly": "opcode-handlers/57.asm"
+  },
+  {
+    "opcode": 88,
+    "handler": "0x42bb8c",
+    "assembly": "opcode-handlers/58.asm"
+  },
+  {
+    "opcode": 89,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/59.asm"
+  },
+  {
+    "opcode": 90,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/5a.asm"
+  },
+  {
+    "opcode": 91,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/5b.asm"
+  },
+  {
+    "opcode": 92,
+    "handler": "0x42b6c8",
+    "assembly": "opcode-handlers/5c.asm"
+  },
+  {
+    "opcode": 93,
+    "handler": "0x42b785",
+    "assembly": "opcode-handlers/5d.asm"
+  },
+  {
+    "opcode": 94,
+    "handler": "0x42b784",
+    "assembly": "opcode-handlers/5e.asm"
+  },
+  {
+    "opcode": 95,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/5f.asm"
+  },
+  {
+    "opcode": 96,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/60.asm"
+  },
+  {
+    "opcode": 97,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/61.asm"
+  },
+  {
+    "opcode": 98,
+    "handler": "0x42ad18",
+    "assembly": "opcode-handlers/62.asm"
+  },
+  {
+    "opcode": 99,
+    "handler": "0x42adc8",
+    "assembly": "opcode-handlers/63.asm"
+  },
+  {
+    "opcode": 100,
+    "handler": "0x42ae7c",
+    "assembly": "opcode-handlers/64.asm"
+  },
+  {
+    "opcode": 101,
+    "handler": "0x42b4b0",
+    "assembly": "opcode-handlers/65.asm"
+  },
+  {
+    "opcode": 102,
+    "handler": "0x42b560",
+    "assembly": "opcode-handlers/66.asm"
+  },
+  {
+    "opcode": 103,
+    "handler": "0x42b614",
+    "assembly": "opcode-handlers/67.asm"
+  },
+  {
+    "opcode": 104,
+    "handler": "0x427fdc",
+    "assembly": "opcode-handlers/68.asm"
+  },
+  {
+    "opcode": 105,
+    "handler": "0x428011",
+    "assembly": "opcode-handlers/69.asm"
+  },
+  {
+    "opcode": 106,
+    "handler": "0x428010",
+    "assembly": "opcode-handlers/6a.asm"
+  },
+  {
+    "opcode": 107,
+    "handler": "0x4280b4",
+    "assembly": "opcode-handlers/6b.asm"
+  },
+  {
+    "opcode": 108,
+    "handler": "0x4280e9",
+    "assembly": "opcode-handlers/6c.asm"
+  },
+  {
+    "opcode": 109,
+    "handler": "0x4280e8",
+    "assembly": "opcode-handlers/6d.asm"
+  },
+  {
+    "opcode": 110,
+    "handler": "0x428048",
+    "assembly": "opcode-handlers/6e.asm"
+  },
+  {
+    "opcode": 111,
+    "handler": "0x42807d",
+    "assembly": "opcode-handlers/6f.asm"
+  },
+  {
+    "opcode": 112,
+    "handler": "0x42807c",
+    "assembly": "opcode-handlers/70.asm"
+  },
+  {
+    "opcode": 113,
+    "handler": "0x428120",
+    "assembly": "opcode-handlers/71.asm"
+  },
+  {
+    "opcode": 114,
+    "handler": "0x428155",
+    "assembly": "opcode-handlers/72.asm"
+  },
+  {
+    "opcode": 115,
+    "handler": "0x428154",
+    "assembly": "opcode-handlers/73.asm"
+  },
+  {
+    "opcode": 116,
+    "handler": "0x42f12c",
+    "assembly": "opcode-handlers/74.asm"
+  },
+  {
+    "opcode": 117,
+    "handler": "0x42f038",
+    "assembly": "opcode-handlers/75.asm"
+  },
+  {
+    "opcode": 118,
+    "handler": "0x42ee94",
+    "assembly": "opcode-handlers/76.asm"
+  },
+  {
+    "opcode": 119,
+    "handler": "0x42efbc",
+    "assembly": "opcode-handlers/77.asm"
+  },
+  {
+    "opcode": 120,
+    "handler": "0x42ed44",
+    "assembly": "opcode-handlers/78.asm"
+  },
+  {
+    "opcode": 121,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/79.asm"
+  },
+  {
+    "opcode": 122,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/7a.asm"
+  },
+  {
+    "opcode": 123,
+    "handler": "0x429030",
+    "assembly": "opcode-handlers/7b.asm"
+  },
+  {
+    "opcode": 124,
+    "handler": "0x42918d",
+    "assembly": "opcode-handlers/7c.asm"
+  },
+  {
+    "opcode": 125,
+    "handler": "0x42918c",
+    "assembly": "opcode-handlers/7d.asm"
+  },
+  {
+    "opcode": 126,
+    "handler": "0x42f158",
+    "assembly": "opcode-handlers/7e.asm"
+  },
+  {
+    "opcode": 127,
+    "handler": "0x430684",
+    "assembly": "opcode-handlers/7f.asm"
+  },
+  {
+    "opcode": 128,
+    "handler": "0x430694",
+    "assembly": "opcode-handlers/80.asm"
+  },
+  {
+    "opcode": 129,
+    "handler": "0x4306a4",
+    "assembly": "opcode-handlers/81.asm"
+  },
+  {
+    "opcode": 130,
+    "handler": "0x4306b4",
+    "assembly": "opcode-handlers/82.asm"
+  },
+  {
+    "opcode": 131,
+    "handler": "0x43052c",
+    "assembly": "opcode-handlers/83.asm"
+  },
+  {
+    "opcode": 132,
+    "handler": "0x43053c",
+    "assembly": "opcode-handlers/84.asm"
+  },
+  {
+    "opcode": 133,
+    "handler": "0x43054c",
+    "assembly": "opcode-handlers/85.asm"
+  },
+  {
+    "opcode": 134,
+    "handler": "0x43055c",
+    "assembly": "opcode-handlers/86.asm"
+  },
+  {
+    "opcode": 135,
+    "handler": "0x42c2e0",
+    "assembly": "opcode-handlers/87.asm"
+  },
+  {
+    "opcode": 136,
+    "handler": "0x42c38c",
+    "assembly": "opcode-handlers/88.asm"
+  },
+  {
+    "opcode": 137,
+    "handler": "0x42c438",
+    "assembly": "opcode-handlers/89.asm"
+  },
+  {
+    "opcode": 138,
+    "handler": "0x42c4e4",
+    "assembly": "opcode-handlers/8a.asm"
+  },
+  {
+    "opcode": 139,
+    "handler": "0x42af30",
+    "assembly": "opcode-handlers/8b.asm"
+  },
+  {
+    "opcode": 140,
+    "handler": "0x42afe0",
+    "assembly": "opcode-handlers/8c.asm"
+  },
+  {
+    "opcode": 141,
+    "handler": "0x42b090",
+    "assembly": "opcode-handlers/8d.asm"
+  },
+  {
+    "opcode": 142,
+    "handler": "0x42b140",
+    "assembly": "opcode-handlers/8e.asm"
+  },
+  {
+    "opcode": 143,
+    "handler": "0x4255c0",
+    "assembly": "opcode-handlers/8f.asm"
+  },
+  {
+    "opcode": 144,
+    "handler": "0x4255e5",
+    "assembly": "opcode-handlers/90.asm"
+  },
+  {
+    "opcode": 145,
+    "handler": "0x4255e4",
+    "assembly": "opcode-handlers/91.asm"
+  },
+  {
+    "opcode": 146,
+    "handler": "0x425330",
+    "assembly": "opcode-handlers/92.asm"
+  },
+  {
+    "opcode": 147,
+    "handler": "0x4253f8",
+    "assembly": "opcode-handlers/93.asm"
+  },
+  {
+    "opcode": 148,
+    "handler": "0x4254c4",
+    "assembly": "opcode-handlers/94.asm"
+  },
+  {
+    "opcode": 149,
+    "handler": "0x426ba0",
+    "assembly": "opcode-handlers/95.asm"
+  },
+  {
+    "opcode": 150,
+    "handler": "0x426be5",
+    "assembly": "opcode-handlers/96.asm"
+  },
+  {
+    "opcode": 151,
+    "handler": "0x426be4",
+    "assembly": "opcode-handlers/97.asm"
+  },
+  {
+    "opcode": 152,
+    "handler": "0x426420",
+    "assembly": "opcode-handlers/98.asm"
+  },
+  {
+    "opcode": 153,
+    "handler": "0x42650c",
+    "assembly": "opcode-handlers/99.asm"
+  },
+  {
+    "opcode": 154,
+    "handler": "0x4265f8",
+    "assembly": "opcode-handlers/9a.asm"
+  },
+  {
+    "opcode": 155,
+    "handler": "0x428c5d",
+    "assembly": "opcode-handlers/9b.asm"
+  },
+  {
+    "opcode": 156,
+    "handler": "0x428c5c",
+    "assembly": "opcode-handlers/9c.asm"
+  },
+  {
+    "opcode": 157,
+    "handler": "0x42c1a8",
+    "assembly": "opcode-handlers/9d.asm"
+  },
+  {
+    "opcode": 158,
+    "handler": "0x42c241",
+    "assembly": "opcode-handlers/9e.asm"
+  },
+  {
+    "opcode": 159,
+    "handler": "0x42c240",
+    "assembly": "opcode-handlers/9f.asm"
+  },
+  {
+    "opcode": 160,
+    "handler": "0x42bda0",
+    "assembly": "opcode-handlers/a0.asm"
+  },
+  {
+    "opcode": 161,
+    "handler": "0x42be39",
+    "assembly": "opcode-handlers/a1.asm"
+  },
+  {
+    "opcode": 162,
+    "handler": "0x42be38",
+    "assembly": "opcode-handlers/a2.asm"
+  },
+  {
+    "opcode": 163,
+    "handler": "0x42b998",
+    "assembly": "opcode-handlers/a3.asm"
+  },
+  {
+    "opcode": 164,
+    "handler": "0x42ba31",
+    "assembly": "opcode-handlers/a4.asm"
+  },
+  {
+    "opcode": 165,
+    "handler": "0x42ba30",
+    "assembly": "opcode-handlers/a5.asm"
+  },
+  {
+    "opcode": 166,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/a6.asm"
+  },
+  {
+    "opcode": 167,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/a7.asm"
+  },
+  {
+    "opcode": 168,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/a8.asm"
+  },
+  {
+    "opcode": 169,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/a9.asm"
+  },
+  {
+    "opcode": 170,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/aa.asm"
+  },
+  {
+    "opcode": 171,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ab.asm"
+  },
+  {
+    "opcode": 172,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ac.asm"
+  },
+  {
+    "opcode": 173,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ad.asm"
+  },
+  {
+    "opcode": 174,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ae.asm"
+  },
+  {
+    "opcode": 175,
+    "handler": "0x42c590",
+    "assembly": "opcode-handlers/af.asm"
+  },
+  {
+    "opcode": 176,
+    "handler": "0x42c63c",
+    "assembly": "opcode-handlers/b0.asm"
+  },
+  {
+    "opcode": 177,
+    "handler": "0x42c6e8",
+    "assembly": "opcode-handlers/b1.asm"
+  },
+  {
+    "opcode": 178,
+    "handler": "0x42c794",
+    "assembly": "opcode-handlers/b2.asm"
+  },
+  {
+    "opcode": 179,
+    "handler": "0x42b1f0",
+    "assembly": "opcode-handlers/b3.asm"
+  },
+  {
+    "opcode": 180,
+    "handler": "0x42b2a0",
+    "assembly": "opcode-handlers/b4.asm"
+  },
+  {
+    "opcode": 181,
+    "handler": "0x42b350",
+    "assembly": "opcode-handlers/b5.asm"
+  },
+  {
+    "opcode": 182,
+    "handler": "0x42b400",
+    "assembly": "opcode-handlers/b6.asm"
+  },
+  {
+    "opcode": 183,
+    "handler": "0x42c054",
+    "assembly": "opcode-handlers/b7.asm"
+  },
+  {
+    "opcode": 184,
+    "handler": "0x42c0fd",
+    "assembly": "opcode-handlers/b8.asm"
+  },
+  {
+    "opcode": 185,
+    "handler": "0x42c0fc",
+    "assembly": "opcode-handlers/b9.asm"
+  },
+  {
+    "opcode": 186,
+    "handler": "0x42bc4c",
+    "assembly": "opcode-handlers/ba.asm"
+  },
+  {
+    "opcode": 187,
+    "handler": "0x42bcf5",
+    "assembly": "opcode-handlers/bb.asm"
+  },
+  {
+    "opcode": 188,
+    "handler": "0x42bcf4",
+    "assembly": "opcode-handlers/bc.asm"
+  },
+  {
+    "opcode": 189,
+    "handler": "0x42b844",
+    "assembly": "opcode-handlers/bd.asm"
+  },
+  {
+    "opcode": 190,
+    "handler": "0x42b8ed",
+    "assembly": "opcode-handlers/be.asm"
+  },
+  {
+    "opcode": 191,
+    "handler": "0x42b8ec",
+    "assembly": "opcode-handlers/bf.asm"
+  },
+  {
+    "opcode": 192,
+    "handler": "0x428bd4",
+    "assembly": "opcode-handlers/c0.asm"
+  },
+  {
+    "opcode": 193,
+    "handler": "0x42ecb0",
+    "assembly": "opcode-handlers/c1.asm"
+  },
+  {
+    "opcode": 194,
+    "handler": "0x42ec48",
+    "assembly": "opcode-handlers/c2.asm"
+  },
+  {
+    "opcode": 195,
+    "handler": "0x42ec78",
+    "assembly": "opcode-handlers/c3.asm"
+  },
+  {
+    "opcode": 196,
+    "handler": "0x42ec94",
+    "assembly": "opcode-handlers/c4.asm"
+  },
+  {
+    "opcode": 197,
+    "handler": "0x427df4",
+    "assembly": "opcode-handlers/c5.asm"
+  },
+  {
+    "opcode": 198,
+    "handler": "0x427e29",
+    "assembly": "opcode-handlers/c6.asm"
+  },
+  {
+    "opcode": 199,
+    "handler": "0x427e28",
+    "assembly": "opcode-handlers/c7.asm"
+  },
+  {
+    "opcode": 200,
+    "handler": "0x429368",
+    "assembly": "opcode-handlers/c8.asm"
+  },
+  {
+    "opcode": 201,
+    "handler": "0x426c58",
+    "assembly": "opcode-handlers/c9.asm"
+  },
+  {
+    "opcode": 202,
+    "handler": "0x426ccc",
+    "assembly": "opcode-handlers/ca.asm"
+  },
+  {
+    "opcode": 203,
+    "handler": "0x426d44",
+    "assembly": "opcode-handlers/cb.asm"
+  },
+  {
+    "opcode": 204,
+    "handler": "0x42692c",
+    "assembly": "opcode-handlers/cc.asm"
+  },
+  {
+    "opcode": 205,
+    "handler": "0x4269fc",
+    "assembly": "opcode-handlers/cd.asm"
+  },
+  {
+    "opcode": 206,
+    "handler": "0x426acc",
+    "assembly": "opcode-handlers/ce.asm"
+  },
+  {
+    "opcode": 207,
+    "handler": "0x42a808",
+    "assembly": "opcode-handlers/cf.asm"
+  },
+  {
+    "opcode": 208,
+    "handler": "0x42a8bc",
+    "assembly": "opcode-handlers/d0.asm"
+  },
+  {
+    "opcode": 209,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/d1.asm"
+  },
+  {
+    "opcode": 210,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/d2.asm"
+  },
+  {
+    "opcode": 211,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/d3.asm"
+  },
+  {
+    "opcode": 212,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/d4.asm"
+  },
+  {
+    "opcode": 213,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/d5.asm"
+  },
+  {
+    "opcode": 214,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/d6.asm"
+  },
+  {
+    "opcode": 215,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/d7.asm"
+  },
+  {
+    "opcode": 216,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/d8.asm"
+  },
+  {
+    "opcode": 217,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/d9.asm"
+  },
+  {
+    "opcode": 218,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/da.asm"
+  },
+  {
+    "opcode": 219,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/db.asm"
+  },
+  {
+    "opcode": 220,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/dc.asm"
+  },
+  {
+    "opcode": 221,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/dd.asm"
+  },
+  {
+    "opcode": 222,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/de.asm"
+  },
+  {
+    "opcode": 223,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/df.asm"
+  },
+  {
+    "opcode": 224,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e0.asm"
+  },
+  {
+    "opcode": 225,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e1.asm"
+  },
+  {
+    "opcode": 226,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e2.asm"
+  },
+  {
+    "opcode": 227,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e3.asm"
+  },
+  {
+    "opcode": 228,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e4.asm"
+  },
+  {
+    "opcode": 229,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e5.asm"
+  },
+  {
+    "opcode": 230,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e6.asm"
+  },
+  {
+    "opcode": 231,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e7.asm"
+  },
+  {
+    "opcode": 232,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e8.asm"
+  },
+  {
+    "opcode": 233,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/e9.asm"
+  },
+  {
+    "opcode": 234,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ea.asm"
+  },
+  {
+    "opcode": 235,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/eb.asm"
+  },
+  {
+    "opcode": 236,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ec.asm"
+  },
+  {
+    "opcode": 237,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ed.asm"
+  },
+  {
+    "opcode": 238,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ee.asm"
+  },
+  {
+    "opcode": 239,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ef.asm"
+  },
+  {
+    "opcode": 240,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f0.asm"
+  },
+  {
+    "opcode": 241,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f1.asm"
+  },
+  {
+    "opcode": 242,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f2.asm"
+  },
+  {
+    "opcode": 243,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f3.asm"
+  },
+  {
+    "opcode": 244,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f4.asm"
+  },
+  {
+    "opcode": 245,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f5.asm"
+  },
+  {
+    "opcode": 246,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f6.asm"
+  },
+  {
+    "opcode": 247,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f7.asm"
+  },
+  {
+    "opcode": 248,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f8.asm"
+  },
+  {
+    "opcode": 249,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/f9.asm"
+  },
+  {
+    "opcode": 250,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/fa.asm"
+  },
+  {
+    "opcode": 251,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/fb.asm"
+  },
+  {
+    "opcode": 252,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/fc.asm"
+  },
+  {
+    "opcode": 253,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/fd.asm"
+  },
+  {
+    "opcode": 254,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/fe.asm"
+  },
+  {
+    "opcode": 255,
+    "handler": "0x43d5bc",
+    "assembly": "opcode-handlers/ff.asm"
+  }
+]

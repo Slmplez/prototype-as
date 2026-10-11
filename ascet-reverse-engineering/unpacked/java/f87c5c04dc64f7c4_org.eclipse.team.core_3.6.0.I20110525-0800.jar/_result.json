@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.team.core_3.6.0.I20110525-0800.jar",
+  "sha256": "f87c5c04dc64f7c4b2d9de089aa98ad977e4913f7bef83e305173bda699af019",
+  "kind": "java",
+  "output": "unpacked/java/f87c5c04dc64f7c4_org.eclipse.team.core_3.6.0.I20110525-0800.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 177,
+  "input_classes": 262,
+  "warning_lines": 35,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.team.core_3.6.0.I20110525-0800.jar"
+  ],
+  "top_level_classes_checked": 177,
+  "missing_top_level_java_files": 0
+}

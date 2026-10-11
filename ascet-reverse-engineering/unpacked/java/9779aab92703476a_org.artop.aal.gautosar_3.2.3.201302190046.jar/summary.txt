@@ -1,0 +1,2 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.artop.aal.gautosar_3.2.3.201302190046.jar
+Decompiled with CFR 0.152

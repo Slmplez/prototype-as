@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/ETAS.StandardDialogs.dll",
+  "sha256": "33a6244c3b63ed3b4f0d39b867dac5946544885c487c3e4015d2ded03e497244",
+  "kind": "managed",
+  "output": "unpacked/dotnet/33a6244c3b63ed3b_ETAS.StandardDialogs.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 32,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/ETAS.StandardDialogs.dll"
+  ]
+}

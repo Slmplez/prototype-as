@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xerces_2.9.0.v201101211617.jar",
+  "sha256": "8d6ccb1bf885bd3bda90253d928fc165f9343d6145dd522b84f3f3c0f835a7dc",
+  "kind": "java",
+  "output": "unpacked/java/8d6ccb1bf885bd3b_org.apache.xerces_2.9.0.v201101211617.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 673,
+  "input_classes": 894,
+  "warning_lines": 44,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xerces_2.9.0.v201101211617.jar"
+  ],
+  "top_level_classes_checked": 673,
+  "missing_top_level_java_files": 0
+}

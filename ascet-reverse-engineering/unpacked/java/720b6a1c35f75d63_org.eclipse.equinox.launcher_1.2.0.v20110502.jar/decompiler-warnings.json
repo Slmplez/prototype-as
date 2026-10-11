@@ -1,0 +1,17 @@
+[
+  {
+    "file": "org/eclipse/equinox/launcher/Main.java",
+    "line": 890,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/launcher/Main.java",
+    "line": 1809,
+    "text": "* WARNING - Removed back jump from a try to a catch block - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/launcher/Main.java",
+    "line": 2144,
+    "text": "* Unable to fully structure code"
+  }
+]

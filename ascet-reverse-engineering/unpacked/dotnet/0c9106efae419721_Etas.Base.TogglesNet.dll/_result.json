@@ -1,0 +1,14 @@
+{
+  "source": "unpacked/installation/Etas.Base.TogglesNet.dll",
+  "sha256": "0c9106efae419721da5df5cf211431c47a1630df831f4a7d098fc26d129b44a6",
+  "kind": "managed",
+  "output": "unpacked/dotnet/0c9106efae419721_Etas.Base.TogglesNet.dll",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 461,
+  "warning_lines": 9,
+  "aliases": [
+    "unpacked/installation/Etas.Base.TogglesNet.dll",
+    "unpacked/installation/ETASShared11/TgtSvr/Etas.Base.TogglesNet.dll"
+  ]
+}

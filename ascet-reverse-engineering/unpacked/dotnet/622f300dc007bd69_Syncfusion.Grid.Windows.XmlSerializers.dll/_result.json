@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/Syncfusion.Grid.Windows.XmlSerializers.dll",
+  "sha256": "622f300dc007bd697e231e82faf92c921f25d143d47891fa5da5bacc2309cca7",
+  "kind": "managed",
+  "output": "unpacked/dotnet/622f300dc007bd69_Syncfusion.Grid.Windows.XmlSerializers.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 174,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/Syncfusion.Grid.Windows.XmlSerializers.dll"
+  ]
+}

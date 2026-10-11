@@ -1,0 +1,525 @@
+[
+  {
+    "source": "unpacked/installation/bin/Autofac.dll",
+    "sha256": "3a65181e0c2e7eaf2c87504e6005fb34311e630b5d7a3130992bf4e981be3a86",
+    "kind": "managed",
+    "output": "unpacked/dotnet/3a65181e0c2e7eaf_Autofac.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 177,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Autofac.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Cfw.HelperClasses.dll",
+    "sha256": "85e8a7f212cd5d77256ecfb70a830add07111e9ba43f041b06b6a58cda3a3f3d",
+    "kind": "managed",
+    "output": "unpacked/dotnet/85e8a7f212cd5d77_Cfw.HelperClasses.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 3,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Cfw.HelperClasses.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Cfw.Logging.interop.dll",
+    "sha256": "1d72207b8d762ace0df2d40b6f998549cda20bc8136e8402f0c8f9366b5f6d1f",
+    "kind": "managed",
+    "output": "unpacked/dotnet/1d72207b8d762ace_Cfw.Logging.interop.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 6,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Cfw.Logging.interop.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/de/Etas.Base.Shared.resources.dll",
+    "sha256": "bad18cb896b3ea0b7f64403bca084bde1e3c73d0f68111d0b5ce970a7ab64e9a",
+    "kind": "managed",
+    "output": "unpacked/dotnet/bad18cb896b3ea0b_Etas.Base.Shared.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/de/Etas.Base.Shared.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/de/Etas.Base.UI.Framework.resources.dll",
+    "sha256": "00412c9ad44305418d765562c986d689d5032f4dc16abc03a28202dd634c7951",
+    "kind": "managed",
+    "output": "unpacked/dotnet/00412c9ad4430541_Etas.Base.UI.Framework.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/de/Etas.Base.UI.Framework.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/de-ch/Etas.Base.Shared.resources.dll",
+    "sha256": "8bacc35b5683db3880e9dec0f72963d38779dcc91ebd935b840ece18801f1c5f",
+    "kind": "managed",
+    "output": "unpacked/dotnet/8bacc35b5683db38_Etas.Base.Shared.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/de-ch/Etas.Base.Shared.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/de-ch/Etas.Base.UI.Framework.resources.dll",
+    "sha256": "8d9df5d887e32cce18a03cd3cdb983913a5af9e794378157f127ee6e43fea9dd",
+    "kind": "managed",
+    "output": "unpacked/dotnet/8d9df5d887e32cce_Etas.Base.UI.Framework.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/de-ch/Etas.Base.UI.Framework.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/en-us/Etas.Base.Shared.resources.dll",
+    "sha256": "a9a52081f1129bcf183683410201a6976a674b1938a6089e11bbb0ec66a20a72",
+    "kind": "managed",
+    "output": "unpacked/dotnet/a9a52081f1129bcf_Etas.Base.Shared.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/en-us/Etas.Base.Shared.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/en-us/Etas.Base.UI.Framework.resources.dll",
+    "sha256": "b52e8fcf534ffbf748bb9ac4bd484ed97fdaa1ccd249dd7b9ee74af58413db2d",
+    "kind": "managed",
+    "output": "unpacked/dotnet/b52e8fcf534ffbf7_Etas.Base.UI.Framework.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/en-us/Etas.Base.UI.Framework.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Etas.Base.ComSupport.dll",
+    "sha256": "e34db0b33b15e7f0cd57843d655d91ffb528bac3e743aafe54f794bd555ad5f2",
+    "kind": "managed",
+    "output": "unpacked/dotnet/e34db0b33b15e7f0_Etas.Base.ComSupport.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 7,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Etas.Base.ComSupport.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Etas.Base.Shared.dll",
+    "sha256": "796b17053da1c0e46f2f7d5d52fa22e1fdbd864dc7917b07169469da2f4ab502",
+    "kind": "managed",
+    "output": "unpacked/dotnet/796b17053da1c0e4_Etas.Base.Shared.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 48,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Etas.Base.Shared.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Etas.Base.UI.Framework.dll",
+    "sha256": "e6814229b2e6716e624c8ddf4924c46b0b55393320a17625129dbf523dc8e4a5",
+    "kind": "managed",
+    "output": "unpacked/dotnet/e6814229b2e6716e_Etas.Base.UI.Framework.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 69,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Etas.Base.UI.Framework.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/EtasTimeDotNet.dll",
+    "sha256": "dd28cbabc7506add8e70891f2e99a5575a7eb239e08edf7d78fcba046febc017",
+    "kind": "managed",
+    "output": "unpacked/dotnet/dd28cbabc7506add_EtasTimeDotNet.dll",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 537,
+    "warning_lines": 69,
+    "aliases": [
+      "unpacked/installation/bin/EtasTimeDotNet.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/fr/Etas.Base.Shared.resources.dll",
+    "sha256": "edc57f9cd4cc092df5c7ab6809f5ad7a30a05546a02135b75b424c24ca8872fa",
+    "kind": "managed",
+    "output": "unpacked/dotnet/edc57f9cd4cc092d_Etas.Base.Shared.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/fr/Etas.Base.Shared.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/fr/Etas.Base.UI.Framework.resources.dll",
+    "sha256": "353c1ecabd33891d0533c864b79a97684a50fd537afece96e0d072a22b17f6f2",
+    "kind": "managed",
+    "output": "unpacked/dotnet/353c1ecabd33891d_Etas.Base.UI.Framework.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/fr/Etas.Base.UI.Framework.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/ja/Etas.Base.Shared.resources.dll",
+    "sha256": "cd8a243d7015a658aa90be342820f055ba673b11dc26a2b00e1cf02726eb420f",
+    "kind": "managed",
+    "output": "unpacked/dotnet/cd8a243d7015a658_Etas.Base.Shared.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/ja/Etas.Base.Shared.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/ja/Etas.Base.UI.Framework.resources.dll",
+    "sha256": "721b1e949fb9b71486f7b0c0c307cab9316927fcf267be08cdad6b91cc4c1fbc",
+    "kind": "managed",
+    "output": "unpacked/dotnet/721b1e949fb9b714_Etas.Base.UI.Framework.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/ja/Etas.Base.UI.Framework.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Syncfusion.Core.dll",
+    "sha256": "c0dbff9d798daa8c4f7ba992c73d3de2b8cd9f54c8337d49c99574eb4b6864c5",
+    "kind": "managed",
+    "output": "unpacked/dotnet/c0dbff9d798daa8c_Syncfusion.Core.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 53,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Syncfusion.Core.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Syncfusion.Grid.Base.dll",
+    "sha256": "2b4ddbafbaa2505672fbd8478745eb4da3810f552c9527b8a6dba3d31401f7c6",
+    "kind": "managed",
+    "output": "unpacked/dotnet/2b4ddbafbaa25056_Syncfusion.Grid.Base.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 3,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Syncfusion.Grid.Base.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Syncfusion.Grid.Windows.dll",
+    "sha256": "5707a34a120c3f42b32d88fac84d42a0965ad8ae02caa3ff84ecbbd2ffd535dd",
+    "kind": "managed",
+    "output": "unpacked/dotnet/5707a34a120c3f42_Syncfusion.Grid.Windows.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 704,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Syncfusion.Grid.Windows.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Syncfusion.Grid.Windows.XmlSerializers.dll",
+    "sha256": "622f300dc007bd697e231e82faf92c921f25d143d47891fa5da5bacc2309cca7",
+    "kind": "managed",
+    "output": "unpacked/dotnet/622f300dc007bd69_Syncfusion.Grid.Windows.XmlSerializers.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 174,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Syncfusion.Grid.Windows.XmlSerializers.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Syncfusion.Shared.Base.dll",
+    "sha256": "7a56c094171b1836bfc6ef8c5578766d2c0a83c4a81bcc6b94cc2388da81c6c0",
+    "kind": "managed",
+    "output": "unpacked/dotnet/7a56c094171b1836_Syncfusion.Shared.Base.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 782,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Syncfusion.Shared.Base.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Syncfusion.Shared.Windows.dll",
+    "sha256": "aa8cf898d2590735c4379823144d9c3d5c23ca8dffd297285c6ddaea4ae919ff",
+    "kind": "managed",
+    "output": "unpacked/dotnet/aa8cf898d2590735_Syncfusion.Shared.Windows.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 29,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Syncfusion.Shared.Windows.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Syncfusion.Tools.Base.dll",
+    "sha256": "4df3250ac1c518c2306483ad36d99f0dc7e8827072b2135f95d4c521faff311b",
+    "kind": "managed",
+    "output": "unpacked/dotnet/4df3250ac1c518c2_Syncfusion.Tools.Base.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 4,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/Syncfusion.Tools.Base.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/Syncfusion.Tools.Windows.dll",
+    "sha256": "264730e2a4a65dee2d94c23e8069453a4ace0dda93b85da484dfde74893a239e",
+    "kind": "managed",
+    "output": "unpacked/dotnet/264730e2a4a65dee_Syncfusion.Tools.Windows.dll",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 1585,
+    "warning_lines": 14,
+    "aliases": [
+      "unpacked/installation/bin/Syncfusion.Tools.Windows.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/zh-cn/Etas.Base.Shared.resources.dll",
+    "sha256": "e393c3a2e8ea9e6ae7158f1f89d79b3f9af1107c0fd93ae8ffe8dfae84b049a9",
+    "kind": "managed",
+    "output": "unpacked/dotnet/e393c3a2e8ea9e6a_Etas.Base.Shared.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/zh-cn/Etas.Base.Shared.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/bin/zh-cn/Etas.Base.UI.Framework.resources.dll",
+    "sha256": "e44f4bdf3438ddb02b5e18f73dd7039133785eb42924fb2b9f81b73507444220",
+    "kind": "managed",
+    "output": "unpacked/dotnet/e44f4bdf3438ddb0_Etas.Base.UI.Framework.resources.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/bin/zh-cn/Etas.Base.UI.Framework.resources.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/cebra/CheckPID.exe",
+    "sha256": "04dc6172c270ef897a1caf5d51fbe4396a291cbec508cb4da384a9db4ecb22fb",
+    "kind": "managed",
+    "output": "unpacked/dotnet/04dc6172c270ef89_CheckPID.exe",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 2,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/cebra/CheckPID.exe"
+    ]
+  },
+  {
+    "source": "unpacked/installation/cebra/ClassESDLConcurrentTest.exe",
+    "sha256": "4815b359a533ef59e910a0b1041b85af07277f2572af95fd84a13ad01eefc210",
+    "kind": "managed",
+    "output": "unpacked/dotnet/4815b359a533ef59_ClassESDLConcurrentTest.exe",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 2,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/cebra/ClassESDLConcurrentTest.exe"
+    ]
+  },
+  {
+    "source": "unpacked/installation/cebra/ClassESDLSimpleTest.exe",
+    "sha256": "35c6ce5d9586d2e9e761ec34c44df892c185fbdcb4b9b203aaefda769c72cd95",
+    "kind": "managed",
+    "output": "unpacked/dotnet/35c6ce5d9586d2e9_ClassESDLSimpleTest.exe",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 2,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/cebra/ClassESDLSimpleTest.exe"
+    ]
+  },
+  {
+    "source": "unpacked/installation/cebra/ConcurrentReadTest.exe",
+    "sha256": "f11ef045f323ab195265c72a90a5046ae9ab95b503c1bb8331256529a6351651",
+    "kind": "managed",
+    "output": "unpacked/dotnet/f11ef045f323ab19_ConcurrentReadTest.exe",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 2,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/cebra/ConcurrentReadTest.exe"
+    ]
+  },
+  {
+    "source": "unpacked/installation/cebra/Etas.AscetNET.dll",
+    "sha256": "2c75ef3e9bbcd831f2dfa359a66691aad68aba981d592987eff4b37bd0fb1984",
+    "kind": "managed",
+    "output": "unpacked/dotnet/2c75ef3e9bbcd831_Etas.AscetNET.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 536,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/cebra/Etas.AscetNET.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/cebra/ListFolders.exe",
+    "sha256": "b83b95be2460eb2ae2d68153f8359da11ebfdf00b4684fa78a2a4f07e9732a2b",
+    "kind": "managed",
+    "output": "unpacked/dotnet/b83b95be2460eb2a_ListFolders.exe",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 2,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/cebra/ListFolders.exe"
+    ]
+  },
+  {
+    "source": "unpacked/installation/cebra/PIDConcurrentTest.exe",
+    "sha256": "0509c813278e7802d06b93119d51d563a4fd2398feedec5edec0bf4c6376eb2a",
+    "kind": "managed",
+    "output": "unpacked/dotnet/0509c813278e7802_PIDConcurrentTest.exe",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 2,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/cebra/PIDConcurrentTest.exe"
+    ]
+  },
+  {
+    "source": "unpacked/installation/Etas.Base.TogglesNet.dll",
+    "sha256": "0c9106efae419721da5df5cf211431c47a1630df831f4a7d098fc26d129b44a6",
+    "kind": "managed",
+    "output": "unpacked/dotnet/0c9106efae419721_Etas.Base.TogglesNet.dll",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 461,
+    "warning_lines": 9,
+    "aliases": [
+      "unpacked/installation/Etas.Base.TogglesNet.dll",
+      "unpacked/installation/ETASShared11/TgtSvr/Etas.Base.TogglesNet.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/ETAS.StandardDialogs.dll",
+    "sha256": "33a6244c3b63ed3b4f0d39b867dac5946544885c487c3e4015d2ded03e497244",
+    "kind": "managed",
+    "output": "unpacked/dotnet/33a6244c3b63ed3b_ETAS.StandardDialogs.dll",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 32,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/ETAS.StandardDialogs.dll"
+    ]
+  },
+  {
+    "source": "unpacked/installation/Tools/WorkspaceCreator/WSCreator.exe",
+    "sha256": "a2d79ad4ef1d9c4a21916faf532bdb0b1b430421f6c7a2778ae8a2cb4439a6ae",
+    "kind": "managed",
+    "output": "unpacked/dotnet/a2d79ad4ef1d9c4a_WSCreator.exe",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 19,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/WorkspaceCreator/WSCreator.exe"
+    ]
+  },
+  {
+    "source": "unpacked/installation/Web Service/EtasToolStarter.exe",
+    "sha256": "968bc995b7afcc99e9e09e4ed0f59d97dfd91b01c5e9ab86a96e1806959f7ac8",
+    "kind": "managed",
+    "output": "unpacked/dotnet/968bc995b7afcc99_EtasToolStarter.exe",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 7,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Web Service/EtasToolStarter.exe"
+    ]
+  },
+  {
+    "source": "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/_F92E58051517B7900B87D094BDFF0B85",
+    "sha256": "348bc95d77cc5e4710b5b6674f0caa8cabc7918d96b045bb7e20e2392a63543d",
+    "kind": "managed",
+    "output": "unpacked/dotnet/348bc95d77cc5e47",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 17,
+    "warning_lines": 2,
+    "aliases": [
+      "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/_F92E58051517B7900B87D094BDFF0B85",
+      "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/decoded-files/TARGETDIR/CaliberRMPlugin.dll"
+    ]
+  },
+  {
+    "source": "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/_AEA26CD57095BA4CEF34C1416A5610A4",
+    "sha256": "ffe7d3032a292ebe30273f515c33c04bba9509ab314476efb5242ef1ac20e78f",
+    "kind": "managed",
+    "output": "unpacked/dotnet/ffe7d3032a292ebe",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 711,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/_AEA26CD57095BA4CEF34C1416A5610A4",
+      "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/decoded-files/TARGETDIR/CaliberRMSDK80.NET.dll"
+    ]
+  }
+]

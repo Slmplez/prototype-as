@@ -1,0 +1,32 @@
+"Statically reconstructed from ASCET image; generated names; not original source. Runtime equivalence not tested."
+
+"abtxmlp.ic method 0x2000037c; bytecode file offset 0x18bb0"
+!SgmlUnknownEntity methodsFor: 'recovered'!
+name
+    | recoveredValue0 |
+    recoveredValue0 := (self) contents.
+    ^recoveredValue0
+! !
+
+"abtxmlp.ic method 0x200011fc; bytecode file offset 0x19a94"
+!SgmlUnknownEntity methodsFor: 'recovered'!
+isEntityDeclaration
+    ^true
+! !
+
+"abtxmlp.ic method 0x200040c8; bytecode file offset 0x1c8f0"
+!SgmlUnknownEntity methodsFor: 'recovered'!
+printOn: recoveredArg1
+    | recoveredValue0 recoveredValue1 recoveredValue2 recoveredValue3 recoveredValue4 recoveredValue5 |
+    recoveredValue0 := recoveredArg1.
+    recoveredValue1 := recoveredValue0.
+    recoveredValue2 := ERO.
+    (recoveredValue1) nextPutAll: (recoveredValue2).
+    recoveredValue3 := recoveredValue0.
+    recoveredValue4 := (self) contents.
+    (recoveredValue3) nextPutAll: (recoveredValue4).
+    recoveredValue5 := REFC.
+    (recoveredValue0) nextPutAll: (recoveredValue5).
+    ^self
+! !
+

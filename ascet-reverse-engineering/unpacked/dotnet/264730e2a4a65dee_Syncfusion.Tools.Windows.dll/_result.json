@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/Syncfusion.Tools.Windows.dll",
+  "sha256": "264730e2a4a65dee2d94c23e8069453a4ace0dda93b85da484dfde74893a239e",
+  "kind": "managed",
+  "output": "unpacked/dotnet/264730e2a4a65dee_Syncfusion.Tools.Windows.dll",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 1585,
+  "warning_lines": 14,
+  "aliases": [
+    "unpacked/installation/bin/Syncfusion.Tools.Windows.dll"
+  ]
+}

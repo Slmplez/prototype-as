@@ -1,0 +1,77 @@
+[
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/EnumDefinition.java",
+    "line": 38,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/EnumDefinition.java",
+    "line": 139,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/InstallableUnit.java",
+    "line": 239,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/VersionFormat.java",
+    "line": 62,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/VersionFormat.java",
+    "line": 166,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/VersionFormatParser.java",
+    "line": 1743,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/VersionVector.java",
+    "line": 47,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/expression/Binary.java",
+    "line": 84,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/expression/CoercingComparator.java",
+    "line": 82,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/expression/CompoundIterator.java",
+    "line": 46,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/expression/Expression.java",
+    "line": 98,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/expression/MatchIteratorFilter.java",
+    "line": 49,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/equinox/internal/p2/metadata/expression/Unique.java",
+    "line": 83,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/p2/metadata/MetadataFactory.java",
+    "line": 214,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/p2/metadata/expression/SimplePattern.java",
+    "line": 186,
+    "text": "* Unable to fully structure code"
+  }
+]

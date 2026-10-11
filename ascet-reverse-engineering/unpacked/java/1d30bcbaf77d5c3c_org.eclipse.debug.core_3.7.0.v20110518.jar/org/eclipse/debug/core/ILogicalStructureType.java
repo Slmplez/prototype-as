@@ -1,0 +1,16 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package org.eclipse.debug.core;
+
+import org.eclipse.debug.core.model.ILogicalStructureTypeDelegate;
+import org.eclipse.debug.core.model.ILogicalStructureTypeDelegate2;
+
+public interface ILogicalStructureType
+extends ILogicalStructureTypeDelegate,
+ILogicalStructureTypeDelegate2 {
+    public String getDescription();
+
+    public String getId();
+}
+

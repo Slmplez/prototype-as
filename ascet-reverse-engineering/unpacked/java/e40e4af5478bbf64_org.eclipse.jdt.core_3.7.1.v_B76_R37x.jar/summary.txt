@@ -1,0 +1,539 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.jdt.core.JavaCore
+----------------------------
+
+initializeAfterLoad(org.eclipse.core.runtime.IProgressMonitor )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.core.Signature
+----------------------------
+
+appendIntersectionTypeSignature(char[] int boolean java.lang.StringBuffer )
+  Unable to fully structure code
+getTypeParameters(char[] )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.core.ToolFactory
+----------------------------
+
+createDefaultClassFileReader(java.lang.String java.lang.String int )
+  Loose catch block
+
+
+org.eclipse.jdt.core.compiler.CharOperation
+----------------------------
+
+endsWith(char[] char[] )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.core.dom.CompilationUnitResolver
+----------------------------
+
+resolve(org.eclipse.jdt.core.ICompilationUnit[] java.lang.String[] org.eclipse.jdt.core.dom.ASTRequestor int java.util.Map org.eclipse.jdt.core.WorkingCopyOwner int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [7[CATCHBLOCK]], but top level block is 3[TRYBLOCK]
+resolve(java.lang.String[] java.lang.String[] java.lang.String[] org.eclipse.jdt.core.dom.FileASTRequestor int java.util.Map int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [9[CATCHBLOCK]], but top level block is 4[TRYBLOCK]
+
+
+org.eclipse.jdt.core.dom.DefaultBindingResolver
+----------------------------
+
+resolveName(org.eclipse.jdt.core.dom.Name )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.core.formatter.CodeFormatterApplication
+----------------------------
+
+readConfig(java.lang.String )
+  Loose catch block
+
+
+org.eclipse.jdt.core.search.SearchPattern
+----------------------------
+
+createFieldPattern(java.lang.String int int )
+  Unable to fully structure code
+createMethodOrConstructorPattern(java.lang.String int int boolean )
+  Unable to fully structure code
+  Could not resolve type clashes
+
+
+org.eclipse.jdt.internal.codeassist.CompletionEngine
+----------------------------
+
+complete(org.eclipse.jdt.internal.compiler.env.ICompilationUnit int int org.eclipse.jdt.core.ITypeRoot )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [16[WHILELOOP]], but top level block is 4[TRYBLOCK]
+computeExpectedTypes(org.eclipse.jdt.internal.compiler.ast.ASTNode org.eclipse.jdt.internal.compiler.ast.ASTNode org.eclipse.jdt.internal.compiler.lookup.Scope )
+  Unable to fully structure code
+findFieldsAndMethodsFromMissingReturnType(char[] org.eclipse.jdt.internal.compiler.lookup.TypeBinding[] org.eclipse.jdt.internal.compiler.lookup.Scope org.eclipse.jdt.internal.compiler.lookup.InvocationSite boolean )
+  Unable to fully structure code
+findNestedTypes(char[] org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding org.eclipse.jdt.internal.compiler.lookup.Scope boolean org.eclipse.jdt.internal.compiler.util.ObjectVector )
+  Unable to fully structure code
+findVariablesAndMethods(char[] org.eclipse.jdt.internal.compiler.lookup.Scope org.eclipse.jdt.internal.compiler.lookup.InvocationSite org.eclipse.jdt.internal.compiler.lookup.Scope boolean boolean )
+  Unable to fully structure code
+substituteMethodTypeParameterName(char char char char[][] char[][] )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.codeassist.SelectionEngine
+----------------------------
+
+select(org.eclipse.jdt.internal.compiler.env.ICompilationUnit int int )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.codeassist.complete.CompletionJavadocParser
+----------------------------
+
+pushText(int int )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.codeassist.complete.CompletionParser
+----------------------------
+
+buildMoreCompletionEnclosingContext(org.eclipse.jdt.internal.compiler.ast.Statement )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.codeassist.complete.CompletionScanner
+----------------------------
+
+getNextToken()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 88[DOLOOP]
+
+
+org.eclipse.jdt.internal.compiler.Compiler
+----------------------------
+
+compile(org.eclipse.jdt.internal.compiler.env.ICompilationUnit[] )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+org.eclipse.jdt.internal.compiler.ReadManager
+----------------------------
+
+run()
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.ast.CastExpression
+----------------------------
+
+checkUnsafeCast(org.eclipse.jdt.internal.compiler.lookup.Scope org.eclipse.jdt.internal.compiler.lookup.TypeBinding org.eclipse.jdt.internal.compiler.lookup.TypeBinding org.eclipse.jdt.internal.compiler.lookup.TypeBinding boolean )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration
+----------------------------
+
+reportNLSProblems()
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.ast.SwitchStatement
+----------------------------
+
+resolve(org.eclipse.jdt.internal.compiler.lookup.BlockScope )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.ast.TypeDeclaration
+----------------------------
+
+resolve()
+  Unable to fully structure code
+  Could not resolve type clashes
+
+
+org.eclipse.jdt.internal.compiler.batch.ClasspathJar
+----------------------------
+
+fetchLinkedJars(org.eclipse.jdt.internal.compiler.batch.FileSystem$ClasspathSectionProblemReporter )
+  Loose catch block
+
+
+org.eclipse.jdt.internal.compiler.batch.Main
+----------------------------
+
+configure(java.lang.String[] )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.classfmt.ClassFileReader
+----------------------------
+
+hasNonSyntheticFieldChanges(org.eclipse.jdt.internal.compiler.classfmt.FieldInfo[] org.eclipse.jdt.internal.compiler.classfmt.FieldInfo[] )
+  Unable to fully structure code
+hasNonSyntheticMethodChanges(org.eclipse.jdt.internal.compiler.classfmt.MethodInfo[] org.eclipse.jdt.internal.compiler.classfmt.MethodInfo[] )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.codegen.CodeStream
+----------------------------
+
+sort(int[] int int int[] )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.flow.FlowContext
+----------------------------
+
+checkExceptionHandlers(org.eclipse.jdt.internal.compiler.lookup.TypeBinding org.eclipse.jdt.internal.compiler.ast.ASTNode org.eclipse.jdt.internal.compiler.flow.FlowInfo org.eclipse.jdt.internal.compiler.lookup.BlockScope boolean )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.flow.LoopingFlowContext
+----------------------------
+
+complainOnDeferredNullChecks(org.eclipse.jdt.internal.compiler.lookup.BlockScope org.eclipse.jdt.internal.compiler.flow.FlowInfo )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.flow.UnconditionalFlowInfo
+----------------------------
+
+addPotentialInitializationsFrom(org.eclipse.jdt.internal.compiler.flow.FlowInfo )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.lookup.MethodVerifier
+----------------------------
+
+mustImplementAbstractMethod(org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.lookup.MethodVerifier15
+----------------------------
+
+checkMethods()
+  Unable to fully structure code
+checkTypeVariableMethods(org.eclipse.jdt.internal.compiler.ast.TypeParameter )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.lookup.ParameterizedGenericMethodBinding
+----------------------------
+
+inferFromArgumentTypes(org.eclipse.jdt.internal.compiler.lookup.Scope org.eclipse.jdt.internal.compiler.lookup.MethodBinding org.eclipse.jdt.internal.compiler.lookup.TypeBinding[] org.eclipse.jdt.internal.compiler.lookup.TypeBinding[] org.eclipse.jdt.internal.compiler.lookup.InferenceContext )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding
+----------------------------
+
+collectSubstitutes(org.eclipse.jdt.internal.compiler.lookup.Scope org.eclipse.jdt.internal.compiler.lookup.TypeBinding org.eclipse.jdt.internal.compiler.lookup.InferenceContext int )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.lookup.Scope
+----------------------------
+
+connectTypeVariables(org.eclipse.jdt.internal.compiler.ast.TypeParameter[] boolean )
+  Unable to fully structure code
+  Could not resolve type clashes
+getImplicitMethod(char[] org.eclipse.jdt.internal.compiler.lookup.TypeBinding[] org.eclipse.jdt.internal.compiler.lookup.InvocationSite )
+  Unable to fully structure code
+getType(char[][] int )
+  Unable to fully structure code
+getTypeOrPackage(char[] int boolean )
+  Handled impossible loop by adding 'first' condition
+getTypeOrPackage(char[][] )
+  Unable to fully structure code
+lowerUpperBound(org.eclipse.jdt.internal.compiler.lookup.TypeBinding[] java.util.List )
+  Unable to fully structure code
+minimalErasedCandidates(org.eclipse.jdt.internal.compiler.lookup.TypeBinding[] java.util.Map )
+  Unable to fully structure code
+  Could not resolve type clashes
+
+
+org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding
+----------------------------
+
+fields()
+  Unable to fully structure code
+getField(char[] boolean )
+  Unable to fully structure code
+methods()
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.lookup.TypeBinding
+----------------------------
+
+findSuperTypeOriginatingFrom(org.eclipse.jdt.internal.compiler.lookup.TypeBinding )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.parser.AbstractCommentParser
+----------------------------
+
+commentParse()
+  Unable to fully structure code
+parseHref()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK], 1[TRYBLOCK]], but top level block is 7[DOLOOP]
+parseParam()
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.parser.Scanner
+----------------------------
+
+checkTaskTag(int int )
+  Unable to fully structure code
+getNextToken()
+  Unable to fully structure code
+jumpOverMethodBody()
+  Loose catch block
+
+
+org.eclipse.jdt.internal.compiler.parser.TypeConverter
+----------------------------
+
+decodeType(java.lang.String int int int )
+  Unable to fully structure code
+decodeType(char[] int int int boolean )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.compiler.parser.diagnose.DiagnoseParser
+----------------------------
+
+diagnoseParse(boolean )
+  Unable to fully structure code
+errorRecovery(int boolean )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.BinaryType
+----------------------------
+
+getSourceFileName(org.eclipse.jdt.internal.compiler.env.IBinaryType )
+  Unable to fully structure code
+sourceFileName(org.eclipse.jdt.internal.compiler.env.IBinaryType )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.ClasspathChange
+----------------------------
+
+classpathContains(org.eclipse.jdt.core.IClasspathEntry[] org.eclipse.jdt.core.IClasspathEntry )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.ClasspathEntry
+----------------------------
+
+getCalledFileNames(org.eclipse.core.runtime.IPath )
+  Loose catch block
+validateClasspathEntry(org.eclipse.jdt.core.IJavaProject org.eclipse.jdt.core.IClasspathEntry org.eclipse.jdt.core.IClasspathContainer boolean boolean )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.DeltaProcessor
+----------------------------
+
+resourceChanged(org.eclipse.core.resources.IResourceChangeEvent )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.JavaElement
+----------------------------
+
+getURLContents(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+org.eclipse.jdt.internal.core.JavaModelManager
+----------------------------
+
+initializeContainer(org.eclipse.jdt.core.IJavaProject org.eclipse.core.runtime.IPath )
+  Unable to fully structure code
+loadVariablesAndContainers()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [3[TRYBLOCK], 22[CATCHBLOCK], 21[CATCHBLOCK]], but top level block is 5[TRYBLOCK]
+secondaryTypes(org.eclipse.jdt.core.IJavaProject boolean org.eclipse.core.runtime.IProgressMonitor )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.JavaProject
+----------------------------
+
+validateCycles(java.util.Map )
+  Unable to fully structure code
+loadPreferences()
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.SetContainerOperation
+----------------------------
+
+executeOperation()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [18[DOLOOP]], but top level block is 19[UNCONDITIONALDOLOOP]
+
+
+org.eclipse.jdt.internal.core.builder.AbstractImageBuilder
+----------------------------
+
+acceptResult(org.eclipse.jdt.internal.compiler.CompilationResult )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder
+----------------------------
+
+build(org.eclipse.jdt.internal.compiler.util.SimpleLookupTable )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [11[WHILELOOP]], but top level block is 4[TRYBLOCK]
+findAffectedSourceFiles(org.eclipse.core.resources.IResourceDelta int org.eclipse.jdt.internal.core.builder.StringSet )
+  Unable to fully structure code
+writeClassFileContents(org.eclipse.jdt.internal.compiler.ClassFile org.eclipse.core.resources.IFile java.lang.String boolean org.eclipse.jdt.internal.core.builder.SourceFile )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.builder.JavaBuilder
+----------------------------
+
+build(int java.util.Map org.eclipse.core.runtime.IProgressMonitor )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 3 blocks at once
+
+
+org.eclipse.jdt.internal.core.builder.State
+----------------------------
+
+copyFrom(org.eclipse.jdt.internal.core.builder.State )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.hierarchy.HierarchyBuilder
+----------------------------
+
+createInfoFromClassFileInJar(org.eclipse.jdt.internal.core.Openable )
+  Loose catch block
+
+
+org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver
+----------------------------
+
+fixSupertypeBindings()
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.jdom.DOMType
+----------------------------
+
+normalize(org.eclipse.jdt.internal.core.jdom.ILineStartFinder )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.search.StringOperation
+----------------------------
+
+getPatternMatchingRegions(java.lang.String int int java.lang.String int int boolean )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.search.indexing.BinaryIndexer
+----------------------------
+
+extractArgCount(char[] char[] )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.search.indexing.IndexAllProject
+----------------------------
+
+execute(org.eclipse.core.runtime.IProgressMonitor )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [16[WHILELOOP]], but top level block is 7[TRYBLOCK]
+
+
+org.eclipse.jdt.internal.core.search.indexing.IndexBinaryFolder
+----------------------------
+
+execute(org.eclipse.core.runtime.IProgressMonitor )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [9[WHILELOOP]], but top level block is 2[TRYBLOCK]
+
+
+org.eclipse.jdt.internal.core.search.matching.MatchLocator
+----------------------------
+
+reportAccurateParameterizedTypeReference(org.eclipse.jdt.core.search.SearchMatch org.eclipse.jdt.internal.compiler.ast.TypeReference int org.eclipse.jdt.internal.compiler.ast.TypeReference[] )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.search.matching.PatternLocator
+----------------------------
+
+updateMatch(org.eclipse.jdt.internal.compiler.lookup.TypeBinding[] org.eclipse.jdt.internal.core.search.matching.MatchLocator char[][] boolean )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.util.LRUCache
+----------------------------
+
+makeSpace(int )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.core.util.PublicScanner
+----------------------------
+
+checkTaskTag(int int )
+  Unable to fully structure code
+getNextToken()
+  Unable to fully structure code
+jumpOverMethodBody()
+  Loose catch block
+
+
+org.eclipse.jdt.internal.core.util.Util
+----------------------------
+
+isValidMethodSignature(java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.eval.CodeSnippetScope
+----------------------------
+
+getBinding(char[][] int org.eclipse.jdt.internal.compiler.lookup.InvocationSite org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding )
+  Unable to fully structure code
+
+
+org.eclipse.jdt.internal.formatter.FormatterCommentParser
+----------------------------
+
+parseHtmlTag(int int )
+  Unable to fully structure code
+  Could not resolve type clashes
+
+
+org.eclipse.jdt.internal.formatter.Scribe
+----------------------------
+
+consumeInvalidToken(int )
+  Unable to fully structure code
+initializeScanner(long org.eclipse.jdt.internal.formatter.DefaultCodeFormatterOptions )
+  Unable to fully structure code
+printBlockComment(boolean )
+  Unable to fully structure code
+printLineComment()
+  Unable to fully structure code
+printLineComment(int int )
+  Unable to fully structure code
+printIndentationIfNecessary(java.lang.StringBuffer )
+  Unable to fully structure code
+printJavadocGapLines(int int int boolean boolean java.lang.StringBuffer )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [6[CASE]], but top level block is 4[TRYBLOCK]
+printJavadocImmutableText(org.eclipse.jdt.internal.formatter.FormatJavadocText org.eclipse.jdt.internal.formatter.FormatJavadocBlock boolean )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [10[WHILELOOP]], but top level block is 2[TRYBLOCK]
+printNewLinesBeforeDisablingComment()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [8[DOLOOP]], but top level block is 0[TRYBLOCK]
+printNewLinesCharacters(int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [7[DOLOOP]], but top level block is 8[WHILELOOP]

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.security.win32.x86_1.0.200.v20100503.jar",
+  "sha256": "4963cfbeb4f1ee47db476dae0c0dab836634924a9e8b2998c75b4f8adfaca250",
+  "kind": "java",
+  "output": "unpacked/java/4963cfbeb4f1ee47_org.eclipse.equinox.security.win32.x86_1.0.200.v20100503.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 2,
+  "input_classes": 2,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.security.win32.x86_1.0.200.v20100503.jar"
+  ],
+  "top_level_classes_checked": 2,
+  "missing_top_level_java_files": 0
+}

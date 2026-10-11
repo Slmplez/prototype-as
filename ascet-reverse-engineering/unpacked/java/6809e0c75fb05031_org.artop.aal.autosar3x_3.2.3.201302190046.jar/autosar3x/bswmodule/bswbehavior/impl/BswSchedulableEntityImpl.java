@@ -1,0 +1,24 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  org.eclipse.emf.ecore.EClass
+ */
+package autosar3x.bswmodule.bswbehavior.impl;
+
+import autosar3x.bswmodule.bswbehavior.BswSchedulableEntity;
+import autosar3x.bswmodule.bswbehavior.BswbehaviorPackage;
+import autosar3x.bswmodule.bswbehavior.impl.BswModuleEntityImpl;
+import org.eclipse.emf.ecore.EClass;
+
+public class BswSchedulableEntityImpl
+extends BswModuleEntityImpl
+implements BswSchedulableEntity {
+    protected BswSchedulableEntityImpl() {
+    }
+
+    protected EClass eStaticClass() {
+        return BswbehaviorPackage.Literals.BSW_SCHEDULABLE_ENTITY;
+    }
+}
+

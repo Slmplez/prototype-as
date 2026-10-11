@@ -1,0 +1,136 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.pde.core_3.7.1.v20110822-2108.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.pde.internal.core.BinaryRepositoryProvider
+----------------------------
+
+isBinaryResource(org.eclipse.core.resources.IResource boolean )
+  Unable to fully structure code
+
+
+org.eclipse.pde.internal.core.ClasspathComputer
+----------------------------
+
+addSourceFolder(org.eclipse.pde.core.build.IBuildEntry org.eclipse.core.resources.IProject java.util.HashSet java.util.ArrayList )
+  Unable to fully structure code
+
+
+org.eclipse.pde.internal.core.ClasspathHelper
+----------------------------
+
+getDevEntriesProperties(java.lang.String boolean )
+  Loose catch block
+getDevEntriesProperties(java.lang.String java.util.Map )
+  Loose catch block
+
+
+org.eclipse.pde.internal.core.ExternalFeatureModelManager
+----------------------------
+
+createModel(java.io.File )
+  Loose catch block
+
+
+org.eclipse.pde.internal.core.MinimalState
+----------------------------
+
+loadManifest(java.io.File )
+  Loose catch block
+
+
+org.eclipse.pde.internal.core.PDEState
+----------------------------
+
+createNewTargetState(boolean java.net.URL[] org.eclipse.core.runtime.IProgressMonitor )
+  Loose catch block
+
+
+org.eclipse.pde.internal.core.builders.BuildErrorReporter
+----------------------------
+
+containedInFragment(org.eclipse.osgi.service.resolver.BundleDescription java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.pde.internal.core.builders.DefaultSAXParser
+----------------------------
+
+parse(org.eclipse.core.resources.IFile org.eclipse.pde.internal.core.builders.XMLErrorReporter )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+org.eclipse.pde.internal.core.builders.SchemaTransformer
+----------------------------
+
+transformText(java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.pde.internal.core.converter.PluginConverter
+----------------------------
+
+findPluginManifest(java.io.File )
+  Unable to fully structure code
+
+
+org.eclipse.pde.internal.core.exports.FeatureBasedExportOperation
+----------------------------
+
+run(org.eclipse.core.runtime.IProgressMonitor )
+  Unable to fully structure code
+
+
+org.eclipse.pde.internal.core.exports.FeatureExportOperation
+----------------------------
+
+appendMetadataToArchive(java.lang.String[] org.eclipse.core.runtime.IProgressMonitor )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+cleanup(java.lang.String[] org.eclipse.core.runtime.IProgressMonitor )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+org.eclipse.pde.internal.core.exports.ProductExportOperation
+----------------------------
+
+run(org.eclipse.core.runtime.IProgressMonitor )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [29[DOLOOP]], but top level block is 30[UNCONDITIONALDOLOOP]
+createMacInfoPList()
+  Loose catch block
+
+
+org.eclipse.pde.internal.core.project.BundleProjectService
+----------------------------
+
+loadManifest(java.io.File )
+  Loose catch block
+
+
+org.eclipse.pde.internal.core.target.AbstractBundleContainer
+----------------------------
+
+loadManifest(org.eclipse.equinox.frameworkadmin.BundleInfo )
+  Loose catch block
+loadManifest(java.io.File )
+  Loose catch block
+
+
+org.eclipse.pde.internal.core.text.DocumentHandler
+----------------------------
+
+setTextNodeOffset(org.eclipse.pde.internal.core.text.IDocumentElementNode )
+  Unable to fully structure code
+
+
+org.eclipse.pde.internal.core.util.PDEHTMLHelper
+----------------------------
+
+stripTags(java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.pde.internal.core.util.SchemaUtil
+----------------------------
+
+parseURL(java.net.URL org.xml.sax.helpers.DefaultHandler )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 3 blocks at once

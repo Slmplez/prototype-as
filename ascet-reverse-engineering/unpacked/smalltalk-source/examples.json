@@ -1,0 +1,410 @@
+[
+  {
+    "image": "ASDBase.ic",
+    "address": "0x20000060",
+    "offset": 9423116,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasItemWidgetCtrl",
+      "selector": "stopObserving",
+      "class_address": "0x280abac8",
+      "dictionary_address": "0x1231edb8"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasItemWidgetCtrl",
+        "selector": "stopObserving",
+        "class_address": "0x37f099c",
+        "dictionary_address": "0x1231edb8"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasItemWidgetCtrl",
+        "selector": "stopObserving",
+        "class_address": "0x280abac8",
+        "dictionary_address": "0x1231edb8"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "stopObserving\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x200000c8",
+    "offset": 9423220,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasConfigurableOption",
+      "selector": "initialize",
+      "class_address": "0x28014fb4",
+      "dictionary_address": "0x12035d40"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasConfigurableOption",
+        "selector": "initialize",
+        "class_address": "0x3884fb8",
+        "dictionary_address": "0x12035d40"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasConfigurableOption",
+        "selector": "initialize",
+        "class_address": "0x28014fb4",
+        "dictionary_address": "0x12035d40"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "initialize\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x200000d8",
+    "offset": 9423236,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasOptionEntryBase",
+      "selector": "optionClass",
+      "class_address": "0x280076e8",
+      "dictionary_address": "0x1210dcfc"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasOptionEntryBase",
+        "selector": "optionClass",
+        "class_address": "0x38976f0",
+        "dictionary_address": "0x1210dcfc"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasOptionEntryBase",
+        "selector": "optionClass",
+        "class_address": "0x280076e8",
+        "dictionary_address": "0x1210dcfc"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "optionClass\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x200000f0",
+    "offset": 9423260,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasEuMouseButtonFilterState",
+      "selector": "button3Up",
+      "class_address": "0x2800f608",
+      "dictionary_address": "0x1219e36c"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasEuMouseButtonFilterState",
+        "selector": "button3Up",
+        "class_address": "0x389f610",
+        "dictionary_address": "0x1219e36c"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasEuMouseButtonFilterState",
+        "selector": "button3Up",
+        "class_address": "0x2800f608",
+        "dictionary_address": "0x1219e36c"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "button3Up\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x20000120",
+    "offset": 9423308,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasButtonOption",
+      "selector": "updateValue",
+      "class_address": "0x280006e4",
+      "dictionary_address": "0x1237aba8"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasButtonOption",
+        "selector": "updateValue",
+        "class_address": "0x38906ec",
+        "dictionary_address": "0x1237aba8"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasButtonOption",
+        "selector": "updateValue",
+        "class_address": "0x280006e4",
+        "dictionary_address": "0x1237aba8"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "updateValue\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x200001d0",
+    "offset": 9423484,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasOleExtendedPrimitive",
+      "selector": "registerOleEventHandlers",
+      "class_address": "0x28060c7c",
+      "dictionary_address": "0x123bb80c"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasOleExtendedPrimitive",
+        "selector": "registerOleEventHandlers",
+        "class_address": "0x3830d18",
+        "dictionary_address": "0x123bb80c"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasOleExtendedPrimitive",
+        "selector": "registerOleEventHandlers",
+        "class_address": "0x28060c7c",
+        "dictionary_address": "0x123bb80c"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "registerOleEventHandlers\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x200001f8",
+    "offset": 9423524,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasUIScintillaEditorRT class",
+      "selector": "_PRAGMA_EtasUIScintillaConstants",
+      "class_address": "0x2804c810",
+      "dictionary_address": "0x123a415c"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasUIScintillaEditorRT class",
+        "selector": "_PRAGMA_EtasUIScintillaConstants",
+        "class_address": "0x385c864",
+        "dictionary_address": "0x123a415c"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasUIScintillaEditorRT class",
+        "selector": "_PRAGMA_EtasUIScintillaConstants",
+        "class_address": "0x2804c810",
+        "dictionary_address": "0x123a415c"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "_PRAGMA_EtasUIScintillaConstants\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x20000200",
+    "offset": 9423532,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasDataCollectionAgreementDialog",
+      "selector": "initializeLicenseLabels",
+      "class_address": "0x2805d214",
+      "dictionary_address": "0x123323c4"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasDataCollectionAgreementDialog",
+        "selector": "initializeLicenseLabels",
+        "class_address": "0x384d2a8",
+        "dictionary_address": "0x123323c4"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasDataCollectionAgreementDialog",
+        "selector": "initializeLicenseLabels",
+        "class_address": "0x2805d214",
+        "dictionary_address": "0x123323c4"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "initializeLicenseLabels\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x20000230",
+    "offset": 9423580,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasCwExtensionsRT class",
+      "selector": "_PRAGMA_EtasUIConstants_CommonWidgets",
+      "class_address": "0x2800dca4",
+      "dictionary_address": "0x12311c3c"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasCwExtensionsRT class",
+        "selector": "_PRAGMA_EtasUIConstants_CommonWidgets",
+        "class_address": "0x389dcac",
+        "dictionary_address": "0x12311c3c"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasCwExtensionsRT class",
+        "selector": "_PRAGMA_EtasUIConstants_CommonWidgets",
+        "class_address": "0x2800dca4",
+        "dictionary_address": "0x12311c3c"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "_PRAGMA_EtasUIConstants_CommonWidgets\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x20000240",
+    "offset": 9423596,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasAbstractDependentParameterManager",
+      "selector": "presetValuesOfIndependentAndDependentParameters",
+      "class_address": "0x2803e6bc",
+      "dictionary_address": "0x12131924"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasAbstractDependentParameterManager",
+        "selector": "presetValuesOfIndependentAndDependentParameters",
+        "class_address": "0x386e6d8",
+        "dictionary_address": "0x12131924"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasAbstractDependentParameterManager",
+        "selector": "presetValuesOfIndependentAndDependentParameters",
+        "class_address": "0x2803e6bc",
+        "dictionary_address": "0x12131924"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "presetValuesOfIndependentAndDependentParameters\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x20000268",
+    "offset": 9423636,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasConfigurableOption",
+      "selector": "optionClass",
+      "class_address": "0x28014fb4",
+      "dictionary_address": "0x12035d40"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasConfigurableOption",
+        "selector": "optionClass",
+        "class_address": "0x3884fb8",
+        "dictionary_address": "0x12035d40"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasConfigurableOption",
+        "selector": "optionClass",
+        "class_address": "0x28014fb4",
+        "dictionary_address": "0x12035d40"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "optionClass\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  },
+  {
+    "image": "ASDBase.ic",
+    "address": "0x20000290",
+    "offset": 9423676,
+    "binding": {
+      "class_image": "ASDBase.ic",
+      "clazz": "EtasItemIEWidget",
+      "selector": "initializeAfterOpen",
+      "class_address": "0x280276a8",
+      "dictionary_address": "0x12051ba0"
+    },
+    "binding_observations": [
+      {
+        "class_image": "ascet.icx",
+        "clazz": "EtasItemIEWidget",
+        "selector": "initializeAfterOpen",
+        "class_address": "0x38776b4",
+        "dictionary_address": "0x12051ba0"
+      },
+      {
+        "class_image": "ASDBase.ic",
+        "clazz": "EtasItemIEWidget",
+        "selector": "initializeAfterOpen",
+        "class_address": "0x280276a8",
+        "dictionary_address": "0x12051ba0"
+      }
+    ],
+    "status": "reconstructed_static",
+    "kind": "straight_line",
+    "source": "initializeAfterOpen\n    ^self\n",
+    "instruction_count": 1,
+    "inline_blocks": 0,
+    "code_hex": "0000ac1044"
+  }
+]

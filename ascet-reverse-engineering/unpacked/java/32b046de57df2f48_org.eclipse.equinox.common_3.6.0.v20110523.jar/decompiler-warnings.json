@@ -1,0 +1,102 @@
+[
+  {
+    "file": "org/eclipse/core/runtime/CoreException.java",
+    "line": 34,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/CoreException.java",
+    "line": 45,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/Path.java",
+    "line": 342,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/Activator.java",
+    "line": 386,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/Activator.java",
+    "line": 404,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/AdapterManager.java",
+    "line": 74,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/AdapterManager.java",
+    "line": 93,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/AdapterManager.java",
+    "line": 109,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/AdapterManager.java",
+    "line": 327,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/AdapterManager.java",
+    "line": 337,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/AdapterManager.java",
+    "line": 347,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/RuntimeLog.java",
+    "line": 18,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/RuntimeLog.java",
+    "line": 32,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/RuntimeLog.java",
+    "line": 47,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/RuntimeLog.java",
+    "line": 57,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/RuntimeLog.java",
+    "line": 67,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/RuntimeLog.java",
+    "line": 111,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/RuntimeLog.java",
+    "line": 121,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/RuntimeLog.java",
+    "line": 131,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/RuntimeLog.java",
+    "line": 151,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

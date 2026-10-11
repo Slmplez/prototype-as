@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar",
+  "sha256": "ed6cb922366f14e2b152ff68bfa0cfa18f12880eb004610e6056b5da7852a82a",
+  "kind": "java",
+  "output": "unpacked/java/ed6cb922366f14e2_org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 62,
+  "input_classes": 102,
+  "warning_lines": 2,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar"
+  ],
+  "top_level_classes_checked": 62,
+  "missing_top_level_java_files": 0
+}

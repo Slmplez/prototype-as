@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.jdom_1.1.1.v201101151400.jar",
+  "sha256": "7504ceb11a839420cbb52b858d0c10ee457ae56e7902f80410252cb30b2ce9d3",
+  "kind": "java",
+  "output": "unpacked/java/7504ceb11a839420_org.jdom_1.1.1.v201101151400.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 62,
+  "input_classes": 73,
+  "warning_lines": 1,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.jdom_1.1.1.v201101151400.jar"
+  ],
+  "top_level_classes_checked": 62,
+  "missing_top_level_java_files": 0
+}

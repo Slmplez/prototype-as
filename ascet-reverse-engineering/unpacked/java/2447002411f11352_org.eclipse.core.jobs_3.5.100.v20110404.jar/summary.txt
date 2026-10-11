@@ -1,0 +1,30 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.core.jobs_3.5.100.v20110404.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.core.internal.jobs.DeadlockDetector
+----------------------------
+
+reduceGraph(int org.eclipse.core.runtime.jobs.ISchedulingRule )
+  Unable to fully structure code
+
+
+org.eclipse.core.internal.jobs.InternalWorker
+----------------------------
+
+run()
+  Unable to fully structure code
+
+
+org.eclipse.core.internal.jobs.JobManager
+----------------------------
+
+waitForUnblocked(org.eclipse.core.internal.jobs.InternalJob )
+  Unable to fully structure code
+
+
+org.eclipse.core.internal.jobs.Worker
+----------------------------
+
+run()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [8[CATCHBLOCK]], but top level block is 5[TRYBLOCK]

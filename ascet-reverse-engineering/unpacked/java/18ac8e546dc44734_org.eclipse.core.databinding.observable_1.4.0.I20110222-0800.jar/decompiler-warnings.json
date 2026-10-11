@@ -1,0 +1,32 @@
+[
+  {
+    "file": "org/eclipse/core/databinding/observable/Realm.java",
+    "line": 62,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/databinding/observable/Realm.java",
+    "line": 74,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/databinding/observable/Realm.java",
+    "line": 103,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/databinding/observable/Realm.java",
+    "line": 129,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/databinding/observable/Realm.java",
+    "line": 174,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/databinding/observable/list/ListDiff.java",
+    "line": 19,
+    "text": "* Unable to fully structure code"
+  }
+]

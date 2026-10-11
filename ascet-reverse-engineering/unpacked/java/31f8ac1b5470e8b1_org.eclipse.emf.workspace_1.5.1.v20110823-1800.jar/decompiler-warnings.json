@@ -1,0 +1,27 @@
+[
+  {
+    "file": "org/eclipse/emf/workspace/internal/Tracing.java",
+    "line": 40,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/workspace/util/WorkspaceSynchronizer.java",
+    "line": 104,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/workspace/util/WorkspaceSynchronizer.java",
+    "line": 229,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/workspace/util/WorkspaceSynchronizer.java",
+    "line": 243,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/workspace/util/WorkspaceSynchronizer.java",
+    "line": 316,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

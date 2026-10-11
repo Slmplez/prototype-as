@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>ETAS.StandardDialogs</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Es.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_It.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Ko.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Pt.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Ro.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Jp.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Ch.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_De.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_EnUs.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Fr.rtf" />
+    <None Remove="ETAS.StandardDialogs.Resources.SupportInfo.xml" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Es.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Es.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_It.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_It.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Ko.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Ko.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Pt.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Pt.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Ro.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Ro.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Jp.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Jp.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Ch.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Ch.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_De.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_De.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_EnUs.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_EnUs.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Fr.rtf" LogicalName="ETAS.StandardDialogs.Resources.Disclaimer.Disclaimer_Fr.rtf" />
+    <EmbeddedResource Include="ETAS.StandardDialogs.Resources.SupportInfo.xml" LogicalName="ETAS.StandardDialogs.Resources.SupportInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+</Project>

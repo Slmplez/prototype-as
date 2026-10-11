@@ -1,0 +1,2217 @@
+[
+  {
+    "file": "org/eclipse/core/runtime/internal/adaptor/ContextFinder.java",
+    "line": 147,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/runtime/internal/adaptor/ContextFinder.java",
+    "line": 152,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/runtime/internal/adaptor/ContextFinder.java",
+    "line": 170,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/runtime/internal/adaptor/EclipseClassLoadingHook.java",
+    "line": 70,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/runtime/internal/adaptor/EclipseLogWriter.java",
+    "line": 345,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/runtime/internal/adaptor/EclipseStorageHook.java",
+    "line": 321,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/runtime/internal/adaptor/EclipseStorageHook.java",
+    "line": 325,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/runtime/internal/adaptor/EclipseStorageHook.java",
+    "line": 343,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/runtime/internal/stats/ClassloaderStats.java",
+    "line": 100,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/equinox/log/internal/BasicReadWriteLock.java",
+    "line": 48,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/equinox/log/internal/BasicReadWriteLock.java",
+    "line": 52,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/equinox/log/internal/BasicReadWriteLock.java",
+    "line": 70,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/equinox/log/internal/ExtendedLogEntryImpl.java",
+    "line": 67,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/BaseAdaptor.java",
+    "line": 487,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/BaseAdaptor.java",
+    "line": 588,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/BaseData.java",
+    "line": 121,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/launch/Equinox.java",
+    "line": 118,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/storagemanager/StorageManager.java",
+    "line": 557,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/storagemanager/StorageManager.java",
+    "line": 594,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/storagemanager/StorageManager.java",
+    "line": 627,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/util/ManifestElement.java",
+    "line": 135,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/osgi/util/ManifestElement.java",
+    "line": 139,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/osgi/util/ManifestElement.java",
+    "line": 158,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/bundlefile/MRUBundleFileList.java",
+    "line": 66,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/bundlefile/MRUBundleFileList.java",
+    "line": 112,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/bundlefile/MRUBundleFileList.java",
+    "line": 139,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/bundlefile/ZipBundleEntry.java",
+    "line": 89,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/loader/ClasspathEntry.java",
+    "line": 40,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/loader/ClasspathEntry.java",
+    "line": 53,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/loader/ClasspathManager.java",
+    "line": 230,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/loader/ClasspathManager.java",
+    "line": 395,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/loader/ClasspathManager.java",
+    "line": 445,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/loader/ClasspathManager.java",
+    "line": 483,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/loader/ClasspathManager.java",
+    "line": 519,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/loader/ClasspathManager.java",
+    "line": 577,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/baseadaptor/loader/ClasspathManager.java",
+    "line": 629,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/EclipseDebugTrace.java",
+    "line": 226,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/FrameworkDebugOptions.java",
+    "line": 163,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/FrameworkDebugOptions.java",
+    "line": 188,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/FrameworkDebugOptions.java",
+    "line": 205,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/FrameworkDebugOptions.java",
+    "line": 229,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/FrameworkDebugOptions.java",
+    "line": 249,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/FrameworkDebugOptions.java",
+    "line": 288,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/FrameworkDebugOptions.java",
+    "line": 333,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/FrameworkDebugOptions.java",
+    "line": 344,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/debug/FrameworkDebugOptions.java",
+    "line": 387,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/eventmgr/CopyOnWriteIdentityMap.java",
+    "line": 362,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/eventmgr/CopyOnWriteIdentityMap.java",
+    "line": 428,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/eventmgr/CopyOnWriteIdentityMap.java",
+    "line": 523,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/eventmgr/ListenerQueue.java",
+    "line": 44,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/eventmgr/ListenerQueue.java",
+    "line": 61,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/util/KeyedHashSet.java",
+    "line": 400,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/framework/util/ObjectPool.java",
+    "line": 32,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/AbstractBundle.java",
+    "line": 368,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/AbstractBundle.java",
+    "line": 499,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/AbstractBundle.java",
+    "line": 639,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/BundleContextImpl.java",
+    "line": 64,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/BundleContextImpl.java",
+    "line": 78,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/BundleContextImpl.java",
+    "line": 257,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/BundleContextImpl.java",
+    "line": 405,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/BundleFragment.java",
+    "line": 173,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/BundleHost.java",
+    "line": 440,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/BundleRepository.java",
+    "line": 24,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 397,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 619,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 754,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 817,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 893,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 925,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 939,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 959,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1056,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1083,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1104,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1157,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1172,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1185,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1227,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1267,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1294,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1336,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1493,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1562,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1676,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1735,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1851,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Framework.java",
+    "line": 1881,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/FrameworkCommandInterpreter.java",
+    "line": 245,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/FrameworkCommandInterpreter.java",
+    "line": 297,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/FrameworkCommandInterpreter.java",
+    "line": 432,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/FrameworkCommandProvider.java",
+    "line": 677,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/FrameworkCommandProvider.java",
+    "line": 1337,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/FrameworkCommandProvider.java",
+    "line": 1510,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/FrameworkCommandProvider.java",
+    "line": 1570,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/FrameworkCommandProvider.java",
+    "line": 1681,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/ManifestLocalization.java",
+    "line": 102,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/PackageAdminImpl.java",
+    "line": 162,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/PackageAdminImpl.java",
+    "line": 235,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/PackageAdminImpl.java",
+    "line": 478,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/PackageAdminImpl.java",
+    "line": 479,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/StartLevelManager.java",
+    "line": 105,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/StartLevelManager.java",
+    "line": 175,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/StartLevelManager.java",
+    "line": 275,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/StartLevelManager.java",
+    "line": 293,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/StartLevelManager.java",
+    "line": 438,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/StartLevelManager.java",
+    "line": 462,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/core/Util.java",
+    "line": 12,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/reliablefile/ReliableFile.java",
+    "line": 98,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/reliablefile/ReliableFile.java",
+    "line": 196,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/reliablefile/ReliableFile.java",
+    "line": 353,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/framework/internal/reliablefile/ReliableFile.java",
+    "line": 486,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/BasePermissionStorage.java",
+    "line": 26,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/BasePermissionStorage.java",
+    "line": 43,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/BasePermissionStorage.java",
+    "line": 60,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/BaseStorage.java",
+    "line": 721,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/BaseStorage.java",
+    "line": 1345,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/BaseStorage.java",
+    "line": 1437,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/BaseStorage.java",
+    "line": 1438,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/BaseStorage.java",
+    "line": 1481,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/BaseStorage.java",
+    "line": 1513,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/DevClassPathHelper.java",
+    "line": 87,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/baseadaptor/StateManager.java",
+    "line": 198,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/composite/CompositeConfigurator.java",
+    "line": 158,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/composite/CompositeConfigurator.java",
+    "line": 205,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/composite/CompositeConfigurator.java",
+    "line": 219,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/composite/CompositeConfigurator.java",
+    "line": 234,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/composite/CompositeConfigurator.java",
+    "line": 247,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/composite/CompositeServiceTracker.java",
+    "line": 58,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/composite/CompositeServiceTracker.java",
+    "line": 79,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/composite/CompositeServiceTracker.java",
+    "line": 94,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/BundleLoader.java",
+    "line": 265,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/BundleLoader.java",
+    "line": 1163,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/BundleLoader.java",
+    "line": 1177,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/BundleLoader.java",
+    "line": 1199,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/BundleLoader.java",
+    "line": 1268,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/BundleLoader.java",
+    "line": 1315,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/BundleLoaderProxy.java",
+    "line": 195,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/BundleLoaderProxy.java",
+    "line": 219,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/SystemBundleLoader.java",
+    "line": 41,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/SystemBundleLoader.java",
+    "line": 111,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/SystemBundleLoader.java",
+    "line": 137,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/SystemBundleLoader.java",
+    "line": 164,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/SystemBundleLoader.java",
+    "line": 181,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/module/ResolverImpl.java",
+    "line": 1066,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "org/eclipse/osgi/internal/module/ResolverImpl.java",
+    "line": 1229,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/PermissionInfoCollection.java",
+    "line": 108,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/PermissionInfoCollection.java",
+    "line": 187,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 160,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 190,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 205,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 217,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 228,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 266,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 284,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 320,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 337,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 348,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 371,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 391,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 424,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityAdmin.java",
+    "line": 520,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityRow.java",
+    "line": 96,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityRow.java",
+    "line": 327,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityRow.java",
+    "line": 489,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/permadmin/SecurityRow.java",
+    "line": 515,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BaseDescriptionImpl.java",
+    "line": 31,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 104,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 116,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 128,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 143,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 158,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 173,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 188,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 203,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 218,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 230,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 294,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 309,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 324,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 339,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 354,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 369,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 384,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 398,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 417,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 428,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 439,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 450,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 468,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 489,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 507,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 525,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 543,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 569,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 589,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 600,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 613,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 624,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 642,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 663,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 674,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 685,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 696,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 707,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 718,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 756,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 773,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 793,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 813,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 841,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 854,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 867,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 881,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 891,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 947,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 967,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1029,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1055,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1066,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1087,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1099,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1124,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1135,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1145,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1199,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java",
+    "line": 1319,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleSpecificationImpl.java",
+    "line": 26,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleSpecificationImpl.java",
+    "line": 36,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleSpecificationImpl.java",
+    "line": 46,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleSpecificationImpl.java",
+    "line": 57,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleSpecificationImpl.java",
+    "line": 68,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleSpecificationImpl.java",
+    "line": 78,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleSpecificationImpl.java",
+    "line": 131,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/BundleSpecificationImpl.java",
+    "line": 150,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ExportPackageDescriptionImpl.java",
+    "line": 47,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ExportPackageDescriptionImpl.java",
+    "line": 76,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ExportPackageDescriptionImpl.java",
+    "line": 106,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ExportPackageDescriptionImpl.java",
+    "line": 147,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ExportPackageDescriptionImpl.java",
+    "line": 179,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ExportPackageDescriptionImpl.java",
+    "line": 217,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ExportPackageDescriptionImpl.java",
+    "line": 236,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ExportPackageDescriptionImpl.java",
+    "line": 262,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericDescriptionImpl.java",
+    "line": 54,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericDescriptionImpl.java",
+    "line": 70,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericDescriptionImpl.java",
+    "line": 80,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericDescriptionImpl.java",
+    "line": 102,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericDescriptionImpl.java",
+    "line": 129,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericDescriptionImpl.java",
+    "line": 143,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 29,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 40,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 55,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 86,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 97,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 107,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 118,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 129,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 139,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 150,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 171,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 182,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/GenericSpecificationImpl.java",
+    "line": 192,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 27,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 37,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 86,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 97,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 108,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 122,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 137,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 148,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 158,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/HostSpecificationImpl.java",
+    "line": 171,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 32,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 47,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 61,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 75,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 88,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 104,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 118,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 224,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 234,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 244,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/ImportPackageSpecificationImpl.java",
+    "line": 265,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 42,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 56,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 70,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 84,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 98,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 221,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 231,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 245,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 255,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeDescriptionImpl.java",
+    "line": 265,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeSpecificationImpl.java",
+    "line": 33,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeSpecificationImpl.java",
+    "line": 47,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeSpecificationImpl.java",
+    "line": 57,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/NativeCodeSpecificationImpl.java",
+    "line": 68,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateBuilder.java",
+    "line": 442,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateDeltaImpl.java",
+    "line": 29,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateDeltaImpl.java",
+    "line": 39,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateDeltaImpl.java",
+    "line": 68,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateDeltaImpl.java",
+    "line": 92,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateDeltaImpl.java",
+    "line": 111,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateDeltaImpl.java",
+    "line": 134,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateDeltaImpl.java",
+    "line": 153,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateDeltaImpl.java",
+    "line": 172,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 113,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 157,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 215,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 232,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 279,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 297,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 318,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 329,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 348,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 392,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 403,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 429,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 458,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 716,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 730,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 747,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 757,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 767,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 778,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 789,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 799,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 827,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 837,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 892,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 903,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 925,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 942,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 953,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 986,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1202,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1213,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1261,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1331,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1341,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1351,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1370,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1398,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1422,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1432,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1448,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1467,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1481,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1491,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1506,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1522,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1532,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1548,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1559,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1586,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1604,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1625,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateImpl.java",
+    "line": 1637,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/StateWriter.java",
+    "line": 122,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 36,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 52,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 66,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 77,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 88,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 99,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 110,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 120,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 130,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/resolver/VersionConstraintImpl.java",
+    "line": 140,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceProperties.java",
+    "line": 19,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 60,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 79,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 100,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 123,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 175,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 201,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 211,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 221,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 235,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 253,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 280,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 284,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 302,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 306,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 349,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl.java",
+    "line": 384,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistry.java",
+    "line": 269,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistry.java",
+    "line": 320,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistry.java",
+    "line": 344,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistry.java",
+    "line": 372,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistry.java",
+    "line": 397,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistry.java",
+    "line": 435,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistry.java",
+    "line": 551,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/serviceregistry/ServiceRegistry.java",
+    "line": 828,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/signedcontent/SignatureBlockProcessor.java",
+    "line": 262,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/osgi/internal/loader/buddy/PolicyHandler.java",
+    "line": 64,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/service/security/KeyStoreTrustEngine.java",
+    "line": 82,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/service/security/KeyStoreTrustEngine.java",
+    "line": 134,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/service/security/KeyStoreTrustEngine.java",
+    "line": 151,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/service/security/KeyStoreTrustEngine.java",
+    "line": 189,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/service/security/KeyStoreTrustEngine.java",
+    "line": 215,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/service/security/KeyStoreTrustEngine.java",
+    "line": 245,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/osgi/internal/service/security/KeyStoreTrustEngine.java",
+    "line": 264,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/AdaptPermission.java",
+    "line": 71,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/osgi/framework/AdaptPermissionCollection.java",
+    "line": 48,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/AdaptPermissionCollection.java",
+    "line": 83,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/AdminPermission.java",
+    "line": 100,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/osgi/framework/AdminPermissionCollection.java",
+    "line": 49,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/AdminPermissionCollection.java",
+    "line": 84,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/BundlePermission.java",
+    "line": 51,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/osgi/framework/BundlePermissionCollection.java",
+    "line": 48,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/BundlePermissionCollection.java",
+    "line": 80,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/CapabilityPermission.java",
+    "line": 86,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/osgi/framework/CapabilityPermissionCollection.java",
+    "line": 60,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/CapabilityPermissionCollection.java",
+    "line": 104,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/PackagePermission.java",
+    "line": 80,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/osgi/framework/PackagePermissionCollection.java",
+    "line": 62,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/PackagePermissionCollection.java",
+    "line": 106,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/ServicePermission.java",
+    "line": 101,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/osgi/framework/ServicePermissionCollection.java",
+    "line": 62,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/framework/ServicePermissionCollection.java",
+    "line": 106,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/AbstractTracked.java",
+    "line": 43,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/AbstractTracked.java",
+    "line": 71,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/AbstractTracked.java",
+    "line": 98,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/AbstractTracked.java",
+    "line": 139,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/BundleTracker.java",
+    "line": 37,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/BundleTracker.java",
+    "line": 69,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/BundleTracker.java",
+    "line": 112,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/BundleTracker.java",
+    "line": 132,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/BundleTracker.java",
+    "line": 154,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/BundleTracker.java",
+    "line": 168,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/BundleTracker.java",
+    "line": 182,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/BundleTracker.java",
+    "line": 197,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 93,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 134,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 183,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 209,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 277,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 291,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 340,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 354,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 373,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 388,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/osgi/util/tracker/ServiceTracker.java",
+    "line": 402,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

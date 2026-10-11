@@ -1,0 +1,237 @@
+[
+  {
+    "file": "org/eclipse/core/filebuffers/manipulation/GenericFileBufferOperationRunner.java",
+    "line": 56,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/filebuffers/manipulation/GenericFileBufferOperationRunner.java",
+    "line": 83,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/DocumentReader.java",
+    "line": 39,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/DocumentReader.java",
+    "line": 50,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/FileStoreTextFileBuffer.java",
+    "line": 95,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/FileStoreTextFileBuffer.java",
+    "line": 283,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/FileStoreTextFileBuffer.java",
+    "line": 287,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/FileStoreTextFileBuffer.java",
+    "line": 305,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/ResourceTextFileBuffer.java",
+    "line": 96,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 43,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 58,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 73,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 87,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 102,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 116,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 130,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 144,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 158,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 173,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 188,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 203,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 218,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 233,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 248,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 262,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 276,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 290,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 304,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 318,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 332,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 346,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 360,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/SynchronizableDocument.java",
+    "line": 374,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 83,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 120,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 162,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 187,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 213,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 336,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 346,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 369,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 370,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 408,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 419,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 521,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 534,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filebuffers/TextFileBufferManager.java",
+    "line": 592,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

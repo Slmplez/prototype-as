@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Syncfusion.Core</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Syncfusion.Core.Licensing.syncf.ico" />
+    <None Remove="Syncfusion.Core.Licensing.lic.genab" />
+    <EmbeddedResource Include="Syncfusion.Core.Licensing.syncf.ico" LogicalName="Syncfusion.Core.Licensing.syncf.ico" />
+    <EmbeddedResource Include="Syncfusion.Core.Licensing.lic.genab" LogicalName="Syncfusion.Core.Licensing.lic.genab" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+</Project>

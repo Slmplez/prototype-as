@@ -1,0 +1,7 @@
+[
+  {
+    "file": "autosar3x/util/Autosar3xPackage.java",
+    "line": 233,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

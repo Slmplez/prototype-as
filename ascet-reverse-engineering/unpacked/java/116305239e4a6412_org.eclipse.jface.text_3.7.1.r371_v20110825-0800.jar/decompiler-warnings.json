@@ -1,0 +1,272 @@
+[
+  {
+    "file": "org/eclipse/jface/text/TextViewerHoverManager.java",
+    "line": 68,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/TextViewerHoverManager.java",
+    "line": 97,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/TextViewerHoverManager.java",
+    "line": 132,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/text/link/contentassist/AdditionalInfoController2.java",
+    "line": 51,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/text/link/contentassist/AdditionalInfoController2.java",
+    "line": 79,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/text/link/contentassist/AdditionalInfoController2.java",
+    "line": 97,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/text/link/contentassist/AdditionalInfoController2.java",
+    "line": 140,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/internal/text/link/contentassist/ContentAssistant2.java",
+    "line": 584,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/jface/internal/text/link/contentassist/ContentAssistant2.java",
+    "line": 588,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/jface/internal/text/link/contentassist/ContentAssistant2.java",
+    "line": 608,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/jface/internal/text/link/contentassist/ContentAssistant2.java",
+    "line": 612,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/contentassist/AdditionalInfoController.java",
+    "line": 312,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/contentassist/AdditionalInfoController.java",
+    "line": 486,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/contentassist/ContentAssistant.java",
+    "line": 962,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/jface/text/contentassist/ContentAssistant.java",
+    "line": 966,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/jface/text/contentassist/ContentAssistant.java",
+    "line": 986,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/jface/text/contentassist/ContentAssistant.java",
+    "line": 990,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/hyperlink/HyperlinkManager.java",
+    "line": 103,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/hyperlink/HyperlinkManager.java",
+    "line": 158,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/hyperlink/HyperlinkManager.java",
+    "line": 296,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/reconciler/AbstractReconciler.java",
+    "line": 79,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/reconciler/AbstractReconciler.java",
+    "line": 102,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/reconciler/AbstractReconciler.java",
+    "line": 122,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/reconciler/AbstractReconciler.java",
+    "line": 203,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/reconciler/AbstractReconciler.java",
+    "line": 218,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/reconciler/AbstractReconciler.java",
+    "line": 237,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/reconciler/AbstractReconciler.java",
+    "line": 259,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/reconciler/AbstractReconciler.java",
+    "line": 339,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/rules/FastPartitioner.java",
+    "line": 182,
+    "text": "* WARNING - Removed back jump from a try to a catch block - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/rules/FastPartitioner.java",
+    "line": 183,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/text/rules/PatternRule.java",
+    "line": 78,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/text/rules/RuleBasedScanner.java",
+    "line": 120,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationPainter.java",
+    "line": 117,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationPainter.java",
+    "line": 163,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationPainter.java",
+    "line": 483,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationPainter.java",
+    "line": 507,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationPainter.java",
+    "line": 673,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/AnnotationPainter.java",
+    "line": 740,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/LineChangeHover.java",
+    "line": 79,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/text/source/LineNumberRulerColumn.java",
+    "line": 100,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/LineNumberRulerColumn.java",
+    "line": 354,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/OverviewRuler.java",
+    "line": 135,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/OverviewRuler.java",
+    "line": 380,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/templates/TemplateCompletionProcessor.java",
+    "line": 104,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionSummary.java",
+    "line": 48,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionSummary.java",
+    "line": 63,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionSummary.java",
+    "line": 78,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionSummary.java",
+    "line": 176,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionSummary.java",
+    "line": 257,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionSummary.java",
+    "line": 268,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionViewer.java",
+    "line": 137,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionViewer.java",
+    "line": 492,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionViewer.java",
+    "line": 517,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jface/text/source/projection/ProjectionViewer.java",
+    "line": 529,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

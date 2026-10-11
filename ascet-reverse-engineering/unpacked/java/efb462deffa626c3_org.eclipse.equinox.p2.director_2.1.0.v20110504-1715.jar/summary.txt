@@ -1,0 +1,2 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.equinox.p2.director_2.1.0.v20110504-1715.jar
+Decompiled with CFR 0.152

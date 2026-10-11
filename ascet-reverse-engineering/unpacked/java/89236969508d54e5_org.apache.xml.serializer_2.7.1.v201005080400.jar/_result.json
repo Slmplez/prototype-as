@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xml.serializer_2.7.1.v201005080400.jar",
+  "sha256": "89236969508d54e592c6a02b4f20db06f99cf349c99dd0f3961849aa9629b6ad",
+  "kind": "java",
+  "output": "unpacked/java/89236969508d54e5_org.apache.xml.serializer_2.7.1.v201005080400.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 84,
+  "input_classes": 109,
+  "warning_lines": 4,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xml.serializer_2.7.1.v201005080400.jar"
+  ],
+  "top_level_classes_checked": 84,
+  "missing_top_level_java_files": 0
+}

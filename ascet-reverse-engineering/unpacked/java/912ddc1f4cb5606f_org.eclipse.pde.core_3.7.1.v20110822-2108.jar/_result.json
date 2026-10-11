@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.core_3.7.1.v20110822-2108.jar",
+  "sha256": "912ddc1f4cb5606fc5248684434ecb2c5d3b50941dcb7a091b10e8f42708ad63",
+  "kind": "java",
+  "output": "unpacked/java/912ddc1f4cb5606f_org.eclipse.pde.core_3.7.1.v20110822-2108.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 509,
+  "input_classes": 555,
+  "warning_lines": 28,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.core_3.7.1.v20110822-2108.jar"
+  ],
+  "top_level_classes_checked": 509,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,62 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.jface_3.7.0.I20110522-1430.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.jface.action.CoolBarManager
+----------------------------
+
+nextRow(java.util.ListIterator boolean )
+  Unable to fully structure code
+refresh()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+
+
+org.eclipse.jface.action.LegacyActionTools
+----------------------------
+
+extractMnemonic(java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.jface.bindings.keys.KeySequenceText
+----------------------------
+
+deleteSelection(org.eclipse.jface.bindings.keys.KeyStroke[] boolean org.eclipse.jface.bindings.keys.KeyStroke[][] )
+  Unable to fully structure code
+
+
+org.eclipse.jface.layout.LayoutGenerator
+----------------------------
+
+defaultsFor(org.eclipse.swt.widgets.Control )
+  Unable to fully structure code
+
+
+org.eclipse.jface.operation.ModalContext
+----------------------------
+
+canProgressMonitorBeUsed(org.eclipse.core.runtime.IProgressMonitor org.eclipse.core.runtime.IProgressMonitor )
+  Unable to fully structure code
+run()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [8[CATCHBLOCK]], but top level block is 4[TRYBLOCK]
+
+
+org.eclipse.jface.preference.PreferenceDialog
+----------------------------
+
+run()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [6[DOLOOP]], but top level block is 2[TRYBLOCK]
+
+
+org.eclipse.jface.viewers.CustomHashtable
+----------------------------
+
+hasMoreElements()
+  Unable to fully structure code
+
+
+org.eclipse.jface.window.ApplicationWindow
+----------------------------
+
+run(boolean boolean org.eclipse.jface.operation.IRunnableWithProgress )
+  Unable to fully structure code

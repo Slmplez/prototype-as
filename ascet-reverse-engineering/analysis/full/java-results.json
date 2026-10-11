@@ -1,0 +1,1874 @@
+[
+  {
+    "source": "unpacked/archives/10fd53a5e96c4d2e_org.eclipse.core.resources_3.7.100.v20110510-0712.jar/ant_tasks/resources-ant.jar",
+    "sha256": "c5f7ff0e1eb1712288bf7c8c9e02558d7898ba770b8434a8bd4124155fcd5723",
+    "kind": "java",
+    "output": "unpacked/java/c5f7ff0e1eb17122",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 4,
+    "input_classes": 4,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/archives/10fd53a5e96c4d2e_org.eclipse.core.resources_3.7.100.v20110510-0712.jar/ant_tasks/resources-ant.jar"
+    ],
+    "top_level_classes_checked": 4,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/archives/20b981d9ee46c49d_org.eclipse.jdt.launching_3.6.1.v20110803_r371.jar/lib/launchingsupport.jar",
+    "sha256": "507ed6a47f838afcf0706d39df8f556cdc62852641d5b59de56e80cdf52675f8",
+    "kind": "java",
+    "output": "unpacked/java/507ed6a47f838afc",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 3,
+    "input_classes": 3,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/archives/20b981d9ee46c49d_org.eclipse.jdt.launching_3.6.1.v20110803_r371.jar/lib/launchingsupport.jar"
+    ],
+    "top_level_classes_checked": 3,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/archives/3dc4941a8ba19a7b_org.eclipse.equinox.p2.jarprocessor_1.0.200.v20110502-1955.jar/lib/jarprocessor-ant.jar",
+    "sha256": "ae5f52612d2d3b635f5966f3c8c09c5f249c68bb681fb273057b0b9dfa44de75",
+    "kind": "java",
+    "output": "unpacked/java/ae5f52612d2d3b63",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 3,
+    "input_classes": 4,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/archives/3dc4941a8ba19a7b_org.eclipse.equinox.p2.jarprocessor_1.0.200.v20110502-1955.jar/lib/jarprocessor-ant.jar"
+    ],
+    "top_level_classes_checked": 3,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/archives/6a5c69ad3345e896_org.eclipse.equinox.p2.director.app_1.0.300.v20110505.jar/ant_tasks/director-ant.jar",
+    "sha256": "78da5a7dfd873d3271aed5076ea882f1097c597cbc0ff9886a710af75693c6cd",
+    "kind": "java",
+    "output": "unpacked/java/78da5a7dfd873d32",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 1,
+    "input_classes": 2,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/archives/6a5c69ad3345e896_org.eclipse.equinox.p2.director.app_1.0.300.v20110505.jar/ant_tasks/director-ant.jar"
+    ],
+    "top_level_classes_checked": 1,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/archives/912ddc1f4cb5606f_org.eclipse.pde.core_3.7.1.v20110822-2108.jar/ant_tasks/pde-ant.jar",
+    "sha256": "cfcf0fdc450c5eb5247bce219035206780e02b301e0e03eb298767c441e3ee6e",
+    "kind": "java",
+    "output": "unpacked/java/cfcf0fdc450c5eb5",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 5,
+    "input_classes": 5,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/archives/912ddc1f4cb5606f_org.eclipse.pde.core_3.7.1.v20110822-2108.jar/ant_tasks/pde-ant.jar"
+    ],
+    "top_level_classes_checked": 5,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/archives/b7c13142ae1e2cd6_org.eclipse.ant.core_3.2.300.v20110511.jar/lib/antsupportlib.jar",
+    "sha256": "bf68030d5628b864c0f988c0daa410d87a3f3131f9aee553abeb1184199b4f8a",
+    "kind": "java",
+    "output": "unpacked/java/bf68030d5628b864",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 14,
+    "input_classes": 16,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/archives/b7c13142ae1e2cd6_org.eclipse.ant.core_3.2.300.v20110511.jar/lib/antsupportlib.jar"
+    ],
+    "top_level_classes_checked": 14,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/archives/e40e4af5478bbf64_org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar/jdtCompilerAdapter.jar",
+    "sha256": "c60042a9710dd9b387cca951cc161bcda6d60ab327a0f5d303b9960ac48244fa",
+    "kind": "java",
+    "output": "unpacked/java/c60042a9710dd9b3",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 3,
+    "input_classes": 4,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/archives/e40e4af5478bbf64_org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar/jdtCompilerAdapter.jar"
+    ],
+    "top_level_classes_checked": 3,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/archives/f7aa78405c2ab327_org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110511-1359.jar/ant_tasks/metadataRepository-ant.jar",
+    "sha256": "344dbf1cdea2f0c9cd9970b7f2bc770cd19f46ca785f38b5e14ec2b2fd84b3a5",
+    "kind": "java",
+    "output": "unpacked/java/344dbf1cdea2f0c9",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 4,
+    "input_classes": 4,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/archives/f7aa78405c2ab327_org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110511-1359.jar/ant_tasks/metadataRepository-ant.jar"
+    ],
+    "top_level_classes_checked": 4,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.amd620.core_1.1.0.201412021129.jar",
+    "sha256": "90d5fc417bf2b38c55ab6af7ceb40dcd388889e14dcbbb25cecc987c7eb9b6d5",
+    "kind": "java",
+    "output": "unpacked/java/90d5fc417bf2b38c_com.etas.amd620.core_1.1.0.201412021129.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 984,
+    "input_classes": 1008,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.amd620.core_1.1.0.201412021129.jar"
+    ],
+    "top_level_classes_checked": 984,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a.headless_1.1.0.201412021129.jar",
+    "sha256": "94f333752fa02967d73b3156a47aed882fea567ca1c3b73e6af86560d9263f79",
+    "kind": "java",
+    "output": "unpacked/java/94f333752fa02967_com.etas.ascet.importer.a2a.headless_1.1.0.201412021129.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 3,
+    "input_classes": 3,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a.headless_1.1.0.201412021129.jar"
+    ],
+    "top_level_classes_checked": 3,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a.ui_1.1.0.201412021129.jar",
+    "sha256": "5bcca482d06308c19648fbca0b092c333de59c0a790f0d2e20bc6e594dae8d16",
+    "kind": "java",
+    "output": "unpacked/java/5bcca482d06308c1_com.etas.ascet.importer.a2a.ui_1.1.0.201412021129.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 20,
+    "input_classes": 29,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a.ui_1.1.0.201412021129.jar"
+    ],
+    "top_level_classes_checked": 20,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a_1.1.0.201412021129.jar",
+    "sha256": "52321ab896cfb79aed12c78b3651ab868b4aaebfdb941c96f03a77944762cd5a",
+    "kind": "java",
+    "output": "unpacked/java/52321ab896cfb79a_com.etas.ascet.importer.a2a_1.1.0.201412021129.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 43,
+    "input_classes": 43,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.importer.a2a_1.1.0.201412021129.jar"
+    ],
+    "top_level_classes_checked": 43,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.webservice_1.1.0.201412021129.jar",
+    "sha256": "99e26de80d2532050b7dd76febe5f8942766f87a6d2c369b7b8b43ae14a82969",
+    "kind": "java",
+    "output": "unpacked/java/99e26de80d253205_com.etas.ascet.webservice_1.1.0.201412021129.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 6,
+    "input_classes": 6,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.ascet.webservice_1.1.0.201412021129.jar"
+    ],
+    "top_level_classes_checked": 6,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.google.collect_1.0.0.v201105210816.jar",
+    "sha256": "2689046f8dff143d10c60a1e35532c166a81166b5cad9dff0c94ee7c968172e6",
+    "kind": "java",
+    "output": "unpacked/java/2689046f8dff143d_com.google.collect_1.0.0.v201105210816.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 130,
+    "input_classes": 458,
+    "warning_lines": 115,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.google.collect_1.0.0.v201105210816.jar"
+    ],
+    "top_level_classes_checked": 129,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.google.guava_10.0.1.v201203051515.jar",
+    "sha256": "3f6ac18e91aa12d6cffc42e3ed9acb07b0883ec0bf6d5a2b5347bbd2419c278a",
+    "kind": "java",
+    "output": "unpacked/java/3f6ac18e91aa12d6_com.google.guava_10.0.1.v201203051515.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 324,
+    "input_classes": 1164,
+    "warning_lines": 203,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.google.guava_10.0.1.v201203051515.jar"
+    ],
+    "top_level_classes_checked": 317,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.ibm.icu_4.4.2.v20110208.jar",
+    "sha256": "432cdb7d9af5f138fbfd1902c197f01a314422a7db760e291cab2c76d8d65be8",
+    "kind": "java",
+    "output": "unpacked/java/432cdb7d9af5f138_com.ibm.icu_4.4.2.v20110208.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 374,
+    "input_classes": 802,
+    "warning_lines": 105,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.ibm.icu_4.4.2.v20110208.jar"
+    ],
+    "top_level_classes_checked": 374,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/javax.activation_1.1.0.v201108011116.jar",
+    "sha256": "455d8161fe54dd02ace6a75b2fd56e5852ba1dc8aa5c3d3f684b2c8f2f4ce9f6",
+    "kind": "java",
+    "output": "unpacked/java/455d8161fe54dd02_javax.activation_1.1.0.v201108011116.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 25,
+    "input_classes": 29,
+    "warning_lines": 9,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/javax.activation_1.1.0.v201108011116.jar"
+    ],
+    "top_level_classes_checked": 25,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/javax.xml_1.3.4.v201005080400.jar",
+    "sha256": "22d52002b1bab03b51372c197411a7aee2a5d80f8a3f767eeeace71d1e0c4ad2",
+    "kind": "java",
+    "output": "unpacked/java/22d52002b1bab03b_javax.xml_1.3.4.v201005080400.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 249,
+    "input_classes": 303,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/javax.xml_1.3.4.v201005080400.jar"
+    ],
+    "top_level_classes_checked": 249,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.cli_1.2.0.v201105210650.jar",
+    "sha256": "8f8f4ae230858b0690af68137ba770d1bf424c777915ab9217bf0915beca2365",
+    "kind": "java",
+    "output": "unpacked/java/8f8f4ae230858b06_org.apache.commons.cli_1.2.0.v201105210650.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 20,
+    "input_classes": 23,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.cli_1.2.0.v201105210650.jar"
+    ],
+    "top_level_classes_checked": 20,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.lang_2.4.0.v201005080502.jar",
+    "sha256": "f6492f8fa460ceb5561b59bfa9814419884c587af8872f185039ca12bc4f1a24",
+    "kind": "java",
+    "output": "unpacked/java/f6492f8fa460ceb5_org.apache.commons.lang_2.4.0.v201005080502.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 80,
+    "input_classes": 127,
+    "warning_lines": 15,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.lang_2.4.0.v201005080502.jar"
+    ],
+    "top_level_classes_checked": 80,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar",
+    "sha256": "453d6f5e9d3f1682ed0eb86110231b6182f1d6d2a95fd2c528496818a01383ac",
+    "kind": "java",
+    "output": "unpacked/java/453d6f5e9d3f1682_org.apache.commons.logging_1.0.4.v201101211617.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 13,
+    "input_classes": 18,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar"
+    ],
+    "top_level_classes_checked": 13,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xerces_2.9.0.v201101211617.jar",
+    "sha256": "8d6ccb1bf885bd3bda90253d928fc165f9343d6145dd522b84f3f3c0f835a7dc",
+    "kind": "java",
+    "output": "unpacked/java/8d6ccb1bf885bd3b_org.apache.xerces_2.9.0.v201101211617.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 673,
+    "input_classes": 894,
+    "warning_lines": 44,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xerces_2.9.0.v201101211617.jar"
+    ],
+    "top_level_classes_checked": 673,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xml.resolver_1.2.0.v201005080400.jar",
+    "sha256": "5639f48666197185cfc6e179a4c2609155f1e64cdae57560d9221b0034cf88f3",
+    "kind": "java",
+    "output": "unpacked/java/5639f48666197185_org.apache.xml.resolver_1.2.0.v201005080400.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 30,
+    "input_classes": 30,
+    "warning_lines": 2,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xml.resolver_1.2.0.v201005080400.jar"
+    ],
+    "top_level_classes_checked": 30,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xml.serializer_2.7.1.v201005080400.jar",
+    "sha256": "89236969508d54e592c6a02b4f20db06f99cf349c99dd0f3961849aa9629b6ad",
+    "kind": "java",
+    "output": "unpacked/java/89236969508d54e5_org.apache.xml.serializer_2.7.1.v201005080400.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 84,
+    "input_classes": 109,
+    "warning_lines": 4,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xml.serializer_2.7.1.v201005080400.jar"
+    ],
+    "top_level_classes_checked": 84,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.autosar21_3.2.3.201302190046.jar",
+    "sha256": "3e4ed891f285ead6cfd9f81605b7f79619cae26d623be6cc6366833c89d738f9",
+    "kind": "java",
+    "output": "unpacked/java/3e4ed891f285ead6_org.artop.aal.autosar21_3.2.3.201302190046.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 1852,
+    "input_classes": 2149,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.autosar21_3.2.3.201302190046.jar"
+    ],
+    "top_level_classes_checked": 1852,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.autosar3x_3.2.3.201302190046.jar",
+    "sha256": "6809e0c75fb05031d4ecaf0e6189d8a29c087fe2dfc49705089afa5c00d213b1",
+    "kind": "java",
+    "output": "unpacked/java/6809e0c75fb05031_org.artop.aal.autosar3x_3.2.3.201302190046.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 2070,
+    "input_classes": 2417,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.autosar3x_3.2.3.201302190046.jar"
+    ],
+    "top_level_classes_checked": 2070,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.autosar40_3.2.3.201302190046.jar",
+    "sha256": "26ce28c4835e433b2470febcb46f6c1f9afb7a1dfd5dfc2c2218ca107eba2050",
+    "kind": "java",
+    "output": "unpacked/java/26ce28c4835e433b",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 2844,
+    "input_classes": 3334,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.autosar40_3.2.3.201302190046.jar"
+    ],
+    "top_level_classes_checked": 2844,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.common_3.2.3.201302190046.jar",
+    "sha256": "812d4f0c8db9f6c5ac950664852399e08f113eb1ec04d9e1cd9a72be9fb3ccda",
+    "kind": "java",
+    "output": "unpacked/java/812d4f0c8db9f6c5_org.artop.aal.common_3.2.3.201302190046.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 33,
+    "input_classes": 48,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.common_3.2.3.201302190046.jar"
+    ],
+    "top_level_classes_checked": 33,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.gautosar_3.2.3.201302190046.jar",
+    "sha256": "9779aab92703476a95f77603ba665a58ba0fb0341b4582e5c1f6df0cc8a6e248",
+    "kind": "java",
+    "output": "unpacked/java/9779aab92703476a_org.artop.aal.gautosar_3.2.3.201302190046.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 403,
+    "input_classes": 516,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.gautosar_3.2.3.201302190046.jar"
+    ],
+    "top_level_classes_checked": 403,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.serialization_3.2.3.201302190046.jar",
+    "sha256": "9ea09f27fc67af6951f21207a016927fd470890dda9b84ada36c2587f25d6249",
+    "kind": "java",
+    "output": "unpacked/java/9ea09f27fc67af69_org.artop.aal.serialization_3.2.3.201302190046.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 28,
+    "input_classes": 33,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.serialization_3.2.3.201302190046.jar"
+    ],
+    "top_level_classes_checked": 28,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.eel.common_1.0.0.201302082307.jar",
+    "sha256": "0c4992efca5de29217f57ead2c3fc6cf3a898a074662ebc4ecb6becdf1c2e5f1",
+    "kind": "java",
+    "output": "unpacked/java/0c4992efca5de292_org.artop.eel.common_1.0.0.201302082307.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 4,
+    "input_classes": 5,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.eel.common_1.0.0.201302082307.jar"
+    ],
+    "top_level_classes_checked": 4,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.eel.serialization_1.0.0.201302082307.jar",
+    "sha256": "c2a9f5920fa4a995cfe8623ca4b10b48099b43bda3e7229c9e73479ff0c388d0",
+    "kind": "java",
+    "output": "unpacked/java/c2a9f5920fa4a995_org.artop.eel.serialization_1.0.0.201302082307.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 4,
+    "input_classes": 5,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.eel.serialization_1.0.0.201302082307.jar"
+    ],
+    "top_level_classes_checked": 4,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ant.core_3.2.300.v20110511.jar",
+    "sha256": "b7c13142ae1e2cd659b26ca5d14deabbc725dc616e1acb0986836e1d1957c2a1",
+    "kind": "java",
+    "output": "unpacked/java/b7c13142ae1e2cd6_org.eclipse.ant.core_3.2.300.v20110511.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 22,
+    "input_classes": 26,
+    "warning_lines": 5,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ant.core_3.2.300.v20110511.jar"
+    ],
+    "top_level_classes_checked": 22,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.compare.core_3.5.200.I20110208-0800.jar",
+    "sha256": "eb727e83cf2fb8857843aec089c477ae81fb5bb0f321cad01e562e519d29a203",
+    "kind": "java",
+    "output": "unpacked/java/eb727e83cf2fb885_org.eclipse.compare.core_3.5.200.I20110208-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 26,
+    "input_classes": 29,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.compare.core_3.5.200.I20110208-0800.jar"
+    ],
+    "top_level_classes_checked": 26,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.commands_3.6.0.I20110111-0800.jar",
+    "sha256": "7e0f36bb37a2a59259324352298f0b297f04a2dc599bb670facc172391a261e5",
+    "kind": "java",
+    "output": "unpacked/java/7e0f36bb37a2a592_org.eclipse.core.commands_3.6.0.I20110111-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 79,
+    "input_classes": 84,
+    "warning_lines": 16,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.commands_3.6.0.I20110111-0800.jar"
+    ],
+    "top_level_classes_checked": 79,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar",
+    "sha256": "6da47b0a00d62966e0a8456e516c8afe74e761b3d9eb0008efd7635cfdc0080a",
+    "kind": "java",
+    "output": "unpacked/java/6da47b0a00d62966_org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 35,
+    "input_classes": 52,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar"
+    ],
+    "top_level_classes_checked": 35,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding.observable_1.4.0.I20110222-0800.jar",
+    "sha256": "18ac8e546dc4473452d75326321eb69426ce3e75994f0886d14fc4f6547b2460",
+    "kind": "java",
+    "output": "unpacked/java/18ac8e546dc44734_org.eclipse.core.databinding.observable_1.4.0.I20110222-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 106,
+    "input_classes": 244,
+    "warning_lines": 6,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding.observable_1.4.0.I20110222-0800.jar"
+    ],
+    "top_level_classes_checked": 106,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding.property_1.4.0.I20110222-0800.jar",
+    "sha256": "f35a5e0300a33f92ebcccdbfce144ac24dc47aaa2b9384deb67f15231105c134",
+    "kind": "java",
+    "output": "unpacked/java/f35a5e0300a33f92_org.eclipse.core.databinding.property_1.4.0.I20110222-0800.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 50,
+    "input_classes": 123,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding.property_1.4.0.I20110222-0800.jar"
+    ],
+    "top_level_classes_checked": 50,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding_1.4.0.I20110111-0800.jar",
+    "sha256": "7a5bfbe052d9b47814f3993aa202bb8c3276ff49e759c64f8fd0ee08761c08da",
+    "kind": "java",
+    "output": "unpacked/java/7a5bfbe052d9b478_org.eclipse.core.databinding_1.4.0.I20110111-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 87,
+    "input_classes": 144,
+    "warning_lines": 4,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding_1.4.0.I20110111-0800.jar"
+    ],
+    "top_level_classes_checked": 87,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.expressions_3.4.300.v20110228.jar",
+    "sha256": "7f168ea1e6db8dd530e92581ad65daf1f3e1c65766a1900ed96fc721eee0869f",
+    "kind": "java",
+    "output": "unpacked/java/7f168ea1e6db8dd5_org.eclipse.core.expressions_3.4.300.v20110228.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 44,
+    "input_classes": 52,
+    "warning_lines": 2,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.expressions_3.4.300.v20110228.jar"
+    ],
+    "top_level_classes_checked": 44,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filebuffers_3.5.200.v20110505-0800.jar",
+    "sha256": "63c2b87f2072aa982419fda56aa36a457ba90b8aa2350267a9a71e4e18eb7ee3",
+    "kind": "java",
+    "output": "unpacked/java/63c2b87f2072aa98_org.eclipse.core.filebuffers_3.5.200.v20110505-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 39,
+    "input_classes": 70,
+    "warning_lines": 47,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filebuffers_3.5.200.v20110505-0800.jar"
+    ],
+    "top_level_classes_checked": 39,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filesystem.win32.x86_1.1.300.v20110423-0524.jar",
+    "sha256": "cf69c06e5a335b147f88df9936f8b2c80676588b2316846ef0f2b08375abbfa0",
+    "kind": "java",
+    "output": "unpacked/java/cf69c06e5a335b14_org.eclipse.core.filesystem.win32.x86_1.1.300.v20110423-0524.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 0,
+    "input_classes": 0,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filesystem.win32.x86_1.1.300.v20110423-0524.jar"
+    ],
+    "top_level_classes_checked": 0,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filesystem_1.3.100.v20110423-0524.jar",
+    "sha256": "2882c0cd4caa4ac8096f577698fe8c0aa1771dd57d7f13820e17123ded76e06d",
+    "kind": "java",
+    "output": "unpacked/java/2882c0cd4caa4ac8_org.eclipse.core.filesystem_1.3.100.v20110423-0524.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 26,
+    "input_classes": 27,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.filesystem_1.3.100.v20110423-0524.jar"
+    ],
+    "top_level_classes_checked": 26,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.jobs_3.5.100.v20110404.jar",
+    "sha256": "2447002411f1135266024cf7c4fc717cea690697eaf8af2b06a6241506125785",
+    "kind": "java",
+    "output": "unpacked/java/2447002411f11352_org.eclipse.core.jobs_3.5.100.v20110404.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 33,
+    "input_classes": 48,
+    "warning_lines": 56,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.jobs_3.5.100.v20110404.jar"
+    ],
+    "top_level_classes_checked": 33,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.resources.win32.x86_3.5.100.v20110423-0524.jar",
+    "sha256": "bce19a101c3448488375a5aee6803b25a333716ca3dc9f1e51d9ee3d90d1f88f",
+    "kind": "java",
+    "output": "unpacked/java/bce19a101c344848_org.eclipse.core.resources.win32.x86_3.5.100.v20110423-0524.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 0,
+    "input_classes": 0,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.resources.win32.x86_3.5.100.v20110423-0524.jar"
+    ],
+    "top_level_classes_checked": 0,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.resources_3.7.100.v20110510-0712.jar",
+    "sha256": "10fd53a5e96c4d2efc5c34a88ab4ce38dbd2a58014089651c63fdbddbe2c7329",
+    "kind": "java",
+    "output": "unpacked/java/10fd53a5e96c4d2e_org.eclipse.core.resources_3.7.100.v20110510-0712.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 276,
+    "input_classes": 378,
+    "warning_lines": 53,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.resources_3.7.100.v20110510-0712.jar"
+    ],
+    "top_level_classes_checked": 276,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505/runtime_registry_compatibility.jar",
+    "sha256": "affcccdc38ff34742a42bd4d4c153972f116600c02b6366dc102ca73f34bd60b",
+    "kind": "java",
+    "output": "unpacked/java/affcccdc38ff3474_runtime_registry_compatibility.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 7,
+    "input_classes": 7,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505/runtime_registry_compatibility.jar"
+    ],
+    "top_level_classes_checked": 7,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.runtime_3.7.0.v20110110.jar",
+    "sha256": "2c207b8ac6c4bdeacfb4e3f86617ca801f1c22305f82cc98872c0df9c1e6b146",
+    "kind": "java",
+    "output": "unpacked/java/2c207b8ac6c4bdea_org.eclipse.core.runtime_3.7.0.v20110110.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 22,
+    "input_classes": 29,
+    "warning_lines": 10,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.runtime_3.7.0.v20110110.jar"
+    ],
+    "top_level_classes_checked": 22,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.variables_3.2.500.v20110511.jar",
+    "sha256": "4c437a510b1d0f6f4e8e8312c57fe5c850a76830c6426e7a00bf1623c25eb1a5",
+    "kind": "java",
+    "output": "unpacked/java/4c437a510b1d0f6f_org.eclipse.core.variables_3.2.500.v20110511.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 16,
+    "input_classes": 18,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.variables_3.2.500.v20110511.jar"
+    ],
+    "top_level_classes_checked": 16,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.debug.core_3.7.0.v20110518.jar",
+    "sha256": "1d30bcbaf77d5c3c250a6c8e6ec8b16a9c762d6245d5ce9751f5bf0f8582f18a",
+    "kind": "java",
+    "output": "unpacked/java/1d30bcbaf77d5c3c_org.eclipse.debug.core_3.7.0.v20110518.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 188,
+    "input_classes": 241,
+    "warning_lines": 48,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.debug.core_3.7.0.v20110518.jar"
+    ],
+    "top_level_classes_checked": 188,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.common_2.7.0.v20110912-0920.jar",
+    "sha256": "5d48ead3afaca4849d1e47df9575a96a832b22226601cb02d5822968f5578248",
+    "kind": "java",
+    "output": "unpacked/java/5d48ead3afaca484_org.eclipse.emf.common_2.7.0.v20110912-0920.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 56,
+    "input_classes": 125,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.common_2.7.0.v20110912-0920.jar"
+    ],
+    "top_level_classes_checked": 56,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore.change_2.7.1.v20110829-1916.jar",
+    "sha256": "5a7adda5a6359fbe9e916c5f9f25de5db93a9137e2172a6e294ad14238ba916f",
+    "kind": "java",
+    "output": "unpacked/java/5a7adda5a6359fbe_org.eclipse.emf.ecore.change_2.7.1.v20110829-1916.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 22,
+    "input_classes": 31,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore.change_2.7.1.v20110829-1916.jar"
+    ],
+    "top_level_classes_checked": 22,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar",
+    "sha256": "ed6cb922366f14e2b152ff68bfa0cfa18f12880eb004610e6056b5da7852a82a",
+    "kind": "java",
+    "output": "unpacked/java/ed6cb922366f14e2_org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 62,
+    "input_classes": 102,
+    "warning_lines": 2,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar"
+    ],
+    "top_level_classes_checked": 62,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore_2.7.0.v20110912-0920.jar",
+    "sha256": "04f36d3fb7cfe303aafa9347aaf67877661708523cec9409d22fb71251a55261",
+    "kind": "java",
+    "output": "unpacked/java/04f36d3fb7cfe303_org.eclipse.emf.ecore_2.7.0.v20110912-0920.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 161,
+    "input_classes": 542,
+    "warning_lines": 16,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.ecore_2.7.0.v20110912-0920.jar"
+    ],
+    "top_level_classes_checked": 161,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.edit_2.7.1.v20110913-1526.jar",
+    "sha256": "d8bf5e39a6134e2cbffee2a12ed58275e0eea6028777c467eb01da8ec4f945db",
+    "kind": "java",
+    "output": "unpacked/java/d8bf5e39a6134e2c_org.eclipse.emf.edit_2.7.1.v20110913-1526.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 79,
+    "input_classes": 137,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.edit_2.7.1.v20110913-1526.jar"
+    ],
+    "top_level_classes_checked": 79,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar",
+    "sha256": "5ae961efead9b1b848a6327a07f7278c52d70aaaf86e39c2bafb9b750aa77ab1",
+    "kind": "java",
+    "output": "unpacked/java/5ae961efead9b1b8_org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 58,
+    "input_classes": 103,
+    "warning_lines": 22,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar"
+    ],
+    "top_level_classes_checked": 58,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar",
+    "sha256": "d364d9f1964bdb8e4ffa38eb2ba33b76e8d8cd301ca5413e321cebb1c491f80f",
+    "kind": "java",
+    "output": "unpacked/java/d364d9f1964bdb8e_org.eclipse.emf.validation_1.4.0.v20100428-2315.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 137,
+    "input_classes": 203,
+    "warning_lines": 23,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"
+    ],
+    "top_level_classes_checked": 137,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.workspace_1.5.1.v20110823-1800.jar",
+    "sha256": "31f8ac1b5470e8b1f7b17b2ee6484daf77f006756ac5cfbc639821c95742055d",
+    "kind": "java",
+    "output": "unpacked/java/31f8ac1b5470e8b1_org.eclipse.emf.workspace_1.5.1.v20110823-1800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 24,
+    "input_classes": 39,
+    "warning_lines": 5,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.emf.workspace_1.5.1.v20110823-1800.jar"
+    ],
+    "top_level_classes_checked": 24,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.app_1.3.100.v20110321.jar",
+    "sha256": "39c030cd896948dd2fab237c5d4f0880975a3434ce388ce8a53d5b21e4d3a63f",
+    "kind": "java",
+    "output": "unpacked/java/39c030cd896948dd_org.eclipse.equinox.app_1.3.100.v20110321.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 23,
+    "input_classes": 32,
+    "warning_lines": 27,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.app_1.3.100.v20110321.jar"
+    ],
+    "top_level_classes_checked": 23,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.common_3.6.0.v20110523.jar",
+    "sha256": "32b046de57df2f4887fc5a2c343740d9d12c7fe17541e2cede73cfa4ccbc2436",
+    "kind": "java",
+    "output": "unpacked/java/32b046de57df2f48_org.eclipse.equinox.common_3.6.0.v20110523.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 54,
+    "input_classes": 59,
+    "warning_lines": 20,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.common_3.6.0.v20110523.jar"
+    ],
+    "top_level_classes_checked": 54,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.frameworkadmin.equinox_1.0.300.v20110506.jar",
+    "sha256": "5ca0ce3b358d8df3c16e3b2116100035dfc626780346061a7326929a9b6409cd",
+    "kind": "java",
+    "output": "unpacked/java/5ca0ce3b358d8df3_org.eclipse.equinox.frameworkadmin.equinox_1.0.300.v20110506.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 13,
+    "input_classes": 13,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.frameworkadmin.equinox_1.0.300.v20110506.jar"
+    ],
+    "top_level_classes_checked": 13,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.frameworkadmin_2.0.0.v20110502-1955.jar",
+    "sha256": "aeafa58708691e101eff8e8ccda79fa65d4ccc6a4cecb724b58913cd708d7e8f",
+    "kind": "java",
+    "output": "unpacked/java/aeafa58708691e10_org.eclipse.equinox.frameworkadmin_2.0.0.v20110502-1955.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 13,
+    "input_classes": 13,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.frameworkadmin_2.0.0.v20110502-1955.jar"
+    ],
+    "top_level_classes_checked": 13,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.launcher_1.2.0.v20110502.jar",
+    "sha256": "720b6a1c35f75d6366e49f8f00ef8b83ef5ddfb0578e072c619d510b5cd77745",
+    "kind": "java",
+    "output": "unpacked/java/720b6a1c35f75d63_org.eclipse.equinox.launcher_1.2.0.v20110502.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 5,
+    "input_classes": 12,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.launcher_1.2.0.v20110502.jar"
+    ],
+    "top_level_classes_checked": 5,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.artifact.repository_1.1.101.R37x_v20110714.jar",
+    "sha256": "577f9ba2282c6cae0381eda4f2a0e2dab47ddb249066a2e104b9cff3d16cb7e4",
+    "kind": "java",
+    "output": "unpacked/java/577f9ba2282c6cae_org.eclipse.equinox.p2.artifact.repository_1.1.101.R37x_v20110714.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 29,
+    "input_classes": 49,
+    "warning_lines": 6,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.artifact.repository_1.1.101.R37x_v20110714.jar"
+    ],
+    "top_level_classes_checked": 29,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.core_2.1.0.v20110502-1955.jar",
+    "sha256": "d3af9d4dc608a6290e8c4abacd306bb126ae9e90334bd63687659538b13b85fa",
+    "kind": "java",
+    "output": "unpacked/java/d3af9d4dc608a629_org.eclipse.equinox.p2.core_2.1.0.v20110502-1955.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 32,
+    "input_classes": 45,
+    "warning_lines": 11,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.core_2.1.0.v20110502-1955.jar"
+    ],
+    "top_level_classes_checked": 32,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.director.app_1.0.300.v20110505.jar",
+    "sha256": "6a5c69ad3345e8961b94dc49decb2958401a275687d878a8f0c318b684aecd93",
+    "kind": "java",
+    "output": "unpacked/java/6a5c69ad3345e896_org.eclipse.equinox.p2.director.app_1.0.300.v20110505.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 5,
+    "input_classes": 8,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.director.app_1.0.300.v20110505.jar"
+    ],
+    "top_level_classes_checked": 5,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.director_2.1.0.v20110504-1715.jar",
+    "sha256": "efb462deffa626c3bc7a27cd917270afcfd70bf61ec38bf2cf2fcc2021b7d2d9",
+    "kind": "java",
+    "output": "unpacked/java/efb462deffa626c3_org.eclipse.equinox.p2.director_2.1.0.v20110504-1715.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 24,
+    "input_classes": 38,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.director_2.1.0.v20110504-1715.jar"
+    ],
+    "top_level_classes_checked": 24,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.engine_2.1.0.v20110511.jar",
+    "sha256": "8d3a947ca446624f7e783c200cb42c809a0e1f913dcf72b160903698d6967966",
+    "kind": "java",
+    "output": "unpacked/java/8d3a947ca446624f_org.eclipse.equinox.p2.engine_2.1.0.v20110511.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 64,
+    "input_classes": 93,
+    "warning_lines": 11,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.engine_2.1.0.v20110511.jar"
+    ],
+    "top_level_classes_checked": 64,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.garbagecollector_1.0.200.v20110510.jar",
+    "sha256": "c5cda136e5cbd17c9b2057d121ff677c2bf5d835ae12f7ab8a4b1c0d915b72b2",
+    "kind": "java",
+    "output": "unpacked/java/c5cda136e5cbd17c_org.eclipse.equinox.p2.garbagecollector_1.0.200.v20110510.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 8,
+    "input_classes": 10,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.garbagecollector_1.0.200.v20110510.jar"
+    ],
+    "top_level_classes_checked": 8,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.jarprocessor_1.0.200.v20110502-1955.jar",
+    "sha256": "3dc4941a8ba19a7b14bfcbe2ca305e74c5ad8d613949286a8308d24a0f3bfd4e",
+    "kind": "java",
+    "output": "unpacked/java/3dc4941a8ba19a7b_org.eclipse.equinox.p2.jarprocessor_1.0.200.v20110502-1955.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 17,
+    "input_classes": 22,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.jarprocessor_1.0.200.v20110502-1955.jar"
+    ],
+    "top_level_classes_checked": 17,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110511-1359.jar",
+    "sha256": "f7aa78405c2ab3273d489ed2421f491b70859c6e53f3fe3d77a24418fa0d4cfe",
+    "kind": "java",
+    "output": "unpacked/java/f7aa78405c2ab327_org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110511-1359.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 15,
+    "input_classes": 49,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110511-1359.jar"
+    ],
+    "top_level_classes_checked": 15,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.metadata_2.1.0.v20110510.jar",
+    "sha256": "a86b91bd4e0ba896a90ea29dfd0f4ad0507afd4197fab0fd0056a68962fe4ecd",
+    "kind": "java",
+    "output": "unpacked/java/a86b91bd4e0ba896_org.eclipse.equinox.p2.metadata_2.1.0.v20110510.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 142,
+    "input_classes": 211,
+    "warning_lines": 15,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.metadata_2.1.0.v20110510.jar"
+    ],
+    "top_level_classes_checked": 142,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.0.0.v20110511/ant_tasks/pdepublishing-ant.jar",
+    "sha256": "c73e8f0b339fa038e3372dfa586c0477733cca0c1b49d8fd5aadf062b132b348",
+    "kind": "java",
+    "output": "unpacked/java/c73e8f0b339fa038_pdepublishing-ant.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 5,
+    "input_classes": 8,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.0.0.v20110511/ant_tasks/pdepublishing-ant.jar"
+    ],
+    "top_level_classes_checked": 5,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.0.0.v20110511/pdepublishing.jar",
+    "sha256": "e476bf426bc46de1363f01bc018ec725b54f09772df7e79b7751c7270c3947ff",
+    "kind": "java",
+    "output": "unpacked/java/e476bf426bc46de1_pdepublishing.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 46,
+    "input_classes": 73,
+    "warning_lines": 5,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.0.0.v20110511/pdepublishing.jar"
+    ],
+    "top_level_classes_checked": 46,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher_1.2.0.v20110511.jar",
+    "sha256": "5a1f027cba7c9f8103012979ea48c397b5e6d4377cc86bf2fc584c33317f076e",
+    "kind": "java",
+    "output": "unpacked/java/5a1f027cba7c9f81_org.eclipse.equinox.p2.publisher_1.2.0.v20110511.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 38,
+    "input_classes": 42,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.publisher_1.2.0.v20110511.jar"
+    ],
+    "top_level_classes_checked": 38,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.repository_2.1.0.v20110601.jar",
+    "sha256": "f1732b11abc5816aee8cd3296279ddf20326bb98c000920644456193e25d06ca",
+    "kind": "java",
+    "output": "unpacked/java/f1732b11abc5816a_org.eclipse.equinox.p2.repository_2.1.0.v20110601.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 51,
+    "input_classes": 71,
+    "warning_lines": 20,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.repository_2.1.0.v20110601.jar"
+    ],
+    "top_level_classes_checked": 51,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.touchpoint.eclipse_2.1.1.R37x_v20110815-0935.jar",
+    "sha256": "62c42ceff20c920541b3db13ecd605b921810680064bc44d96b94acb6874612c",
+    "kind": "java",
+    "output": "unpacked/java/62c42ceff20c9205_org.eclipse.equinox.p2.touchpoint.eclipse_2.1.1.R37x_v20110815-0935.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 50,
+    "input_classes": 52,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.p2.touchpoint.eclipse_2.1.1.R37x_v20110815-0935.jar"
+    ],
+    "top_level_classes_checked": 50,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.preferences_3.4.1.R37x_v20110725.jar",
+    "sha256": "722f5fe345578f6ee6f6859f40d9e8049ef79d9f4fe12a84d62de0f1d4bfe2c6",
+    "kind": "java",
+    "output": "unpacked/java/722f5fe345578f6e_org.eclipse.equinox.preferences_3.4.1.R37x_v20110725.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 40,
+    "input_classes": 60,
+    "warning_lines": 5,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.preferences_3.4.1.R37x_v20110725.jar"
+    ],
+    "top_level_classes_checked": 40,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar",
+    "sha256": "294b7c05d5034d199ad79488798968aaea84ccafaebcfc73b1f8859138c131d1",
+    "kind": "java",
+    "output": "unpacked/java/294b7c05d5034d19_org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 80,
+    "input_classes": 94,
+    "warning_lines": 38,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar"
+    ],
+    "top_level_classes_checked": 80,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.security.win32.x86_1.0.200.v20100503.jar",
+    "sha256": "4963cfbeb4f1ee47db476dae0c0dab836634924a9e8b2998c75b4f8adfaca250",
+    "kind": "java",
+    "output": "unpacked/java/4963cfbeb4f1ee47_org.eclipse.equinox.security.win32.x86_1.0.200.v20100503.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 2,
+    "input_classes": 2,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.security.win32.x86_1.0.200.v20100503.jar"
+    ],
+    "top_level_classes_checked": 2,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.security_1.1.1.R37x_v20110822-1018.jar",
+    "sha256": "524dbc2e366f78198f1a73c34f748e1b3ae99cea51144b86440e714e59966df1",
+    "kind": "java",
+    "output": "unpacked/java/524dbc2e366f7819_org.eclipse.equinox.security_1.1.1.R37x_v20110822-1018.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 48,
+    "input_classes": 53,
+    "warning_lines": 15,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.security_1.1.1.R37x_v20110822-1018.jar"
+    ],
+    "top_level_classes_checked": 48,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20110502-1955.jar",
+    "sha256": "9958b943b802746f38b5e15f2220e089f85f0595692bbde5ab5423d760ae28a0",
+    "kind": "java",
+    "output": "unpacked/java/9958b943b802746f_org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20110502-1955.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 4,
+    "input_classes": 6,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20110502-1955.jar"
+    ],
+    "top_level_classes_checked": 4,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.simpleconfigurator_1.0.200.v20110502-1955.jar",
+    "sha256": "8db74ddfc6cad626ec4fe1f1e35a835cab549a38020f89ebd893c993354fefdc",
+    "kind": "java",
+    "output": "unpacked/java/8db74ddfc6cad626_org.eclipse.equinox.simpleconfigurator_1.0.200.v20110502-1955.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 14,
+    "input_classes": 15,
+    "warning_lines": 5,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.equinox.simpleconfigurator_1.0.200.v20110502-1955.jar"
+    ],
+    "top_level_classes_checked": 14,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.help_3.5.100.v20110426.jar",
+    "sha256": "56ba2f14597ee0b00088cca6767099ef4b7f40a62d85055b03460c1c02970c27",
+    "kind": "java",
+    "output": "unpacked/java/56ba2f14597ee0b0_org.eclipse.help_3.5.100.v20110426.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 112,
+    "input_classes": 131,
+    "warning_lines": 3,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.help_3.5.100.v20110426.jar"
+    ],
+    "top_level_classes_checked": 112,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.compiler.apt_1.0.400.v0110816-0800.jar",
+    "sha256": "61ff04f1d95762a7506f9d1eb3d140cb82fd0d3dd85eb4437df6b83382e94c50",
+    "kind": "java",
+    "output": "unpacked/java/61ff04f1d95762a7_org.eclipse.jdt.compiler.apt_1.0.400.v0110816-0800.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 47,
+    "input_classes": 51,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.compiler.apt_1.0.400.v0110816-0800.jar"
+    ],
+    "top_level_classes_checked": 47,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.compiler.tool_1.0.100.v_B76_R37x.jar",
+    "sha256": "cb19e45384b85c7d82d44e2a0fed4c13b4b4727e3395d8c3709cfca6244f41d9",
+    "kind": "java",
+    "output": "unpacked/java/cb19e45384b85c7d_org.eclipse.jdt.compiler.tool_1.0.100.v_B76_R37x.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 8,
+    "input_classes": 17,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.compiler.tool_1.0.100.v_B76_R37x.jar"
+    ],
+    "top_level_classes_checked": 8,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar",
+    "sha256": "e40e4af5478bbf64091bea6c859833910f0ab1697d33e92280f6b37307b57e83",
+    "kind": "java",
+    "output": "unpacked/java/e40e4af5478bbf64_org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 1183,
+    "input_classes": 1484,
+    "warning_lines": 295,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar"
+    ],
+    "top_level_classes_checked": 1183,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.debug_3.7.1.v20110802_r371/jdi.jar",
+    "sha256": "6282f2e915e329306ec964eae4a109cee2799e500a376386189a1482214483cd",
+    "kind": "java",
+    "output": "unpacked/java/6282f2e915e32930_jdi.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 121,
+    "input_classes": 128,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.debug_3.7.1.v20110802_r371/jdi.jar"
+    ],
+    "top_level_classes_checked": 121,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.debug_3.7.1.v20110802_r371/jdimodel.jar",
+    "sha256": "2eafd2dc827547b3fc3ea92042ef4c2287ce143a92b9beecf4210aade04acd37",
+    "kind": "java",
+    "output": "unpacked/java/2eafd2dc827547b3_jdimodel.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 348,
+    "input_classes": 415,
+    "warning_lines": 77,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.debug_3.7.1.v20110802_r371/jdimodel.jar"
+    ],
+    "top_level_classes_checked": 348,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.launching_3.6.1.v20110803_r371.jar",
+    "sha256": "20b981d9ee46c49dc134554f2e73dbb073b1776693d88fd3681eac98bc26c292",
+    "kind": "java",
+    "output": "unpacked/java/20b981d9ee46c49d_org.eclipse.jdt.launching_3.6.1.v20110803_r371.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 103,
+    "input_classes": 117,
+    "warning_lines": 14,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.launching_3.6.1.v20110803_r371.jar"
+    ],
+    "top_level_classes_checked": 103,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface.databinding_1.5.0.I20100907-0800.jar",
+    "sha256": "b45924bf92d248c3d694a982cff4b18516d8e2b08cd7ff1d283561dcd892fe36",
+    "kind": "java",
+    "output": "unpacked/java/b45924bf92d248c3_org.eclipse.jface.databinding_1.5.0.I20100907-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 163,
+    "input_classes": 242,
+    "warning_lines": 8,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface.databinding_1.5.0.I20100907-0800.jar"
+    ],
+    "top_level_classes_checked": 163,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface.text_3.7.1.r371_v20110825-0800.jar",
+    "sha256": "116305239e4a6412309953e76ee97ac572eaf9248f072d6c077c9bdedf8cf249",
+    "kind": "java",
+    "output": "unpacked/java/116305239e4a6412_org.eclipse.jface.text_3.7.1.r371_v20110825-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 324,
+    "input_classes": 646,
+    "warning_lines": 54,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface.text_3.7.1.r371_v20110825-0800.jar"
+    ],
+    "top_level_classes_checked": 324,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface_3.7.0.I20110522-1430.jar",
+    "sha256": "92f948300a9f26f363499eeb78f98b8543a69506c1c9d79b4c3cd38b582e11d5",
+    "kind": "java",
+    "output": "unpacked/java/92f948300a9f26f3_org.eclipse.jface_3.7.0.I20110522-1430.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 381,
+    "input_classes": 741,
+    "warning_lines": 28,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface_3.7.0.I20110522-1430.jar"
+    ],
+    "top_level_classes_checked": 381,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.osgi.services_3.3.0.v20110513.jar",
+    "sha256": "8751da79fb7100ee10e69f95f9b8e460e78d687520cc0fed333a8b947217b22b",
+    "kind": "java",
+    "output": "unpacked/java/8751da79fb7100ee_org.eclipse.osgi.services_3.3.0.v20110513.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 71,
+    "input_classes": 73,
+    "warning_lines": 6,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.osgi.services_3.3.0.v20110513.jar"
+    ],
+    "top_level_classes_checked": 71,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.osgi_3.7.1.R37x_v20110808-1106.jar",
+    "sha256": "8562aed06ec44197ad0dcb20426cf31d4785a62f050d76964d2aefda3d2b43dc",
+    "kind": "java",
+    "output": "unpacked/java/8562aed06ec44197_org.eclipse.osgi_3.7.1.R37x_v20110808-1106.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 440,
+    "input_classes": 632,
+    "warning_lines": 443,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.osgi_3.7.1.R37x_v20110808-1106.jar"
+    ],
+    "top_level_classes_checked": 439,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.build_3.7.0.v20110512-1320/lib/pdebuild-ant.jar",
+    "sha256": "fd67fb009bf46654383fbdadf672bb2357876b2952ca0422834aedefd71d1ac6",
+    "kind": "java",
+    "output": "unpacked/java/fd67fb009bf46654_pdebuild-ant.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 28,
+    "input_classes": 33,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.build_3.7.0.v20110512-1320/lib/pdebuild-ant.jar"
+    ],
+    "top_level_classes_checked": 28,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.build_3.7.0.v20110512-1320/pdebuild.jar",
+    "sha256": "a0aa0345cacd28eeb527eb0f9e34f5a6f3d8950bb4b8cf738355548890ca6e90",
+    "kind": "java",
+    "output": "unpacked/java/a0aa0345cacd28ee_pdebuild.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 83,
+    "input_classes": 99,
+    "warning_lines": 2,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.build_3.7.0.v20110512-1320/pdebuild.jar"
+    ],
+    "top_level_classes_checked": 83,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.core_3.7.1.v20110822-2108.jar",
+    "sha256": "912ddc1f4cb5606fc5248684434ecb2c5d3b50941dcb7a091b10e8f42708ad63",
+    "kind": "java",
+    "output": "unpacked/java/912ddc1f4cb5606f_org.eclipse.pde.core_3.7.1.v20110822-2108.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 509,
+    "input_classes": 555,
+    "warning_lines": 28,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.core_3.7.1.v20110822-2108.jar"
+    ],
+    "top_level_classes_checked": 509,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.runtime_3.4.201.v20110819-0851.jar",
+    "sha256": "886c8a7aa309f6575397100ecc744dd17e78ba530401ffd42c013c7c698129c8",
+    "kind": "java",
+    "output": "unpacked/java/886c8a7aa309f657_org.eclipse.pde.runtime_3.4.201.v20110819-0851.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 46,
+    "input_classes": 76,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.pde.runtime_3.4.201.v20110819-0851.jar"
+    ],
+    "top_level_classes_checked": 46,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.sphinx.emf_0.7.0.201302172347.jar",
+    "sha256": "fd292974d26984227d92672bce33fb85ef012d658e7feef1b4e1fcc4d3473498",
+    "kind": "java",
+    "output": "unpacked/java/fd292974d2698422_org.eclipse.sphinx.emf_0.7.0.201302172347.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 116,
+    "input_classes": 200,
+    "warning_lines": 13,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.sphinx.emf_0.7.0.201302172347.jar"
+    ],
+    "top_level_classes_checked": 116,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.sphinx.platform_0.7.0.201302172347.jar",
+    "sha256": "eb5dd70fe1f874f724e42bebcf81e5b320c38d0a965c2991db1850dff9eb99d0",
+    "kind": "java",
+    "output": "unpacked/java/eb5dd70fe1f874f7_org.eclipse.sphinx.platform_0.7.0.201302172347.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 43,
+    "input_classes": 55,
+    "warning_lines": 5,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.sphinx.platform_0.7.0.201302172347.jar"
+    ],
+    "top_level_classes_checked": 43,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.swt.win32.win32.x86_3.7.1.v3738a.jar",
+    "sha256": "7e0d48280d5867c2126d8845afcf2839fce8e893ee61ab6ac0805ae1068c756b",
+    "kind": "java",
+    "output": "unpacked/java/7e0d48280d5867c2_org.eclipse.swt.win32.win32.x86_3.7.1.v3738a.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 793,
+    "input_classes": 1078,
+    "warning_lines": 51,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.swt.win32.win32.x86_3.7.1.v3738a.jar"
+    ],
+    "top_level_classes_checked": 793,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.swt_3.7.1.v3738a.jar",
+    "sha256": "bc871d5332261628a5dce72da77d58cc1eb1e256801f733826e7018ddcbb5852",
+    "kind": "java",
+    "output": "unpacked/java/bc871d5332261628_org.eclipse.swt_3.7.1.v3738a.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 0,
+    "input_classes": 0,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.swt_3.7.1.v3738a.jar"
+    ],
+    "top_level_classes_checked": 0,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.team.core_3.6.0.I20110525-0800.jar",
+    "sha256": "f87c5c04dc64f7c4b2d9de089aa98ad977e4913f7bef83e305173bda699af019",
+    "kind": "java",
+    "output": "unpacked/java/f87c5c04dc64f7c4_org.eclipse.team.core_3.6.0.I20110525-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 177,
+    "input_classes": 262,
+    "warning_lines": 35,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.team.core_3.6.0.I20110525-0800.jar"
+    ],
+    "top_level_classes_checked": 177,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.text_3.5.101.r371_v20110810-0800.jar",
+    "sha256": "1bacf311ac3d39cc53b03f8de7a4ccffc89c208938f0004a90c652383e927f18",
+    "kind": "java",
+    "output": "unpacked/java/1bacf311ac3d39cc_org.eclipse.text_3.5.101.r371_v20110810-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 127,
+    "input_classes": 168,
+    "warning_lines": 25,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.text_3.5.101.r371_v20110810-0800.jar"
+    ],
+    "top_level_classes_checked": 127,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.console_3.5.100.v20110511.jar",
+    "sha256": "9797b24bbc8a8e2eea829c607435f2fc57a157fa3c822c2a768e0a1861c3f1c9",
+    "kind": "java",
+    "output": "unpacked/java/9797b24bbc8a8e2e_org.eclipse.ui.console_3.5.100.v20110511.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 56,
+    "input_classes": 95,
+    "warning_lines": 30,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.console_3.5.100.v20110511.jar"
+    ],
+    "top_level_classes_checked": 56,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.forms_3.5.100.v20110425.jar",
+    "sha256": "af8a8c4dcc5a4114d8ad1ed4d2ae7d53fdca35efe3c5c4311877dea6e4a5c3a3",
+    "kind": "java",
+    "output": "unpacked/java/af8a8c4dcc5a4114_org.eclipse.ui.forms_3.5.100.v20110425.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 82,
+    "input_classes": 173,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.forms_3.5.100.v20110425.jar"
+    ],
+    "top_level_classes_checked": 82,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.views.log_1.0.200.v20110404.jar",
+    "sha256": "f3025a3a23ed779029dfb2f250f8fc396861ed4a15d4dd31eb89deb086e1a9e1",
+    "kind": "java",
+    "output": "unpacked/java/f3025a3a23ed7790_org.eclipse.ui.views.log_1.0.200.v20110404.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 21,
+    "input_classes": 79,
+    "warning_lines": 6,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.views.log_1.0.200.v20110404.jar"
+    ],
+    "top_level_classes_checked": 21,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.views_3.6.0.I20110412-0800.jar",
+    "sha256": "2849cc0b3a7eea97520e2bb5a9f10eed0d811f406595d157e9bc1592e918b0ab",
+    "kind": "java",
+    "output": "unpacked/java/2849cc0b3a7eea97_org.eclipse.ui.views_3.6.0.I20110412-0800.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 36,
+    "input_classes": 56,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.views_3.6.0.I20110412-0800.jar"
+    ],
+    "top_level_classes_checked": 36,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.workbench.texteditor_3.7.0.v20110505-0800.jar",
+    "sha256": "46c6f4340f9a47770311e4581f4a989fd2e9256e5581fa5dd68cb1b9bd489f23",
+    "kind": "java",
+    "output": "unpacked/java/46c6f4340f9a4777_org.eclipse.ui.workbench.texteditor_3.7.0.v20110505-0800.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 162,
+    "input_classes": 342,
+    "warning_lines": 22,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.workbench.texteditor_3.7.0.v20110505-0800.jar"
+    ],
+    "top_level_classes_checked": 162,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.workbench_3.7.0.I20110519-0100.jar",
+    "sha256": "03fc1a206cc2728ac8ce770c7c1b12ed79e870e08282e50dd340514961b0ce8d",
+    "kind": "java",
+    "output": "unpacked/java/03fc1a206cc2728a_org.eclipse.ui.workbench_3.7.0.I20110519-0100.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 1344,
+    "input_classes": 2744,
+    "warning_lines": 77,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.workbench_3.7.0.I20110519-0100.jar"
+    ],
+    "top_level_classes_checked": 1344,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui_3.7.0.I20110602-0100.jar",
+    "sha256": "c6f4b72a11da9cfbed1d5522eb0047b588f858019bac1df461cb22b0d46903d3",
+    "kind": "java",
+    "output": "unpacked/java/c6f4b72a11da9cfb_org.eclipse.ui_3.7.0.I20110602-0100.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 2,
+    "input_classes": 4,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui_3.7.0.I20110602-0100.jar"
+    ],
+    "top_level_classes_checked": 2,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.update.configurator_3.3.100.v20100512.jar",
+    "sha256": "3bbc93f6f4fb7d396104f32638f2e8561e7a378a823e6712ef1d3fbff613ebe4",
+    "kind": "java",
+    "output": "unpacked/java/3bbc93f6f4fb7d39_org.eclipse.update.configurator_3.3.100.v20100512.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 30,
+    "input_classes": 37,
+    "warning_lines": 2,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.update.configurator_3.3.100.v20100512.jar"
+    ],
+    "top_level_classes_checked": 30,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.jdom_1.1.1.v201101151400.jar",
+    "sha256": "7504ceb11a839420cbb52b858d0c10ee457ae56e7902f80410252cb30b2ce9d3",
+    "kind": "java",
+    "output": "unpacked/java/7504ceb11a839420_org.jdom_1.1.1.v201101151400.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 62,
+    "input_classes": 73,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.jdom_1.1.1.v201101151400.jar"
+    ],
+    "top_level_classes_checked": 62,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.sat4j.core_2.3.0.v20110329.jar",
+    "sha256": "3e6c4a633ede8c24a86559cf9fc2231840dbf032398a38a960677723906728c1",
+    "kind": "java",
+    "output": "unpacked/java/3e6c4a633ede8c24_org.sat4j.core_2.3.0.v20110329.jar",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 150,
+    "input_classes": 170,
+    "warning_lines": 1,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.sat4j.core_2.3.0.v20110329.jar"
+    ],
+    "top_level_classes_checked": 150,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.sat4j.pb_2.3.0.v20110329.jar",
+    "sha256": "c40ca55dad3a937dc4c4005e5facf11204a61d56824c2b19eac480dfbeeaaafd",
+    "kind": "java",
+    "output": "unpacked/java/c40ca55dad3a937d_org.sat4j.pb_2.3.0.v20110329.jar",
+    "exit_code": 0,
+    "status": "ok",
+    "source_files": 88,
+    "input_classes": 96,
+    "warning_lines": 0,
+    "aliases": [
+      "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.sat4j.pb_2.3.0.v20110329.jar"
+    ],
+    "top_level_classes_checked": 88,
+    "missing_top_level_java_files": 0
+  },
+  {
+    "source": "unpacked/installation/ETASShared11/cebra/cebra.zip",
+    "sha256": "71ee3d4150b1f6b6153c4ecaeed017f6df118eb82bf026f7a8e622c796fa69a8",
+    "kind": "java",
+    "output": "unpacked/java/71ee3d4150b1f6b6",
+    "exit_code": 0,
+    "status": "partial",
+    "source_files": 67,
+    "input_classes": 71,
+    "warning_lines": 2,
+    "aliases": [
+      "unpacked/installation/ETASShared11/cebra/cebra.zip"
+    ],
+    "top_level_classes_checked": 67,
+    "missing_top_level_java_files": 0
+  }
+]

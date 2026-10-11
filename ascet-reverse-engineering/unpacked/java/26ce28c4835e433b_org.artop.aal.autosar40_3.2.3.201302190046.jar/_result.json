@@ -1,0 +1,11 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.artop.aal.autosar40_3.2.3.201302190046.jar",
+  "sha256": "26ce28c4835e433b2470febcb46f6c1f9afb7a1dfd5dfc2c2218ca107eba2050",
+  "kind": "java",
+  "output": "unpacked/java/26ce28c4835e433b_org.artop.aal.autosar40_3.2.3.201302190046.jar",
+  "exit_code": 0,
+  "status": "error",
+  "source_files": 2844,
+  "input_classes": 3334,
+  "error": "[Errno 2] No such file or directory: 'E:\\\\Repo\\\\ASCET\\\\unpacked\\\\java\\\\26ce28c4835e433b_org.artop.aal.autosar40_3.2.3.201302190046.jar\\\\autosar40\\\\commonstructure\\\\timing\\\\timingdescription\\\\timingdescriptionevents\\\\tdeventoccurrenceexpression\\\\instancerefs\\\\impl\\\\OperationArgumentInComponentInstanceRefImpl.java'"
+}

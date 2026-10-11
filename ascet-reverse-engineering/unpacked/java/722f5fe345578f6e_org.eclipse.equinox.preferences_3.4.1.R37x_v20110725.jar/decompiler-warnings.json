@@ -1,0 +1,27 @@
+[
+  {
+    "file": "org/eclipse/core/internal/preferences/ConfigurationPreferences.java",
+    "line": 92,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/preferences/EclipsePreferences.java",
+    "line": 362,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/preferences/EclipsePreferences.java",
+    "line": 810,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/preferences/EclipsePreferences.java",
+    "line": 832,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/preferences/InstancePreferences.java",
+    "line": 185,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

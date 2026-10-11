@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.amd620.core_1.1.0.201412021129.jar",
+  "sha256": "90d5fc417bf2b38c55ab6af7ceb40dcd388889e14dcbbb25cecc987c7eb9b6d5",
+  "kind": "java",
+  "output": "unpacked/java/90d5fc417bf2b38c_com.etas.amd620.core_1.1.0.201412021129.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 984,
+  "input_classes": 1008,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.etas.amd620.core_1.1.0.201412021129.jar"
+  ],
+  "top_level_classes_checked": 984,
+  "missing_top_level_java_files": 0
+}

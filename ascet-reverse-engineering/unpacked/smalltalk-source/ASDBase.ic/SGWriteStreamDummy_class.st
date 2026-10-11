@@ -1,0 +1,19 @@
+"Statically reconstructed from ASCET image; generated names; not original source. Runtime equivalence not tested."
+
+"ASDBase.ic method 0x2000dd1c; bytecode file offset 0x90ab8c"
+!SGWriteStreamDummy class methodsFor: 'recovered'!
+createWithStream: recoveredArg1
+    | recoveredValue0 |
+    recoveredValue0 := (self) create.
+    ^recoveredValue0
+! !
+
+"ASDBase.ic method 0x2002f374; bytecode file offset 0x934580"
+!SGWriteStreamDummy class methodsFor: 'recovered'!
+create
+    | recoveredValue0 recoveredValue1 |
+    recoveredValue0 := (self) new.
+    recoveredValue1 := (recoveredValue0) initialize.
+    ^recoveredValue1
+! !
+

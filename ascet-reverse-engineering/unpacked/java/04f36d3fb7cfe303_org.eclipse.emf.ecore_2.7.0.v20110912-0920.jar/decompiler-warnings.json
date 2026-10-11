@@ -1,0 +1,82 @@
+[
+  {
+    "file": "org/eclipse/emf/ecore/impl/EGenericTypeImpl.java",
+    "line": 134,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/impl/EGenericTypeImpl.java",
+    "line": 272,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/impl/ETypeParameterImpl.java",
+    "line": 52,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/impl/ETypeParameterImpl.java",
+    "line": 68,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/util/ComposedSwitch.java",
+    "line": 39,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/util/ComposedSwitch.java",
+    "line": 51,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/util/ComposedSwitch.java",
+    "line": 79,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/util/EcoreUtil.java",
+    "line": 1029,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/emf/ecore/xml/type/internal/DataValue.java",
+    "line": 1219,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/emf/ecore/xml/type/internal/RegEx.java",
+    "line": 1169,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/emf/ecore/xml/type/internal/RegEx.java",
+    "line": 1263,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/xml/type/internal/RegEx.java",
+    "line": 2524,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/emf/ecore/xml/type/internal/RegEx.java",
+    "line": 3389,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/xml/type/internal/RegEx.java",
+    "line": 4039,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/xml/type/internal/RegEx.java",
+    "line": 4638,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/emf/ecore/xml/type/internal/RegEx.java",
+    "line": 6170,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

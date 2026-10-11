@@ -1,0 +1,17 @@
+[
+  {
+    "file": "org/eclipse/core/filesystem/provider/FileStore.java",
+    "line": 40,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filesystem/FileCache.java",
+    "line": 33,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/filesystem/InternalFileSystemCore.java",
+    "line": 112,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

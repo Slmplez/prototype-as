@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar",
+  "sha256": "e40e4af5478bbf64091bea6c859833910f0ab1697d33e92280f6b37307b57e83",
+  "kind": "java",
+  "output": "unpacked/java/e40e4af5478bbf64_org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 1183,
+  "input_classes": 1484,
+  "warning_lines": 295,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar"
+  ],
+  "top_level_classes_checked": 1183,
+  "missing_top_level_java_files": 0
+}

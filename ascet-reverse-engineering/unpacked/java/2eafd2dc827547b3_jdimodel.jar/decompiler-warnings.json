@@ -1,0 +1,387 @@
+[
+  {
+    "file": "org/eclipse/jdi/internal/ValueCache.java",
+    "line": 49,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/ValueCache.java",
+    "line": 68,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/VerboseWriter.java",
+    "line": 358,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/VerboseWriter.java",
+    "line": 381,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketReceiveManager.java",
+    "line": 46,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketReceiveManager.java",
+    "line": 75,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketReceiveManager.java",
+    "line": 101,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketReceiveManager.java",
+    "line": 179,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketReceiveManager.java",
+    "line": 193,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketReceiveManager.java",
+    "line": 208,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketSendManager.java",
+    "line": 30,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketSendManager.java",
+    "line": 58,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketSendManager.java",
+    "line": 74,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/PacketSendManager.java",
+    "line": 75,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/SocketConnection.java",
+    "line": 38,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/connect/SocketConnection.java",
+    "line": 72,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdi/internal/spy/TcpipSpy.java",
+    "line": 97,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/EventDispatcher.java",
+    "line": 231,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/EventDispatcher.java",
+    "line": 246,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/breakpoints/ConditionalBreakpointHandler.java",
+    "line": 61,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/breakpoints/ConditionalBreakpointHandler.java",
+    "line": 167,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/breakpoints/JavaLineBreakpoint.java",
+    "line": 162,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/breakpoints/JavaLineBreakpoint.java",
+    "line": 308,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/hcr/JavaHotCodeReplaceManager.java",
+    "line": 150,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/hcr/JavaHotCodeReplaceManager.java",
+    "line": 173,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/hcr/JavaHotCodeReplaceManager.java",
+    "line": 609,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/hcr/JavaHotCodeReplaceManager.java",
+    "line": 826,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/logicalstructures/JavaLogicalStructure.java",
+    "line": 365,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/logicalstructures/JavaLogicalStructure.java",
+    "line": 376,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIDebugTarget.java",
+    "line": 227,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIDebugTarget.java",
+    "line": 355,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIDebugTarget.java",
+    "line": 383,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIDebugTarget.java",
+    "line": 929,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIDebugTarget.java",
+    "line": 1439,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIDebugTarget.java",
+    "line": 1458,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIDebugTarget.java",
+    "line": 1500,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIDebugTarget.java",
+    "line": 1568,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIDebugTarget.java",
+    "line": 1732,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDILocalVariable.java",
+    "line": 44,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDILocalVariable.java",
+    "line": 67,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 108,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 193,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 208,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 297,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 549,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 572,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 631,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 724,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 774,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 790,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 816,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 839,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 955,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 973,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 991,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIStackFrame.java",
+    "line": 1009,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 405,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 406,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 520,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 533,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 543,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 691,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 761,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 905,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 919,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 933,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 994,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 1013,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 1143,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 1194,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 1292,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 1620,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 1898,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/core/model/JDIThread.java",
+    "line": 1913,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/eval/ast/engine/BinaryBasedSourceGenerator.java",
+    "line": 320,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/eval/ast/engine/SignatureExt.java",
+    "line": 16,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/jdt/internal/debug/eval/ast/instructions/RuntimeSignature.java",
+    "line": 287,
+    "text": "* Unable to fully structure code"
+  }
+]

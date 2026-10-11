@@ -1,0 +1,39 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.debug.core_3.7.0.v20110518.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.debug.core.DebugPlugin
+----------------------------
+
+parseDocument(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+org.eclipse.debug.core.model.RuntimeProcess
+----------------------------
+
+run()
+  Unable to fully structure code
+
+
+org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector
+----------------------------
+
+run()
+  Unable to fully structure code
+
+
+org.eclipse.debug.internal.core.LaunchManager
+----------------------------
+
+getInfo(org.eclipse.debug.internal.core.LaunchConfiguration )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+generateLaunchConfigurationName(java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.debug.internal.core.SystemVariableResolver
+----------------------------
+
+getCorrectPath(java.lang.String )
+  Unable to fully structure code

@@ -1,0 +1,2 @@
+Summary for E:\Repo\ASCET\unpacked\archives\6a5c69ad3345e896_org.eclipse.equinox.p2.director.app_1.0.300.v20110505.jar\ant_tasks\director-ant.jar
+Decompiled with CFR 0.152

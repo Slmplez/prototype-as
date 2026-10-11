@@ -1,0 +1,14 @@
+{
+  "source": "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/_F92E58051517B7900B87D094BDFF0B85",
+  "sha256": "348bc95d77cc5e4710b5b6674f0caa8cabc7918d96b045bb7e20e2392a63543d",
+  "kind": "managed",
+  "output": "unpacked/dotnet/348bc95d77cc5e47",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 17,
+  "warning_lines": 2,
+  "aliases": [
+    "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/_F92E58051517B7900B87D094BDFF0B85",
+    "unpacked/archives/5c5f68461ed0f0fb__BA8DCF0DCCF42E3D9C2E54ADD093D02B/decoded-files/TARGETDIR/CaliberRMPlugin.dll"
+  ]
+}

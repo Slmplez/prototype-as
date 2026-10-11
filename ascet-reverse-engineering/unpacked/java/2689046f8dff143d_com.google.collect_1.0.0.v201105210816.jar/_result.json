@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.google.collect_1.0.0.v201105210816.jar",
+  "sha256": "2689046f8dff143d10c60a1e35532c166a81166b5cad9dff0c94ee7c968172e6",
+  "kind": "java",
+  "output": "unpacked/java/2689046f8dff143d_com.google.collect_1.0.0.v201105210816.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 130,
+  "input_classes": 458,
+  "warning_lines": 115,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.google.collect_1.0.0.v201105210816.jar"
+  ],
+  "top_level_classes_checked": 129,
+  "missing_top_level_java_files": 0
+}

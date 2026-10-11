@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/archives/f7aa78405c2ab327_org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110511-1359.jar/ant_tasks/metadataRepository-ant.jar",
+  "sha256": "344dbf1cdea2f0c9cd9970b7f2bc770cd19f46ca785f38b5e14ec2b2fd84b3a5",
+  "kind": "java",
+  "output": "unpacked/java/344dbf1cdea2f0c9",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 4,
+  "input_classes": 4,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/archives/f7aa78405c2ab327_org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110511-1359.jar/ant_tasks/metadataRepository-ant.jar"
+  ],
+  "top_level_classes_checked": 4,
+  "missing_top_level_java_files": 0
+}

@@ -1,0 +1,13 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package org.eclipse.debug.core.model;
+
+public interface IStepFilters {
+    public boolean supportsStepFilters();
+
+    public boolean isStepFiltersEnabled();
+
+    public void setStepFiltersEnabled(boolean var1);
+}
+

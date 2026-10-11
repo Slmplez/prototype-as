@@ -1,0 +1,12 @@
+[
+  {
+    "file": "org/apache/xml/resolver/helpers/PublicId.java",
+    "line": 11,
+    "text": "* WARNING - void declaration"
+  },
+  {
+    "file": "org/apache/xml/resolver/readers/TextCatalogReader.java",
+    "line": 133,
+    "text": "* Unable to fully structure code"
+  }
+]

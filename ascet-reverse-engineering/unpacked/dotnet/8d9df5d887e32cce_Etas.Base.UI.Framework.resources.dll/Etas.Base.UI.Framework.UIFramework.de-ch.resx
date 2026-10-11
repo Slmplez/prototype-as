@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="RES_ExceptionXmlRead" xml:space="preserve"><value>CODI00A2</value></data>
+  <data name="RES_ExceptionArrayIsNull" xml:space="preserve"><value>CODI00A9</value></data>
+  <data name="RES_NavigationAudioLocation" xml:space="preserve"><value>CODI00A6</value></data>
+  <data name="RES_ExceptionNavigationFailure" xml:space="preserve"><value>CODI00A4</value></data>
+  <data name="RES_ExceptionLessThanZeroIndex" xml:space="preserve"><value>CODI00AA</value></data>
+  <data name="RES_ExceptionOutOfBoundsIndex" xml:space="preserve"><value>CODI009F</value></data>
+  <data name="RES_ExceptionLocalizerConfig " xml:space="preserve"><value>CODI00A1</value></data>
+  <data name="RES_ExceptionNavigationInitializationFailure" xml:space="preserve"><value>CODI00A3</value></data>
+  <data name="RES_ExceptionNonCLSCompliant " xml:space="preserve"><value>CODI00A0</value></data>
+  <data name="RES_ResetToDefault2" xml:space="preserve"><value>CODI009E</value></data>
+  <data name="RES_ResetToDefault1" xml:space="preserve"><value>CODI009D</value></data>
+  <data name="RES_ExceptionNotSupported" xml:space="preserve"><value>CODI00A8</value></data>
+  <data name="RES_InvalidValueAsParameter" xml:space="preserve"><value>CODI00AF</value></data>
+  <data name="RES_ExceptionUnknown" xml:space="preserve"><value>CODI00AB</value></data>
+  <data name="RES_ColorSchemeError" xml:space="preserve"><value>CODI00AC</value></data>
+  <data name="RES_ExceptionStorageExecution" xml:space="preserve"><value>CODI00A7</value></data>
+  <data name="RES_NullValueAsParameter" xml:space="preserve"><value>CODI00AE</value></data>
+  <data name="RES_ExceptionNullStackObject" xml:space="preserve"><value>CODI00A5</value></data>
+  <data name="RES_SuggestionMenuShortcut" xml:space="preserve"><value>CODI00B0</value></data>
+  <data name="RES_MediaFailure" xml:space="preserve"><value>CODI00AD</value></data>
+  </root>

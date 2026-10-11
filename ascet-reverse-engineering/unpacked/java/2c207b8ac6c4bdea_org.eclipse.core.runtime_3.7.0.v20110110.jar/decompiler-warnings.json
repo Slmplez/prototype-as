@@ -1,0 +1,52 @@
+[
+  {
+    "file": "org/eclipse/core/runtime/PerformanceStats.java",
+    "line": 99,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/InternalPlatform.java",
+    "line": 206,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/InternalPlatform.java",
+    "line": 308,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/InternalPlatform.java",
+    "line": 329,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/Log.java",
+    "line": 46,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/Log.java",
+    "line": 64,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/Log.java",
+    "line": 78,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/PerformanceStatsProcessor.java",
+    "line": 51,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/PerformanceStatsProcessor.java",
+    "line": 62,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/runtime/PerformanceStatsProcessor.java",
+    "line": 171,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

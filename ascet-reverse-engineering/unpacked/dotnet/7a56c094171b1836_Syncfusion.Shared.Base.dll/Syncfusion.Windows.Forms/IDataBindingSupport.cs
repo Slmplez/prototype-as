@@ -1,0 +1,9 @@
+using Syncfusion.Documentation;
+
+namespace Syncfusion.Windows.Forms;
+
+[DocumentationExclude]
+public interface IDataBindingSupport
+{
+	string PropertyNamePrefix { get; }
+}

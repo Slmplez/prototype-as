@@ -1,0 +1,7 @@
+[
+  {
+    "file": "org/eclipse/pde/internal/build/tasks/CompileErrorTask.java",
+    "line": 38,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

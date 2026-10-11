@@ -1,0 +1,13 @@
+{
+  "source": "unpacked/installation/bin/Syncfusion.Core.dll",
+  "sha256": "c0dbff9d798daa8c4f7ba992c73d3de2b8cd9f54c8337d49c99574eb4b6864c5",
+  "kind": "managed",
+  "output": "unpacked/dotnet/c0dbff9d798daa8c_Syncfusion.Core.dll",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 53,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/bin/Syncfusion.Core.dll"
+  ]
+}

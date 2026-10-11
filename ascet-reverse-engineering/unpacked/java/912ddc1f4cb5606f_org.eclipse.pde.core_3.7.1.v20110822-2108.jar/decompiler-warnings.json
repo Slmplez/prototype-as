@@ -1,0 +1,142 @@
+[
+  {
+    "file": "org/eclipse/pde/internal/core/BinaryRepositoryProvider.java",
+    "line": 68,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/ClasspathComputer.java",
+    "line": 151,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/ExternalFeatureModelManager.java",
+    "line": 151,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/PluginModelManager.java",
+    "line": 760,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/PluginModelManager.java",
+    "line": 789,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/builders/BuildErrorReporter.java",
+    "line": 687,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/builders/DefaultSAXParser.java",
+    "line": 14,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/builders/DefaultSAXParser.java",
+    "line": 18,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/builders/DefaultSAXParser.java",
+    "line": 36,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/builders/SchemaTransformer.java",
+    "line": 185,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/converter/PluginConverter.java",
+    "line": 143,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/FeatureBasedExportOperation.java",
+    "line": 45,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/FeatureExportOperation.java",
+    "line": 233,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/FeatureExportOperation.java",
+    "line": 237,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/FeatureExportOperation.java",
+    "line": 255,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/FeatureExportOperation.java",
+    "line": 857,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/FeatureExportOperation.java",
+    "line": 861,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/FeatureExportOperation.java",
+    "line": 879,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/ProductExportOperation.java",
+    "line": 109,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/ProductExportOperation.java",
+    "line": 113,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/exports/ProductExportOperation.java",
+    "line": 131,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/project/BundleProjectService.java",
+    "line": 155,
+    "text": "* WARNING - Removed back jump from a try to a catch block - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/target/AbstractBundleContainer.java",
+    "line": 175,
+    "text": "* WARNING - Removed back jump from a try to a catch block - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/text/DocumentHandler.java",
+    "line": 197,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/util/PDEHTMLHelper.java",
+    "line": 21,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/util/SchemaUtil.java",
+    "line": 26,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/util/SchemaUtil.java",
+    "line": 30,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/pde/internal/core/util/SchemaUtil.java",
+    "line": 48,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  }
+]

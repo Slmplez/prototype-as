@@ -1,0 +1,47 @@
+[
+  {
+    "file": "-Module-.cs",
+    "line": 263,
+    "text": "internal static bool _003FInitializedPerProcess_0040DefaultDomain_0040_003CCrtImplementationDetails_003E_0040_00402_NA/*Field data (rva=0x19873) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 265,
+    "text": "internal static bool _003FEntered_0040DefaultDomain_0040_003CCrtImplementationDetails_003E_0040_00402_NA/*Field data (rva=0x19870) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 267,
+    "text": "internal static bool _003FInitializedNative_0040DefaultDomain_0040_003CCrtImplementationDetails_003E_0040_00402_NA/*Field data (rva=0x19871) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 269,
+    "text": "internal static int _003FCount_0040AllDomains_0040_003CCrtImplementationDetails_003E_0040_00402HA/*Field data (rva=0x1986c) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 285,
+    "text": "internal static bool _003FInitializedNativeFromCCTOR_0040DefaultDomain_0040_003CCrtImplementationDetails_003E_0040_00402_NA/*Field data (rva=0x19872) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 301,
+    "text": "internal static uint _003FA0xc6172590_002E__exit_list_size/*Field data (rva=0x199f8) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 306,
+    "text": "internal unsafe static delegate*<void>* _003FA0xc6172590_002E__onexitbegin_m/*Field data (rva=0x199f0) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 308,
+    "text": "internal unsafe static delegate*<void>* _003FA0xc6172590_002E__onexitend_m/*Field data (rva=0x199f4) could not be foundin any section!*/;"
+  },
+  {
+    "file": "-Module-.cs",
+    "line": 330,
+    "text": "internal unsafe static volatile void* __native_startup_lock/*Field data (rva=0x19a24) could not be foundin any section!*/;"
+  }
+]

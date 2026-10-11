@@ -1,0 +1,244 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\com.ibm.icu_4.4.2.v20110208.jar
+Decompiled with CFR 0.152
+
+
+com.ibm.icu.impl.BMPSet
+----------------------------
+
+span(java.lang.CharSequence int int com.ibm.icu.text.UnicodeSet$SpanCondition )
+  Unable to fully structure code
+
+
+com.ibm.icu.impl.IntTrieBuilder
+----------------------------
+
+fillBlock(int int int int boolean )
+  Unable to fully structure code
+
+
+com.ibm.icu.impl.Normalizer2Impl
+----------------------------
+
+addPropertyStarts(com.ibm.icu.text.UnicodeSet )
+  Unable to fully structure code
+addCanonIterPropertyStarts(com.ibm.icu.text.UnicodeSet )
+  Handled impossible loop by duplicating code
+getFCDTrie()
+  Unable to fully structure code
+ensureCanonIterData()
+  Unable to fully structure code
+equal(java.lang.CharSequence int int java.lang.CharSequence int int )
+  Unable to fully structure code
+
+
+com.ibm.icu.impl.PatternTokenizer
+----------------------------
+
+next(java.lang.StringBuffer )
+  Unable to fully structure code
+
+
+com.ibm.icu.impl.TrieIterator
+----------------------------
+
+calculateNextBMPElement(com.ibm.icu.util.RangeValueIterator$Element )
+  Unable to fully structure code
+
+
+com.ibm.icu.impl.UPropertyAliases
+----------------------------
+
+chooseNameInGroup(short int )
+  Unable to fully structure code
+
+
+com.ibm.icu.impl.locale.LanguageTag
+----------------------------
+
+parseExtlangs(com.ibm.icu.impl.locale.StringTokenIterator com.ibm.icu.impl.locale.LanguageTag$ParseStatus )
+  Unable to fully structure code
+parseVariants(com.ibm.icu.impl.locale.StringTokenIterator com.ibm.icu.impl.locale.LanguageTag$ParseStatus )
+  Unable to fully structure code
+parseExtensions(com.ibm.icu.impl.locale.StringTokenIterator com.ibm.icu.impl.locale.LanguageTag$ParseStatus )
+  Unable to fully structure code
+
+
+com.ibm.icu.lang.UCharacter
+----------------------------
+
+offsetByCodePoints(char[] int int int int )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.AnyTransliterator
+----------------------------
+
+next()
+  Unable to fully structure code
+
+
+com.ibm.icu.text.Bidi
+----------------------------
+
+adjustWSLevels()
+  Unable to fully structure code
+
+
+com.ibm.icu.text.BidiLine
+----------------------------
+
+setTrailingWSStart(com.ibm.icu.text.Bidi )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.CollationElementIterator
+----------------------------
+
+setOffset(int )
+  Unable to fully structure code
+previousExpansion(com.ibm.icu.text.RuleBasedCollator int )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.CollationRuleParser
+----------------------------
+
+assembleTokenList()
+  Unable to fully structure code
+equals(java.lang.Object )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.DecimalFormat
+----------------------------
+
+compareComplexAffix(java.lang.String java.lang.String int int com.ibm.icu.util.Currency[] )
+  Unable to fully structure code
+expandAffix(java.lang.String java.lang.String java.lang.StringBuffer boolean )
+  Unable to fully structure code
+appendAffixPattern(java.lang.StringBuffer boolean boolean boolean )
+  Unable to fully structure code
+applyPatternWithoutExpandAffix(java.lang.String boolean )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.DictionaryBasedBreakIterator
+----------------------------
+
+previous()
+  Unable to fully structure code
+
+
+com.ibm.icu.text.DigitList
+----------------------------
+
+set(double int boolean )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.NFRuleSet
+----------------------------
+
+lcm(long long )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.RbnfScannerProviderImpl
+----------------------------
+
+findText2(java.lang.String java.lang.String int )
+  Unable to fully structure code
+prefixLength(java.lang.String java.lang.String )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.RuleBasedCollator
+----------------------------
+
+doSecondaryBytes(int boolean boolean )
+  Unable to fully structure code
+doTertiaryBytes(int boolean )
+  Unable to fully structure code
+doFrench()
+  Unable to fully structure code
+doTertiary()
+  Unable to fully structure code
+setUpLatinOne()
+  Unable to fully structure code
+
+
+com.ibm.icu.text.RuleBasedNumberFormat
+----------------------------
+
+stripWhitespace(java.lang.String )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.SimpleDateFormat
+----------------------------
+
+subParse(java.lang.String int char int boolean boolean boolean[] com.ibm.icu.util.Calendar )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.UCharacterIterator
+----------------------------
+
+moveCodePointIndex(int )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.UTF16
+----------------------------
+
+findOffsetFromCodePoint(java.lang.String int )
+  Unable to fully structure code
+findOffsetFromCodePoint(java.lang.StringBuffer int )
+  Unable to fully structure code
+findOffsetFromCodePoint(char[] int int int )
+  Unable to fully structure code
+reverse(java.lang.StringBuffer )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.UnicodeCompressor
+----------------------------
+
+compress(char[] int int int[] byte[] int int )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.UnicodeDecompressor
+----------------------------
+
+decompress(byte[] int int int[] char[] int int )
+  Unable to fully structure code
+
+
+com.ibm.icu.text.UnicodeSet
+----------------------------
+
+applyPropertyAlias(java.lang.String java.lang.String com.ibm.icu.text.SymbolTable )
+  Unable to fully structure code
+
+
+com.ibm.icu.util.Calendar
+----------------------------
+
+fieldDifference(java.util.Date int )
+  Unable to fully structure code
+
+
+com.ibm.icu.util.RuleBasedTimeZone
+----------------------------
+
+getOffset(long boolean int int int[] )
+  Unable to fully structure code
+  Could not resolve type clashes
+
+
+com.ibm.icu.util.ULocale
+----------------------------
+
+getFallbackString(java.lang.String )
+  Unable to fully structure code

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.help_3.5.100.v20110426.jar",
+  "sha256": "56ba2f14597ee0b00088cca6767099ef4b7f40a62d85055b03460c1c02970c27",
+  "kind": "java",
+  "output": "unpacked/java/56ba2f14597ee0b0_org.eclipse.help_3.5.100.v20110426.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 112,
+  "input_classes": 131,
+  "warning_lines": 3,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.help_3.5.100.v20110426.jar"
+  ],
+  "top_level_classes_checked": 112,
+  "missing_top_level_java_files": 0
+}

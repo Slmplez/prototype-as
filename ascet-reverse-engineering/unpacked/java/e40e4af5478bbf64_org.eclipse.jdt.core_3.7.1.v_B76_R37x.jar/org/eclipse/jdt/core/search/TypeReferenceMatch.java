@@ -1,0 +1,30 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  org.eclipse.core.resources.IResource
+ */
+package org.eclipse.jdt.core.search;
+
+import org.eclipse.core.resources.IResource;
+import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.search.ReferenceMatch;
+import org.eclipse.jdt.core.search.SearchParticipant;
+
+public class TypeReferenceMatch
+extends ReferenceMatch {
+    private IJavaElement[] otherElements;
+
+    public TypeReferenceMatch(IJavaElement enclosingElement, int accuracy, int offset, int length, boolean insideDocComment, SearchParticipant participant, IResource resource) {
+        super(enclosingElement, accuracy, offset, length, insideDocComment, participant, resource);
+    }
+
+    public final IJavaElement[] getOtherElements() {
+        return this.otherElements;
+    }
+
+    public final void setOtherElements(IJavaElement[] otherElements) {
+        this.otherElements = otherElements;
+    }
+}
+

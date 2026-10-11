@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding.property_1.4.0.I20110222-0800.jar",
+  "sha256": "f35a5e0300a33f92ebcccdbfce144ac24dc47aaa2b9384deb67f15231105c134",
+  "kind": "java",
+  "output": "unpacked/java/f35a5e0300a33f92_org.eclipse.core.databinding.property_1.4.0.I20110222-0800.jar",
+  "exit_code": 0,
+  "status": "ok",
+  "source_files": 50,
+  "input_classes": 123,
+  "warning_lines": 0,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.core.databinding.property_1.4.0.I20110222-0800.jar"
+  ],
+  "top_level_classes_checked": 50,
+  "missing_top_level_java_files": 0
+}

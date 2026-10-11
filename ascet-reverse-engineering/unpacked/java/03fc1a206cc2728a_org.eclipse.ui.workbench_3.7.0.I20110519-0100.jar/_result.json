@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.workbench_3.7.0.I20110519-0100.jar",
+  "sha256": "03fc1a206cc2728ac8ce770c7c1b12ed79e870e08282e50dd340514961b0ce8d",
+  "kind": "java",
+  "output": "unpacked/java/03fc1a206cc2728a_org.eclipse.ui.workbench_3.7.0.I20110519-0100.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 1344,
+  "input_classes": 2744,
+  "warning_lines": 77,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.ui.workbench_3.7.0.I20110519-0100.jar"
+  ],
+  "top_level_classes_checked": 1344,
+  "missing_top_level_java_files": 0
+}

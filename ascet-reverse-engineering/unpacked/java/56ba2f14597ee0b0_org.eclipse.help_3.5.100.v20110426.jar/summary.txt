@@ -1,0 +1,9 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.help_3.5.100.v20110426.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.help.internal.util.ProductPreferences
+----------------------------
+
+loadPropertiesFile(java.lang.String java.lang.String )
+  Loose catch block

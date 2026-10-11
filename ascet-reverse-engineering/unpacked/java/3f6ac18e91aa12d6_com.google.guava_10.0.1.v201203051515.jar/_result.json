@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.google.guava_10.0.1.v201203051515.jar",
+  "sha256": "3f6ac18e91aa12d6cffc42e3ed9acb07b0883ec0bf6d5a2b5347bbd2419c278a",
+  "kind": "java",
+  "output": "unpacked/java/3f6ac18e91aa12d6_com.google.guava_10.0.1.v201203051515.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 324,
+  "input_classes": 1164,
+  "warning_lines": 203,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/com.google.guava_10.0.1.v201203051515.jar"
+  ],
+  "top_level_classes_checked": 317,
+  "missing_top_level_java_files": 0
+}

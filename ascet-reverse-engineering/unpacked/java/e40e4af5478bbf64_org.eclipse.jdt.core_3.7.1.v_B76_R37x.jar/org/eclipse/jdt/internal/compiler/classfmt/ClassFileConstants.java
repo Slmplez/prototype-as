@@ -1,0 +1,85 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package org.eclipse.jdt.internal.compiler.classfmt;
+
+public interface ClassFileConstants {
+    public static final int AccDefault = 0;
+    public static final int AccPublic = 1;
+    public static final int AccPrivate = 2;
+    public static final int AccProtected = 4;
+    public static final int AccStatic = 8;
+    public static final int AccFinal = 16;
+    public static final int AccSynchronized = 32;
+    public static final int AccVolatile = 64;
+    public static final int AccBridge = 64;
+    public static final int AccTransient = 128;
+    public static final int AccVarargs = 128;
+    public static final int AccNative = 256;
+    public static final int AccInterface = 512;
+    public static final int AccAbstract = 1024;
+    public static final int AccStrictfp = 2048;
+    public static final int AccSynthetic = 4096;
+    public static final int AccAnnotation = 8192;
+    public static final int AccEnum = 16384;
+    public static final int AccSuper = 32;
+    public static final int AccAnnotationDefault = 131072;
+    public static final int AccDeprecated = 0x100000;
+    public static final int Utf8Tag = 1;
+    public static final int IntegerTag = 3;
+    public static final int FloatTag = 4;
+    public static final int LongTag = 5;
+    public static final int DoubleTag = 6;
+    public static final int ClassTag = 7;
+    public static final int StringTag = 8;
+    public static final int FieldRefTag = 9;
+    public static final int MethodRefTag = 10;
+    public static final int InterfaceMethodRefTag = 11;
+    public static final int NameAndTypeTag = 12;
+    public static final int ConstantMethodRefFixedSize = 5;
+    public static final int ConstantClassFixedSize = 3;
+    public static final int ConstantDoubleFixedSize = 9;
+    public static final int ConstantFieldRefFixedSize = 5;
+    public static final int ConstantFloatFixedSize = 5;
+    public static final int ConstantIntegerFixedSize = 5;
+    public static final int ConstantInterfaceMethodRefFixedSize = 5;
+    public static final int ConstantLongFixedSize = 9;
+    public static final int ConstantStringFixedSize = 3;
+    public static final int ConstantUtf8FixedSize = 3;
+    public static final int ConstantNameAndTypeFixedSize = 5;
+    public static final int MAJOR_VERSION_1_1 = 45;
+    public static final int MAJOR_VERSION_1_2 = 46;
+    public static final int MAJOR_VERSION_1_3 = 47;
+    public static final int MAJOR_VERSION_1_4 = 48;
+    public static final int MAJOR_VERSION_1_5 = 49;
+    public static final int MAJOR_VERSION_1_6 = 50;
+    public static final int MAJOR_VERSION_1_7 = 51;
+    public static final int MINOR_VERSION_0 = 0;
+    public static final int MINOR_VERSION_1 = 1;
+    public static final int MINOR_VERSION_2 = 2;
+    public static final int MINOR_VERSION_3 = 3;
+    public static final int MINOR_VERSION_4 = 4;
+    public static final long JDK1_1 = 2949123L;
+    public static final long JDK1_2 = 0x2E0000L;
+    public static final long JDK1_3 = 0x2F0000L;
+    public static final long JDK1_4 = 0x300000L;
+    public static final long JDK1_5 = 0x310000L;
+    public static final long JDK1_6 = 0x320000L;
+    public static final long JDK1_7 = 0x330000L;
+    public static final long CLDC_1_1 = 2949124L;
+    public static final long JDK_DEFERRED = Long.MAX_VALUE;
+    public static final int INT_ARRAY = 10;
+    public static final int BYTE_ARRAY = 8;
+    public static final int BOOLEAN_ARRAY = 4;
+    public static final int SHORT_ARRAY = 9;
+    public static final int CHAR_ARRAY = 5;
+    public static final int LONG_ARRAY = 11;
+    public static final int FLOAT_ARRAY = 6;
+    public static final int DOUBLE_ARRAY = 7;
+    public static final int ATTR_SOURCE = 1;
+    public static final int ATTR_LINES = 2;
+    public static final int ATTR_VARS = 4;
+    public static final int ATTR_STACK_MAP_TABLE = 8;
+    public static final int ATTR_STACK_MAP = 16;
+}
+

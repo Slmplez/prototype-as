@@ -1,0 +1,11 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.equinox.launcher_1.2.0.v20110502.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.equinox.launcher.Main
+----------------------------
+
+isMatchingCandidate(java.lang.String java.lang.String java.io.File )
+  Unable to fully structure code
+appendPaddedInt(int int java.lang.StringBuffer )
+  Unable to fully structure code

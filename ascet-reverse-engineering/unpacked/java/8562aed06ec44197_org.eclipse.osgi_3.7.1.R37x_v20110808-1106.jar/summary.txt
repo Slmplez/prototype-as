@@ -1,0 +1,203 @@
+Summary for E:\Repo\ASCET\unpacked\installation\Tools\AutosarToAscetImporter\plugins\org.eclipse.osgi_3.7.1.R37x_v20110808-1106.jar
+Decompiled with CFR 0.152
+
+
+org.eclipse.core.runtime.internal.adaptor.ContextFinder
+----------------------------
+
+loadClass(java.lang.String boolean )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 3 blocks at once
+
+
+org.eclipse.core.runtime.internal.adaptor.EclipseLogWriter
+----------------------------
+
+appendPaddedInt(int int java.lang.StringBuffer )
+  Unable to fully structure code
+
+
+org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook
+----------------------------
+
+hasPackageInfo(java.net.URL )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 8[CASE]
+
+
+org.eclipse.equinox.log.internal.BasicReadWriteLock
+----------------------------
+
+writeLock()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [5[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+
+
+org.eclipse.osgi.baseadaptor.BaseAdaptor
+----------------------------
+
+getNextElement()
+  Unable to fully structure code
+listEntryPaths(org.eclipse.osgi.baseadaptor.bundlefile.BundleFile java.lang.String org.osgi.framework.Filter java.util.Hashtable<java.lang.String, java.lang.String> int java.util.List<java.lang.String> )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.baseadaptor.loader.ClasspathManager
+----------------------------
+
+findLocalResource(java.lang.String )
+  Unable to fully structure code
+findLocalClass(java.lang.String )
+  Unable to fully structure code
+lockClassName(java.lang.String )
+  Unable to fully structure code
+defineClass(java.lang.String byte[] org.eclipse.osgi.baseadaptor.loader.ClasspathEntry org.eclipse.osgi.baseadaptor.bundlefile.BundleEntry org.eclipse.osgi.baseadaptor.hooks.ClassLoadingStatsHook[] )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.framework.internal.core.Framework
+----------------------------
+
+parseVersionInt(java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.framework.internal.core.FrameworkCommandProvider
+----------------------------
+
+_bundle(org.eclipse.osgi.framework.console.CommandInterpreter )
+  Unable to fully structure code
+_setbsl(org.eclipse.osgi.framework.console.CommandInterpreter )
+  Unable to fully structure code
+getBundleFromToken(org.eclipse.osgi.framework.console.CommandInterpreter java.lang.String boolean )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.framework.internal.core.PackageAdminImpl
+----------------------------
+
+processDelta(org.eclipse.osgi.service.resolver.BundleDelta[] boolean org.eclipse.osgi.service.resolver.State )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.framework.internal.core.Util
+----------------------------
+
+qSortByString(java.lang.Object[] int int )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.framework.util.KeyedHashSet
+----------------------------
+
+next()
+  Unable to fully structure code
+
+
+org.eclipse.osgi.internal.baseadaptor.BaseStorage
+----------------------------
+
+run()
+  Unable to fully structure code
+
+
+org.eclipse.osgi.internal.loader.SystemBundleLoader
+----------------------------
+
+<init>(org.eclipse.osgi.framework.internal.core.BundleHost org.eclipse.osgi.internal.loader.BundleLoaderProxy )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.internal.module.ResolverImpl
+----------------------------
+
+checkCycle(java.util.List<org.eclipse.osgi.internal.module.ResolverBundle> )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.internal.permadmin.SecurityRow
+----------------------------
+
+createConditionalPermissionInfo(org.eclipse.osgi.internal.permadmin.SecurityAdmin java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.internal.resolver.StateBuilder
+----------------------------
+
+getAttributes(org.eclipse.osgi.util.ManifestElement java.lang.String[] )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl
+----------------------------
+
+getService(org.eclipse.osgi.framework.internal.core.BundleContextImpl )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [2[TRYBLOCK]], but top level block is 14[MONITOR]
+
+
+org.eclipse.osgi.internal.signedcontent.SignatureBlockProcessor
+----------------------------
+
+getDigestLine(java.lang.String java.lang.String )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.launch.Equinox
+----------------------------
+
+getFrameworkURLs(java.net.URLClassLoader )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.storagemanager.StorageManager
+----------------------------
+
+getOutputStreamSet(java.lang.String[] )
+  Unable to fully structure code
+
+
+org.eclipse.osgi.util.ManifestElement
+----------------------------
+
+parseHeader(java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+
+
+org.osgi.framework.AdaptPermission
+----------------------------
+
+parseActions(java.lang.String )
+  Unable to fully structure code
+
+
+org.osgi.framework.AdminPermission
+----------------------------
+
+parseActions(java.lang.String )
+  Unable to fully structure code
+
+
+org.osgi.framework.BundlePermission
+----------------------------
+
+parseActions(java.lang.String )
+  Unable to fully structure code
+
+
+org.osgi.framework.CapabilityPermission
+----------------------------
+
+parseActions(java.lang.String )
+  Unable to fully structure code
+
+
+org.osgi.framework.PackagePermission
+----------------------------
+
+parseActions(java.lang.String )
+  Unable to fully structure code
+
+
+org.osgi.framework.ServicePermission
+----------------------------
+
+parseActions(java.lang.String )
+  Unable to fully structure code

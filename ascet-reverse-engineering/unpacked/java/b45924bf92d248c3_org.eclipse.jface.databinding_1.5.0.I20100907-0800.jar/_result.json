@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface.databinding_1.5.0.I20100907-0800.jar",
+  "sha256": "b45924bf92d248c3d694a982cff4b18516d8e2b08cd7ff1d283561dcd892fe36",
+  "kind": "java",
+  "output": "unpacked/java/b45924bf92d248c3_org.eclipse.jface.databinding_1.5.0.I20100907-0800.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 163,
+  "input_classes": 242,
+  "warning_lines": 8,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.jface.databinding_1.5.0.I20100907-0800.jar"
+  ],
+  "top_level_classes_checked": 163,
+  "missing_top_level_java_files": 0
+}

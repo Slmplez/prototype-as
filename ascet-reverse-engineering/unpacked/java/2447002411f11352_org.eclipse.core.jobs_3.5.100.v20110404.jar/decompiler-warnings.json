@@ -1,0 +1,282 @@
+[
+  {
+    "file": "org/eclipse/core/internal/jobs/DeadlockDetector.java",
+    "line": 411,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/ImplicitJobs.java",
+    "line": 40,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/ImplicitJobs.java",
+    "line": 114,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/ImplicitJobs.java",
+    "line": 183,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/ImplicitJobs.java",
+    "line": 236,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/ImplicitJobs.java",
+    "line": 249,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/InternalWorker.java",
+    "line": 25,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/InternalWorker.java",
+    "line": 26,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/InternalWorker.java",
+    "line": 69,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 189,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 219,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 270,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 375,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 414,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 468,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 493,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 568,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 612,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 653,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 668,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 678,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 712,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 742,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 752,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 762,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 807,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 902,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 962,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 977,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1009,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1052,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1084,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1107,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1119,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1156,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1180,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1287,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1288,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1350,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1388,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1417,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1442,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/JobManager.java",
+    "line": 1460,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/LockManager.java",
+    "line": 80,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/LockManager.java",
+    "line": 99,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/LockManager.java",
+    "line": 162,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/LockManager.java",
+    "line": 184,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/LockManager.java",
+    "line": 203,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/LockManager.java",
+    "line": 222,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/LockManager.java",
+    "line": 241,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/ThreadJob.java",
+    "line": 121,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/ThreadJob.java",
+    "line": 275,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/Worker.java",
+    "line": 41,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/Worker.java",
+    "line": 45,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/Worker.java",
+    "line": 63,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/core/internal/jobs/WorkerPool.java",
+    "line": 144,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

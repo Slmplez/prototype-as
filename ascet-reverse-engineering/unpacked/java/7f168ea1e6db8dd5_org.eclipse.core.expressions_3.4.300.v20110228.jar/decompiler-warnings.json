@@ -1,0 +1,12 @@
+[
+  {
+    "file": "org/eclipse/core/internal/expressions/Expressions.java",
+    "line": 85,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/core/internal/expressions/util/LRUCache.java",
+    "line": 85,
+    "text": "* Unable to fully structure code"
+  }
+]

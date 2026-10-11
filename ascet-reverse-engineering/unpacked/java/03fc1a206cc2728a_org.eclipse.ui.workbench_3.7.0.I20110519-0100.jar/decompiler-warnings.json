@@ -1,0 +1,387 @@
+[
+  {
+    "file": "org/eclipse/ui/actions/ContributedAction.java",
+    "line": 143,
+    "text": "* Exception decompiling"
+  },
+  {
+    "file": "org/eclipse/ui/actions/ContributedAction.java",
+    "line": 147,
+    "text": "* This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file."
+  },
+  {
+    "file": "org/eclipse/ui/actions/ContributedAction.java",
+    "line": 165,
+    "text": "throw new IllegalStateException(\"Decompilation failed\");"
+  },
+  {
+    "file": "org/eclipse/ui/application/WorkbenchAdvisor.java",
+    "line": 174,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/dialogs/FilteredItemsSelectionDialog.java",
+    "line": 960,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/dialogs/FilteredItemsSelectionDialog.java",
+    "line": 979,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/dialogs/FilteredItemsSelectionDialog.java",
+    "line": 1031,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/dialogs/FilteredItemsSelectionDialog.java",
+    "line": 1093,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/AbstractPartSelectionTracker.java",
+    "line": 50,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/AbstractWorkingSetManager.java",
+    "line": 488,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/AbstractWorkingSetManager.java",
+    "line": 543,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/AbstractWorkingSetManager.java",
+    "line": 593,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/AbstractWorkingSetManager.java",
+    "line": 642,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/AbstractWorkingSetManager.java",
+    "line": 658,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/EditorReference.java",
+    "line": 411,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/LayoutTreeNode.java",
+    "line": 205,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/UISynchronizer.java",
+    "line": 63,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/UISynchronizer.java",
+    "line": 86,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/UISynchronizer.java",
+    "line": 102,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/Workbench.java",
+    "line": 2836,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/WorkbenchPlugin.java",
+    "line": 707,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/WorkbenchPlugin.java",
+    "line": 727,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/WorkbenchWindow.java",
+    "line": 1257,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/statushandlers/WorkbenchErrorHandler.java",
+    "line": 80,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/about/AboutPluginsPage.java",
+    "line": 375,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/about/AboutPluginsPage.java",
+    "line": 427,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/about/AboutPluginsPage.java",
+    "line": 449,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/decorators/DecorationScheduler.java",
+    "line": 166,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/decorators/DecorationScheduler.java",
+    "line": 167,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/decorators/DecorationScheduler.java",
+    "line": 221,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/decorators/DecorationScheduler.java",
+    "line": 295,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/decorators/DecorationScheduler.java",
+    "line": 348,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/decorators/DecorationScheduler.java",
+    "line": 416,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/keys/BindingPersistence.java",
+    "line": 280,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/keys/KeysPreferencePage.java",
+    "line": 1013,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/misc/StringMatcher.java",
+    "line": 91,
+    "text": "* Unable to fully structure code"
+  },
+  {
+    "file": "org/eclipse/ui/internal/preferences/PropertyListenerList.java",
+    "line": 26,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/FinishedJobs.java",
+    "line": 137,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/FinishedJobs.java",
+    "line": 176,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/FinishedJobs.java",
+    "line": 208,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/FinishedJobs.java",
+    "line": 275,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/FinishedJobs.java",
+    "line": 314,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/FinishedJobs.java",
+    "line": 341,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/GroupInfo.java",
+    "line": 35,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/GroupInfo.java",
+    "line": 45,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/GroupInfo.java",
+    "line": 75,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/GroupInfo.java",
+    "line": 92,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/GroupInfo.java",
+    "line": 118,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/GroupInfo.java",
+    "line": 136,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/GroupInfo.java",
+    "line": 154,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/GroupInfo.java",
+    "line": 167,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressManager.java",
+    "line": 331,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressManager.java",
+    "line": 464,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressManager.java",
+    "line": 483,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressManager.java",
+    "line": 508,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressManager.java",
+    "line": 628,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressManager.java",
+    "line": 643,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressManager.java",
+    "line": 660,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressMonitorFocusJobDialog.java",
+    "line": 319,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressMonitorFocusJobDialog.java",
+    "line": 332,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressViewUpdater.java",
+    "line": 102,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressViewUpdater.java",
+    "line": 158,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressViewUpdater.java",
+    "line": 176,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressViewUpdater.java",
+    "line": 190,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressViewUpdater.java",
+    "line": 201,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressViewUpdater.java",
+    "line": 212,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressViewUpdater.java",
+    "line": 223,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressViewUpdater.java",
+    "line": 242,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/ProgressViewUpdater.java",
+    "line": 261,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/WorkbenchSiteProgressService.java",
+    "line": 129,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/WorkbenchSiteProgressService.java",
+    "line": 159,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/WorkbenchSiteProgressService.java",
+    "line": 226,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/WorkbenchSiteProgressService.java",
+    "line": 245,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/WorkbenchSiteProgressService.java",
+    "line": 274,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/progress/WorkbenchSiteProgressService.java",
+    "line": 295,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/registry/EditorDescriptor.java",
+    "line": 156,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  },
+  {
+    "file": "org/eclipse/ui/internal/registry/EditorDescriptor.java",
+    "line": 200,
+    "text": "* WARNING - Removed try catching itself - possible behaviour change."
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xml.resolver_1.2.0.v201005080400.jar",
+  "sha256": "5639f48666197185cfc6e179a4c2609155f1e64cdae57560d9221b0034cf88f3",
+  "kind": "java",
+  "output": "unpacked/java/5639f48666197185_org.apache.xml.resolver_1.2.0.v201005080400.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 30,
+  "input_classes": 30,
+  "warning_lines": 2,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.apache.xml.resolver_1.2.0.v201005080400.jar"
+  ],
+  "top_level_classes_checked": 30,
+  "missing_top_level_java_files": 0
+}

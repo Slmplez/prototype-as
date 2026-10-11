@@ -1,0 +1,16 @@
+{
+  "source": "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.sphinx.platform_0.7.0.201302172347.jar",
+  "sha256": "eb5dd70fe1f874f724e42bebcf81e5b320c38d0a965c2991db1850dff9eb99d0",
+  "kind": "java",
+  "output": "unpacked/java/eb5dd70fe1f874f7_org.eclipse.sphinx.platform_0.7.0.201302172347.jar",
+  "exit_code": 0,
+  "status": "partial",
+  "source_files": 43,
+  "input_classes": 55,
+  "warning_lines": 5,
+  "aliases": [
+    "unpacked/installation/Tools/AutosarToAscetImporter/plugins/org.eclipse.sphinx.platform_0.7.0.201302172347.jar"
+  ],
+  "top_level_classes_checked": 43,
+  "missing_top_level_java_files": 0
+}
