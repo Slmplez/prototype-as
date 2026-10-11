@@ -11,6 +11,9 @@ try {
   assert.equal(ready.result.open, false, 'Fixture experiment must be closed before this test.');
   await assert.rejects(b.request('configuration'), (e: any) => e.code === 'PRECONDITION_FAILED' && e.message === 'NO_EXPERIMENT' && !e.outcomeUnknown);
   assert.equal((await b.request('inspect')).result.open, false);
+  for (const args of [['unused', '3', '0', 'values', '0', '-1', 'NaN'], ['unused', '3', '0', 'evaluate:', '0', '-1', '1'], ['unused', '3', '0', 'values', '-1', '-1', '1'], ['unused', '4096', '2', 'values', '0', '0', '1']])
+    await assert.rejects(b.request('write_data', args), (e: any) => e.code === 'INVALID_ARGUMENT' && !e.outcomeUnknown);
+  report.checks.push('raw structured mutations reject invalid shape/index, selector text and nonfinite values before dispatch');
   await assert.rejects(b.request('step', ['Condition', 'true']), (e: any) => e.code === 'INVALID_ARGUMENT');
   for (const value of ['self halt', 'AEB_On\n', 'true.', 'NaN', 'Infinity'])
     await assert.rejects(b.request('write', ['physical', 'unused', value]), (e: any) => e.code === 'INVALID_ARGUMENT' && !e.outcomeUnknown);
@@ -29,7 +32,7 @@ try {
   assert.equal(a.result.configurationStamp, actual.configurationStamp);
   const chained = await b.request('stimulus', ['in/compute', 'constant', '.5', '1', '1', '0', a.result.configurationStamp]);
   assert.equal(chained.result.stimuli.find((x: any) => x.channel === 'in/compute').offset, .5);
-  await assert.rejects(b.request('save', [stamp, 'environment_only']), (e: any) => e.code === 'PRECONDITION_FAILED' && e.message === 'CONFIGURATION_CHANGED' && !e.outcomeUnknown);
+  await assert.rejects(b.request('save', [a.result.configurationStamp, 'environment_only']), (e: any) => e.code === 'PRECONDITION_FAILED' && e.message === 'CONFIGURATION_CHANGED' && !e.outcomeUnknown);
   const saved = await b.request('save', [chained.result.configurationStamp, 'environment_only']);
   assert.equal(saved.result.databaseCommitted, false);
   report.checks.push('save compares the native stamp and commits the database only when explicitly requested');

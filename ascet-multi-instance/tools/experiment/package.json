@@ -1,6 +1,6 @@
 {
   "name": "@ascet/experiment-tools",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": { "node": ">=22" },
@@ -16,6 +16,8 @@
     "verify:class": "npm run build:ts && node dist/scripts/verify-class.js",
     "verify:aeb": "npm run build && node dist/scripts/verify-aeb.js",
     "verify:aeb-behavior": "npm run build && node dist/scripts/verify-aeb-behavior.js",
+    "verify:enhanced": "npm run build && node dist/scripts/verify-enhanced.js",
+    "verify:structured": "npm run build && node dist/scripts/verify-structured.js",
     "probe:component": "npm run build:ts && node dist/scripts/probe-component.js",
     "verify:mcp": "npm run build:ts && node dist/scripts/verify-mcp.js",
     "verify:guards": "npm run build && node dist/scripts/verify-native-guards.js"

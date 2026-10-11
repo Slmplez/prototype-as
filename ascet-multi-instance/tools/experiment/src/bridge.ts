@@ -74,7 +74,7 @@ export class Bridge implements NativeClient {
       if (this.dead) throw new ToolError('SESSION_INVALID', 'Connection invalidated; request was not dispatched.', false, this.dead.message);
       return new Promise<any>((yes, no) => {
         const id = randomUUID();
-        this.pending = { id, mutating: !['inspect', 'read', 'signals', 'catalog', 'configuration', 'quit'].includes(op), resolve: yes, reject: no, timer: setTimeout(() => this.fail('NATIVE_TIMEOUT', 'Dispatched operation timed out. ASCET may still be executing; no automatic replay.'), timeoutMs) };
+        this.pending = { id, mutating: !['inspect', 'read', 'read_data', 'signals', 'catalog', 'configuration', 'quit'].includes(op), resolve: yes, reject: no, timer: setTimeout(() => this.fail('NATIVE_TIMEOUT', 'Dispatched operation timed out. ASCET may still be executing; no automatic replay.'), timeoutMs) };
         this.child.stdin.write(JSON.stringify({ id, op, args }) + '\n');
       });
     });

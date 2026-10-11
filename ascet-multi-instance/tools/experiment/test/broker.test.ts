@@ -221,3 +221,21 @@ test('database commit is explicit and both saves and stimulus creation have dura
   assert.equal(rows.filter(row => row.phase === 'observed').length, 3);
   await f.broker.close();
 });
+
+test('staged cases apply inputs in order, run actual durations and persist temporal evidence', async () => {
+  const f = await fixture();
+  const ref = f.signals[0].signalRef;
+  const submitted = await f.invoke('exp_run_case', { requestId: 'stages', caseSpec: {
+    initialization: 'preserve', signalRefs: [ref], writes: [{ signalRef: ref, value: 0 }],
+    stages: [{ name: 'on', durationSeconds: .03, sampleSeconds: .01, writes: [{ signalRef: ref, value: 1 }] }, { name: 'off', durationSeconds: .02, sampleSeconds: .01, writes: [{ signalRef: ref, value: 0 }] }],
+    assertions: [{ signalRef: ref, kind: 'hold', condition: { equals: 1 }, durationSeconds: .03 }, { signalRef: ref, kind: 'transition', states: [0, 1, 0] }]
+  } });
+  assert.equal(submitted.ok, true);
+  let job; do { await delay(5); job = await f.broker.call('exp_job', { jobId: submitted.jobId, action: 'get' }); } while (['running', 'queued'].includes(job.status));
+  assert.equal(job.status, 'completed', JSON.stringify(job));
+  const run = await f.broker.call('exp_results', { runId: submitted.runId });
+  assert.equal(run.stages.length, 2); assert.ok(run.assertions.every((c: any) => c.passed));
+  assert.equal(f.fake.value, 0); assert.equal(f.fake.operations.filter(op => op === 'step').length, 5);
+  assert.equal(run.completeWaveform, false); assert.equal(run.sampling.assertionsEstablishContinuousBehavior, false);
+  await f.broker.close();
+});

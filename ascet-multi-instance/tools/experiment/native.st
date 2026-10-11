@@ -2,7 +2,7 @@
 boundView := AaaManagement instance currentExperiment.
 boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simController simEnvironment].
 [:api :operation :input |
-    | result out encode view controller environment simulator service stage errorCode errorText args token values readValue logger guard configurationStamp |
+    | result out encode view controller environment simulator service stage errorCode errorText args token values readValue logger guard configurationStamp dataKind dataShape dataSnapshot |
     stage := operation.
     api handleExceptionsIn: [
         guard := [:condition :code | condition ifFalse: [stage := 'guard/', code. api error: code]].
@@ -24,10 +24,39 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
                 ifFalse: [guard value: environment isOffline value: 'OFFLINE_ONLY']
         ].
         (#('inspect' 'catalog' 'open') includes: operation) ifFalse: [guard value: view notNil value: 'NO_EXPERIMENT'].
-        (#('write' 'stimulus' 'event' 'create_stimulus' 'parameters' 'step' 'save') includes: operation) ifTrue: [
+        (#('write' 'write_data' 'read_data' 'stimulus' 'event' 'create_stimulus' 'parameters' 'step' 'save') includes: operation) ifTrue: [
             guard value: (controller isSimPause or: [controller isSimOff]) value: 'REQUIRES_PAUSED_OR_STOPPED'
         ].
-        operation = 'write' ifTrue: [guard value: controller isSimPause value: 'WRITE_REQUIRES_PAUSED_TO_PRESERVE_VALUES'].
+        (#('write' 'write_data') includes: operation) ifTrue: [guard value: controller isSimPause value: 'WRITE_REQUIRES_PAUSED_TO_PRESERVE_VALUES'].
+        dataKind := [:data |
+            (data isKindOf: RBTwoDStaticCharTable) ifTrue: ['map'] ifFalse: [
+            (data isKindOf: RBOneDStaticCharTable) ifTrue: ['curve'] ifFalse: [
+            (data isKindOf: RBDataMatrix) ifTrue: ['matrix'] ifFalse: [
+            (data isKindOf: RBDataVector) ifTrue: ['array'] ifFalse: [
+            data isVectoredType ifTrue: ['unsupported'] ifFalse: ['scalar']]]]]
+        ].
+        dataShape := [:data | | kind |
+            kind := dataKind value: data.
+            (#('map' 'matrix') includes: kind) ifTrue: [Array with: data xSize with: data ySize] ifFalse: [
+            (#('curve' 'array') includes: kind) ifTrue: [Array with: data xSize] ifFalse: [Array new]]
+        ].
+        dataSnapshot := [:data | | kind shape rows axes |
+            kind := dataKind value: data. shape := dataShape value: data.
+            guard value: (#('array' 'matrix' 'curve' 'map') includes: kind) value: 'STRUCTURED_DATA_REQUIRED'.
+            guard value: (shape first * (shape size = 2 ifTrue: [shape last] ifFalse: [1]) <= 4096) value: 'DATA_TOO_LARGE'.
+            rows := OrderedCollection new. axes := Dictionary new.
+            (#('curve' 'map') includes: kind) ifTrue: [
+                data values readOnlineData. data xDistribution readOnlineData.
+                axes at: 'xAxis' put: data getXValues asArray.
+                kind = 'map' ifTrue: [data yDistribution readOnlineData. axes at: 'yAxis' put: data getYValues asArray]
+            ] ifFalse: [data readOnlineData].
+            1 to: shape first do: [:x |
+                shape size = 2 ifTrue: [ | row | row := OrderedCollection new.
+                    1 to: shape last do: [:y | row add: (kind = 'map' ifTrue: [data values physAt: x at: y] ifFalse: [data physAt: x at: y])]. rows add: row
+                ] ifFalse: [rows add: (kind = 'curve' ifTrue: [data physValueAtIndex: x] ifFalse: [data physAt: x])]
+            ].
+            Dictionary new at: 'kind' put: kind; at: 'shape' put: shape; at: 'values' put: rows; at: 'axes' put: axes; yourself
+        ].
         configurationStamp := [view isNil ifTrue: [''] ifFalse: [
             | stream |
             stream := WriteStream on: (String new: 1024).
@@ -83,9 +112,71 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
             (args at: 1) = 'save' ifTrue: [service saveParameters: (args at: 2)]
         ].
         operation = 'record' ifTrue: [
+            logger := AaaManagement instance currentDataLogger.
+            guard value: logger notNil value: 'NO_DATA_LOGGER'.
+            (args at: 1) = 'set_output' ifTrue: [guard value: logger uiController logging not value: 'LOGGER_ACTIVE'].
+            (args at: 1) = 'configure' ifTrue: [ | datas previous |
+                guard value: (controller isSimPause or: [controller isSimOff]) value: 'REQUIRES_PAUSED_OR_STOPPED'.
+                guard value: logger uiController logging not value: 'LOGGER_ACTIVE'.
+                datas := OrderedCollection new. previous := OrderedCollection new.
+                logger uiController logDatas do: [:old | environment labelTable keysAndValuesDo: [:label :node |
+                    (node isReadable and: [(environment getSimInstanceForNode: node) == old]) ifTrue: [previous add: label]
+                ]].
+                2 to: args size do: [:i | | data |
+                    data := service getReadableDataElementForExperimentLabel: (args at: i).
+                    guard value: (service getLastErrorNumber = 0 and: [(dataKind value: data) = 'scalar']) value: 'LOGGER_SCALAR_REQUIRED'.
+                    datas add: data
+                ].
+                service suppressDialogsAndExecInUI: [logger uiController removeAllLogData. logger uiController logDatas: (SortedCollection new sortBlock: [:a :b | a wName <= b wName]). datas do: [:data | logger uiController addLogData: data]].
+                result at: 'previousChannels' put: previous.
+                result at: 'channelsConfigured' put: (logger uiController getUsedChannels = datas size)
+            ].
             (args at: 1) = 'set_output' ifTrue: [service setDataLoggerFile: (args at: 2)].
             (args at: 1) = 'start' ifTrue: [service startDataLogging].
             (args at: 1) = 'stop' ifTrue: [service stopDataLogging]
+        ].
+        (#('read_data' 'write_data') includes: operation) ifTrue: [ | data snapshot shape |
+            data := operation = 'write_data' ifTrue: [service getWriteableDataElementForExperimentLabel: args first] ifFalse: [service getReadableDataElementForExperimentLabel: args first].
+            guard value: (service getLastErrorNumber = 0) value: 'DATA_NOT_ACCESSIBLE'.
+            snapshot := dataSnapshot value: data. shape := snapshot at: 'shape'.
+            operation = 'write_data' ifTrue: [ | cells proposed seen continue kind |
+                guard value: (shape first = (args at: 2) asNumber and: [(shape size = 2 ifTrue: [shape last] ifFalse: [0]) = (args at: 3) asNumber]) value: 'DATA_SHAPE_CHANGED'.
+                cells := OrderedCollection new. proposed := Dictionary new. seen := Set new. kind := snapshot at: 'kind'.
+                (snapshot at: 'axes') keysAndValuesDo: [:key :axis | proposed at: key put: axis copy].
+                4 to: args size by: 4 do: [:i | | part x y value key target physical |
+                    part := args at: i. x := (args at: i + 1) asNumber. y := (args at: i + 2) asNumber. value := (args at: i + 3) asFloat.
+                    key := part, ':', x printString, ':', y printString.
+                    guard value: (seen includes: key) not value: 'DUPLICATE_CELL'. seen add: key.
+                    part = 'values' ifTrue: [
+                        guard value: (x >= 0 and: [x < shape first and: [shape size = 2 ifTrue: [y >= 0 and: [y < shape last]] ifFalse: [y = -1]]]) value: 'CELL_INDEX_OUT_OF_BOUNDS'.
+                        target := (#('curve' 'map') includes: kind) ifTrue: [data values] ifFalse: [data]
+                    ] ifFalse: [
+                        guard value: (proposed includesKey: part) value: 'AXIS_NOT_AVAILABLE'.
+                        guard value: (y = -1 and: [x >= 0 and: [x < (proposed at: part) size]]) value: 'AXIS_INDEX_OUT_OF_BOUNDS'.
+                        target := part = 'xAxis' ifTrue: [data xDistribution] ifFalse: [data yDistribution]
+                    ].
+                    guard value: (target getPhysInterval contains: value) value: 'VALUE_OUT_OF_INTERVAL'.
+                    physical := target getPhysValue: (target getImplValue: value).
+                    part ~= 'values' ifTrue: [(proposed at: part) at: x + 1 put: physical].
+                    cells add: (Dictionary new at: 'part' put: part; at: 'x' put: x; at: 'y' put: y; at: 'requested' put: value; at: 'status' put: 'notAttempted'; yourself)
+                ].
+                proposed values do: [:axis | 2 to: axis size do: [:i | guard value: ((axis at: i) > (axis at: i - 1)) value: 'AXIS_MUST_INCREASE']].
+                continue := true.
+                cells do: [:cell | continue ifTrue: [ | part x y target |
+                    part := cell at: 'part'. x := (cell at: 'x') + 1. y := (cell at: 'y') + 1.
+                    api handleExceptionsIn: [
+                        part = 'values' ifTrue: [
+                            (#('curve' 'map') includes: kind) ifTrue: [target := data values] ifFalse: [target := data].
+                            shape size = 2 ifTrue: [target at: x at: y putPhys: (cell at: 'requested'). cell at: 'after' put: (target physAt: x at: y)] ifFalse: [target at: x putPhys: (cell at: 'requested'). cell at: 'after' put: (target physAt: x)]
+                        ] ifFalse: [
+                            target := part = 'xAxis' ifTrue: [data xDistribution] ifFalse: [data yDistribution].
+                            target at: x putPhys: (cell at: 'requested'). cell at: 'after' put: (target physAt: x)
+                        ]. cell at: 'status' put: 'applied'
+                    ] ifFail: [:e | cell at: 'status' put: 'failed'; at: 'error' put: e printString. continue := false]
+                ]].
+                result at: 'cells' put: cells.
+                snapshot := dataSnapshot value: data
+            ]. result at: 'data' put: snapshot. AaaResult reset
         ].
         readValue := [:label |
             | value |
@@ -95,6 +186,10 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
                 at: 'code' put: service getLastErrorNumber; at: 'message' put: service getLastErrorText; yourself
         ].
         operation = 'read' ifTrue: [
+            2 to: args size do: [:i | | data |
+                data := service getReadableDataElementForExperimentLabel: (args at: i).
+                guard value: (service getLastErrorNumber = 0 and: [(dataKind value: data) = 'scalar']) value: 'SCALAR_READ_REQUIRED'
+            ].
             result at: 'timeBefore' put: simulator actualSimTime.
             values := OrderedCollection new.
             2 to: args size do: [:i | values add: (readValue value: (args at: i))].
@@ -107,7 +202,7 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
                 | data |
                 AaaResult reset. data := service getWriteableDataElementForExperimentLabel: (args at: i).
                 service getLastErrorNumber ~= 0 ifTrue: [valid := false].
-                service getLastErrorNumber = 0 ifTrue: [data isVectoredType ifTrue: [valid := false]].
+                service getLastErrorNumber = 0 ifTrue: [(dataKind value: data) ~= 'scalar' ifTrue: [valid := false]].
                 rows add: (Dictionary new at: 'label' put: (args at: i); at: 'requested' put: (args at: i + 1);
                     at: 'validationCode' put: service getLastErrorNumber; at: 'status' put: 'notAttempted'; yourself)
             ].
@@ -165,7 +260,7 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
             node := environment labelTable at: (args at: 3) ifAbsent: [nil].
             guard value: node notNil value: 'SIGNAL_NOT_FOUND'.
             data := environment getSimInstanceForNode: node.
-            guard value: data isVectoredType not value: 'SCALAR_STIMULUS_ONLY'.
+            guard value: ((dataKind value: data) = 'scalar') value: 'SCALAR_STIMULUS_ONLY'.
             service suppressDialogsAndExecInUI: [
                 environment createDataChannel: (Association key: (args at: 2) value: node).
                 channel := controller dataChannels at: (args at: 2).
@@ -232,7 +327,8 @@ boundEnvironment := boundView isNil ifTrue: [nil] ifFalse: [boundView simControl
                             data := environment getSimInstanceForNode: node.
                             rows add: (Dictionary new at: 'label' put: label; at: 'displayLabel' put: label asASDSimLabel;
                                 at: 'readable' put: readable; at: 'calibratable' put: writable;
-                                at: 'scalar' put: data isVectoredType not; yourself)
+                                at: 'dataKind' put: (dataKind value: data); at: 'shape' put: (dataShape value: data);
+                                at: 'scalar' put: ((dataKind value: data) = 'scalar'); yourself)
                         ]. count := count + 1
                     ]
                 ]. result at: 'signals' put: rows; at: 'total' put: count

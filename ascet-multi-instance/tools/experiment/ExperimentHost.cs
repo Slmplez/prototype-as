@@ -33,7 +33,7 @@ internal static class ExperimentHost
     static TextWriter Output;
     static readonly HashSet<string> Operations = new HashSet<string> {
         "inspect", "catalog", "signals", "open", "close", "start", "pause", "stop", "step",
-        "read", "write", "parameters", "record", "configuration", "stimulus", "event", "create_stimulus", "save",
+        "read", "write", "read_data", "write_data", "parameters", "record", "configuration", "stimulus", "event", "create_stimulus", "save",
         "start_os", "stop_os", "start_measurement", "stop_measurement"
     };
         [DllImport("iphlpapi.dll", SetLastError = true)]
@@ -370,13 +370,25 @@ internal static class ExperimentHost
             || (op == "stimulus" && n == 7 && (args[1] == "constant" || args[1] == "pulse"))
             || (op == "read" && n >= 2 && n <= 129 && (args[0] == "physical" || args[0] == "hex"))
             || (op == "write" && n >= 3 && n <= 129 && n % 2 == 1 && args[0] == "physical")
+            || (op == "read_data" && n == 1)
+            || (op == "write_data" && n >= 7 && n <= 2051 && (n - 3) % 4 == 0)
             || (op == "step" && n == 2 && (args[0] == "Steps" || args[0] == "Seconds"))
             || (op == "parameters" && ((n == 1 && new HashSet<string> { "reset_variables", "reset_parameters", "update_dependent" }.Contains(args[0])) || (n == 2 && (args[0] == "load" || args[0] == "save"))))
-            || (op == "record" && ((n == 1 && (args[0] == "start" || args[0] == "stop")) || (n == 2 && args[0] == "set_output")))
+            || (op == "record" && ((n == 1 && (args[0] == "start" || args[0] == "stop")) || (n == 2 && args[0] == "set_output") || (n >= 2 && n <= 129 && args[0] == "configure")))
             || ((op == "start_os" || op == "stop_os" || op == "start_measurement" || op == "stop_measurement") && n == 0)
             || (op == "event" && n >= 4 && n % 2 == 0 && new HashSet<string> { "enabled", "Delay", "Phase", "Prio", "Mode" }.Contains(args[2]))
             || (op == "create_stimulus" && n == 8 && (args[3] == "constant" || args[3] == "pulse"));
         if (!valid) throw new ArgumentException("Unsupported operation arguments");
+        if (op == "write_data")
+        {
+            int x, y;
+            if (!Int32.TryParse(args[1], out x) || x < 1 || x > 4096 || !Int32.TryParse(args[2], out y) || y < 0 || y > 4096 || x * Math.Max(1, y) > 4096) throw new ArgumentException("Invalid structured shape");
+            for (int i = 3; i < n; i += 4)
+            {
+                double value;
+                if (!new HashSet<string> { "values", "xAxis", "yAxis" }.Contains(args[i]) || !Int32.TryParse(args[i + 1], out x) || x < 0 || x > 4095 || !Int32.TryParse(args[i + 2], out y) || y < -1 || y > 4095 || !Double.TryParse(args[i + 3], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out value) || Double.IsNaN(value) || Double.IsInfinity(value)) throw new ArgumentException("Invalid structured cell");
+            }
+        }
         if (op == "step")
         {
             double value;

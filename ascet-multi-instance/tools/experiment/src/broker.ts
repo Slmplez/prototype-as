@@ -4,21 +4,24 @@ import { isAbsolute, resolve, join } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 import { Bridge, ROOT, ToolError, type NativeClient, type Snapshot, type NativeReply } from './bridge.js';
 import { validate } from './contracts.js';
+import { normalizeCase, evaluateAssertions } from './cases.js';
+import { parseMdf, previewWaveform } from './waveform.js';
 
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const stamp = () => new Date().toISOString();
-const mutations = new Set(['open', 'close', 'start', 'pause', 'stop', 'start_os', 'stop_os', 'start_measurement', 'stop_measurement', 'step', 'write', 'stimulus', 'create_stimulus', 'event', 'save', 'parameters', 'record']);
-type Signal = { signalRef: string; label: string; epoch: number; scalar: boolean; calibratable: boolean; readable: boolean; displayLabel: string };
+const mutations = new Set(['open', 'close', 'start', 'pause', 'stop', 'start_os', 'stop_os', 'start_measurement', 'stop_measurement', 'step', 'write', 'write_data', 'stimulus', 'create_stimulus', 'event', 'save', 'parameters', 'record']);
+type Signal = { signalRef: string; label: string; epoch: number; scalar: boolean; dataKind?: string; calibratable: boolean; readable: boolean; displayLabel: string };
 type Session = { id: string; client: NativeClient; snapshot: Snapshot; epoch: number; refs: Map<string, Signal>; tail: Promise<unknown>; busyJob?: string; invalid?: boolean };
 type Job = { jobId: string; runId: string; sessionId: string; requestId: string; fingerprint: string; status: string; stage: string; completedChunks: number; requestedChunks: number; cancelRequested: boolean; submittedAt: string; error?: any; result?: any };
 export const capabilities = {
   offlinePC: true, nativeBatchRead: true, scalarCalibration: true, boundedStep: true,
   existingNumericStimuli: ['constant', 'pulse'], configurationRead: true,
   snapshotCases: true, cooperativeCaseCancellation: true,
-  online: false, onlineControlAdapter: true, arrays: false, conditionStep: true, hardCancellation: false,
+  online: false, onlineControlAdapter: true, arrays: true, matrices: true, curves: true, conditionStep: true, hardCancellation: false,
   createStimulusChannel: true, eventEditing: true, configurationSave: true,
-  nativeRecordingControl: true, nativeLogParsing: false,
-  dcmRoundTripVerified: false,
+  nativeRecordingControl: true, nativeLogParsing: ['MDF2', 'MDF3'], recordingChannelConfiguration: true,
+  stagedCases: true, temporalAssertions: ['final', 'range', 'eventually', 'hold', 'transition'],
+  dcmRoundTripVerified: true,
 };
 export class Broker {
   private sessions = new Map<string, Session>();
@@ -40,6 +43,13 @@ export class Broker {
       if (name === 'exp_attach') result = await this.attach(args);
       else if (name === 'exp_job') result = await this.job(args);
       else if (name === 'exp_results') result = await this.results(args);
+      else if (name === 'exp_waveform') {
+        const file = await this.fileArtifact(args.path, 64 * 1024 * 1024);
+        const parsed = parseMdf(file.bytes);
+        const artifact = file.sha256 + '.json';
+        await this.persist(join(this.artifactRoot, 'waveforms'), artifact, { ...parsed, source: file.metadata });
+        result = { ...previewWaveform(parsed, args.maxPoints ?? 200), source: file.metadata, rawArtifact: join(this.artifactRoot, 'waveforms', artifact), metricsScope: 'all_records_before_downsampling' };
+      }
       else {
         const session = this.sessions.get(args.sessionId);
         if (!session || (session.invalid && name !== 'exp_detach')) throw new ToolError('SESSION_INVALID', 'Detach the invalid session, then attach explicitly and inspect.');
@@ -110,12 +120,26 @@ export class Broker {
       return this.envelope(s, { capabilities, processStart: ready.started, journal: join(this.artifactRoot, id, 'operations.jsonl') });
     } catch (e) { this.reservations.delete(key); await client?.close(); throw e; }
   }
-  private signal(s: Session, ref: string, writable = false): Signal {
+  private signal(s: Session, ref: string, writable = false, scalar = true): Signal {
     const item = s.refs.get(ref);
     if (!item || item.epoch !== s.epoch) throw new ToolError('STALE_SIGNAL_REF', 'Rediscover signals in the current experiment.');
-    if (!item.scalar) throw new ToolError('SCALAR_ONLY', 'Array and matrix operations are disabled.');
+    if (scalar && !item.scalar) throw new ToolError('SCALAR_ONLY', 'Use exp_read_data / exp_write_data for structured values.');
     if (writable && !item.calibratable) throw new ToolError('NOT_CALIBRATABLE', item.label);
     return item;
+  }
+  private async fileArtifact(path: string, maxBytes = 16 * 1024 * 1024) {
+    if (!isAbsolute(path)) throw new ToolError('ABSOLUTE_PATH_REQUIRED', path);
+    const f = await open(path, 'r');
+    try {
+      const before = await f.stat();
+      if (!before.isFile() || before.size > maxBytes) throw new ToolError('FILE_TOO_LARGE', 'File exceeds bounded parser size.');
+      const bytes = Buffer.alloc(before.size); let read = 0;
+      while (read < bytes.length) { const chunk = await f.read(bytes, read, bytes.length - read, read); if (!chunk.bytesRead) break; read += chunk.bytesRead; }
+      const after = await f.stat();
+      if (before.size !== after.size || before.mtimeMs !== after.mtimeMs || read !== before.size) throw new ToolError('FILE_CHANGED', 'File is still being written.');
+      const sha256 = createHash('sha256').update(bytes).digest('hex');
+      return { bytes, sha256, metadata: { path: resolve(path), bytes: bytes.length, sha256 } };
+    } finally { await f.close(); }
   }
   private async read(s: Session, refs: string[], representation = 'physical') {
     const items = refs.map(ref => this.signal(s, ref));
@@ -212,14 +236,30 @@ export class Broker {
       }
       case 'exp_read': return this.envelope(s, await this.read(s, a.signalRefs, a.representation));
       case 'exp_write': return this.envelope(s, await this.write(s, a.writes));
+      case 'exp_read_data': {
+        const item = this.signal(s, a.signalRef, false, false);
+        const r = await this.native(s, 'read_data', [item.label]);
+        return this.envelope(s, { signalRef: item.signalRef, data: r.result.data, consistency: 'quiescent', indexBase: 0, nativeMs: r.nativeMs });
+      }
+      case 'exp_write_data': {
+        const item = this.signal(s, a.signalRef, true, false);
+        const r = await this.native(s, 'write_data', [item.label, String(a.shape[0]), String(a.shape[1] ?? 0), ...a.cells.flatMap((c: any) => [c.part, String(c.index[0]), String(c.index[1] ?? -1), String(c.value)])]);
+        if (r.result.cells.some((c: any) => c.status !== 'applied')) throw new ToolError('PARTIAL_OR_REJECTED_WRITE', 'Inspect cell outcomes; no automatic replay.', false, r.result);
+        return this.envelope(s, { signalRef: item.signalRef, data: r.result.data, cells: r.result.cells.map((c: any, i: number) => ({ ...c, matchesRequested: Number(c.after) === a.cells[i].value })), indexBase: 0, nativeMs: r.nativeMs });
+      }
       case 'exp_parameters': {
+        if (a.expected) this.validateWrites(s, a.expected);
+        let artifact: any;
         if (a.path) {
           if (!isAbsolute(a.path)) throw new ToolError('ABSOLUTE_PATH_REQUIRED', a.path);
-          if (a.action === 'load') await access(a.path);
+          if (a.action === 'load') { artifact = await this.fileArtifact(a.path); if (!/KONSERVIERUNG_FORMAT\s+[12]\.0/.test(artifact.bytes.toString('latin1'))) throw new ToolError('INVALID_DCM', 'DCM header is missing.'); }
           else { try { await access(a.path); throw new ToolError('FILE_EXISTS', 'Parameter save refuses to overwrite an existing file.'); } catch (e: any) { if (e.code !== 'ENOENT') throw e; } }
         }
-        const r = await this.native(s, 'parameters', a.path ? [a.action, a.path] : [a.action]);
-        return this.envelope(s, { action: a.action, path: a.path }, r.nativeMs);
+        const r = await this.native(s, 'parameters', a.path ? [a.action, a.path] : [a.action], a.path ? 60_000 : 5000);
+        if (a.action === 'save') { artifact = await this.fileArtifact(a.path); if (!/KONSERVIERUNG_FORMAT\s+[12]\.0/.test(artifact.bytes.toString('latin1'))) throw new ToolError('INVALID_DCM_EXPORT', 'Export did not produce a DCM file.'); }
+        const verification = a.expected ? (await this.read(s, a.expected.map((w: any) => w.signalRef))).values.map((v: any, i: number) => ({ signalRef: v.signalRef, expected: a.expected[i].value, actual: v.value, passed: String(a.expected[i].value) === v.value })) : [];
+        if (verification.some((v: any) => !v.passed)) throw new ToolError('PARAMETER_READBACK_MISMATCH', 'DCM import returned, but requested readback did not match.', false, { artifact: artifact.metadata, verification });
+        return this.envelope(s, { action: a.action, path: a.path, artifact: artifact?.metadata, verification, importScope: a.action === 'load' ? 'native_import_with_selected_readback' : undefined }, r.nativeMs);
       }
       case 'exp_control': {
         const r = await this.native(s, a.action);
@@ -230,6 +270,12 @@ export class Broker {
       }
       case 'exp_step': return this.envelope(s, a.mode === 'condition' ? await this.conditionStep(s, a) : await this.step(s, a.mode, a.value, a.maxWallTimeMs));
       case 'exp_record': {
+        if (a.action === 'configure') {
+          const items = a.signalRefs.map((ref: string) => this.signal(s, ref));
+          const r = await this.native(s, 'record', ['configure', ...items.map((i: Signal) => i.label)]);
+          if (!r.result.channelsConfigured) throw new ToolError('LOGGER_CHANNEL_READBACK_MISMATCH', 'Inspect recorder; channel configuration may be partially applied.', false, r.result);
+          return this.envelope(s, { recording: r.result.recording, previousChannels: r.result.previousChannels, action: a.action }, r.nativeMs);
+        }
         if (a.action === 'set_output') {
           if (!isAbsolute(a.path)) throw new ToolError('ABSOLUTE_PATH_REQUIRED', a.path);
           try { await access(a.path); throw new ToolError('FILE_EXISTS', 'Recording output refuses to overwrite an existing file.'); } catch (e: any) { if (e.code !== 'ENOENT') throw e; }
@@ -237,8 +283,13 @@ export class Broker {
           return this.envelope(s, { recording: r.result.recording, action: a.action }, r.nativeMs);
         }
         if (a.action === 'start' || a.action === 'stop') {
+          const before = (await this.native(s, 'inspect')).result.recording;
+          if (a.action === 'start' && before?.logging === false && before.file) {
+            try { await access(before.file); throw new ToolError('FILE_EXISTS', 'Recorder output already exists; set a fresh output path.'); } catch (e: any) { if (e.code !== 'ENOENT') throw e; }
+          }
           const r = await this.native(s, 'record', [a.action]);
-          return this.envelope(s, { recording: r.result.recording, action: a.action }, r.nativeMs);
+          const artifact = a.action === 'stop' && before?.logging === true && before.file ? (await this.fileArtifact(before.file, 64 * 1024 * 1024)).metadata : undefined;
+          return this.envelope(s, { recording: r.result.recording, action: a.action, artifact }, r.nativeMs);
         }
         const r = await this.native(s, 'inspect'); return this.envelope(s, { recording: r.result.recording, nativeRecordingControl: true }, r.nativeMs);
       }
@@ -319,10 +370,13 @@ export class Broker {
     }
     spec.signalRefs.forEach((r: string) => this.signal(s, r));
     if (spec.writes) this.validateWrites(s, spec.writes);
+    const normalized = normalizeCase(spec);
+    for (const stage of normalized.stages) if (stage.writes) this.validateWrites(s, stage.writes);
     for (const check of spec.assertions ?? []) {
-      if (!spec.signalRefs.includes(check.signalRef) || check.min > check.max) throw new ToolError('INVALID_ASSERTION', 'Assertions require selected signals and min <= max.');
+      const condition = check.condition ?? check;
+      if (!spec.signalRefs.includes(check.signalRef) || condition.min > condition.max || (check.fromSeconds ?? 0) > (check.toSeconds ?? Infinity) || check.toSeconds > normalized.stages.reduce((sum: number, st: any) => sum + st.durationSeconds, 0) + 1e-9 || (check.kind === 'transition' && check.states.some((v: any, i: number) => i && v === check.states[i - 1]))) throw new ToolError('INVALID_ASSERTION', 'Select asserted signals; validate ranges, time windows and distinct consecutive states.');
     }
-    const job: Job = { jobId, runId: jobId, sessionId: s.id, requestId: a.requestId, fingerprint, status: 'queued', stage: 'queued', completedChunks: 0, requestedChunks: spec.chunks, cancelRequested: false, submittedAt: stamp() };
+    const job: Job = { jobId, runId: jobId, sessionId: s.id, requestId: a.requestId, fingerprint, status: 'queued', stage: 'queued', completedChunks: 0, requestedChunks: spec.chunks ?? normalized.estimated, cancelRequested: false, submittedAt: stamp() };
     await this.saveJob(job); this.jobs.set(jobId, job); s.busyJob = jobId;
     void this.enqueue(s, () => this.runCase(s, job, spec));
     return { jobId, runId: jobId, status: 'queued' };
@@ -340,6 +394,14 @@ export class Broker {
       if (!Object.entries(config.events.EventSimChannels).some(([name, v]: [string, any]) => name !== 'generateData' && v.enabled)) throw new ToolError('NO_ACTIVE_MODEL_EVENTS', 'No enabled model events.');
       if (!['stopped', 'paused'].includes(config.state ?? '')) throw new ToolError('CASE_REQUIRES_QUIESCENT', 'Pause or stop before running a case.');
       if (spec.initialization === 'preserve' && config.state !== 'paused') throw new ToolError('PRESERVE_REQUIRES_PAUSED', 'First step from stopped can auto-initialize.');
+      for (const stage of normalizeCase(spec).stages) {
+        const channels = new Set<string>();
+        for (const stimulus of stage.stimuli ?? []) {
+          const old = config.stimuli.find((c: any) => c.channel === stimulus.channel);
+          if (channels.has(stimulus.channel) || !old || old.mode !== 'constant' || typeof old.offset !== 'number') throw new ToolError('STAGE_STIMULUS_REQUIRES_CONSTANT', 'Unique existing constant channels required: ' + stimulus.channel);
+          channels.add(stimulus.channel);
+        }
+      }
       if (job.cancelRequested) { job.status = 'cancelled'; return; }
       if (spec.initialization === 'reset') {
         job.stage = 'initialization'; await this.saveJob(job);
@@ -350,27 +412,49 @@ export class Broker {
       }
       if (spec.writes?.length) { job.stage = 'calibration'; await this.saveJob(job); await this.write(s, spec.writes); }
       run.startSimTimeSeconds = s.snapshot.simTimeSeconds;
-      for (let i = 0; i < spec.chunks && !job.cancelRequested; i++) {
-        job.stage = 'step'; await this.saveJob(job);
-        const step = await this.step(s, 'duration', spec.stepSeconds);
-        if (step.advancedSeconds <= 0) throw new ToolError('NO_SIMULATION_PROGRESS', 'A timed segment did not advance simulation time.', false, step);
-        job.stage = 'collect';
+      run.stages = [];
+      const collect = async (stage: string, advancedSeconds: number) => {
         const data = await this.read(s, spec.signalRefs);
-        const sample = { timeSeconds: s.snapshot.simTimeSeconds, values: data.values, advancedSeconds: step.advancedSeconds };
+        const sample = { timeSeconds: s.snapshot.simTimeSeconds, values: data.values, advancedSeconds, stage };
         samples.push(sample);
-        job.completedChunks++;
         const log = await open(join(this.artifactRoot, 'runs', job.runId + '.samples.jsonl'), 'a');
         try { await log.write(JSON.stringify(sample) + '\n'); await log.sync(); } finally { await log.close(); }
+      };
+      if (spec.stages) await collect('initial', 0);
+      for (const stage of normalizeCase(spec).stages) {
+        if (job.cancelRequested) break;
+        if (stage.writes) await this.write(s, stage.writes);
+        for (const stimulus of stage.stimuli ?? []) {
+          const config = (await this.native(s, 'configuration')).result;
+          const old = config.stimuli.find((c: any) => c.channel === stimulus.channel);
+          if (!old || old.mode !== 'constant' || typeof old.offset !== 'number') throw new ToolError('STAGE_STIMULUS_REQUIRES_CONSTANT', stimulus.channel);
+          const r = await this.native(s, 'stimulus', [old.channel, old.mode, String(stimulus.offset), String(old.amplitude), String(old.frequencyHz), String(old.phase), config.configurationStamp]);
+          if (r.result.stimuli.find((c: any) => c.channel === old.channel)?.offset !== stimulus.offset) throw new ToolError('CONFIG_READBACK_MISMATCH', stimulus.channel);
+        }
+        const stageStart = s.snapshot.simTimeSeconds!;
+        const end = stageStart + stage.durationSeconds;
+        let i = 0;
+        if (spec.stages) await collect(stage.name, 0);
+        while (!job.cancelRequested && (spec.stages ? s.snapshot.simTimeSeconds! < end - 1e-9 : i < spec.chunks)) {
+        if (samples.length >= 10000) throw new ToolError('CASE_SAMPLE_LIMIT', 'Reached 10000 samples.');
+        job.stage = 'step'; await this.saveJob(job);
+        let step = await this.step(s, 'duration', spec.stages ? Math.min(stage.sampleSeconds, end - s.snapshot.simTimeSeconds!) : spec.stepSeconds);
+        for (let retry = 0; step.advancedSeconds <= 0 && spec.stages && retry < 256 && !job.cancelRequested; retry++) step = await this.step(s, 'events', 1);
+        if (job.cancelRequested && step.advancedSeconds <= 0) break;
+        if (step.advancedSeconds <= 0) throw new ToolError('NO_SIMULATION_PROGRESS', 'A segment did not advance simulation time.', false, step);
+        job.stage = 'collect';
+        await collect(stage.name, step.advancedSeconds);
+        job.completedChunks++; i++;
         await this.saveJob(job);
+        }
+        run.stages.push({ name: stage.name, requestedDurationSeconds: stage.durationSeconds, requestedSampleSeconds: stage.sampleSeconds, timeBefore: stageStart, timeAfter: s.snapshot.simTimeSeconds, completed: !job.cancelRequested && (spec.stages ? s.snapshot.simTimeSeconds! >= end - 1e-9 : i === spec.chunks) });
       }
       run.metrics = spec.signalRefs.map((ref: string) => {
         const xs = samples.map(p => p.values.find((v: any) => v.signalRef === ref)?.numericValue).filter((x: any) => typeof x === 'number');
         return { signalRef: ref, count: xs.length, min: xs.length ? Math.min(...xs) : null, max: xs.length ? Math.max(...xs) : null, final: xs.at(-1) ?? null };
       });
-      run.assertions = (spec.assertions ?? []).map((check: any) => {
-        const metric = run.metrics.find((m: any) => m.signalRef === check.signalRef);
-        return { ...check, actual: metric?.final ?? null, passed: typeof metric?.final === 'number' && metric.final >= check.min && metric.final <= check.max, scope: 'final_snapshot' };
-      });
+      run.sampling = { mode: 'quiescent_snapshots', maxObservedGapSeconds: samples.reduce((gap, p, i) => i ? Math.max(gap, p.timeSeconds - samples[i - 1].timeSeconds) : gap, 0), assertionsEstablishContinuousBehavior: false };
+      run.assertions = evaluateAssertions(spec.assertions ?? [], samples, run.startSimTimeSeconds, !job.cancelRequested);
       job.status = job.cancelRequested ? 'cancelled' : run.assertions.every((c: any) => c.passed) ? 'completed' : 'assertion_failed';
       job.result = { samples: samples.length, assertions: run.assertions, runId: job.runId };
     } catch (e) {

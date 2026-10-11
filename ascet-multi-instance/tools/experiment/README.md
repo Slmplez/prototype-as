@@ -1,6 +1,6 @@
 # ASCET Experiment Agent Tools
 
-面向 ASCET 6.4 Offline PC 的工具。提供 16 个 MCP 工具、JSONL 入口和 TypeScript Broker，已在独立实例的 PID 示例和指定 AEB iBooster 项目中完成打开实验、发现信号、批量标定、有界步进、模型响应、分段取数与断言。
+面向 ASCET 6.4 Offline PC 的工具。提供 19 个 MCP 工具、JSONL 入口和 TypeScript Broker，已在独立实例的 PID 示例和指定 AEB iBooster 项目中完成打开实验、发现信号、批量标定、有界步进、模型响应、分段取数与断言。
 
 ## 使用
 
@@ -34,19 +34,21 @@ MCP 客户端直接启动 `node E:\Repo\ASCET\tools\experiment\dist\src\mcp.js`�
 | `exp_catalog` | 完整路径优先直接解析，模糊查询最多 200 项；支持根反斜杠和 `/`，路径最长 1024 字符。 |
 | `exp_open` | 打开指定组件和配置，必要时由 ASCET 构建；核对实际结果，不接受静默回退。相同实验复用，不同实验要求显式关闭。 |
 | `exp_inspect` | 返回实例身份、实验、状态、仿真秒数和记录器状态。 |
-| `exp_signals` | 分页返回原生 label、显示名称、标量资格和标定资格，并产生 `signalRef`。 |
+| `exp_signals` | 分页返回原生 label、显示名称、数据类型、维度和标定资格，并产生 `signalRef`。 |
 | `exp_read` | 一次原生调用批量读取最多 128 个标量，physical 或 hex。 |
 | `exp_write` | 暂停状态下批量写入最多 64 个数值、布尔或枚举名称标量；完整检查资格，逐项写入和回读。非事务，不自动重放。 |
 | `exp_configure` | 按 revision 修改事件/激励、创建标量通道；save 保存环境，`commitDatabase:true` 显式提交整个绑定数据库的待保存变更。 |
-| `exp_parameters` | 重置变量、参数和更新依赖参数已实测。DCM load/save 转发厂商接口，完整文件往返尚未验收；PID 无可导出参数时返回明确错误。 |
+| `exp_read_data` / `exp_write_data` | 物理值数组、矩阵、曲线和坐标轴读写；最多4096单元、512个修改，0基索引，整批预检后逐单元写入回读，不改变维度。 |
+| `exp_parameters` | 重置和依赖更新；DCM导出验证文件和哈希，导入可附 expected 标量回读检查。AEB全量文件往返已验收。 |
 | `exp_control` | start、pause、stop、close；另有 start/stop OS 和 measurement 原生入口，Offline PC 会明确拒绝在线动作。关闭必须传 `discardUnsaved:true`。 |
 | `exp_step` | 一个事件、一段仿真时间，或以标量比较器为条件的有界步进；条件模式逐事件执行并受 maxEvents/maxWallTimeMs 约束。 |
-| `exp_record` | 查询、设置输出文件、启动和停止已存在的 Data Logger；不会创建记录器或通道。 |
-| `exp_run_case` | 后台运行分段用例，采集每段结束的标量快照，并执行最终值范围断言。 |
+| `exp_record` | 查询、显式替换既有记录器通道、设置新输出、启动和停止；停止返回实际落盘文件和哈希。 |
+| `exp_waveform` | 完整解析MDF 2/3声明的数值记录，计算全量统计、RMS、梯形积分和转换点，保存完整JSON波形，返回有上限的预览。 |
+| `exp_run_case` | 多阶段标定或常量激励、实际持续时间、采样间隔；最终值、范围、到达、保持时间和状态转换断言。兼容原chunks用例。 |
 | `exp_job` | 查询、请求在下一段结束后取消；请求取消不代表立刻停止。 |
 | `exp_results` | 返回有上限的快照序列、统计、断言和完整 JSON 文件路径。 |
 
-返回 `capabilities` 明示能力。在线控制适配器、事件编辑、标量通道创建、条件步进、环境保存和 Data Logger 控制已接入；在线目标、数组/矩阵读写、MDF 解析和完整记录文件解析仍按实例能力单独验收。分段快照用例可以使用带有已停止记录器的实验；记录器活动或状态未知时，需要先显式执行 `exp_record(action="stop")`。用例不负责记录器文件的分段、合并或波形解析。
+返回 `capabilities` 明示能力。在线控制适配器、事件编辑、标量通道创建、条件步进、环境保存和 Data Logger 控制已接入；在线目标仍未实测。数组、矩阵、曲线、MDF文件解析和DCM往返已通过隔离实例验收，详见[增强功能说明](docs/enhanced-experiment-20261011.md)。分段快照用例可以使用带有已停止记录器的实验；记录器活动或状态未知时，需要先显式执行 `exp_record(action="stop")`。完整原生波形使用 exp_record → exp_step/exp_write → exp_record(stop) → exp_waveform；多阶段后台用例仍返回快照，不能与活动记录器同时运行。
 
 事件模式限定为原生支持的 `segment`、`timeSynchron`、`singleShot`、`signalled`；`timeSynchron` 的 delay 必须大于 0，单位为秒。修改后核对实际值并返回新的 revision，可用于下一次连续修改。`save` 默认只保存当前环境到数据库对象，返回 `databaseCommitted:false`；只有明确传入 `commitDatabase:true` 才提交数据库并返回 `databaseCommitted:true`，该提交可能包含同一数据库中的其他待保存变更。
 
@@ -129,6 +131,10 @@ npm.cmd run verify:live
 npm.cmd run verify:class
 npm.cmd run verify:aeb
 npm.cmd run verify:aeb-behavior
+npm.cmd run verify:enhanced
+# 独立ESDL fixture的准备契约见增强功能说明
+$env:ASCET_STRUCTURED_FIXTURE = 'ExperimentToolsFixture\StructuredDataESDLFixture'
+npm.cmd run verify:structured
 npm.cmd run verify:mcp
 npm.cmd run verify:guards
 
@@ -137,7 +143,7 @@ $env:ASCET_COMPONENT_PATH = 'PlatformLibrary\\Package\\AEB_AutomaticEmergencyBra
 npm.cmd run probe:component
 ```
 
-目前通过 16 个回归测试，还覆盖布尔/枚举写入和表达式文本拒绝、长路径与根路径、事件周期/模式校验和修改回读、重置用例的初始化顺序、记录器前置条件、显式数据库提交，以及保存和通道创建的日志记录。MCP 协议验收覆盖初始化、列出 16 个工具、连接、查询、schema 拒绝和断开。
+目前通过 21 个回归测试，还覆盖布尔/枚举写入和表达式文本拒绝、长路径与根路径、事件周期/模式校验和修改回读、重置用例的初始化顺序、记录器前置条件、显式数据库提交，以及保存和通道创建的日志记录。MCP 协议验收覆盖初始化、列出 19 个工具、连接、查询、schema 拒绝和断开。
 
 真实 PID 验收还覆盖：0.5 的常量激励实际进入模型、10 Hz pulse 的高低电平、输出响应、事件编辑回读、标量通道创建、条件步进、显式环境保存、写入回读、20 次性能样本、5 段运行及断言、取消、启动/暂停/停止、变量/参数重置、依赖更新、记录器不可用时的安全状态和在线动作拒绝，以及不存在配置的回退识别。最新报告：[live report](E:/Repo/ASCET/tools/experiment/artifacts/live-2026-10-07T09-58-32-473Z/report.json)。
 

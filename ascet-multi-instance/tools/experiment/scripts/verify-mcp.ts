@@ -9,7 +9,7 @@ const transport = new StdioClientTransport({ command: process.execPath, args: [j
 const client = new Client({ name: 'experiment-acceptance', version: '1.0.0' });
 try {
   await client.connect(transport);
-  const listed = await client.listTools(); assert.equal(listed.tools.length, 16);
+  const listed = await client.listTools(); assert.equal(listed.tools.length, 19);
   const attached = await client.callTool({ name: 'exp_attach', arguments: {} });
   const session = attached.structuredContent as any; assert.equal(session.ok, true, JSON.stringify(attached));
   const inspected = await client.callTool({ name: 'exp_inspect', arguments: { sessionId: session.sessionId } });

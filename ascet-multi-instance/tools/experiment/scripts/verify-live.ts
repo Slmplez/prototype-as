@@ -105,6 +105,17 @@ try {
   report.checks.push('pulse stimulus produced both low and high levels in live samples');
   const restoreConfig = await call('exp_configure', { action: 'read' });
   await call('exp_configure', { action: 'apply', expectedRevision: restoreConfig.revision, stimulus });
+  const staged = await call('exp_run_case', { requestId: randomUUID(), caseSpec: {
+    initialization: 'preserve', signalRefs: [input.signalRef],
+    stages: [{ name: 'low', durationSeconds: .03, sampleSeconds: .01, stimuli: [{ channel: 'in/compute', offset: .5 }] }, { name: 'high', durationSeconds: .03, sampleSeconds: .01, stimuli: [{ channel: 'in/compute', offset: .75 }] }],
+    assertions: [{ signalRef: input.signalRef, kind: 'transition', states: [.5, .75] }, { signalRef: input.signalRef, kind: 'hold', durationSeconds: .02, condition: { equals: .75 } }]
+  } });
+  do { await delay(30); job = await call('exp_job', { jobId: staged.jobId, action: 'get' }); } while (['queued', 'running'].includes(job.status));
+  assert.equal(job.status, 'completed', JSON.stringify(job));
+  report.stagedStimuli = await call('exp_results', { runId: staged.runId });
+  report.checks.push('generic stages update actual generator input; ordered transition and hold assertions pass');
+  const stageRestore = await call('exp_configure', { action: 'read' });
+  await call('exp_configure', { action: 'apply', expectedRevision: stageRestore.revision, stimulus });
   const cancelCase = await call('exp_run_case', { requestId: randomUUID(), caseSpec: { ...caseArgs.caseSpec, chunks: 100 } });
   await call('exp_job', { jobId: cancelCase.jobId, action: 'cancel' });
   do { await delay(20); job = await call('exp_job', { jobId: cancelCase.jobId, action: 'get' }); } while (['queued', 'running'].includes(job.status));
