@@ -120,7 +120,7 @@ export class Broker {
   private async read(s: Session, refs: string[], representation = 'physical') {
     const items = refs.map(ref => this.signal(s, ref));
     const r = await this.native(s, 'read', [representation, ...items.map(i => i.label)]);
-    const values = r.result.values.map((v: any, i: number) => ({ ...v, signalRef: items[i].signalRef, numericValue: representation === 'physical' && v.value.trim() !== '' && Number.isFinite(Number(v.value)) ? Number(v.value) : null }));
+    const values = r.result.values.map((v: any, i: number) => ({ ...v, signalRef: items[i].signalRef, numericValue: representation === 'physical' ? (v.value === 'true' ? 1 : v.value === 'false' ? 0 : v.value.trim() !== '' && Number.isFinite(Number(v.value)) ? Number(v.value) : null) : null }));
     if (values.some((v: any) => v.code !== 0)) throw new ToolError('READ_FAILED', 'One or more scalar reads failed.', false, values);
     return { values, timeBefore: r.result.timeBefore, timeAfter: r.result.simTimeSeconds, consistency: r.result.state === 'paused' || r.result.state === 'stopped' ? 'quiescent_sequential' : 'running_sequential', nativeMs: r.nativeMs };
   }
@@ -136,7 +136,7 @@ export class Broker {
     const inputs = this.validateWrites(s, writes);
     const r = await this.native(s, 'write', ['physical', ...inputs.flatMap(w => [w.label, String(w.value)])]);
     if (!r.result.validationPassed || r.result.writes.some((w: any) => w.status !== 'applied')) throw new ToolError('PARTIAL_OR_REJECTED_WRITE', 'Inspect per-item outcomes before proceeding; no automatic replay.', false, r.result.writes);
-    return { writes: r.result.writes.map((w: any, i: number) => ({ ...w, signalRef: inputs[i].signalRef, matchesRequested: Number(w.after.value) === inputs[i].value })), nativeMs: r.nativeMs };
+    return { writes: r.result.writes.map((w: any, i: number) => ({ ...w, signalRef: inputs[i].signalRef, matchesRequested: typeof inputs[i].value === 'number' ? Number(w.after.value) === inputs[i].value : w.after.value === String(inputs[i].value) })), nativeMs: r.nativeMs };
   }
   private async step(s: Session, mode: string, value: number, timeout = 10_000) {
     if (mode === 'events' && !Number.isInteger(value)) throw new ToolError('INVALID_ARGUMENT', 'events requires an integer.');

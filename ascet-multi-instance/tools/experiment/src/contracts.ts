@@ -8,7 +8,8 @@ const enumeration = (...values: string[]) => ({ type: 'string', enum: values });
 const object = (properties: Record<string, any>, required = Object.keys(properties)) => ({ type: 'object' as const, properties, required, additionalProperties: false });
 const session = { sessionId: id };
 const refs = { type: 'array', items: id, minItems: 1, maxItems: 128, uniqueItems: true };
-const writes = { type: 'array', minItems: 1, maxItems: 64, items: object({ signalRef: id, value: number }) };
+const scalarValue = { anyOf: [number, { type: 'boolean' }, { type: 'string', minLength: 1, maxLength: 128, pattern: '^[A-Za-z_][A-Za-z0-9_]*(?![\\s\\S])', not: { enum: ['NaN', 'Infinity'] } }] };
+const writes = { type: 'array', minItems: 1, maxItems: 64, items: object({ signalRef: id, value: scalarValue }) };
 const stimulus = object({ channel: text, mode: enumeration('constant', 'pulse'), offset: number, amplitude: { type: 'number', minimum: 0 }, frequencyHz: { type: 'number', exclusiveMinimum: 0, maximum: 1000000 }, phase: number });
 const createdStimulus = object({ channel: text, signalRef: id, mode: enumeration('constant', 'pulse'), offset: number, amplitude: { type: 'number', minimum: 0 }, frequencyHz: { type: 'number', exclusiveMinimum: 0, maximum: 1000000 }, phase: number });
 const defs = [
@@ -26,7 +27,7 @@ const defs = [
     object({ ...session, action: enumeration('validate', 'apply'), expectedRevision: id, section: { const: 'event' }, event: object({ name: text, enabled: { type: 'boolean' }, delay: { type: 'number', minimum: 0 }, phase: number, priority: integer(-1000000, 1000000), mode: enumeration('segment', 'timeSynchron', 'singleShot', 'signalled') }, ['name']) }),
   ] }],
   ['exp_read', '一次原生调用批量读取至多 128 个标量。运行中为顺序读取，不承诺同时采样。', object({ ...session, signalRefs: refs, representation: enumeration('physical', 'hex') }, ['sessionId', 'signalRefs'])],
-  ['exp_write', '暂停时批量标定数值标量，完整检查资格后顺序写入并回读；非事务。停止后先步进初始化，以免 start 覆盖值。', object({ ...session, writes })],
+  ['exp_write', '暂停时批量标定数值、布尔或枚举名称标量，完整检查资格后顺序写入并回读；非事务。停止后先步进初始化，以免 start 覆盖值。', object({ ...session, writes })],
   ['exp_parameters', '重置变量/参数、更新依赖参数，或读写 DCM 文件。保存不覆盖已有文件。', { oneOf: [object({ ...session, action: enumeration('reset_variables', 'reset_parameters', 'update_dependent') }), object({ ...session, action: enumeration('load', 'save'), path: text })] }],
   ['exp_control', '控制离线或已验证在线运行轴。start 可能按 ASCET 选项重新初始化数据；close 必须明确丢弃未保存环境。', { oneOf: [object({ ...session, action: enumeration('start', 'pause', 'stop', 'start_os', 'stop_os', 'start_measurement', 'stop_measurement') }), object({ ...session, action: { const: 'close' }, discardUnsaved: { const: true } })] }],
   ['exp_step', '有界事件步进、秒数步进或安全条件步进并等待完成；events=1 是一个事件。超时不等于停止。', { oneOf: [

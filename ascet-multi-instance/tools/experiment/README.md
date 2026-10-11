@@ -7,14 +7,14 @@
 需要 Windows、Node.js 22 以上、.NET Framework 4 编译器及 ASCET 6.4 的 `Etas.AscetNET.dll`。ASCET 实例必须已经运行并打开目标数据库，启用 Web Service 以加载 `AaaExperimentInterface`。`exp_attach` 不启动应用、不切换数据库。使用隔离副本进行实验测试。
 
 ```powershell
-Set-Location .\ascet-multi-instance\tools\experiment
+Set-Location E:\Repo\ASCET\tools\experiment
 npm.cmd ci
 npm.cmd run build
-$env:ASCET_EXPERIMENT_MANIFEST = '<隔离实例 instance.json 的绝对路径>'
+$env:ASCET_EXPERIMENT_MANIFEST = 'E:\Repo\ASCET\analysis\bde-experiments\2026-10-07\experiment-tools-01\bde-de6abc3093b8\instance.json'
 npm.cmd run start:mcp
 ```
 
-MCP 客户端直接启动 `node E:\Repo\ASCET\tools\experiment\dist\src\mcp.js`。可参考 [MCP 配置示例](mcp.example.json)，替换实例 manifest；该示例未自动写入任何客户端的全局配置。stdio 只输出协议内容。
+MCP 客户端直接启动 `node E:\Repo\ASCET\tools\experiment\dist\src\mcp.js`。可参考 [MCP 配置示例](E:/Repo/ASCET/tools/experiment/mcp.example.json)，替换实例 manifest；该示例未自动写入任何客户端的全局配置。stdio 只输出协议内容。
 
 `instance.json` 沿用仓库多实例格式，至少包含 `runtime`、`database`、`logs` 的绝对路径以及本地 Cebra `port`。Host 检查监听端口所属进程、进程启动时间、可执行文件路径及实际打开的数据库；不同端口的其他实例不会被操作。默认 DLL 路径可通过 `ASCET_API_DLL` 修改。
 
@@ -36,7 +36,7 @@ MCP 客户端直接启动 `node E:\Repo\ASCET\tools\experiment\dist\src\mcp.js`�
 | `exp_inspect` | 返回实例身份、实验、状态、仿真秒数和记录器状态。 |
 | `exp_signals` | 分页返回原生 label、显示名称、标量资格和标定资格，并产生 `signalRef`。 |
 | `exp_read` | 一次原生调用批量读取最多 128 个标量，physical 或 hex。 |
-| `exp_write` | 暂停状态下批量写入最多 64 个数值标量；完整检查资格，逐项写入和回读。非事务，不自动重放。 |
+| `exp_write` | 暂停状态下批量写入最多 64 个数值、布尔或枚举名称标量；完整检查资格，逐项写入和回读。非事务，不自动重放。 |
 | `exp_configure` | 按 revision 修改事件/激励、创建标量通道；save 保存环境，`commitDatabase:true` 显式提交整个绑定数据库的待保存变更。 |
 | `exp_parameters` | 重置变量、参数和更新依赖参数已实测。DCM load/save 转发厂商接口，完整文件往返尚未验收；PID 无可导出参数时返回明确错误。 |
 | `exp_control` | start、pause、stop、close；另有 start/stop OS 和 measurement 原生入口，Offline PC 会明确拒绝在线动作。关闭必须传 `discardUnsaved:true`。 |
@@ -92,7 +92,7 @@ MCP / JSONL / TypeScript
       → 原生实验对象的批量状态与配置读取
 ```
 
-复用 [进程内查询设计](../../docs/bde-in-process-query-pattern.md) 和 [原生批处理设计](../../docs/ascet-native-batch-method.md)。对象遍历和批量取值在 ASCET 内完成，每次读真实状态，不缓存动态数值。模板每次连接编译一次；本次性能收益主要由批量减少往返实现，没有单独声称模板缓存的收益。
+复用 [进程内查询设计](E:/Repo/ASCET/docs/bde-in-process-query-pattern.md) 和 [原生批处理设计](E:/Repo/ASCET/docs/ascet-native-batch-method.md)。对象遍历和批量取值在 ASCET 内完成，每次读真实状态，不缓存动态数值。模板每次连接编译一次；本次性能收益主要由批量减少往返实现，没有单独声称模板缓存的收益。
 
 相对初始方案，首版采用同一条 Cebra 连接直接调用厂商的 `AaaExperimentInterface`，把结果与错误码放在同一原生调用内，避免多个 SOAP 往返。未发布第二条独立 SOAP 控制通道。实验需要 Web Service 类已加载，独立 HTTP 端口 `-wsport:32652` 在测试实例中已启动验证。
 
@@ -128,6 +128,7 @@ $env:ASCET_EXPERIMENT_MANIFEST = '<隔离实例的绝对 manifest 路径>'
 npm.cmd run verify:live
 npm.cmd run verify:class
 npm.cmd run verify:aeb
+npm.cmd run verify:aeb-behavior
 npm.cmd run verify:mcp
 npm.cmd run verify:guards
 
@@ -136,7 +137,7 @@ $env:ASCET_COMPONENT_PATH = 'PlatformLibrary\\Package\\AEB_AutomaticEmergencyBra
 npm.cmd run probe:component
 ```
 
-目前通过 15 个回归测试，还覆盖长路径与根路径、事件周期/模式校验和修改回读、重置用例的初始化顺序、记录器前置条件、显式数据库提交，以及保存和通道创建的日志记录。MCP 协议验收覆盖初始化、列出 16 个工具、连接、查询、schema 拒绝和断开。
+目前通过 16 个回归测试，还覆盖布尔/枚举写入和表达式文本拒绝、长路径与根路径、事件周期/模式校验和修改回读、重置用例的初始化顺序、记录器前置条件、显式数据库提交，以及保存和通道创建的日志记录。MCP 协议验收覆盖初始化、列出 16 个工具、连接、查询、schema 拒绝和断开。
 
 真实 PID 验收还覆盖：0.5 的常量激励实际进入模型、10 Hz pulse 的高低电平、输出响应、事件编辑回读、标量通道创建、条件步进、显式环境保存、写入回读、20 次性能样本、5 段运行及断言、取消、启动/暂停/停止、变量/参数重置、依赖更新、记录器不可用时的安全状态和在线动作拒绝，以及不存在配置的回退识别。最新报告：[live report](E:/Repo/ASCET/tools/experiment/artifacts/live-2026-10-07T09-58-32-473Z/report.json)。
 
@@ -149,6 +150,10 @@ npm.cmd run probe:component
 `verify:aeb` 针对已修复的隔离 AEB 数据库，要求 `PC.Generic` 已有 `TaskInit`、`TaskBaseCtrlx1`、`TaskBaseCtrlx4` 调度。它启用单次初始化、5 ms 和 20 ms 周期任务，显式保存并提交数据库，验证 75 的踏板输入进入两个周期任务，再执行 5 段 preserve 与 3 段 reset 用例并核对输出。reset 顺序为停止、重置数据、初始化步进、标定、分段运行。脚本清理踏板输入、关闭实验，并保留详细报告。
 
 重启隔离 ASCET、显式打开数据库后设置 `ASCET_AEB_REQUIRE_SAVED=1`，可验证在任何事件修改之前调度配置已经持久化。2026-10-11 的重启验收通过；这验证任务执行和输入传播，不覆盖完整 AEB 制动功能或车辆标定。模型修复及测量说明见 [AEB 验收说明](docs/aeb-acceptance-20261011.md)。工具代码不附带模型 AMD、数据库、SDK DLL 或临时导出。
+
+`verify:aeb-behavior` 使用同一隔离数据库已保存的周期任务，以外部请求、驾驶员制动力、踏板与停车信号驱动 8 组算法行为用例，并在关键转换处按事件条件步进。覆盖 IB/BA 触发与维持、压力变化率触发、退出与锁定到期、IB→BA、停车保持/超时释放、油门双踩及退出禁用。实验过程中读取实际标定和信号回读，结束时重置数据并关闭实验，不提交数据库。结果和范围见 [AEB 行为验收说明](docs/aeb-behavior-20261011.md)。
+
+写入布尔值使用 JSON `true`/`false`，枚举使用原生名称，例如 `AEB_On`。枚举字符串只允许单个标识符，由 ASCET 验证其合法性；数值输入仍允许实际量化。`exp_read.numericValue` 对布尔返回 1/0，对枚举名称返回 null，原始物理文本保留在 `value` 中。条件和用例数值断言可以检查布尔信号，枚举检查使用物理文本。
 
 ## 准备测试副本
 

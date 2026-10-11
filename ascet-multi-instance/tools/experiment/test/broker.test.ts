@@ -42,6 +42,28 @@ test('contracts reject arbitrary selectors, malformed conditions, nonfinite numb
   assert.throws(() => validate('exp_write', { sessionId: 'x', writes: [{ signalRef: 'y', value: Infinity }] }));
   assert.throws(() => validate('exp_control', { sessionId: 'x', action: 'close' }));
 });
+test('scalar writes accept booleans and enum identifiers and reject expression text', async () => {
+  const f = await fixture(); const original = f.fake.request.bind(f.fake); const writes: string[][] = [];
+  f.fake.request = async (op, args = []) => {
+    const reply = await original(op, args);
+    if (op === 'write') writes.push(args);
+    if (op === 'read') reply.result.values = [{ label: 'P', value: 'true', code: 0 }];
+    return reply;
+  };
+  for (const value of [true, false, 'AEB_On']) {
+    const result = await f.invoke('exp_write', { writes: [{ signalRef: f.signals[0].signalRef, value }] });
+    assert.equal(result.ok, true); assert.equal(result.writes[0].matchesRequested, true);
+  }
+  assert.deepEqual(writes.map(args => args[2]), ['true', 'false', 'AEB_On']);
+  const read = await f.invoke('exp_read', { signalRefs: [f.signals[0].signalRef] });
+  assert.equal(read.values[0].numericValue, 1);
+  for (const value of ['self halt', '1+2', 'true.', 'AEB_On\n', 'NaN', 'Infinity', '', {}, null]) {
+    const invalid = await f.invoke('exp_write', { writes: [{ signalRef: f.signals[0].signalRef, value }] });
+    assert.equal(invalid.error.code, 'INVALID_ARGUMENT');
+  }
+  assert.equal(writes.length, 3, 'Rejected text must never reach native write dispatch');
+  await f.broker.close();
+});
 test('bounded condition step stops at the first matching sampled event', async () => {
   const f = await fixture();
   const result = await f.invoke('exp_step', { mode: 'condition', signalRef: f.signals[1].signalRef, operator: '>=', threshold: 1, maxEvents: 3 });

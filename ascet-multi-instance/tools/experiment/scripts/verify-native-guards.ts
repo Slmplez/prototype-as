@@ -12,6 +12,10 @@ try {
   await assert.rejects(b.request('configuration'), (e: any) => e.code === 'PRECONDITION_FAILED' && e.message === 'NO_EXPERIMENT' && !e.outcomeUnknown);
   assert.equal((await b.request('inspect')).result.open, false);
   await assert.rejects(b.request('step', ['Condition', 'true']), (e: any) => e.code === 'INVALID_ARGUMENT');
+  for (const value of ['self halt', 'AEB_On\n', 'true.', 'NaN', 'Infinity'])
+    await assert.rejects(b.request('write', ['physical', 'unused', value]), (e: any) => e.code === 'INVALID_ARGUMENT' && !e.outcomeUnknown);
+  assert.equal((await b.request('inspect')).result.open, false);
+  report.checks.push('raw host rejects expression text, trailing newline and nonfinite scalar text before native dispatch');
   const opened = await b.request('open', ['ETAS_SystemLib\\Transferfunction\\Control\\PID', 'test'], 120_000);
   assert.equal(opened.result.nativeError.code, 0);
   const configuration = (await b.request('configuration')).result;

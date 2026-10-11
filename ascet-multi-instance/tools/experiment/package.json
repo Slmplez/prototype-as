@@ -15,6 +15,7 @@
     "verify:live": "npm run build && node dist/scripts/verify-live.js",
     "verify:class": "npm run build:ts && node dist/scripts/verify-class.js",
     "verify:aeb": "npm run build && node dist/scripts/verify-aeb.js",
+    "verify:aeb-behavior": "npm run build && node dist/scripts/verify-aeb-behavior.js",
     "probe:component": "npm run build:ts && node dist/scripts/probe-component.js",
     "verify:mcp": "npm run build:ts && node dist/scripts/verify-mcp.js",
     "verify:guards": "npm run build && node dist/scripts/verify-native-guards.js"

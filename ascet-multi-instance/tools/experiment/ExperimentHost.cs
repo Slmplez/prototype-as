@@ -394,6 +394,8 @@ internal static class ExperimentHost
             for (int i = 2; i < (op == "stimulus" ? 6 : args.Length); i += op == "write" ? 2 : 1)
             {
                 double value;
+                if (op == "write" && (args[i] == "true" || args[i] == "false" ||
+                    (args[i] != "NaN" && args[i] != "Infinity" && System.Text.RegularExpressions.Regex.IsMatch(args[i], "\\A[A-Za-z_][A-Za-z0-9_]{0,127}\\z")))) continue;
                 if (!Double.TryParse(args[i], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out value) || Double.IsInfinity(value) || Double.IsNaN(value)) throw new ArgumentException("Finite numeric value required");
                 if (op == "stimulus" && ((i == 3 && value < 0) || (i == 4 && (value <= 0 || value > 1000000)))) throw new ArgumentException("Invalid amplitude/frequency");
             }
