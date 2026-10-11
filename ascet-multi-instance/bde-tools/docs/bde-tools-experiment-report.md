@@ -1,3 +1,15 @@
+## 2026-10-11 Finite native patch executor
+
+隔离 Module/source 引用执行层已实现，六阶段 1→2→1→absence→2→absence 实际12write/2delete，8项生命周期拒写控制和另外7项真实native准备拒绝通过。空executor证明返回的准备图像不能改动私有执行材料；完整CURRENT在prepare和dispatch两次守卫。最新fresh两读、公开bookends和零native确认精确恢复，只清本次pending。原先CTError诊断失败不改写。208定向离线控制，953源码冻结，277归档hash核对。实际连线、model/source/cache/owner-object恢复、Message0/60、43required和整体交付仍未完成；WAL-bound request仅离线控制，不开放生产history。未启停ASCET。
+
+| 实验 | 请求帧/bytes | 响应帧/bytes | 范围 |
+|---|---:|---:|---|
+| native preparation guards01 | 116/213100 | 115/368172 | 7拒绝+0writer空执行 |
+| finite patch live05 | 72/45393 | 71/1098120 | 6阶段+8拒写 |
+| fresh02 | 99/189889 | 98/110191 | 完整双读 |
+
+初次编译括号错误、四参数block、Array new:withAll:、Character asciiValue不支持均在writer准备前失败并保留。后续已修复为运行时支持的固定接口。[复现和完整边界](../analysis/bde-experiments/2026-10-11/bde-finite-patch-increment-01/README.md) · [机器结果](../analysis/bde-experiments/2026-10-11/bde-finite-patch-increment-01/result.json)。
+
 ## 2026-10-11 Stored v3 native preparation-only guards
 
 补齐canonical/staged编辑守卫与connect history原材料profile检查。真实compiled guard在三个不可执行脱离frame上拒绝apply/revert/validate_revert，无生产token或model dispatch；history模板只编译。正式v3 prepare/inspect/discard和上层双拒写再验通过，公开/原生bookends一致，441/440帧。首次stage/canonical不一致在build阶段拒绝、未到native，原失败保留。24定向控制、960归档hash及生成一致性通过，完整任务不升级。

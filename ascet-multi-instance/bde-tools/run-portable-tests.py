@@ -8,6 +8,7 @@ sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tests')]
 MODULES = (
     'test_bde_reference_leaf_noop_probe', 'test_bde_reference_leaf_lifecycle_probe',
     'test_bde_reference_leaf_nonempty_probe', 'test_bd_finite_reference_lifecycle',
+    'test_bd_finite_reference_patch', 'test_bde_finite_reference_patch_probe', 'test_bd_finite_reference_patch_journal',
     'test_bd_module_persistent_references', 'test_bd_finite_reference_inverse', 'test_bd_persistent_references',
     'test_bd_module_references', 'test_bd_module_reference_inverse', 'test_bd_connect_journal', 'test_bd_connect_material',
     'test_bd_connect_history', 'test_bd_connect_local_history', 'test_bd_connect_local_plan',

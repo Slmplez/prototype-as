@@ -18,7 +18,8 @@ class AscetConnectCompileProbe
         "bde_module_reference_snapshot.st", "bde_module_reference_probe.st",
         "bde_commit_reference_record.st", "bde_module_persistent_references.st", "bde_value_probe.st",
         "bde_reference_leaf_noop.st", "bde_detached_value_reader.st", "bde_reference_leaf_lifecycle.st",
-        "bde_connect_preparation_guard_probe.st"
+        "bde_connect_preparation_guard_probe.st", "bde_finite_reference_patch.st", "bde_finite_reference_patch_probe.st",
+        "bde_finite_reference_patch_guard_probe.st"
     };
 
     static object ListTrialModules(AscetDataBase database)
@@ -38,7 +39,7 @@ class AscetConnectCompileProbe
         }
     }
 
-    static object ReadReferences(AscetDataBase database, string path, bool persistent, string[] targets, bool guardControls)
+    static object ReadReferences(AscetDataBase database, string path, bool persistent, string[] targets, bool guardControls, bool finiteGuardControls)
     {
         path = path.Trim('\\'); int slash = path.LastIndexOf('\\');
         if (slash < 1 || slash == path.Length - 1 || path.Contains(".."))
@@ -92,6 +93,20 @@ class AscetConnectCompileProbe
                     persistentImages.Add(AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(encoded)));
                 }
                 result["persistent_probe_blocks_invoked"] = 2;
+                if (finiteGuardControls) {
+                    Func<Identifiable, Identifiable, Identifiable> bindNative = (f, p) => {
+                        var c = new InstanceMethodCall(f, "value:", component); c.appendParameter(p); component.call(c);
+                        var b = c.ResultRemoteObject; blocks.Add(b); return b;
+                    };
+                    var patchRoot = AscetStructureRead.Compile(component, "bde_finite_reference_patch.st"); blocks.Add(patchRoot);
+                    var patchFactory = bindNative(bindNative(patchRoot, decoder), persistentReader);
+                    var guardRoot = AscetStructureRead.Compile(component, "bde_finite_reference_patch_guard_probe.st"); blocks.Add(guardRoot);
+                    var guardReader = bindNative(bindNative(guardRoot, patchFactory), persistentReader);
+                    var guardProbe = bindNative(serializer, guardReader);
+                    var guardCall = new InstanceMethodCall(guardProbe, "value:", component);
+                    guardCall.appendParameter(component); component.call(guardCall);
+                    result["finite_patch_guard_controls"] = AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(guardCall.ResultString));
+                }
                 if (component.GetOID() != oid || component.GetNameWithPath().Trim('\\') != path)
                     throw new Exception("Persistent Module component identity changed during read");
             }
@@ -124,7 +139,8 @@ class AscetConnectCompileProbe
     static int Main(string[] args)
     {
         bool guardControls = args.Length > 0 && args[args.Length - 1] == "--native-guard-controls";
-        if (guardControls) Array.Resize(ref args, args.Length - 1);
+        bool finiteGuardControls = args.Length > 0 && args[args.Length - 1] == "--finite-guard-controls";
+        if (guardControls || finiteGuardControls) Array.Resize(ref args, args.Length - 1);
         int expectedPid;
         if ((args.Length < 2 || args.Length > 5) || !Int32.TryParse(args[0], out expectedPid)
                 || expectedPid < 1 || File.Exists(args[1])) return 2;
@@ -138,6 +154,7 @@ class AscetConnectCompileProbe
         }
         Array.Sort(targets, StringComparer.Ordinal);
         if (guardControls && (args.Length < 3 || args[2] == "--list-trials")) return 2;
+        if (finiteGuardControls && !persistent) return 2;
         var result = new Dictionary<string, object> {
             { "profile", "bde_connect_fixed_compile_probe_v1" }, { "passed", false },
             { "model_setters_called", 0 }, { "store_called", false },
@@ -184,7 +201,7 @@ class AscetConnectCompileProbe
             }
             if (args.Length >= 3) {
                 if (args[2] == "--list-trials") result["trial_modules"] = ListTrialModules(database);
-                else result["module_read"] = ReadReferences(database, args[2], persistent, targets, guardControls);
+                else result["module_read"] = ReadReferences(database, args[2], persistent, targets, guardControls, finiteGuardControls);
             }
             var current = ascet.GetCurrentDataBase();
             try {

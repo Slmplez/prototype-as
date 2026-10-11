@@ -1,4 +1,22 @@
 {
+  "latest_finite_native_patch_increment": {
+    "source": "analysis/bde-experiments/2026-10-11/bde-finite-patch-increment-01/result.json",
+    "status": "isolated_reference_leaf_executor_verified_full_connection_closure_pending",
+    "native_leaf_executor_implemented": true,
+    "native_leaf_executor_scope": "isolated_Module_and_source_only",
+    "guarded_lifecycle_phases": 6,
+    "persistent_leaf_write_calls": 12,
+    "persistent_leaf_delete_calls": 2,
+    "native_lifecycle_no_write_guards": 8,
+    "native_preparation_refusals": 7,
+    "offline_controls_passed": 208,
+    "independent_fresh_read_confirmed": true,
+    "exact_observation_restored": true,
+    "wal_bound_inverse_request_online_verified": false,
+    "production_connection_inverse_available": false,
+    "full_commit_resource_closure": false,
+    "full_delivery": false
+  },
   "current_increment_key": "latest_nonempty_reference_increment",
   "latest_native_v3_guard_increment": {
     "source": "analysis/bde-experiments/2026-10-11/bde-v3-native-guard-increment-01/result.json",

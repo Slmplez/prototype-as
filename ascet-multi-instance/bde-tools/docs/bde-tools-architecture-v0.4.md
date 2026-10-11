@@ -1,5 +1,7 @@
 # BDE tools v0.4：读取、精确编辑、修改记录与原生显示
 
+2026-10-11 后续：有限引用 native executor 已实现，只接受隔离 Module/source 的五字段物理 patch，完整 CURRENT 在 prepare/dispatch 双重核对，完整 raw/header/tail readback、存在性恢复和 reciprocal 候选一致性先验检查。六阶段12write/2delete及8拒写、7类native准备控制、导出深复制隔离与独立fresh精确恢复通过。Python/WAL 固定参数编码完成但 formal invocation 未验；production v3/history 仍关闭，owner-object/model/source/cache closure 是下一依赖。[合同](bde-finite-reference-patch.md)。下方旧“无执行器”按历史时点保留。
+
 2026-10-11 非空研究层：固定 `WRITE_RECIPROCAL_RESIZE_AND_RESTORE` 握手在原before落盘/pending之后执行，一次7write/1delete完成两个隔离owner的双向引用1/2/1/absence。完整计划按64+21N分配，并保留原入站tail；逆向写回直接使用原完整raw，不能假设原header与新factory相同。独立新连接确认现存记录与absence恢复；CTError101 sysio诊断差异单独保留，整观察相等为false。`lifecycle_plan`按物理key合并重复观察、存在性转换要求完整actual CURRENT；仅离线候选，无native执行器，生产v3门不变。
 
 2026-10-11 原始引用扩展：固定内部 `persistent_target_keys` 仅用于 fresh prepare，最多16个唯一 lowercase40-hex身份键；采集实际 outgoing 与请求目标的原始入站记录/absence，native receipt 冻结确切请求覆盖，inspect/current不能重绑。研究 leaf writer 仅在隔离 Trial 已核对身份、dirty、原始before并fsync后，经parent固定握手执行；跨STORE pending建立在READY之后，unknown保留且不重试。已有record原样写回与原absent空record创建/删除已在线确认；生产v3 apply/revert门仍拒绝，通用非空持久patch/inverse尚缺。

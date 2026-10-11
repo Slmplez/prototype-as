@@ -23,6 +23,8 @@ class AscetReferenceLeafNoopProbe
     public static int Run(string[] args, bool lifecycle)
     { return Run(args, lifecycle, false); }
     public static int Run(string[] args, bool lifecycle, bool nonempty)
+    { return Run(args, lifecycle, nonempty, false); }
+    public static int Run(string[] args, bool lifecycle, bool nonempty, bool finitePatch)
     {
         if (args.Length != 5) return 2;
         int pid = Int32.Parse(args[0]); string expectedEpoch = args[1], expectedDatabase = args[2], path = args[3], output = args[4];
@@ -52,7 +54,11 @@ class AscetReferenceLeafNoopProbe
             var decoder = compile("bde_commit_reference_record.st");
             var collectorFactory = compile("bde_module_persistent_references.st");
             var collector = nonempty ? bind(bind(compile("bde_reference_leaf_nonempty_collector.st"), collectorFactory), decoder) : bind(collectorFactory, decoder);
-            var kernel = bind(compile(nonempty ? "bde_reference_leaf_nonempty.st" : lifecycle ? "bde_reference_leaf_lifecycle.st" : "bde_reference_leaf_noop.st"), collector);
+            var kernel = bind(compile(finitePatch ? "bde_finite_reference_patch_probe.st" : nonempty ? "bde_reference_leaf_nonempty.st" : lifecycle ? "bde_reference_leaf_lifecycle.st" : "bde_reference_leaf_noop.st"), collector);
+            if (finitePatch) {
+                var executorFactory = bind(bind(compile("bde_finite_reference_patch.st"), decoder), collector);
+                kernel = bind(kernel, executorFactory);
+            }
             var prepare = new InstanceMethodCall(kernel, "value:", component); prepare.appendParameter(component); component.call(prepare);
             Identifiable prepared;
             try { prepared = prepare.ResultRemoteObject; }
@@ -75,14 +81,14 @@ class AscetReferenceLeafNoopProbe
             };
             object before = read("prepared"); result["before"] = before;
             Save(Path.Combine(output, "prepared.json"), new { process_epoch = epoch, database = expectedDatabase, component = path, component_oid = oid, before = before });
-            Console.WriteLine(nonempty ? "BDE_REFERENCE_NONEMPTY_READY" : lifecycle ? "BDE_REFERENCE_LIFECYCLE_READY" : "BDE_REFERENCE_NOOP_READY"); Console.Out.Flush();
-            if (Console.ReadLine() != (nonempty ? "WRITE_RECIPROCAL_RESIZE_AND_RESTORE" : lifecycle ? "WRITE_EMPTY_AND_REMOVE" : "WRITE_NOOP")) throw new Exception("No parent authorization; research writer not dispatched");
+            Console.WriteLine(finitePatch ? "BDE_FINITE_PATCH_READY" : nonempty ? "BDE_REFERENCE_NONEMPTY_READY" : lifecycle ? "BDE_REFERENCE_LIFECYCLE_READY" : "BDE_REFERENCE_NOOP_READY"); Console.Out.Flush();
+            if (Console.ReadLine() != (finitePatch ? "EXECUTE_FINITE_PATCH_LIFECYCLE" : nonempty ? "WRITE_RECIPROCAL_RESIZE_AND_RESTORE" : lifecycle ? "WRITE_EMPTY_AND_REMOVE" : "WRITE_NOOP")) throw new Exception("No parent authorization; research writer not dispatched");
             if (AscetStructureRead.ProcessEpoch() != epoch || component.GetOID() != oid || database.GetName() != expectedDatabase) throw new Exception("Identity expired before no-op dispatch");
             dirty = ascet.GetAllEditorsWithUnsavedChanges(); if (dirty == null || dirty.Length != 0) throw new Exception("Dirty state changed before dispatch");
             var getExecute = new InstanceMethodCall(prepared, "at:", component); getExecute.appendParameter("execute"); component.call(getExecute);
             var execute = getExecute.ResultRemoteObject; blocks.Add(execute);
             var serializerExecute = bind(encode, execute);
-            Save(Path.Combine(output, "dispatch.json"), new { process_epoch = epoch, component_oid = oid, command = nonempty ? "isolated_reciprocal_reference_resize_restore" : lifecycle ? "absent_source_reference_empty_and_remove" : "existing_module_reference_write_noop", automatic_retry = false });
+            Save(Path.Combine(output, "dispatch.json"), new { process_epoch = epoch, component_oid = oid, command = finitePatch ? "isolated_finite_reference_patch_lifecycle" : nonempty ? "isolated_reciprocal_reference_resize_restore" : lifecycle ? "absent_source_reference_empty_and_remove" : "existing_module_reference_write_noop", automatic_retry = false });
             result["write_dispatched"] = true;
             var invoke = new InstanceMethodCall(serializerExecute, "value:", component); invoke.appendParameter(component); component.call(invoke);
             string valueResult = invoke.ResultString;

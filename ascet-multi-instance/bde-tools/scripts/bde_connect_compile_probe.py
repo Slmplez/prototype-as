@@ -22,7 +22,9 @@ SOURCES = ('AscetConnectCompileProbe.cs', 'AscetStructureRead.cs',
     'bde_commit_reference_record.st', 'bde_module_persistent_references.st', 'bde_value_probe.st',
     'bd_module_persistent_references.py', 'bd_persistent_references.py',
     'bde_reference_leaf_noop.st', 'bde_detached_value_reader.st', 'bde_reference_leaf_lifecycle.st',
-    'bde_connect_preparation_guard_probe.st')
+    'bde_connect_preparation_guard_probe.st', 'bde_finite_reference_patch.st', 'bde_finite_reference_patch_probe.st',
+    'bde_finite_reference_patch_guard_probe.st', 'bd_finite_reference_patch.py', 'bd_finite_reference_inverse.py',
+    'bd_edit_journal.py')
 
 
 def main():
@@ -34,7 +36,9 @@ def main():
     selection.add_argument('--component', help='Optional exact existing Module path; read only')
     selection.add_argument('--list-trials', action='store_true', help='Read existing isolated ModuleBDE names only')
     parser.add_argument('--persistent-references', action='store_true', help='Also read finite Module/source raw reference records twice; requires --component')
-    parser.add_argument('--native-guard-controls', action='store_true', help='Execute staged guard on three detached non-executable test frames; no production edit')
+    control_selection = parser.add_mutually_exclusive_group()
+    control_selection.add_argument('--native-guard-controls', action='store_true', help='Execute staged guard on three detached non-executable test frames; no production edit')
+    control_selection.add_argument('--finite-guard-controls', action='store_true', help='Execute finite patch preparation controls plus empty zero-writer executor; requires complete persistent read')
     parser.add_argument('--allow-incomplete-observation', action='store_true', help='Validate retained failed-read evidence; does not pass complete raw capture')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
@@ -46,6 +50,8 @@ def main():
         parser.error('--persistent-references requires --component')
     if args.native_guard_controls and not args.component:
         parser.error('--native-guard-controls requires --component')
+    if args.finite_guard_controls and (not args.persistent_references or not args.component):
+        parser.error('--finite-guard-controls requires --component and --persistent-references')
     if args.allow_incomplete_observation and not args.persistent_references:
         parser.error('--allow-incomplete-observation requires --persistent-references')
     output = args.output.resolve()
@@ -93,7 +99,8 @@ def main():
                             + ([args.component] if args.component else ['--list-trials'] if args.list_trials else [])
                             + (['--persistent-references'] if args.persistent_references else [])
                             + ([','.join(targets)] if targets else [])
-                            + (['--native-guard-controls'] if args.native_guard_controls else []),
+                            + (['--native-guard-controls'] if args.native_guard_controls else [])
+                            + (['--finite-guard-controls'] if args.finite_guard_controls else []),
                             env=environment, capture_output=True, timeout=60)
                         (output / 'native.stdout.log').write_bytes(native.stdout)
                         (output / 'native.stderr.log').write_bytes(native.stderr)
@@ -140,6 +147,27 @@ def main():
                 result['incomplete_observation_allowed'] = args.allow_incomplete_observation
                 result['persistent_reference_summary'] = summarize(values[0], component_oid=read['component_oid'],
                     require_complete=not args.allow_incomplete_observation)
+            if args.finite_guard_controls:
+                guard = read['finite_patch_guard_controls']
+                if (guard['profile'] != 'finite_reference_patch_native_guards_v1'
+                        or guard['persistent_leaf_write_calls'] != 0 or type(guard['persistent_leaf_write_calls']) is not int
+                        or guard['persistent_leaf_delete_calls'] != 0 or type(guard['persistent_leaf_delete_calls']) is not int
+                        or guard['before'] != values[0] or guard['after'] != values[0]
+                        or guard['detached_exports_isolated'] is not True or len(guard['controls']) != 7
+                        or any(c['rejected'] is not True or c['write_dispatched'] is not False for c in guard['controls'])
+                        or len({c['name'] for c in guard['controls']}) != 7):
+                    raise ValueError('Seven exact native preparation refusals and immutable exports required')
+                empty = guard['empty_result']
+                if (empty['profile'] != 'finite_reference_patch_result_v1'
+                        or empty['before'] != values[0] or empty['candidate'] != values[0] or empty['after'] != values[0]
+                        or empty['persistent_leaf_write_calls'] != 0 or empty['persistent_leaf_delete_calls'] != 0
+                        or empty['outcomes'] != [] or empty['diagnostic_changes'] != []
+                        or empty['exact_observation_matches'] is not True or empty['persistent_records_match'] is not True
+                        or empty['owner_source_backend_preserved'] is not True
+                        or empty['model_setters_called'] != 0 or any(empty[k] is not False for k in
+                            ('store_called', 'commit_called', 'automatic_retry', 'full_commit_resource_closure'))):
+                    raise ValueError('Empty native executor performed changes or lost private images')
+                result['finite_patch_native_guards_verified'] = True
         result['sources_match'] = hashes == {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs}
         result['passed'] = (result.get('native_exit_code') == 0 and result.get('native', {}).get('passed') is True
             and result['sources_match'] and not wire['errors'])

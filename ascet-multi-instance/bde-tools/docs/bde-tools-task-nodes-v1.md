@@ -35,6 +35,8 @@ T0 运行时身份与安全边界
 
 ## 当前执行顺序
 
+2026-10-11 后续：有限 native leaf executor 六阶段/12write/2delete 已实测并独立 fresh 确认精确恢复，8 个实际 no-write lifecycle 守卫及另外 7 个 native preparation controls 通过。208 定向离线控制、WAL-bound request 编码完成。仍仅隔离 Module/source 引用，正式连接/owner-object/model/source/cache closure 未完成，不升级 T3.1/T5.1。下一步为实际 store effects 原对象/缓存/持久记录 patch 闭合。见 `bde-finite-patch-increment-01`。
+
 2026-10-11 最新检查点：隔离非空双向引用1/2/1/原absence、7write/1delete实测；完整原raw恢复及fresh两读独立确认，source sysio诊断差异单独保留、原failed verdict不改写。184定向控制通过。纯离线生命周期逆候选增加存在性转换与物理key去重，仍无native执行器；下一步继续有限persistent patch/inverse与T5.1真实connect闭环，整体节点不升级。
 
 1. **T3.1**：把 Message 拓扑引用差异接入生产 `bd_connect_journal` 的 native receipt。

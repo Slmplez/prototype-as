@@ -1,5 +1,14 @@
 # ASCET BDE Agent Tools
 
+Latest checkpoint adds an online-verified isolated Module/source reference leaf
+executor: six phases, 12 writes, 2 deletes, eight lifecycle no-write guards,
+seven preparation refusals and independent exact restoration confirmation.
+WAL-bound request encoding is implemented but only verified offline.
+Production connect/history remain preparation-only until complete
+model/source/cache/owner-record closure. Full delivery remains false.
+See `evidence/2026-10-11/finite-native-patch` and
+`docs/bde-finite-reference-patch.md`. Runtime recovery state is excluded.
+
 This directory contains the portable source package for the ASCET Block Diagram
 agent tools. It is intentionally kept beside the multi-instance connector so a
 Doge host can overlay the `Doge/src/tools/BlockDiagramTool` directory and run

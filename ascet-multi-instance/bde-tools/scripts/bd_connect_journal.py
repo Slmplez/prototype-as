@@ -102,6 +102,34 @@ def persistent_reference_inverse_plan(log, token, current):
     Caller may supply only CURRENT. Original raw records come from the WAL and
     cannot be replaced by a later probe. This grants no native write authority.
     """
+    intent, prepared, actual, material = _persistent_reference_context(log, token)
+    from bd_finite_reference_inverse import plan
+    result = plan(material['module_persistent_references'], current, token=token,
+        component_oid=intent['domain']['oid'], generation=prepared['before']['generation'])
+    result.update(journal_bound=True, original_domain=clone(intent['domain']), durable_actual_sha256=fingerprint(actual))
+    return result
+
+
+def persistent_reference_inverse_request(log, token, current):
+    """WAL-bound immutable leaf arguments, with no dispatch or history upgrade.
+
+    The bounded leaf executor is available only to explicit isolated research.
+    Model/source/cache and full commit closure remain prerequisites for a
+    production connection inverse. Original before and actual after are read
+    from one confirmed WAL; CURRENT cannot replace either of them.
+    """
+    intent, prepared, actual, material = _persistent_reference_context(log, token)
+    from bd_finite_reference_patch import inverse_request
+    result = inverse_request(material['module_persistent_references'], current, token=token,
+        component_oid=intent['domain']['oid'], generation=prepared['before']['generation'])
+    result.update(journal_bound=True, original_domain=clone(intent['domain']),
+        durable_actual_sha256=fingerprint(actual), original_prepared_sha256=fingerprint(prepared),
+        native_leaf_executor_profile='isolated_module_source_only_v1',
+        production_connection_inverse_available=False)
+    return result
+
+
+def _persistent_reference_context(log, token):
     events = log.read(token); intent = events[0]['payload']
     if (intent.get('operation') != 'connect_data' or intent.get('diagram') != 'Main'
             or intent.get('arguments', [None])[0] != []
@@ -113,11 +141,7 @@ def persistent_reference_inverse_plan(log, token, current):
     if ('module_persistent_references' not in material or actual != forward_observation(actual['after'], material)
             or not postcondition(intent, prepared['before'], actual['after'])):
         raise JournalError('REVERT_UNAVAILABLE', 'Complete durable actual finite raw reference proof required')
-    from bd_finite_reference_inverse import plan
-    result = plan(material['module_persistent_references'], current, token=token,
-        component_oid=intent['domain']['oid'], generation=prepared['before']['generation'])
-    result.update(journal_bound=True, original_domain=clone(intent['domain']), durable_actual_sha256=fingerprint(actual))
-    return result
+    return intent, prepared, actual, material
 
 
 def forward_material(source, prepared, value, token):
