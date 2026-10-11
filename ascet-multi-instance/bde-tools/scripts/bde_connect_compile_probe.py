@@ -21,7 +21,8 @@ SOURCES = ('AscetConnectCompileProbe.cs', 'AscetStructureRead.cs',
     'bde_module_reference_snapshot.st', 'bde_module_reference_probe.st', 'bd_module_references.py',
     'bde_commit_reference_record.st', 'bde_module_persistent_references.st', 'bde_value_probe.st',
     'bd_module_persistent_references.py', 'bd_persistent_references.py',
-    'bde_reference_leaf_noop.st', 'bde_detached_value_reader.st', 'bde_reference_leaf_lifecycle.st')
+    'bde_reference_leaf_noop.st', 'bde_detached_value_reader.st', 'bde_reference_leaf_lifecycle.st',
+    'bde_connect_preparation_guard_probe.st')
 
 
 def main():
@@ -33,6 +34,7 @@ def main():
     selection.add_argument('--component', help='Optional exact existing Module path; read only')
     selection.add_argument('--list-trials', action='store_true', help='Read existing isolated ModuleBDE names only')
     parser.add_argument('--persistent-references', action='store_true', help='Also read finite Module/source raw reference records twice; requires --component')
+    parser.add_argument('--native-guard-controls', action='store_true', help='Execute staged guard on three detached non-executable test frames; no production edit')
     parser.add_argument('--allow-incomplete-observation', action='store_true', help='Validate retained failed-read evidence; does not pass complete raw capture')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
@@ -42,6 +44,8 @@ def main():
         parser.error('--target-key requires --persistent-references')
     if args.persistent_references and not args.component:
         parser.error('--persistent-references requires --component')
+    if args.native_guard_controls and not args.component:
+        parser.error('--native-guard-controls requires --component')
     if args.allow_incomplete_observation and not args.persistent_references:
         parser.error('--allow-incomplete-observation requires --persistent-references')
     output = args.output.resolve()
@@ -88,7 +92,8 @@ def main():
                         native = subprocess.run([str(binary), str(args.pid), str(output / 'native.json')]
                             + ([args.component] if args.component else ['--list-trials'] if args.list_trials else [])
                             + (['--persistent-references'] if args.persistent_references else [])
-                            + ([','.join(targets)] if targets else []),
+                            + ([','.join(targets)] if targets else [])
+                            + (['--native-guard-controls'] if args.native_guard_controls else []),
                             env=environment, capture_output=True, timeout=60)
                         (output / 'native.stdout.log').write_bytes(native.stdout)
                         (output / 'native.stderr.log').write_bytes(native.stderr)
@@ -111,6 +116,19 @@ def main():
             if len(observations) != 2 or observations[0] != observations[1]:
                 raise ValueError('Two exact same-owner Module observations differ; preserve both')
             result['module_observations_stable'] = True
+            if args.native_guard_controls:
+                guard = read['native_guard_controls']
+                if (guard.get('profile') != 'native_connect_preparation_guard_controls_v1'
+                        or guard.get('component_oid') != read['component_oid']
+                        or guard.get('guard_invocations') != 3 or guard.get('model_setters_called') != 0
+                        or any(guard.get(k) is not False for k in ('production_token_used', 'store_called',
+                            'persistent_write_called', 'connection_edit_dispatched'))
+                        or [c.get('mode') for c in guard.get('controls', [])] != ['apply', 'revert', 'validate_revert']
+                        or any(c.get('rejected') is not True or c.get('detached_material_preserved') is not True
+                            or c.get('error') != 'Finite Module reference capture is preparation-only; persistent write and inverse closure remain unverified'
+                            for c in guard['controls'])):
+                    raise ValueError('Three exact detached native guard refusals required')
+                result['native_guard_controls_verified'] = True
             if args.persistent_references:
                 from bd_module_persistent_references import validate, summarize
                 values = [validate(value, component_oid=read['component_oid'],

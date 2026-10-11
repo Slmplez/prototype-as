@@ -836,6 +836,8 @@
    targets := record at: 'targets'. operation := record at: 'operation'. args := record at: 'args'.
    (operation = 'connect_data' and: [record includesKey: 'connectMaterial']) ifTrue: [ | connectMaterial |
      connectMaterial := record at: 'connectMaterial'.
+     (connectMaterial at: 'profile') = 'native_connect_material_v3' ifTrue: [
+       component error: 'Finite Module reference capture is preparation-only; persistent write and inverse closure remain unverified'].
      (connectMaterial at: 'profile') = 'native_connect_material_v2' ifTrue: [
        undo ifTrue: [component error: 'Module reference history requires persistent inverse closure'].
        (connectMaterial at: 'moduleReferenceGuard') value

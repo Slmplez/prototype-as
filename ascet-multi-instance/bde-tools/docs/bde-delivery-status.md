@@ -1,5 +1,7 @@
 # BDE delivery status, 2026-10-11
 
+执行边界修正：canonical/staged 原生守卫现在直接根据原材料 profile 拒绝 v3 apply/revert/validate，connection history 同时拒绝 v2/v3。三个真实 Smalltalk guard 调用使用无生产token/reader/mutator的脱离测试frame，均按预期拒绝；随后正式v3 prepare/inspect/discard、Python/C#拒写及公开/原生bookends通过。history模板只编译、未调用，不当作在线历史验收。24项定向控制、960归档hash及canonical/staged一致性通过；本轮未启停ASCET。[证据](../analysis/bde-experiments/2026-10-11/bde-v3-native-guard-increment-01/README.md)。
+
 最新增量：隔离 Module/source 的**非空双向引用 1→2→1→原 absence 生命周期**已实测，7 次 leaf write、1 次 delete；三条物理记录每次完整计划 bytes 均原样读回，各阶段 reciprocal membership 无不一致。已有入站记录恢复真正 original 的完整 raw header/payload/tail，没有把新 factory header 替代旧 header。184 项定向离线控制通过。
 
 原生完整观察的原失败 verdict 保留：source CTError101 absence 的 `sysio_code` 从 `0` 变为 Windows 158 诊断文本。其余完整有限观察精确相同；新连接两次读取与最终 actual 一致，独立 confirmation 不调用 native、不重放 writer，确认现存引用记录及原 absence 恢复后只清除本次 pending。`exact_observation_restored=false`，诊断差异仍报告，生产写前守卫未放宽。

@@ -109,8 +109,8 @@
     },
     {
       "path": "docs/bde-core-function-coverage.json",
-      "bytes": 138404,
-      "sha256": "f100c75761f89aaf8107e401acab91da8b13630ef5af92e6a263f7ca4f948264"
+      "bytes": 138976,
+      "sha256": "975f2842d4edbaca73c41e9850d67791aba879620a23411c36f891164d7f8bf6"
     },
     {
       "path": "docs/bde-core-function-delivery-plan-20261004.md",
@@ -124,13 +124,13 @@
     },
     {
       "path": "docs/bde-core-function-workboard.json",
-      "bytes": 211566,
-      "sha256": "b07bdc1037adf174206b45753c3c3d5892cdc587507418e5bda6eef9fc972bf6"
+      "bytes": 212138,
+      "sha256": "42be910465430e215698ffa8cf82a1c2b542a1232cba47d8fd3cc3f53b207efc"
     },
     {
       "path": "docs/bde-delivery-status.md",
-      "bytes": 159233,
-      "sha256": "80e6937a72ccd4eeea3eb4add1d6685f754f21ada939b35a42733984f997ada8"
+      "bytes": 159852,
+      "sha256": "c4b47d8b49255ad82d104f88f18ca89b729af196e4b068b18f4632121b6ebc37"
     },
     {
       "path": "docs/bde-detached-graphical-material.md",
@@ -334,8 +334,8 @@
     },
     {
       "path": "docs/bde-tools-experiment-report.md",
-      "bytes": 504098,
-      "sha256": "0a4eac665a00ec55100d73f1092edb428f3bb6a0e757d75d068788d66d4340e2"
+      "bytes": 504779,
+      "sha256": "ea0a499ad29ceb5a43b1c966692acbc2727c7e6a391c7af050f8a270c31bf04e"
     },
     {
       "path": "docs/bde-tools-task-nodes-v1.md",
@@ -793,6 +793,26 @@
       "sha256": "c5e046f1b663a2039f0bd76703c37def872aadf5254ea0e6735717b593ba1e29"
     },
     {
+      "path": "evidence/2026-10-11/native-v3-preparation-guard/canonical-staged.log",
+      "bytes": 4643,
+      "sha256": "16c339942b84ad937567dae4e02bb32890e1e8326ff6476c69fe908a0e3fed6f"
+    },
+    {
+      "path": "evidence/2026-10-11/native-v3-preparation-guard/controls.log",
+      "bytes": 4256,
+      "sha256": "77f45d7796b95d8c689da5dc3e7909d2f8007857b551eacd876c936304d8a0eb"
+    },
+    {
+      "path": "evidence/2026-10-11/native-v3-preparation-guard/README.md",
+      "bytes": 3056,
+      "sha256": "0f14c702a92887c64d109f6097bbbcd4e33be863da11298abf6d5d499bf54a83"
+    },
+    {
+      "path": "evidence/2026-10-11/native-v3-preparation-guard/result.json",
+      "bytes": 111071,
+      "sha256": "066e88b671e3787b4273f4bbfbf0a0416ac844893ce241d8fa826809a0c9d5d0"
+    },
+    {
       "path": "evidence/2026-10-11/nonempty-reference-lifecycle/controls.log",
       "bytes": 33800,
       "sha256": "43a45e8977853208efa3c9f9d50b88cde165a29bc938230e93b71ba122b5c253"
@@ -844,8 +864,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5746,
-      "sha256": "6cf8c5da3c3baf223d62927169552d3935c99c1f203f31de269a0d19d680e1c2"
+      "bytes": 6115,
+      "sha256": "fafd3c4b1aaf165141d21c5fcefd786be96e360b31db6e9361eb34022f25cff9"
     },
     {
       "path": "run-portable-tests.py",
@@ -984,8 +1004,8 @@
     },
     {
       "path": "scripts/AscetConnectCompileProbe.cs",
-      "bytes": 11922,
-      "sha256": "e2d26c29ee4675cf6a083bb4028f27afae54a2398958902ace2c63f44bd01b60"
+      "bytes": 13685,
+      "sha256": "cd40eeff8a0c5365700d37d334021243f88c6b525aa7eb1014c1bfa4f97fe166"
     },
     {
       "path": "scripts/AscetConnectFixture.cs",
@@ -2404,8 +2424,8 @@
     },
     {
       "path": "scripts/bde_connect_compile_probe.py",
-      "bytes": 8890,
-      "sha256": "0b81d153b0fad77095d51f9d527fec02c63f77d6f8e4c956492cd59e8addfc59"
+      "bytes": 10499,
+      "sha256": "1b791d4317dfd5f5b16b6c55dd1a5728f475b274ac2f22e926a4c4683b39bea2"
     },
     {
       "path": "scripts/bde_connect_fixture.py",
@@ -2414,8 +2434,8 @@
     },
     {
       "path": "scripts/bde_connect_history.st",
-      "bytes": 26119,
-      "sha256": "306083a7c0163bd9118e5ee9869962617c6ea97489ca0f8ec8bf4f1ccfa628ce"
+      "bytes": 26161,
+      "sha256": "35a0c585463686551301337ea56586bf132015557e8aaafc4d9373a00cea395d"
     },
     {
       "path": "scripts/bde_connect_history_experiment.py",
@@ -2441,6 +2461,11 @@
       "path": "scripts/bde_connect_material_preflight.py",
       "bytes": 9799,
       "sha256": "07ad9923918c1d176a3339b2d653a0c8ed52e43eee478d30da72a8608350bc42"
+    },
+    {
+      "path": "scripts/bde_connect_preparation_guard_probe.st",
+      "bytes": 2264,
+      "sha256": "f4d95710e24a0a21e5cd20daad7d0941e3b4fc2d78d4ffaaf56d0bccd648fd03"
     },
     {
       "path": "scripts/bde_connect_reference_preflight.py",
@@ -4094,8 +4119,8 @@
     },
     {
       "path": "scripts/bde_structure_edit.st",
-      "bytes": 158559,
-      "sha256": "6282e1c765d924b27fa7123ef661b995634e9d78a1ae38340242f03fe131e32f"
+      "bytes": 158775,
+      "sha256": "aeda68e9476f37fc468cc3f59399e951a65fe89701d0e5278de3ff4bc0b5cec3"
     },
     {
       "path": "scripts/bde_structure_experiment.py",
@@ -4129,8 +4154,8 @@
     },
     {
       "path": "scripts/bde_structure_stage_guard.st",
-      "bytes": 47238,
-      "sha256": "4f7ee8c094627731207f830e2e27a1441a9f71f1f064130eb9c34f11199c542b"
+      "bytes": 47452,
+      "sha256": "38e4eeac5389b765ec990132dcd19ce2d8822692f13622ad9c4eec0e7cb1a91f"
     },
     {
       "path": "scripts/bde_structure_stage_prepare.st",

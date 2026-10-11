@@ -1,3 +1,9 @@
+## 2026-10-11 Stored v3 native preparation-only guards
+
+补齐canonical/staged编辑守卫与connect history原材料profile检查。真实compiled guard在三个不可执行脱离frame上拒绝apply/revert/validate_revert，无生产token或model dispatch；history模板只编译。正式v3 prepare/inspect/discard和上层双拒写再验通过，公开/原生bookends一致，441/440帧。首次stage/canonical不一致在build阶段拒绝、未到native，原失败保留。24定向控制、960归档hash及生成一致性通过，完整任务不升级。
+
+[固定证据、范围与命令](../analysis/bde-experiments/2026-10-11/bde-v3-native-guard-increment-01/README.md)。
+
 ## 2026-10-11 Nonempty reciprocal resize and original-record restoration
 
 复用私有 PID56068 / 32631，未关闭、启动或重启。只写隔离组件及其 source 的三条引用记录：source 出站1条→2条→1条→原CTError101 absence，配套更新两个入站记录，共7write/1delete。每次完整 planned bytes 均读回一致；original 入站 raw含未解析tail原样写回，各阶段membership无不一致。184项定向离线控制通过，941份代码/依赖冻结、102次归档源码hash核对通过。

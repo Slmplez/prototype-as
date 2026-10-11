@@ -93,6 +93,12 @@ lifecycle proposals add existence transitions and physical-record coalescing,
 but still have no native executor or durable inverse. See
 `evidence/2026-10-11/nonempty-reference-lifecycle/`.
 
+The canonical/staged native execution boundary now rejects stored v3 materials
+directly; connection history refuses v2 and v3. Three detached native guard
+controls and a fresh production prepare/inspect/discard passed. These controls
+do not execute a production connection or inverse; history was compiled only.
+See `evidence/2026-10-11/native-v3-preparation-guard/`.
+
 The selected portable suite passes 200 tests, including the new fixed-handshake,
 full raw/absence and zero-leaf refusal controls. Its actual result is saved in
 `portable-controls.log` and `portable-controls-result.json`.

@@ -1,5 +1,17 @@
 {
   "current_increment_key": "latest_nonempty_reference_increment",
+  "latest_native_v3_guard_increment": {
+    "source": "analysis/bde-experiments/2026-10-11/bde-v3-native-guard-increment-01/result.json",
+    "status": "native_v3_preparation_guard_verified_real_edit_inverse_pending",
+    "native_detached_guard_controls": 3,
+    "production_prepare_inspect_discard_verified": true,
+    "python_and_host_write_refusal_verified": true,
+    "history_guard_compiled_only": true,
+    "offline_controls_passed": 24,
+    "canonical_staged_consistent": true,
+    "persistent_reference_inverse_implemented": false,
+    "full_delivery": false
+  },
   "latest_nonempty_reference_increment": {
     "source": "analysis/bde-experiments/2026-10-11/bde-reference-nonempty-increment-01/result.json",
     "node": "T3.1",

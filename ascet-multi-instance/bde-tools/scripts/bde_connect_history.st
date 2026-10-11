@@ -25,7 +25,7 @@
    (record at: 'operation') = 'connect_data' and: [(record at: 'diagramName') = 'Main']]])
    ifFalse: [component error: 'Exact retained ordinary Main connection required'].
  material := record at: 'connectMaterial' ifAbsent: [component error: 'Prepared original connect material unavailable'].
- (material at: 'profile') = 'native_connect_material_v2' ifTrue: [
+ (#('native_connect_material_v2' 'native_connect_material_v3') includes: (material at: 'profile')) ifTrue: [
    component error: 'Module reference history requires persistent inverse closure; graphical inverse is insufficient'].
  (material at: 'phase') = 'attached' ifFalse: [component error: 'Actual created connect material unavailable'].
  root := (Smalltalk at: #DogeBDEStructureIdentityV2) at: (component getOID, '/Main').
