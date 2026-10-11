@@ -5991,3 +5991,15 @@ followup等待、0下游stage，60连删未开始。798运行/11后续输入无d
 
 结果：`analysis/bde-experiments/2026-10-11/bde-module-reference-journal-01/result.json`。
 
+## 2026-10-11 Finite raw-reference capture, v3 preparation and raw inverse planning
+
+固定内部查询直接读取 Module、Main 源码 owner 的 outgoing/inbound 记录，以及已有 outgoing 目标的 inbound 记录，不进行整库 census。两组当前观察分别覆盖 13/14 次记录读取、9/10 个目标；两次观察全部字段和字节一致。undefined-record 101 依已有原生接口语义明确保存为 absence，未伪造空记录。源码 owner/DBObject/backend 及其 specification 身份在读取后复查；新创建的 getDiagram view wrapper 不作为持久 owner 身份。
+
+生产 `native_connect_material_v3` 的 prepare/inspect/discard 在线通过。原始记录冻结在本次 prepared native record 上，后续检查比较完整确定性编码；在两层拒写守卫后 native/public before/after 完全一致，准备 token 已释放。最终 preflight 含 434 请求帧/433 响应帧、304,526 请求 bytes/372,865 响应 bytes；包括编译、独立 oracle、检查与清理，不是日常读取性能。显式 host apply 请求收到 no-mutation refusal，未编译或派发 Smalltalk apply；Python apply 更早在任何原生 I/O 前被拒绝。无 ASCET 启停、业务写入或新 fixture 创建。
+
+实际 journal/diff 合同加入原始记录摘要和 raw-tail 变化；新 reciprocal 目标缺少 original before 时，显示 not_captured，绝不从 after/CURRENT 制造 before。原始字节三方逆规划对同尺寸记录仅合并原 edit 的变更位置，保留当前无关字节；改尺寸要求严格 actual-after；任一冲突、缺原材料或不支持的 absence lifecycle 都撤销整组候选。138 项相关离线控制通过，含 synthetic WAL/diff/recovery scenarios；没有真实 attached/edit/inverse，因此不增加完整生命周期通过数。
+
+失败全部保留：live01 使用瞬态图形 view 的对象身份导致后守卫失败；live02 保留错误但完整采集合同拒绝它；live03 仅通过 incomplete observation；preflight01 使用 Dictionary identity equality 导致值比较失败；increment01 缺 PYTHONPATH 导致控制导入失败。修复后 final live06/live07、preflight05 与 increment02 通过。在线输入源码保持一致；仅离线报告脚本在 preflight 后修复，单独归档并明确记录差异，不据此重新执行未变化的 native path。
+
+[增量报告](../analysis/bde-experiments/2026-10-11/bde-finite-module-reference-increment-02/README.md) · [结果](../analysis/bde-experiments/2026-10-11/bde-finite-module-reference-increment-02/result.json)
+

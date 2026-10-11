@@ -104,8 +104,8 @@
     },
     {
       "path": "docs/bde-core-function-coverage.json",
-      "bytes": 135548,
-      "sha256": "a6804bf847b826cdd2afe37ffb110f9ec97bdc9404153ea44dd49b766d72ef47"
+      "bytes": 136233,
+      "sha256": "8a46b242aaedbbc398320704245c388356954e61d817049333992bf2cd960b76"
     },
     {
       "path": "docs/bde-core-function-delivery-plan-20261004.md",
@@ -119,13 +119,13 @@
     },
     {
       "path": "docs/bde-core-function-workboard.json",
-      "bytes": 208635,
-      "sha256": "6808aa38c0bdf9971fe2bd3caed7db0d420b9369c6670364e63042322437ffb8"
+      "bytes": 209395,
+      "sha256": "7698599b9ed237a21b5933be69a4fdd9506f0082d67cb96012a1abb66c047134"
     },
     {
       "path": "docs/bde-delivery-status.md",
-      "bytes": 155133,
-      "sha256": "7205e7a53b0d958454eda1575bd40465f312eb46524a9f52d061f87e2572f277"
+      "bytes": 156011,
+      "sha256": "20019154b04ea1ab9d2f3bd59b25ccea128b32c069e46817129bccfcba11ae57"
     },
     {
       "path": "docs/bde-detached-graphical-material.md",
@@ -329,13 +329,13 @@
     },
     {
       "path": "docs/bde-tools-experiment-report.md",
-      "bytes": 498495,
-      "sha256": "d633a9de7fd2c29998e5b11e0c2a49d8acc1bbf0e28a9b237165b1fe34a1cf54"
+      "bytes": 501075,
+      "sha256": "e22613bc59d0f613e1a940219a4a764197793599c4951bdfb94c46eb2d72c747"
     },
     {
       "path": "docs/bde-tools-task-nodes-v1.md",
-      "bytes": 4602,
-      "sha256": "d5f683292a38b59de9b4ab079e2e75c0791b9f760537e49b84a994144598fe12"
+      "bytes": 5064,
+      "sha256": "5c24394d1a5fe866a2349c9b8f0ceb747e867dda02872f3d6fb35658d1915d07"
     },
     {
       "path": "docs/bde-tools-tasks-and-goals.md",
@@ -448,6 +448,281 @@
       "sha256": "3758f3f76bf75ead135947db77c29a9fad823117fe97f99d99718fb4264d5f2d"
     },
     {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-connect-preflight-01/before.json",
+      "bytes": 3644,
+      "sha256": "0a1698b518dba0a6d323634a7fd9c66eb58f71d9c957d945276d5ac1c069eace"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-connect-preflight-01/result.json",
+      "bytes": 108926,
+      "sha256": "eebf450df29de5a810ec3706ec0e637eee3aa09c6f816674588358184b7aa812"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-connect-preflight-05/after.json",
+      "bytes": 3644,
+      "sha256": "0a1698b518dba0a6d323634a7fd9c66eb58f71d9c957d945276d5ac1c069eace"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-connect-preflight-05/before.json",
+      "bytes": 3644,
+      "sha256": "0a1698b518dba0a6d323634a7fd9c66eb58f71d9c957d945276d5ac1c069eace"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-connect-preflight-05/inspected.json",
+      "bytes": 247204,
+      "sha256": "91d9f09976b85cae69338d85979322aed12cee89fa3fb8ae69ca4cf6fbf3f6dc"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-connect-preflight-05/prepared.json",
+      "bytes": 275003,
+      "sha256": "64baa51f6b992a6b1d886dd64745d8f03761092dbbcaba39676620adc8dd1887"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-connect-preflight-05/result.json",
+      "bytes": 109633,
+      "sha256": "68a78fdd093a8138665a7a8f32f22e583397e0ba181ca0796d0fdfacf5d9c986"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-01/controls.log",
+      "bytes": 9807,
+      "sha256": "fd91d17de956c2eab561bb2fa7377d23523d290ca19b94c7956cca465566a732"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-01/result.json",
+      "bytes": 3148,
+      "sha256": "4586dc36f996607ae2200fa61a60436e2bca6d3a6aa5178ba28fdb4818de7933"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/controls.log",
+      "bytes": 26322,
+      "sha256": "3d119f8e11901e69b9fb10b58340dd8d86d9dd8d065dcd0da10f333ac46f6b66"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/README.md",
+      "bytes": 6451,
+      "sha256": "bdf7c1199e4d7a4bb297dcda9d8cddf39d75ece50ceced06253fca1871a171de"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/result.json",
+      "bytes": 6938,
+      "sha256": "3482daba11844f0534c5c6bf0028288f108d01813dff034a38dddb4603026bdd"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/AscetConnectCompileProbe.cs",
+      "bytes": 10957,
+      "sha256": "67cdd09a70546dd5ab28433140a6b49156bdf2fcfc6506617bc712cc940841b6"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/AscetStructureSession.cs",
+      "bytes": 266149,
+      "sha256": "a28abfdd4bc43cbcd277b49d1789f3fcf4b43ed874d716df7c70889d59a34613"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bd_connect_journal.py",
+      "bytes": 22849,
+      "sha256": "dccb1e8b07b1fb2db4597f76abd4305586771c213327b36bca895b7cd547a2b8"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bd_connect_material.py",
+      "bytes": 6055,
+      "sha256": "ae5940970ac11901e18c0b6afe28dae129c9c9ca92bd886d495e15b9a1c453ef"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bd_finite_reference_inverse.py",
+      "bytes": 5563,
+      "sha256": "38a98a2f7f4eb7d569529356403ae96dfb7d42c6d1126b9dca48400e3c986754"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bd_module_persistent_references.py",
+      "bytes": 14095,
+      "sha256": "d1d0b3e4fbcb49ebe47ba1dcc2f67627774d554fa936ee8d13ca89703871c9d3"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bd_native_structure.py",
+      "bytes": 52715,
+      "sha256": "9d3152750371c8ee833855375677dd0a47057717d714473ee29f219efb0af673"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bd_structure_journal.py",
+      "bytes": 95259,
+      "sha256": "618d94deebe8cd035696f0b93cb16eb199344ffc94cc52680fe2002157645d1e"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bde_connect_compile_probe.py",
+      "bytes": 8314,
+      "sha256": "f75870747bf9159edd82b223ca04ee4677ca749392ee736355d3fb8892c0822e"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bde_connect_material.st",
+      "bytes": 27171,
+      "sha256": "1b06adaeb750902ba31a040103539214b9281b40538155890bc12d2589893615"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bde_connect_reference_preflight.py",
+      "bytes": 11232,
+      "sha256": "229a3a1a4bb0f9e5b841f9c288ba023b96bafcc1cce1c2a2bbed7ee8ee05e299"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bde_finite_reference_increment.py",
+      "bytes": 8478,
+      "sha256": "ed33faa8e0984d9146ba76ac1887cfc7a82ab5430bd03ae5fd0c0d4b535c5b1e"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bde_main_workflow.py",
+      "bytes": 23993,
+      "sha256": "809f9ffd5d10edbb0f6f346f1fb78b0fe242496cd82ae382e4bc0cd7e4c82a6f"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bde_module_persistent_references.st",
+      "bytes": 9329,
+      "sha256": "b99b5c459a450d31a8366d3c6b33a58b279a33cbeb11c9369a604d1901b4b21f"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/bde_value_probe.st",
+      "bytes": 1266,
+      "sha256": "937f80cbcbc403f082a6c0918384497e77b71f64b3fd6991b5534b913352b0ce"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/test_bd_finite_reference_inverse.py",
+      "bytes": 7332,
+      "sha256": "51e5d1fbc3f9e0d9465ce5e47544ab0292ba18b9b95269cfebc871c31f572c73"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/source/scripts/test_bd_module_persistent_references.py",
+      "bytes": 18127,
+      "sha256": "95b44810232d59894748ff41911402591c641153e48922e65841e7de615d03a9"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-01/build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-01/native.json",
+      "bytes": 1452,
+      "sha256": "85142e0c6dd6e7fc20632c0d1ddadd1e549b505ef320155722df6170384b1d93"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-01/native.stderr.log",
+      "bytes": 4512,
+      "sha256": "742395310196d8180875fd37d35fc53ac4cef84dbc8a037901a6104c77438b99"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-01/native.stdout.log",
+      "bytes": 59,
+      "sha256": "62557f6bd7862661fc31ca7a16c05650aa8c1335eff090e92d26ddfb2f8cee1f"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-01/result.json",
+      "bytes": 4515,
+      "sha256": "1412e36c65ac0e8375f7d0ddfa2d35ff9d7045e56191957dac100b05a13cb897"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-02/build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-02/native.json",
+      "bytes": 60739,
+      "sha256": "16affaceb79ddcf8e4dc0eff7cce4b9a1b24dd088fd2a723b64eb3194a842a8c"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-02/native.stderr.log",
+      "bytes": 4512,
+      "sha256": "3399a44dd9f7de44682e1143e125220d562d7460d7e65caa5217ac3b0ab549da"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-02/native.stdout.log",
+      "bytes": 59,
+      "sha256": "62557f6bd7862661fc31ca7a16c05650aa8c1335eff090e92d26ddfb2f8cee1f"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-02/result.json",
+      "bytes": 396924,
+      "sha256": "ef9c644eddc0451ec578328588055e693c3af8e72d9bfcdf356ea5072023a1f5"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-03/build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-03/native.json",
+      "bytes": 60915,
+      "sha256": "193ae999a39fed75f1b7918924ab30ddec800f18b474921f976a7965d04940f1"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-03/native.stderr.log",
+      "bytes": 4512,
+      "sha256": "7e0b29c7e57769a65caa3636a972ecda1d8b9cb3df6a178999c518e1daea148c"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-03/native.stdout.log",
+      "bytes": 59,
+      "sha256": "62557f6bd7862661fc31ca7a16c05650aa8c1335eff090e92d26ddfb2f8cee1f"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-03/result.json",
+      "bytes": 397813,
+      "sha256": "0ea8f7ed5cf246968fb71981bc84985de1c40d06f63f2cd6e188f3532f994e63"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-06/build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-06/native.json",
+      "bytes": 64680,
+      "sha256": "887d0395e1824d9f61e55459041a218af43ee298bf26454e151e4d934b702290"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-06/native.stderr.log",
+      "bytes": 4512,
+      "sha256": "cf4fd9e11da91e662f7303095348379ebd42e907c4ee3a8ed68fe4de9f721ea6"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-06/native.stdout.log",
+      "bytes": 59,
+      "sha256": "62557f6bd7862661fc31ca7a16c05650aa8c1335eff090e92d26ddfb2f8cee1f"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-06/result.json",
+      "bytes": 417254,
+      "sha256": "25fe2078039fdca89c7a95540add5b5191b3ea343a3d507ecbe122da4ec554d7"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-07/build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-07/native.json",
+      "bytes": 76035,
+      "sha256": "4f4bcce50090c66e0c862e6cbe80d5adc07db84964ff82c711e3d7e0e1201c55"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-07/native.stderr.log",
+      "bytes": 4512,
+      "sha256": "cf4fd9e11da91e662f7303095348379ebd42e907c4ee3a8ed68fe4de9f721ea6"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-07/native.stdout.log",
+      "bytes": 59,
+      "sha256": "62557f6bd7862661fc31ca7a16c05650aa8c1335eff090e92d26ddfb2f8cee1f"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/bde-finite-module-references-live-07/result.json",
+      "bytes": 495824,
+      "sha256": "ed95d5095c77b50e08cf7d99287a295bfd517e1ddc32cda8a0fd4dce3e46ba88"
+    },
+    {
+      "path": "evidence/2026-10-11/finite-module-references/portable-controls.json",
+      "bytes": 328,
+      "sha256": "c7872554af5c0b48f9343452fbe89b4abf137fa5bc2ca8a71d3bc1df50b22ec2"
+    },
+    {
       "path": "evidence/2026-10-11/module-reference-journal.json",
       "bytes": 1642,
       "sha256": "f475ac00b028a43adc521b15090365160782b75c1647f730cc54f6495869150b"
@@ -519,18 +794,18 @@
     },
     {
       "path": "manifest.json",
-      "bytes": 1080,
-      "sha256": "d8eb2611c53bdd127c713c696fae25c72330a389cdfae947866f018865e9a4d3"
+      "bytes": 1267,
+      "sha256": "83cf89b6afbda67955a3442ac17f5a6b427a49388843fded339d967f8882b1ed"
     },
     {
       "path": "README.md",
-      "bytes": 3329,
-      "sha256": "26e6de0fec23f3e85361a1db3ee72b082245a54224762a897584680301c8d3c9"
+      "bytes": 4088,
+      "sha256": "76f3e5f2e657b6126d9ad1233ba009dc28afd37ff0a7a80aa2868303eedbc491"
     },
     {
       "path": "run-portable-tests.py",
-      "bytes": 919,
-      "sha256": "1eae9417ce40d0cc62d2ab13f91c6a05a040f2297f18b59c609f06719e1a2114"
+      "bytes": 1032,
+      "sha256": "d7b275a94174f9782e3b6cfa325e6a3ebaffbfae771473cdb60bd1846313b44e"
     },
     {
       "path": "scripts/AscetBatchFormatProbe.cs",
@@ -664,8 +939,8 @@
     },
     {
       "path": "scripts/AscetConnectCompileProbe.cs",
-      "bytes": 8618,
-      "sha256": "c637d749afd2f224d5968b716ef44eca830feb3e949a6534ef295788b0c41d65"
+      "bytes": 10957,
+      "sha256": "67cdd09a70546dd5ab28433140a6b49156bdf2fcfc6506617bc712cc940841b6"
     },
     {
       "path": "scripts/AscetConnectFixture.cs",
@@ -749,8 +1024,8 @@
     },
     {
       "path": "scripts/AscetStructureSession.cs",
-      "bytes": 264950,
-      "sha256": "89d9846db2014ed7a5324aae557ef48b179a23c4ec5af3e3b8a5669428e0d0a6"
+      "bytes": 266149,
+      "sha256": "a28abfdd4bc43cbcd277b49d1789f3fcf4b43ed874d716df7c70889d59a34613"
     },
     {
       "path": "scripts/bd_array_values.py",
@@ -969,8 +1244,8 @@
     },
     {
       "path": "scripts/bd_connect_journal.py",
-      "bytes": 20578,
-      "sha256": "774471eb513a61a6f509b910e14c4286debd47f7a71596edc62c655de0c7aaf0"
+      "bytes": 22849,
+      "sha256": "dccb1e8b07b1fb2db4597f76abd4305586771c213327b36bca895b7cd547a2b8"
     },
     {
       "path": "scripts/bd_connect_local_plan.py",
@@ -979,8 +1254,8 @@
     },
     {
       "path": "scripts/bd_connect_material.py",
-      "bytes": 5476,
-      "sha256": "f7e185a41ff2607228e8569d64f940c02f28d2c2706431c91b71b73270af3d46"
+      "bytes": 6055,
+      "sha256": "ae5940970ac11901e18c0b6afe28dae129c9c9ca92bd886d495e15b9a1c453ef"
     },
     {
       "path": "scripts/bd_connection_presentation.py",
@@ -1118,6 +1393,11 @@
       "sha256": "2cbde7f605bbd49a3e1925990e1730bfdce57e28a18d50c40db69d40bf43f9a1"
     },
     {
+      "path": "scripts/bd_finite_reference_inverse.py",
+      "bytes": 5563,
+      "sha256": "38a98a2f7f4eb7d569529356403ae96dfb7d42c6d1126b9dca48400e3c986754"
+    },
+    {
       "path": "scripts/bd_flow_plan.py",
       "bytes": 5994,
       "sha256": "c8e872a630db2b10731e90da8d0482c0c8260d10af5f75212bdf35d32dc3e6f0"
@@ -1203,6 +1483,11 @@
       "sha256": "7700ff77dd76985244dcdc5fcf4bcec32de239fc39ee9c08afa686f2a9e1d7ef"
     },
     {
+      "path": "scripts/bd_module_persistent_references.py",
+      "bytes": 14095,
+      "sha256": "d1d0b3e4fbcb49ebe47ba1dcc2f67627774d554fa936ee8d13ca89703871c9d3"
+    },
+    {
       "path": "scripts/bd_module_references.py",
       "bytes": 7387,
       "sha256": "2607fdf9f2ec7026ce5251f04e3f50f61fa66f26ba91f5403e016d3ca8f08db3"
@@ -1229,8 +1514,8 @@
     },
     {
       "path": "scripts/bd_native_structure.py",
-      "bytes": 52077,
-      "sha256": "b540b001426d68d17f8642eba328a8eaff06dc15b8b33fb9ea1ba5b4a643737f"
+      "bytes": 52715,
+      "sha256": "9d3152750371c8ee833855375677dd0a47057717d714473ee29f219efb0af673"
     },
     {
       "path": "scripts/bd_parent_order_effects.py",
@@ -1374,8 +1659,8 @@
     },
     {
       "path": "scripts/bd_structure_journal.py",
-      "bytes": 94129,
-      "sha256": "51bcc6775b40ffa442e7c3b05c082a2c4207fe550407e3b49f582c6398100e08"
+      "bytes": 95259,
+      "sha256": "618d94deebe8cd035696f0b93cb16eb199344ffc94cc52680fe2002157645d1e"
     },
     {
       "path": "scripts/bd_structure_scope.py",
@@ -2059,8 +2344,8 @@
     },
     {
       "path": "scripts/bde_connect_compile_probe.py",
-      "bytes": 6507,
-      "sha256": "0c5ca94ad57ebb3ffba5c2471407106a586b095fa5213a50bf92372fb4cded11"
+      "bytes": 8314,
+      "sha256": "f75870747bf9159edd82b223ca04ee4677ca749392ee736355d3fb8892c0822e"
     },
     {
       "path": "scripts/bde_connect_fixture.py",
@@ -2089,8 +2374,8 @@
     },
     {
       "path": "scripts/bde_connect_material.st",
-      "bytes": 24133,
-      "sha256": "7c232e673682357267adbc7d4495266cf1f05af561c7e024f1d18a0089fd609c"
+      "bytes": 27171,
+      "sha256": "1b06adaeb750902ba31a040103539214b9281b40538155890bc12d2589893615"
     },
     {
       "path": "scripts/bde_connect_material_preflight.py",
@@ -2099,8 +2384,8 @@
     },
     {
       "path": "scripts/bde_connect_reference_preflight.py",
-      "bytes": 8438,
-      "sha256": "c3b7a66da364cddce79dca593c333f39f75a909ee5a70ef878ffd05eadd13457"
+      "bytes": 11232,
+      "sha256": "229a3a1a4bb0f9e5b841f9c288ba023b96bafcc1cce1c2a2bbed7ee8ee05e299"
     },
     {
       "path": "scripts/bde_connect_source_images.st",
@@ -2613,6 +2898,11 @@
       "sha256": "79671474c08083d391e34b9e56479fc0fe4af0a172b66ac2921cb00ffb19bc38"
     },
     {
+      "path": "scripts/bde_finite_reference_increment.py",
+      "bytes": 8478,
+      "sha256": "ed33faa8e0984d9146ba76ac1887cfc7a82ab5430bd03ae5fd0c0d4b535c5b1e"
+    },
+    {
       "path": "scripts/bde_formula_audit.py",
       "bytes": 1978,
       "sha256": "162a6d66d484b1125ea3b91b5a68ea527c4fbafe1a51b764383165bdc1010aa5"
@@ -2889,8 +3179,8 @@
     },
     {
       "path": "scripts/bde_main_workflow.py",
-      "bytes": 23954,
-      "sha256": "081444b5dcdf8d529eb2f827b0ce5d0085453e5bca6ad120f67f9cb0951b5352"
+      "bytes": 23993,
+      "sha256": "809f9ffd5d10edbb0f6f346f1fb78b0fe242496cd82ae382e4bc0cd7e4c82a6f"
     },
     {
       "path": "scripts/bde_main_workflow_witness.st",
@@ -3006,6 +3296,11 @@
       "path": "scripts/bde_model_presentation_experiment.py",
       "bytes": 13775,
       "sha256": "712c447fa2a12915038ccacc598a50640b2ec1c3b548a929da2e8b0b5edb481a"
+    },
+    {
+      "path": "scripts/bde_module_persistent_references.st",
+      "bytes": 9329,
+      "sha256": "b99b5c459a450d31a8366d3c6b33a58b279a33cbeb11c9369a604d1901b4b21f"
     },
     {
       "path": "scripts/bde_module_reference_probe.st",
@@ -3928,6 +4223,11 @@
       "sha256": "9d7f19a9ce163a598055262e4856fc8092a4456279970fd76a7209d013c4ab38"
     },
     {
+      "path": "scripts/bde_value_probe.st",
+      "bytes": 1266,
+      "sha256": "937f80cbcbc403f082a6c0918384497e77b71f64b3fd6991b5534b913352b0ce"
+    },
+    {
       "path": "scripts/bde_view_experiment.py",
       "bytes": 1795,
       "sha256": "485dd1d49ddd1a7f64b33600309f0ea85d7b1dab16eee84dc57490c77f6ebfb0"
@@ -4433,6 +4733,11 @@
       "sha256": "2f073fa3da722469322f87ac5b540193fa44f2472ca118d2fbbd68ef9e7fb135"
     },
     {
+      "path": "tests/test_bd_finite_reference_inverse.py",
+      "bytes": 7332,
+      "sha256": "51e5d1fbc3f9e0d9465ce5e47544ab0292ba18b9b95269cfebc871c31f572c73"
+    },
+    {
       "path": "tests/test_bd_flow_plan.py",
       "bytes": 3759,
       "sha256": "0f1750fd92100fb2191a803e696b92830717a09c836485728e2b1527a80ee6cb"
@@ -4551,6 +4856,11 @@
       "path": "tests/test_bd_message_material_diagnostic.py",
       "bytes": 3691,
       "sha256": "e24f8f1d1f1e1111ad0f6bb8f1bd9d949b75420f8ded3053a80f5c4f71ddbc10"
+    },
+    {
+      "path": "tests/test_bd_module_persistent_references.py",
+      "bytes": 18127,
+      "sha256": "95b44810232d59894748ff41911402591c641153e48922e65841e7de615d03a9"
     },
     {
       "path": "tests/test_bd_module_reference_inverse.py",

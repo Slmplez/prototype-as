@@ -26,5 +26,7 @@
     "writes_require": "isolated Trial_* component and explicit structural write gate",
     "unknown_outcome": "preserve the journal and quarantine; never retry automatically",
     "stale_epoch": "reject before opening a native session"
-  }
+  },
+  "latest_increment": "evidence/2026-10-11/finite-module-references/bde-finite-module-reference-increment-02/result.json",
+  "portable_tests_passed": 154
 }

@@ -14,7 +14,7 @@ def compile_bridge():
     resources = [root / 'scripts' / name for name in ('bde_structure_read.st', 'bde_structure_edit.st', 'bde_session_guard.st', 'bde_recovery_release.st', 'bde_recovery_status.st', 'bde_managed_inverse_handoff.st', 'bde_connection_group_guard.st', 'bde_construction_group_guard.st', 'bde_native_collection_merge.st', 'bde_parent_order_inverse.st', 'bde_parent_order_evidence.st', 'bde_edge_restore_guard.st', 'bde_native_graph_current.st', 'bde_native_field_patch.st', 'bde_native_field_order_plan.st', 'bde_field_execution_status.st', 'bde_field_source_alias_plan.st', 'bde_source_graph_equal.st', 'bde_field_source_restore.st', 'bde_field_source_compensation.st', 'bde_persisted_source_graph.st', 'bde_delete_inverse_values.st', 'bde_drawing_order_evidence.st')]
     resources.extend(root / 'scripts' / name for name in ('bde_native_source_images.st', 'bde_field_native_capture.st',
         'bde_topology_native_capture.st', 'bde_topology_current_context.st', 'bde_topology_exact_inverse.st', 'bde_message_material_diagnostic.st',
-        'bde_connect_material.st', 'bde_module_reference_snapshot.st', 'bde_create_material.st', 'bde_message_declaration_capture.st', 'bde_message_creation_capture.st', 'bde_message_history_guard.st', 'bde_enum_definition_inventory.st', 'bde_enum_declaration_capture.st', 'bde_enum_creation_capture.st', 'bde_enum_history_guard.st', 'bde_declaration_capture.st', 'bde_declaration_cache_guard.st', 'bde_create_history.st', 'bde_create_finalize.st', 'bde_connect_history.st', 'bde_connect_local_plan.st',
+        'bde_connect_material.st', 'bde_module_reference_snapshot.st', 'bde_module_persistent_references.st', 'bde_create_material.st', 'bde_message_declaration_capture.st', 'bde_message_creation_capture.st', 'bde_message_history_guard.st', 'bde_enum_definition_inventory.st', 'bde_enum_declaration_capture.st', 'bde_enum_creation_capture.st', 'bde_enum_history_guard.st', 'bde_declaration_capture.st', 'bde_declaration_cache_guard.st', 'bde_create_history.st', 'bde_create_finalize.st', 'bde_connect_history.st', 'bde_connect_local_plan.st',
         'bde_connect_local_plan_probe.st', 'bde_frozen_source_evidence.st',
         'bde_source_structural_correspondence.st', 'bde_topology_forward_source_normalization.st',
         'bde_source_logical_images.st', 'bde_frozen_image_merge.st', 'bde_topology_local_inverse.st',
@@ -189,9 +189,10 @@ class NativeStructureAdapter(NativeLiteralAdapter):
             self.connect_history_capable = True
             self.connect_local_history_capable = connect_profile == 'native_source_local_v1'
         reference_profile = environment.get('ASCET_BD_CONNECT_REFERENCES')
-        if reference_profile is not None and (reference_profile != 'module_inbound_v1' or not self.connect_history_capable):
+        if reference_profile is not None and (reference_profile not in ('module_inbound_v1', 'module_persistent_v1') or not self.connect_history_capable):
             raise ValueError('Module inbound references require fixed retained Main connection material')
-        self.connect_reference_capture_capable = reference_profile == 'module_inbound_v1'
+        self.connect_reference_capture_capable = reference_profile in ('module_inbound_v1', 'module_persistent_v1')
+        self.connect_persistent_reference_capture_capable = reference_profile == 'module_persistent_v1'
         managed_topology = environment.get('ASCET_BD_MANAGED_TOPOLOGY_INVERSE')
         if managed_topology is not None and managed_topology != 'native_source_v1':
             raise ValueError('Unknown fixed managed topology profile')
@@ -370,6 +371,9 @@ class NativeStructureAdapter(NativeLiteralAdapter):
     def apply(self, token):
         if getattr(self, 'commit_resource_capture_capable', False):
             raise NativePreconditionConflict('Commit resource capture is preparation-only; complete persistent diff/inverse is required before writing')
+        if (getattr(self, 'connect_persistent_reference_capture_capable', False)
+                and getattr(self, 'prepared_operation', None) == 'connect_data'):
+            raise NativePreconditionConflict('Finite Module reference capture is preparation-only; persistent write and inverse closure remain unverified')
         if self.create_material_capable and getattr(self, 'prepared_operation', None) == 'create_block':
             material = self.create_material_prepared
             if material is None or material['native_token'] != token:
@@ -413,7 +417,8 @@ class NativeStructureAdapter(NativeLiteralAdapter):
         return self._mutate('apply', token)
 
     def _check_connect_reference_profile(self, material):
-        expected = 'native_connect_material_v2' if self.connect_reference_capture_capable else 'native_connect_material_v1'
+        expected = ('native_connect_material_v3' if getattr(self, 'connect_persistent_reference_capture_capable', False) else
+            'native_connect_material_v2' if self.connect_reference_capture_capable else 'native_connect_material_v1')
         if material['profile'] != expected:
             raise ValueError('Connect reference coverage differs from the explicit fixed capture profile')
 

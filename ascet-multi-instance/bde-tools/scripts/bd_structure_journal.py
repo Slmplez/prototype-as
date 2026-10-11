@@ -594,6 +594,13 @@ class StructureJournal(EditJournal):
             from bd_module_references import summary
             result['module_reference_history'] = summary(reference_proof)
             result['module_reference_history']['revert_of_revert_available'] = False
+        persistent_proof = next((e['payload']['module_persistent_references_actual'] for e in events
+            if e['kind'] == 'observed' and 'module_persistent_references_actual' in e['payload']), None)
+        if persistent_proof is not None:
+            from bd_module_persistent_references import differences
+            result['module_persistent_reference_history'] = dict(sha256=fingerprint(persistent_proof),
+                changed_records=len(differences(persistent_proof)), write_authorized=False,
+                inverse_authorized=False, revert_of_revert_available=False, full_commit_resource_closure=False)
         if any(e['kind']=='create_history_ready' or (e['kind']=='observed'
                 and 'create_history_actual' in e['payload']) for e in events):
             from bd_create_history_journal import receipt_projection
@@ -672,6 +679,12 @@ class StructureJournal(EditJournal):
                 'detail_source': 'original durable recovery journal',
                 'summary_source': 'graphical_differences contains actual/current digests and changed-object counts'}
         for observation in result['observations']:
+            if 'module_persistent_references_actual' in observation:
+                from bd_module_persistent_references import differences
+                proof = observation.pop('module_persistent_references_actual')
+                observation['module_persistent_reference_differences'] = differences(proof)
+                observation['module_persistent_reference_history'] = dict(sha256=fingerprint(proof),
+                    full_commit_resource_closure=False, inverse_authorized=False)
             if 'module_references_actual' in observation:
                 from bd_module_references import differences as reference_differences, summary as reference_summary
                 proof = observation.pop('module_references_actual')

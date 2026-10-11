@@ -1,4 +1,4 @@
-"""Compile three fixed connection templates in an existing ASCET; never edit.
+"""Compile fixed connection templates in an existing ASCET; never edit.
 
 By default this validates runtime compilation only. With --component it also
 executes the fixed read-only Module collector twice, never a connection block.
@@ -18,7 +18,9 @@ from bde_experiments import proxy
 
 SOURCES = ('AscetConnectCompileProbe.cs', 'AscetStructureRead.cs',
     'bde_connect_material.st', 'bde_structure_stage_guard.st', 'bde_connect_history.st',
-    'bde_module_reference_snapshot.st', 'bde_module_reference_probe.st', 'bd_module_references.py')
+    'bde_module_reference_snapshot.st', 'bde_module_reference_probe.st', 'bd_module_references.py',
+    'bde_commit_reference_record.st', 'bde_module_persistent_references.st', 'bde_value_probe.st',
+    'bd_module_persistent_references.py', 'bd_persistent_references.py')
 
 
 def main():
@@ -28,8 +30,14 @@ def main():
     selection = parser.add_mutually_exclusive_group()
     selection.add_argument('--component', help='Optional exact existing Module path; read only')
     selection.add_argument('--list-trials', action='store_true', help='Read existing isolated ModuleBDE names only')
+    parser.add_argument('--persistent-references', action='store_true', help='Also read finite Module/source raw reference records twice; requires --component')
+    parser.add_argument('--allow-incomplete-observation', action='store_true', help='Validate retained failed-read evidence; does not pass complete raw capture')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
+    if args.persistent_references and not args.component:
+        parser.error('--persistent-references requires --component')
+    if args.allow_incomplete_observation and not args.persistent_references:
+        parser.error('--allow-incomplete-observation requires --persistent-references')
     output = args.output.resolve()
     if not output.is_relative_to(service.ROOT / 'analysis/bde-experiments') or output.exists():
         raise ValueError('Fresh owned experiment output required')
@@ -72,7 +80,8 @@ def main():
                         ASCET_BD_PROBE_PORT=str(wire['port']), ASCET_BD_NATIVE_TRACE='1')
                     try:
                         native = subprocess.run([str(binary), str(args.pid), str(output / 'native.json')]
-                            + ([args.component] if args.component else ['--list-trials'] if args.list_trials else []),
+                            + ([args.component] if args.component else ['--list-trials'] if args.list_trials else [])
+                            + (['--persistent-references'] if args.persistent_references else []),
                             env=environment, capture_output=True, timeout=60)
                         (output / 'native.stdout.log').write_bytes(native.stdout)
                         (output / 'native.stderr.log').write_bytes(native.stderr)
@@ -95,6 +104,17 @@ def main():
             if len(observations) != 2 or observations[0] != observations[1]:
                 raise ValueError('Two exact same-owner Module observations differ; preserve both')
             result['module_observations_stable'] = True
+            if args.persistent_references:
+                from bd_module_persistent_references import validate, summarize
+                values = [validate(value, component_oid=read['component_oid'],
+                    require_complete=not args.allow_incomplete_observation) for value in read['persistent_observations']]
+                if len(values) != 2 or values[0] != values[1]:
+                    raise ValueError('Two exact finite raw reference observations differ; preserve both')
+                result['persistent_observations_stable'] = True
+                result['persistent_complete_capture_verified'] = values[0]['complete']
+                result['incomplete_observation_allowed'] = args.allow_incomplete_observation
+                result['persistent_reference_summary'] = summarize(values[0], component_oid=read['component_oid'],
+                    require_complete=not args.allow_incomplete_observation)
         result['sources_match'] = hashes == {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs}
         result['passed'] = (result.get('native_exit_code') == 0 and result.get('native', {}).get('passed') is True
             and result['sources_match'] and not wire['errors'])

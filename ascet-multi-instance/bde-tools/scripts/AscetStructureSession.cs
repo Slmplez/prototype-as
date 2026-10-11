@@ -610,7 +610,7 @@ class AscetStructureSession
             throw new Exception("Explicit isolated fixed Main connection material profile required");
         string token = Text(request, "token"), mode = Text(request, "action");
         string references = Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_REFERENCES") ?? "none";
-        if (references != "none" && references != "module_inbound_v1")
+        if (references != "none" && references != "module_inbound_v1" && references != "module_persistent_v1")
             throw new Exception("Unknown fixed Module inbound reference capture profile");
         if (!System.Text.RegularExpressions.Regex.IsMatch(token, @"^edit_[0-9a-f]{64}$") ||
                 Array.IndexOf(new [] { "prepare", "inspect_prepared", "capture_attached", "inspect_attached", "inspect_detached", "inspect_original" }, mode) < 0)
@@ -633,10 +633,20 @@ class AscetStructureSession
             component.call(array); var baseHelpers = array.ResultRemoteObject; blocks.Add(baseHelpers);
             var extend = new InstanceMethodCall(baseHelpers, "copyWith:", component);
             extend.appendParameter(endpoint); component.call(extend); var endpointHelpers = extend.ResultRemoteObject; blocks.Add(endpointHelpers);
-            var referenceReader = references == "module_inbound_v1" ? fixedCompile("bde_module_reference_snapshot.st") : null;
+            var referenceReader = references != "none" ? fixedCompile("bde_module_reference_snapshot.st") : null;
             var extendReferences = new InstanceMethodCall(endpointHelpers, "copyWith:", component);
             extendReferences.appendParameter(referenceReader); component.call(extendReferences);
             var helpers = extendReferences.ResultRemoteObject; blocks.Add(helpers);
+            if (references == "module_persistent_v1") {
+                var decoder = fixedCompile("bde_commit_reference_record.st");
+                var persistentFactory = fixedCompile("bde_module_persistent_references.st");
+                var bindPersistent = new InstanceMethodCall(persistentFactory, "value:", component);
+                bindPersistent.appendParameter(decoder); component.call(bindPersistent);
+                var persistentReader = bindPersistent.ResultRemoteObject; blocks.Add(persistentReader);
+                var extendPersistent = new InstanceMethodCall(helpers, "copyWith:", component);
+                extendPersistent.appendParameter(persistentReader); component.call(extendPersistent);
+                helpers = extendPersistent.ResultRemoteObject; blocks.Add(helpers);
+            }
             var factory = fixedCompile("bde_connect_material.st");
             var bind = new InstanceMethodCall(factory, "value:", component); bind.appendParameter(helpers); component.call(bind);
             var capture = bind.ResultRemoteObject; blocks.Add(capture);
@@ -2780,6 +2790,9 @@ class AscetStructureSession
         }
         bool managedInverse = command == "managed_inverse" || command == "validate_managed_inverse";
         if (command != "prepare" && command != "validate" && command != "apply" && command != "revert" && command != "validate_revert" && !managedInverse) throw new Exception("Unknown command");
+        if (Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_REFERENCES") == "module_persistent_v1"
+                && (command == "apply" || command == "revert" || command == "managed_inverse"))
+            throw new PreconditionConflict("Finite Module reference capture is preparation-only; persistent write and inverse closure remain unverified");
         // Recovery data lives in explicit native records, never captured locals.
         // Compile a fresh fixed dispatcher for each operation.
         if (editor != null) {

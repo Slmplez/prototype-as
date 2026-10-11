@@ -1,5 +1,9 @@
 # BDE delivery status, 2026-10-11
 
+最新增量（2026-10-11）：有限原始引用读取、生产 v3 prepare/inspect/discard、Python 与 C# 拒写守卫在线通过。复用 PID40652 / 32631，未启停 ASCET；两个已有隔离 Module 分别覆盖 2 个 owner、9/10 个 reciprocal targets、13/14 次记录读取，原始尾部字节与 undefined-record absence 都明确保留。v3 将原始记录绑定到本次准备 token，并保留实际 diff/WAL 的入口；原始字节三方逆候选与 journal 绑定完成，138 项相关离线控制通过。候选仍无 native 持久写入执行器，不能算实际连线回退、Message 矩阵或 T0–T9 完成交付。
+
+[本轮证据与复现](../analysis/bde-experiments/2026-10-11/bde-finite-module-reference-increment-02/README.md) · [在线 v3 准备及双层拒写](../analysis/bde-experiments/2026-10-11/bde-finite-connect-preflight-05/result.json)
+
 2026-10-11 后续增量：复用现有私有 ASCET PID40652 / port32631，未关闭、启动或重启。连线材料、写前守卫、历史及两个新引用模板均通过实际 Smalltalk 编译；共享 `bde_module_reference_snapshot.st` 先冻结 database-record 入站列表，再读取 loaded/merged 列表，避免把合并后的采样当作原数据库采样。多个现有隔离 Module 的两次只读引用观察一致。新增三方 OID/class 语义逆候选和生产 journal 绑定：只使用已确认 forward 的原 before/after，保留无关增删/类型变化，任一引用集合冲突时不提供整个候选；未知结果不提升为已恢复。87 项定向离线测试通过（含 14 项新增），生产 C# 桥接编译与 canonical/staged 检查通过。
 
 在核对私有 manifest、镜像 hash、进程 epoch、数据库、dirty 和 pending 后，仅新建 `Trial_ConnectReferences_20261011_034859_7419e31d`，含字面量和加法块、0 条连线。该 fixture 创建调用了 StoreToCache，不能称为整轮零写入。随后 **正式 v2 prepare → inspect_prepared → discard_prepared 在线通过**，原 native/public 全观察前后相同；该 prepare 实验未派发 apply/store/inverse，401 请求帧/400 响应帧。先前 AEB_Core 非 Module guard 拒绝、三个旧样例无可用引脚组合及两次探针构建失败均保留。

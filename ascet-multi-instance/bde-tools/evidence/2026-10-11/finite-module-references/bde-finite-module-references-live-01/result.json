@@ -1,0 +1,109 @@
+{
+  "profile": "bde_connect_compile_experiment_v1",
+  "passed": false,
+  "scope": "fixed compilation and read-only Module reference observation",
+  "port": 32631,
+  "pid": 40652,
+  "source_manifest": {
+    "AscetConnectCompileProbe.cs": "67cdd09a70546dd5ab28433140a6b49156bdf2fcfc6506617bc712cc940841b6",
+    "AscetStructureRead.cs": "7b548d69a32a67bf10f5b7b799f260d7310ed0858d66a01e2c22f768d9cf6099",
+    "bde_connect_material.st": "7c232e673682357267adbc7d4495266cf1f05af561c7e024f1d18a0089fd609c",
+    "bde_structure_stage_guard.st": "4f7ee8c094627731207f830e2e27a1441a9f71f1f064130eb9c34f11199c542b",
+    "bde_connect_history.st": "306083a7c0163bd9118e5ee9869962617c6ea97489ca0f8ec8bf4f1ccfa628ce",
+    "bde_module_reference_snapshot.st": "15aa604746c05bbacf05410d5deea332b2e11f4ad0b7878281ee2f071654f327",
+    "bde_module_reference_probe.st": "48db7a18d99d86bb8e8fd17936b6db727ef419cc77a43352eedecc93e990ad35",
+    "bd_module_references.py": "2607fdf9f2ec7026ce5251f04e3f50f61fa66f26ba91f5403e016d3ca8f08db3",
+    "bde_commit_reference_record.st": "bf867bd853586b7bf0495f7dee53b8e72b8671754e82f99e0c7a281770477217",
+    "bde_module_persistent_references.st": "fd29c2d9ea742fb531d5a305a22afa899b19d6122b30c8318b9ecf2b68e20375",
+    "bde_value_probe.st": "937f80cbcbc403f082a6c0918384497e77b71f64b3fd6991b5534b913352b0ce",
+    "bd_module_persistent_references.py": "52008679dd4f7c9e55b6c745048e20eafd4bc544b170c44c315779c3d9d933b4",
+    "bd_persistent_references.py": "c5e265903afafaa2a34c3ff6e8b08df753fc25d55b1df3fa243c310e1fc6838e",
+    "bde_connect_compile_probe.py": "d3277e8c336add22265c33900e4f6f881a8b93384a9e2695b0f42bd6ff29dc5c"
+  },
+  "ascet_started_or_restarted": false,
+  "persistent_reference_inverse_implemented": false,
+  "full_delivery": false,
+  "bridge_compile_passed": true,
+  "native_exit_code": 1,
+  "wire": {
+    "connections": 1,
+    "request": {
+      "bytes": 134100,
+      "frames": 63,
+      "parse_error": null,
+      "incomplete_bytes": 0
+    },
+    "response": {
+      "bytes": 8176,
+      "frames": 62,
+      "parse_error": null,
+      "incomplete_bytes": 0
+    },
+    "errors": []
+  },
+  "native": {
+    "profile": "bde_connect_fixed_compile_probe_v1",
+    "passed": false,
+    "model_setters_called": 0,
+    "store_called": false,
+    "template_blocks_invoked": 0,
+    "connection_edit_dispatched": false,
+    "templates": [
+      {
+        "resource": "bde_connect_material.st",
+        "compiled": true,
+        "released": true,
+        "elapsed_ms": 12.7962
+      },
+      {
+        "resource": "bde_structure_stage_guard.st",
+        "compiled": true,
+        "released": true,
+        "elapsed_ms": 28.6659
+      },
+      {
+        "resource": "bde_connect_history.st",
+        "compiled": true,
+        "released": true,
+        "elapsed_ms": 13.5593
+      },
+      {
+        "resource": "bde_module_reference_snapshot.st",
+        "compiled": true,
+        "released": true,
+        "elapsed_ms": 3.3811
+      },
+      {
+        "resource": "bde_module_reference_probe.st",
+        "compiled": true,
+        "released": true,
+        "elapsed_ms": 3.1286
+      },
+      {
+        "resource": "bde_commit_reference_record.st",
+        "compiled": true,
+        "released": true,
+        "elapsed_ms": 3.4162000000000003
+      },
+      {
+        "resource": "bde_module_persistent_references.st",
+        "compiled": true,
+        "released": true,
+        "elapsed_ms": 4.9795
+      },
+      {
+        "resource": "bde_value_probe.st",
+        "compiled": true,
+        "released": true,
+        "elapsed_ms": 2.5601000000000003
+      }
+    ],
+    "process_epoch": "40652/2026-10-11T01:26:22.5375589Z",
+    "dirty_before": 0,
+    "database": "E:\\Repo\\ASCET\\analysis\\search-tools-acceptance\\2026-10-02\\agent-a\\data\\Database\\agent-a",
+    "error": "System.Exception: BDE_FINITE_REFERENCE_ERROR: Finite reference owner/source/backend expired during read\r\n   在 AscetConnectCompileProbe.ReadReferences(AscetDataBase database, String path, Boolean persistent)\r\n   在 AscetConnectCompileProbe.Main(String[] args)",
+    "elapsed_ms": 294.8899
+  },
+  "sources_match": true,
+  "error": "System.Exception: BDE_FINITE_REFERENCE_ERROR: Finite reference owner/source/backend expired during read\r\n   在 AscetConnectCompileProbe.ReadReferences(AscetDataBase database, String path, Boolean persistent)\r\n   在 AscetConnectCompileProbe.Main(String[] args)"
+}

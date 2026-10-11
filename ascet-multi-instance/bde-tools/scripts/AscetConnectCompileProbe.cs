@@ -15,7 +15,8 @@ class AscetConnectCompileProbe
 {
     static readonly string[] Templates = {
         "bde_connect_material.st", "bde_structure_stage_guard.st", "bde_connect_history.st",
-        "bde_module_reference_snapshot.st", "bde_module_reference_probe.st"
+        "bde_module_reference_snapshot.st", "bde_module_reference_probe.st",
+        "bde_commit_reference_record.st", "bde_module_persistent_references.st", "bde_value_probe.st"
     };
 
     static object ListTrialModules(AscetDataBase database)
@@ -35,7 +36,7 @@ class AscetConnectCompileProbe
         }
     }
 
-    static object ReadReferences(AscetDataBase database, string path)
+    static object ReadReferences(AscetDataBase database, string path, bool persistent)
     {
         path = path.Trim('\\'); int slash = path.LastIndexOf('\\');
         if (slash < 1 || slash == path.Length - 1 || path.Contains(".."))
@@ -60,7 +61,33 @@ class AscetConnectCompileProbe
             }
             if (component.GetOID() != oid || component.GetNameWithPath().Trim('\\') != path)
                 throw new Exception("Module component identity changed during read");
-            return new { component = path, component_oid = oid, observations = images, probe_blocks_invoked = 2 };
+            var result = new Dictionary<string, object> {
+                { "component", path }, { "component_oid", oid }, { "observations", images },
+                { "probe_blocks_invoked", 2 }
+            };
+            if (persistent) {
+                var decoder = AscetStructureRead.Compile(component, "bde_commit_reference_record.st"); blocks.Add(decoder);
+                var persistentFactory = AscetStructureRead.Compile(component, "bde_module_persistent_references.st"); blocks.Add(persistentFactory);
+                var bindPersistent = new InstanceMethodCall(persistentFactory, "value:", component);
+                bindPersistent.appendParameter(decoder); component.call(bindPersistent);
+                var persistentReader = bindPersistent.ResultRemoteObject; blocks.Add(persistentReader);
+                var serializer = AscetStructureRead.Compile(component, "bde_value_probe.st"); blocks.Add(serializer);
+                var bindSerializer = new InstanceMethodCall(serializer, "value:", component);
+                bindSerializer.appendParameter(persistentReader); component.call(bindSerializer);
+                var persistentProbe = bindSerializer.ResultRemoteObject; blocks.Add(persistentProbe);
+                var persistentImages = new List<object>(); result["persistent_observations"] = persistentImages;
+                for (int i = 0; i < 2; ++i) {
+                    var call = new InstanceMethodCall(persistentProbe, "value:", component);
+                    call.appendParameter(component); component.call(call);
+                    string encoded = call.ResultString;
+                    if (encoded.StartsWith("BDE_", StringComparison.Ordinal)) throw new Exception(encoded);
+                    persistentImages.Add(AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(encoded)));
+                }
+                result["persistent_probe_blocks_invoked"] = 2;
+                if (component.GetOID() != oid || component.GetNameWithPath().Trim('\\') != path)
+                    throw new Exception("Persistent Module component identity changed during read");
+            }
+            return result;
         } finally {
             for (int i = blocks.Count - 1; i >= 0; --i) {
                 var release = component.createControlMessageCall("destroyObjectForId:");
@@ -73,8 +100,10 @@ class AscetConnectCompileProbe
     static int Main(string[] args)
     {
         int expectedPid;
-        if ((args.Length != 2 && args.Length != 3) || !Int32.TryParse(args[0], out expectedPid)
+        if ((args.Length < 2 || args.Length > 4) || !Int32.TryParse(args[0], out expectedPid)
                 || expectedPid < 1 || File.Exists(args[1])) return 2;
+        bool persistent = args.Length == 4 && args[3] == "--persistent-references";
+        if (args.Length == 4 && (!persistent || args[2] == "--list-trials")) return 2;
         var result = new Dictionary<string, object> {
             { "profile", "bde_connect_fixed_compile_probe_v1" }, { "passed", false },
             { "model_setters_called", 0 }, { "store_called", false },
@@ -119,9 +148,9 @@ class AscetConnectCompileProbe
                     row["elapsed_ms"] = elapsed.Elapsed.TotalMilliseconds;
                 }
             }
-            if (args.Length == 3) {
+            if (args.Length >= 3) {
                 if (args[2] == "--list-trials") result["trial_modules"] = ListTrialModules(database);
-                else result["module_read"] = ReadReferences(database, args[2]);
+                else result["module_read"] = ReadReferences(database, args[2], persistent);
             }
             var current = ascet.GetCurrentDataBase();
             try {

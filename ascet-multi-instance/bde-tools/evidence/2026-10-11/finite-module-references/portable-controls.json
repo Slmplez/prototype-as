@@ -1,0 +1,10 @@
+{
+  "profile": "portable_offline_test_observation_v1",
+  "command": "E:/PYTHON/python.exe -X utf8 run-portable-tests.py",
+  "exit_code": 0,
+  "tests_passed": 154,
+  "tool_output_truncated": true,
+  "observed_output_tail": "Ran 154 tests in 7.157s\n\nOK",
+  "native_write_acceptance": false,
+  "full_delivery": false
+}

@@ -1,0 +1,179 @@
+{
+  "profile": "bde_finite_reference_increment_v1",
+  "passed": true,
+  "full_delivery": false,
+  "node": "T3.1",
+  "message_lifecycle_cases_passed": 0,
+  "capture_attached_verified": false,
+  "persistent_reference_inverse_implemented": false,
+  "native_calls_by_report": 0,
+  "source_manifest": {
+    "scripts/AscetConnectCompileProbe.cs": "67cdd09a70546dd5ab28433140a6b49156bdf2fcfc6506617bc712cc940841b6",
+    "scripts/AscetStructureSession.cs": "a28abfdd4bc43cbcd277b49d1789f3fcf4b43ed874d716df7c70889d59a34613",
+    "scripts/bde_connect_compile_probe.py": "f75870747bf9159edd82b223ca04ee4677ca749392ee736355d3fb8892c0822e",
+    "scripts/bde_connect_reference_preflight.py": "229a3a1a4bb0f9e5b841f9c288ba023b96bafcc1cce1c2a2bbed7ee8ee05e299",
+    "scripts/bde_finite_reference_increment.py": "ed33faa8e0984d9146ba76ac1887cfc7a82ab5430bd03ae5fd0c0d4b535c5b1e",
+    "scripts/bde_module_persistent_references.st": "b99b5c459a450d31a8366d3c6b33a58b279a33cbeb11c9369a604d1901b4b21f",
+    "scripts/bde_value_probe.st": "937f80cbcbc403f082a6c0918384497e77b71f64b3fd6991b5534b913352b0ce",
+    "scripts/bde_connect_material.st": "1b06adaeb750902ba31a040103539214b9281b40538155890bc12d2589893615",
+    "scripts/bd_module_persistent_references.py": "d1d0b3e4fbcb49ebe47ba1dcc2f67627774d554fa936ee8d13ca89703871c9d3",
+    "scripts/bd_finite_reference_inverse.py": "38a98a2f7f4eb7d569529356403ae96dfb7d42c6d1126b9dca48400e3c986754",
+    "scripts/bd_connect_material.py": "ae5940970ac11901e18c0b6afe28dae129c9c9ca92bd886d495e15b9a1c453ef",
+    "scripts/bd_connect_journal.py": "dccb1e8b07b1fb2db4597f76abd4305586771c213327b36bca895b7cd547a2b8",
+    "scripts/bd_structure_journal.py": "618d94deebe8cd035696f0b93cb16eb199344ffc94cc52680fe2002157645d1e",
+    "scripts/bd_native_structure.py": "9d3152750371c8ee833855375677dd0a47057717d714473ee29f219efb0af673",
+    "scripts/bde_main_workflow.py": "809f9ffd5d10edbb0f6f346f1fb78b0fe242496cd82ae382e4bc0cd7e4c82a6f",
+    "scripts/test_bd_module_persistent_references.py": "95b44810232d59894748ff41911402591c641153e48922e65841e7de615d03a9",
+    "scripts/test_bd_finite_reference_inverse.py": "51e5d1fbc3f9e0d9465ce5e47544ab0292ba18b9b95269cfebc871c31f572c73"
+  },
+  "read_probes": [
+    "analysis\\bde-experiments\\2026-10-11\\bde-finite-module-references-live-06",
+    "analysis\\bde-experiments\\2026-10-11\\bde-finite-module-references-live-07"
+  ],
+  "preflight": "analysis\\bde-experiments\\2026-10-11\\bde-finite-connect-preflight-05",
+  "report_only_source_changes": [
+    "scripts/bde_finite_reference_increment.py"
+  ],
+  "controls": {
+    "exit_code": 0,
+    "tests": 138,
+    "modules": [
+      "test_bd_finite_reference_inverse",
+      "test_bd_module_persistent_references",
+      "test_bd_module_reference_inverse",
+      "test_bd_module_references",
+      "test_bd_connect_journal",
+      "test_bd_connect_material",
+      "test_bd_connect_history",
+      "test_bd_connect_local_history",
+      "test_bd_connect_local_plan",
+      "test_bd_structural_diff_route",
+      "test_bd_structure_conflicts",
+      "test_bd_persistent_references"
+    ],
+    "live_write_acceptance": false
+  },
+  "read_summaries": [
+    {
+      "component": "BDE_Tool_Experiments\\Trial_ConnectReferences_20261011_034859_7419e31d",
+      "component_oid": "040ts00000001qg7185g75ap26ii6",
+      "summary": {
+        "profile": "finite_module_reference_summary_v1",
+        "component_oid": "040ts00000001qg7185g75ap26ii6",
+        "owners": 2,
+        "record_reads": 13,
+        "reciprocal_targets": 9,
+        "complete": true,
+        "failed_record_reads": 0,
+        "absent_record_reads": 1,
+        "existing_record_reads": 12,
+        "semantic_bytes": 2679,
+        "raw_bytes": 3942,
+        "inconsistent_checks": 0,
+        "original_edit_before_bound": false,
+        "cross_process_atomic": false,
+        "full_commit_resource_closure": false,
+        "write_authorized": false,
+        "inverse_authorized": false
+      },
+      "wire": {
+        "connections": 1,
+        "request": {
+          "bytes": 138820,
+          "frames": 73,
+          "parse_error": null,
+          "incomplete_bytes": 0
+        },
+        "response": {
+          "bytes": 108974,
+          "frames": 72,
+          "parse_error": null,
+          "incomplete_bytes": 0
+        },
+        "errors": []
+      },
+      "native_elapsed_ms": 260.8173
+    },
+    {
+      "component": "BDE_Tool_Experiments\\Trial_ChannelModule0_20261001_182702_1a77f8",
+      "component_oid": "040ts00000001qg71810o4cvlao0s",
+      "summary": {
+        "profile": "finite_module_reference_summary_v1",
+        "component_oid": "040ts00000001qg71810o4cvlao0s",
+        "owners": 2,
+        "record_reads": 14,
+        "reciprocal_targets": 10,
+        "complete": true,
+        "failed_record_reads": 0,
+        "absent_record_reads": 1,
+        "existing_record_reads": 13,
+        "semantic_bytes": 3268,
+        "raw_bytes": 4821,
+        "inconsistent_checks": 0,
+        "original_edit_before_bound": false,
+        "cross_process_atomic": false,
+        "full_commit_resource_closure": false,
+        "write_authorized": false,
+        "inverse_authorized": false
+      },
+      "wire": {
+        "connections": 1,
+        "request": {
+          "bytes": 138815,
+          "frames": 73,
+          "parse_error": null,
+          "incomplete_bytes": 0
+        },
+        "response": {
+          "bytes": 126755,
+          "frames": 72,
+          "parse_error": null,
+          "incomplete_bytes": 0
+        },
+        "errors": []
+      },
+      "native_elapsed_ms": 272.0738
+    }
+  ],
+  "original_prepared_reference_snapshot_summary": {
+    "profile": "finite_module_reference_summary_v1",
+    "component_oid": "040ts00000001qg7185g75ap26ii6",
+    "owners": 2,
+    "record_reads": 13,
+    "reciprocal_targets": 9,
+    "complete": true,
+    "failed_record_reads": 0,
+    "absent_record_reads": 1,
+    "existing_record_reads": 12,
+    "semantic_bytes": 2679,
+    "raw_bytes": 3942,
+    "inconsistent_checks": 0,
+    "original_edit_before_bound": false,
+    "cross_process_atomic": false,
+    "full_commit_resource_closure": false,
+    "write_authorized": false,
+    "inverse_authorized": false
+  },
+  "prepared_verified": true,
+  "prepared_native_record_bound": true,
+  "python_apply_refused_before_io": true,
+  "native_bridge_no_mutation_refusal_verified": true,
+  "public_native_original_unchanged": true,
+  "preflight_wire": {
+    "connections": 1,
+    "request": {
+      "bytes": 304526,
+      "frames": 434,
+      "parse_error": null,
+      "incomplete_bytes": 0
+    },
+    "response": {
+      "bytes": 372865,
+      "frames": 433,
+      "parse_error": null,
+      "incomplete_bytes": 0
+    },
+    "errors": []
+  },
+  "ascet_started_or_restarted": false
+}

@@ -9,12 +9,15 @@
    edge api afterOrder afterDrawing sourceAfter nativeAfter orderAfter drawingAfter
    endpoints edgeRecord retained anchors boundaries detachedGuard answer combinedNativeAfter
    actualValues actualEncoded alias reservations graphicalActual referenceProfile
-   referenceRead referenceOwner referenceDBObject referenceBefore referenceAfter referenceReceipt |
- (helpers isArray and: [helpers size = 6 and: [context isArray and: [context size = 3]]])
+   referenceRead referenceOwner referenceDBObject referenceBefore referenceAfter referenceReceipt
+   persistentRead persistentBefore persistentAfter persistentReceipt |
+ (helpers isArray and: [(#(6 7) includes: helpers size) and: [context isArray and: [context size = 3]]])
    ifFalse: [component error: 'Fixed connect material helpers and token/mode required'].
  token := context first. mode := context at: 2. referenceProfile := context last.
- (#('none' 'module_inbound_v1') includes: referenceProfile)
+ (#('none' 'module_inbound_v1' 'module_persistent_v1') includes: referenceProfile)
    ifFalse: [component error: 'Unknown fixed Module inbound reference profile'].
+ helpers size = (referenceProfile = 'module_persistent_v1' ifTrue: [7] ifFalse: [6])
+   ifFalse: [component error: 'Exact fixed reference helper coverage required'].
  (#('prepare' 'inspect_prepared' 'capture_attached' 'inspect_attached' 'inspect_detached' 'inspect_original') includes: mode)
    ifFalse: [component error: 'Unknown fixed connect material command'].
  record := (Smalltalk at: #DogeBDEStructureEditsV3) at: token.
@@ -100,7 +103,7 @@
    "Retain the material before querying additional resources so a failed
     reference read never destroys the only original graphical/source witness."
    record at: 'connectMaterial' put: material.
-   referenceProfile = 'module_inbound_v1' ifTrue: [
+   referenceProfile ~= 'none' ifTrue: [
      (component class name asString = 'EtasAPIModuleBDE' and: [component item class name asString = 'SGModule'])
        ifFalse: [component error: 'Exact native Module BDE owner required for inbound reference capture'].
      referenceOwner := component item. referenceDBObject := referenceOwner dbObject.
@@ -118,7 +121,23 @@
          actualReferences := referenceRead value.
          #('owner_references' 'owner_database_record_references') allSatisfy: [:key |
            (actualReferences at: key) = (referenceBefore at: key)]
-       ]
+       ].
+     referenceProfile = 'module_persistent_v1' ifTrue: [
+       persistentRead := [
+         (component item == referenceOwner and: [referenceOwner dbObject == referenceDBObject and: [
+           (root at: 'owner') == referenceOwner and: [(root at: 'generation') = (material at: 'generation')]]])
+           ifFalse: [component error: 'Original finite reference preparation binding expired'].
+         (helpers at: 7) value: component
+       ].
+       material at: 'profile' put: 'native_connect_material_v3'; at: 'persistentReferenceReader' put: persistentRead.
+       persistentBefore := persistentRead value.
+       (persistentBefore at: 'complete') == true ifFalse: [component error: 'Original finite reference query incomplete; preparation retained'].
+       material at: 'persistentReferencesBefore' put: persistentBefore;
+         at: 'persistentReferencesBeforeEncoding' put: ((native at: 'encode') value: persistentBefore);
+         at: 'persistentReferenceGuard' put: [
+           ((native at: 'encode') value: (material at: 'persistentReferenceReader') value)
+             = (material at: 'persistentReferencesBeforeEncoding')]
+     ]
    ]
  ] ifFalse: [material := record at: 'connectMaterial' ifAbsent: [component error: 'Original connect material unavailable']].
  ((material at: 'record') == record and: [(material at: 'root') == root and: [
@@ -136,9 +155,12 @@
  originalOrder := material at: 'beforeOrder'. originalDrawing := material at: 'beforeDrawing'.
  native := material at: 'nativeBefore'. source := material at: 'sourceBefore'. orderRecord := material at: 'orderRecord'.
  (#('prepare' 'inspect_prepared') includes: mode) ifTrue: [
-   referenceProfile = 'module_inbound_v1' ifTrue: [
+   referenceProfile ~= 'none' ifTrue: [
      (material at: 'moduleReferenceGuard') value
        ifFalse: [component error: 'Prepared Module inbound references changed']].
+   referenceProfile = 'module_persistent_v1' ifTrue: [
+     (material at: 'persistentReferenceGuard') value
+       ifFalse: [component error: 'Prepared finite raw reference records changed']].
    ((material at: 'phase') = 'prepared' and: [(record at: 'state') = 'prepared' and: [
    (sameOrder value: parent children value: originalOrder) and: [
    (sameOrder value: parent sortedChildren value: originalDrawing) and: [
@@ -149,8 +171,12 @@
  mode = 'capture_attached' ifTrue: [
    ((material at: 'phase') = 'prepared' and: [(record at: 'state') = 'applied'])
      ifFalse: [component error: 'Actual connect result can be captured once after observed application'].
-   referenceProfile = 'module_inbound_v1' ifTrue: [
+   referenceProfile ~= 'none' ifTrue: [
      material at: 'moduleReferencesAfter' put: (material at: 'moduleReferenceReader') value].
+   referenceProfile = 'module_persistent_v1' ifTrue: [
+     persistentAfter := (material at: 'persistentReferenceReader') value.
+     (persistentAfter at: 'complete') == true ifFalse: [component error: 'Actual finite reference query incomplete; original before retained'].
+     material at: 'persistentReferencesAfter' put: persistentAfter].
    api := record at: 'created' ifAbsent: [component error: 'Actual created connection unavailable'].
    edge := api diagramElement. afterOrder := parent children asArray copy. afterDrawing := parent sortedChildren asArray copy.
    (edge manager == parent and: [(afterOrder select: [:member | member == edge]) size = 1 and: [
@@ -234,7 +260,7 @@
      at: 'beforeValues' put: (material at: 'beforeValues'); at: 'afterValues' put: actualValues; yourself)
  ].
  mode = 'inspect_original' ifTrue: [
-   referenceProfile = 'module_inbound_v1' ifTrue: [
+   referenceProfile ~= 'none' ifTrue: [
      component error: 'Module inbound references require persistent inverse closure before original verification'].
    (record at: 'state') = 'reverted' ifFalse: [component error: 'Original baseline inspection requires a verified reverted connection'].
    receipt := Dictionary new at: 'profile' put: 'native_connect_original_baseline_v1';
@@ -249,12 +275,16 @@
    (native at: 'encode') value: receipt
  ] ifFalse: [
  (#('capture_attached' 'inspect_attached' 'inspect_detached') includes: mode) ifTrue: [
-   referenceProfile = 'module_inbound_v1' ifTrue: [
+   referenceProfile ~= 'none' ifTrue: [
      mode = 'inspect_detached' ifTrue: [component error: 'Module reference detached history is not implemented'].
      referenceAfter := (material at: 'moduleReferenceReader') value.
      (#('owner_references' 'owner_database_record_references') allSatisfy: [:key |
        (referenceAfter at: key) = ((material at: 'moduleReferencesAfter') at: key)])
        ifFalse: [component error: 'Frozen actual Module inbound reference head changed']].
+   referenceProfile = 'module_persistent_v1' ifTrue: [
+     ((native at: 'encode') value: (material at: 'persistentReferenceReader') value)
+       = ((native at: 'encode') value: (material at: 'persistentReferencesAfter'))
+       ifFalse: [component error: 'Frozen actual finite raw reference head changed']].
    (material at: 'phase') = 'attached' ifFalse: [component error: 'Actual retained connection material required'].
    ((record at: 'created') == (material at: 'createdAPI') and: [
      (material at: 'createdAPI') diagramElement == (material at: 'created')])
@@ -292,7 +322,7 @@
    at: 'created_original_retained' put: (material includesKey: 'created');
    at: 'model_setters_called' put: 0; at: 'store_called' put: false;
    at: 'write_authorized' put: false; at: 'managed_inverse_enabled' put: false; yourself.
- referenceProfile = 'module_inbound_v1' ifTrue: [
+ referenceProfile ~= 'none' ifTrue: [
    referenceReceipt := Dictionary new at: 'profile' put: 'native_module_inbound_references_v1';
      at: 'native_token' put: token; at: 'component_oid' put: component getOID;
      at: 'generation' put: (material at: 'generation');
@@ -301,6 +331,18 @@
      at: 'complete' put: true; at: 'model_setters_called' put: 0; at: 'store_called' put: false;
      at: 'inverse_authorized' put: false; at: 'full_commit_resource_closure' put: false; yourself.
    receipt at: 'module_references' put: referenceReceipt
+ ].
+ referenceProfile = 'module_persistent_v1' ifTrue: [
+   persistentReceipt := Dictionary new at: 'profile' put: 'native_module_persistent_references_v1';
+     at: 'native_token' put: token; at: 'component_oid' put: component getOID;
+     at: 'generation' put: (material at: 'generation'); at: 'phase' put: (material at: 'phase');
+     at: 'before' put: (material at: 'persistentReferencesBefore');
+     at: 'after' put: (material at: 'persistentReferencesAfter' ifAbsent: [nil]);
+     at: 'prepared_native_record_bound' put: true; at: 'model_setters_called' put: 0;
+     at: 'store_called' put: false; at: 'commit_called' put: false;
+     at: 'write_authorized' put: false; at: 'inverse_authorized' put: false;
+     at: 'full_commit_resource_closure' put: false; yourself.
+   receipt at: 'module_persistent_references' put: persistentReceipt
  ].
  answer := (native at: 'encode') value: receipt. answer
  ]

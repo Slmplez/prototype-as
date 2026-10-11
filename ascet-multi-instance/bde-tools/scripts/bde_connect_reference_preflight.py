@@ -1,7 +1,9 @@
-"""Zero-write production v2 connection prepare/inspect/discard on an existing Trial.
+"""Zero-model-write production v2/v3 preparation on an existing Trial.
 
 Requires a fresh successful fixed read probe on the same process/component.
-No apply, inverse, factory, store, editor close or ASCET lifecycle is requested.
+No model apply, inverse, factory, store, editor close or ASCET lifecycle is
+dispatched. V3 verifies Python refusal; optional host-gate verification sends
+one apply protocol request which must return explicit no-mutation refusal.
 """
 import argparse
 import json
@@ -25,7 +27,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--read-probe', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--persistent-references', action='store_true', help='Bind finite raw Module/source/reciprocal records to v3; preparation only')
+    parser.add_argument('--verify-host-write-gate', action='store_true', help='Send one explicitly rejected host apply request; no Smalltalk apply dispatch')
     args = parser.parse_args()
+    if args.verify_host_write_gate and not args.persistent_references:
+        parser.error('--verify-host-write-gate requires --persistent-references')
     prior, output = args.read_probe.resolve(), args.output.resolve()
     owned = service.ROOT / 'analysis/bde-experiments'
     if not prior.is_relative_to(owned) or not output.is_relative_to(owned) or output.exists():
@@ -33,6 +39,8 @@ def main():
     proof = json.loads((prior / 'result.json').read_text(encoding='utf-8'))
     if proof.get('passed') is not True or proof.get('module_observations_stable') is not True:
         raise ValueError('Successful existing Module probe required')
+    if args.persistent_references and proof.get('persistent_complete_capture_verified') is not True:
+        raise ValueError('Successful complete finite current reference read required')
     native, port, pid = proof['native'], proof['port'], proof['pid']
     component = native['module_read']['component']
     if not re.fullmatch(r'BDE_Tool_Experiments\\Trial_[A-Za-z0-9_]+', component):
@@ -62,7 +70,7 @@ def main():
         environment = {key: value for key, value in os.environ.items() if not key.startswith('ASCET_BD_')}
         environment.update(ASCET_BD_ENDPOINT_PORT=str(port), ASCET_BD_OPERATION_EXECUTOR='staged_v1',
             ASCET_BD_CONNECT_MATERIAL='identity_v1', ASCET_BD_CONNECT_HISTORY='native_source_exact_v1',
-            ASCET_BD_CONNECT_REFERENCES='module_inbound_v1', ASCET_BD_NATIVE_TRACE='1')
+            ASCET_BD_CONNECT_REFERENCES='module_persistent_v1' if args.persistent_references else 'module_inbound_v1', ASCET_BD_NATIVE_TRACE='1')
         with service.live_lock():
             check_pending(domain)
             if endpoint_process(port) != pid:
@@ -93,6 +101,11 @@ def main():
                             raise ValueError('Preparation changed the full semantic observation')
                         if adapter.connect_material_prepared['module_references']['before'] != native['module_read']['observations'][1]['image']:
                             raise ValueError('Module references changed since the read probe; retain preparation')
+                        if args.persistent_references:
+                            raw = adapter.connect_material_prepared['module_persistent_references']['before']
+                            if raw != native['module_read']['persistent_observations'][1]:
+                                raise ValueError('Finite raw references changed since the read probe; retain preparation')
+                            result['finite_original_prepared_record_bound'] = True
                         result['stage'] = 'inspect_prepared'; save()
                         inspected = validate(adapter._exchange(dict(cmd='connect_material', action='inspect_prepared', token=token)),
                             token=token, component_oid=domain['oid'], source=source_ref, target=target_ref, phase='prepared')
@@ -100,6 +113,27 @@ def main():
                         if inspected != adapter.connect_material_prepared:
                             raise ValueError('Prepared material or references changed before any edit')
                         result['prepared_verified'] = True
+                        if args.persistent_references:
+                            from bd_edit_journal import NativePreconditionConflict
+                            before_commands = len(adapter.commands)
+                            try:
+                                adapter.apply(token)
+                            except NativePreconditionConflict as error:
+                                result['apply_refusal'] = str(error)
+                            else:
+                                raise ValueError('Finite reference preparation gate failed to refuse application')
+                            if len(adapter.commands) != before_commands:
+                                raise ValueError('Write refusal dispatched a native command')
+                            result['apply_refused_before_native_dispatch'] = True
+                            if args.verify_host_write_gate:
+                                result['stage'] = 'host_write_refusal'; save()
+                                try:
+                                    adapter._exchange(dict(cmd='apply', token=token))
+                                except NativePreconditionConflict as error:
+                                    result['host_apply_refusal'] = str(error)
+                                    result['host_explicit_no_mutation_refusal'] = True
+                                else:
+                                    raise ValueError('Native bridge failed to refuse preparation-only application')
                         result['stage'] = 'discard'; save()
                         result['discard'] = adapter.discard_prepared(domain, token)
                         after = adapter.observe(domain, []); public_after = adapter.observe_public(domain)

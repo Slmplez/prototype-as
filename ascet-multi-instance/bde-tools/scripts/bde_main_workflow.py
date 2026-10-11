@@ -84,7 +84,7 @@ def build_oracle(output, *, scope_lifecycle=False):
              "bde_field_inverse_values.st", "bde_field_inverse_values_private.st", "bde_observation_copy.st",
              "bde_topology_inverse_values.st", "bde_topology_inverse_values_private.st",
              "bde_topology_native_capture.st", "bde_topology_material_probe.st", "bde_topology_current_context.st",
-             "bde_connect_material.st", "bde_module_reference_snapshot.st", "bde_create_material.st", "bde_create_declaration_probe.st",
+             "bde_connect_material.st", "bde_module_reference_snapshot.st", "bde_module_persistent_references.st", "bde_create_material.st", "bde_create_declaration_probe.st",
              "bde_enum_history_failure_probe.st", "bde_message_declaration_inventory.st",
              "bde_message_declaration_capture.st", "bde_message_before_study.st", "bde_message_creation_capture.st", "bde_message_history_guard.st", "bde_message_material_diagnostic.st",
              "bde_enum_reference_sync.st",

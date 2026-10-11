@@ -61,6 +61,17 @@ three-way inverse planner is bound to confirmed original journals, preserves
 unrelated memberships and rejects overlaps, but grants no database write or
 inverse authority. See `evidence/2026-10-11/module-reference-preflight/`.
 
-The selected portable suite passes 103 tests. It is offline package validation;
+The latest v3 preparation-only profile is
+`ASCET_BD_CONNECT_REFERENCES=module_persistent_v1`. It additionally freezes finite
+Module/source raw outgoing/inbound records and existing reciprocal targets in
+the prepared native record, including distinct absence results and full raw
+tails. Production prepare/inspect/discard and both Python/C# no-mutation refusals
+passed in the existing session; two isolated Module read observations passed.
+Compact actual WAL/diff and journal-bound raw inverse proposals are implemented,
+but the persistent writer/inverse and actual attached capture remain unverified.
+Any raw conflict or missing original target capture suppresses all candidates.
+See `evidence/2026-10-11/finite-module-references/` for results and failures.
+
+The selected portable suite passes 154 tests. It is offline package validation;
 the native preparation evidence is a separate result and not a complete edit
 lifecycle acceptance.

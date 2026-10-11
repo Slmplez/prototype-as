@@ -1,0 +1,175 @@
+{
+  "native": {
+    "diagram": "Main",
+    "diagram_kind": "block_diagram",
+    "entries": [
+      {
+        "anchor": [
+          300,
+          100
+        ],
+        "kind": "node",
+        "native_class": "SGOperatorGO",
+        "operator": "+",
+        "pins": [
+          "p2",
+          "p3",
+          "p4"
+        ],
+        "position": [
+          290,
+          90
+        ],
+        "ref": "n1",
+        "size": [
+          20,
+          20
+        ]
+      },
+      {
+        "anchor": [
+          100,
+          100
+        ],
+        "kind": "node",
+        "literal": "1.0",
+        "native_class": "SGLiteralGO",
+        "pins": [
+          "p6"
+        ],
+        "position": [
+          80,
+          93
+        ],
+        "ref": "n5",
+        "size": [
+          40,
+          14
+        ]
+      },
+      {
+        "input": false,
+        "kind": "pin",
+        "name": "out#1",
+        "output": true,
+        "owner": "n1",
+        "ref": "p2",
+        "sequence": null
+      },
+      {
+        "input": true,
+        "kind": "pin",
+        "name": "in#1",
+        "output": false,
+        "owner": "n1",
+        "ref": "p3",
+        "sequence": null
+      },
+      {
+        "input": true,
+        "kind": "pin",
+        "name": "in#2",
+        "output": false,
+        "owner": "n1",
+        "ref": "p4",
+        "sequence": null
+      },
+      {
+        "input": false,
+        "kind": "pin",
+        "name": "get/get",
+        "output": true,
+        "owner": "n5",
+        "ref": "p6",
+        "sequence": null
+      }
+    ],
+    "generation": 4,
+    "identity": "native_object_registry_guarded_by_graphics_source_in_current_ASCET_process",
+    "lookup_edges": 0,
+    "lookup_nodes": 2,
+    "targets": []
+  },
+  "public": {
+    "nodes": [
+      {
+        "id": 1,
+        "kind": "BlockDiagramOperator",
+        "position": [
+          290,
+          90
+        ],
+        "size": [
+          20,
+          20
+        ],
+        "pins": [
+          {
+            "native": {
+              "native_class": "SGBlockInterfaceElementGO",
+              "id": 2
+            },
+            "owner": 1,
+            "name": "out#1",
+            "input": false,
+            "output": true,
+            "sequence": null
+          },
+          {
+            "native": {
+              "native_class": "SGBlockInterfaceElementGO",
+              "id": 3
+            },
+            "owner": 1,
+            "name": "in#1",
+            "input": true,
+            "output": false,
+            "sequence": null
+          },
+          {
+            "native": {
+              "native_class": "SGBlockInterfaceElementGO",
+              "id": 4
+            },
+            "owner": 1,
+            "name": "in#2",
+            "input": true,
+            "output": false,
+            "sequence": null
+          }
+        ],
+        "literal": null,
+        "op": "+"
+      },
+      {
+        "id": 5,
+        "kind": "BlockDiagramLiteral",
+        "position": [
+          80,
+          93
+        ],
+        "size": [
+          40,
+          14
+        ],
+        "pins": [
+          {
+            "native": {
+              "native_class": "SGBlockInterfaceElementGO",
+              "id": 6
+            },
+            "owner": 5,
+            "name": "get/get",
+            "input": false,
+            "output": true,
+            "sequence": null
+          }
+        ],
+        "literal": "1.0",
+        "op": null
+      }
+    ],
+    "edges": [],
+    "comments": []
+  }
+}

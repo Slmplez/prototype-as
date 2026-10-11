@@ -96,6 +96,30 @@ def reference_inverse_plan(log, token, current):
     return result
 
 
+def persistent_reference_inverse_plan(log, token, current):
+    """Bind a raw finite proposal to the durable confirmed original forward.
+
+    Caller may supply only CURRENT. Original raw records come from the WAL and
+    cannot be replaced by a later probe. This grants no native write authority.
+    """
+    events = log.read(token); intent = events[0]['payload']
+    if (intent.get('operation') != 'connect_data' or intent.get('diagram') != 'Main'
+            or intent.get('arguments', [None])[0] != []
+            or log.receipt(token, events)['status'] != 'applied_observed'):
+        raise JournalError('REVERT_UNAVAILABLE', 'Confirmed complete Main connection forward required for raw reference planning')
+    prepared, actual = one(events, 'prepared'), one(events, 'observed')
+    material = forward_material(intent, prepared, actual.get('connect_material_actual'), token)
+    from bd_structure_journal import postcondition
+    if ('module_persistent_references' not in material or actual != forward_observation(actual['after'], material)
+            or not postcondition(intent, prepared['before'], actual['after'])):
+        raise JournalError('REVERT_UNAVAILABLE', 'Complete durable actual finite raw reference proof required')
+    from bd_finite_reference_inverse import plan
+    result = plan(material['module_persistent_references'], current, token=token,
+        component_oid=intent['domain']['oid'], generation=prepared['before']['generation'])
+    result.update(journal_bound=True, original_domain=clone(intent['domain']), durable_actual_sha256=fingerprint(actual))
+    return result
+
+
 def forward_material(source, prepared, value, token):
     from bd_connect_material import validate
     bindings = dict(token=token, component_oid=source['domain']['oid'],
@@ -110,6 +134,10 @@ def forward_material(source, prepared, value, token):
         for key in ('before', 'generation'):
             if actual['module_references'][key] != original['module_references'][key]:
                 raise JournalError('CONNECT_MATERIAL_INVALID', 'Actual connection differs from durable original Module ' + key)
+    if 'module_persistent_references' in original:
+        for key in ('before', 'generation'):
+            if actual['module_persistent_references'][key] != original['module_persistent_references'][key]:
+                raise JournalError('CONNECT_MATERIAL_INVALID', 'Actual finite reference proof differs from durable original ' + key)
     for key in ('graphical_before', 'parent_before', 'drawing_before',
             'original_native_objects', 'original_source_objects'):
         if actual[key] != original[key]:
@@ -129,6 +157,10 @@ def forward_observation(after, material):
         from bd_module_references import differences
         result.update(module_references_actual=clone(material['module_references']),
             module_reference_differences=differences(material['module_references']))
+    if 'module_persistent_references' in material:
+        from bd_module_persistent_references import differences
+        result.update(module_persistent_references_actual=clone(material['module_persistent_references']),
+            module_persistent_reference_differences=differences(material['module_persistent_references']))
     return result
 
 

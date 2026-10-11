@@ -1,0 +1,65 @@
+BDE_NATIVE_TRACE compile.begin bde_connect_material.st chars=27171
+BDE_NATIVE_TRACE compile.return bde_connect_material.st
+BDE_NATIVE_TRACE compile.class.begin bde_connect_material.st
+BDE_NATIVE_TRACE compile.class.done bde_connect_material.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_connect_material.st
+BDE_NATIVE_TRACE compile.begin bde_structure_stage_guard.st chars=47238
+BDE_NATIVE_TRACE compile.return bde_structure_stage_guard.st
+BDE_NATIVE_TRACE compile.class.begin bde_structure_stage_guard.st
+BDE_NATIVE_TRACE compile.class.done bde_structure_stage_guard.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_structure_stage_guard.st
+BDE_NATIVE_TRACE compile.begin bde_connect_history.st chars=26119
+BDE_NATIVE_TRACE compile.return bde_connect_history.st
+BDE_NATIVE_TRACE compile.class.begin bde_connect_history.st
+BDE_NATIVE_TRACE compile.class.done bde_connect_history.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_connect_history.st
+BDE_NATIVE_TRACE compile.begin bde_module_reference_snapshot.st chars=1759
+BDE_NATIVE_TRACE compile.return bde_module_reference_snapshot.st
+BDE_NATIVE_TRACE compile.class.begin bde_module_reference_snapshot.st
+BDE_NATIVE_TRACE compile.class.done bde_module_reference_snapshot.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_module_reference_snapshot.st
+BDE_NATIVE_TRACE compile.begin bde_module_reference_probe.st chars=1715
+BDE_NATIVE_TRACE compile.return bde_module_reference_probe.st
+BDE_NATIVE_TRACE compile.class.begin bde_module_reference_probe.st
+BDE_NATIVE_TRACE compile.class.done bde_module_reference_probe.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_module_reference_probe.st
+BDE_NATIVE_TRACE compile.begin bde_commit_reference_record.st chars=2791
+BDE_NATIVE_TRACE compile.return bde_commit_reference_record.st
+BDE_NATIVE_TRACE compile.class.begin bde_commit_reference_record.st
+BDE_NATIVE_TRACE compile.class.done bde_commit_reference_record.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_commit_reference_record.st
+BDE_NATIVE_TRACE compile.begin bde_module_persistent_references.st chars=9329
+BDE_NATIVE_TRACE compile.return bde_module_persistent_references.st
+BDE_NATIVE_TRACE compile.class.begin bde_module_persistent_references.st
+BDE_NATIVE_TRACE compile.class.done bde_module_persistent_references.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_module_persistent_references.st
+BDE_NATIVE_TRACE compile.begin bde_value_probe.st chars=1266
+BDE_NATIVE_TRACE compile.return bde_value_probe.st
+BDE_NATIVE_TRACE compile.class.begin bde_value_probe.st
+BDE_NATIVE_TRACE compile.class.done bde_value_probe.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_value_probe.st
+BDE_NATIVE_TRACE compile.begin bde_module_reference_snapshot.st chars=1759
+BDE_NATIVE_TRACE compile.return bde_module_reference_snapshot.st
+BDE_NATIVE_TRACE compile.class.begin bde_module_reference_snapshot.st
+BDE_NATIVE_TRACE compile.class.done bde_module_reference_snapshot.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_module_reference_snapshot.st
+BDE_NATIVE_TRACE compile.begin bde_module_reference_probe.st chars=1715
+BDE_NATIVE_TRACE compile.return bde_module_reference_probe.st
+BDE_NATIVE_TRACE compile.class.begin bde_module_reference_probe.st
+BDE_NATIVE_TRACE compile.class.done bde_module_reference_probe.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_module_reference_probe.st
+BDE_NATIVE_TRACE compile.begin bde_commit_reference_record.st chars=2791
+BDE_NATIVE_TRACE compile.return bde_commit_reference_record.st
+BDE_NATIVE_TRACE compile.class.begin bde_commit_reference_record.st
+BDE_NATIVE_TRACE compile.class.done bde_commit_reference_record.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_commit_reference_record.st
+BDE_NATIVE_TRACE compile.begin bde_module_persistent_references.st chars=9329
+BDE_NATIVE_TRACE compile.return bde_module_persistent_references.st
+BDE_NATIVE_TRACE compile.class.begin bde_module_persistent_references.st
+BDE_NATIVE_TRACE compile.class.done bde_module_persistent_references.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_module_persistent_references.st
+BDE_NATIVE_TRACE compile.begin bde_value_probe.st chars=1266
+BDE_NATIVE_TRACE compile.return bde_value_probe.st
+BDE_NATIVE_TRACE compile.class.begin bde_value_probe.st
+BDE_NATIVE_TRACE compile.class.done bde_value_probe.st BlockContextTemplate
+BDE_NATIVE_TRACE compile.done bde_value_probe.st

@@ -1,5 +1,19 @@
 {
-  "current_increment_key": "latest_module_reference_preflight_increment",
+  "current_increment_key": "latest_finite_module_reference_increment",
+  "latest_finite_module_reference_increment": {
+    "source": "analysis/bde-experiments/2026-10-11/bde-finite-module-reference-increment-02/result.json",
+    "node": "T3.1",
+    "status": "finite_original_prepare_live_verified_persistent_executor_pending",
+    "offline_controls_passed": 138,
+    "finite_read_fixtures": 2,
+    "production_prepare_inspect_discard_verified": true,
+    "python_and_native_write_refusal_verified": true,
+    "journal_bound_raw_inverse_plan": true,
+    "capture_attached_verified": false,
+    "persistent_reference_inverse_implemented": false,
+    "next": "Capture original records for explicitly new reference targets, prove absent-record lifecycle and finite persistent writer/inverse before T5.1",
+    "full_delivery": false
+  },
   "latest_module_reference_preflight_increment": {
     "source": "analysis/bde-experiments/2026-10-11/bde-module-reference-preflight-increment-01/result.json",
     "node": "T3.1",
