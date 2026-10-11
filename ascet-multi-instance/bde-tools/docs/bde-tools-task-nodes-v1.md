@@ -1,5 +1,7 @@
 # BDE tools task nodes v1
 
+最新 T3.1 增量：v4 同次准备保存完整 Module/source owner 原记录；prepare/inspect/discard 与独立双读及三层拒写在线通过。owner 自动实际 diff/WAL/offline projection 与组合三方逆候选已接入，107 定向离线控制通过。仍未执行实际 v4 connection attached 或 native owner/reference/model/cache inverse，T3.1/T5.1 不升级。下一垂直验收必须完成一条实际 connect 生命周期及完整恢复；有限 raw writer 的外部 reciprocal 目标仍拒写。[合同](bde-connect-owner-journal.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-connect-owner-journal-increment-03/README.md)。
+
 2026-10-11 最新增量：从已核对58对象的私有 source 副本精确将 Operator/logic_id=1 的 position.x 从300改为311，生成4,424字节实际 after，再由私有原生loader完整核对全部非省略字段/共享关系，恢复副本坐标。随后在该隔离组件原生 source 记录执行候选写入→完整原字节读回→原记录 inverse（2write/0delete），新连接双读完整 owner/reference 和公共 bookends 保持原样，精确清本次 pending。实际图形语义 diff 为1个坐标，source 记录物理792字节变化（含序列化地址等差异，未宣称逐字节原因已证），完整raw前后保留；固定header身份未变。只证明该 source 记录在当前实例内的往返，未改 live 图形/cache、未 Store/Commit，不能升级为生产move/connect/inverse或崩溃持久性。正式 model/source/cache/owner journal 闭合、T5.1、Message0/60、43 required、业务恢复与整体交付继续未完成。获批恢复后所有操作复用当前实例，没有新启停。
 
 [修改后source记录证据](../analysis/bde-experiments/2026-10-11/bde-source-payload-increment-01/README.md) · [source合同](bde-fresh-source-serializer.md)。

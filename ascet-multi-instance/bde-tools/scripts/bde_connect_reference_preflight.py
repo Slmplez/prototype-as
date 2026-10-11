@@ -28,8 +28,11 @@ def main():
     parser.add_argument('--read-probe', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--persistent-references', action='store_true', help='Bind finite raw Module/source/reciprocal records to v3; preparation only')
+    parser.add_argument('--owner-records', action='store_true', help='Bind full Module/source records in the same v4 preparation; no edit')
     parser.add_argument('--verify-host-write-gate', action='store_true', help='Send one explicitly rejected host apply request; no Smalltalk apply dispatch')
     args = parser.parse_args()
+    if args.owner_records and not args.persistent_references:
+        parser.error('--owner-records requires --persistent-references')
     if args.verify_host_write_gate and not args.persistent_references:
         parser.error('--verify-host-write-gate requires --persistent-references')
     prior, output = args.read_probe.resolve(), args.output.resolve()
@@ -41,6 +44,8 @@ def main():
         raise ValueError('Successful existing Module probe required')
     if args.persistent_references and proof.get('persistent_complete_capture_verified') is not True:
         raise ValueError('Successful complete finite current reference read required')
+    if args.owner_records and proof.get('persistent_owner_records_stable') is not True:
+        raise ValueError('Successful full isolated owner read required')
     native, port, pid = proof['native'], proof['port'], proof['pid']
     component = native['module_read']['component']
     targets = []
@@ -76,7 +81,8 @@ def main():
         environment = {key: value for key, value in os.environ.items() if not key.startswith('ASCET_BD_')}
         environment.update(ASCET_BD_ENDPOINT_PORT=str(port), ASCET_BD_OPERATION_EXECUTOR='staged_v1',
             ASCET_BD_CONNECT_MATERIAL='identity_v1', ASCET_BD_CONNECT_HISTORY='native_source_exact_v1',
-            ASCET_BD_CONNECT_REFERENCES='module_persistent_v1' if args.persistent_references else 'module_inbound_v1', ASCET_BD_NATIVE_TRACE='1')
+            ASCET_BD_CONNECT_REFERENCES='module_owner_records_v1' if args.owner_records else
+                'module_persistent_v1' if args.persistent_references else 'module_inbound_v1', ASCET_BD_NATIVE_TRACE='1')
         with service.live_lock():
             check_pending(domain)
             if endpoint_process(port) != pid:
@@ -113,6 +119,11 @@ def main():
                             if raw != native['module_read']['persistent_observations'][1]:
                                 raise ValueError('Finite raw references changed since the read probe; retain preparation')
                             result['finite_original_prepared_record_bound'] = True
+                        if args.owner_records:
+                            original_owners = adapter.connect_material_prepared['persistent_owner_records']['before']
+                            if original_owners != native['module_read']['owner_observations'][1]:
+                                raise ValueError('Complete owner records changed since independent read; retain preparation')
+                            result['full_owners_original_prepared_record_bound'] = True
                         result['stage'] = 'inspect_prepared'; save()
                         inspected = validate(adapter._exchange(dict(cmd='connect_material', action='inspect_prepared', token=token)),
                             token=token, component_oid=domain['oid'], source=source_ref, target=target_ref, phase='prepared')

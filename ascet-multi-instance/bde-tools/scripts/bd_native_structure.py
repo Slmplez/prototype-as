@@ -30,6 +30,7 @@ def compile_bridge():
     resources.append(root / 'scripts/bde_commit_attempt.st')
     resources.append(root / 'scripts/bde_reference_baseline_lookup.st')
     resources.append(root / 'scripts/bde_commit_persistent_owners.st')
+    resources.append(root / 'scripts/bde_persistent_owner_records.st')
     staged_sources, _ = build()
     for name, expected in staged_sources.items():
         source = root / 'scripts' / name
@@ -189,10 +190,11 @@ class NativeStructureAdapter(NativeLiteralAdapter):
             self.connect_history_capable = True
             self.connect_local_history_capable = connect_profile == 'native_source_local_v1'
         reference_profile = environment.get('ASCET_BD_CONNECT_REFERENCES')
-        if reference_profile is not None and (reference_profile not in ('module_inbound_v1', 'module_persistent_v1') or not self.connect_history_capable):
+        if reference_profile is not None and (reference_profile not in ('module_inbound_v1', 'module_persistent_v1', 'module_owner_records_v1') or not self.connect_history_capable):
             raise ValueError('Module inbound references require fixed retained Main connection material')
-        self.connect_reference_capture_capable = reference_profile in ('module_inbound_v1', 'module_persistent_v1')
-        self.connect_persistent_reference_capture_capable = reference_profile == 'module_persistent_v1'
+        self.connect_reference_capture_capable = reference_profile in ('module_inbound_v1', 'module_persistent_v1', 'module_owner_records_v1')
+        self.connect_persistent_reference_capture_capable = reference_profile in ('module_persistent_v1', 'module_owner_records_v1')
+        self.connect_owner_record_capture_capable = reference_profile == 'module_owner_records_v1'
         from bd_module_persistent_references import target_requests
         self.connect_reference_targets = target_requests([] if connect_reference_targets is None else connect_reference_targets)
         if self.connect_reference_targets and not self.connect_persistent_reference_capture_capable:
@@ -423,11 +425,12 @@ class NativeStructureAdapter(NativeLiteralAdapter):
         return self._mutate('apply', token)
 
     def _check_connect_reference_profile(self, material):
-        expected = ('native_connect_material_v3' if getattr(self, 'connect_persistent_reference_capture_capable', False) else
+        expected = ('native_connect_material_v4' if getattr(self, 'connect_owner_record_capture_capable', False) else
+            'native_connect_material_v3' if getattr(self, 'connect_persistent_reference_capture_capable', False) else
             'native_connect_material_v2' if self.connect_reference_capture_capable else 'native_connect_material_v1')
         if material['profile'] != expected:
             raise ValueError('Connect reference coverage differs from the explicit fixed capture profile')
-        if expected == 'native_connect_material_v3':
+        if expected in ('native_connect_material_v3', 'native_connect_material_v4'):
             from bd_module_persistent_references import target_requests
             targets = material['module_persistent_references']['before'].get('requested_reciprocal_targets', [])
             actual = target_requests([bytes(key).hex() for key in targets])

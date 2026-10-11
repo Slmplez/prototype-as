@@ -1,0 +1,111 @@
+{
+  "actual_connection_inverse_verified": false,
+  "archived_source_hashes_checked": 2068,
+  "ascet_started_or_restarted": false,
+  "business_restoration_hold_cleared": false,
+  "complete_message_lifecycle_cases_passed": 0,
+  "connection_edit_dispatched": false,
+  "external_reciprocal_write_supported": false,
+  "failure_reason": "Production bridge omitted the fixed owner-record embedded resource; fixed and revalidated",
+  "first_failed_preflight_preserved": true,
+  "frozen_source_files": 150,
+  "full_delivery": false,
+  "independent_full_original_reads_equal": true,
+  "local_evidence_hashes": {
+    "bde-connect-owner-v4-native-guard-01/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bde-connect-owner-v4-native-guard-01/native.json": "caf35d29a7ab605e3115a86c3013e8b1476a8e848bf120fd4c4a5e9c4eacad8f",
+    "bde-connect-owner-v4-native-guard-01/result.json": "54c4708fa8513d8a2fb675914206e16a7a78566b412ddecbef550cfddf827c20",
+    "bde-connect-owner-v4-preflight-01/before.json": "a174ee9d07665478b44f0f5ac7de3e49c24db84c47a8245d5df673cb370a7dca",
+    "bde-connect-owner-v4-preflight-01/result.json": "67e3ba25b56487b6a21f960aea4e731a05ae688ce0f7b659ef0030310f3e03ef",
+    "bde-connect-owner-v4-preflight-02/after.json": "a174ee9d07665478b44f0f5ac7de3e49c24db84c47a8245d5df673cb370a7dca",
+    "bde-connect-owner-v4-preflight-02/before.json": "a174ee9d07665478b44f0f5ac7de3e49c24db84c47a8245d5df673cb370a7dca",
+    "bde-connect-owner-v4-preflight-02/inspected.json": "8671f42416b94f4e4c500c992f8c87b656ebed583f776a3f5f57a59aa460de5b",
+    "bde-connect-owner-v4-preflight-02/prepared.json": "73c3c5eb2d1d50843326223ee7fe4ae8cc742cb253d16ffc3acd39e5a89bc44f",
+    "bde-connect-owner-v4-preflight-02/result.json": "164fd55d9f87a124478813fa3d1299ae8275954e55aad48106dc17d423ba51ad",
+    "bde-connect-owner-v4-read-01/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bde-connect-owner-v4-read-01/native.json": "c5ceecbcbda27c3360bb440768dd6b66f5d5d672bd4a7b681e23d943bd91bad4",
+    "bde-connect-owner-v4-read-01/result.json": "8f5fe482085232eb62d331e5514c67f448e86458397cb7688f340d3d2d5ecb52"
+  },
+  "model_cache_restoration_verified": false,
+  "native_calls_by_report": 0,
+  "native_guard_invocations": 3,
+  "native_wire": {
+    "bde-connect-owner-v4-native-guard-01": {
+      "connections": 1,
+      "errors": [],
+      "request": {
+        "bytes": 314343,
+        "frames": 148,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      },
+      "response": {
+        "bytes": 333293,
+        "frames": 147,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      }
+    },
+    "bde-connect-owner-v4-preflight-02": {
+      "connections": 1,
+      "errors": [],
+      "request": {
+        "bytes": 328847,
+        "frames": 455,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      },
+      "response": {
+        "bytes": 595559,
+        "frames": 454,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      }
+    },
+    "bde-connect-owner-v4-read-01": {
+      "connections": 1,
+      "errors": [],
+      "request": {
+        "bytes": 261327,
+        "frames": 132,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      },
+      "response": {
+        "bytes": 329790,
+        "frames": 131,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      }
+    }
+  },
+  "offline_composite_inverse_plan_verified": true,
+  "offline_controls": {
+    "executed_from_frozen_sources": true,
+    "exit_code": 0,
+    "modules": [
+      "test_bd_connect_owner_inverse",
+      "test_bd_connect_owner_records",
+      "test_bd_connect_material",
+      "test_bd_connect_journal",
+      "test_bd_persistent_owner_records",
+      "test_bd_module_persistent_references",
+      "test_bd_structural_diff_route",
+      "test_bd_finite_reference_patch_journal",
+      "test_bd_persistent_owner_patch"
+    ],
+    "online_acceptance": false,
+    "tests": 107
+  },
+  "original_prepare_and_full_raw_records_verified": true,
+  "owner_raw_bytes": 10080,
+  "passed": true,
+  "prepared_owners": 2,
+  "production_connection_inverse_available": false,
+  "profile": "bde_connect_owner_journal_checkpoint_v1",
+  "python_host_native_no_write_guards_verified": true,
+  "report_field_correction": "The prior checkpoint called original-state read equality restoration; no connection edit or inverse was dispatched in either checkpoint.",
+  "required_cases_upgraded": false,
+  "source_profile": "native_connect_material_v4",
+  "test_count_correction": "Earlier 118-test reports included 11 imported fixture test methods twice. This report avoids that import discovery and records the executed count; no online verdict changed."
+}

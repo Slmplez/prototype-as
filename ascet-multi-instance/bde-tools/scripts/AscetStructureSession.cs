@@ -621,9 +621,9 @@ class AscetStructureSession
             throw new Exception("Explicit isolated fixed Main connection material profile required");
         string token = Text(request, "token"), mode = Text(request, "action");
         string references = Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_REFERENCES") ?? "none";
-        if (references != "none" && references != "module_inbound_v1" && references != "module_persistent_v1")
+        if (references != "none" && references != "module_inbound_v1" && references != "module_persistent_v1" && references != "module_owner_records_v1")
             throw new Exception("Unknown fixed Module inbound reference capture profile");
-        if (request.ContainsKey("persistent_target_keys") && references != "module_persistent_v1")
+        if (request.ContainsKey("persistent_target_keys") && references != "module_persistent_v1" && references != "module_owner_records_v1")
             throw new Exception("Explicit targets require fixed persistent reference capture");
         if (!System.Text.RegularExpressions.Regex.IsMatch(token, @"^edit_[0-9a-f]{64}$") ||
                 Array.IndexOf(new [] { "prepare", "inspect_prepared", "capture_attached", "inspect_attached", "inspect_detached", "inspect_original" }, mode) < 0)
@@ -650,7 +650,7 @@ class AscetStructureSession
             var extendReferences = new InstanceMethodCall(endpointHelpers, "copyWith:", component);
             extendReferences.appendParameter(referenceReader); component.call(extendReferences);
             var helpers = extendReferences.ResultRemoteObject; blocks.Add(helpers);
-            if (references == "module_persistent_v1") {
+            if (references == "module_persistent_v1" || references == "module_owner_records_v1") {
                 var decoder = fixedCompile("bde_commit_reference_record.st");
                 var persistentFactory = fixedCompile("bde_module_persistent_references.st");
                 string[] targets = request.ContainsKey("persistent_target_keys") ? Strings(request["persistent_target_keys"]) : new string[0];
@@ -673,6 +673,15 @@ class AscetStructureSession
                 var extendPersistent = new InstanceMethodCall(helpers, "copyWith:", component);
                 extendPersistent.appendParameter(persistentReader); component.call(extendPersistent);
                 helpers = extendPersistent.ResultRemoteObject; blocks.Add(helpers);
+                if (references == "module_owner_records_v1") {
+                    var ownerFactory = fixedCompile("bde_persistent_owner_records.st");
+                    var bindOwner = new InstanceMethodCall(ownerFactory, "value:", component);
+                    bindOwner.appendParameter(persistentReader); component.call(bindOwner);
+                    var ownerReader = bindOwner.ResultRemoteObject; blocks.Add(ownerReader);
+                    var extendOwner = new InstanceMethodCall(helpers, "copyWith:", component);
+                    extendOwner.appendParameter(ownerReader); component.call(extendOwner);
+                    helpers = extendOwner.ResultRemoteObject; blocks.Add(helpers);
+                }
             }
             var factory = fixedCompile("bde_connect_material.st");
             var bind = new InstanceMethodCall(factory, "value:", component); bind.appendParameter(helpers); component.call(bind);
@@ -2826,7 +2835,8 @@ class AscetStructureSession
         }
         bool managedInverse = command == "managed_inverse" || command == "validate_managed_inverse";
         if (command != "prepare" && command != "validate" && command != "apply" && command != "revert" && command != "validate_revert" && !managedInverse) throw new Exception("Unknown command");
-        if (Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_REFERENCES") == "module_persistent_v1"
+        if ((Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_REFERENCES") == "module_persistent_v1"
+                || Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_REFERENCES") == "module_owner_records_v1")
                 && (command == "apply" || command == "revert" || command == "managed_inverse"))
             throw new PreconditionConflict("Finite Module reference capture is preparation-only; persistent write and inverse closure remain unverified");
         // Recovery data lives in explicit native records, never captured locals.

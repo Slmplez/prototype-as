@@ -43,6 +43,7 @@ def main():
     parser.add_argument('--serializer-inventory', type=int, help='Capture actual source graph/callbacks from an existing retained workbench; no dump/load/write')
     control_selection = parser.add_mutually_exclusive_group()
     control_selection.add_argument('--native-guard-controls', action='store_true', help='Execute staged guard on three detached non-executable test frames; no production edit')
+    control_selection.add_argument('--native-owner-guard-controls', action='store_true', help='Execute real v4 guard on three detached non-executable frames; no production edit')
     control_selection.add_argument('--finite-guard-controls', action='store_true', help='Execute finite patch preparation controls plus empty zero-writer executor; requires complete persistent read')
     parser.add_argument('--allow-incomplete-observation', action='store_true', help='Validate retained failed-read evidence; does not pass complete raw capture')
     parser.add_argument('--output', type=Path, required=True)
@@ -59,7 +60,7 @@ def main():
         parser.error('--serializer-workbench requires --owner-records')
     if args.serializer_inventory is not None and (not args.owner_records or args.serializer_workbench or not 1 <= args.serializer_inventory <= 16):
         parser.error('--serializer-inventory requires --owner-records, index 1..16 and no --serializer-workbench')
-    if args.native_guard_controls and not args.component:
+    if (args.native_guard_controls or args.native_owner_guard_controls) and not args.component:
         parser.error('--native-guard-controls requires --component')
     if args.finite_guard_controls and (not args.persistent_references or not args.component):
         parser.error('--finite-guard-controls requires --component and --persistent-references')
@@ -111,6 +112,7 @@ def main():
                             + (['--persistent-references'] if args.persistent_references else [])
                             + ([','.join(targets)] if targets else [])
                             + (['--native-guard-controls'] if args.native_guard_controls else [])
+                            + (['--native-owner-guard-controls'] if args.native_owner_guard_controls else [])
                             + (['--finite-guard-controls'] if args.finite_guard_controls else [])
                             + (['--owner-records'] if args.owner_records else [])
                             + (['--serializer-workbench'] if args.serializer_workbench else [])
@@ -137,9 +139,11 @@ def main():
             if len(observations) != 2 or observations[0] != observations[1]:
                 raise ValueError('Two exact same-owner Module observations differ; preserve both')
             result['module_observations_stable'] = True
-            if args.native_guard_controls:
+            if args.native_guard_controls or args.native_owner_guard_controls:
                 guard = read['native_guard_controls']
-                if (guard.get('profile') != 'native_connect_preparation_guard_controls_v1'
+                expected_guard_profile = ('native_connect_owner_preparation_guard_controls_v1'
+                    if args.native_owner_guard_controls else 'native_connect_preparation_guard_controls_v1')
+                if (guard.get('profile') != expected_guard_profile
                         or guard.get('component_oid') != read['component_oid']
                         or guard.get('guard_invocations') != 3 or guard.get('model_setters_called') != 0
                         or any(guard.get(k) is not False for k in ('production_token_used', 'store_called',

@@ -601,6 +601,13 @@ class StructureJournal(EditJournal):
             result['module_persistent_reference_history'] = dict(sha256=fingerprint(persistent_proof),
                 changed_records=len(differences(persistent_proof)), write_authorized=False,
                 inverse_authorized=False, revert_of_revert_available=False, full_commit_resource_closure=False)
+        owner_proof = next((e['payload']['persistent_owner_records_actual'] for e in events
+            if e['kind'] == 'observed' and 'persistent_owner_records_actual' in e['payload']), None)
+        if owner_proof is not None:
+            from bd_persistent_owner_records import differences as owner_differences
+            result['persistent_owner_record_history'] = dict(sha256=fingerprint(owner_proof),
+                changed_records=len(owner_differences(owner_proof)), write_authorized=False,
+                inverse_authorized=False, revert_of_revert_available=False, full_commit_resource_closure=False)
         if any(e['kind']=='create_history_ready' or (e['kind']=='observed'
                 and 'create_history_actual' in e['payload']) for e in events):
             from bd_create_history_journal import receipt_projection
@@ -679,6 +686,12 @@ class StructureJournal(EditJournal):
                 'detail_source': 'original durable recovery journal',
                 'summary_source': 'graphical_differences contains actual/current digests and changed-object counts'}
         for observation in result['observations']:
+            if 'persistent_owner_records_actual' in observation:
+                from bd_persistent_owner_records import differences as owner_differences
+                proof = observation.pop('persistent_owner_records_actual')
+                observation['persistent_owner_record_differences'] = owner_differences(proof)
+                observation['persistent_owner_record_history'] = dict(sha256=fingerprint(proof),
+                    full_commit_resource_closure=False, inverse_authorized=False)
             if 'module_persistent_references_actual' in observation:
                 from bd_module_persistent_references import differences
                 proof = observation.pop('module_persistent_references_actual')

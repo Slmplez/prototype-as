@@ -1,5 +1,7 @@
 # BDE delivery status, 2026-10-11
 
+最新接入：正式连线材料增加 v4，同次准备绑定完整 Module/source 原始记录与有限双向引用。现有私有实例的完整独立双读、prepare/inspect/discard、Python/C# 拒写及三项真实原生 v4 守卫通过；无模型写入或启停。WAL 实际 owner diff 和离线复算接入，组合 owner/reference 三方逆规划保留无关 owner、重叠 source 或外部 reciprocal writer 越界时抑制整组候选。107 项定向离线控制在150冻结文件通过；实际 v4 attached、model/source/cache 闭合、native inverse、T3.1/T5.1、Message0/60、43 required 和整体交付仍未完成。首次桥接遗漏嵌入资源的失败已保存并修复；旧报告的“restoration reads”字段更正为原状态读取一致，无实际编辑恢复含义。[合同](bde-connect-owner-journal.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-connect-owner-journal-increment-03/README.md)。
+
 2026-10-11 最新增量：从已核对58对象的私有 source 副本精确将 Operator/logic_id=1 的 position.x 从300改为311，生成4,424字节实际 after，再由私有原生loader完整核对全部非省略字段/共享关系，恢复副本坐标。随后在该隔离组件原生 source 记录执行候选写入→完整原字节读回→原记录 inverse（2write/0delete），新连接双读完整 owner/reference 和公共 bookends 保持原样，精确清本次 pending。实际图形语义 diff 为1个坐标，source 记录物理792字节变化（含序列化地址等差异，未宣称逐字节原因已证），完整raw前后保留；固定header身份未变。只证明该 source 记录在当前实例内的往返，未改 live 图形/cache、未 Store/Commit，不能升级为生产move/connect/inverse或崩溃持久性。正式 model/source/cache/owner journal 闭合、T5.1、Message0/60、43 required、业务恢复与整体交付继续未完成。获批恢复后所有操作复用当前实例，没有新启停。
 
 [修改后source记录证据](../analysis/bde-experiments/2026-10-11/bde-source-payload-increment-01/README.md) · [source合同](bde-fresh-source-serializer.md)。

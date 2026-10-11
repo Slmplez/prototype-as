@@ -129,6 +129,24 @@ def persistent_reference_inverse_request(log, token, current):
     return result
 
 
+def persistent_owner_inverse_request(log, token, current):
+    """Plan owner and reciprocal patches from one verified v4 WAL forward.
+
+    All resources are checked before returning any candidate. Caller supplies
+    only CURRENT; old before/actual after come from the original journal. This
+    does not execute native writes or certify model/cache restoration.
+    """
+    intent, prepared, actual, material = _persistent_reference_context(log, token)
+    if 'persistent_owner_records' not in material:
+        raise JournalError('REVERT_UNAVAILABLE', 'Original full owner records were not captured; a later read cannot replace them')
+    from bd_connect_owner_inverse import request
+    result = request(material['persistent_owner_records'], material['module_persistent_references'], current,
+        token=token, component_oid=intent['domain']['oid'], generation=prepared['before']['generation'])
+    result.update(journal_bound=True, original_domain=clone(intent['domain']),
+        durable_actual_sha256=fingerprint(actual), original_prepared_sha256=fingerprint(prepared))
+    return result
+
+
 def _persistent_reference_context(log, token):
     events = log.read(token); intent = events[0]['payload']
     if (intent.get('operation') != 'connect_data' or intent.get('diagram') != 'Main'
@@ -162,6 +180,10 @@ def forward_material(source, prepared, value, token):
         for key in ('before', 'generation'):
             if actual['module_persistent_references'][key] != original['module_persistent_references'][key]:
                 raise JournalError('CONNECT_MATERIAL_INVALID', 'Actual finite reference proof differs from durable original ' + key)
+    if 'persistent_owner_records' in original:
+        for key in ('before', 'generation'):
+            if actual['persistent_owner_records'][key] != original['persistent_owner_records'][key]:
+                raise JournalError('CONNECT_MATERIAL_INVALID', 'Actual owner records differ from durable original ' + key)
     for key in ('graphical_before', 'parent_before', 'drawing_before',
             'original_native_objects', 'original_source_objects'):
         if actual[key] != original[key]:
@@ -185,6 +207,10 @@ def forward_observation(after, material):
         from bd_module_persistent_references import differences
         result.update(module_persistent_references_actual=clone(material['module_persistent_references']),
             module_persistent_reference_differences=differences(material['module_persistent_references']))
+    if 'persistent_owner_records' in material:
+        from bd_persistent_owner_records import differences as owner_differences
+        result.update(persistent_owner_records_actual=clone(material['persistent_owner_records']),
+            persistent_owner_record_differences=owner_differences(material['persistent_owner_records']))
     return result
 
 

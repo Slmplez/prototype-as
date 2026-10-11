@@ -41,7 +41,7 @@ class AscetConnectCompileProbe
         }
     }
 
-    static object ReadReferences(AscetDataBase database, string path, bool persistent, string[] targets, bool guardControls, bool finiteGuardControls, bool ownerRecords, bool serializerWorkbench, int inventoryIndex)
+    static object ReadReferences(AscetDataBase database, string path, bool persistent, string[] targets, bool guardControls, bool ownerGuardControls, bool finiteGuardControls, bool ownerRecords, bool serializerWorkbench, int inventoryIndex)
     {
         path = path.Trim('\\'); int slash = path.LastIndexOf('\\');
         if (slash < 1 || slash == path.Length - 1 || path.Contains(".."))
@@ -165,11 +165,17 @@ class AscetConnectCompileProbe
                 if (component.GetOID() != oid || component.GetNameWithPath().Trim('\\') != path)
                     throw new Exception("Persistent Module component identity changed during read");
             }
-            if (guardControls) {
+            if (guardControls || ownerGuardControls) {
                 var guard = AscetStructureRead.Compile(component, "bde_structure_stage_guard.st"); blocks.Add(guard);
                 var controlsFactory = AscetStructureRead.Compile(component, "bde_connect_preparation_guard_probe.st"); blocks.Add(controlsFactory);
                 var bindControls = new InstanceMethodCall(controlsFactory, "value:", component);
-                bindControls.appendParameter(guard); component.call(bindControls);
+                Identifiable guardConfiguration = guard;
+                if (ownerGuardControls) {
+                    var configureGuard = component.createClassMethodCall("Array", "with:with:");
+                    configureGuard.appendParameter(guard); configureGuard.appendParameter("native_connect_material_v4"); component.call(configureGuard);
+                    guardConfiguration = configureGuard.ResultRemoteObject; blocks.Add(guardConfiguration);
+                }
+                bindControls.appendParameter(guardConfiguration); component.call(bindControls);
                 var controls = bindControls.ResultRemoteObject; blocks.Add(controls);
                 var serializer = AscetStructureRead.Compile(component, "bde_value_probe.st"); blocks.Add(serializer);
                 var bindSerializer = new InstanceMethodCall(serializer, "value:", component);
@@ -204,8 +210,9 @@ class AscetConnectCompileProbe
         bool ownerRecords = args.Length > 0 && args[args.Length - 1] == "--owner-records";
         if (ownerRecords) Array.Resize(ref args, args.Length - 1);
         bool guardControls = args.Length > 0 && args[args.Length - 1] == "--native-guard-controls";
+        bool ownerGuardControls = args.Length > 0 && args[args.Length - 1] == "--native-owner-guard-controls";
         bool finiteGuardControls = args.Length > 0 && args[args.Length - 1] == "--finite-guard-controls";
-        if (guardControls || finiteGuardControls) Array.Resize(ref args, args.Length - 1);
+        if (guardControls || ownerGuardControls || finiteGuardControls) Array.Resize(ref args, args.Length - 1);
         int expectedPid;
         if ((args.Length < 2 || args.Length > 5) || !Int32.TryParse(args[0], out expectedPid)
                 || expectedPid < 1 || File.Exists(args[1])) return 2;
@@ -218,7 +225,7 @@ class AscetConnectCompileProbe
             if (!System.Text.RegularExpressions.Regex.IsMatch(key, "^[0-9a-f]{40}$") || !seen.Add(key)) return 2;
         }
         Array.Sort(targets, StringComparer.Ordinal);
-        if (guardControls && (args.Length < 3 || args[2] == "--list-trials")) return 2;
+        if ((guardControls || ownerGuardControls) && (args.Length < 3 || args[2] == "--list-trials")) return 2;
         if (finiteGuardControls && !persistent) return 2;
         if (ownerRecords && !persistent) return 2;
         if (serializerWorkbench && !ownerRecords) return 2;
@@ -269,7 +276,7 @@ class AscetConnectCompileProbe
             }
             if (args.Length >= 3) {
                 if (args[2] == "--list-trials") result["trial_modules"] = ListTrialModules(database);
-                else result["module_read"] = ReadReferences(database, args[2], persistent, targets, guardControls, finiteGuardControls, ownerRecords, serializerWorkbench, inventoryIndex);
+                else result["module_read"] = ReadReferences(database, args[2], persistent, targets, guardControls, ownerGuardControls, finiteGuardControls, ownerRecords, serializerWorkbench, inventoryIndex);
             }
             var current = ascet.GetCurrentDataBase();
             try {

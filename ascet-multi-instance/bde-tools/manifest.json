@@ -26,8 +26,9 @@
     "writes_require": "isolated Trial_* component and explicit structural write gate",
     "unknown_outcome": "preserve the journal and quarantine; never retry automatically",
     "stale_epoch": "reject before opening a native session",
-    "source_serializer": "research only; changed private payload and isolated source record roundtrip verified; no live model/cache/Store/Commit or production inverse authorization"
+    "source_serializer": "research only; changed private payload and isolated source record roundtrip verified; no live model/cache/Store/Commit or production inverse authorization",
+    "owner_journal": "original full owner/reference v4 preparation verified; composite inverse is an offline proposal; actual connection/model/cache inverse and external reciprocal writes remain gated"
   },
-  "latest_increment": "evidence/2026-10-11/changed-source-record/result.json",
-  "portable_tests_passed": 302
+  "latest_increment": "evidence/2026-10-11/connect-owner-journal/result.json",
+  "portable_tests_passed": 326
 }

@@ -10,18 +10,20 @@
    endpoints edgeRecord retained anchors boundaries detachedGuard answer combinedNativeAfter
    actualValues actualEncoded alias reservations graphicalActual referenceProfile
    referenceRead referenceOwner referenceDBObject referenceBefore referenceAfter referenceReceipt
-   persistentRead persistentBefore persistentAfter persistentReceipt requestedTargets |
- (helpers isArray and: [(#(6 7) includes: helpers size) and: [context isArray and: [#(3 4) includes: context size]]])
+   persistentRead persistentBefore persistentAfter persistentReceipt requestedTargets
+   persistentProfile ownerRead ownerBefore ownerAfter ownerReceipt |
+ (helpers isArray and: [(#(6 7 8) includes: helpers size) and: [context isArray and: [#(3 4) includes: context size]]])
    ifFalse: [component error: 'Fixed connect material helpers and token/mode required'].
  token := context first. mode := context at: 2. referenceProfile := context at: 3.
  requestedTargets := context size = 4 ifTrue: [context last] ifFalse: [#()].
  (requestedTargets isArray and: [requestedTargets size <= 16])
    ifFalse: [component error: 'Bounded fixed finite reference targets required'].
- (requestedTargets isEmpty not and: [referenceProfile ~= 'module_persistent_v1'])
+ persistentProfile := #('module_persistent_v1' 'module_owner_records_v1') includes: referenceProfile.
+ (requestedTargets isEmpty not and: [persistentProfile not])
    ifTrue: [component error: 'Explicit target coverage requires persistent reference profile'].
- (#('none' 'module_inbound_v1' 'module_persistent_v1') includes: referenceProfile)
+ (#('none' 'module_inbound_v1' 'module_persistent_v1' 'module_owner_records_v1') includes: referenceProfile)
    ifFalse: [component error: 'Unknown fixed Module inbound reference profile'].
- helpers size = (referenceProfile = 'module_persistent_v1' ifTrue: [7] ifFalse: [6])
+ helpers size = (referenceProfile = 'module_owner_records_v1' ifTrue: [8] ifFalse: [persistentProfile ifTrue: [7] ifFalse: [6]])
    ifFalse: [component error: 'Exact fixed reference helper coverage required'].
  (#('prepare' 'inspect_prepared' 'capture_attached' 'inspect_attached' 'inspect_detached' 'inspect_original') includes: mode)
    ifFalse: [component error: 'Unknown fixed connect material command'].
@@ -128,7 +130,7 @@
          #('owner_references' 'owner_database_record_references') allSatisfy: [:key |
            (actualReferences at: key) = (referenceBefore at: key)]
        ].
-     referenceProfile = 'module_persistent_v1' ifTrue: [
+     persistentProfile ifTrue: [
        persistentRead := [
          (component item == referenceOwner and: [referenceOwner dbObject == referenceDBObject and: [
            (root at: 'owner') == referenceOwner and: [(root at: 'generation') = (material at: 'generation')]]])
@@ -142,7 +144,25 @@
          at: 'persistentReferencesBeforeEncoding' put: ((native at: 'encode') value: persistentBefore);
          at: 'persistentReferenceGuard' put: [
            ((native at: 'encode') value: (material at: 'persistentReferenceReader') value)
-             = (material at: 'persistentReferencesBeforeEncoding')]
+             = (material at: 'persistentReferencesBeforeEncoding')].
+       referenceProfile = 'module_owner_records_v1' ifTrue: [
+         ownerRead := [
+           (component item == referenceOwner and: [referenceOwner dbObject == referenceDBObject and: [
+             (root at: 'owner') == referenceOwner and: [(root at: 'generation') = (material at: 'generation')]]])
+             ifFalse: [component error: 'Original owner record preparation binding expired'].
+           (helpers at: 8) value: component
+         ].
+         ownerBefore := ownerRead value.
+         (ownerBefore at: 'complete') == true ifFalse: [component error: 'Original owner records incomplete; preparation retained'].
+         ((native at: 'encode') value: (ownerBefore at: 'references')) = (material at: 'persistentReferencesBeforeEncoding')
+           ifFalse: [component error: 'Original owner and reference observations differ; preparation retained'].
+         material at: 'profile' put: 'native_connect_material_v4'; at: 'persistentOwnerReader' put: ownerRead;
+           at: 'persistentOwnersBefore' put: ownerBefore;
+           at: 'persistentOwnersBeforeEncoding' put: ((native at: 'encode') value: ownerBefore);
+           at: 'persistentOwnerGuard' put: [
+             ((native at: 'encode') value: (material at: 'persistentOwnerReader') value)
+               = (material at: 'persistentOwnersBeforeEncoding')]
+       ]
      ]
    ]
  ] ifFalse: [material := record at: 'connectMaterial' ifAbsent: [component error: 'Original connect material unavailable']].
@@ -166,9 +186,12 @@
    referenceProfile ~= 'none' ifTrue: [
      (material at: 'moduleReferenceGuard') value
        ifFalse: [component error: 'Prepared Module inbound references changed']].
-   referenceProfile = 'module_persistent_v1' ifTrue: [
+   persistentProfile ifTrue: [
      (material at: 'persistentReferenceGuard') value
        ifFalse: [component error: 'Prepared finite raw reference records changed']].
+   referenceProfile = 'module_owner_records_v1' ifTrue: [
+     (material at: 'persistentOwnerGuard') value
+       ifFalse: [component error: 'Prepared full owner records changed']].
    ((material at: 'phase') = 'prepared' and: [(record at: 'state') = 'prepared' and: [
    (sameOrder value: parent children value: originalOrder) and: [
    (sameOrder value: parent sortedChildren value: originalDrawing) and: [
@@ -181,10 +204,16 @@
      ifFalse: [component error: 'Actual connect result can be captured once after observed application'].
    referenceProfile ~= 'none' ifTrue: [
      material at: 'moduleReferencesAfter' put: (material at: 'moduleReferenceReader') value].
-   referenceProfile = 'module_persistent_v1' ifTrue: [
+   persistentProfile ifTrue: [
      persistentAfter := (material at: 'persistentReferenceReader') value.
      (persistentAfter at: 'complete') == true ifFalse: [component error: 'Actual finite reference query incomplete; original before retained'].
      material at: 'persistentReferencesAfter' put: persistentAfter].
+   referenceProfile = 'module_owner_records_v1' ifTrue: [
+     ownerAfter := (material at: 'persistentOwnerReader') value.
+     (ownerAfter at: 'complete') == true ifFalse: [component error: 'Actual full owner records incomplete; original retained'].
+     ((native at: 'encode') value: (ownerAfter at: 'references')) = ((native at: 'encode') value: persistentAfter)
+       ifFalse: [component error: 'Actual owner and reference observations differ; original retained'].
+     material at: 'persistentOwnersAfter' put: ownerAfter].
    api := record at: 'created' ifAbsent: [component error: 'Actual created connection unavailable'].
    edge := api diagramElement. afterOrder := parent children asArray copy. afterDrawing := parent sortedChildren asArray copy.
    (edge manager == parent and: [(afterOrder select: [:member | member == edge]) size = 1 and: [
@@ -289,10 +318,14 @@
      (#('owner_references' 'owner_database_record_references') allSatisfy: [:key |
        (referenceAfter at: key) = ((material at: 'moduleReferencesAfter') at: key)])
        ifFalse: [component error: 'Frozen actual Module inbound reference head changed']].
-   referenceProfile = 'module_persistent_v1' ifTrue: [
+   persistentProfile ifTrue: [
      ((native at: 'encode') value: (material at: 'persistentReferenceReader') value)
        = ((native at: 'encode') value: (material at: 'persistentReferencesAfter'))
        ifFalse: [component error: 'Frozen actual finite raw reference head changed']].
+   referenceProfile = 'module_owner_records_v1' ifTrue: [
+     ((native at: 'encode') value: (material at: 'persistentOwnerReader') value)
+       = ((native at: 'encode') value: (material at: 'persistentOwnersAfter'))
+       ifFalse: [component error: 'Frozen actual full owner head changed']].
    (material at: 'phase') = 'attached' ifFalse: [component error: 'Actual retained connection material required'].
    ((record at: 'created') == (material at: 'createdAPI') and: [
      (material at: 'createdAPI') diagramElement == (material at: 'created')])
@@ -340,7 +373,7 @@
      at: 'inverse_authorized' put: false; at: 'full_commit_resource_closure' put: false; yourself.
    receipt at: 'module_references' put: referenceReceipt
  ].
- referenceProfile = 'module_persistent_v1' ifTrue: [
+ persistentProfile ifTrue: [
    persistentReceipt := Dictionary new at: 'profile' put: 'native_module_persistent_references_v1';
      at: 'native_token' put: token; at: 'component_oid' put: component getOID;
      at: 'generation' put: (material at: 'generation'); at: 'phase' put: (material at: 'phase');
@@ -351,6 +384,18 @@
      at: 'write_authorized' put: false; at: 'inverse_authorized' put: false;
      at: 'full_commit_resource_closure' put: false; yourself.
    receipt at: 'module_persistent_references' put: persistentReceipt
+ ].
+ referenceProfile = 'module_owner_records_v1' ifTrue: [
+   ownerReceipt := Dictionary new at: 'profile' put: 'native_connect_owner_records_v1';
+     at: 'native_token' put: token; at: 'component_oid' put: component getOID;
+     at: 'generation' put: (material at: 'generation'); at: 'phase' put: (material at: 'phase');
+     at: 'before' put: (material at: 'persistentOwnersBefore');
+     at: 'after' put: (material at: 'persistentOwnersAfter' ifAbsent: [nil]);
+     at: 'prepared_native_record_bound' put: true; at: 'model_setters_called' put: 0;
+     at: 'store_called' put: false; at: 'commit_called' put: false;
+     at: 'write_authorized' put: false; at: 'inverse_authorized' put: false;
+     at: 'full_commit_resource_closure' put: false; yourself.
+   receipt at: 'persistent_owner_records' put: ownerReceipt
  ].
  answer := (native at: 'encode') value: receipt. answer
  ]
