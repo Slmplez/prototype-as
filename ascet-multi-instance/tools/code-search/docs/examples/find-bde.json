@@ -1,0 +1,212 @@
+{
+  "recording": "2026-10-11-polish-e-live",
+  "warning": "Recorded session only; refs/cursors have expired. Discover fresh identities before use.",
+  "request": {
+    "tool": "ascet_find",
+    "arguments": {
+      "target": "objects",
+      "name": "C_AEB_AXCDeadZoneNeg",
+      "scope": {
+        "components": [
+          {
+            "name": "AEB_dFxTar"
+          }
+        ],
+        "diagrams": [
+          {
+            "name": "Main"
+          }
+        ]
+      }
+    }
+  },
+  "model_response": {
+    "status": "ok",
+    "target": "objects",
+    "returned_count": 1,
+    "total_count": 1,
+    "has_more": false,
+    "next_cursor": null,
+    "expires_utc": "2026-10-11T03:12:56.234Z",
+    "results": [
+      {
+        "ref": "s3urQXdX_3:n1",
+        "kind": "element",
+        "name": "C_AEB_AXCDeadZoneNeg",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+        "component_type": "SGClass",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ikn3n0e",
+        "node_id": 54,
+        "visibility": "public",
+        "element_type": "SGVariable",
+        "read_tool": "ascet_read_bde",
+        "next_call": {
+          "tool": "ascet_read_bde",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_3:n1"
+            ]
+          }
+        },
+        "hierarchy": "root"
+      }
+    ],
+    "task_tool": "ascet_find",
+    "applied_scope": {
+      "components": [
+        {
+          "ref": "s3urQXdX_1:d1"
+        }
+      ],
+      "diagrams": [
+        {
+          "ref": "s3urQXdX_2:d1"
+        }
+      ]
+    },
+    "scope_identities": [
+      {
+        "ref": "s3urQXdX_1:d1",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+        "component_type": "SGClass"
+      },
+      {
+        "ref": "s3urQXdX_2:d1",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+        "kind": "diagram",
+        "variant": "BD",
+        "component_type": "SGClass",
+        "language": "ascet_graph",
+        "diagram_type": "bde",
+        "visibility": "public",
+        "representation": "graphical_model",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ikn3n0e",
+        "diagram_methods": [
+          {
+            "name": "AEBdFxTar",
+            "kind": "method"
+          },
+          {
+            "name": "calc",
+            "kind": "method"
+          }
+        ],
+        "read_tool": "ascet_read_bde",
+        "next_call": {
+          "tool": "ascet_read_bde",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_2:d1"
+            ]
+          }
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+          "kind": "diagram",
+          "member": "Main",
+          "variant": "BD",
+          "implementation": ""
+        }
+      }
+    ],
+    "citable_refs": [
+      "s3urQXdX_3:n1",
+      "s3urQXdX_1:d1",
+      "s3urQXdX_2:d1"
+    ]
+  },
+  "structured_response": {
+    "status": "ok",
+    "target": "objects",
+    "returned_count": 1,
+    "total_count": 1,
+    "has_more": false,
+    "next_cursor": null,
+    "expires_utc": "2026-10-11T03:12:56.234Z",
+    "results": [
+      {
+        "ref": "s3urQXdX_3:n1",
+        "kind": "element",
+        "name": "C_AEB_AXCDeadZoneNeg",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+        "component_type": "SGClass",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ikn3n0e",
+        "node_id": 54,
+        "visibility": "public",
+        "element_type": "SGVariable",
+        "read_tool": "ascet_read_bde",
+        "next_call": {
+          "tool": "ascet_read_bde",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_3:n1"
+            ]
+          }
+        },
+        "hierarchy": "root"
+      }
+    ],
+    "task_tool": "ascet_find",
+    "applied_scope": {
+      "components": [
+        {
+          "ref": "s3urQXdX_1:d1"
+        }
+      ],
+      "diagrams": [
+        {
+          "ref": "s3urQXdX_2:d1"
+        }
+      ]
+    },
+    "scope_identities": [
+      {
+        "ref": "s3urQXdX_1:d1",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+        "component_type": "SGClass"
+      },
+      {
+        "ref": "s3urQXdX_2:d1",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+        "kind": "diagram",
+        "variant": "BD",
+        "component_type": "SGClass",
+        "language": "ascet_graph",
+        "diagram_type": "bde",
+        "visibility": "public",
+        "representation": "graphical_model",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70ikn3n0e",
+        "diagram_methods": [
+          {
+            "name": "AEBdFxTar",
+            "kind": "method"
+          },
+          {
+            "name": "calc",
+            "kind": "method"
+          }
+        ],
+        "read_tool": "ascet_read_bde",
+        "next_call": {
+          "tool": "ascet_read_bde",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_2:d1"
+            ]
+          }
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+          "kind": "diagram",
+          "member": "Main",
+          "variant": "BD",
+          "implementation": ""
+        }
+      }
+    ]
+  }
+}

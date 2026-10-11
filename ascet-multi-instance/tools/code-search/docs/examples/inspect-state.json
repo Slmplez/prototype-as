@@ -1,0 +1,550 @@
+{
+  "recording": "2026-10-11-polish-e-live",
+  "warning": "Recorded session only; refs/cursors have expired. Discover fresh identities before use.",
+  "request": {
+    "tool": "ascet_inspect_state",
+    "arguments": {
+      "refs": [
+        "s3urQXdX_b:d1"
+      ]
+    }
+  },
+  "model_response": {
+    "status": "ok",
+    "ref": "s3urQXdX_b:d1",
+    "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+    "kind": "state",
+    "variant": "ASDL",
+    "component_type": "SGClass",
+    "language": "state_model",
+    "visibility": "public",
+    "native_type": "SGStateGODB",
+    "state_kind": "state",
+    "diagram": "Main",
+    "diagram_oid": "040ts00000001qg714eg70igttug6",
+    "state_hierarchy_ids": [],
+    "state": "Main/AEB_State_Off",
+    "state_id": 0,
+    "initial": true,
+    "history": false,
+    "code_slots": [
+      {
+        "ref": "s3urQXdX_b:d2",
+        "kind": "state_entry",
+        "language": "esdl",
+        "state_hierarchy_ids": [],
+        "state": "Main/AEB_State_Off",
+        "state_id": 0,
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d2"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_b:d2"
+        },
+        "identity": {
+          "kind": "state_entry",
+          "member": "Main/AEB_State_Off"
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d3",
+        "kind": "state_static",
+        "language": "esdl",
+        "state_hierarchy_ids": [],
+        "state": "Main/AEB_State_Off",
+        "state_id": 0,
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d3"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_b:d3"
+        },
+        "identity": {
+          "kind": "state_static",
+          "member": "Main/AEB_State_Off"
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d4",
+        "kind": "state_exit",
+        "language": "esdl",
+        "state_hierarchy_ids": [],
+        "state": "Main/AEB_State_Off",
+        "state_id": 0,
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d4"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_b:d4"
+        },
+        "identity": {
+          "kind": "state_exit",
+          "member": "Main/AEB_State_Off"
+        }
+      }
+    ],
+    "incoming": [
+      {
+        "ref": "s3urQXdX_b:d5",
+        "kind": "transition",
+        "native_type": "SGBezierConnectionGODB",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #20",
+        "transition_id": 20,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d5"
+            ]
+          }
+        },
+        "identity": {
+          "kind": "transition",
+          "member": "Main/Transition #20"
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d6",
+        "kind": "transition",
+        "native_type": "SGBezierConnectionGODB",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #23",
+        "transition_id": 23,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d6"
+            ]
+          }
+        },
+        "identity": {
+          "kind": "transition",
+          "member": "Main/Transition #23"
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d7",
+        "kind": "transition",
+        "native_type": "SGBezierConnectionGODB",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #25",
+        "transition_id": 25,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d7"
+            ]
+          }
+        },
+        "identity": {
+          "kind": "transition",
+          "member": "Main/Transition #25"
+        }
+      }
+    ],
+    "outgoing": [
+      {
+        "ref": "s3urQXdX_b:d8",
+        "kind": "transition",
+        "native_type": "SGBezierConnectionGODB",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #26",
+        "transition_id": 26,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d8"
+            ]
+          }
+        },
+        "identity": {
+          "kind": "transition",
+          "member": "Main/Transition #26"
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d9",
+        "kind": "transition",
+        "native_type": "SGBezierConnectionGODB",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #27",
+        "transition_id": 27,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d9"
+            ]
+          }
+        },
+        "identity": {
+          "kind": "transition",
+          "member": "Main/Transition #27"
+        }
+      }
+    ],
+    "has_more": false,
+    "next_cursor": null,
+    "expires_utc": "2026-10-11T03:12:56.941Z",
+    "task_tool": "ascet_inspect_state",
+    "read_tool": "ascet_inspect_state",
+    "identity": {
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state",
+      "member": "Main/AEB_State_Off",
+      "variant": "ASDL",
+      "implementation": ""
+    },
+    "read_scope": {
+      "refs": [
+        "s3urQXdX_b:d1"
+      ]
+    },
+    "related_context": "Omitted shared metadata in endpoints, code_slots and relations inherits this page, including owner, Diagram, Variant and Implementation; explicit values override. Method bindings are saved references; no implementation body is included.",
+    "citable_refs": [
+      "s3urQXdX_b:d1",
+      "s3urQXdX_b:d2",
+      "s3urQXdX_b:d3",
+      "s3urQXdX_b:d4",
+      "s3urQXdX_b:d5",
+      "s3urQXdX_b:d6",
+      "s3urQXdX_b:d7",
+      "s3urQXdX_b:d8",
+      "s3urQXdX_b:d9"
+    ]
+  },
+  "structured_response": {
+    "status": "ok",
+    "ref": "s3urQXdX_b:d1",
+    "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+    "kind": "state",
+    "variant": "ASDL",
+    "component_type": "SGClass",
+    "language": "state_model",
+    "visibility": "public",
+    "native_type": "SGStateGODB",
+    "state_kind": "state",
+    "diagram": "Main",
+    "diagram_oid": "040ts00000001qg714eg70igttug6",
+    "state_hierarchy_ids": [],
+    "state": "Main/AEB_State_Off",
+    "state_id": 0,
+    "initial": true,
+    "history": false,
+    "code_slots": [
+      {
+        "ref": "s3urQXdX_b:d2",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "kind": "state_entry",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "esdl",
+        "visibility": "public",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igttug6",
+        "state_hierarchy_ids": [],
+        "state": "Main/AEB_State_Off",
+        "state_id": 0,
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d2"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_b:d2"
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+          "kind": "state_entry",
+          "member": "Main/AEB_State_Off",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d3",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "kind": "state_static",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "esdl",
+        "visibility": "public",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igttug6",
+        "state_hierarchy_ids": [],
+        "state": "Main/AEB_State_Off",
+        "state_id": 0,
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d3"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_b:d3"
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+          "kind": "state_static",
+          "member": "Main/AEB_State_Off",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d4",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "kind": "state_exit",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "esdl",
+        "visibility": "public",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igttug6",
+        "state_hierarchy_ids": [],
+        "state": "Main/AEB_State_Off",
+        "state_id": 0,
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d4"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_b:d4"
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+          "kind": "state_exit",
+          "member": "Main/AEB_State_Off",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      }
+    ],
+    "incoming": [
+      {
+        "ref": "s3urQXdX_b:d5",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "kind": "transition",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "state_model",
+        "visibility": "public",
+        "native_type": "SGBezierConnectionGODB",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igttug6",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #20",
+        "transition_id": 20,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d5"
+            ]
+          }
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+          "kind": "transition",
+          "member": "Main/Transition #20",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d6",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "kind": "transition",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "state_model",
+        "visibility": "public",
+        "native_type": "SGBezierConnectionGODB",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igttug6",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #23",
+        "transition_id": 23,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d6"
+            ]
+          }
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+          "kind": "transition",
+          "member": "Main/Transition #23",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d7",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "kind": "transition",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "state_model",
+        "visibility": "public",
+        "native_type": "SGBezierConnectionGODB",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igttug6",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #25",
+        "transition_id": 25,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d7"
+            ]
+          }
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+          "kind": "transition",
+          "member": "Main/Transition #25",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      }
+    ],
+    "outgoing": [
+      {
+        "ref": "s3urQXdX_b:d8",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "kind": "transition",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "state_model",
+        "visibility": "public",
+        "native_type": "SGBezierConnectionGODB",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igttug6",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #26",
+        "transition_id": 26,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d8"
+            ]
+          }
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+          "kind": "transition",
+          "member": "Main/Transition #26",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      },
+      {
+        "ref": "s3urQXdX_b:d9",
+        "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+        "kind": "transition",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "state_model",
+        "visibility": "public",
+        "native_type": "SGBezierConnectionGODB",
+        "diagram": "Main",
+        "diagram_oid": "040ts00000001qg714eg70igttug6",
+        "state_hierarchy_ids": [],
+        "transition": "Main/Transition #27",
+        "transition_id": 27,
+        "read_tool": "ascet_inspect_state",
+        "next_call": {
+          "tool": "ascet_inspect_state",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_b:d9"
+            ]
+          }
+        },
+        "identity": {
+          "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+          "kind": "transition",
+          "member": "Main/Transition #27",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      }
+    ],
+    "has_more": false,
+    "next_cursor": null,
+    "expires_utc": "2026-10-11T03:12:56.941Z",
+    "task_tool": "ascet_inspect_state",
+    "read_evidence": {
+      "id": "read-qNuPculL-c",
+      "requested": {
+        "refs": [
+          "s3urQXdX_b:d1"
+        ]
+      }
+    },
+    "read_tool": "ascet_inspect_state",
+    "next_call": {
+      "tool": "ascet_inspect_state",
+      "arguments": {
+        "refs": [
+          "s3urQXdX_b:d1"
+        ]
+      }
+    },
+    "identity": {
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state",
+      "member": "Main/AEB_State_Off",
+      "variant": "ASDL",
+      "implementation": ""
+    }
+  }
+}

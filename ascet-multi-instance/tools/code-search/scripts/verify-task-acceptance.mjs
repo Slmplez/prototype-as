@@ -9,6 +9,7 @@ import { createAscetExtension } from '../dist/src/pi-extension.js';
 import { PiClient } from '../dist/src/pi-client.js';
 import { fingerprint } from '../dist/scripts/oracle.js';
 import { verifyRunningAgentInstance, retainAgentInstance } from '../dist/scripts/agent-instance-retention.js';
+import { taskSearchScopeError } from '../dist/src/task-scope-guard.js';
 
 // This script only attaches to a verified, retained instance. It never launches
 // ASCET, switches databases, or invokes a lifecycle stop command.
@@ -125,6 +126,20 @@ try {
     assert.equal(owner.validateFinalAnswer(JSON.stringify(answer)).valid, true);
     answer.facts.requested_object_ref = ref + 'bad';
     assert.equal(owner.validateFinalAnswer(JSON.stringify(answer)).valid, false);
+  });
+  await check('live owner evidence validates code-ref scope and rejects global or foreign scope before dispatch', async () => {
+    const found = (await owner.call('ascet_find', { target: 'members', name: 'calc_pre', scope: { components: [{ name: 'AEB_AxCtrlConfigFF_Modify' }], variants: ['ASDL'] } })).response;
+    const ref = found.results[0].ref;
+    const intent = { action: 'search', scope: { components: ['AEB_AxCtrlConfigFF_Modify'], members: ['calc_pre'] } };
+    const queries = [{ text: 'AxTarRaw', mode: 'identifier' }];
+    const lookup = candidate => owner.referenceEvidence(candidate);
+    assert.equal(lookup(ref).member, 'calc_pre');
+    assert.equal(taskSearchScopeError(intent, 'ascet_search_code', { queries, scope: { code_ref: ref } }, lookup), undefined);
+    assert.match(taskSearchScopeError(intent, 'ascet_search_code', { queries }, lookup), /INTENT_SCOPE_MISMATCH/);
+    assert.match(taskSearchScopeError(intent, 'ascet_search_code', { queries, scope: { components: [{ name: 'AEB_dFxTar' }], members: ['calc_pre'] } }, lookup), /INTENT_SCOPE_MISMATCH/);
+    const response = (await owner.call('ascet_search_code', { queries, scope: { code_ref: ref } })).response;
+    assert.equal(response.total_hits, 2); assert.equal(response.has_more, false);
+    report.calls.push({ tool: 'ascet_search_code', arguments: { queries, scope: { code_ref: ref } }, response });
   });
   await check('live final BDE facts reject neighbor Pins and altered read scope', async () => {
     const found = (await owner.call('ascet_find', { target: 'objects', name: 'C_AEB_AXCDeadZoneNeg',

@@ -1,5 +1,7 @@
 # Pi 六工具候选接口
 
+当前使用手册与 build E 边界说明见 [SEARCH_TOOLS_GUIDE.zh-CN.md](SEARCH_TOOLS_GUIDE.zh-CN.md)。本页保留各轮开发记录；旧轮次的成绩及默认值描述应按其日期理解。
+
 这是 `task` 配置的接口说明。原三工具仍保留；默认配置仍为 `baseline`。评测结果见本轮独立对照报告，不能用离线测试通过数代替真实 Agent 成功率。
 
 当前交付与验收见 [TASK_ACCEPTANCE.zh-CN.md](TASK_ACCEPTANCE.zh-CN.md)。task profile 默认启用最终引用/BDE Pin 校验和逐用户请求 Intent 守卫。生产守卫与关闭守卫的首次采样分别记录；历史结果保留在下文。

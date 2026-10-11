@@ -1,0 +1,41 @@
+{
+  "recording": "2026-10-11-polish-e-live",
+  "warning": "Recorded session only; refs/cursors have expired. Discover fresh identities before use.",
+  "request": {
+    "tool": "ascet_find",
+    "arguments": {
+      "target": "objects",
+      "cursor": "p-qNuPculL-1"
+    }
+  },
+  "model_response": {
+    "status": "error",
+    "code": "CURSOR_TOOL_MISMATCH",
+    "message": "Continue this cursor with ascet_search_code.",
+    "field": "cursor",
+    "next_tool": "ascet_search_code",
+    "next_calls": [
+      {
+        "tool": "ascet_search_code",
+        "arguments": {
+          "cursor": "p-qNuPculL-1"
+        }
+      }
+    ]
+  },
+  "structured_response": {
+    "status": "error",
+    "code": "CURSOR_TOOL_MISMATCH",
+    "message": "Continue this cursor with ascet_search_code.",
+    "field": "cursor",
+    "next_tool": "ascet_search_code",
+    "next_calls": [
+      {
+        "tool": "ascet_search_code",
+        "arguments": {
+          "cursor": "p-qNuPculL-1"
+        }
+      }
+    ]
+  }
+}

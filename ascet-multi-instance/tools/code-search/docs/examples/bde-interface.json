@@ -1,0 +1,203 @@
+{
+  "recording": "2026-10-11-polish-e-live",
+  "warning": "Recorded session only; refs/cursors have expired. Discover fresh identities before use.",
+  "request": {
+    "tool": "ascet_read_bde",
+    "arguments": {
+      "refs": [
+        "s3urQXdX_3:n1"
+      ],
+      "depth": 0,
+      "direction": "both"
+    }
+  },
+  "model_response": {
+    "status": "ok",
+    "task_tool": "ascet_read_bde",
+    "read_scope": {
+      "refs": [
+        "s3urQXdX_3:n1"
+      ],
+      "depth": 0,
+      "direction": "both"
+    },
+    "ref": "s3urQXdX_3:n1",
+    "requested_object": {
+      "ref": "s3urQXdX_3:n1",
+      "kind": "element",
+      "name": "C_AEB_AXCDeadZoneNeg",
+      "pin_count": 1,
+      "read_tool": "ascet_read_bde",
+      "hierarchy": "root",
+      "role": "query_subject",
+      "pins": [
+        {
+          "object_ref": "s3urQXdX_3:n1",
+          "id": 56,
+          "name": "get/get",
+          "input": false,
+          "output": true
+        }
+      ],
+      "pin_ids_on_page": [
+        56
+      ],
+      "pin_ids_complete": true
+    },
+    "facts_mapping": {
+      "requested_object_ref": "s3urQXdX_3:n1",
+      "facts_pin_ids": "requested_object.pin_ids_on_page",
+      "facts_pin_ids_complete": "requested_object.pin_ids_complete",
+      "neighbor_pin_ids": "neighbors[].endpoint_pins[].id (connection context only)"
+    },
+    "scope": "local",
+    "depth": 0,
+    "direction": "both",
+    "has_more": false,
+    "next_cursor": null,
+    "connections_not_read": "depth is 0: this view has connections:[] and neighbors:[]. Keep depth 0 when answering this request. Empty in this view does not mean no saved wires exist.",
+    "connections": [],
+    "boundaries": [],
+    "neighbors": [],
+    "pin_coverage": "requested_object.role=query_subject is the subject of this read. Consume all pages for its pin_ids_on_page; pin_count is its native total and pin_ids_complete confirms completeness. Connection ref resolves to requested_object or neighbors; pin/pin_id identify that endpoint. neighbors.role=connection_neighbor and neighbors.endpoint_pins are not the requested interface; read that ref separately for its complete interface.",
+    "citable_refs": [
+      "s3urQXdX_3:n1",
+      "s3urQXdX_3:d2"
+    ],
+    "diagram_context": {
+      "ref": "s3urQXdX_3:d2",
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+      "kind": "diagram",
+      "member": "Main",
+      "variant": "BD",
+      "implementation": "",
+      "component_type": "SGClass",
+      "diagram": "Main",
+      "diagram_oid": "040ts00000001qg714eg70ikn3n0e",
+      "language": "ascet_graph",
+      "visibility": "public",
+      "representation": "graphical_model",
+      "diagram_methods": [
+        {
+          "name": "AEBdFxTar",
+          "kind": "method"
+        },
+        {
+          "name": "calc",
+          "kind": "method"
+        }
+      ]
+    },
+    "diagram_type": "bde",
+    "expires_utc": "2026-10-11T03:12:56.234Z",
+    "read_tool": "ascet_read_bde"
+  },
+  "structured_response": {
+    "status": "ok",
+    "ref": "s3urQXdX_3:n1",
+    "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+    "kind": "diagram",
+    "variant": "BD",
+    "component_type": "SGClass",
+    "language": "ascet_graph",
+    "diagram_type": "bde",
+    "visibility": "public",
+    "representation": "graphical_model",
+    "diagram": "Main",
+    "diagram_oid": "040ts00000001qg714eg70ikn3n0e",
+    "diagram_methods": [
+      {
+        "name": "AEBdFxTar",
+        "kind": "method"
+      },
+      {
+        "name": "calc",
+        "kind": "method"
+      }
+    ],
+    "scope": "local",
+    "diagram_ref": "s3urQXdX_3:d2",
+    "object": {
+      "ref": "s3urQXdX_3:n1",
+      "kind": "element",
+      "name": "C_AEB_AXCDeadZoneNeg",
+      "pin_count": 1,
+      "read_tool": "ascet_read_bde",
+      "next_call": {
+        "tool": "ascet_read_bde",
+        "arguments": {
+          "refs": [
+            "s3urQXdX_3:n1"
+          ],
+          "depth": 0,
+          "direction": "both"
+        }
+      },
+      "hierarchy": "root"
+    },
+    "depth": 0,
+    "direction": "both",
+    "nodes": [
+      {
+        "ref": "s3urQXdX_3:n1",
+        "kind": "element",
+        "name": "C_AEB_AXCDeadZoneNeg",
+        "read_tool": "ascet_read_bde",
+        "next_call": {
+          "tool": "ascet_read_bde",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_3:n1"
+            ],
+            "depth": 0,
+            "direction": "both"
+          }
+        },
+        "hierarchy": "root"
+      }
+    ],
+    "pins": [
+      {
+        "object_ref": "s3urQXdX_3:n1",
+        "id": 56,
+        "name": "get/get",
+        "input": false,
+        "output": true
+      }
+    ],
+    "connections": [],
+    "boundaries": [],
+    "has_more": false,
+    "next_cursor": null,
+    "expires_utc": "2026-10-11T03:12:56.234Z",
+    "task_tool": "ascet_read_bde",
+    "read_evidence": {
+      "id": "read-qNuPculL-3",
+      "requested": {
+        "refs": [
+          "s3urQXdX_3:n1"
+        ],
+        "depth": 0,
+        "direction": "both"
+      }
+    },
+    "read_tool": "ascet_read_bde",
+    "next_call": {
+      "tool": "ascet_read_bde",
+      "arguments": {
+        "refs": [
+          "s3urQXdX_3:n1"
+        ],
+        "depth": 0,
+        "direction": "both"
+      }
+    },
+    "identity": {
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_dFxTar",
+      "kind": "diagram",
+      "member": "Main",
+      "variant": "BD",
+      "implementation": ""
+    }
+  }
+}

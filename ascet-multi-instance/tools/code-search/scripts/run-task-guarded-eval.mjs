@@ -18,8 +18,10 @@ const targetedCases = [
   'intent-followup-switch-owner', 'batch-pagination', 'large-header-read-pages',
   'cross-tool-cursor-recovery', 'truncated-search-boundary',
 ];
-const plan = JSON.parse(fs.readFileSync('PI_AGENT_PRECISION_V5.json', 'utf8'));
-const cases = guarded ? targetedCases : plan.cases.map(c => c.id);
+const planFile = process.argv[4] ?? 'PI_AGENT_PRECISION_V5.json';
+assert.match(planFile, /^[A-Z0-9_]+\.json$/u, 'Use a local named plan');
+const plan = JSON.parse(fs.readFileSync(planFile, 'utf8'));
+const cases = guarded ? plan.targeted_cases ?? targetedCases : plan.cases.map(c => c.id);
 assert.ok(cases.every(id => plan.cases.some(c => c.id === id)));
 const manifest = path.resolve(process.env.ASCET_AGENT_LATENCY_MANIFEST ?? '../../analysis/search-tools-acceptance/2026-10-02/agent-a/instance.json');
 const identity = JSON.parse(fs.readFileSync(path.join(path.dirname(manifest), 'process.json'), 'utf8').replace(/^\uFEFF/, ''));
@@ -34,8 +36,9 @@ for (const file of ['CodeSearchBridge.exe', 'package.json', ...['find', 'search'
 const sha = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const production = Object.fromEntries(fs.readdirSync('dist/src').filter(f => f.endsWith('.js')).map(f => [f, sha(path.join('dist/src', f))]));
 fs.cpSync('dist/scripts', path.join(root, 'grading-build/scripts'), { recursive: true });
+fs.copyFileSync(planFile, path.join(root, planFile));
 fs.writeFileSync(path.join(root, 'eval.freeze.json'), JSON.stringify({ cases, identity, production,
-  plan_sha256: sha('PI_AGENT_PRECISION_V5.json'), repetitions: 1, guards_enabled: guarded,
+  plan_file: planFile, plan_sha256: sha(planFile), repetitions: 1, guards_enabled: guarded,
   policy: guarded ? 'Targeted production-guard acceptance. Not a first-attempt benchmark or an independent holdout. Preserve every raw assistant answer, repair, rejected call and original v6 score. Do not replace complete unguarded runs.'
     : 'Complete plan, one first attempt per case. Intent/final guards disabled. No retries or selected successful repeats. Preserve every raw answer, error and v6 score; do not merge with guarded attempts.' }, null, 2) + '\n');
 const directory = path.join(root, guarded ? 'guarded-pi-01' : 'candidate-pi-01');
@@ -43,7 +46,7 @@ const fd = fs.openSync(directory + '.console.log', 'wx');
 const code = await new Promise((accept, reject) => {
   const child = spawn(process.execPath, ['dist/scripts/verify-pi-agent-eval.js', directory, cases.join(',')], {
     windowsHide: true, stdio: ['ignore', fd, fd], env: { ...process.env,
-      ASCET_PI_TOOL_PROFILE: 'task', ASCET_PI_PLAN_FILE: 'PI_AGENT_PRECISION_V5.json', ASCET_PI_GRADING_VERSION: '6',
+      ASCET_PI_TOOL_PROFILE: 'task', ASCET_PI_PLAN_FILE: planFile, ASCET_PI_GRADING_VERSION: '6',
       ASCET_PI_REPEAT: '1', ASCET_PI_RESCORE: '0', ASCET_PI_EVAL_GUARDS: guarded ? '1' : '0',
       ASCET_PI_PROVIDER: 'deepseek', ASCET_PI_MODEL: 'deepseek-flash',
       ASCET_PI_EXTENSION: path.join(build, 'dist/src/pi-extension.js') } });

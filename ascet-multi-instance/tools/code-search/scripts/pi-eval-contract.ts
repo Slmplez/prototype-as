@@ -1,5 +1,6 @@
 import type { MatrixCheck } from './pi-eval-matrix.js';
 import { intentRecognitionChecks } from './pi-intent-eval.js';
+import { TaskFactsSchema } from '../src/task-facts-schema.js';
 
 export const primaryCheck = (check: MatrixCheck) => (!intentRecognitionChecks.has(check.name) ||
   ['intent_clarification_question', 'intent_no_resolved_claim'].includes(check.name)) && check.name !== 'final_intent_schema';
@@ -22,6 +23,7 @@ export function validatePiEvalContract(plan: any): string[] {
   if (plan.intent_recording === 'final_only' && /Before your first tool call|ONLY this intent field/iu.test(plan.answer_format))
     errors.push('final_only conflicts with a pre-tool intent declaration');
   for (const c of plan.cases) {
+    if (c.facts_schema !== undefined) try { new TaskFactsSchema(c.facts_schema); } catch (error) { errors.push(c.id + ': invalid caller facts_schema: ' + String(error)); }
     const requested = c.requirement + ' ' + (c.response_fields ?? '');
     if (c.rubric?.type === 'local') {
       for (const field of ['name', 'kind', 'hierarchy', 'pin_ids', 'connections']) {

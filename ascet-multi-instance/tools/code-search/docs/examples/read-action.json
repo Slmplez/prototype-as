@@ -1,0 +1,130 @@
+{
+  "recording": "2026-10-11-polish-e-live",
+  "warning": "Recorded session only; refs/cursors have expired. Discover fresh identities before use.",
+  "request": {
+    "tool": "ascet_read_code",
+    "arguments": {
+      "refs": [
+        "s3urQXdX_b:d3"
+      ]
+    }
+  },
+  "model_response": {
+    "status": "ok",
+    "ref": "s3urQXdX_b:d3",
+    "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+    "kind": "state_static",
+    "variant": "ASDL",
+    "component_type": "SGClass",
+    "language": "esdl",
+    "visibility": "public",
+    "diagram": "Main",
+    "diagram_oid": "040ts00000001qg714eg70igttug6",
+    "state_hierarchy_ids": [],
+    "state": "Main/AEB_State_Off",
+    "state_id": 0,
+    "code": "/* */\r\n/* Initialization of AEB-state-signals */\r\nAEBState=11;\r\nAEBActive = false;\r\nAEBBAActive = false;\r\nAEBIBActive = false;\r\n\r\ntAEB = 0.0;\r\n\r\n/* Decrement timer for locking time */\r\nif (AEBLockTime > 0.0)\r\n{\r\n   AEBLockTime = AEBLockTime - C_AEBdT;\r\n}\r\n",
+    "line_count": 15,
+    "line_coverage": {
+      "selected": {
+        "start": 1,
+        "end": 15
+      },
+      "page": {
+        "start": 1,
+        "end": 15
+      },
+      "complete_lines": {
+        "start": 1,
+        "end": 15
+      }
+    },
+    "task_tool": "ascet_read_code",
+    "read_tool": "ascet_read_code",
+    "next_call": {
+      "tool": "ascet_read_code",
+      "arguments": {
+        "refs": [
+          "s3urQXdX_b:d3"
+        ]
+      }
+    },
+    "search_scope": {
+      "code_ref": "s3urQXdX_b:d3"
+    },
+    "identity": {
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_static",
+      "member": "Main/AEB_State_Off",
+      "variant": "ASDL",
+      "implementation": ""
+    },
+    "read_scope": {
+      "refs": [
+        "s3urQXdX_b:d3"
+      ]
+    },
+    "citable_refs": [
+      "s3urQXdX_b:d3"
+    ]
+  },
+  "structured_response": {
+    "status": "ok",
+    "ref": "s3urQXdX_b:d3",
+    "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+    "kind": "state_static",
+    "variant": "ASDL",
+    "component_type": "SGClass",
+    "language": "esdl",
+    "visibility": "public",
+    "diagram": "Main",
+    "diagram_oid": "040ts00000001qg714eg70igttug6",
+    "state_hierarchy_ids": [],
+    "state": "Main/AEB_State_Off",
+    "state_id": 0,
+    "code": "/* */\r\n/* Initialization of AEB-state-signals */\r\nAEBState=11;\r\nAEBActive = false;\r\nAEBBAActive = false;\r\nAEBIBActive = false;\r\n\r\ntAEB = 0.0;\r\n\r\n/* Decrement timer for locking time */\r\nif (AEBLockTime > 0.0)\r\n{\r\n   AEBLockTime = AEBLockTime - C_AEBdT;\r\n}\r\n",
+    "line_count": 15,
+    "line_coverage": {
+      "selected": {
+        "start": 1,
+        "end": 15
+      },
+      "page": {
+        "start": 1,
+        "end": 15
+      },
+      "complete_lines": {
+        "start": 1,
+        "end": 15
+      }
+    },
+    "task_tool": "ascet_read_code",
+    "read_evidence": {
+      "id": "read-qNuPculL-d",
+      "requested": {
+        "refs": [
+          "s3urQXdX_b:d3"
+        ]
+      }
+    },
+    "read_tool": "ascet_read_code",
+    "next_call": {
+      "tool": "ascet_read_code",
+      "arguments": {
+        "refs": [
+          "s3urQXdX_b:d3"
+        ]
+      }
+    },
+    "search_scope": {
+      "code_ref": "s3urQXdX_b:d3"
+    },
+    "identity": {
+      "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AEB_Core\\AEB_State_Machine",
+      "kind": "state_static",
+      "member": "Main/AEB_State_Off",
+      "variant": "ASDL",
+      "implementation": ""
+    }
+  }
+}

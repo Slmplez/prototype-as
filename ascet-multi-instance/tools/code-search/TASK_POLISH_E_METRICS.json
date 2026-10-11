@@ -1,0 +1,720 @@
+{
+  "date": "2026-10-11",
+  "boundary": "Saved-code/BDE regression on an existing database, not an independent holdout. Prompt protocol alignment changed in guarded runs; do not attribute score differences solely to the model or tools. Guards validate facts/refs, not arbitrary prose. All original failures and auxiliary intent failures remain in reports.",
+  "offline": {
+    "source": "experiments/2026-10-11-polish-e-offline-final.log",
+    "sha256": "0bd63ea30796721bb2eec6fdd1770d1b5cf668ac4e5b33ca70f1917e89e45d64",
+    "tests": 836,
+    "passed": 836,
+    "failed": 0
+  },
+  "live_sdk": {
+    "source": "experiments/pi-agent-eval/2026-10-11-polish-e-live/report.json",
+    "sha256": "96daabbc6a8ce2979920208117692cfac9d22525b20f6aa7a7c9019f3d72e36f",
+    "passed": 17,
+    "total": 17,
+    "sources_and_graphs_unchanged": true,
+    "instance_retained": true
+  },
+  "first_attempt": {
+    "source": "experiments/pi-agent-eval/2026-10-11-polish-e-first/candidate-pi-01/report.json",
+    "sha256": "a7307960cc2641a014ead2644e05fe17f0d262b59ca0eb4e76c50354689a1f74",
+    "summary": {
+      "passed": 28,
+      "attempted": 30,
+      "planned": 80,
+      "unique_cases": 80,
+      "semantic_passed": 28,
+      "model_service_failures": 1,
+      "completed_cases": 29,
+      "tool_errors": 1,
+      "tool_calls": 73,
+      "expected_tool_errors": 0,
+      "unexpected_tool_errors": 1,
+      "task_latency": {
+        "samples": 30,
+        "p50_ms": 7613.7918999999965,
+        "p95_ms": 14491.744999999995,
+        "max_ms": 17742.910499999998
+      },
+      "first_tool_latency": {
+        "samples": 24,
+        "p50_ms": 525.1599999999999,
+        "p95_ms": 773.4595000000008,
+        "max_ms": 857.3151999999973
+      },
+      "subsequent_tool_latency": {
+        "samples": 48,
+        "p50_ms": 119.85139999999956,
+        "p95_ms": 731.0413000000008,
+        "max_ms": 1210.5697999999975
+      },
+      "subsequent_search_latency": {
+        "samples": 0
+      }
+    },
+    "completion": {
+      "planned": 80,
+      "attempted": 30,
+      "not_attempted": 50,
+      "completed": 29,
+      "full_plan_completed": false,
+      "stopped_reason": "model_service_failed; remaining cases were not attempted",
+      "skipped_cases": [
+        {
+          "id": "holdout-literal-statement",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-multiline-tail",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-switch-force-owner",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-force-lines",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-full-kp",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-ordered-batch",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-module-diagrams",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-max-interface",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-negative-outgoing",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-positive-incoming",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-off-static",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-off-exit",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-trigger-binding",
+          "repetition": 1
+        },
+        {
+          "id": "holdout-runtime-boundary",
+          "repetition": 1
+        },
+        {
+          "id": "transfer-slip-symbol",
+          "repetition": 1
+        },
+        {
+          "id": "transfer-integrator-regex",
+          "repetition": 1
+        },
+        {
+          "id": "transfer-min-gradient-full",
+          "repetition": 1
+        },
+        {
+          "id": "transfer-slip-lines",
+          "repetition": 1
+        },
+        {
+          "id": "transfer-module-interface",
+          "repetition": 1
+        },
+        {
+          "id": "transfer-literal-outgoing",
+          "repetition": 1
+        },
+        {
+          "id": "transfer-inner-hierarchy",
+          "repetition": 1
+        },
+        {
+          "id": "transfer-deep-instance",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-aeb5ms",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-aebpre5ms_ibooster",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-aeb_light_class",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-aeb_axctrlfxlim",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-aeb_axtarlim",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-aeb_core",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-code-axctrldevdeadzone",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-code-axctrllimminax",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-code-dbr_force2pressure",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-even-lines",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-missing-object",
+          "repetition": 1
+        },
+        {
+          "id": "accept2-missing-code",
+          "repetition": 1
+        },
+        {
+          "id": "batch-pagination",
+          "repetition": 1
+        },
+        {
+          "id": "large-header-read-pages",
+          "repetition": 1
+        },
+        {
+          "id": "find-directory-pagination",
+          "repetition": 1
+        },
+        {
+          "id": "search-cursor-replay",
+          "repetition": 1
+        },
+        {
+          "id": "truncated-search-boundary",
+          "repetition": 1
+        },
+        {
+          "id": "cross-tool-cursor-recovery",
+          "repetition": 1
+        },
+        {
+          "id": "cursor-intent-variant-unspecified",
+          "repetition": 1
+        },
+        {
+          "id": "cursor-holdout-negative-outgoing",
+          "repetition": 1
+        },
+        {
+          "id": "new-code-AxCtrlLimGradFx",
+          "repetition": 1
+        },
+        {
+          "id": "new-code-AEB_AxCtrlConfigProp",
+          "repetition": 1
+        },
+        {
+          "id": "new-code-AxCtrlLimDepOnFxAct",
+          "repetition": 1
+        },
+        {
+          "id": "new-code-AxCtrldFxDtPropFF",
+          "repetition": 1
+        },
+        {
+          "id": "new-bde-AEB_axControl",
+          "repetition": 1
+        },
+        {
+          "id": "new-bde-AEB_SM_TriggerConditions",
+          "repetition": 1
+        },
+        {
+          "id": "new-state_static",
+          "repetition": 1
+        },
+        {
+          "id": "new-state_exit",
+          "repetition": 1
+        }
+      ],
+      "service_errors": [
+        {
+          "id": "holdout-independent-two",
+          "message": "402: {\"message\":\"Insufficient Balance (request_id: 10d36aed-b101-455d-8120-53b63e708068)\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}"
+        }
+      ]
+    },
+    "call_accuracy": {
+      "parameter_acceptance": {
+        "passed": 72,
+        "total": 73,
+        "rate": 0.9863013698630136
+      },
+      "explicit_scope_compliance": {
+        "passed": 15,
+        "total": 20,
+        "rate": 0.75
+      },
+      "unclassified_error_calls": 0,
+      "known_unnecessary_calls": 0,
+      "boundary": "Parameter acceptance is not semantic precision. Scope labels cover annotated explicit predicates only, with same-owner structural reads allowed. Unannotated call relevance remains unknown."
+    },
+    "native_source_checks": {
+      "passed": 20,
+      "total": 20
+    },
+    "scoring_errors": 0,
+    "dimensions": {
+      "tool_behavior_passed": {
+        "passed": 27,
+        "total": 28
+      },
+      "evidence_and_facts_passed": {
+        "passed": 29,
+        "total": 30
+      },
+      "answer_contract_passed": {
+        "passed": 29,
+        "total": 30
+      }
+    },
+    "intent_recognition": {
+      "passed": 17,
+      "total": 28
+    },
+    "tool_errors": {
+      "total": 1,
+      "unexpected": 1
+    },
+    "final_guard_accepted": 0,
+    "repair_events": 0,
+    "failed_cases": [
+      {
+        "id": "intent-followup-timer",
+        "checks": [
+          {
+            "name": "intent_terms",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_call_errors",
+            "passed": false
+          },
+          {
+            "name": "intent_read_scope",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "holdout-independent-two",
+        "checks": [
+          {
+            "name": "pi_completed",
+            "passed": false
+          },
+          {
+            "name": "answer_and_refs",
+            "passed": false,
+            "detail": "outcome must be located, partial, not_found or unsupported; answer must be a nonempty string; evidence_refs must be an array of nonempty strings; missing_evidence must be an array of nonempty strings"
+          },
+          {
+            "name": "strict_json_format",
+            "passed": false
+          },
+          {
+            "name": "required_outcome",
+            "passed": false
+          },
+          {
+            "name": "facts_object",
+            "passed": false
+          },
+          {
+            "name": "relevant_search_citation",
+            "passed": false
+          },
+          {
+            "name": "search_count_facts",
+            "passed": false
+          }
+        ]
+      }
+    ],
+    "auxiliary_failed_checks": [
+      {
+        "id": "intent-where-wired",
+        "checks": [
+          {
+            "name": "intent_terms",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-getter-interface",
+        "checks": [
+          {
+            "name": "intent_schema",
+            "passed": false
+          },
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_component_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-static-not-entry",
+        "checks": [
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-junction-to-off",
+        "checks": [
+          {
+            "name": "intent_terms",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-shared-class",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_terms",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-missing-referent",
+        "checks": [
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-calc-without-owner",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-variant-unspecified",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-duplicate-stage",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-generated-target",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          }
+        ]
+      }
+    ],
+    "closeout": {
+      "status": "passed",
+      "sources_and_graphs_unchanged": true,
+      "isolated_instance_retained": true,
+      "endpoint_open": true,
+      "protected_processes_unchanged": true
+    }
+  },
+  "guarded": {
+    "source": "experiments/pi-agent-eval/2026-10-11-polish-e-guarded/guarded-pi-01/report.json",
+    "sha256": "61b1c32d923a53e0beaea6a789e2e61bd8d760f78c70192891462f09071c2341",
+    "summary": {
+      "passed": 24,
+      "attempted": 24,
+      "planned": 24,
+      "unique_cases": 24,
+      "semantic_passed": 24,
+      "model_service_failures": 0,
+      "completed_cases": 24,
+      "tool_errors": 1,
+      "tool_calls": 73,
+      "expected_tool_errors": 1,
+      "unexpected_tool_errors": 0,
+      "task_latency": {
+        "samples": 24,
+        "p50_ms": 9195.746299999999,
+        "p95_ms": 20182.831499999993,
+        "max_ms": 22122.539699999994
+      },
+      "first_tool_latency": {
+        "samples": 17,
+        "p50_ms": 517.8554999999906,
+        "p95_ms": 886.9445999999998,
+        "max_ms": 886.9445999999998
+      },
+      "subsequent_tool_latency": {
+        "samples": 55,
+        "p50_ms": 112.65859999999884,
+        "p95_ms": 849.8731000000116,
+        "max_ms": 1184.6538
+      },
+      "subsequent_search_latency": {
+        "samples": 0
+      }
+    },
+    "completion": {
+      "planned": 24,
+      "attempted": 24,
+      "not_attempted": 0,
+      "completed": 24,
+      "full_plan_completed": true,
+      "stopped_reason": null,
+      "skipped_cases": [],
+      "service_errors": []
+    },
+    "call_accuracy": {
+      "parameter_acceptance": {
+        "passed": 72,
+        "total": 73,
+        "rate": 0.9863013698630136
+      },
+      "explicit_scope_compliance": {
+        "passed": 9,
+        "total": 9,
+        "rate": 1
+      },
+      "unclassified_error_calls": 0,
+      "known_unnecessary_calls": 0,
+      "boundary": "Parameter acceptance is not semantic precision. Scope labels cover annotated explicit predicates only, with same-owner structural reads allowed. Unannotated call relevance remains unknown."
+    },
+    "native_source_checks": {
+      "passed": 22,
+      "total": 22
+    },
+    "scoring_errors": 0,
+    "dimensions": {
+      "tool_behavior_passed": {
+        "passed": 18,
+        "total": 18
+      },
+      "evidence_and_facts_passed": {
+        "passed": 24,
+        "total": 24
+      },
+      "answer_contract_passed": {
+        "passed": 24,
+        "total": 24
+      }
+    },
+    "intent_recognition": {
+      "passed": 9,
+      "total": 18
+    },
+    "tool_errors": {
+      "total": 1,
+      "unexpected": 0
+    },
+    "final_guard_accepted": 24,
+    "repair_events": 2,
+    "failed_cases": [],
+    "auxiliary_failed_checks": [
+      {
+        "id": "intent-getter-interface",
+        "checks": [
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-static-not-entry",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_member_constraints",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-junction-to-off",
+        "checks": [
+          {
+            "name": "intent_terms",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-shared-class",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_terms",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-missing-referent",
+        "checks": [
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-calc-without-owner",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "intent-duplicate-stage",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          },
+          {
+            "name": "intent_decision",
+            "passed": false
+          },
+          {
+            "name": "intent_clarification_fields",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "accept2-missing-object",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          }
+        ]
+      },
+      {
+        "id": "accept2-missing-code",
+        "checks": [
+          {
+            "name": "intent_action",
+            "passed": false
+          }
+        ]
+      }
+    ],
+    "closeout": {
+      "status": "passed",
+      "sources_and_graphs_unchanged": true,
+      "isolated_instance_retained": true,
+      "endpoint_open": true,
+      "protected_processes_unchanged": true
+    }
+  }
+}

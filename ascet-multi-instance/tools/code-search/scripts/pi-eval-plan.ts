@@ -6,6 +6,7 @@ import type { IntentRubric } from './pi-intent-eval.js';
 export interface PiEvalCase extends MatrixCase {
   requirement: string; max_tool_calls?: number; timeout_ms?: number; repetition?: number;
   intent?: IntentRubric; response_fields?: string; intent_fixture?: MatrixRubric;
+  facts_schema?: Record<string, unknown>;
   turns?: { requirement: string; response_fields?: string }[];
 }
 export function normalizePiEvalCases(plan: any): PiEvalCase[] {

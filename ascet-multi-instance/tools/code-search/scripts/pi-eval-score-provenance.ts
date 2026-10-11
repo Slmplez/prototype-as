@@ -18,7 +18,7 @@ export function assertPlanProvenance(report: EvalReport, planRaw: string, filena
 }
 export async function gradingFingerprint(): Promise<string> {
   const files = ['dist/scripts/verify-pi-agent-eval.js', 'dist/scripts/pi-eval-matrix.js', 'dist/scripts/pi-eval-plan.js', 'dist/scripts/pi-eval-metrics.js',
-    'dist/scripts/pi-intent-eval.js', 'dist/scripts/pi-intent-turns.js', 'dist/scripts/pi-call-accuracy.js', 'dist/scripts/pi-eval-contract.js', 'dist/scripts/pi-eval-source-context.js', 'dist/scripts/pi-eval-answer.js', 'dist/scripts/oracle.js', 'dist/scripts/pi-eval-score-provenance.js', 'dist/src/agent-answer.js', 'dist/src/agent-evidence.js'];
+    'dist/scripts/pi-intent-eval.js', 'dist/scripts/pi-intent-turns.js', 'dist/scripts/pi-call-accuracy.js', 'dist/scripts/pi-eval-contract.js', 'dist/scripts/pi-eval-source-context.js', 'dist/scripts/pi-eval-answer.js', 'dist/scripts/oracle.js', 'dist/scripts/pi-eval-score-provenance.js', 'dist/src/agent-answer.js', 'dist/src/agent-evidence.js', 'dist/src/task-facts-schema.js'];
   const hashes = await Promise.all(files.map(async file => [file, reportSHA(await readFile(join(ROOT, file), 'utf8'))]));
   return reportSHA(JSON.stringify(hashes));
 }

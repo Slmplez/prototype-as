@@ -31,7 +31,14 @@ const summarize = record => {
   const calls = cases.flatMap(c => c.calls);
   const checks = cases.flatMap(c => c.scoring.checks);
   const sourceChecks = checks.filter(c => c.name.startsWith('native_source_'));
-  return { source, sha256, summary: data.summary, call_accuracy: data.call_accuracy,
+  return { source, sha256, summary: data.summary,
+    completion: { planned: data.summary.planned, attempted: data.summary.attempted,
+      not_attempted: (data.skipped_cases ?? []).length, completed: data.summary.completed_cases,
+      full_plan_completed: data.summary.attempted === data.summary.planned && data.summary.completed_cases === data.summary.planned,
+      stopped_reason: data.stopped_reason ?? null,
+      skipped_cases: data.skipped_cases ?? [],
+      service_errors: cases.filter(c => c.execution_status === 'model_service_failed').map(c => ({ id: c.id, message: c.model_error })) },
+    call_accuracy: data.call_accuracy,
     native_source_checks: { passed: sourceChecks.filter(c => c.passed).length, total: sourceChecks.length },
     scoring_errors: checks.filter(c => c.name === 'scoring_error').length,
     dimensions: Object.fromEntries(['tool_behavior_passed', 'evidence_and_facts_passed', 'answer_contract_passed'].map(key => [key, dimension(key)])),

@@ -6,6 +6,7 @@ export interface AgentEvidenceRef {
   component_path?: string;
   diagram_oid?: string;
   kind?: string;
+  member?: string;
   expires_at?: number;
   scoped: boolean;
   read: boolean;
@@ -244,6 +245,10 @@ export class AgentEvidence {
         evidence.component_path ??= owner;
         evidence.diagram_oid ??= diagram;
         evidence.kind ??= key === 'diagram_ref' ? 'diagram' : typeof value.kind === 'string' ? value.kind : undefined;
+        if (key === 'ref') {
+          const member = value.method ?? value.process ?? value.state ?? value.transition ?? (isRecord(value.identity) ? value.identity.member : undefined);
+          if (typeof member === 'string') evidence.member ??= member;
+        }
         evidence.expires_at ??= expiry ?? this.now() + 300_000;
         evidence.scoped ||= scoped;
         this.entries.set(ref, evidence);

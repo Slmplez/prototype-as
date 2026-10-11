@@ -29,6 +29,7 @@ import { primaryCheck, scoreDimensions, validatePiEvalContract } from './pi-eval
 import { namedStateObjects, assertFrozenSourceErrors } from './pi-eval-source-context.js';
 import { retainAgentInstance, verifyRunningAgentInstance } from './agent-instance-retention.js';
 import { splitPiEvalAnswer, acceptedTaskSettlements, piEvalAnswerFormat } from './pi-eval-answer.js';
+import { TaskFactsSchema } from '../src/task-facts-schema.js';
 
 type Row = { tool: AgentToolName; args: any; request: Record<string, unknown>; response: any; is_error: boolean;
   ms: number; details: any; model_bytes: number; structured_bytes: number; expected_error?: boolean; turn?: number };
@@ -102,6 +103,7 @@ function score(id: string, result: any, source: Snapshot) {
   const requirements = ['saved-method', 'class-init', 'referenced-class', 'multiline-regex'].includes(id)
     ? { complete_text_read: true, ...(id === 'multiline-regex' ? { multiline_regex_match: true } : {}) } : {};
   const { facts: f, intent, base } = splitPiEvalAnswer(parsed, profile, Boolean(task.intent));
+  if (task.facts_schema) check('declared_facts_schema', new TaskFactsSchema(task.facts_schema).validate(f).length === 0);
   const validation = validateAgentAnswer(JSON.stringify(base), ledger, requirements);
   check('pi_completed', result.exit_code === 0 && result.settled && result.stop_reason === 'stop' && !result.timeout && !result.budget_exceeded);
   if (guarded && profile === 'task') check('production_final_validation', acceptedTaskSettlements(result.final_guard_events ?? [], task.turns?.length ?? 1));
@@ -275,16 +277,17 @@ async function runCase(task: any) {
   const result: any = { id: task.id, execution_id: runID, group: task.group, repetition: task.repetition, requirement: task.requirement, started_utc: new Date().toISOString(), calls, raw_assistant_messages: [], final_guard_events: [], settled: false, timeout: false, budget_exceeded: false, usage: { input: 0, output: 0, cache_read: 0, cost: 0 }, protocol_errors: [] };
   const intentFormat = ' Also include intent: {action: locate/search/read/connections/compare/clarify/unsupported, decision: execute/clarify/unsupported, terms: string[], scope: {components: string[], members: string[]}, clarification_fields: string[]}. terms are positive requested search symbols/fragments, not excluded terms. scope records user constraints, including constraints resolved from prior turns; do not add a discovered owner the user never constrained. Empty lists are allowed. clarification_fields uses symbol/component/variant/hierarchy when those are missing. Choose action for the current user goal, not every intermediate tool.';
   const taskAnswerFormat = piEvalAnswerFormat(plan.answer_format, profile, guarded, Boolean(task.intent), intentFormat);
-  const intentProtocol = task.intent ? '\nBefore your first tool call in EACH user turn, emit an assistant text block containing exactly one JSON object with ONLY this intent field: {"intent":{"action":"...","decision":"...","terms":[],"scope":{"components":[],"members":[]},"clarification_fields":[]}}. This declaration is separate from the final answer and must be emitted before tools. The final JSON must also include the intent field.' : '';
+  const intentProtocol = task.intent ? '\nOnly for decision execute: before the first tool call in EACH user turn emit a separate text block {"intent":{"action":"...","decision":"execute","terms":[],"scope":{"components":[],"members":[]},"clarification_fields":[]}}. Copy it into the final JSON. For decision clarify/unsupported, emit exactly one final JSON object including intent, with no separate declaration and no tool calls.' : '';
   const prompt = (turn: { requirement: string; response_fields?: string }) => turn.requirement + '\nFinish within ' + callBudget + ' total tool calls for this conversation. ' + taskAnswerFormat + intentProtocol +
-    (turn.response_fields ? '\nResponse schema only (not reference answers): facts: ' + turn.response_fields : '');
+    (turn.response_fields ? '\nResponse schema only (not reference answers): facts: ' + turn.response_fields : '') +
+    (task.facts_schema ? '\nCaller-declared facts JSON Schema (no saved reference values): ' + JSON.stringify(task.facts_schema) : '');
   const multiTurn = Array.isArray(task.turns) && task.turns.length > 1;
   const child = spawn(process.execPath, [piEntry, '--no-extensions', '--no-skills', '--no-prompt-templates', '--no-themes',
     '--no-context-files', '--offline', '--no-session', '--mode', multiTurn ? 'rpc' : 'json', ...(multiTurn ? [] : ['--print']), '--tools', toolNames.join(','),
     ...(process.env.ASCET_PI_PROVIDER ? ['--provider', process.env.ASCET_PI_PROVIDER] : []),
     ...(process.env.ASCET_PI_MODEL ? ['--model', process.env.ASCET_PI_MODEL] : []),
     '--extension', extension, '--append-system-prompt', 'Use only the delivered ASCET tools. No reference answers are available. ' + taskAnswerFormat + intentProtocol,
-    ...(multiTurn ? [] : ['--', prompt(task)])], { cwd, env, windowsHide: true });
+    ...(multiTurn ? [] : ['--', prompt(task)])], { cwd, env: { ...env, ASCET_PI_FACTS_SCHEMA: task.facts_schema ? JSON.stringify(task.facts_schema) : '' }, windowsHide: true });
   const conversation = multiTurn ? new PiIntentTurns(task.turns.map(prompt), command => {
     result.settled = false;
     result.final_text = ''; result.stop_reason = undefined;

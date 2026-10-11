@@ -1,6 +1,7 @@
 import { isRecord } from './validation.js';
+import { taskSearchScopeError, type TaskScopeEvidence } from './task-scope-guard.js';
 
-export const TASK_INTENT_PROTOCOL = 'First decide whether the current user request is executable. decision unsupported or clarify is terminal: return the final JSON with intent and NO tool calls; do not locate a symbol merely to confirm a known capability limit. Only for decision execute, before the first ASCET tool call in EACH user prompt, emit a text block containing exactly {"intent":{"action":"locate|search|read|connections|compare","decision":"execute","terms":[],"scope":{"components":[],"members":[]},"clarification_fields":[]}}. Choose one action, not the pipe-separated alternatives. For terminal decisions use the matching action unsupported or clarify. Every list contains strings: intent.scope.components uses ["Controller"], never tool selectors such as [{"name":"Controller"}]. Record the user goal and restrictions, including prior-turn restrictions; do not add owners discovered incidentally. Copy that intent into the final JSON. A repair is part of the same user prompt.';
+export const TASK_INTENT_PROTOCOL = 'Before any tools, choose the user goal action (locate/search/read/connections/compare/clarify/unsupported) separately from decision (execute/clarify/unsupported). action read with decision clarify is valid when a requested Method owner is missing. For decision clarify or unsupported, emit ONLY the final JSON containing intent; do not emit a separate declaration or call tools. For execute, before the first ASCET call in EACH user prompt emit exactly one separate text block {"intent":{"action":"search","decision":"execute","terms":[],"scope":{"components":[],"members":[]},"clarification_fields":[]}}, choosing the actual action. Use string arrays, never selector objects. components are owning Classes/Modules/State Machines; members are explicitly requested Methods/Processes/State paths, not Component names. Example: search speed in Controller ASDL Methods => terms:["speed"], scope:{components:["Controller"],members:[]}; search calc alone needs an owner, not components:["calc"]. Keep positive user symbols as terms; do not add excluded terms or incidental discoveries. clarification_fields identifies missing symbol/component/variant/hierarchy. Preserve prior-turn restrictions. Copy the declaration unchanged into final intent. A repair remains the same user prompt. A scoped search must carry the declared owning Component and members on every initial query; after zero hits or an error preserve queries and scope. Returned refs can scope only their proven owner.';
 
 export function validTaskIntent(value: unknown): boolean {
   if (!isRecord(value) || Object.keys(value).some(key => !['action', 'decision', 'terms', 'scope', 'clarification_fields'].includes(key))) return false;
@@ -35,11 +36,11 @@ export class TaskIntentState {
       }
     } catch { /* Prose/final answers are not pre-tool declarations. */ }
   }
-  beforeTool(): string | undefined {
+  beforeTool(tool?: string, args?: unknown, lookup?: (ref: string) => TaskScopeEvidence | undefined): string | undefined {
     if (!this.intent) return 'INTENT_REQUIRED: ' + (this.declarationError ?? 'Emit the intent JSON text block before the first ASCET tool call.') + ' ' + TASK_INTENT_PROTOCOL;
     if (this.intent.decision !== 'execute') return 'INTENT_TOOL_NOT_ALLOWED: the declared decision is ' + this.intent.decision + '; return the clarification or unsupported answer without ASCET calls';
     this.called = true;
-    return undefined;
+    return taskSearchScopeError(this.intent, tool, args, lookup);
   }
   validateFinal(value: unknown, outcome?: unknown): string[] {
     if (!validTaskIntent(value)) return ['Final answer requires a valid intent object'];

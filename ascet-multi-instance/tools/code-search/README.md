@@ -18,10 +18,12 @@ npm run start:agent
 
 ## 文档
 
+- [详细使用与开发手册：六工具、真实 JSON、分页、并发、Intent 和证据边界](SEARCH_TOOLS_GUIDE.zh-CN.md)
+- [build E 打磨与 Pi 评测结果](TASK_POLISH_E.zh-CN.md)
 - [CLI 输入输出与生命周期](CLI.md)
 - [六工具协议与开发记录](PI_TASK_TOOLS.zh-CN.md)
 - [Pi 接入](PI_TOOLS.md)
 - [任务拆分和验收标准](TASK_BREAKDOWN.zh-CN.md)
-- [最新交付与实测结果](TASK_ACCEPTANCE.zh-CN.md)
+- [前期任务交付与实测结果](TASK_ACCEPTANCE.zh-CN.md)
 
 Pi 的六工具配置通过 `ASCET_PI_TOOL_PROFILE=task` 启用；默认三工具配置保持兼容。Task 配置的最终答案引用校验及逐用户回合 Intent 校验默认启用。完整评测会单独记录首次模型结果，保留原始事件与失败记录。

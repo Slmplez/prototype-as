@@ -1,0 +1,110 @@
+{
+  "recording": "2026-10-11-polish-e-live",
+  "warning": "Recorded session only; refs/cursors have expired. Discover fresh identities before use.",
+  "request": {
+    "tool": "ascet_search_code",
+    "arguments": {
+      "queries": [
+        {
+          "text": "AxTarRaw",
+          "mode": "identifier"
+        }
+      ],
+      "scope": {
+        "code_ref": "sX4WyLpCW3:d1"
+      }
+    }
+  },
+  "model_response": null,
+  "structured_response": {
+    "status": "ok",
+    "returned_hits": 2,
+    "total_hits": 2,
+    "has_more": false,
+    "next_cursor": null,
+    "expires_utc": "2026-10-11T03:12:57.517Z",
+    "searches": [
+      {
+        "index": 0,
+        "query": "AxTarRaw",
+        "mode": "identifier",
+        "returned_hits": 2,
+        "total_hits": 2,
+        "has_more": false,
+        "results": [
+          {
+            "ref": "sX4WyLpCW4:d1",
+            "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AxCtrlConfigFF_Modify",
+            "kind": "method",
+            "variant": "ASDL",
+            "component_type": "SGClass",
+            "language": "esdl",
+            "method": "calc_pre",
+            "snippets": [
+              {
+                "start_line": 1,
+                "text": "/* Determine the speed and target acceleration state when AEB is triggered in first clyc */\n\nif ( /*(AEB_AxCtrlActiveK1_B== false) && delete for defect*/ (AEB_AxCtrlActive_B==true) )\n{\n\tVxActMody = VxAct;\n\tAxTarMody = AxTarRaw;\n}\nelse if(AEB_AxCtrlActive_B==false)\n{\n\tVxActMody = 0;\n\tAxTarMody = 0;\n}\n/* Determine the Diff between AxTarLim and AxTar*/\nAEB_AXCAxLimDiff = AxTarRaw - AxTarLim;\n\n/* Determine the Diff between AxTarLim and AxTarLimK1*/\nAxTarLimDiff = AxTarLimK1 - AxTarLim;\n\nloc_AEB_AxCtrlActive_B = AEB_AxCtrlActive_B;\nloc_AxTarLim = AxTarLim;\n",
+                "matches": [
+                  {
+                    "line": 6,
+                    "columns": [
+                      14
+                    ]
+                  },
+                  {
+                    "line": 14,
+                    "columns": [
+                      20
+                    ]
+                  }
+                ]
+              }
+            ],
+            "read_tool": "ascet_read_code",
+            "next_call": {
+              "tool": "ascet_read_code",
+              "arguments": {
+                "refs": [
+                  "sX4WyLpCW4:d1"
+                ]
+              }
+            },
+            "search_scope": {
+              "code_ref": "sX4WyLpCW4:d1"
+            },
+            "identity": {
+              "component_path": "PlatformLibrary\\Package\\AEB_AutomaticEmergencyBrake\\Private\\AutomaticBraking\\AEB_AxCtrlConfigFF_Modify",
+              "kind": "method",
+              "member": "calc_pre",
+              "variant": "ASDL",
+              "implementation": ""
+            }
+          }
+        ]
+      }
+    ],
+    "task_tool": "ascet_search_code",
+    "applied_scope": {
+      "components": [
+        {
+          "ref": "sX4WyLpCW3:d1"
+        }
+      ],
+      "members": [
+        "calc_pre"
+      ],
+      "member_ids": [
+        "0101000000000000e6070b0862fa6d078f750000"
+      ],
+      "kinds": [
+        "method"
+      ],
+      "variants": [
+        "ASDL"
+      ],
+      "implementations": [
+        ""
+      ]
+    }
+  }
+}

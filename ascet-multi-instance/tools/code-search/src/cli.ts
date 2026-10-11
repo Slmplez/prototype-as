@@ -8,7 +8,7 @@ import { ToolError } from './patterns.js';
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   if (args.length === 1 && (args[0] === '--help' || args[0] === '-h')) {
-    process.stderr.write('ASCET live code search: node dist/src/cli.js [--agent] [--timeout 30] [--operation-timeout 120] [--max-page-bytes 131072] [--model-bytes 32768]\n--agent: compact input/output and ref reads. Accepts raw operation requests or {tool:"ascet_code_find|search|read",arguments:{...}}. One JSON request/result per line; keep this process alive.\n'); return;
+    process.stderr.write('ASCET live code search: node dist/src/cli.js [--agent] [--timeout 30] [--operation-timeout 120] [--max-page-bytes 131072] [--model-bytes 32768]\n--agent: compact input/output and ref reads. Task tools: ascet_find, ascet_search_code, ascet_search_bde, ascet_read_code, ascet_read_bde, ascet_inspect_state. Request envelope: {tool:"ascet_find",arguments:{target:"components"}}. Legacy ascet_code_find/search/read and raw operation requests remain supported. One JSON request/result per line; keep this process alive. Pi intent/final-answer guards apply in the Pi extension, not in this CLI.\n'); return;
   }
   const agent = args[0] === '--agent';
   if (agent) args.shift();

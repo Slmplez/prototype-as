@@ -4,6 +4,7 @@ import type { ClientOptions } from './bridge.js';
 import { ToolError } from './patterns.js';
 import { validatePiFinalAnswer } from './pi-answer-validation.js';
 import { TaskBdeEvidence } from './task-bde-evidence.js';
+import type { AgentEvidenceRef } from './agent-evidence.js';
 
 export interface PiClientOptions {
   client?: Partial<ClientOptions>;
@@ -59,6 +60,9 @@ export class PiClient {
     this.bdeEvidence.record(response, client.evidence.refs());
     return { response, generation, timings: { client_setup_ms: ready - began, queue_ms: dispatched - ready, execution_ms: performance.now() - dispatched } };
   }
+
+  /** Only current returned identity metadata, without initializing a connection. */
+  referenceEvidence(ref: string): AgentEvidenceRef | undefined { return this.client?.evidence.get(ref); }
 
   /** Validate a task answer against the live AgentEvidence ledger. */
   validateFinalAnswer(text: string) {

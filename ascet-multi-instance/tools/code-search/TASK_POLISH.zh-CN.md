@@ -33,18 +33,20 @@
 
 两组均使用既有 80 案例各一次采样；范围统计按实际调用计数，分母不同。任务通过稍有提升，但范围合规下降，因此不能宣称整体精准率都提高了，也不能从单次模型采样推断稳定增益。范围保持应优先于继续缩减调用数。
 
-本轮 8 个首答失败为 intent-where-wired（from_pin/to_pin 返回对象而非要求的数值）、intent-getter-interface（shared_diagram 返回名称而非布尔值）、intent-three-variables（owner/member 混淆后全库查询并收窄到单个方法）、intent-calc-without-owner、intent-duplicate-stage、intent-runtime-now（三例最终输出两个 JSON）、batch-pagination（未消费要求的游标）、cross-tool-cursor-recovery（error_observed 类型）。所有原始失败保留，未用生产修复替换首答分数。
+本轮 8 个首答失败为 intent-where-wired（from_pin/to_pin 返回对象而非要求的 Pin 名称字符串）、intent-getter-interface（shared_diagram 返回名称而非布尔值）、intent-three-variables（owner/member 混淆后全库查询并收窄到单个方法）、intent-calc-without-owner、intent-duplicate-stage、intent-runtime-now（三例最终输出两个 JSON）、batch-pagination（未消费要求的游标）、cross-tool-cursor-recovery（error_observed 类型）。所有原始失败保留，未用生产修复替换首答分数。
 
 完整首答组记录在 `experiments/pi-agent-eval/2026-10-11-polish-d-first/`，定向组在 `2026-10-11-polish-d-guarded/`，真实 SDK 组在 `2026-10-11-polish-d-live/`。完整成绩和 SHA-256 见 [TASK_POLISH_METRICS.json](TASK_POLISH_METRICS.json)，旧 build A/C 记录保留在 TASK_ACCEPTANCE_METRICS.json。
 
 ## 尚需打磨
 
-1. 明示 Agent 最终事实字段类型，例如 shared_diagram/error_observed 是布尔值，from_pin/to_pin 是数值 ID，避免仅靠字段名约定而由评分器隐式强制类型。
+1. 明示 Agent 最终事实字段类型，例如 shared_diagram/error_observed 是布尔值，from_pin/to_pin 是 Pin 名称字符串；需要数值 ID 时另用 *_pin_id。避免仅靠字段名约定而由评分器隐式强制类型。
 2. 对用户限定的 Component/Method/Variant 保持查询范围。不能在参数或零命中后转成全库搜索，也不能把全组件统计收窄为某一个 code_ref；现有提示未保证模型始终遵守。
 3. 区分“用户意图声明”与“中途发现的对象”。已有硬守卫能验证声明结构及一致性，不能自动证明 action、owner/member 和 clarification_fields 的语义正确。
 4. 无工具的 unsupported/clarify 首答仍可能输出预先 intent 加最终答案两个 JSON；生产守卫有一次修复，关闭守卫时仍应记为首答格式失败。
 
 这些是模型调用/回答可靠性和评测约定缺口；不能通过改写旧分数、放宽事实核验或把守卫 accepted 当语义正确来消除。
+
+文档补正（build E）：此前本页误将 from_pin/to_pin 描述为数值 ID；按原评分器的 nativePin.name/targetPin.name 比较修正为名称字符串。此补正不改变 build D 的原始回答、评分或分母。
 
 ## 复现
 

@@ -1,0 +1,223 @@
+{
+  "recording": "2026-10-11-polish-e-live",
+  "warning": "Recorded session only; refs/cursors have expired. Discover fresh identities before use.",
+  "request": {
+    "tool": "ascet_read_code",
+    "arguments": {
+      "refs": [
+        "s3urQXdX_9:d1",
+        "s3urQXdX_9:d1"
+      ]
+    }
+  },
+  "model_response": {
+    "status": "ok",
+    "requested_count": 2,
+    "returned_count": 2,
+    "results": [
+      {
+        "ref": "s3urQXdX_9:d1",
+        "component_path": "PlatformLibrary_NewBrakeSystems\\Package\\DBR_DriverBrakeRequest\\Private\\BaseLib\\DBR_Force2Pressure",
+        "kind": "method",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "esdl",
+        "method": "Init",
+        "code": "pressure = 0;",
+        "line_count": 1,
+        "line_coverage": {
+          "selected": {
+            "start": 1,
+            "end": 1
+          },
+          "page": {
+            "start": 1,
+            "end": 1
+          },
+          "complete_lines": {
+            "start": 1,
+            "end": 1
+          }
+        },
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_9:d1"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_9:d1"
+        },
+        "identity": {
+          "component_path": "PlatformLibrary_NewBrakeSystems\\Package\\DBR_DriverBrakeRequest\\Private\\BaseLib\\DBR_Force2Pressure",
+          "kind": "method",
+          "member": "Init",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      },
+      {
+        "ref": "s3urQXdX_9:d1",
+        "component_path": "PlatformLibrary_NewBrakeSystems\\Package\\DBR_DriverBrakeRequest\\Private\\BaseLib\\DBR_Force2Pressure",
+        "kind": "method",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "esdl",
+        "method": "Init",
+        "code": "pressure = 0;",
+        "line_count": 1,
+        "line_coverage": {
+          "selected": {
+            "start": 1,
+            "end": 1
+          },
+          "page": {
+            "start": 1,
+            "end": 1
+          },
+          "complete_lines": {
+            "start": 1,
+            "end": 1
+          }
+        },
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_9:d1"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_9:d1"
+        },
+        "identity": {
+          "component_path": "PlatformLibrary_NewBrakeSystems\\Package\\DBR_DriverBrakeRequest\\Private\\BaseLib\\DBR_Force2Pressure",
+          "kind": "method",
+          "member": "Init",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      }
+    ],
+    "task_tool": "ascet_read_code",
+    "read_scope": {
+      "refs": [
+        "s3urQXdX_9:d1",
+        "s3urQXdX_9:d1"
+      ]
+    },
+    "citable_refs": [
+      "s3urQXdX_9:d1"
+    ]
+  },
+  "structured_response": {
+    "status": "ok",
+    "requested_count": 2,
+    "returned_count": 2,
+    "results": [
+      {
+        "ref": "s3urQXdX_9:d1",
+        "component_path": "PlatformLibrary_NewBrakeSystems\\Package\\DBR_DriverBrakeRequest\\Private\\BaseLib\\DBR_Force2Pressure",
+        "kind": "method",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "esdl",
+        "method": "Init",
+        "code": "pressure = 0;",
+        "line_count": 1,
+        "line_coverage": {
+          "selected": {
+            "start": 1,
+            "end": 1
+          },
+          "page": {
+            "start": 1,
+            "end": 1
+          },
+          "complete_lines": {
+            "start": 1,
+            "end": 1
+          }
+        },
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_9:d1"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_9:d1"
+        },
+        "identity": {
+          "component_path": "PlatformLibrary_NewBrakeSystems\\Package\\DBR_DriverBrakeRequest\\Private\\BaseLib\\DBR_Force2Pressure",
+          "kind": "method",
+          "member": "Init",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      },
+      {
+        "ref": "s3urQXdX_9:d1",
+        "component_path": "PlatformLibrary_NewBrakeSystems\\Package\\DBR_DriverBrakeRequest\\Private\\BaseLib\\DBR_Force2Pressure",
+        "kind": "method",
+        "variant": "ASDL",
+        "component_type": "SGClass",
+        "language": "esdl",
+        "method": "Init",
+        "code": "pressure = 0;",
+        "line_count": 1,
+        "line_coverage": {
+          "selected": {
+            "start": 1,
+            "end": 1
+          },
+          "page": {
+            "start": 1,
+            "end": 1
+          },
+          "complete_lines": {
+            "start": 1,
+            "end": 1
+          }
+        },
+        "read_tool": "ascet_read_code",
+        "next_call": {
+          "tool": "ascet_read_code",
+          "arguments": {
+            "refs": [
+              "s3urQXdX_9:d1"
+            ]
+          }
+        },
+        "search_scope": {
+          "code_ref": "s3urQXdX_9:d1"
+        },
+        "identity": {
+          "component_path": "PlatformLibrary_NewBrakeSystems\\Package\\DBR_DriverBrakeRequest\\Private\\BaseLib\\DBR_Force2Pressure",
+          "kind": "method",
+          "member": "Init",
+          "variant": "ASDL",
+          "implementation": ""
+        }
+      }
+    ],
+    "task_tool": "ascet_read_code",
+    "read_evidence": {
+      "id": "read-qNuPculL-b",
+      "requested": {
+        "refs": [
+          "s3urQXdX_9:d1",
+          "s3urQXdX_9:d1"
+        ]
+      }
+    }
+  }
+}

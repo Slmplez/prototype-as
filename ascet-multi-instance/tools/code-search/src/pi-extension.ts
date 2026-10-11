@@ -8,8 +8,9 @@ import { ToolError } from './patterns.js';
 import { isRecord } from './validation.js';
 import { TaskToolError } from './task-tools.js';
 import { TaskIntentState, TASK_INTENT_PROTOCOL } from './task-intent.js';
+import { TaskFactsSchema } from './task-facts-schema.js';
 
-export interface AscetExtensionOptions extends PiClientOptions { exposure?: Extract<ToolExposure, 'direct' | 'deferred' | 'codemode'>; toolProfile?: ToolProfile; requireIntent?: boolean }
+export interface AscetExtensionOptions extends PiClientOptions { exposure?: Extract<ToolExposure, 'direct' | 'deferred' | 'codemode'>; toolProfile?: ToolProfile; requireIntent?: boolean; factsSchema?: Record<string, unknown> }
 
 export function createAscetExtension(options: AscetExtensionOptions = {}) {
   return function ascetExtension(pi: ExtensionAPI): void {
@@ -19,6 +20,8 @@ export function createAscetExtension(options: AscetExtensionOptions = {}) {
     let answerRepairUsed = false;
     const intentState = new TaskIntentState();
     const requireIntent = profile === 'task' && (options.requireIntent ?? process.env.ASCET_PI_REQUIRE_INTENT !== '0');
+    const factsSchema = new TaskFactsSchema(profile === 'task' ? options.factsSchema ??
+      (process.env.ASCET_PI_FACTS_SCHEMA ? JSON.parse(process.env.ASCET_PI_FACTS_SCHEMA) : undefined) : undefined);
     // A low-level model turn also starts during a repair. Reset only when a
     // new user prompt starts; otherwise repeated invalid answers can loop.
     pi.on('before_agent_start', () => { answerRepairUsed = false; intentState.reset(); });
@@ -28,7 +31,7 @@ export function createAscetExtension(options: AscetExtensionOptions = {}) {
     });
     pi.on('tool_call', event => {
       if (!requireIntent || !event.toolName.startsWith('ascet_')) return;
-      const reason = intentState.beforeTool();
+      const reason = intentState.beforeTool(event.toolName, event.input, ref => owner.referenceEvidence(ref));
       if (reason) return { block: true, reason };
     });
     // Task profile answers are consumed as machine-readable JSON by agents and
@@ -43,12 +46,14 @@ export function createAscetExtension(options: AscetExtensionOptions = {}) {
       const assistant = [...messages].reverse().find(message => message?.role === 'assistant');
       const text = Array.isArray(assistant?.content) ? assistant.content.filter((part: any) => part?.type === 'text').map((part: any) => part.text).join('\n') : '';
       const validation = owner.validateFinalAnswer(text);
+      try { validation.errors.push(...factsSchema.validate(JSON.parse(text)?.facts)); } catch { /* JSON errors already reported. */ }
       if (requireIntent) {
         let intent: unknown, outcome: unknown;
         try { const answer = JSON.parse(text); intent = answer?.intent; outcome = answer?.outcome; } catch { /* JSON validation already records the format failure. */ }
         validation.errors.push(...intentState.validateFinal(intent, outcome));
         validation.valid = validation.errors.length === 0;
       }
+      validation.valid = validation.errors.length === 0;
       if (validation.valid) return { entries: [{ type: 'custom', customType: 'ascet_answer_validation', data: { status: 'accepted' } }] };
       if (answerRepairUsed) return { entries: [{ type: 'custom_message', customType: 'ascet_answer_validation',
         content: JSON.stringify({ status: 'rejected', code: 'INVALID_FINAL_ANSWER', errors: validation.errors }), display: true }], continue: false };
@@ -59,7 +64,7 @@ export function createAscetExtension(options: AscetExtensionOptions = {}) {
     pi.on('session_shutdown', async () => { await owner.close(); });
     for (const contract of getToolContracts(profile)) pi.registerTool({
       name: contract.name, label: contract.name, description: contract.description,
-      promptSnippet: contract.description, promptGuidelines: requireIntent ? [...contract.guidelines, TASK_INTENT_PROTOCOL] : contract.guidelines,
+      promptSnippet: contract.description, promptGuidelines: [...contract.guidelines, ...(requireIntent ? [TASK_INTENT_PROTOCOL] : []), ...(factsSchema.prompt ? [factsSchema.prompt] : [])],
       parameters: contract.inputSchema as TSchema,
       outputSchema: contract.outputSchema as TSchema,
       executionMode: 'parallel', exposure: options.exposure ?? 'direct',
