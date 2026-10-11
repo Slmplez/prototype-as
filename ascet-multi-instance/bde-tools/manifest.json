@@ -26,8 +26,8 @@
     "writes_require": "isolated Trial_* component and explicit structural write gate",
     "unknown_outcome": "preserve the journal and quarantine; never retry automatically",
     "stale_epoch": "reject before opening a native session",
-    "source_serializer": "research only; corrected native preparation and dump not validated; no production write authorization"
+    "source_serializer": "research only; own native bytes load and limited projection verified; no production graphical write/inverse authorization"
   },
-  "latest_increment": "evidence/2026-10-11/fresh-source-serializer/result.json",
-  "portable_tests_passed": 269
+  "latest_increment": "evidence/2026-10-11/fresh-source-roundtrip/result.json",
+  "portable_tests_passed": 281
 }

@@ -129,8 +129,8 @@
     },
     {
       "path": "docs/bde-delivery-status.md",
-      "bytes": 162655,
-      "sha256": "647bccc5ae14935bd76d7239bd37a9454c34ed5b208cb675a323b23777940420"
+      "bytes": 165681,
+      "sha256": "35feb6c6fa1943df5c839e28fcd34912a489fbdc4a6cdc915a19e74fe6bfe92b"
     },
     {
       "path": "docs/bde-detached-graphical-material.md",
@@ -154,8 +154,8 @@
     },
     {
       "path": "docs/bde-fresh-source-serializer.md",
-      "bytes": 3133,
-      "sha256": "ec9a71a6446d1bf39515651d8c362299ffe5e2183585a4e8d6c6ef221d6f59ac"
+      "bytes": 5147,
+      "sha256": "4400e4a2c7c3724644d79885f152461bcf001d5c8e10e17156455f7b19a8cbc5"
     },
     {
       "path": "docs/bde-full-read-performance.md",
@@ -349,13 +349,13 @@
     },
     {
       "path": "docs/bde-tools-experiment-report.md",
-      "bytes": 508019,
-      "sha256": "2e4154fb6bc4471edfde798627076f42ddd7ce15f5a83bf4f8be79d1a9fa6de4"
+      "bytes": 509456,
+      "sha256": "346a69ec6e45ea96eaa97b82d46b5e9b2cc38e60124626a9a6b815e97bce26b9"
     },
     {
       "path": "docs/bde-tools-task-nodes-v1.md",
-      "bytes": 8281,
-      "sha256": "b4ae82d58583e5dbc1e12f499de3bc10dc39996df4b27e1923a60b1712d8ec01"
+      "bytes": 9512,
+      "sha256": "b45dcf046e01a28cf632f579085451ee8d7e07ad35404b164883854f6a8be053"
     },
     {
       "path": "docs/bde-tools-tasks-and-goals.md",
@@ -758,6 +758,16 @@
       "sha256": "8ed84f5d0e851fcdc73fd0761366866ba6d8c75e4a02a4eb1fdc0639f3d6856a"
     },
     {
+      "path": "evidence/2026-10-11/fresh-source-roundtrip/README.md",
+      "bytes": 1525,
+      "sha256": "10fd83c842a5c28a03debcdc6e16a58769cdf628012c4c1e9b0df120b5152d63"
+    },
+    {
+      "path": "evidence/2026-10-11/fresh-source-roundtrip/result.json",
+      "bytes": 9144,
+      "sha256": "101a3aa87a65b3f785b845440c257197e49b3b491df3ffb39b53aa7ad2c843f3"
+    },
+    {
       "path": "evidence/2026-10-11/fresh-source-serializer/controls.log",
       "bytes": 10888,
       "sha256": "ab9f567ad9a8d2c7492374d4e3f8fd2dc137c7f7981d9475998e8a3e53b244ba"
@@ -909,28 +919,28 @@
     },
     {
       "path": "manifest.json",
-      "bytes": 1356,
-      "sha256": "bf8ca5d2b3737c59f03c07a4af438de59d14f0968b2a146da535d4eae9a9f0c1"
+      "bytes": 1375,
+      "sha256": "aa5299659c7f22c438c3a3eedbf309c8c8a9ee0ca251206c9c5bfc280e534998"
     },
     {
       "path": "portable-controls-result.json",
       "bytes": 168,
-      "sha256": "b36bcb8663e05644b78ba25f7ab1c498fdfa70e105dac3b1d21f73a8d434c717"
+      "sha256": "466329863e3b20106c271909dce6c182d4127c92c294f46d9c70108091e5f7dc"
     },
     {
       "path": "portable-controls.log",
-      "bytes": 47861,
-      "sha256": "bd7981c0e787beec755a43126307604204ba7a2588efb12fb53f933604dbe916"
+      "bytes": 50048,
+      "sha256": "85debdff2abfaf1afb181a83933ecd67b23c3b9aae9df2aecfa9b124b0205adc"
     },
     {
       "path": "README.md",
-      "bytes": 7721,
-      "sha256": "9be683e7c137608e7f2a67f0f07ae76059976dbe2ddfc9fac0b7049e696c51af"
+      "bytes": 8320,
+      "sha256": "0e30a6b336badc75b49ede14ddae22b883e294197079629ab932685b0144fb4d"
     },
     {
       "path": "run-portable-tests.py",
-      "bytes": 1567,
-      "sha256": "1f8814c2a1f0497ac0b92f6b9f6b8bfb16ad963e66437a7d74d48cb807b6a7d2"
+      "bytes": 1615,
+      "sha256": "cc922eb7b7035ad93bf8504e1bf9d3f3ae266049414883256844365136e3b3c4"
     },
     {
       "path": "scripts/AscetBatchFormatProbe.cs",
@@ -1083,6 +1093,11 @@
       "sha256": "6c9ec0687dd5553c5109b4f112e7789aef340c26296880b09284a432ded63ad8"
     },
     {
+      "path": "scripts/AscetFreshExtractionProbe.cs",
+      "bytes": 8475,
+      "sha256": "31f37a2d72b4daf55c5eb48004f9d52a29e8d3be7d49508d0129037ed05cb570"
+    },
+    {
       "path": "scripts/AscetFreshSerializerProbe.cs",
       "bytes": 8024,
       "sha256": "3de19cee3339ccee8fd23d5e0c8da58585f328e14c488495dec127cec0743756"
@@ -1101,6 +1116,11 @@
       "path": "scripts/AscetLiteralSession.cs",
       "bytes": 9444,
       "sha256": "3e5d0dfc6c06c34f18b9c1588e37f0635f2c3473bedb42ab5978ef7c44b86f76"
+    },
+    {
+      "path": "scripts/AscetOpenExistingDatabaseProbe.cs",
+      "bytes": 3899,
+      "sha256": "5a4d193b2a5470fbb9b5c93e4f637ec265c83c261f1fc625d36eab28c115ed1b"
     },
     {
       "path": "scripts/AscetPersistentOwnerNoopProbe.cs",
@@ -3148,6 +3168,21 @@
       "sha256": "4128d2beed7e685108167f89b9ca03c744da23d7b6a18ecc5c0229bd56e5c6c2"
     },
     {
+      "path": "scripts/bde_fresh_serializer_extract.st",
+      "bytes": 11815,
+      "sha256": "4e20143354dc783aaff1da3c1823fe7bf34479ee725c1603bdb2bd8edae582c6"
+    },
+    {
+      "path": "scripts/bde_fresh_serializer_extract_confirm.py",
+      "bytes": 7141,
+      "sha256": "ba9667f3cfbe8a5419f5036713ab5b95e9e6a794263ae1d8429d27e20858403c"
+    },
+    {
+      "path": "scripts/bde_fresh_serializer_extract_probe.py",
+      "bytes": 22470,
+      "sha256": "d4729d0ced996c5a6f4f91488e790499134e216d6e849890b86572ef11a9ba36"
+    },
+    {
       "path": "scripts/bde_fresh_serializer_increment.py",
       "bytes": 9513,
       "sha256": "af46831b99a86a0dc233c9e4935ed18e46b0240bc9e342e1bdcf4a13bc521781"
@@ -3166,6 +3201,11 @@
       "path": "scripts/bde_fresh_serializer_prepare.st",
       "bytes": 13889,
       "sha256": "c34677d768f356e98b6a521bf95d1b8ced965f69e637ecf0aa2fe58ad36a57fb"
+    },
+    {
+      "path": "scripts/bde_fresh_serializer_roundtrip_increment.py",
+      "bytes": 8381,
+      "sha256": "e233729bf4a82bfe8b4ebf1e3445e51bf71bfe7fdb66e7b24d3e10f2215992fb"
     },
     {
       "path": "scripts/bde_frozen_image_merge.st",
@@ -4039,8 +4079,8 @@
     },
     {
       "path": "scripts/bde_reference_leaf_noop_probe.py",
-      "bytes": 19205,
-      "sha256": "34cb373f499abc48900cd7f36345de30adba14eb2c811b08be297bd29ae8a7cd"
+      "bytes": 19759,
+      "sha256": "d3dc30a98219e1fa71f8000e7ce1f8b78f1a0b30d00997d375ecc599dcf2c174"
     },
     {
       "path": "scripts/bde_reference_leaf_refusal_confirm.py",
@@ -4616,6 +4656,11 @@
       "path": "scripts/smalltalk_image.py",
       "bytes": 13187,
       "sha256": "792b47e2ef18fb42bfd4f97ac05e8726160d23beeecc9658481d54d2a599dfaf"
+    },
+    {
+      "path": "scripts/test_bde_fresh_serializer_extract_probe.py",
+      "bytes": 12883,
+      "sha256": "f5b84a6bfa7ac5a9224e59618899373688426eff375b0898c2a1dcb30f91794f"
     },
     {
       "path": "tests/bde_creation_contract_cases.json",

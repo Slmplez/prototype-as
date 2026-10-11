@@ -1,5 +1,8 @@
 # ASCET BDE Agent Tools
 
+Native own-bytes source dump/load and 58-object nonaliasing projection are now verified online on one isolated Module/Main. A guarded finish removed the embedded self DBObject without loading again. Independent full owner/reference double reads confirmed preservation and cleared only this bound pending. Full delivery remains false; changed graphical payload, production connect/inverse and cross-Module references remain unverified. See docs/bde-fresh-source-serializer.md and evidence/2026-10-11/fresh-source-roundtrip/. Earlier checkpoint paragraphs below retain their historical verdicts.
+
+
 Latest checkpoint adds isolated existing owner object record patch execution,
 seven preparation guards, six raw-version phases, unrelated-owner preservation,
 replay/stale refusals and independent exact restoration. Serialized graphical

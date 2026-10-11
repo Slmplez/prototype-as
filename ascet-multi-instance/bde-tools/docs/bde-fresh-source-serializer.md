@@ -1,5 +1,38 @@
 # Fresh source serializer checkpoint
 
+Current verified checkpoint (2026-10-11): a newly bound private workbench
+produced a 4,424-byte native source dump, then loaded it once into its private
+RBObjectLoader. All 58 reachable objects match the live source under the exact
+omission configuration, including object sharing; none alias original mutable
+objects. This is semantic projection equivalence of own bytes, not byte equality
+with the stored blob or a proof for arbitrary binary inputs.
+
+The first extraction refused an incorrect zero-proxy assumption. The graph
+contains one embedded DBObject: DBLinkProxy.createReferencesFrom: removes that
+self reference. A guarded finish reused the already loaded source, with zero
+load calls in the finish dispatch. The final link has zero external references.
+Both original graph/config checks and independent complete owner/reference
+reads plus public bookends were unchanged. Only this bound pending was cleared.
+The original failed result remains unchanged. The bridge now rejects encoded
+error strings instead of treating a completed RPC as a successful typed result.
+
+The user-authorized private restart was executed exactly once; old material and
+pending were not rebound or cleared. Other ASCET instances were untouched.
+All subsequent probes reused the new instance. The earlier failed/pre-recovery
+checkpoint below remains historical, including its then-unverified statements.
+
+Commands for the fixed helper are in scripts/bde_fresh_serializer_extract_probe.py
+and scripts/bde_fresh_serializer_extract_confirm.py. A finish accepts only the
+exact recorded self-proxy guard failure and a full independent unchanged double
+read, retains the original pending, and never invokes loadFromStream: again.
+
+Changed graphical payload, formal model/source/cache/owner journal closure,
+production connect/revert, cross-Module references and full delivery remain
+unverified. Message lifecycle remains 0/60; no required case is upgraded.
+
+## Historical checkpoint before recovery
+
+
 This research uses audited ASCET `RBObjectDumper`/`RBObjectLoader` configuration
 from the live source backend. It is not a production edit or inverse adapter.
 
