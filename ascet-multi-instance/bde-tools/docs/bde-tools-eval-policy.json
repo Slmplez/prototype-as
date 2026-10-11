@@ -1,0 +1,35 @@
+{
+  "id": "bde-tools-eval-v2-functional-delivery",
+  "scope": "ordinary_bde_tools_only",
+  "excluded": ["state_machine", "code_mode_runtime", "new_host_framework"],
+  "aggregation": "all_required_cases_pass_no_weighted_score",
+  "statuses": ["pass", "fail", "not_run", "blocked", "not_applicable"],
+  "required_cases_allow_not_applicable": false,
+  "evidence_bound_to_candidate_and_scope": true,
+  "intentional_fault_with_expected_unknown_is_failure": false,
+  "automatic_business_write_enablement": false,
+  "default_live_trials_per_required_scenario": 3,
+  "priority": "complete_core_functions_before_latency_optimization",
+  "performance_limits_block_delivery": false,
+  "reporting_failures_do_not_pass_functional_cases": true,
+  "groups": {
+    "G0": {"cases": ["CONTRACT-01", "CONTRACT-02", "CONTRACT-03"], "evidence": "offline", "threshold": "all_assertions_pass"},
+    "G1": {"cases": ["READ-01", "READ-02", "READ-03", "READ-04"], "evidence": "live_and_independent_oracle", "threshold": "exact_declared_coverage"},
+    "G2": {"cases": ["ID-01", "ID-02", "ID-03", "ID-04"], "read_only_cases": ["ID-01", "ID-02"], "evidence": "live_negative_cases"},
+    "G3": {"cases": ["EDIT-01", "DIFF-01", "DIFF-02", "EDIT-02"], "evidence": "live_and_independent_oracle", "fixtures_per_operation": 3, "trials_per_fixture": 3},
+    "G4": {"cases": ["REVERT-01", "REVERT-02", "REVERT-03"], "evidence": "live_identity_order_and_fields"},
+    "G5": {"cases": ["FAULT-01", "FAULT-02", "LOCK-01"], "evidence": "offline_and_isolated_live", "trials_per_fault_point": 3},
+    "G6": {"cases": ["UI-01", "UI-02", "FLOW-01"], "evidence": "ordinary_bde_visual_and_native_state", "ui_lifecycle_cycles": 3, "flow_tasks": 3, "trials_per_task": 3},
+    "G7": {"required_cases": ["COST-01"], "reporting_cases": ["PERF-01", "PERF-02", "PERF-03"], "evidence": "raw_samples_and_equivalent_coverage", "performance_measurements": "reuse_version_bound_existing_samples_and_report_limits; no_remeasurement_for_latency_alone", "percentile": "nearest_rank", "latency_thresholds": "non_blocking_observations_no_one_second_delivery_requirement", "offline_queries_native_requests": 0},
+    "G8": {"required_cases": ["FLOW-READ-01", "FLOW-BIND-01", "FLOW-BIND-02", "FLOW-ID-01", "FLOW-CLASS-01", "FLOW-HIER-01", "FLOW-READ-02", "FLOW-EDIT-01", "FLOW-CREATE-01", "FLOW-EXEC-01", "FLOW-JOURNAL-01", "FLOW-REVERT-01", "FLOW-DELETE-01", "FLOW-UI-01"], "evidence": "live_project_instance_module_class_hierarchy_and_independent_oracle", "specification": "docs/bde-signal-flow-eval.md"},
+    "G9": {"required_cases": ["CORE-COVERAGE-01", "DOGE-01", "AEB-CORE-01", "PACKAGE-01"], "evidence": "native_type_inventory_tool_call_original_bde_and_reproducible_delivery", "specification": "docs/bde-core-function-delivery-plan-20261004.md"}
+  },
+  "levels": {
+    "L0": {"required_groups": ["G0"]},
+    "L1": {"required_groups": ["G0", "G1"], "additional_cases": ["ID-01:read_only", "ID-02:read_only"]},
+    "L2": {"required_groups": ["G0", "G1", "G2", "G3", "G4", "G5"]},
+    "L3": {"required_groups": ["G0", "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9"]}
+  },
+  "current_status": "core_delivery_incomplete; historical_latency_failures_are_non_blocking",
+  "runner_status": "policy_only_existing_experiment_scripts_are_execution_building_blocks"
+}

@@ -1,0 +1,14 @@
+{
+  "profile": "bde_portable_checkpoint_tests_v1",
+  "command": "python -X utf8 run-portable-tests.py",
+  "result": "passed",
+  "tests": 89,
+  "native_calls": 0,
+  "native_smalltalk_runtime_verified": false,
+  "initial_packaging_failures": [
+    "broad historical discovery requires excluded analysis fixtures",
+    "initial targeted invocation used scripts.test_* although archived tests live under tests/",
+    "portable corpus tests initially lacked sibling JSON files; copied unchanged source corpora and reran successfully"
+  ],
+  "full_delivery": false
+}

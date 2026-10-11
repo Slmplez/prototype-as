@@ -1,0 +1,30 @@
+{
+  "package": "ascet-bde-agent-tools",
+  "version": "2026-10-11-source-checkpoint",
+  "file_hashes": "files.sha256.json",
+  "verification": "python -X utf8 verify-package.py",
+  "full_delivery": false,
+  "source_workspace": "E:/Repo/ASCET",
+  "components": {
+    "python_backend": "scripts",
+    "native_bridge_sources": [
+      "scripts/AscetStructureRead.cs",
+      "scripts/AscetStructureSession.cs",
+      "scripts/AscetStructureExperiment.cs"
+    ],
+    "smalltalk_resources": "scripts/*.st",
+    "doge_tool": "Doge/src/tools/BlockDiagramTool",
+    "offline_tests": "tests"
+  },
+  "excluded": [
+    "licensed ASCET binaries and Cebra DLLs",
+    "ASCET image/database files",
+    "analysis run state, WALs, tokens, and process-specific evidence",
+    "old process epochs and retained native object handles"
+  ],
+  "native_safety": {
+    "writes_require": "isolated Trial_* component and explicit structural write gate",
+    "unknown_outcome": "preserve the journal and quarantine; never retry automatically",
+    "stale_epoch": "reject before opening a native session"
+  }
+}

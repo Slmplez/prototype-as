@@ -1,0 +1,5584 @@
+[
+  {
+    "id": "variable",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "variable-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "variable-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "variable-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "variable-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "variable-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "variable-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "variable-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "variable-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "parameter",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "parameter-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "parameter-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "parameter-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "parameter-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "parameter-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "parameter-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "parameter-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "parameter-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "constant",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "constant-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "constant-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "constant-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "constant-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "constant-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "constant-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "constant-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "constant-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "resource",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "resource-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "resource-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "resource-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "resource-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "resource-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "resource-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "resource-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "resource-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "resource-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "delta_t",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "dT",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "delta_t-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "dT",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "delta_t-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "dT",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "delta_t-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "delta_t-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "delta_t-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "dT",
+      "position": [
+        300,
+        200
+      ],
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "delta_t-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "dT",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "delta_t-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "dT",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "delta_t-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "dT",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "delta_t-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "delta_t",
+      "name": "dT",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "implementation_cast",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "implementation_cast-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "implementation_cast-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "implementation_cast-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "implementation_cast-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "implementation_cast-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "implementation_cast-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "implementation_cast-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "implementation_cast-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "implementation_cast-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "implementation_cast",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "array",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "array-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "array-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "array-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "array-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "array-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "array-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "array-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "array-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "matrix",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "matrix-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "matrix-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "matrix-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "matrix-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "matrix-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "matrix-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "matrix-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "matrix-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "distribution",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "distribution",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "distribution-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "distribution",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "distribution-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "distribution",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "distribution-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "distribution",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "distribution-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "distribution",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "distribution-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "distribution",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "distribution-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "distribution",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "distribution-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "distribution",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "distribution-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "distribution",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "oned_table",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "oned_table-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "oned_table-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "oned_table-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "oned_table-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "oned_table-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "oned_table-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "oned_table-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "oned_table-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "twod_table",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "twod_table-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "twod_table-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "twod_table-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "twod_table-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "twod_table-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "twod_table-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "twod_table-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "twod_table-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "oned_table_fixed",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "oned_table_fixed-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "oned_table_fixed-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_fixed",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "oned_table_fixed-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_fixed",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "oned_table_fixed-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_fixed",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "oned_table_fixed-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "oned_table_fixed-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "oned_table_fixed-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "oned_table_fixed-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "twod_table_fixed",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "twod_table_fixed-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "twod_table_fixed-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_fixed",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "twod_table_fixed-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_fixed",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "twod_table_fixed-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_fixed",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "twod_table_fixed-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "twod_table_fixed-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "twod_table_fixed-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "twod_table_fixed-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_fixed",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "receive_message",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "receive_message-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "receive_message-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "receive_message-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "receive_message-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "receive_message-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "receive_message-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "receive_message-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "receive_message-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "send_message",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "send_message-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "send_message-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "send_message-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "send_message-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "send_message-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "send_message-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "send_message-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "send_message-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "send_receive_message",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "send_receive_message-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "send_receive_message-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "send_receive_message-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "send_receive_message-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "send_receive_message-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "send_receive_message-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "send_receive_message-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "send_receive_message-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "enumeration",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example"
+    }
+  },
+  {
+    "id": "enumeration-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "extra": true
+    }
+  },
+  {
+    "id": "enumeration-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ],
+      "definition": "Types\\Example"
+    }
+  },
+  {
+    "id": "enumeration-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example"
+    }
+  },
+  {
+    "id": "enumeration-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example"
+    }
+  },
+  {
+    "id": "enumeration-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "enumeration-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "arity": 2
+    }
+  },
+  {
+    "id": "enumeration-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "enumeration-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "component",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example"
+    }
+  },
+  {
+    "id": "component-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "extra": true
+    }
+  },
+  {
+    "id": "component-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ],
+      "definition": "Types\\Example"
+    }
+  },
+  {
+    "id": "component-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example"
+    }
+  },
+  {
+    "id": "component-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example"
+    }
+  },
+  {
+    "id": "component-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "component-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "arity": 2
+    }
+  },
+  {
+    "id": "component-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "component-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\Example",
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "existing_model",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "existing_model-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "existing_model-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "existing_model-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "existing_model-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "existing_model-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "existing_model-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "existing_model-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "existing_model-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "existing_model-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "existing_model",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "literal",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "1.0",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "literal-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "1.0",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "literal-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "1.0",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "literal-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "literal-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "literal-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "1.0",
+      "position": [
+        300,
+        200
+      ],
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "literal-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "1.0",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "literal-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "1.0",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "literal-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "1.0",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "literal-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "1.0",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "comment",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "comment-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "comment-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "comment-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "comment-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "comment-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "comment-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "comment-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "comment-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "comment-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "comment",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "operator",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "operator-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "operator-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "operator-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "operator-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "operator-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ],
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "operator-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "operator-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "operator-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "control",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "control",
+      "name": "IfThenElse",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "control-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "control",
+      "name": "IfThenElse",
+      "position": [
+        300,
+        200
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "control-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "control",
+      "name": "IfThenElse",
+      "position": [
+        true,
+        1
+      ]
+    }
+  },
+  {
+    "id": "control-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "control",
+      "name": "",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "control-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "control",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "control-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "control",
+      "name": "IfThenElse",
+      "position": [
+        300,
+        200
+      ],
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "control-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "control",
+      "name": "IfThenElse",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "control-inapplicable-inputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "control",
+      "name": "IfThenElse",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "control-inapplicable-outputs",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "control",
+      "name": "IfThenElse",
+      "position": [
+        300,
+        200
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "hierarchy",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "hierarchy",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        "result"
+      ]
+    }
+  },
+  {
+    "id": "hierarchy-bad-extra4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "hierarchy",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        "result"
+      ],
+      "extra": true
+    }
+  },
+  {
+    "id": "hierarchy-bad-position9",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "hierarchy",
+      "name": "Example",
+      "position": [
+        true,
+        1
+      ],
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        "result"
+      ]
+    }
+  },
+  {
+    "id": "hierarchy-bad-name0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "hierarchy",
+      "name": "",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        "result"
+      ]
+    }
+  },
+  {
+    "id": "hierarchy-bad-name257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "hierarchy",
+      "name": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        "result"
+      ]
+    }
+  },
+  {
+    "id": "hierarchy-inapplicable-model_type",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "hierarchy",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        "result"
+      ],
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "hierarchy-inapplicable-arity",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "hierarchy",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        "result"
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "hierarchy-inapplicable-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "hierarchy",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        "result"
+      ],
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "enumeration-missing-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "enumeration-bad-path-T",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "T"
+    }
+  },
+  {
+    "id": "enumeration-bad-path-\\",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "\\"
+    }
+  },
+  {
+    "id": "enumeration-bad-path-\\T",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "\\T"
+    }
+  },
+  {
+    "id": "enumeration-bad-path-Types\\",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\"
+    }
+  },
+  {
+    "id": "enumeration-bad-path-Types\\\\T",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\\\T"
+    }
+  },
+  {
+    "id": "component-missing-definition",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "component-bad-path-T",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "T"
+    }
+  },
+  {
+    "id": "component-bad-path-\\",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "\\"
+    }
+  },
+  {
+    "id": "component-bad-path-\\T",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "\\T"
+    }
+  },
+  {
+    "id": "component-bad-path-Types\\",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\"
+    }
+  },
+  {
+    "id": "component-bad-path-Types\\\\T",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "definition": "Types\\\\T"
+    }
+  },
+  {
+    "id": "duplicate-ports",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "hierarchy",
+      "name": "Example",
+      "position": [
+        300,
+        200
+      ],
+      "inputs": [
+        "p"
+      ],
+      "outputs": [
+        "p"
+      ]
+    }
+  },
+  {
+    "id": "not-arity-None",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "not",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "not-arity-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "not",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 1
+    }
+  },
+  {
+    "id": "not-arity-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "not",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "not-arity-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "not",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 3
+    }
+  },
+  {
+    "id": "bet-arity-None",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "bet",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "bet-arity-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "bet",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 1
+    }
+  },
+  {
+    "id": "bet-arity-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "bet",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "bet-arity-3",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "bet",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 3
+    }
+  },
+  {
+    "id": "%-arity-None",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "%",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "%-arity-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "%",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 1
+    }
+  },
+  {
+    "id": "%-arity-2",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "%",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "%-arity-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "%",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 3
+    }
+  },
+  {
+    "id": "verify-arity-None",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "verify",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "verify-arity-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "verify",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 1
+    }
+  },
+  {
+    "id": "verify-arity-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "verify",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "verify-arity-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "verify",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 3
+    }
+  },
+  {
+    "id": "assert-arity-None",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "assert",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "assert-arity-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "assert",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 1
+    }
+  },
+  {
+    "id": "assert-arity-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "assert",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "assert-arity-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "assert",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 3
+    }
+  },
+  {
+    "id": "+-arity-None",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "+-arity-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 1
+    }
+  },
+  {
+    "id": "+-arity-2",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "+-arity-3",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 3
+    }
+  },
+  {
+    "id": "oned_table_group",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": "Main/m_123"
+    }
+  },
+  {
+    "id": "oned_table_group-bad-model_typecont",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": "Main/m_123",
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "oned_table_group-bad-x_distributionMain/n1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": "Main/n1"
+    }
+  },
+  {
+    "id": "oned_table_group-bad-x_distributionTrue",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": true
+    }
+  },
+  {
+    "id": "oned_table_group-bad-definitionTypes\\T",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": "Main/m_123",
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "oned_table_group-missing-X",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "oned_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "twod_table_group",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": "Main/m_123",
+      "y_distribution": "Main/m_456"
+    }
+  },
+  {
+    "id": "twod_table_group-bad-model_typecont",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": "Main/m_123",
+      "y_distribution": "Main/m_456",
+      "model_type": "cont"
+    }
+  },
+  {
+    "id": "twod_table_group-bad-x_distributionMain/n1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": "Main/n1",
+      "y_distribution": "Main/m_456"
+    }
+  },
+  {
+    "id": "twod_table_group-bad-x_distributionTrue",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": true,
+      "y_distribution": "Main/m_456"
+    }
+  },
+  {
+    "id": "twod_table_group-bad-definitionTypes\\T",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "x_distribution": "Main/m_123",
+      "y_distribution": "Main/m_456",
+      "definition": "Types\\T"
+    }
+  },
+  {
+    "id": "twod_table_group-missing-X",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "twod_table_group",
+      "name": "Group",
+      "position": [
+        300,
+        200
+      ],
+      "y_distribution": "Main/m_456"
+    }
+  },
+  {
+    "id": "limit-None",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "limit",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "limit-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "limit",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 1
+    }
+  },
+  {
+    "id": "limit-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "limit",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "wraparound-None",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "wraparound",
+      "position": [
+        300,
+        200
+      ]
+    }
+  },
+  {
+    "id": "wraparound-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "wraparound",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 1
+    }
+  },
+  {
+    "id": "wraparound-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "wraparound",
+      "position": [
+        300,
+        200
+      ],
+      "arity": 2
+    }
+  },
+  {
+    "id": "literal-utf16-128",
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      "position": [
+        1,
+        2
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "literal-utf16-129",
+    "operation": {
+      "op": "create_block",
+      "kind": "literal",
+      "name": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      "position": [
+        1,
+        2
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "initial-variable-cont-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-variable-cont-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-variable-cont-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": "42"
+    }
+  },
+  {
+    "id": "initial-variable-cont-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 1000000001
+    }
+  },
+  {
+    "id": "initial-variable-log-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-variable-log-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": false
+    }
+  },
+  {
+    "id": "initial-variable-log-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": 1
+    }
+  },
+  {
+    "id": "initial-variable-log-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": "true"
+    }
+  },
+  {
+    "id": "initial-variable-sdisc-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": -42
+    }
+  },
+  {
+    "id": "initial-variable-sdisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-variable-udisc-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-variable-udisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": -1
+    }
+  },
+  {
+    "id": "initial-variable-udisc-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 0.5
+    }
+  },
+  {
+    "id": "initial-parameter-cont-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-parameter-cont-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-parameter-cont-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": "42"
+    }
+  },
+  {
+    "id": "initial-parameter-cont-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 1000000001
+    }
+  },
+  {
+    "id": "initial-parameter-log-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-parameter-log-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": false
+    }
+  },
+  {
+    "id": "initial-parameter-log-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": 1
+    }
+  },
+  {
+    "id": "initial-parameter-log-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": "true"
+    }
+  },
+  {
+    "id": "initial-parameter-sdisc-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": -42
+    }
+  },
+  {
+    "id": "initial-parameter-sdisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-parameter-udisc-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-parameter-udisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": -1
+    }
+  },
+  {
+    "id": "initial-parameter-udisc-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "parameter",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 0.5
+    }
+  },
+  {
+    "id": "initial-constant-cont-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-constant-cont-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-constant-cont-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": "42"
+    }
+  },
+  {
+    "id": "initial-constant-cont-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 1000000001
+    }
+  },
+  {
+    "id": "initial-constant-log-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-constant-log-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": false
+    }
+  },
+  {
+    "id": "initial-constant-log-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": 1
+    }
+  },
+  {
+    "id": "initial-constant-log-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": "true"
+    }
+  },
+  {
+    "id": "initial-constant-sdisc-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": -42
+    }
+  },
+  {
+    "id": "initial-constant-sdisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-constant-udisc-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-constant-udisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": -1
+    }
+  },
+  {
+    "id": "initial-constant-udisc-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "constant",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 0.5
+    }
+  },
+  {
+    "id": "initial-receive_message-cont-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-receive_message-cont-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-receive_message-cont-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": "42"
+    }
+  },
+  {
+    "id": "initial-receive_message-cont-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 1000000001
+    }
+  },
+  {
+    "id": "initial-receive_message-log-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-receive_message-log-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": false
+    }
+  },
+  {
+    "id": "initial-receive_message-log-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": 1
+    }
+  },
+  {
+    "id": "initial-receive_message-log-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": "true"
+    }
+  },
+  {
+    "id": "initial-receive_message-sdisc-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": -42
+    }
+  },
+  {
+    "id": "initial-receive_message-sdisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-receive_message-udisc-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-receive_message-udisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": -1
+    }
+  },
+  {
+    "id": "initial-receive_message-udisc-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 0.5
+    }
+  },
+  {
+    "id": "initial-send_message-cont-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-send_message-cont-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-send_message-cont-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": "42"
+    }
+  },
+  {
+    "id": "initial-send_message-cont-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 1000000001
+    }
+  },
+  {
+    "id": "initial-send_message-log-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-send_message-log-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": false
+    }
+  },
+  {
+    "id": "initial-send_message-log-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": 1
+    }
+  },
+  {
+    "id": "initial-send_message-log-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": "true"
+    }
+  },
+  {
+    "id": "initial-send_message-sdisc-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": -42
+    }
+  },
+  {
+    "id": "initial-send_message-sdisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-send_message-udisc-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-send_message-udisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": -1
+    }
+  },
+  {
+    "id": "initial-send_message-udisc-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 0.5
+    }
+  },
+  {
+    "id": "initial-send_receive_message-cont-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-send_receive_message-cont-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-send_receive_message-cont-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": "42"
+    }
+  },
+  {
+    "id": "initial-send_receive_message-cont-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "cont",
+      "initial_value": 1000000001
+    }
+  },
+  {
+    "id": "initial-send_receive_message-log-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": true
+    }
+  },
+  {
+    "id": "initial-send_receive_message-log-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": false
+    }
+  },
+  {
+    "id": "initial-send_receive_message-log-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": 1
+    }
+  },
+  {
+    "id": "initial-send_receive_message-log-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "log",
+      "initial_value": "true"
+    }
+  },
+  {
+    "id": "initial-send_receive_message-sdisc-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": -42
+    }
+  },
+  {
+    "id": "initial-send_receive_message-sdisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "sdisc",
+      "initial_value": 42.125
+    }
+  },
+  {
+    "id": "initial-send_receive_message-udisc-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-send_receive_message-udisc-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": -1
+    }
+  },
+  {
+    "id": "initial-send_receive_message-udisc-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "send_receive_message",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "model_type": "udisc",
+      "initial_value": 0.5
+    }
+  },
+  {
+    "id": "initial-enum-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "definition": "Types\\Mode",
+      "initial_value": "On"
+    }
+  },
+  {
+    "id": "initial-enum-1",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "definition": "Types\\Mode",
+      "initial_value": ""
+    }
+  },
+  {
+    "id": "initial-enum-2",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "definition": "Types\\Mode",
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-enum-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "definition": "Types\\Mode",
+      "initial_value": false
+    }
+  },
+  {
+    "id": "initial-enum-4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "enumeration",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "definition": "Types\\Mode",
+      "initial_value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    }
+  },
+  {
+    "id": "initial-unsupported-array",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-unsupported-matrix",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-unsupported-operator",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "operator",
+      "name": "+",
+      "position": [
+        100,
+        100
+      ],
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-unsupported-resource",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "resource",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "initial_value": 42
+    }
+  },
+  {
+    "id": "initial-unsupported-component",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "component",
+      "name": "Eval",
+      "position": [
+        100,
+        100
+      ],
+      "initial_value": 42,
+      "definition": "Types\\Item"
+    }
+  },
+  {
+    "id": "array-max-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": 1
+    }
+  },
+  {
+    "id": "array-max-256",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": 256
+    }
+  },
+  {
+    "id": "array-max-0",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": 0
+    }
+  },
+  {
+    "id": "array-max-257",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": 257
+    }
+  },
+  {
+    "id": "array-max-True",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": true
+    }
+  },
+  {
+    "id": "array-max-1.5",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": 1.5
+    }
+  },
+  {
+    "id": "array-max-4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": "4"
+    }
+  },
+  {
+    "id": "array-max-None",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "array",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": null
+    }
+  },
+  {
+    "id": "scalar-max-forbidden",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "variable",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": 4
+    }
+  },
+  {
+    "id": "matrix-max-0",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": "matrix-max-1",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": [
+        16,
+        16
+      ]
+    }
+  },
+  {
+    "id": "matrix-max-2",
+    "valid": true,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": [
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "id": "matrix-max-3",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": 4
+    }
+  },
+  {
+    "id": "matrix-max-4",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": [
+        0,
+        4
+      ]
+    }
+  },
+  {
+    "id": "matrix-max-5",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": [
+        4,
+        17
+      ]
+    }
+  },
+  {
+    "id": "matrix-max-6",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": [
+        true,
+        4
+      ]
+    }
+  },
+  {
+    "id": "matrix-max-7",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": [
+        4
+      ]
+    }
+  },
+  {
+    "id": "matrix-max-8",
+    "valid": false,
+    "operation": {
+      "op": "create_block",
+      "kind": "matrix",
+      "name": "Sample",
+      "position": [
+        1,
+        2
+      ],
+      "max_size": [
+        4,
+        4,
+        4
+      ]
+    }
+  }
+  ,{"id":"oned-table-log-native-rejected","valid":false,"operation":{"op":"create_block","kind":"oned_table","name":"LogicalTable","position":[300,200],"model_type":"log"}}
+  ,{"id":"twod-table-log-native-rejected","valid":false,"operation":{"op":"create_block","kind":"twod_table","name":"LogicalTable","position":[300,200],"model_type":"log"}}
+  ,{"id":"oned-fixed-table-log-native-rejected","valid":false,"operation":{"op":"create_block","kind":"oned_table_fixed","name":"LogicalTable","position":[300,200],"model_type":"log"}}
+  ,{"id":"twod-fixed-table-log-native-rejected","valid":false,"operation":{"op":"create_block","kind":"twod_table_fixed","name":"LogicalTable","position":[300,200],"model_type":"log"}}
+  ,{"id":"oned-table-grid","valid":true,"operation":{"op":"create_block","kind":"oned_table","name":"TableGrid","position":[300,200],"max_size":3}}
+  ,{"id":"twod-table-grid","valid":true,"operation":{"op":"create_block","kind":"twod_table","name":"TableGrid","position":[300,200],"max_size":[2,3]}}
+  ,{"id":"oned-fixed-table-grid","valid":true,"operation":{"op":"create_block","kind":"oned_table_fixed","name":"TableGrid","position":[300,200],"max_size":3}}
+  ,{"id":"twod-fixed-table-grid","valid":true,"operation":{"op":"create_block","kind":"twod_table_fixed","name":"TableGrid","position":[300,200],"max_size":[2,3]}}
+  ,{"id":"oned-table-grid-wrong-shape","valid":false,"operation":{"op":"create_block","kind":"oned_table","name":"TableGrid","position":[300,200],"max_size":[2,3]}}
+  ,{"id":"twod-table-grid-wrong-shape","valid":false,"operation":{"op":"create_block","kind":"twod_table","name":"TableGrid","position":[300,200],"max_size":3}}
+  ,{"id":"oned-table-grid-too-large","valid":false,"operation":{"op":"create_block","kind":"oned_table_fixed","name":"TableGrid","position":[300,200],"max_size":257}}
+  ,{"id":"twod-table-grid-too-large","valid":false,"operation":{"op":"create_block","kind":"twod_table_fixed","name":"TableGrid","position":[300,200],"max_size":[2,17]}}
+  ,{"id":"new-enum-definition","valid":true,"operation":{"op":"create_block","kind":"enumeration","name":"mode","position":[300,200],"new_definition":{"name":"EvalMode","items":["Off","On","Fault"]},"initial_value":"On"}}
+  ,{"id":"new-enum-without-initial","valid":true,"operation":{"op":"create_block","kind":"enumeration","name":"mode","position":[300,200],"new_definition":{"name":"EvalMode","items":["Off"]}}}
+  ,{"id":"new-enum-conflicting-definition","valid":false,"operation":{"op":"create_block","kind":"enumeration","name":"mode","position":[300,200],"definition":"Types\\Mode","new_definition":{"name":"EvalMode","items":["Off"]}}}
+  ,{"id":"new-enum-empty-items","valid":false,"operation":{"op":"create_block","kind":"enumeration","name":"mode","position":[300,200],"new_definition":{"name":"EvalMode","items":[]}}}
+  ,{"id":"new-enum-duplicate-items","valid":false,"operation":{"op":"create_block","kind":"enumeration","name":"mode","position":[300,200],"new_definition":{"name":"EvalMode","items":["Off","Off"]}}}
+  ,{"id":"new-enum-unknown-initial","valid":false,"operation":{"op":"create_block","kind":"enumeration","name":"mode","position":[300,200],"new_definition":{"name":"EvalMode","items":["Off"]},"initial_value":"On"}}
+  ,{"id":"new-enum-on-component","valid":false,"operation":{"op":"create_block","kind":"component","name":"mode","position":[300,200],"new_definition":{"name":"EvalMode","items":["Off"]}}}
+  ,{"id":"new-enum-extra-key","valid":false,"operation":{"op":"create_block","kind":"enumeration","name":"mode","position":[300,200],"new_definition":{"name":"EvalMode","items":["Off"],"extra":true}}}
+  ,{"id":"enum-receive-message","valid":true,"operation":{"op":"create_block","kind":"receive_message","name":"Mode","position":[300,200],"model_type":"enum","definition":"Types\\Mode","message_scope":"imported"}}
+  ,{"id":"send-message-local","valid":true,"operation":{"op":"create_block","kind":"send_message","name":"LocalValue","position":[300,200],"model_type":"log","message_scope":"local"}}
+  ,{"id":"message-invalid-scope","valid":false,"operation":{"op":"create_block","kind":"send_message","name":"Value","position":[300,200],"message_scope":"global"}}
+  ,{"id":"enum-message-missing-definition","valid":false,"operation":{"op":"create_block","kind":"receive_message","name":"Mode","position":[300,200],"model_type":"enum"}}
+  ,{"id":"primitive-message-definition","valid":false,"operation":{"op":"create_block","kind":"send_message","name":"Value","position":[300,200],"definition":"Types\\Mode"}}
+  ,{"id":"message-scope-on-variable","valid":false,"operation":{"op":"create_block","kind":"variable","name":"Value","position":[300,200],"message_scope":"local"}}
+  ,{"id":"message-enum-pipe","valid":false,"operation":{"op":"create_block","kind":"send_message","name":"Value","position":[300,200],"model_type":"enum","definition":"Types\\Bad|Name"}}
+]

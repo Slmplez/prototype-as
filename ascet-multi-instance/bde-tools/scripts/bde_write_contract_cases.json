@@ -1,0 +1,3628 @@
+[
+  {
+    "id": "set_formula",
+    "tool": "bd_edit",
+    "args": {"snapshot": "s_formula", "request_id": "eval", "operations": [
+      {"op": "set_formula", "target": "Main/m_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "expect": {"text": "x", "compiled": "(x)"}, "text": "x + 1"}
+    ]},
+    "valid": true
+  },
+  {
+    "id": "set_formula_binding",
+    "tool": "bd_edit",
+    "args": {"snapshot": "s_formula", "request_id": "eval", "operations": [
+      {"op": "set_formula_binding", "target": "Main/m_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "formal_oid": "dddddddddddddddddddddddddddddddddddddddd", "expect": {"actual": "Main/m_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}, "actual": "Main/m_cccccccccccccccccccccccccccccccccccccccc"}
+    ]},
+    "valid": true
+  },
+  {
+    "id": "set_formula-extra-expect",
+    "tool": "bd_edit",
+    "args": {"snapshot": "s_formula", "request_id": "eval", "operations": [
+      {"op": "set_formula", "target": "Main/m_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "expect": {"text": "x", "compiled": "(x)", "owner": "x"}, "text": "x + 1"}
+    ]},
+    "valid": false
+  },
+  {
+    "id": "set_formula-non-ascii",
+    "tool": "bd_edit",
+    "args": {"snapshot": "s_formula", "request_id": "eval", "operations": [
+      {"op": "set_formula", "target": "Main/m_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "expect": {"text": "x", "compiled": "(x)"}, "text": "\u4e2d\u6587"}
+    ]},
+    "valid": false
+  },
+  {
+    "id": "set_formula-binding-name-is-not-oid",
+    "tool": "bd_edit",
+    "args": {"snapshot": "s_formula", "request_id": "eval", "operations": [
+      {"op": "set_formula_binding", "target": "Main/m_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "formal_oid": "x", "expect": {"actual": "Main/m_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}, "actual": "Main/m_cccccccccccccccccccccccccccccccccccccccc"}
+    ]},
+    "valid": false
+  },
+  {
+    "id": "set_literal",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          }
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "set_literal-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          }
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "set_literal-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          },
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_literal-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_literal-missing-expect",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "value": {
+            "text": "2.0"
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_literal-missing-value",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_literal-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          }
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "set_comment",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_comment",
+          "target": "Main/n1",
+          "text": "comment"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "set_comment-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_comment",
+          "target": "Main/n1",
+          "text": "comment"
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "set_comment-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_comment",
+          "target": "Main/n1",
+          "text": "comment",
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_comment-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_comment",
+          "text": "comment"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_comment-missing-text",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_comment",
+          "target": "Main/n1"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_comment-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_comment",
+          "target": "Main/n1",
+          "text": "comment"
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "move_node",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "target": "Main/n1",
+          "position": [
+            100,
+            200
+          ]
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "move_node-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "target": "Main/n1",
+          "position": [
+            100,
+            200
+          ]
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "move_node-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "target": "Main/n1",
+          "position": [
+            100,
+            200
+          ],
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "move_node-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "position": [
+            100,
+            200
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "move_node-missing-position",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "target": "Main/n1"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "move_node-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "target": "Main/n1",
+          "position": [
+            100,
+            200
+          ]
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "set_edge_route",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "set_edge_route-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              10
+            ]
+          ]
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "set_edge_route-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              10
+            ]
+          ],
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_edge_route-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_edge_route-missing-points",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_edge_route-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              10
+            ]
+          ]
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "connect_data",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "connect_data",
+          "source": "Main/p1",
+          "target": "Main/p2"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "connect_data-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "connect_data",
+          "source": "Main/p1",
+          "target": "Main/p2"
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "connect_data-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "connect_data",
+          "source": "Main/p1",
+          "target": "Main/p2",
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "connect_data-missing-source",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "connect_data",
+          "target": "Main/p2"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "connect_data-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "connect_data",
+          "source": "Main/p1"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "connect_data-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "connect_data",
+          "source": "Main/p1",
+          "target": "Main/p2"
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "rewire_data",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rewire_data",
+          "source": "Main/p1",
+          "target": "Main/e2"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "rewire_data-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rewire_data",
+          "source": "Main/p1",
+          "target": "Main/e2"
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "rewire_data-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rewire_data",
+          "source": "Main/p1",
+          "target": "Main/e2",
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "rewire_data-missing-source",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rewire_data",
+          "target": "Main/e2"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "rewire_data-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rewire_data",
+          "source": "Main/p1"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "rewire_data-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rewire_data",
+          "source": "Main/p1",
+          "target": "Main/e2"
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "disconnect_data",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "disconnect_data",
+          "target": "Main/e1"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "disconnect_data-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "disconnect_data",
+          "target": "Main/e1"
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "disconnect_data-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "disconnect_data",
+          "target": "Main/e1",
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "disconnect_data-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "disconnect_data"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "disconnect_data-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "disconnect_data",
+          "target": "Main/e1"
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "delete_node",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_node",
+          "target": "Main/n1"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "delete_node-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_node",
+          "target": "Main/n1"
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "delete_node-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_node",
+          "target": "Main/n1",
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "delete_node-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_node"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "delete_node-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_node",
+          "target": "Main/n1"
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "delete_state",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_state",
+          "target": "Main/n1"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "delete_state-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_state",
+          "target": "Main/n1"
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "delete_state-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_state",
+          "target": "Main/n1",
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "delete_state-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_state"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "delete_state-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_state",
+          "target": "Main/n1"
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "delete_transition",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_transition",
+          "target": "Main/t1"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "delete_transition-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_transition",
+          "target": "Main/t1"
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "delete_transition-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_transition",
+          "target": "Main/t1",
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "delete_transition-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_transition"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "delete_transition-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "delete_transition",
+          "target": "Main/t1"
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "create_transition",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "create_transition",
+          "source": "Main/n1",
+          "target": "Main/n2",
+          "out_position": [
+            1,
+            2
+          ],
+          "in_position": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "create_transition-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "create_transition",
+          "source": "Main/n1",
+          "target": "Main/n2",
+          "out_position": [
+            1,
+            2
+          ],
+          "in_position": [
+            3,
+            4
+          ]
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "create_transition-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "create_transition",
+          "source": "Main/n1",
+          "target": "Main/n2",
+          "out_position": [
+            1,
+            2
+          ],
+          "in_position": [
+            3,
+            4
+          ],
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "create_transition-missing-source",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "create_transition",
+          "target": "Main/n2",
+          "out_position": [
+            1,
+            2
+          ],
+          "in_position": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "create_transition-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "create_transition",
+          "source": "Main/n1",
+          "out_position": [
+            1,
+            2
+          ],
+          "in_position": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "create_transition-missing-out_position",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "create_transition",
+          "source": "Main/n1",
+          "target": "Main/n2",
+          "in_position": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "create_transition-missing-in_position",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "create_transition",
+          "source": "Main/n1",
+          "target": "Main/n2",
+          "out_position": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "create_transition-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "create_transition",
+          "source": "Main/n1",
+          "target": "Main/n2",
+          "out_position": [
+            1,
+            2
+          ],
+          "in_position": [
+            3,
+            4
+          ]
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "set_transition_priority",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_priority",
+          "target": "Main/t1",
+          "priority": 1
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "set_transition_priority-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_priority",
+          "target": "Main/t1",
+          "priority": 1
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "set_transition_priority-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_priority",
+          "target": "Main/t1",
+          "priority": 1,
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_transition_priority-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_priority",
+          "priority": 1
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_transition_priority-missing-priority",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_priority",
+          "target": "Main/t1"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_transition_priority-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_priority",
+          "target": "Main/t1",
+          "priority": 1
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "set_transition_esdl",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_esdl",
+          "target": "Main/t1",
+          "slot": "condition",
+          "text": ""
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "set_transition_esdl-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_esdl",
+          "target": "Main/t1",
+          "slot": "condition",
+          "text": ""
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "set_transition_esdl-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_esdl",
+          "target": "Main/t1",
+          "slot": "condition",
+          "text": "",
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_transition_esdl-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_esdl",
+          "slot": "condition",
+          "text": ""
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_transition_esdl-missing-slot",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_esdl",
+          "target": "Main/t1",
+          "text": ""
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_transition_esdl-missing-text",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_esdl",
+          "target": "Main/t1",
+          "slot": "condition"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "set_transition_esdl-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_transition_esdl",
+          "target": "Main/t1",
+          "slot": "condition",
+          "text": ""
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "rename_state",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rename_state",
+          "target": "Main/n1",
+          "name": "Mode"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "rename_state-preview",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rename_state",
+          "target": "Main/n1",
+          "name": "Mode"
+        }
+      ],
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "rename_state-extra-operation-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rename_state",
+          "target": "Main/n1",
+          "name": "Mode",
+          "unexpected": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "rename_state-missing-target",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rename_state",
+          "name": "Mode"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "rename_state-missing-name",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rename_state",
+          "target": "Main/n1"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "rename_state-extra-request-field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rename_state",
+          "target": "Main/n1",
+          "name": "Mode"
+        }
+      ],
+      "unexpected": true
+    },
+    "valid": false
+  },
+  {
+    "id": "operations-None",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": null
+    },
+    "valid": false
+  },
+  {
+    "id": "operations-[]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": []
+    },
+    "valid": false
+  },
+  {
+    "id": "operations-{}",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": {}
+    },
+    "valid": false
+  },
+  {
+    "id": "operations-[{'op': 'set_literal', 'target': 'Main/n1', 'expect': {'text': '1.0'}, 'value': {'text': '2.0'}}, {'op': 'set_comment', 'target': 'Main/n1', 'text': 'comment'}]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          }
+        },
+        {
+          "op": "set_comment",
+          "target": "Main/n1",
+          "text": "comment"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "operations-not a list",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": "not a list"
+    },
+    "valid": false
+  },
+  {
+    "id": "operations-[None]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        null
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "invalid-previewtrue",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          }
+        }
+      ],
+      "preview": "true"
+    },
+    "valid": false
+  },
+  {
+    "id": "invalid-request_id",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "invalid-snapshotFalse",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": false,
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "invalid-request_idaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "2.0"
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "literal-value-0",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": ""
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "literal-value-257",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "literal-value-null",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_literal",
+          "target": "Main/n1",
+          "expect": {
+            "text": "1.0"
+          },
+          "value": {
+            "text": null
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "move-[True, 1]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "target": "Main/n1",
+          "position": [
+            true,
+            1
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "move-[-1, 1]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "target": "Main/n1",
+          "position": [
+            -1,
+            1
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "move-[100001, 1]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "target": "Main/n1",
+          "position": [
+            100001,
+            1
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "move-[1.5, 1]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "move_node",
+          "target": "Main/n1",
+          "position": [
+            1.5,
+            1
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "route-[[0, 0], [1, 1]]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "route-[[0, 0], [0, 0]]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "route-[[0, 0], [1, 0], [2, 0]]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "route-[[0, 0]]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1",
+          "points": [
+            [
+              0,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "route-[[0, 0], [100001, 0]]",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_edge_route",
+          "target": "Main/e1",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              100001,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "rewire-expect",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rewire_data",
+          "source": "Main/p1",
+          "target": "Main/e2",
+          "expect": {
+            "source": "Main/p3",
+            "native_connection_type": 2
+          }
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "rewire-expect-bool",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "rewire_data",
+          "source": "Main/p1",
+          "target": "Main/e2",
+          "expect": {
+            "source": "Main/p3",
+            "native_connection_type": true
+          }
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-unavailable",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence",
+          "target": "Main/p1",
+          "activator": "Main/a1",
+          "expect": {
+            "number": 1
+          },
+          "number": 2
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "revert-None",
+    "tool": "bd_revert",
+    "args": {
+      "change_id": "edit_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "request_id": "inverse"
+    },
+    "valid": true
+  },
+  {
+    "id": "revert-True",
+    "tool": "bd_revert",
+    "args": {
+      "change_id": "edit_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "request_id": "inverse",
+      "preview": true
+    },
+    "valid": true
+  },
+  {
+    "id": "revert-False",
+    "tool": "bd_revert",
+    "args": {
+      "change_id": "edit_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "request_id": "inverse",
+      "preview": false
+    },
+    "valid": true
+  },
+  {
+    "id": "revert-true",
+    "tool": "bd_revert",
+    "args": {
+      "change_id": "edit_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "request_id": "inverse",
+      "preview": "true"
+    },
+    "valid": false
+  },
+  {
+    "id": "revert-extra",
+    "tool": "bd_revert",
+    "args": {
+      "change_id": "edit_1",
+      "request_id": "inverse",
+      "force": true
+    },
+    "valid": false
+  },
+  {
+    "id": "revert-missing-id",
+    "tool": "bd_revert",
+    "args": {
+      "change_id": "edit_1"
+    },
+    "valid": false
+  },
+  {
+    "id": "comment-utf16-128",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s1",
+      "request_id": "r",
+      "operations": [
+        {
+          "op": "set_comment",
+          "target": "Main/n1",
+          "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "comment-utf16-129",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s1",
+      "request_id": "r",
+      "operations": [
+        {
+          "op": "set_comment",
+          "target": "Main/n1",
+          "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-number-0",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1,
+            "method": "calc"
+          },
+          "number": 0
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "sequence-number-1",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1,
+            "method": "calc"
+          },
+          "number": 100000
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "sequence-number-2",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1,
+            "method": "calc"
+          },
+          "number": -1
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-number-3",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1,
+            "method": "calc"
+          },
+          "number": 100001
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-number-4",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1,
+            "method": "calc"
+          },
+          "number": true
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-number-5",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1,
+            "method": "calc"
+          },
+          "number": 1.2
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-number-6",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1,
+            "method": "calc"
+          },
+          "number": "2"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-expect-0",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {},
+          "number": 5
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-expect-1",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1
+          },
+          "number": 5
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-expect-2",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1,
+            "method": ""
+          },
+          "number": 5
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-expect-3",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": true,
+            "method": "calc"
+          },
+          "number": 5
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-expect-4",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 1,
+            "method": "calc",
+            "extra": 1
+          },
+          "number": 5
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "scalar-value-number",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 1.25
+          },
+          "value": 42.125
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "scalar-value-bool",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": false
+          },
+          "value": false
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "scalar-value-enum",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": "On"
+          },
+          "value": "On"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "scalar-value-negative",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": -42
+          },
+          "value": -42
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "scalar-value-zero",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 0
+          },
+          "value": 0
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "scalar-value-null",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 1.25
+          },
+          "value": null
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "scalar-value-list",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 1.25
+          },
+          "value": []
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "scalar-value-object",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 1.25
+          },
+          "value": {}
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "scalar-value-out_of_range",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 1.25
+          },
+          "value": 10000000000.0
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "scalar-value-empty",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 1.25
+          },
+          "value": ""
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "scalar-value-injection",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 1.25
+          },
+          "value": "On; quit"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "scalar-value-expect_extra",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 1.25,
+            "extra": 1
+          },
+          "value": 42.125
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "scalar-value-expect_missing",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "value": 42.125
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "scalar-value-unknown_field",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_scalar_value",
+          "target": "Main/m_abc",
+          "expect": {
+            "value": 1.25
+          },
+          "value": 42.125,
+          "extra": 1
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-assign-assign",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence",
+          "target": "Main/p1",
+          "expect": {
+            "number": 0,
+            "method": null
+          },
+          "number": 7,
+          "method": "calc"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "sequence-assign-change",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence",
+          "target": "Main/p1",
+          "expect": {
+            "number": 2,
+            "method": "init"
+          },
+          "number": 7,
+          "method": "calc"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "sequence-assign-null-method",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence",
+          "target": "Main/p1",
+          "expect": {
+            "number": 0,
+            "method": null
+          },
+          "number": 7,
+          "method": null
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-assign-empty-method",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence",
+          "target": "Main/p1",
+          "expect": {
+            "number": 0,
+            "method": null
+          },
+          "number": 7,
+          "method": ""
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-assign-bool-number",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence",
+          "target": "Main/p1",
+          "expect": {
+            "number": 0,
+            "method": null
+          },
+          "number": true,
+          "method": "calc"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-assign-missing-expect",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence",
+          "target": "Main/p1",
+          "number": 7,
+          "method": "calc"
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "sequence-assign-number-only-null",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_sequence_number",
+          "target": "Main/p1",
+          "expect": {
+            "number": 0,
+            "method": null
+          },
+          "number": 7
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "array-values-numeric",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_array_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              0
+            ]
+          },
+          "values": [
+            1.25,
+            2.5
+          ]
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "array-values-boolean",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_array_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              false
+            ]
+          },
+          "values": [
+            true,
+            false
+          ]
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "array-values-empty",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_array_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              0
+            ]
+          },
+          "values": []
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "array-values-too_large",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_array_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              0
+            ]
+          },
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "array-values-mixed",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_array_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              0
+            ]
+          },
+          "values": [
+            false,
+            1
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "array-values-string",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_array_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              0
+            ]
+          },
+          "values": [
+            "On"
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "array-values-null",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_array_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              0
+            ]
+          },
+          "values": null
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "array-values-nested",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_array_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              0
+            ]
+          },
+          "values": [
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "array-values-bound",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_array_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              0
+            ]
+          },
+          "values": [
+            10000000000.0
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "matrix-values-number",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                0
+              ]
+            ]
+          },
+          "values": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "matrix-values-bool",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                false
+              ]
+            ]
+          },
+          "values": [
+            [
+              true,
+              false
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "id": "matrix-values-empty",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                0
+              ]
+            ]
+          },
+          "values": []
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "matrix-values-empty_row",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                0
+              ]
+            ]
+          },
+          "values": [
+            []
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "matrix-values-jagged",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                0
+              ]
+            ]
+          },
+          "values": [
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "matrix-values-mixed",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                0
+              ]
+            ]
+          },
+          "values": [
+            [
+              true
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "matrix-values-wide",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                0
+              ]
+            ]
+          },
+          "values": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "matrix-values-tall",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                0
+              ]
+            ]
+          },
+          "values": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "matrix-values-bound",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                0
+              ]
+            ]
+          },
+          "values": [
+            [
+              10000000000.0
+            ]
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "id": "matrix-values-flat",
+    "tool": "bd_edit",
+    "args": {
+      "snapshot": "s_11111111111111111111111111111111",
+      "request_id": "eval",
+      "operations": [
+        {
+          "op": "set_matrix_values",
+          "target": "Main/m_abc",
+          "expect": {
+            "values": [
+              [
+                0
+              ]
+            ]
+          },
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    "valid": false
+  },
+  {"id":"distribution-values-positive","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_distribution_values","target":"Main/m_abc","expect":{"values":[0,0,0]},"values":[-1.25,0,2.5]}]},"valid":true},
+  {"id":"distribution-one-value","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_distribution_values","target":"Main/m_abc","expect":{"values":[0]},"values":[1]}]},"valid":true},
+  {"id":"distribution-duplicate-axis","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_distribution_values","target":"Main/m_abc","expect":{"values":[0]},"values":[1,1]}]},"valid":false},
+  {"id":"distribution-descending-axis","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_distribution_values","target":"Main/m_abc","expect":{"values":[0]},"values":[2,1]}]},"valid":false},
+  {"id":"distribution-boolean-axis","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_distribution_values","target":"Main/m_abc","expect":{"values":[0]},"values":[false,true]}]},"valid":false},
+  {"id":"distribution-empty-axis","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_distribution_values","target":"Main/m_abc","expect":{"values":[0]},"values":[]}]},"valid":false},
+  {"id":"distribution-extra-expect","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_distribution_values","target":"Main/m_abc","expect":{"values":[0],"size":1},"values":[1]}]},"valid":false},
+  {"id":"distribution-unbounded-axis","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_distribution_values","target":"Main/m_abc","expect":{"values":[0]},"values":[1000000001]}]},"valid":false},
+  {"id":"distribution-create-maximum","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"create_block","kind":"distribution","name":"Axis","position":[200,200],"max_size":4}]},"valid":true},
+  {"id":"distribution-create-invalid-maximum","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"create_block","kind":"distribution","name":"Axis","position":[200,200],"max_size":0}]},"valid":false},
+  {"id":"table-vector-values","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"table","operations":[{"op":"set_table_values","target":"Main/m_abc","expect":{"values":[0,0]},"values":[1.25,2.5]}]},"valid":true},
+  {"id":"table-matrix-values","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"table","operations":[{"op":"set_table_values","target":"Main/m_abc","expect":{"values":[[0,0],[0,0]]},"values":[[1,2],[3,4]]}]},"valid":true},
+  {"id":"table-boolean-values","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"table","operations":[{"op":"set_table_values","target":"Main/m_abc","expect":{"values":[[false]]},"values":[[true]]}]},"valid":false},
+  {"id":"table-resize-rejected","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"table","operations":[{"op":"set_table_values","target":"Main/m_abc","expect":{"values":[0]},"values":[1,2]}]},"valid":false},
+  {"id":"table-axis-change-rejected","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"table","operations":[{"op":"set_table_values","target":"Main/m_abc","expect":{"values":[0]},"values":[1],"x":[2]}]},"valid":false},
+  {"id":"table-axis-x-valid","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_table_axis","target":"Main/m_abc","axis":"x","expect":{"values":[0,0]},"values":[-1.25,2.5]}]},"valid":true},
+  {"id":"table-axis-y-valid","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_table_axis","target":"Main/m_abc","axis":"y","expect":{"values":[0]},"values":[2]}]},"valid":true},
+  {"id":"table-axis-resize","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_table_axis","target":"Main/m_abc","axis":"x","expect":{"values":[0]},"values":[1,2]}]},"valid":false},
+  {"id":"table-axis-duplicate","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_table_axis","target":"Main/m_abc","axis":"x","expect":{"values":[0,0]},"values":[1,1]}]},"valid":false},
+  {"id":"table-axis-descending","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_table_axis","target":"Main/m_abc","axis":"x","expect":{"values":[0,0]},"values":[2,1]}]},"valid":false},
+  {"id":"table-axis-boolean","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_table_axis","target":"Main/m_abc","axis":"x","expect":{"values":[0,0]},"values":[false,true]}]},"valid":false},
+  {"id":"table-axis-z","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_table_axis","target":"Main/m_abc","axis":"z","expect":{"values":[0]},"values":[1]}]},"valid":false},
+  {"id":"table-axis-extra","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"axis","operations":[{"op":"set_table_axis","target":"Main/m_abc","axis":"x","expect":{"values":[0],"size":1},"values":[1]}]},"valid":false},
+  {"id":"table-interpolation-rounded","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"interpolation","operations":[{"op":"set_table_interpolation","target":"Main/m_abc","expect":{"declared_interpolation":null,"interpolation_linear":true,"interpolation_rounded":false},"mode":"rounded"}]},"valid":true},
+  {"id":"table-interpolation-linear","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"interpolation","operations":[{"op":"set_table_interpolation","target":"Main/m_abc","expect":{"declared_interpolation":"Rounded","interpolation_linear":false,"interpolation_rounded":true},"mode":"linear"}]},"valid":true},
+  {"id":"table-interpolation-ambiguous","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"interpolation","operations":[{"op":"set_table_interpolation","target":"Main/m_abc","expect":{"declared_interpolation":null,"interpolation_linear":true,"interpolation_rounded":true},"mode":"linear"}]},"valid":false},
+  {"id":"table-interpolation-integer","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"interpolation","operations":[{"op":"set_table_interpolation","target":"Main/m_abc","expect":{"declared_interpolation":null,"interpolation_linear":1,"interpolation_rounded":false},"mode":"linear"}]},"valid":false},
+  {"id":"table-interpolation-spline","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"interpolation","operations":[{"op":"set_table_interpolation","target":"Main/m_abc","expect":{"declared_interpolation":null,"interpolation_linear":true,"interpolation_rounded":false},"mode":"spline"}]},"valid":false},
+  {"id":"table-interpolation-missing-declaration","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"interpolation","operations":[{"op":"set_table_interpolation","target":"Main/m_abc","expect":{"interpolation_linear":true,"interpolation_rounded":false},"mode":"rounded"}]},"valid":false},
+  {"id":"table-dimension-change-rejected","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"table","operations":[{"op":"set_table_values","target":"Main/m_abc","expect":{"values":[0]},"values":[[1]]}]},"valid":false},
+  {"id":"table-ragged-rejected","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"table","operations":[{"op":"set_table_values","target":"Main/m_abc","expect":{"values":[[0,0],[0,0]]},"values":[[1],[2,3]]}]},"valid":false},
+  {"id":"table-mixed-type-rejected","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"table","operations":[{"op":"set_table_values","target":"Main/m_abc","expect":{"values":[0,0]},"values":[true,1]}]},"valid":false},
+  {"id":"group-connect","tool":"bd_edit","args":{"request_id":"g1","steps":[{"snapshot":"s1","operations":[{"op":"connect_data","source":"Main/p1","target":"Main/p2"}]},{"snapshot":"s2","operations":[{"op":"connect_data","source":"Main/p1","target":"Main/p2"}]}]},"valid":true},
+  {"id":"group-single-resource","tool":"bd_edit","args":{"request_id":"g1","steps":[{"snapshot":"s1","operations":[{"op":"delete_node","target":"Main/n1"}]}]},"valid":false},
+  {"id":"group-mixed-snapshot","tool":"bd_edit","args":{"snapshot":"s0","request_id":"g1","steps":[{"snapshot":"s1","operations":[{"op":"delete_node","target":"Main/n1"}]},{"snapshot":"s2","operations":[{"op":"delete_node","target":"Main/n1"}]}]},"valid":false},
+  {"id":"group-unknown-operation","tool":"bd_edit","args":{"request_id":"g1","steps":[{"snapshot":"s1","operations":[{"op":"free_smalltalk","text":"unsafe"}]},{"snapshot":"s2","operations":[{"op":"delete_node","target":"Main/n1"}]}]},"valid":false},
+  {"id":"group-extra-step","tool":"bd_edit","args":{"request_id":"g1","steps":[{"snapshot":"s1","name":"Signal","operations":[{"op":"delete_node","target":"Main/n1"}]},{"snapshot":"s2","operations":[{"op":"delete_node","target":"Main/n1"}]}]},"valid":false},
+  {"id":"group-table-unavailable","tool":"bd_edit","args":{"request_id":"g1","steps":[{"snapshot":"s1","operations":[{"op":"set_table_values","target":"Main/m_a","expect":{"values":[0]},"values":[1]}]},{"snapshot":"s2","operations":[{"op":"delete_node","target":"Main/n1"}]}]},"valid":false},
+  {"id":"connect-path-plan","tool":"bd_edit","args":{"request_id":"path","operations":[{"op":"connect_path","plan_ref":"plan_example"}]},"valid":true},
+  {"id":"connect-path-preview","tool":"bd_edit","args":{"request_id":"path","operations":[{"op":"connect_path","plan_ref":"plan_example"}],"preview":true},"valid":true},
+  {"id":"connect-path-snapshot-rejected","tool":"bd_edit","args":{"snapshot":"s1","request_id":"path","operations":[{"op":"connect_path","plan_ref":"plan_example"}]},"valid":false},
+  {"id":"connect-path-extra-operation-field","tool":"bd_edit","args":{"request_id":"path","operations":[{"op":"connect_path","plan_ref":"plan_example","source":"Main/p1"}]},"valid":false},
+  {"id":"connect-path-two-operations","tool":"bd_edit","args":{"request_id":"path","operations":[{"op":"connect_path","plan_ref":"plan_example"},{"op":"connect_path","plan_ref":"plan_other"}]},"valid":false},
+  {"id":"connection-sequence-fanout","tool":"bd_edit","args":{"request_id":"g1","mode":"connection_sequence","steps":[{"snapshot":"s1","operations":[{"op":"connect_data","source":"Main/p1","target":"Main/p2"}]},{"snapshot":"s1","operations":[{"op":"connect_data","source":"Main/p1","target":"Main/p3"}]}]},"valid":true},
+  {"id":"connection-sequence-creation-rejected","tool":"bd_edit","args":{"request_id":"g1","mode":"connection_sequence","steps":[{"snapshot":"s1","operations":[{"op":"create_block","kind":"literal","name":"1","position":[100,100]}]},{"snapshot":"s1","operations":[{"op":"connect_data","source":"Main/p1","target":"Main/p3"}]}]},"valid":false},
+  {"id":"group-unknown-mode","tool":"bd_edit","args":{"request_id":"g1","mode":"anything","steps":[{"snapshot":"s1","operations":[{"op":"connect_data","source":"Main/p1","target":"Main/p2"}]},{"snapshot":"s1","operations":[{"op":"connect_data","source":"Main/p1","target":"Main/p3"}]}]},"valid":false},
+  {"id":"explicit-finalize-preview","tool":"bd_revert","args":{"change_id":"edit_example","request_id":"finalize-example","finalize":true,"preview":true},"valid":true},
+  {"id":"finalize-string-rejected","tool":"bd_revert","args":{"change_id":"edit_example","request_id":"finalize-example","finalize":"true"},"valid":false},
+  {"id":"edit-finalize-rejected","tool":"bd_edit","args":{"snapshot":"s_example","request_id":"finalize-example","operations":[{"op":"delete_node","target":"Main/n1"}],"finalize":true},"valid":false}
+]

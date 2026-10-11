@@ -4,6 +4,8 @@
 
 ## 文档入口
 
+- [BDE Agent Tools 源码检查点](ascet-multi-instance/bde-tools/README.md)
+- [BDE T0–T9 开发任务节点](ascet-multi-instance/bde-tools/docs/bde-tools-task-nodes-v1.md)
 - [完整资料包说明](ascet-multi-instance/README.md)
 - [中文操作指南与 Copilot 接入方案](ascet-multi-instance/docs/ascet-agent-background-workflow.md)
 - [多实例工具说明](ascet-multi-instance/tools/multi-instance/README.md)

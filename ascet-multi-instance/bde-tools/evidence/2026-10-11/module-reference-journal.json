@@ -1,0 +1,31 @@
+{
+  "profile": "bde_module_reference_journal_increment_v1",
+  "date": "2026-10-11",
+  "node": "T3.1",
+  "production_profile": "native_connect_material_v2",
+  "gate": "ASCET_BD_CONNECT_REFERENCES=module_inbound_v1",
+  "default_enabled": false,
+  "reference_capture": "within the existing fixed connect_material dispatch",
+  "fields": ["owner_references", "owner_database_record_references"],
+  "actual_wal_diff_implemented": true,
+  "offline_controls_passed": 73,
+  "command": "$env:PYTHONPATH='scripts'; E:\\PYTHON\\python.exe -X utf8 -m unittest scripts.test_bd_module_references scripts.test_bd_connect_journal scripts.test_bd_connect_material scripts.test_bd_connect_history scripts.test_bd_connect_local_history scripts.test_bd_connect_local_plan scripts.test_bd_structural_diff_route scripts.test_bd_structure_conflicts",
+  "csharp_bridge_compile_passed": true,
+  "canonical_generated_stage_check_passed": true,
+  "smalltalk_runtime_compile_verified": false,
+  "smalltalk_execution_verified": false,
+  "ascet_processes_observed": 0,
+  "ascet_started_or_restarted": false,
+  "native_calls": 0,
+  "original_material_retained_by_design": true,
+  "persistent_reference_inverse_implemented": false,
+  "graphical_only_inverse_rejected_for_v2": true,
+  "old_epoch_replayed": false,
+  "message_topology_matrix_promoted": false,
+  "full_delivery": false,
+  "next": [
+    "Compile and execute the new fixed Smalltalk path in an existing authorized ASCET session",
+    "Close persistent reference patch guard/inverse before granting Module connection history",
+    "Run T5.1 on a fresh isolated component without replaying historical tokens"
+  ]
+}

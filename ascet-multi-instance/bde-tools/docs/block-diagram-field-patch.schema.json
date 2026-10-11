@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASCET Block Diagram v0 field plan request",
+  "description": "Design contract only. Runtime capabilities and preconditions must be checked by the adapter.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["session_id", "base_snapshot", "require", "save_policy", "changes"],
+  "properties": {
+    "session_id": {"$ref": "#/$defs/ref"},
+    "base_snapshot": {"$ref": "#/$defs/ref"},
+    "require": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["isolation", "undo"],
+      "properties": {
+        "isolation": {"const": "verified_exclusive"},
+        "undo": {"const": "exact_fields"}
+      }
+    },
+    "save_policy": {"enum": ["deferred", "finalize", "commit_database"]},
+    "changes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["op", "target", "expected_entity_revision", "field", "before", "after"],
+        "properties": {
+          "op": {"const": "set_field"},
+          "target": {"$ref": "#/$defs/ref"},
+          "expected_entity_revision": {"$ref": "#/$defs/ref"},
+          "field": {"enum": ["literal_text", "comment_text"]},
+          "before": {"$ref": "#/$defs/textValue"},
+          "after": {"$ref": "#/$defs/textValue"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ref": {"type": "string", "minLength": 1, "maxLength": 256},
+    "textValue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value"],
+          "properties": {"value": {"type": "string", "maxLength": 8192}}
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["blob_ref", "sha256"],
+          "properties": {
+            "blob_ref": {"$ref": "#/$defs/ref"},
+            "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+          }
+        }
+      ]
+    }
+  }
+}
