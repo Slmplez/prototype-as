@@ -1,5 +1,5 @@
 {
-  "current_increment_key": "latest_persistent_owner_patch_increment",
+  "current_increment_key": "latest_owner_current_wal_increment",
   "latest_persistent_owner_patch_increment": {
     "source": "analysis/bde-experiments/2026-10-11/bde-owner-patch-increment-01/result.json",
     "node": "T3.1",
@@ -156,7 +156,9 @@
     "native_calls": 0,
     "write_authorized": false,
     "inverse_authorized": false,
-    "missing_gates": ["non_empty_original_edit"],
+    "missing_gates": [
+      "non_empty_original_edit"
+    ],
     "full_delivery": false,
     "next": "Bind a fresh changed after image to the exact inverse plan, then prove native durable inverse and conflict behavior in an isolated component."
   },
@@ -370,7 +372,10 @@
     "frozen_summary": "analysis/bde-experiments/2026-10-07/bde-persistent-owner-increment-01/result.json",
     "profile": "native_commit_prepare_v6",
     "persistent_owner_capture_verified": true,
-    "owners": ["component:SGClass", "spec_source:SGTopGraphicsBlockDB"],
+    "owners": [
+      "component:SGClass",
+      "spec_source:SGTopGraphicsBlockDB"
+    ],
     "source_absent_reference_error_number": 101,
     "typed_graph_unchanged": true,
     "model_setters_called": 0,
@@ -609,7 +614,12 @@
     "ascet_restart_count": 0,
     "business_original_restoration_verified_this_increment": false,
     "new_complete_required_cases_passed": 0,
-    "required_ledger": {"total": 43, "pass": 0, "not_run": 42, "blocked": 1},
+    "required_ledger": {
+      "total": 43,
+      "pass": 0,
+      "not_run": 42,
+      "blocked": 1
+    },
     "next_implementation": "Read current reciprocal records and record actual changes; capture original before bytes for newly added targets; controlled persistent patch and local inverse",
     "full_delivery": false,
     "goal_status": "active"
@@ -4305,5 +4315,27 @@
     "full_delivery": false,
     "production_topology_exact_inverse_enabled_by_default": false,
     "previous_evidence": "analysis/bde-experiments/2026-10-05/bde-rewire-function-increment-01/result.json"
+  },
+  "latest_owner_current_wal_increment": {
+    "source": "analysis/bde-experiments/2026-10-11/bde-commit-owner-current-increment-01/result.json",
+    "node": "T3.1",
+    "status": "original_owner_current_wal_and_offline_diff_verified_store_inverse_pending",
+    "current_persistent_owners_checked": true,
+    "owner_current_reads": 2,
+    "records_per_read": 6,
+    "production_inspect_wal_verified": true,
+    "production_offline_diff_pages": 7,
+    "offline_diff_zero_native_frames": true,
+    "original_registered_sg_objects": 271,
+    "original_reference_records": 16017,
+    "offline_controls_passed": 53,
+    "model_store_verified": false,
+    "production_connection_inverse_available": false,
+    "full_commit_resource_closure": false,
+    "complete_message_lifecycle_cases_passed": 0,
+    "required_cases_upgraded": false,
+    "full_delivery": false,
+    "ascet_started_or_restarted": false,
+    "next": "Store model/source/cache and complete persistent write/inverse, then full connection lifecycle and remaining original BDE gates"
   }
 }

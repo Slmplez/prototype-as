@@ -31,6 +31,12 @@ def compile_bridge():
     resources.append(root / 'scripts/bde_reference_baseline_lookup.st')
     resources.append(root / 'scripts/bde_commit_persistent_owners.st')
     resources.append(root / 'scripts/bde_persistent_owner_records.st')
+    resources.append(root / 'scripts/bde_connect_runtime_lifecycle.st')
+    from bde_commit_owner_current_resource import build as build_current_owners
+    current_owner_resource = root / 'scripts/bde_commit_persistent_owners_current.st'
+    if current_owner_resource.read_text(encoding='utf-8-sig') != build_current_owners():
+        raise ValueError('Generated fixed CURRENT owner resource differs')
+    resources.extend((current_owner_resource, root / 'scripts/bde_commit_owner_current_query.st'))
     staged_sources, _ = build()
     for name, expected in staged_sources.items():
         source = root / 'scripts' / name

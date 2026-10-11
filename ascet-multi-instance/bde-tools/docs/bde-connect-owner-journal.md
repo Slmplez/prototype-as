@@ -12,6 +12,17 @@ The current native reference leaf writer is limited to the isolated Module/sourc
 
 Online evidence: complete independent double reads; actual v4 prepare, inspect and discard; unchanged public/native bookends; Python and C# no-mutation application refusals; three invocations of the real native guard on detached, non-executable v4 frames. The first preparation failed because the bridge omitted the owner-reader resource. That failure is retained; the resource embedding was fixed and the new preparation passed. No ASCET restart occurred during these checks.
 
-Acceptance remains incomplete: model/source/cache/owner restoration must execute and be independently verified in the first real `connect_data` lifecycle, followed by original-BDE diff show/clear, conflict, exact undo/redo and the Message matrix. `T3.1`, `T5.1`, 43 required cases, Message 0/60 and `full_delivery=false` are unchanged.
+An explicitly isolated no-Store study now verifies actual native connect/remove,
+three existing graphical changes, twelve new objects and exact native/source/
+drawing restoration with two native restore primitives. Independent fresh
+owner/reference double reads confirmed the original state. Its consumed study
+token does not become production applied/history material. See
+`../analysis/bde-experiments/2026-10-11/bde-connect-runtime-increment-01/README.md`.
+
+Acceptance remains incomplete: Store model/source/cache/owner restoration must
+execute and be independently verified, followed by original-BDE diff show/clear,
+conflict, exact undo/redo and the Message matrix. Full Store-resource preparation
+currently fails the reference-file census before any mutation. `T3.1`, `T5.1`,
+43 required cases, Message 0/60 and `full_delivery=false` are unchanged.
 
 Evidence is frozen by `scripts/bde_connect_owner_increment.py`; see the [checkpoint](../analysis/bde-experiments/2026-10-11/bde-connect-owner-journal-increment-03/README.md). Actual connection after capture and composite inverse execution are explicitly unverified.

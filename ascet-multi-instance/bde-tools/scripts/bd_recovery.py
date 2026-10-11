@@ -327,10 +327,23 @@ def inspect(args, session, budget):
                 from bd_commit_resources import summary as resource_summary
                 with NativeStructureAdapter(context['component'], request['diagram']) as adapter:
                     resource_status=adapter.commit_resource_status(context['domain'],native_token,check=True)
+                    owner_current = None
+                    if resource_prepared['profile'] == 'native_commit_prepare_v6':
+                        from bd_commit_owner_current import observe_logged
+                        owner_current = observe_logged(log,token,adapter,context['domain'],native_token,resource_prepared)
                 if resource_status['prepared_receipt'] != resource_prepared:
                     raise JournalError('RECOVERY_UNRESOLVED', 'Fresh resource preparation differs from original WAL')
-                log._append(log._path(token),events,'commit_resource_checked',resource_status)
-                return service.paged(service.dump(resource_summary(resource_status)),
+                # The owner observation appends its own immutable event. Reload
+                # the chain so this resource check cannot overwrite its slot.
+                log._append(log._path(token),log.read(token),'commit_resource_checked',resource_status)
+                resource_reply=resource_summary(resource_status)
+                if owner_current is not None:
+                    resource_reply['persistent_owner_current']=owner_current
+                    resource_reply['current_persistent_owners_checked']=True
+                    resource_reply['coverage']=resource_reply['coverage'].replace(
+                        'current persistent owners not checked',
+                        'current persistent owners checked through separate original-bound WAL evidence')
+                return service.paged(service.dump(resource_reply),
                     {'query':'recovery','change_id':token,'source':'actual retained prepared resource diff; no model execution'},session,budget)
             if any(e['kind']=='prepared' and 'create_finalize' in e['payload'] for e in events):
                 from bd_create_finalize_journal import reconcile_locked as reconcile_finalize

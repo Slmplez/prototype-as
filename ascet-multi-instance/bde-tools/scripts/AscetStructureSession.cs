@@ -709,6 +709,38 @@ class AscetStructureSession
         }
     }
 
+    static object ConnectRuntimeLifecycle(Dictionary<string, object> request)
+    {
+        if (diagram != "Main" || !path.StartsWith("BDE_Tool_Experiments\\Trial_", StringComparison.Ordinal)
+                || Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_REFERENCES") != "module_owner_records_v1"
+                || Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_RUNTIME_STUDY") != "single_no_store_v1")
+            throw new Exception("Explicit isolated no-store runtime study required");
+        string token = Text(request, "token"), action = Text(request, "action");
+        if (!System.Text.RegularExpressions.Regex.IsMatch(token, @"^edit_[0-9a-f]{64}$")
+                || Array.IndexOf(new [] { "prepare", "execute", "inspect" }, action) < 0)
+            throw new Exception("Fixed original runtime token and action required");
+        var blocks = new List<Identifiable>();
+        try {
+            var order = AscetStructureRead.Compile(component, "bde_native_collection_merge.st"); blocks.Add(order);
+            var patch = AscetStructureRead.Compile(component, "bde_native_field_patch.st"); blocks.Add(patch);
+            var bindPatch = new InstanceMethodCall(patch, "value:", component); bindPatch.appendParameter(order); component.call(bindPatch);
+            var patchFactory = bindPatch.ResultRemoteObject; blocks.Add(patchFactory);
+            var factory = AscetStructureRead.Compile(component, "bde_connect_runtime_lifecycle.st"); blocks.Add(factory);
+            var bind = new InstanceMethodCall(factory, "value:", component); bind.appendParameter(patchFactory); component.call(bind);
+            var study = bind.ResultRemoteObject; blocks.Add(study);
+            var call = new InstanceMethodCall(study, "value:value:", component);
+            call.appendParameter(component); call.appendParameter(new [] { token, action }); component.call(call);
+            string result = call.ResultString;
+            if (result.StartsWith("BDE_", StringComparison.Ordinal)) throw new Exception(result);
+            return AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(result));
+        } finally {
+            for (int i = blocks.Count - 1; i >= 0; --i) {
+                var release = component.createControlMessageCall("destroyObjectForId:");
+                release.appendParameter(blocks[i].getIdentifier()); component.call(release); release.getResultVoid();
+            }
+        }
+    }
+
     static object ConnectHistory(Dictionary<string, object> request, bool compileOnly)
     {
         bool localHistory = Environment.GetEnvironmentVariable("ASCET_BD_CONNECT_HISTORY") == "native_source_local_v1";
@@ -1291,6 +1323,35 @@ class AscetStructureSession
                 }
             }
         }
+        if (command == "commit_persistent_owner_current") {
+            string ownerCurrentToken = Text(request, "token");
+            if (diagram != "Main" || !path.StartsWith("BDE_Tool_Experiments\\Trial_", StringComparison.Ordinal)
+                    || !System.Text.RegularExpressions.Regex.IsMatch(ownerCurrentToken, @"^edit_[0-9a-f]{64}$"))
+                throw new Exception("Exact isolated original v6 CURRENT owner query required");
+            var ownerCurrentBlocks = new List<Identifiable>();
+            bool ownerCurrentKnown = true;
+            try {
+                var decoder = AscetStructureRead.Compile(component, "bde_commit_reference_record.st"); ownerCurrentBlocks.Add(decoder);
+                var ownerCurrentFactory = AscetStructureRead.Compile(component, "bde_commit_persistent_owners_current.st"); ownerCurrentBlocks.Add(ownerCurrentFactory);
+                var bind = new InstanceMethodCall(ownerCurrentFactory, "value:", component); bind.appendParameter(decoder); component.call(bind);
+                var reader = bind.ResultRemoteObject; ownerCurrentBlocks.Add(reader);
+                var queryFactory = AscetStructureRead.Compile(component, "bde_commit_owner_current_query.st"); ownerCurrentBlocks.Add(queryFactory);
+                var bindQuery = new InstanceMethodCall(queryFactory, "value:", component); bindQuery.appendParameter(reader); component.call(bindQuery);
+                var query = bindQuery.ResultRemoteObject; ownerCurrentBlocks.Add(query);
+                var ownerCurrentCall = new InstanceMethodCall(query, "value:value:value:", component);
+                ownerCurrentCall.appendParameter(component); ownerCurrentCall.appendParameter(ownerCurrentToken); ownerCurrentCall.appendParameter(database);
+                ownerCurrentKnown = false; component.call(ownerCurrentCall); string ownerCurrentEncoded = ownerCurrentCall.ResultString;
+                if (String.IsNullOrEmpty(ownerCurrentEncoded)) throw new Exception("Unknown original CURRENT owner query; retain material");
+                ownerCurrentKnown = true;
+                if (ownerCurrentEncoded.StartsWith("BDE_", StringComparison.Ordinal)) throw new Exception(ownerCurrentEncoded);
+                return AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(ownerCurrentEncoded));
+            } finally {
+                if (ownerCurrentKnown) for (int i = ownerCurrentBlocks.Count - 1; i >= 0; --i) {
+                    var release = component.createControlMessageCall("destroyObjectForId:");
+                    release.appendParameter(ownerCurrentBlocks[i].getIdentifier()); component.call(release); release.getResultVoid();
+                }
+            }
+        }
         if (command == "commit_resources") {
             string resourceToken = Text(request, "token"), resourceAction = Text(request, "action");
             if (diagram != "Main" || !System.Text.RegularExpressions.Regex.IsMatch(resourceToken, @"^edit_[0-9a-f]{64}$")
@@ -1373,6 +1434,7 @@ class AscetStructureSession
         if (command == "connect_history_compile") return ConnectHistory(request, true);
         if (command == "connect_history") return ConnectHistory(request, false);
         if (command == "connect_material") return ConnectMaterial(request);
+        if (command == "connect_runtime_lifecycle") return ConnectRuntimeLifecycle(request);
         if (command == "enum_definition_inventory") {
             if (diagram != "Main" || !path.StartsWith("BDE_Tool_Experiments\\Trial_", StringComparison.Ordinal))
                 throw new Exception("Fixed isolated enum library definition inventory only");

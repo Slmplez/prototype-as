@@ -1,0 +1,111 @@
+{
+  "archived_source_hashes_checked": 5073,
+  "ascet_started_or_restarted": false,
+  "commit_called": false,
+  "complete_message_lifecycle_cases_passed": 0,
+  "ctree_read_effects_reported": true,
+  "frozen_source_files": 1019,
+  "full_commit_resource_closure": false,
+  "full_delivery": false,
+  "local_evidence_hashes": {
+    "bde-commit-owner-current-live-01/result.json": "b5d5ac99d78c4a6d88a6f6bb68384c0ebd84ce2f056cda4427c378f77f355066",
+    "bde-commit-owner-current-live-02/current-1.json": "d26f6e9340ab2c0826b9b9593cf174425121bcb0aadfd810e2d58a554be5392d",
+    "bde-commit-owner-current-live-02/current-2.json": "d26f6e9340ab2c0826b9b9593cf174425121bcb0aadfd810e2d58a554be5392d",
+    "bde-commit-owner-current-live-02/result.json": "42ad2c4872d4234b285cc34ae39ba9474528dcdbd0a5fff64cb1f4fd0627e02f",
+    "bde-commit-owner-journal-live-02/offline-diff-pages.json": "0586bd31527bd29f5742259d0084d3bc9da0c99143d3c964e10a4f8cb539b81e",
+    "bde-commit-owner-journal-live-02/offline-diff.json": "aa0cee99b5069c3f66ddd80a112295e52e6f2d1af0224728515fa90d5ed588f8",
+    "bde-commit-owner-journal-live-02/result.json": "352e046d595f8049426a0b934bd2f9e0f6d2712e5b2219294a6590b16f9723d0",
+    "bde-connect-store-failure-inspect-01/report.json": "a55535f52087710db4297c3fc34df028c048980444a9b40e386e30e8602b91a1",
+    "bde-connect-store-resources-preflight-02/before.json": "753ebb4e2b2fbd5fe96937616c20fd12ba0acbe935337cffca962b5222d75702",
+    "bde-connect-store-resources-preflight-02/result.json": "aad0062949137978e10550b9eb42520ed8cd9dab436a77072c74b19302cd7377",
+    "bde-connect-store-resources-preflight-03/after.json": "753ebb4e2b2fbd5fe96937616c20fd12ba0acbe935337cffca962b5222d75702",
+    "bde-connect-store-resources-preflight-03/before.json": "753ebb4e2b2fbd5fe96937616c20fd12ba0acbe935337cffca962b5222d75702",
+    "bde-connect-store-resources-preflight-03/current.json": "b9a2c768ac50cdb8737bc2c1c055f70a5f77b9bc7a6eed9a523f657abfd23679",
+    "bde-connect-store-resources-preflight-03/original-audit.json": "cd553f770971706d43d7516785e04b26b64ec3c61303b434eafe7096e95b8b2f",
+    "bde-connect-store-resources-preflight-03/prepared.json": "5e46c94391bbddc8ea660df3307a2140ca6c98f2cd3d7e3bde97b9c63ef70216",
+    "bde-connect-store-resources-preflight-03/result.json": "c2d6b10ee114dcda3117c0ab38ee75411f4403602612b2453646ab5b75f93bb2"
+  },
+  "model_operations": 0,
+  "model_store_verified": false,
+  "native_calls_by_report": 0,
+  "native_wire": {
+    "bde-commit-owner-current-live-02": {
+      "connections": 1,
+      "errors": [],
+      "request": {
+        "bytes": 88238,
+        "frames": 113,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      },
+      "response": {
+        "bytes": 312398,
+        "frames": 112,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      }
+    },
+    "bde-commit-owner-journal-live-02": {
+      "connections": 2,
+      "errors": [],
+      "request": {
+        "bytes": 560253,
+        "frames": 383,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      },
+      "response": {
+        "bytes": 2308274,
+        "frames": 381,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      }
+    },
+    "bde-connect-store-resources-preflight-03": {
+      "connections": 1,
+      "errors": [],
+      "request": {
+        "bytes": 503352,
+        "frames": 500,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      },
+      "response": {
+        "bytes": 1222249,
+        "frames": 499,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      }
+    }
+  },
+  "offline_controls": {
+    "executed_from_frozen_sources": true,
+    "exit_code": 0,
+    "modules": [
+      "test_bd_commit_owner_current",
+      "test_bd_commit_resource_journal",
+      "test_bd_commit_resources",
+      "test_bd_commit_persistent_owners",
+      "test_bd_structural_diff_route"
+    ],
+    "online_acceptance": false,
+    "tests": 53
+  },
+  "offline_diff_zero_native_frames": true,
+  "offline_history_verified": true,
+  "old_failure_verdict_preserved": true,
+  "original_raw_records_match": true,
+  "original_reference_records": 16017,
+  "original_registered_sg_objects": 271,
+  "original_v6_preparation_verified": true,
+  "passed": true,
+  "production_connection_inverse_available": false,
+  "production_inspect_wal_verified": true,
+  "production_offline_diff_pages": 7,
+  "profile": "bde_commit_owner_current_checkpoint_v1",
+  "records_per_current_read": 6,
+  "required_cases_upgraded": false,
+  "same_original_owner_current_reads_verified": 2,
+  "store_called": false,
+  "strict_platform_function_guard_unchanged": true
+}

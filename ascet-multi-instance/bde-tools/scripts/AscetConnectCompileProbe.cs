@@ -21,7 +21,8 @@ class AscetConnectCompileProbe
         "bde_connect_preparation_guard_probe.st", "bde_finite_reference_patch.st", "bde_finite_reference_patch_probe.st",
         "bde_finite_reference_patch_guard_probe.st", "bde_persistent_owner_records.st", "bde_persistent_owner_noop.st",
         "bde_persistent_owner_patch.st", "bde_persistent_owner_patch_probe.st", "bde_fresh_serializer_prepare.st",
-        "bde_fresh_serializer_inventory.st", "bde_fresh_serializer_inventory_reader.st", "bde_fresh_serializer_dump.st"
+        "bde_fresh_serializer_inventory.st", "bde_fresh_serializer_inventory_reader.st", "bde_fresh_serializer_dump.st",
+        "bde_connect_runtime_lifecycle.st"
     };
 
     static object ListTrialModules(AscetDataBase database)

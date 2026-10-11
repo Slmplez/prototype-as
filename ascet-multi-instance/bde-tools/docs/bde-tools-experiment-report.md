@@ -1,5 +1,9 @@
 ## 2026-10-11 Finite native patch executor
 
+最新v6 CURRENT增量：完整原owner/current六条记录、原token/身份绑定及实际diff进入正式WAL；生产`bd_inspect`→7页离线`bd_diff`和history在线通过，离线帧数0。原记录字节相同，8处CTree fixedRecord读取效应未隐藏。53项离线controls、1,019冻结源码、5,073归档hash通过。首次完整census的函数地址守卫失败与C#编译失败保留；未放宽native guard、不重放旧准备、未启停。Store/model/cache/持久inverse和完整交付仍未完成。[本轮证据](../analysis/bde-experiments/2026-10-11/bde-commit-owner-current-increment-01/README.md) · [合同](bde-commit-owner-current.md)。
+
+当前内存闭环：真实connect/remove、3处existing变化、12个new objects、2个native restore primitives及完整公共/原生bookends通过；独立新连接完整owner/reference双读确认原状态，pending经零native确认清除。9个离线controls从139冻结源码通过，2,082归档hash核对。没有Store/Commit/persistent writer，不称为持久连线或生产inverse验收；Message0/60、43 required/T3.1/T5.1/full_delivery=false保持。Store前完整资源准备的引用文件census失败仍待诊断，未写模型、不重启、不重放。见[可复现证据](../analysis/bde-experiments/2026-10-11/bde-connect-runtime-increment-01/README.md)。
+
 最新 v4 增量：同次连线准备保存完整 Module/source owner 原记录，与有限引用观察核对。独立完整双读、生产 prepare/inspect/discard、Python/C# 拒写和真实 native apply/revert/validate_revert 三项守卫通过。首次漏嵌入 owner-reader 的准备失败保留，补入固定资源后新token验证通过。107 项相关离线控制从150冻结源码通过，2,068 archived source hashes核对。WAL owner实际diff/offline投影及组合owner/reference逆候选已接入，无关owner保留、source重叠或外部reciprocal写入越界时整组拒绝。没有实际v4模型写入、Store/Commit、inverse或ASCET启停；T3.1/T5.1、Message0/60、43 required和整体交付不升级。[证据](../analysis/bde-experiments/2026-10-11/bde-connect-owner-journal-increment-03/README.md) · [合同](bde-connect-owner-journal.md)。
 
 2026-10-11 最新增量：从已核对58对象的私有 source 副本精确将 Operator/logic_id=1 的 position.x 从300改为311，生成4,424字节实际 after，再由私有原生loader完整核对全部非省略字段/共享关系，恢复副本坐标。随后在该隔离组件原生 source 记录执行候选写入→完整原字节读回→原记录 inverse（2write/0delete），新连接双读完整 owner/reference 和公共 bookends 保持原样，精确清本次 pending。实际图形语义 diff 为1个坐标，source 记录物理792字节变化（含序列化地址等差异，未宣称逐字节原因已证），完整raw前后保留；固定header身份未变。只证明该 source 记录在当前实例内的往返，未改 live 图形/cache、未 Store/Commit，不能升级为生产move/connect/inverse或崩溃持久性。正式 model/source/cache/owner journal 闭合、T5.1、Message0/60、43 required、业务恢复与整体交付继续未完成。获批恢复后所有操作复用当前实例，没有新启停。

@@ -26,7 +26,8 @@ SOURCES = ('AscetConnectCompileProbe.cs', 'AscetStructureRead.cs',
     'bde_finite_reference_patch_guard_probe.st', 'bd_finite_reference_patch.py', 'bd_finite_reference_inverse.py',
     'bd_edit_journal.py', 'bde_persistent_owner_records.st', 'bde_persistent_owner_noop.st', 'bd_persistent_owner_records.py',
     'bde_persistent_owner_patch.st', 'bd_persistent_owner_patch.py', 'bde_persistent_owner_patch_probe.st', 'bde_fresh_serializer_prepare.st',
-    'bde_fresh_serializer_inventory.st', 'bde_fresh_serializer_inventory_reader.st', 'bde_fresh_serializer_dump.st')
+    'bde_fresh_serializer_inventory.st', 'bde_fresh_serializer_inventory_reader.st', 'bde_fresh_serializer_dump.st',
+    'bde_connect_runtime_lifecycle.st')
 
 
 def main():

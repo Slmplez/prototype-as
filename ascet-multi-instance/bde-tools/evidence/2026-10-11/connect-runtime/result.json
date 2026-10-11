@@ -1,0 +1,107 @@
+{
+  "archived_source_hashes_checked": 2082,
+  "ascet_started_or_restarted": false,
+  "business_restoration_hold_cleared": false,
+  "commit_called": false,
+  "complete_message_lifecycle_cases_passed": 0,
+  "complete_public_bookends_preserved": true,
+  "failures_preserved": [
+    {
+      "folder": "bde-connect-runtime-lifecycle-01",
+      "reason": "Compared transient API wrapper rather than specification identity; no write dispatch"
+    },
+    {
+      "folder": "bde-connect-runtime-confirm-01",
+      "reason": "Command-name strings treated as dictionaries; no native call or pending clear"
+    }
+  ],
+  "frozen_source_files": 139,
+  "full_delivery": false,
+  "full_owner_fresh_reads": 2,
+  "full_reference_fresh_reads": 2,
+  "local_evidence_hashes": {
+    "bde-connect-runtime-confirm-01/result.json": "1239c7e6dd23d89de497dd9dd4342e742a4c2c8039c28395b96dd8f5bbfb58c6",
+    "bde-connect-runtime-confirm-02/result.json": "405e6ea9cd14049ad462ca9a3660974c750a47a3cfa98313d8f0679a0403594d",
+    "bde-connect-runtime-confirm-02/verified-original-state.json": "76d3cda09cf651466246f5798d8452d7d021dea1efd18e65e4ac24bbbfc77744",
+    "bde-connect-runtime-fresh-01/result.json": "aaa13a5a0b5fff9975c567ed5e1df475134ebaa1b8ba3b34ba0b3c4dc71fd68b",
+    "bde-connect-runtime-lifecycle-01/before.json": "753ebb4e2b2fbd5fe96937616c20fd12ba0acbe935337cffca962b5222d75702",
+    "bde-connect-runtime-lifecycle-01/result.json": "a7a696bcacfa22338b393d9a2e1d501d2be205fe2beeffb51aa1cca98efac866",
+    "bde-connect-runtime-lifecycle-02/actual.json": "826bd98699d5a0abec9fdebe46ff4ffe099c323e6b922b2076298c1f19225c07",
+    "bde-connect-runtime-lifecycle-02/after.json": "753ebb4e2b2fbd5fe96937616c20fd12ba0acbe935337cffca962b5222d75702",
+    "bde-connect-runtime-lifecycle-02/before.json": "753ebb4e2b2fbd5fe96937616c20fd12ba0acbe935337cffca962b5222d75702",
+    "bde-connect-runtime-lifecycle-02/dispatch.json": "dab43a008179897f6bbad8858921686061ff42f485ef2291398501539b0c570c",
+    "bde-connect-runtime-lifecycle-02/inspected.json": "826bd98699d5a0abec9fdebe46ff4ffe099c323e6b922b2076298c1f19225c07",
+    "bde-connect-runtime-lifecycle-02/prepared.json": "fad18842cac0959452a8b50595a3b00aff444b3e2c5d97dbc725c60f420812c1",
+    "bde-connect-runtime-lifecycle-02/result.json": "5928b79d7955140238456df28e66fba36a02c1db6f728022c44d8804819e16a2",
+    "bde-connect-runtime-read-01/result.json": "07e821de5774953bf7551a11f6d3c275b2f406c9d9a537e63980b7b6014490d8"
+  },
+  "model_cache_restoration_verified": false,
+  "native_calls": 0,
+  "native_calls_by_report": 0,
+  "native_wire": {
+    "bde-connect-runtime-fresh-01": {
+      "connections": 1,
+      "errors": [],
+      "request": {
+        "bytes": 271098,
+        "frames": 135,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      },
+      "response": {
+        "bytes": 329881,
+        "frames": 134,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      }
+    },
+    "bde-connect-runtime-lifecycle-02": {
+      "connections": 1,
+      "errors": [],
+      "request": {
+        "bytes": 338359,
+        "frames": 466,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      },
+      "response": {
+        "bytes": 1454270,
+        "frames": 465,
+        "incomplete_bytes": 0,
+        "parse_error": null
+      }
+    }
+  },
+  "offline_controls": {
+    "executed_from_frozen_sources": true,
+    "exit_code": 0,
+    "modules": [
+      "test_bde_connect_runtime_study",
+      "test_bde_connect_runtime_confirm"
+    ],
+    "online_acceptance": false,
+    "tests": 9
+  },
+  "original_state_independently_confirmed": true,
+  "passed": true,
+  "pending_cleared_verified_original_state": true,
+  "persistent_writer_calls": 0,
+  "production_connection_inverse_available": false,
+  "profile": "bde_connect_runtime_checkpoint_v1",
+  "required_cases_upgraded": false,
+  "runtime_edit_replayed": false,
+  "store_called": false,
+  "summary": {
+    "actual_live_connect_remove": true,
+    "changed_graphical_entries": 3,
+    "commit_called": false,
+    "complete_original_restored": true,
+    "full_delivery": false,
+    "model_operations": 2,
+    "native_restore_primitives": 2,
+    "new_graphical_objects": 12,
+    "production_connection_inverse_available": false,
+    "profile": "isolated_connect_runtime_summary_v1",
+    "store_called": false
+  }
+}

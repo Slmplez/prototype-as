@@ -558,6 +558,18 @@ class StructureJournal(EditJournal):
             result['commit_resources'] = {key: clone(resource_prepared[key]) for key in (
                 'profile','resource_token','generation','original_material_held','same_native_dispatch',
                 'full_commit_resource_closure','write_authorized','inverse_authorized')}
+        current_owner_event = next((e for e in reversed(events) if e['kind']=='commit_owner_records_observed'),None)
+        if current_owner_event is not None:
+            from bd_commit_owner_current import projection as project_owner_current
+            try:
+                if resource_prepared is None:
+                    raise ValueError('Owner CURRENT event lacks original preparation')
+                result['persistent_owner_current_check']=dict(
+                    event_sha256=current_owner_event['checksum'],as_of_utc=current_owner_event['utc'],
+                    summary=project_owner_current(current_owner_event['payload'],resource_prepared),
+                    is_fresh_live_observation=False,model_edit_claimed=False)
+            except (ValueError,KeyError,TypeError) as error:
+                raise JournalError('JOURNAL_CORRUPT',str(error)) from error
         field_proof = next((e['payload']['field_execution'] for e in reversed(events)
                             if e['kind'] == 'observed' and 'field_execution' in e['payload']), None)
         if field_proof is not None:
@@ -650,6 +662,26 @@ class StructureJournal(EditJournal):
                     status=checked, model_edit_claimed=False, is_fresh_live_observation=False))
             result['commit_resource_checks'] = retained_checks
             result['commit_resource_check_source'] = 'durable resource check WAL; all changed values, zero live reads; model edit not claimed'
+        owner_checks = [e for e in events if e['kind'] == 'commit_owner_records_observed']
+        if owner_checks:
+            from bd_commit_owner_current import projection as owner_projection
+            if resource_prepared is None:
+                raise JournalError('JOURNAL_CORRUPT','Owner CURRENT event lacks original prepared resources')
+            originals = []
+            results = []
+            for event in owner_checks:
+                try:
+                    value=owner_projection(event['payload'],resource_prepared)
+                    original=event['payload']['original']
+                    if originals and original!=originals[0]:
+                        raise ValueError('Immutable original owner capture changed across current events')
+                    originals.append(original)
+                except (ValueError,KeyError,TypeError) as error:
+                    raise JournalError('JOURNAL_CORRUPT',str(error)) from error
+                results.append(dict(event_sha256=event['checksum'],as_of_utc=event['utc'],summary=value,
+                    is_fresh_live_observation=False))
+            result['persistent_owner_current_checks']=results
+            result['persistent_owner_current_source']='actual retained original/current WAL records; zero live reads'
         compensation = next((e['payload'] for e in events
             if e['kind'] == 'field_failure_compensation_evidence'), None)
         if compensation is not None:

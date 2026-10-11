@@ -1,8 +1,9 @@
 {
   "profile": "bde_portable_offline_controls_v1",
   "passed": true,
-  "tests": 326,
+  "tests": 345,
   "exit_code": 0,
   "online_acceptance": false,
-  "full_delivery": false
+  "full_delivery": false,
+  "command": "python -X utf8 run-portable-tests.py"
 }

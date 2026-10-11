@@ -1,5 +1,13 @@
 # ASCET BDE Agent Tools
 
+Latest verified increments: actual isolated memory connect/remove/restoration
+without Store, and v6 CURRENT owners bound to original material in production
+inspection WAL, seven-page offline diff and history. Full raw records remain
+in WAL; agent summaries contain locations and byte-range digests.
+See docs/bde-commit-owner-current.md and evidence/2026-10-11/commit-owner-current/.
+Store model/source/cache restoration and production persistent inverse remain
+incomplete. No acceptance gate or full delivery upgrade is claimed.
+
 Native own-bytes source dump/load and 58-object nonaliasing projection are now verified online on one isolated Module/Main. A guarded finish removed the embedded self DBObject without loading again. Independent full owner/reference double reads confirmed preservation and cleared only this bound pending. Full delivery remains false; changed graphical payload, production connect/inverse and cross-Module references remain unverified. See docs/bde-fresh-source-serializer.md and evidence/2026-10-11/fresh-source-roundtrip/. Earlier checkpoint paragraphs below retain their historical verdicts.
 
 

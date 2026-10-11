@@ -1,3 +1,22 @@
+test_changed_persistent_records_at_either_stage_refused (test_bde_connect_runtime_study.RuntimeStudyControls.test_changed_persistent_records_at_either_stage_refused) ... ok
+test_noop_cannot_claim_live_connection (test_bde_connect_runtime_study.RuntimeStudyControls.test_noop_cannot_claim_live_connection) ... ok
+test_original_bound_preparation_and_actual_complete_diff (test_bde_connect_runtime_study.RuntimeStudyControls.test_original_bound_preparation_and_actual_complete_diff) ... ok
+test_preparation_refuses_raw_drift_and_wrong_scope (test_bde_connect_runtime_study.RuntimeStudyControls.test_preparation_refuses_raw_drift_and_wrong_scope) ... ok
+test_wrong_original_and_forged_restoration_refused (test_bde_connect_runtime_study.RuntimeStudyControls.test_wrong_original_and_forged_restoration_refused) ... ok
+test_complete_independent_confirmation_is_zero_native (test_bde_connect_runtime_confirm.RuntimeConfirmControls.test_complete_independent_confirmation_is_zero_native) ... ok
+test_public_or_inspection_drift_cannot_clear_pending (test_bde_connect_runtime_confirm.RuntimeConfirmControls.test_public_or_inspection_drift_cannot_clear_pending) ... ok
+test_stale_dirty_and_missing_full_originals_refuse (test_bde_connect_runtime_confirm.RuntimeConfirmControls.test_stale_dirty_and_missing_full_originals_refuse) ... ok
+test_unknown_command_replay_and_changed_dispatch_refuse (test_bde_connect_runtime_confirm.RuntimeConfirmControls.test_unknown_command_replay_and_changed_dispatch_refuse) ... ok
+test_actual_source_raw_change_and_inputs_immutable (test_bd_commit_owner_current.CurrentOwners.test_actual_source_raw_change_and_inputs_immutable) ... ok
+test_agent_projection_keeps_full_bytes_in_wal (test_bd_commit_owner_current.CurrentOwners.test_agent_projection_keeps_full_bytes_in_wal) ... ok
+test_current_cannot_authorize_inverse (test_bd_commit_owner_current.CurrentOwners.test_current_cannot_authorize_inverse) ... ok
+test_current_cross_token_refused (test_bd_commit_owner_current.CurrentOwners.test_current_cross_token_refused) ... ok
+test_current_identity_change_refused (test_bd_commit_owner_current.CurrentOwners.test_current_identity_change_refused) ... ok
+test_full_unchanged_and_no_authority (test_bd_commit_owner_current.CurrentOwners.test_full_unchanged_and_no_authority) ... ok
+test_original_cannot_be_current (test_bd_commit_owner_current.CurrentOwners.test_original_cannot_be_current) ... ok
+test_truncated_physical_tail_refused (test_bd_commit_owner_current.CurrentOwners.test_truncated_physical_tail_refused) ... ok
+test_wal_actual_tamper_rejected (test_bd_commit_owner_current.CurrentOwners.test_wal_actual_tamper_rejected) ... ok
+test_wal_before_cannot_be_replaced_by_current (test_bd_commit_owner_current.CurrentOwners.test_wal_before_cannot_be_replaced_by_current) ... ok
 test_already_restored_owner_needs_no_duplicate_patch (test_bd_connect_owner_inverse.CompositeInverseTests.test_already_restored_owner_needs_no_duplicate_patch) ... ok
 test_coherent_but_different_reference_before_is_rejected (test_bd_connect_owner_inverse.CompositeInverseTests.test_coherent_but_different_reference_before_is_rejected) ... ok
 test_external_reciprocal_writer_is_not_granted_by_owner_capture (test_bd_connect_owner_inverse.CompositeInverseTests.test_external_reciprocal_writer_is_not_granted_by_owner_capture) ... ok
@@ -326,6 +345,6 @@ test_dead_bridge_stdin_flush_does_not_replace_the_primary_failure (test_bd_nativ
 test_every_pipe_is_closed_after_multiple_cleanup_errors (test_bd_native_adapter_cleanup.AdapterCleanupTests.test_every_pipe_is_closed_after_multiple_cleanup_errors) ... ok
 
 ----------------------------------------------------------------------
-Ran 326 tests in 12.695s
+Ran 345 tests in 23.226s
 
 OK
