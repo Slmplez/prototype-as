@@ -35,6 +35,8 @@ T0 运行时身份与安全边界
 
 ## 当前执行顺序
 
+2026-10-11 最新检查点：隔离非空双向引用1/2/1/原absence、7write/1delete实测；完整原raw恢复及fresh两读独立确认，source sysio诊断差异单独保留、原failed verdict不改写。184定向控制通过。纯离线生命周期逆候选增加存在性转换与物理key去重，仍无native执行器；下一步继续有限persistent patch/inverse与T5.1真实connect闭环，整体节点不升级。
+
 1. **T3.1**：把 Message 拓扑引用差异接入生产 `bd_connect_journal` 的 native receipt。
    2026-10-11 后续：固定 Smalltalk 编译、共享引用读取、生产 v2 prepare/inspect/discard 在线通过；三方语义逆候选和 journal 绑定完成，87 项离线控制通过。复用现有 PID40652/32631，未启停；capture_attached 和持久引用 patch/inverse 未验收，T3.1 仍未完成。见 `bde-module-reference-preflight-increment-01`。
    同日继续：v3 冻结 Module/source/reciprocal 的有限原始记录与 absence，生产准备/检查/释放和双层拒写在线通过，完整 native/public bookends 不变。原始字节三方逆规划、actual diff 与 WAL 绑定完成，138 项离线控制通过；新目标 original before、absence lifecycle executor、持久 writer/inverse 仍未闭合，T3.1 继续未完成。见 `bde-finite-module-reference-increment-02`。

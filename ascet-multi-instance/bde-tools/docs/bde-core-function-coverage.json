@@ -1,5 +1,26 @@
 {
-  "current_increment_key": "latest_requested_reference_leaf_increment",
+  "current_increment_key": "latest_nonempty_reference_increment",
+  "latest_nonempty_reference_increment": {
+    "source": "analysis/bde-experiments/2026-10-11/bde-reference-nonempty-increment-01/result.json",
+    "node": "T3.1",
+    "status": "nonempty_reciprocal_raw_records_restored_diagnostic_delta_preserved_executor_pending",
+    "offline_controls_passed": 184,
+    "nonempty_reference_lifecycle_verified": true,
+    "persistent_leaf_write_calls": 7,
+    "persistent_leaf_delete_calls": 1,
+    "independent_fresh_read_confirmed": true,
+    "exact_observation_restored": false,
+    "absence_diagnostic_delta_preserved": true,
+    "writer_replayed": false,
+    "physical_record_proposals_coalesced": true,
+    "lifecycle_proposal_native_executor_implemented": false,
+    "persistent_reference_inverse_implemented": false,
+    "capture_attached_verified": false,
+    "complete_message_lifecycle_cases_passed": 0,
+    "ascet_started_or_restarted": false,
+    "full_delivery": false,
+    "next": "Finite native patch/inverse and model/source resource closure, then T5.1 actual connect lifecycle"
+  },
   "latest_requested_reference_leaf_increment": {
     "source": "analysis/bde-experiments/2026-10-11/bde-reference-leaf-lifecycle-increment-02/result.json",
     "node": "T3.1",

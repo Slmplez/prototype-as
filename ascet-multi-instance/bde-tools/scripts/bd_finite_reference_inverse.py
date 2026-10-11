@@ -33,6 +33,30 @@ def _payload(row):
 
 
 def plan(receipt, current, *, token, component_oid, generation):
+    return _plan(receipt, current, token=token, component_oid=component_oid, generation=generation, lifecycle=False)
+
+
+def lifecycle_plan(receipt, current, *, token, component_oid, generation):
+    """Finite lifecycle proposals after bounded leaf research, never dispatch.
+
+    Exact actual CURRENT is mandatory for existence transitions. Duplicate
+    owner/reciprocal observations coalesce to one physical record operation.
+    This profile does not change the production preparation-only gate.
+    """
+    return _plan(receipt, current, token=token, component_oid=component_oid, generation=generation, lifecycle=True)
+
+
+def _physical_map(snapshot):
+    rows = {}
+    for key, row in _map(snapshot).items():
+        physical = ('physical_record', '', key[2], key[3])
+        if physical in rows and rows[physical] != row:
+            raise ValueError('Repeated physical reference observations differ')
+        rows[physical] = row
+    return rows
+
+
+def _plan(receipt, current, *, token, component_oid, generation, lifecycle):
     receipt = validate_receipt(receipt, token=token, component_oid=component_oid, generation=generation, phase='attached')
     current = validate(current, component_oid=component_oid)
     required_targets = receipt['before'].get('requested_reciprocal_targets', [])
@@ -41,7 +65,8 @@ def plan(receipt, current, *, token, component_oid, generation):
     original_owners = [(row['role'], row['oid'], row['key']) for row in receipt['before']['owners']]
     if [(row['role'], row['oid'], row['key']) for row in current['owners']] != original_owners:
         raise ValueError('Current finite inverse replaced an original Module/source owner')
-    before, after, now = _map(receipt['before']), _map(receipt['after']), _map(current)
+    mapper = _physical_map if lifecycle else _map
+    before, after, now = mapper(receipt['before']), mapper(receipt['after']), mapper(current)
     proposals, conflicts, unsupported = [], [], []
     for key in sorted(set(before) | set(after)):
         left, right = before.get(key), after.get(key)
@@ -52,6 +77,26 @@ def plan(receipt, current, *, token, component_oid, generation):
             unsupported.append(dict(**identity, reason='missing_original_before_capture' if left is None else 'missing_actual_after_capture'))
             continue
         if left['read_status'] != 'record' or right['read_status'] != 'record':
+            if lifecycle:
+                present = now.get(key)
+                if present == left:
+                    # A known current original requires no write; not a success event.
+                    continue
+                if present != right:
+                    conflicts.append(dict(**identity, reason='existence_transition_requires_exact_actual_after'))
+                    continue
+                if left['read_status'] == 'absent' and right['read_status'] == 'record':
+                    operation = 'delete_record'
+                elif left['read_status'] == 'record' and right['read_status'] == 'absent':
+                    operation = 'create_original_record'
+                else:
+                    unsupported.append(dict(**identity, reason='absence_diagnostic_change_not_a_record_patch'))
+                    continue
+                proposals.append(dict(**identity, operation=operation, merge_mode='exact_existence_transition',
+                    changed_byte_offsets=[], original_before_raw_sha256=_raw_hash(left),
+                    actual_after_raw_sha256=_raw_hash(right), current_raw_sha256=_raw_hash(present),
+                    candidate_raw_sha256=_raw_hash(left), current=deepcopy(present), candidate=deepcopy(left)))
+                continue
             unsupported.append(dict(**identity, reason='absent_record_lifecycle_executor_unverified'))
             continue
         present = now.get(key)
@@ -87,14 +132,20 @@ def plan(receipt, current, *, token, component_oid, generation):
         except ValueError as error:
             conflicts.append(dict(**identity, reason='merged_reference_payload_invalid', error=str(error)))
             continue
-        proposals.append(dict(**identity, merge_mode=mode, changed_byte_offsets=changed_offsets,
+        proposal = dict(**identity, merge_mode=mode, changed_byte_offsets=changed_offsets,
             original_before_raw_sha256=_raw_hash(left), actual_after_raw_sha256=_raw_hash(right),
             current_raw_sha256=_raw_hash(present), candidate_raw_sha256=_raw_hash(candidate),
-            candidate=candidate))
+            candidate=candidate)
+        if lifecycle: proposal.update(operation='write_original_or_merged_record', current=deepcopy(present))
+        proposals.append(proposal)
     blocked = bool(conflicts or unsupported)
-    return dict(profile='finite_reference_raw_inverse_plan_v1', native_token=token, component_oid=component_oid,
+    result = dict(profile='finite_reference_lifecycle_inverse_plan_v1' if lifecycle else 'finite_reference_raw_inverse_plan_v1', native_token=token, component_oid=component_oid,
         generation=generation, status='conflict' if conflicts else 'unsupported' if unsupported else 'planned_only',
         patches=[] if blocked else proposals, conflicts=conflicts, unsupported=unsupported,
         candidate_suppressed=blocked, unrelated_current_records_preserved=True,
         native_calls=0, persistent_write_performed=False, epoch_binding_verified=False,
         full_commit_resource_closure=False, write_authorized=False, inverse_authorized=False)
+    if lifecycle:
+        result.update(physical_records_coalesced=True, current_observation=deepcopy(current),
+            automatic_retry=False, native_executor_implemented=False)
+    return result

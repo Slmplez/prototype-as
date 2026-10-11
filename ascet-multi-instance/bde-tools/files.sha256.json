@@ -109,8 +109,8 @@
     },
     {
       "path": "docs/bde-core-function-coverage.json",
-      "bytes": 137374,
-      "sha256": "5fefaa1370334eef859e2766d1cef24cbf1b680b307760d672bfe983eddbc09b"
+      "bytes": 138404,
+      "sha256": "f100c75761f89aaf8107e401acab91da8b13630ef5af92e6a263f7ca4f948264"
     },
     {
       "path": "docs/bde-core-function-delivery-plan-20261004.md",
@@ -124,13 +124,13 @@
     },
     {
       "path": "docs/bde-core-function-workboard.json",
-      "bytes": 210536,
-      "sha256": "3e6c13d3d9e93fb7c3b913bf926db177c2bea369e5e4fa470ffcfbeeb37de639"
+      "bytes": 211566,
+      "sha256": "b07bdc1037adf174206b45753c3c3d5892cdc587507418e5bda6eef9fc972bf6"
     },
     {
       "path": "docs/bde-delivery-status.md",
-      "bytes": 157789,
-      "sha256": "99cce3ea5091e1bc23d4a0e85961272b4bbcf699e1dc0d8647602b82663d87c4"
+      "bytes": 159233,
+      "sha256": "80e6937a72ccd4eeea3eb4add1d6685f754f21ada939b35a42733984f997ada8"
     },
     {
       "path": "docs/bde-detached-graphical-material.md",
@@ -314,8 +314,8 @@
     },
     {
       "path": "docs/bde-tools-architecture-v0.4.md",
-      "bytes": 85646,
-      "sha256": "d6a93d52065f9be3f53a1664544f03426cb968f88d929541caa6134c6ee12a15"
+      "bytes": 86253,
+      "sha256": "c25e9ac680759699feec18b28d9fceefd4b792857e57cca2faf4657079c06f34"
     },
     {
       "path": "docs/bde-tools-eval-evidence.json",
@@ -334,13 +334,13 @@
     },
     {
       "path": "docs/bde-tools-experiment-report.md",
-      "bytes": 502577,
-      "sha256": "d41fe7cd66f2e51e5b9ed9d54c33bbc2b5e13be33e793502b57b2143e7e7b5d6"
+      "bytes": 504098,
+      "sha256": "0a4eac665a00ec55100d73f1092edb428f3bb6a0e757d75d068788d66d4340e2"
     },
     {
       "path": "docs/bde-tools-task-nodes-v1.md",
-      "bytes": 5553,
-      "sha256": "887d8b5188d30f3ad6154f8c3d11246971625558809d92f8bf99fa1993bff934"
+      "bytes": 5983,
+      "sha256": "523f6e6ff8cc8e0a9db10c7dd71649f45aa4f90ce771acd840bcf90451f6b646"
     },
     {
       "path": "docs/bde-tools-tasks-and-goals.md",
@@ -374,8 +374,8 @@
     },
     {
       "path": "docs/block-diagram-edit-journal.md",
-      "bytes": 76558,
-      "sha256": "71c4202a68a51ac0eb30dd9da6278c29ff2ec070ef5a9135367ace919567c76c"
+      "bytes": 77091,
+      "sha256": "e8a954a86c1a587e4d3cc87b109f4efe7f12c130cd9be10b23ef3904605a2f1f"
     },
     {
       "path": "docs/block-diagram-field-patch.schema.json",
@@ -793,6 +793,21 @@
       "sha256": "c5e046f1b663a2039f0bd76703c37def872aadf5254ea0e6735717b593ba1e29"
     },
     {
+      "path": "evidence/2026-10-11/nonempty-reference-lifecycle/controls.log",
+      "bytes": 33800,
+      "sha256": "43a45e8977853208efa3c9f9d50b88cde165a29bc938230e93b71ba122b5c253"
+    },
+    {
+      "path": "evidence/2026-10-11/nonempty-reference-lifecycle/README.md",
+      "bytes": 5701,
+      "sha256": "cefd2f0ed777c4a02db988c184eac075a76a6beb71b0f7cf3267f131a0b9c54b"
+    },
+    {
+      "path": "evidence/2026-10-11/nonempty-reference-lifecycle/result.json",
+      "bytes": 107421,
+      "sha256": "fc22b18db074e234ee92fa8b3deec6ccdff9c9f0de7ec17152d469426485d21b"
+    },
+    {
       "path": "evidence/2026-10-11/portable-tests.json",
       "bytes": 561,
       "sha256": "3f1e752f2e5ba867f21f4bcb14d8db02b5a29c2ef73740b8e42ea60714642918"
@@ -819,23 +834,23 @@
     },
     {
       "path": "portable-controls-result.json",
-      "bytes": 165,
-      "sha256": "03a268428b9710067c22cbe3b5fb00141ece32ae3a7effd204cb9129b0b72319"
+      "bytes": 202,
+      "sha256": "ef3335fc532c8967e6b8f0e34f31f73fd224913084dfc3dc3082134fe4e2b53d"
     },
     {
       "path": "portable-controls.log",
-      "bytes": 33382,
-      "sha256": "452f434e8dedb0fdc8f3da2eb49aa6bfa7a711357f089d2376e26f1724921231"
+      "bytes": 36490,
+      "sha256": "201ee181596947b8f81167c7ff6c13c8d401607c64b73839c2245ce4d02ca511"
     },
     {
       "path": "README.md",
-      "bytes": 5008,
-      "sha256": "de040ce61670ad748a7830bb73b434fcc5f0225f49255e7a47555e87790e775f"
+      "bytes": 5746,
+      "sha256": "6cf8c5da3c3baf223d62927169552d3935c99c1f203f31de269a0d19d680e1c2"
     },
     {
       "path": "run-portable-tests.py",
-      "bytes": 1117,
-      "sha256": "f6849a27be213fda588b93d233ba25cac7f0bc664cd9a487158c33a6224ddda1"
+      "bytes": 1201,
+      "sha256": "596065fe16ea16e8cac4bbebfe9ea10616b3dcce0ef74c24e9705b67f66718f0"
     },
     {
       "path": "scripts/AscetBatchFormatProbe.cs",
@@ -1033,9 +1048,14 @@
       "sha256": "be4f675f18e4b579a8706fd37bf308a6e85cbf4d3427a5d47b0779abe5c94c5a"
     },
     {
+      "path": "scripts/AscetReferenceLeafNonemptyProbe.cs",
+      "bytes": 216,
+      "sha256": "003b75f9c7079a8c4f4ae65bb427b6a3287695c04d94ba8afef411c58e8f9750"
+    },
+    {
       "path": "scripts/AscetReferenceLeafNoopProbe.cs",
-      "bytes": 8696,
-      "sha256": "a157ba56b053a9cf98b8538fa23e6394b491d20e4ce921c85f173233b07ab0d6"
+      "bytes": 9522,
+      "sha256": "ca9c334fcbcf4df56312763b560bdc24b35273ad245c41611ada766d9db64b40"
     },
     {
       "path": "scripts/AscetScopedProbe.cs",
@@ -1434,8 +1454,8 @@
     },
     {
       "path": "scripts/bd_finite_reference_inverse.py",
-      "bytes": 5831,
-      "sha256": "48a6af04c5627004de2b3c5627045388e720747bc22cd1a34f480449868083ed"
+      "bytes": 8602,
+      "sha256": "9015d52b01a2c73520839331402d40e8c54b5bc09e8a6eff6e62dda7501a72e6"
     },
     {
       "path": "scripts/bd_flow_plan.py",
@@ -3758,6 +3778,26 @@
       "sha256": "13b42d4128982b28c42c0ad78afaf85ebbe88ea05bf35599187c96bc9674aedc"
     },
     {
+      "path": "scripts/bde_reference_leaf_nonempty.st",
+      "bytes": 10174,
+      "sha256": "b80a6dd0f9137892e6d3dc1d6f02957ba5265bce07ac3ea5d78b049b916fc901"
+    },
+    {
+      "path": "scripts/bde_reference_leaf_nonempty_collector.st",
+      "bytes": 595,
+      "sha256": "b290b570f037d340298cfa921a0c7c1a461678d2d8289651dcd7cf9139601051"
+    },
+    {
+      "path": "scripts/bde_reference_leaf_nonempty_confirm.py",
+      "bytes": 6362,
+      "sha256": "82758f2e226a3ad78e06c7dd0cdf5a264d79bc6a96bcf9544b55c0c86b199059"
+    },
+    {
+      "path": "scripts/bde_reference_leaf_nonempty_probe.py",
+      "bytes": 12584,
+      "sha256": "681433eca08dd07256d99b7037104cef1c7353d9a1aa891c3fbbb6e10b69e345"
+    },
+    {
       "path": "scripts/bde_reference_leaf_noop.st",
       "bytes": 5183,
       "sha256": "218b83004524f9b6f04e13feb8ab4cbc5ceade484ed7aa939220a6fd87466b81"
@@ -3769,8 +3809,8 @@
     },
     {
       "path": "scripts/bde_reference_leaf_noop_probe.py",
-      "bytes": 14905,
-      "sha256": "1a30a9b2d6af9fcd9467f533ea2fbe3fe2703a2e2e48ab5f5734b1fae061b4ef"
+      "bytes": 16207,
+      "sha256": "490ab4a3c15809aff7726c5236de3cf6ad040144a1fe5e3ea77260cd48ef78aa"
     },
     {
       "path": "scripts/bde_reference_leaf_refusal_confirm.py",
@@ -3781,6 +3821,11 @@
       "path": "scripts/bde_reference_lookup_experiment.py",
       "bytes": 7721,
       "sha256": "00f2e8b987819dbf2a0bd927de3b2db50db7ac20205a09af502e8624e09b3665"
+    },
+    {
+      "path": "scripts/bde_reference_nonempty_increment.py",
+      "bytes": 6363,
+      "sha256": "1a5571d40e0369c23d85241253f58ebb1f129889f03b07e1c5059db5725509ef"
     },
     {
       "path": "scripts/bde_rejection_recovery_experiment.py",
@@ -4823,6 +4868,11 @@
       "sha256": "318057d3f5651ba22b1d6548ee1fbd3a1efb46b4105e4dfdaff04c1c7f05d5f9"
     },
     {
+      "path": "tests/test_bd_finite_reference_lifecycle.py",
+      "bytes": 3553,
+      "sha256": "c21f644e3fded92790e336bf5fe70e74caaf0dc351b1e50122bd02f2b5a27f11"
+    },
+    {
       "path": "tests/test_bd_flow_plan.py",
       "bytes": 3759,
       "sha256": "0f1750fd92100fb2191a803e696b92830717a09c836485728e2b1527a80ee6cb"
@@ -5361,6 +5411,11 @@
       "path": "tests/test_bde_reference_leaf_lifecycle_probe.py",
       "bytes": 6535,
       "sha256": "b4d2479db37932090990dce13d93005b12e3263806a7c505087d96f12c8df5e4"
+    },
+    {
+      "path": "tests/test_bde_reference_leaf_nonempty_probe.py",
+      "bytes": 9962,
+      "sha256": "2fafb9b75849754ce0b86b646ff9e2bae98508146ec66b3f12fe703721df38e7"
     },
     {
       "path": "tests/test_bde_reference_leaf_noop_probe.py",

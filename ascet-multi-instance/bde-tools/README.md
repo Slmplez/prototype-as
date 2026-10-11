@@ -82,7 +82,18 @@ pending evidence remains. Production apply/inverse still refuses because
 nonempty/resized references and general durable inverse remain open. See
 `evidence/2026-10-11/requested-reference-leaf-lifecycle/`.
 
-The selected portable suite passes 183 tests, including the new fixed-handshake,
+Bounded nonempty reciprocal research now also ran source references 1/2/1/absent,
+with seven writes and one deletion on three isolated Module/source records.
+Every planned buffer was read back, and original raw headers/payloads/tails were
+restored. The native strict verdict remains failed because CTError101 sysio
+diagnostic text changed; a fresh two-read connection independently confirms the
+records and absence while reporting exact-observation equality as false. No
+writer replay occurred and production guards were not relaxed. Separate pure
+lifecycle proposals add existence transitions and physical-record coalescing,
+but still have no native executor or durable inverse. See
+`evidence/2026-10-11/nonempty-reference-lifecycle/`.
+
+The selected portable suite passes 200 tests, including the new fixed-handshake,
 full raw/absence and zero-leaf refusal controls. Its actual result is saved in
 `portable-controls.log` and `portable-controls-result.json`.
 It is offline package validation, separate from live native evidence and

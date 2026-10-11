@@ -1,3 +1,13 @@
+## 2026-10-11 Nonempty reciprocal resize and original-record restoration
+
+复用私有 PID56068 / 32631，未关闭、启动或重启。只写隔离组件及其 source 的三条引用记录：source 出站1条→2条→1条→原CTError101 absence，配套更新两个入站记录，共7write/1delete。每次完整 planned bytes 均读回一致；original 入站 raw含未解析tail原样写回，各阶段membership无不一致。184项定向离线控制通过，941份代码/依赖冻结、102次归档源码hash核对通过。
+
+完整观察仅 source absence 的 sysio 诊断不同，原 native `passed=false` 和失败材料保留。新连接两次完整读取与 final actual 一致，独立零native confirmation明确区分 `persistent_reference_records_restored=true` 和 `exact_observation_restored=false`。CTError反编译恢复源显示sysioCode来自CTreeGV/WinError诊断，errorNumber101独立决定undefined对象异常；未调用setter清除诊断，也未放宽生产CURRENT守卫。
+
+前三次失败依次为C#变量遮蔽、未导出准备错误、Smalltalk二元运算结合次序；均未到writer。第四次真正执行后触发诊断差异，原verdict不改写且不重放。新离线生命周期逆候选支持存在性转换、完整after冲突及物理记录合并，仍无native executor，不授予持久inverse。T3.1/T5.1、Message矩阵及完整交付不升级。
+
+[本轮完整证据与命令](../analysis/bde-experiments/2026-10-11/bde-reference-nonempty-increment-01/README.md)。
+
 ## 2026-10-11 Explicit target originals and reference leaf lifecycle
 
 明确新目标键（最多16个唯一20-byte键）进入同次 production prepare，读取原 outgoing targets 与请求 targets 的 union，保留 existing raw 和 CTError101 exact absence。最终生产 prepare/inspect/discard、公开/原生全图 bookends 与 Python/C# 双拒写通过。最终有限观察15条，semantic3,037 / raw4,473 bytes，无 membership 不一致。

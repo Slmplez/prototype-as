@@ -1,5 +1,13 @@
 # BDE delivery status, 2026-10-11
 
+最新增量：隔离 Module/source 的**非空双向引用 1→2→1→原 absence 生命周期**已实测，7 次 leaf write、1 次 delete；三条物理记录每次完整计划 bytes 均原样读回，各阶段 reciprocal membership 无不一致。已有入站记录恢复真正 original 的完整 raw header/payload/tail，没有把新 factory header 替代旧 header。184 项定向离线控制通过。
+
+原生完整观察的原失败 verdict 保留：source CTError101 absence 的 `sysio_code` 从 `0` 变为 Windows 158 诊断文本。其余完整有限观察精确相同；新连接两次读取与最终 actual 一致，独立 confirmation 不调用 native、不重放 writer，确认现存引用记录及原 absence 恢复后只清除本次 pending。`exact_observation_restored=false`，诊断差异仍报告，生产写前守卫未放宽。
+
+新增纯离线 `lifecycle_plan` 规划原 absence 删除和原记录创建，按物理 key/attribute 合并 owner/reciprocal 重复观察；存在性转换要求完整 CURRENT 等于 actual after，冲突抑制整组候选。该规划没有 native executor，也不改变旧 production planner 的 absent 拒写门。整体 T0–T9、通用持久 inverse、T5.1 实际 connect 闭环和 Message 0/60 均仍未完成。本轮未启停 ASCET。
+
+[本轮复算与复现](../analysis/bde-experiments/2026-10-11/bde-reference-nonempty-increment-01/README.md)。以下保留历史检查点。
+
 最新检查点：**明确新目标的原始引用记录已接入同次生产 prepare；已有记录原样写回，以及 source 原不存在记录的创建/删除/精确恢复均有隔离在线证据**。空记录恢复后全部 13 条有限读取（原始 bytes、未解析尾部及 absence）等于真正 original before，编辑器 dirty=0；独立 fresh read 确认后只清除本次 pending，不重放 leaf writer，不改写原失败 verdict。
 
 最终带请求读取为 2 owners / 11 targets / 15 reads，13 existing + 2 absent，semantic 3,037 bytes / raw 4,473 bytes，membership 不一致为 0。生产 v3 prepare/inspect/discard 与 Python/C# 拒写仍通过，public/native bookends 不变。167 项定向控制通过并保存完整日志；不与历史重叠结果累计。

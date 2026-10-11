@@ -1,5 +1,7 @@
 # Block Diagram 编辑自动记录：局部写前/写后日志
 
+2026-10-11 非空研究：保留原before、每阶段完整actual、7次完整planned/raw回执与1次delete结果，再由同epoch新连接两次读取确认。原严格native失败仅涉及absent CTError101 sysio诊断变化；独立确认保留完整差异、原失败verdict不改写，明确`exact_observation_restored=false`。现存record bytes和原absence均恢复时清除确切本次pending，writer_replayed=false；不改动其他epoch pending或restoration hold，不授予生产model-edit/persistent inverse成功。
+
 2026-10-11 引用leaf研究新增：在native准备成功并fsync真正原before后，parent核对运行时/组件/记录存在性才创建跨STORE pending，再发送固定writer命令。原样write或empty create/delete均保留完整before/actual/fresh-read，不是连线model-edit WAL验收。typed zero-leaf refusal要求终止完整回复、两个精确整数0计数与确切pending绑定；完整writer校验失败时保留pending，再由独立fresh read确认，原failed verdict不重写且不重放writer。恢复确认不清除其他epoch pending或restoration hold。通用persistent inverse仍未实现。
 
 2026-10-07 v5 日志已在线验证：`intent → commit_capture_requested → prepared → started → finished`。capture request 必须在原生准备之前落盘；v5 prepared 完整绑定同次原引用基线，不能以少字段或旧 profile 回执降级。当前实验在写入权限检查处拒绝，native apply=0，不能把 `started` 事件本身当成模型已修改。
