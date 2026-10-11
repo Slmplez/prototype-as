@@ -1,5 +1,13 @@
 # ASCET BDE Agent Tools
 
+Latest checkpoint adds isolated existing owner object record patch execution,
+seven preparation guards, six raw-version phases, unrelated-owner preservation,
+replay/stale refusals and independent exact restoration. Serialized graphical
+payload, formal journal binding and full model/source/cache closure remain
+unverified; production connection/history gates remain closed.
+See `evidence/2026-10-11/persistent-owner-patch` and
+`docs/bde-persistent-owner-patch.md`. Full delivery remains false.
+
 Latest checkpoint adds an online-verified isolated Module/source reference leaf
 executor: six phases, 12 writes, 2 deletes, eight lifecycle no-write guards,
 seven preparation refusals and independent exact restoration confirmation.

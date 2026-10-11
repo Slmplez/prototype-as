@@ -6,6 +6,8 @@ import unittest
 ROOT = Path(__file__).resolve().parent
 sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tests')]
 MODULES = (
+    'test_bd_persistent_owner_records', 'test_bde_persistent_owner_noop_probe',
+    'test_bde_persistent_owner_noop_confirm', 'test_bd_persistent_owner_patch', 'test_bde_persistent_owner_patch_probe',
     'test_bde_reference_leaf_noop_probe', 'test_bde_reference_leaf_lifecycle_probe',
     'test_bde_reference_leaf_nonempty_probe', 'test_bd_finite_reference_lifecycle',
     'test_bd_finite_reference_patch', 'test_bde_finite_reference_patch_probe', 'test_bd_finite_reference_patch_journal',

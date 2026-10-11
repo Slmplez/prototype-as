@@ -1,5 +1,7 @@
 # Block Diagram 编辑自动记录：局部写前/写后日志
 
+2026-10-11 owner-record 后续：已实现隔离 Module/Main source 的完整 CTreeSearchObjectRecord 读取与 native patch executor。修正 search global ID 的分段布局，原 raw no-op、六阶段版本字段变更/分项 inverse/redo/inverse 在线通过；source inverse 保留另一 owner 的实际修改。7 类 preparation 拒绝、8 次 replay/stale 拒写、私有导出隔离、新连接完整 owner/reference 双读及 public bookends 精确恢复均通过，本次 pending 已清。此层只验证记录版本字段，尚未验证图形 payload 序列化、模型/source/cache closure 或 formal owner journal invocation；production v3/history 门保持关闭、Message0/60、43 required 与整体交付不升级。未启停 ASCET。[合同](bde-persistent-owner-patch.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-owner-patch-increment-01/README.md)。以下旧段保留历史时点。
+
 2026-10-11 后续：有限 native patch 每次保留完整 before/candidate/actual、物理记录 outcomes、write/delete 计数及诊断差异；私有执行图像与返回的深复制分开。六阶段创建/变长/原raw恢复/删除/重做在线通过，独立新连接双读和零native confirmer 清除本次 pending。正式 journal 新增 `persistent_reference_inverse_request`：只从已确认原 WAL 取 before/actual after，CURRENT 不能替代历史；编码过程无native/WAL写，绑定仍为离线验收。正式 connection 关联模型/source/cache/owner-record 恢复未闭合，不能写成 production inverse 成功。[证据](../analysis/bde-experiments/2026-10-11/bde-finite-patch-increment-01/README.md)。
 
 2026-10-11 非空研究：保留原before、每阶段完整actual、7次完整planned/raw回执与1次delete结果，再由同epoch新连接两次读取确认。原严格native失败仅涉及absent CTError101 sysio诊断变化；独立确认保留完整差异、原失败verdict不改写，明确`exact_observation_restored=false`。现存record bytes和原absence均恢复时清除确切本次pending，writer_replayed=false；不改动其他epoch pending或restoration hold，不授予生产model-edit/persistent inverse成功。

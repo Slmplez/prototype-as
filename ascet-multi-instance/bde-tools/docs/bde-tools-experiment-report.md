@@ -1,5 +1,7 @@
 ## 2026-10-11 Finite native patch executor
 
+2026-10-11 owner-record 后续：已实现隔离 Module/Main source 的完整 CTreeSearchObjectRecord 读取与 native patch executor。修正 search global ID 的分段布局，原 raw no-op、六阶段版本字段变更/分项 inverse/redo/inverse 在线通过；source inverse 保留另一 owner 的实际修改。7 类 preparation 拒绝、8 次 replay/stale 拒写、私有导出隔离、新连接完整 owner/reference 双读及 public bookends 精确恢复均通过，本次 pending 已清。此层只验证记录版本字段，尚未验证图形 payload 序列化、模型/source/cache closure 或 formal owner journal invocation；production v3/history 门保持关闭、Message0/60、43 required 与整体交付不升级。未启停 ASCET。[合同](bde-persistent-owner-patch.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-owner-patch-increment-01/README.md)。以下旧段保留历史时点。
+
 隔离 Module/source 引用执行层已实现，六阶段 1→2→1→absence→2→absence 实际12write/2delete，8项生命周期拒写控制和另外7项真实native准备拒绝通过。空executor证明返回的准备图像不能改动私有执行材料；完整CURRENT在prepare和dispatch两次守卫。最新fresh两读、公开bookends和零native确认精确恢复，只清本次pending。原先CTError诊断失败不改写。208定向离线控制，953源码冻结，277归档hash核对。实际连线、model/source/cache/owner-object恢复、Message0/60、43required和整体交付仍未完成；WAL-bound request仅离线控制，不开放生产history。未启停ASCET。
 
 | 实验 | 请求帧/bytes | 响应帧/bytes | 范围 |

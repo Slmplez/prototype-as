@@ -28,15 +28,15 @@ SOURCES = ('AscetReferenceLeafNoopProbe.cs', 'AscetStructureRead.cs', 'bde_refer
     'bde_value_probe.st', 'bd_module_persistent_references.py', 'bd_persistent_references.py')
 
 
-def run_handshake(command, *, environment, output, authorize, timeout=60, lifecycle=False, nonempty=False, finite_patch=False):
+def run_handshake(command, *, environment, output, authorize, timeout=60, lifecycle=False, nonempty=False, finite_patch=False, owner_noop=False, owner_patch=False):
     """No native writer command until parent validates fsynced before and starts WAL.
 
     The only stdin command is fixed WRITE_NOOP. The native host independently
     rechecks owner/current before writing. A timeout after authorization never
     clears the marker or retries. Failed preparation needs no write quarantine.
     """
-    ready = b'BDE_FINITE_PATCH_READY' if finite_patch else b'BDE_REFERENCE_NONEMPTY_READY' if nonempty else b'BDE_REFERENCE_LIFECYCLE_READY' if lifecycle else b'BDE_REFERENCE_NOOP_READY'
-    writer_command = b'EXECUTE_FINITE_PATCH_LIFECYCLE\n' if finite_patch else b'WRITE_RECIPROCAL_RESIZE_AND_RESTORE\n' if nonempty else b'WRITE_EMPTY_AND_REMOVE\n' if lifecycle else b'WRITE_NOOP\n'
+    ready = b'BDE_OWNER_PATCH_READY' if owner_patch else b'BDE_PERSISTENT_OWNER_READY' if owner_noop else b'BDE_FINITE_PATCH_READY' if finite_patch else b'BDE_REFERENCE_NONEMPTY_READY' if nonempty else b'BDE_REFERENCE_LIFECYCLE_READY' if lifecycle else b'BDE_REFERENCE_NOOP_READY'
+    writer_command = b'EXECUTE_OWNER_PATCH_LIFECYCLE\n' if owner_patch else b'WRITE_ORIGINAL_OWNER_RECORDS_NOOP\n' if owner_noop else b'EXECUTE_FINITE_PATCH_LIFECYCLE\n' if finite_patch else b'WRITE_RECIPROCAL_RESIZE_AND_RESTORE\n' if nonempty else b'WRITE_EMPTY_AND_REMOVE\n' if lifecycle else b'WRITE_NOOP\n'
     with (output / 'native.stderr.log').open('wb') as stderr:
         child = subprocess.Popen(command, env=environment, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=stderr)
         first_line = queue.Queue(maxsize=1)
@@ -98,7 +98,7 @@ def verify_native(native, domain, component):
     return summarize(after, component_oid=domain['oid'])
 
 
-def main(lifecycle=False, nonempty=False, finite_patch=False):
+def main(lifecycle=False, nonempty=False, finite_patch=False, owner_noop=False, owner_patch=False):
     lifecycle = lifecycle or nonempty
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--read-probe', type=Path, required=True)
@@ -129,10 +129,17 @@ def main(lifecycle=False, nonempty=False, finite_patch=False):
     if finite_patch:
         sources += ('AscetFiniteReferencePatchProbe.cs', 'bde_finite_reference_patch.st',
             'bde_finite_reference_patch_probe.st', 'bde_finite_reference_patch_probe.py', 'bd_finite_reference_patch.py')
+    if owner_noop:
+        sources += ('AscetPersistentOwnerNoopProbe.cs', 'bde_persistent_owner_records.st',
+            'bde_persistent_owner_noop.st', 'bd_persistent_owner_records.py', 'bde_persistent_owner_noop_probe.py')
+    if owner_patch:
+        sources += ('AscetPersistentOwnerPatchProbe.cs', 'bde_persistent_owner_records.st',
+            'bde_persistent_owner_patch.st', 'bde_persistent_owner_patch_probe.st',
+            'bd_persistent_owner_records.py', 'bd_persistent_owner_patch.py', 'bde_persistent_owner_patch_probe.py')
     inputs = [service.ROOT / 'scripts' / name for name in sources] + [Path(__file__)]
     hashes = {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in inputs}
     for path in inputs: shutil.copyfile(path, output / path.name)
-    result = dict(profile='bde_finite_reference_patch_experiment_v1' if finite_patch else 'bde_reciprocal_reference_leaf_nonempty_experiment_v1' if nonempty else 'bde_absent_reference_leaf_lifecycle_experiment_v1' if lifecycle else 'bde_existing_reference_leaf_noop_experiment_v1', passed=False,
+    result = dict(profile='bde_persistent_owner_patch_experiment_v1' if owner_patch else 'bde_persistent_owner_noop_experiment_v1' if owner_noop else 'bde_finite_reference_patch_experiment_v1' if finite_patch else 'bde_reciprocal_reference_leaf_nonempty_experiment_v1' if nonempty else 'bde_absent_reference_leaf_lifecycle_experiment_v1' if lifecycle else 'bde_existing_reference_leaf_noop_experiment_v1', passed=False,
         domain=domain, component=component, read_probe=str(prior), source_manifest=hashes,
         port=port, pid=pid,
         ascet_started_or_restarted=False, native_inverse_implemented=False, full_delivery=False)
@@ -143,7 +150,7 @@ def main(lifecycle=False, nonempty=False, finite_patch=False):
         compiler = Path(os.environ.get('WINDIR', 'C:/Windows')) / 'Microsoft.NET/Framework/v4.0.30319/csc.exe'
         dll = Path(os.environ.get('ASCET_BD_DLL', 'E:/ETAS/ASCET6.4/cebra/Etas.AscetNET.dll'))
         shutil.copyfile(dll, output / dll.name)
-        entry = 'AscetFiniteReferencePatchProbe' if finite_patch else 'AscetReferenceLeafNonemptyProbe' if nonempty else 'AscetReferenceLeafLifecycleProbe' if lifecycle else 'AscetReferenceLeafNoopProbe'
+        entry = 'AscetPersistentOwnerPatchProbe' if owner_patch else 'AscetPersistentOwnerNoopProbe' if owner_noop else 'AscetFiniteReferencePatchProbe' if finite_patch else 'AscetReferenceLeafNonemptyProbe' if nonempty else 'AscetReferenceLeafLifecycleProbe' if lifecycle else 'AscetReferenceLeafNoopProbe'
         binary = output / (entry + '.exe')
         build = subprocess.run([str(compiler), '/nologo', '/platform:x86', '/main:' + entry,
             '/r:' + str(dll), '/r:System.Web.Extensions.dll', '/out:' + str(binary),
@@ -156,7 +163,7 @@ def main(lifecycle=False, nonempty=False, finite_patch=False):
         with service.live_lock():
             pending.check(domain)
             if endpoint_process(port) != pid: raise ValueError('Listener changed before no-op research')
-            purpose = 'isolated_finite_reference_patch_lifecycle' if finite_patch else 'isolated_reciprocal_reference_resize_restore' if nonempty else 'absent_reference_empty_lifecycle' if lifecycle else 'existing_reference_noop'
+            purpose = 'isolated_persistent_owner_patch_lifecycle' if owner_patch else 'isolated_persistent_owner_noop' if owner_noop else 'isolated_finite_reference_patch_lifecycle' if finite_patch else 'isolated_reciprocal_reference_resize_restore' if nonempty else 'absent_reference_empty_lifecycle' if lifecycle else 'existing_reference_noop'
             token = 'edit_' + fingerprint(dict(domain=domain, purpose=purpose))
             marker = None
             def authorize():
@@ -166,7 +173,11 @@ def main(lifecycle=False, nonempty=False, finite_patch=False):
                         or prepared['process_epoch'] != domain['process_epoch'] or prepared['database'] != domain['database']
                         or prepared['component_oid'] != domain['oid'] or prepared['component'] != component):
                     raise ValueError('Exact same-runtime original before required before writer authorization')
-                before = validate(prepared['before'], component_oid=domain['oid'])
+                if owner_noop or owner_patch:
+                    from bd_persistent_owner_records import validate as owner_validate
+                    before = owner_validate(prepared['before'], component_oid=domain['oid'])['references']
+                else:
+                    before = validate(prepared['before'], component_oid=domain['oid'])
                 row = before['owners'][1 if lifecycle else 0]['records'][0]
                 if row['read_status'] != ('absent' if lifecycle else 'record'):
                     raise ValueError('Exact original record existence required before fixed research dispatch')
@@ -174,7 +185,7 @@ def main(lifecycle=False, nonempty=False, finite_patch=False):
                     from bde_reference_leaf_nonempty_probe import validate_original
                     validate_original(before, domain)
                 if endpoint_process(port) != pid: raise ValueError('Listener changed before leaf authorization')
-                marker = pending.begin(domain, 'research_finite_reference_patch_lifecycle' if finite_patch else 'research_reciprocal_reference_resize_restore' if nonempty else 'research_absent_reference_lifecycle' if lifecycle else 'research_existing_reference_noop', token,
+                marker = pending.begin(domain, 'research_persistent_owner_patch_lifecycle' if owner_patch else 'research_persistent_owner_noop' if owner_noop else 'research_finite_reference_patch_lifecycle' if finite_patch else 'research_reciprocal_reference_resize_restore' if nonempty else 'research_absent_reference_lifecycle' if lifecycle else 'research_existing_reference_noop', token,
                     context=dict(evidence=str(output), original_material=str(output / 'prepared.json'),
                         original_sha256=fingerprint(prepared)))
                 result['pending_record'] = str(marker); result['parent_validated_original_before'] = True; save()
@@ -183,7 +194,7 @@ def main(lifecycle=False, nonempty=False, finite_patch=False):
                     environment.update(ASCET_BD_ENDPOINT_PORT=str(port), ASCET_BD_PROBE_PORT=str(wire['port']), ASCET_BD_NATIVE_TRACE='1')
                     try:
                         exit_code = run_handshake([str(binary), str(pid), domain['process_epoch'], domain['database'],
-                            component, str(output)], environment=environment, output=output, authorize=authorize, lifecycle=lifecycle, nonempty=nonempty, finite_patch=finite_patch)
+                            component, str(output)], environment=environment, output=output, authorize=authorize, lifecycle=lifecycle, nonempty=nonempty, finite_patch=finite_patch, owner_noop=owner_noop, owner_patch=owner_patch)
                     except (subprocess.TimeoutExpired, TimeoutError):
                         result['native_timeout'] = True
                         raise
@@ -213,7 +224,13 @@ def main(lifecycle=False, nonempty=False, finite_patch=False):
                     if marker is None: raise ValueError('Typed refusal without original parent authorization')
                     pending.confirmed(marker); result['pending_cleared_typed_no_writer_refusal'] = True
                 else:
-                    if finite_patch:
+                    if owner_patch:
+                        from bde_persistent_owner_patch_probe import verify_owner_patch
+                        result['summary'] = verify_owner_patch(observed, domain)
+                    elif owner_noop:
+                        from bde_persistent_owner_noop_probe import verify_owner_noop
+                        result['summary'] = verify_owner_noop(observed, domain)
+                    elif finite_patch:
                         from bde_finite_reference_patch_probe import verify_patch_probe
                         result['summary'] = verify_patch_probe(observed, domain)
                     elif nonempty:

@@ -1,5 +1,7 @@
 # BDE tools v0.4：读取、精确编辑、修改记录与原生显示
 
+2026-10-11 owner-record 后续：已实现隔离 Module/Main source 的完整 CTreeSearchObjectRecord 读取与 native patch executor。修正 search global ID 的分段布局，原 raw no-op、六阶段版本字段变更/分项 inverse/redo/inverse 在线通过；source inverse 保留另一 owner 的实际修改。7 类 preparation 拒绝、8 次 replay/stale 拒写、私有导出隔离、新连接完整 owner/reference 双读及 public bookends 精确恢复均通过，本次 pending 已清。此层只验证记录版本字段，尚未验证图形 payload 序列化、模型/source/cache closure 或 formal owner journal invocation；production v3/history 门保持关闭、Message0/60、43 required 与整体交付不升级。未启停 ASCET。[合同](bde-persistent-owner-patch.md) · [证据](../analysis/bde-experiments/2026-10-11/bde-owner-patch-increment-01/README.md)。以下旧段保留历史时点。
+
 2026-10-11 后续：有限引用 native executor 已实现，只接受隔离 Module/source 的五字段物理 patch，完整 CURRENT 在 prepare/dispatch 双重核对，完整 raw/header/tail readback、存在性恢复和 reciprocal 候选一致性先验检查。六阶段12write/2delete及8拒写、7类native准备控制、导出深复制隔离与独立fresh精确恢复通过。Python/WAL 固定参数编码完成但 formal invocation 未验；production v3/history 仍关闭，owner-object/model/source/cache closure 是下一依赖。[合同](bde-finite-reference-patch.md)。下方旧“无执行器”按历史时点保留。
 
 2026-10-11 非空研究层：固定 `WRITE_RECIPROCAL_RESIZE_AND_RESTORE` 握手在原before落盘/pending之后执行，一次7write/1delete完成两个隔离owner的双向引用1/2/1/absence。完整计划按64+21N分配，并保留原入站tail；逆向写回直接使用原完整raw，不能假设原header与新factory相同。独立新连接确认现存记录与absence恢复；CTError101 sysio诊断差异单独保留，整观察相等为false。`lifecycle_plan`按物理key合并重复观察、存在性转换要求完整actual CURRENT；仅离线候选，无native执行器，生产v3门不变。

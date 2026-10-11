@@ -19,7 +19,8 @@ class AscetConnectCompileProbe
         "bde_commit_reference_record.st", "bde_module_persistent_references.st", "bde_value_probe.st",
         "bde_reference_leaf_noop.st", "bde_detached_value_reader.st", "bde_reference_leaf_lifecycle.st",
         "bde_connect_preparation_guard_probe.st", "bde_finite_reference_patch.st", "bde_finite_reference_patch_probe.st",
-        "bde_finite_reference_patch_guard_probe.st"
+        "bde_finite_reference_patch_guard_probe.st", "bde_persistent_owner_records.st", "bde_persistent_owner_noop.st",
+        "bde_persistent_owner_patch.st", "bde_persistent_owner_patch_probe.st"
     };
 
     static object ListTrialModules(AscetDataBase database)
@@ -39,7 +40,7 @@ class AscetConnectCompileProbe
         }
     }
 
-    static object ReadReferences(AscetDataBase database, string path, bool persistent, string[] targets, bool guardControls, bool finiteGuardControls)
+    static object ReadReferences(AscetDataBase database, string path, bool persistent, string[] targets, bool guardControls, bool finiteGuardControls, bool ownerRecords)
     {
         path = path.Trim('\\'); int slash = path.LastIndexOf('\\');
         if (slash < 1 || slash == path.Length - 1 || path.Contains(".."))
@@ -93,6 +94,24 @@ class AscetConnectCompileProbe
                     persistentImages.Add(AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(encoded)));
                 }
                 result["persistent_probe_blocks_invoked"] = 2;
+                if (ownerRecords) {
+                    var ownerFactory = AscetStructureRead.Compile(component, "bde_persistent_owner_records.st"); blocks.Add(ownerFactory);
+                    var bindOwner = new InstanceMethodCall(ownerFactory, "value:", component);
+                    bindOwner.appendParameter(persistentReader); component.call(bindOwner);
+                    var ownerReader = bindOwner.ResultRemoteObject; blocks.Add(ownerReader);
+                    var bindOwnerSerializer = new InstanceMethodCall(serializer, "value:", component);
+                    bindOwnerSerializer.appendParameter(ownerReader); component.call(bindOwnerSerializer);
+                    var ownerProbe = bindOwnerSerializer.ResultRemoteObject; blocks.Add(ownerProbe);
+                    var ownerImages = new List<object>(); result["owner_observations"] = ownerImages;
+                    for (int i = 0; i < 2; ++i) {
+                        var call = new InstanceMethodCall(ownerProbe, "value:", component);
+                        call.appendParameter(component); component.call(call);
+                        string encoded = call.ResultString;
+                        if (encoded.StartsWith("BDE_", StringComparison.Ordinal)) throw new Exception(encoded);
+                        ownerImages.Add(AscetStructureRead.Decode(AscetStructureRead.Json.DeserializeObject(encoded)));
+                    }
+                    result["owner_probe_blocks_invoked"] = 2;
+                }
                 if (finiteGuardControls) {
                     Func<Identifiable, Identifiable, Identifiable> bindNative = (f, p) => {
                         var c = new InstanceMethodCall(f, "value:", component); c.appendParameter(p); component.call(c);
@@ -138,6 +157,8 @@ class AscetConnectCompileProbe
 
     static int Main(string[] args)
     {
+        bool ownerRecords = args.Length > 0 && args[args.Length - 1] == "--owner-records";
+        if (ownerRecords) Array.Resize(ref args, args.Length - 1);
         bool guardControls = args.Length > 0 && args[args.Length - 1] == "--native-guard-controls";
         bool finiteGuardControls = args.Length > 0 && args[args.Length - 1] == "--finite-guard-controls";
         if (guardControls || finiteGuardControls) Array.Resize(ref args, args.Length - 1);
@@ -155,6 +176,7 @@ class AscetConnectCompileProbe
         Array.Sort(targets, StringComparer.Ordinal);
         if (guardControls && (args.Length < 3 || args[2] == "--list-trials")) return 2;
         if (finiteGuardControls && !persistent) return 2;
+        if (ownerRecords && !persistent) return 2;
         var result = new Dictionary<string, object> {
             { "profile", "bde_connect_fixed_compile_probe_v1" }, { "passed", false },
             { "model_setters_called", 0 }, { "store_called", false },
@@ -201,7 +223,7 @@ class AscetConnectCompileProbe
             }
             if (args.Length >= 3) {
                 if (args[2] == "--list-trials") result["trial_modules"] = ListTrialModules(database);
-                else result["module_read"] = ReadReferences(database, args[2], persistent, targets, guardControls, finiteGuardControls);
+                else result["module_read"] = ReadReferences(database, args[2], persistent, targets, guardControls, finiteGuardControls, ownerRecords);
             }
             var current = ascet.GetCurrentDataBase();
             try {

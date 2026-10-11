@@ -24,7 +24,8 @@ SOURCES = ('AscetConnectCompileProbe.cs', 'AscetStructureRead.cs',
     'bde_reference_leaf_noop.st', 'bde_detached_value_reader.st', 'bde_reference_leaf_lifecycle.st',
     'bde_connect_preparation_guard_probe.st', 'bde_finite_reference_patch.st', 'bde_finite_reference_patch_probe.st',
     'bde_finite_reference_patch_guard_probe.st', 'bd_finite_reference_patch.py', 'bd_finite_reference_inverse.py',
-    'bd_edit_journal.py')
+    'bd_edit_journal.py', 'bde_persistent_owner_records.st', 'bde_persistent_owner_noop.st', 'bd_persistent_owner_records.py',
+    'bde_persistent_owner_patch.st', 'bd_persistent_owner_patch.py', 'bde_persistent_owner_patch_probe.st')
 
 
 def main():
@@ -36,6 +37,7 @@ def main():
     selection.add_argument('--component', help='Optional exact existing Module path; read only')
     selection.add_argument('--list-trials', action='store_true', help='Read existing isolated ModuleBDE names only')
     parser.add_argument('--persistent-references', action='store_true', help='Also read finite Module/source raw reference records twice; requires --component')
+    parser.add_argument('--owner-records', action='store_true', help='Also read complete isolated Module/source search object records twice; requires --persistent-references')
     control_selection = parser.add_mutually_exclusive_group()
     control_selection.add_argument('--native-guard-controls', action='store_true', help='Execute staged guard on three detached non-executable test frames; no production edit')
     control_selection.add_argument('--finite-guard-controls', action='store_true', help='Execute finite patch preparation controls plus empty zero-writer executor; requires complete persistent read')
@@ -48,6 +50,8 @@ def main():
         parser.error('--target-key requires --persistent-references')
     if args.persistent_references and not args.component:
         parser.error('--persistent-references requires --component')
+    if args.owner_records and (not args.persistent_references or args.allow_incomplete_observation):
+        parser.error('--owner-records requires complete --persistent-references')
     if args.native_guard_controls and not args.component:
         parser.error('--native-guard-controls requires --component')
     if args.finite_guard_controls and (not args.persistent_references or not args.component):
@@ -100,7 +104,8 @@ def main():
                             + (['--persistent-references'] if args.persistent_references else [])
                             + ([','.join(targets)] if targets else [])
                             + (['--native-guard-controls'] if args.native_guard_controls else [])
-                            + (['--finite-guard-controls'] if args.finite_guard_controls else []),
+                            + (['--finite-guard-controls'] if args.finite_guard_controls else [])
+                            + (['--owner-records'] if args.owner_records else []),
                             env=environment, capture_output=True, timeout=60)
                         (output / 'native.stdout.log').write_bytes(native.stdout)
                         (output / 'native.stderr.log').write_bytes(native.stderr)
@@ -147,6 +152,13 @@ def main():
                 result['incomplete_observation_allowed'] = args.allow_incomplete_observation
                 result['persistent_reference_summary'] = summarize(values[0], component_oid=read['component_oid'],
                     require_complete=not args.allow_incomplete_observation)
+            if args.owner_records:
+                from bd_persistent_owner_records import validate as owner_validate
+                owners = [owner_validate(value, component_oid=read['component_oid']) for value in read['owner_observations']]
+                if (len(owners) != 2 or owners[0] != owners[1]
+                        or any(value['references'] != values[0] for value in owners)):
+                    raise ValueError('Two full owner observations and independent references must agree')
+                result['persistent_owner_records_stable'] = True
             if args.finite_guard_controls:
                 guard = read['finite_patch_guard_controls']
                 if (guard['profile'] != 'finite_reference_patch_native_guards_v1'
