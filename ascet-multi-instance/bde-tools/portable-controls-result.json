@@ -1,7 +1,7 @@
 {
   "profile": "bde_portable_offline_controls_v1",
   "passed": true,
-  "tests": 281,
+  "tests": 302,
   "exit_code": 0,
   "online_acceptance": false,
   "full_delivery": false

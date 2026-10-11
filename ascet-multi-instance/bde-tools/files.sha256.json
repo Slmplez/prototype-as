@@ -129,8 +129,8 @@
     },
     {
       "path": "docs/bde-delivery-status.md",
-      "bytes": 165681,
-      "sha256": "35feb6c6fa1943df5c839e28fcd34912a489fbdc4a6cdc915a19e74fe6bfe92b"
+      "bytes": 166892,
+      "sha256": "82b2c8e25f88737bee44ce291947b9281e90cd17412dc69b779d24c2a77a685e"
     },
     {
       "path": "docs/bde-detached-graphical-material.md",
@@ -154,8 +154,8 @@
     },
     {
       "path": "docs/bde-fresh-source-serializer.md",
-      "bytes": 5147,
-      "sha256": "4400e4a2c7c3724644d79885f152461bcf001d5c8e10e17156455f7b19a8cbc5"
+      "bytes": 6855,
+      "sha256": "74cef6a24c49233a04996d668d18de66f456b1ca75729c5f3297c1bed8b5da87"
     },
     {
       "path": "docs/bde-full-read-performance.md",
@@ -349,13 +349,13 @@
     },
     {
       "path": "docs/bde-tools-experiment-report.md",
-      "bytes": 509456,
-      "sha256": "346a69ec6e45ea96eaa97b82d46b5e9b2cc38e60124626a9a6b815e97bce26b9"
+      "bytes": 510667,
+      "sha256": "a96fa2466067307eeb5731aa55cc1a3042b67e86160e1708976558af3cca9a4c"
     },
     {
       "path": "docs/bde-tools-task-nodes-v1.md",
-      "bytes": 9512,
-      "sha256": "b45dcf046e01a28cf632f579085451ee8d7e07ad35404b164883854f6a8be053"
+      "bytes": 10723,
+      "sha256": "aa5cb1d25316cc13ae70e1e53836dbf86fb249982e012bc457b2d08af35c60cb"
     },
     {
       "path": "docs/bde-tools-tasks-and-goals.md",
@@ -466,6 +466,16 @@
       "path": "Doge/src/tools/BlockDiagramTool/BlockDiagramWriteContract.test.ts",
       "bytes": 1198,
       "sha256": "3758f3f76bf75ead135947db77c29a9fad823117fe97f99d99718fb4264d5f2d"
+    },
+    {
+      "path": "evidence/2026-10-11/changed-source-record/README.md",
+      "bytes": 2098,
+      "sha256": "cee609d4ddb96a21f29eaa6b103cb92f7247a35683763701f685d3e64e6a350a"
+    },
+    {
+      "path": "evidence/2026-10-11/changed-source-record/result.json",
+      "bytes": 7226,
+      "sha256": "67a4a1c22a0da6e54132c3a1c1f7b287152be4e141185956462a53d4716e8741"
     },
     {
       "path": "evidence/2026-10-11/finite-module-references/bde-finite-connect-preflight-01/before.json",
@@ -919,18 +929,18 @@
     },
     {
       "path": "manifest.json",
-      "bytes": 1375,
-      "sha256": "aa5299659c7f22c438c3a3eedbf309c8c8a9ee0ca251206c9c5bfc280e534998"
+      "bytes": 1407,
+      "sha256": "f822bc33680c00643039770d6de7ff28bd38d65d6477e80c09eaac79231c8971"
     },
     {
       "path": "portable-controls-result.json",
       "bytes": 168,
-      "sha256": "466329863e3b20106c271909dce6c182d4127c92c294f46d9c70108091e5f7dc"
+      "sha256": "7007dfda45e4332fa11adbadd05a138a1dc73d995378f717564e7cf9296e8f77"
     },
     {
       "path": "portable-controls.log",
-      "bytes": 50048,
-      "sha256": "85debdff2abfaf1afb181a83933ecd67b23c3b9aae9df2aecfa9b124b0205adc"
+      "bytes": 53861,
+      "sha256": "43ce992a12518c78559cbfded061a29d9e279a368e8ffba0052ff70e4e207814"
     },
     {
       "path": "README.md",
@@ -939,8 +949,8 @@
     },
     {
       "path": "run-portable-tests.py",
-      "bytes": 1615,
-      "sha256": "cc922eb7b7035ad93bf8504e1bf9d3f3ae266049414883256844365136e3b3c4"
+      "bytes": 1712,
+      "sha256": "185170155a844e309cc9e28ffb553196b6c071e8a283d2411abe4eb04bc40d88"
     },
     {
       "path": "scripts/AscetBatchFormatProbe.cs",
@@ -1098,6 +1108,11 @@
       "sha256": "31f37a2d72b4daf55c5eb48004f9d52a29e8d3be7d49508d0129037ed05cb570"
     },
     {
+      "path": "scripts/AscetFreshLayoutProbe.cs",
+      "bytes": 8212,
+      "sha256": "0bcccd95b65d25270d0c78f7fb95a860bde05f5fb8b178800ec91e828b024e83"
+    },
+    {
       "path": "scripts/AscetFreshSerializerProbe.cs",
       "bytes": 8024,
       "sha256": "3de19cee3339ccee8fd23d5e0c8da58585f328e14c488495dec127cec0743756"
@@ -1186,6 +1201,11 @@
       "path": "scripts/AscetSignalInterfaceRead.cs",
       "bytes": 13973,
       "sha256": "f208ee9ccf939e99ec8b5fa76eb722dadb634e32a6fcaa2019c839adad5f24ed"
+    },
+    {
+      "path": "scripts/AscetSourcePayloadProbe.cs",
+      "bytes": 8346,
+      "sha256": "ed50300cb4f91463eafecc3e544025afd1d3c42bd9985c6d0da828e285d01a09"
     },
     {
       "path": "scripts/AscetStructureDecodeTests.cs",
@@ -1796,6 +1816,11 @@
       "path": "scripts/bd_scoped.py",
       "bytes": 5925,
       "sha256": "60e7673c8e6095331f8046b16738f34dc1975fe025ad2ca4c6fdcadc2239554e"
+    },
+    {
+      "path": "scripts/bd_serialized_source_candidate.py",
+      "bytes": 2512,
+      "sha256": "6b4b7992742dffa0808377a68d7239d12e42a8836d1caa4013857db6b8b0ea5e"
     },
     {
       "path": "scripts/bd_serializer_configuration.py",
@@ -3198,6 +3223,11 @@
       "sha256": "3cfe59fe917061b677d2907113bea07d02c0a779510b7b7481193b09177adec0"
     },
     {
+      "path": "scripts/bde_fresh_serializer_layout_after.st",
+      "bytes": 12893,
+      "sha256": "0e0de59350f386b83d7f48e8c9735008492ee55e78d52a3e58804e0d3b3404c8"
+    },
+    {
       "path": "scripts/bde_fresh_serializer_prepare.st",
       "bytes": 13889,
       "sha256": "c34677d768f356e98b6a521bf95d1b8ced965f69e637ecf0aa2fe58ad36a57fb"
@@ -3868,6 +3898,16 @@
       "sha256": "13a17b0a2c338a557c02c8670a3edf59d39c7d86951b4956d18491c83592726c"
     },
     {
+      "path": "scripts/bde_private_layout_confirm.py",
+      "bytes": 7056,
+      "sha256": "02240b491ab7adec859995e68d6850ff07092f58df2da2c593eee3dc588caa76"
+    },
+    {
+      "path": "scripts/bde_private_layout_probe.py",
+      "bytes": 15910,
+      "sha256": "f837606a782ec09d97b67534137aedb20c5a050a31f168ed7491ccb496eccb67"
+    },
+    {
       "path": "scripts/bde_private_physical_experiment.py",
       "bytes": 16153,
       "sha256": "45f656de0ce5d7ba2d3583756b6413e1cbec82bdcfce344c6798b87a8527f8b9"
@@ -4079,8 +4119,8 @@
     },
     {
       "path": "scripts/bde_reference_leaf_noop_probe.py",
-      "bytes": 19759,
-      "sha256": "d3dc30a98219e1fa71f8000e7ce1f8b78f1a0b30d00997d375ecc599dcf2c174"
+      "bytes": 20108,
+      "sha256": "ca8a2fa92b89c322ce4e2548980423f48971f89f55dc6c2a4c6c46870c4d2b96"
     },
     {
       "path": "scripts/bde_reference_leaf_refusal_confirm.py",
@@ -4351,6 +4391,26 @@
       "path": "scripts/bde_source_normalization_experiment.py",
       "bytes": 6013,
       "sha256": "8d0926f8d76ef09388bb8284e9493e9d6f1c13d05b02abb06797f4a7dfdca550"
+    },
+    {
+      "path": "scripts/bde_source_payload_confirm.py",
+      "bytes": 199,
+      "sha256": "610948a9449161c8f47dd13c44d281fbad15c2a8545bc4b91cac3e37bbcbb8f8"
+    },
+    {
+      "path": "scripts/bde_source_payload_increment.py",
+      "bytes": 7649,
+      "sha256": "86863de61c3f37b98356a5bdfc0d6533bfff370938f594224a532038c1532a35"
+    },
+    {
+      "path": "scripts/bde_source_payload_lifecycle.st",
+      "bytes": 8165,
+      "sha256": "5eb26fb6b3f6df7a0c9c9ecc106cf27ef3f5d20b8cc5991674734ce1f2aa1023"
+    },
+    {
+      "path": "scripts/bde_source_payload_probe.py",
+      "bytes": 8260,
+      "sha256": "ce366daf7d1472f755e2d6e5b9ad5dee4acd3139801fe89460cc95f7e88b5312"
     },
     {
       "path": "scripts/bde_source_structural_correspondence.st",
@@ -5708,6 +5768,11 @@
       "sha256": "4d3fbee4c0db39bba7fecb988bf8bd6c9f929cc9ddbb508089b04c8a31806034"
     },
     {
+      "path": "tests/test_bde_private_layout_probe.py",
+      "bytes": 13041,
+      "sha256": "dbec01874ecc2c257d479061ccf3f41c485c7946d1d847e68c85b26fab1f4258"
+    },
+    {
       "path": "tests/test_bde_recovery_record_audit.py",
       "bytes": 3864,
       "sha256": "9f5cebca1040f9a1842d440bfc7a50f2a08a55f40bea25a903a16e70fc0fd6a4"
@@ -5756,6 +5821,11 @@
       "path": "tests/test_bde_scope_lifecycle_experiment.py",
       "bytes": 2794,
       "sha256": "fd4582c7914a8a736b83602f02a27cc88d6ec0507dc9855d0ae36ea3be6aef84"
+    },
+    {
+      "path": "tests/test_bde_source_payload_probe.py",
+      "bytes": 9513,
+      "sha256": "c85526b2bd4a5359b50047d84229149cdebb4fa2b9697f73b0a5307d30e38533"
     },
     {
       "path": "tests/test_bde_transaction_boundary_audit.py",

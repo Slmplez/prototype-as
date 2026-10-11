@@ -28,17 +28,17 @@ SOURCES = ('AscetReferenceLeafNoopProbe.cs', 'AscetStructureRead.cs', 'bde_refer
     'bde_value_probe.st', 'bd_module_persistent_references.py', 'bd_persistent_references.py')
 
 
-def run_handshake(command, *, environment, output, authorize, timeout=60, lifecycle=False, nonempty=False, finite_patch=False, owner_noop=False, owner_patch=False, serializer_dump=False, serializer_extract=False, serializer_finish=False):
+def run_handshake(command, *, environment, output, authorize, timeout=60, lifecycle=False, nonempty=False, finite_patch=False, owner_noop=False, owner_patch=False, serializer_dump=False, serializer_extract=False, serializer_finish=False, private_layout=False, source_payload=False):
     """No native writer command until parent validates fsynced before and starts WAL.
 
     The only stdin command is fixed WRITE_NOOP. The native host independently
     rechecks owner/current before writing. A timeout after authorization never
     clears the marker or retries. Failed preparation needs no write quarantine.
     """
-    if sum(bool(x) for x in (finite_patch, owner_noop, owner_patch, serializer_dump, serializer_extract, serializer_finish)) > 1 or ((serializer_extract or serializer_finish) and (lifecycle or nonempty)):
+    if sum(bool(x) for x in (finite_patch, owner_noop, owner_patch, serializer_dump, serializer_extract, serializer_finish, private_layout, source_payload)) > 1 or ((serializer_extract or serializer_finish or private_layout or source_payload) and (lifecycle or nonempty)):
         raise ValueError('Conflicting research handshake modes')
-    ready = b'BDE_FRESH_FINISH_READY' if serializer_finish else b'BDE_FRESH_EXTRACT_READY' if serializer_extract else b'BDE_FRESH_SERIALIZER_READY' if serializer_dump else b'BDE_OWNER_PATCH_READY' if owner_patch else b'BDE_PERSISTENT_OWNER_READY' if owner_noop else b'BDE_FINITE_PATCH_READY' if finite_patch else b'BDE_REFERENCE_NONEMPTY_READY' if nonempty else b'BDE_REFERENCE_LIFECYCLE_READY' if lifecycle else b'BDE_REFERENCE_NOOP_READY'
-    writer_command = b'FINISH_EXISTING_LOADED_SOURCE_ONCE\n' if serializer_finish else b'EXTRACT_RETAINED_SOURCE_ONCE\n' if serializer_extract else b'SERIALIZE_FRESH_SOURCE_ONCE\n' if serializer_dump else b'EXECUTE_OWNER_PATCH_LIFECYCLE\n' if owner_patch else b'WRITE_ORIGINAL_OWNER_RECORDS_NOOP\n' if owner_noop else b'EXECUTE_FINITE_PATCH_LIFECYCLE\n' if finite_patch else b'WRITE_RECIPROCAL_RESIZE_AND_RESTORE\n' if nonempty else b'WRITE_EMPTY_AND_REMOVE\n' if lifecycle else b'WRITE_NOOP\n'
+    ready = b'BDE_SOURCE_PAYLOAD_READY' if source_payload else b'BDE_FRESH_LAYOUT_READY' if private_layout else b'BDE_FRESH_FINISH_READY' if serializer_finish else b'BDE_FRESH_EXTRACT_READY' if serializer_extract else b'BDE_FRESH_SERIALIZER_READY' if serializer_dump else b'BDE_OWNER_PATCH_READY' if owner_patch else b'BDE_PERSISTENT_OWNER_READY' if owner_noop else b'BDE_FINITE_PATCH_READY' if finite_patch else b'BDE_REFERENCE_NONEMPTY_READY' if nonempty else b'BDE_REFERENCE_LIFECYCLE_READY' if lifecycle else b'BDE_REFERENCE_NOOP_READY'
+    writer_command = b'WRITE_PRIVATE_LAYOUT_SOURCE_AND_RESTORE_ONCE\n' if source_payload else b'SERIALIZE_PRIVATE_LAYOUT_AFTER_ONCE\n' if private_layout else b'FINISH_EXISTING_LOADED_SOURCE_ONCE\n' if serializer_finish else b'EXTRACT_RETAINED_SOURCE_ONCE\n' if serializer_extract else b'SERIALIZE_FRESH_SOURCE_ONCE\n' if serializer_dump else b'EXECUTE_OWNER_PATCH_LIFECYCLE\n' if owner_patch else b'WRITE_ORIGINAL_OWNER_RECORDS_NOOP\n' if owner_noop else b'EXECUTE_FINITE_PATCH_LIFECYCLE\n' if finite_patch else b'WRITE_RECIPROCAL_RESIZE_AND_RESTORE\n' if nonempty else b'WRITE_EMPTY_AND_REMOVE\n' if lifecycle else b'WRITE_NOOP\n'
     with (output / 'native.stderr.log').open('wb') as stderr:
         child = subprocess.Popen(command, env=environment, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=stderr)
         first_line = queue.Queue(maxsize=1)

@@ -1,5 +1,10 @@
 # BDE tools task nodes v1
 
+2026-10-11 最新增量：从已核对58对象的私有 source 副本精确将 Operator/logic_id=1 的 position.x 从300改为311，生成4,424字节实际 after，再由私有原生loader完整核对全部非省略字段/共享关系，恢复副本坐标。随后在该隔离组件原生 source 记录执行候选写入→完整原字节读回→原记录 inverse（2write/0delete），新连接双读完整 owner/reference 和公共 bookends 保持原样，精确清本次 pending。实际图形语义 diff 为1个坐标，source 记录物理792字节变化（含序列化地址等差异，未宣称逐字节原因已证），完整raw前后保留；固定header身份未变。只证明该 source 记录在当前实例内的往返，未改 live 图形/cache、未 Store/Commit，不能升级为生产move/connect/inverse或崩溃持久性。正式 model/source/cache/owner journal 闭合、T5.1、Message0/60、43 required、业务恢复与整体交付继续未完成。获批恢复后所有操作复用当前实例，没有新启停。
+
+[修改后source记录证据](../analysis/bde-experiments/2026-10-11/bde-source-payload-increment-01/README.md) · [source合同](bde-fresh-source-serializer.md)。
+
+
 2026-10-11 最新：获用户授权后仅私有测试实例恢复重启一次，重新打开原隔离数据库；旧 token/index/pending 保留，不重绑。新工作台原生 dump 生成 4,424 字节，原图/config/完整持久记录及独立双读保持一致。随后一次 own-bytes 原生 load 的58对象投影核对通过；首次按零代理预期拒绝，实际嵌入的自身 DBObject 已查明。修正后复用该已加载对象完成新 link 提取（未重新 load）：1个自身代理移除、0个外部引用、0原对象alias，原图/config/持久记录独立复读一致，本次 pending 已精确清除。第一次失败及一次缺少显式 reciprocal targets 的较弱读取保留。仅该 Module/Main 有限场景；尚无实际 changed graphical payload、model/source/cache 持久恢复或生产连线 inverse，Message0/60、43 required/T0–T9不升级，full_delivery=false。下一项为精确图形变更的 before/after 序列化和正式 journal 闭合。
 
 [本轮源码 roundtrip 证据](../analysis/bde-experiments/2026-10-11/bde-fresh-serializer-roundtrip-increment-01/README.md) · [合同](bde-fresh-source-serializer.md)。

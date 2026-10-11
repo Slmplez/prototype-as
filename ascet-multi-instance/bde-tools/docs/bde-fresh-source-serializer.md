@@ -1,5 +1,32 @@
 # Fresh source serializer checkpoint
 
+Latest changed-payload checkpoint (2026-10-11): one private Operator coordinate
+changed from x=300 to311, y unchanged. The actual 4,424-byte after payload was
+loaded and all58 objects/fields/sharing checked against the changed private
+source. The private coordinate was restored. Then the isolated source search
+record received that exact generated payload, was read back completely, and
+its exact original raw record was restored (2writes,0deletes). A new connection
+confirmed complete owner/reference double reads and identical public bookends,
+then only this pending was cleared. No additional ASCET restart occurred.
+
+The semantic private diff is one coordinate; the physical source record diff
+contains792 changed bytes. Both complete records are preserved. A generated
+source record candidate keeps fixed identity/class/name/version/state, updates
+blob extent from actual bytes, and preserves trailing allocated bytes. Its
+pure inverse preserves another owner and rejects an overlapping source change.
+Native source write/readback/inverse is verified only for this isolated case.
+
+This experiment did not edit the live graphical cache, call Store/Commit, or
+prove crash durability. Formal model/source/cache/owner journal and production
+connect/move/inverse remain incomplete. It does not certify all Block types,
+Message lifecycle, cross-Module or complete delivery. Those gates stay closed.
+
+Fixed commands: scripts/bde_private_layout_probe.py,
+scripts/bde_private_layout_confirm.py, scripts/bde_source_payload_probe.py and
+scripts/bde_source_payload_confirm.py. The raw candidate helper is
+scripts/bd_serialized_source_candidate.py and grants no native write authority.
+
+
 Current verified checkpoint (2026-10-11): a newly bound private workbench
 produced a 4,424-byte native source dump, then loaded it once into its private
 RBObjectLoader. All 58 reachable objects match the live source under the exact

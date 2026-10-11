@@ -6,6 +6,7 @@ import unittest
 ROOT = Path(__file__).resolve().parent
 sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tests')]
 MODULES = (
+    'test_bde_private_layout_probe', 'test_bde_source_payload_probe',
     'test_bde_fresh_serializer_extract_probe',
     'test_bde_fresh_serializer_dump_probe',
     'test_bd_persistent_owner_records', 'test_bde_persistent_owner_noop_probe',
